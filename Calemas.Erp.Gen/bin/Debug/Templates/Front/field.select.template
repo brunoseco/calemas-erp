@@ -1,0 +1,6 @@
+				<section class="<#colformField#>">
+					<div class="form-group">
+						<label><ng-container i18n><#ReletedClass#></ng-container></label>
+						<make-select (ngModelChange)="<#formType#>.model.<#propertyName#> = $event" [dataitem]="'<#ReletedClass#>'"></make-select>
+					</div>
+				</section>

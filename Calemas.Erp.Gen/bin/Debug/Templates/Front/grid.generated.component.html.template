@@ -1,0 +1,17 @@
+<table class="table table-bordered table-striped table-condensed has-tickbox table-hover">
+    <thead>
+        <tr>
+<#theadFields#>
+            <th class="text-center">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of dataList">
+<#tbodyFields#>
+            <td>
+                <button class="btn btn-xs btn-primary" (click)="saveInstance.ExecuteEdit(item.<#KeyName#>);"><i class="fa fa-pencil"></i></button>
+                <button class="btn btn-xs btn-danger" (click)="deleteInstance.ExecuteDelete(item);"><i class="fa fa-trash-o"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

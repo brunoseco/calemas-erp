@@ -1,0 +1,11 @@
+C:\Calemas\Main\Calemas.Erp.Dto\bin\Debug\netcoreapp1.1\Calemas.Erp.Dto.deps.json
+C:\Calemas\Main\Calemas.Erp.Dto\bin\Debug\netcoreapp1.1\Calemas.Erp.Dto.dll
+C:\Calemas\Main\Calemas.Erp.Dto\bin\Debug\netcoreapp1.1\Calemas.Erp.Dto.pdb
+C:\Calemas\Main\Calemas.Erp.Dto\bin\Debug\netcoreapp1.1\Common.Domain.dll
+C:\Calemas\Main\Calemas.Erp.Dto\bin\Debug\netcoreapp1.1\Common.Dto.dll
+C:\Calemas\Main\Calemas.Erp.Dto\bin\Debug\netcoreapp1.1\Common.Dto.pdb
+C:\Calemas\Main\Calemas.Erp.Dto\bin\Debug\netcoreapp1.1\Common.Domain.pdb
+C:\Calemas\Main\Calemas.Erp.Dto\obj\Debug\netcoreapp1.1\Calemas.Erp.Dto.csprojResolveAssemblyReference.cache
+C:\Calemas\Main\Calemas.Erp.Dto\obj\Debug\netcoreapp1.1\Calemas.Erp.Dto.AssemblyInfo.cs
+C:\Calemas\Main\Calemas.Erp.Dto\obj\Debug\netcoreapp1.1\Calemas.Erp.Dto.dll
+C:\Calemas\Main\Calemas.Erp.Dto\obj\Debug\netcoreapp1.1\Calemas.Erp.Dto.pdb

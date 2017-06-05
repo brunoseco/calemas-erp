@@ -1,0 +1,9 @@
+					<section class="<#colformField#>">
+						<div class="form-group">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="<#propertyName#>" [(ngModel)]="<#formType#>.model.<#propertyName#>" /><ng-container i18n><#propertyName#></ng-container>?
+								</label>
+							</div>
+						</div>
+					</section>

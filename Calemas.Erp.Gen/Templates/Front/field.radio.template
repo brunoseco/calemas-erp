@@ -1,0 +1,16 @@
+				<section class="<#colformField#>">
+					<div class="form-group">
+						<label for="<#propertyName#>"><ng-container i18n><#propertyName#></ng-container>?</label>
+						<div class="radio">
+							<label class="radio-inline">
+								<input type="radio" name="<#propertyName#>" [value]="undefined" [(ngModel)]="<#formType#>.model.<#propertyName#>" <#isRequired#> />Todos
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="<#propertyName#>" [value]="true" [(ngModel)]="<#formType#>.model.<#propertyName#>" <#isRequired#> />Sim
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="<#propertyName#>" [value]="false" [(ngModel)]="<#formType#>.model.<#propertyName#>" <#isRequired#> />Não
+							</label>
+						</div>
+					</div>
+				</section>

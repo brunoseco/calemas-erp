@@ -1,0 +1,16 @@
+<div class="gc-filter">
+  <div class="panel panel-default">
+        <div class="panel-heading">Filtros</div>
+        <div class="panel-body">
+            <form (ngSubmit)="filter.ExecuteFilter()" (keyup.enter)="filter.ExecuteFilter()" #filterForm="ngForm">
+  <#formFields#>
+            </form>
+        </div>
+        <div class="panel-footer">
+            <button type="button" class="btn btn-primary" (click)="filterForm.ngSubmit.emit()">
+                <span class="fa fa-search"></span>
+                Filtrar
+            </button>
+        </div>
+  </div>
+</div>

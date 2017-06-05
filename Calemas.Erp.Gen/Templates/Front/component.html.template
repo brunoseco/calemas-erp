@@ -1,0 +1,48 @@
+<ol class="gc-breadcrumb breadcrumb">
+    <li>Cadastro</li>
+    <li class="active"><#classNameFormated#></li>
+</ol>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+          <div class="gc-header">
+            <div class="btn-group">
+              <a href="javascript:history.back()" class="btn btn-primary btn-sm" data-original-title="" title="">
+                <i class="fa fa-reply"></i> Voltar
+              </a>
+              <a class="btn btn-success btn-sm" (click)="saveInstance.ExecuteCreate();">
+                <i class="fa fa-plus"></i> Cadastrar
+              </a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <<#classNameLower#>-filter (instance)="filterInstance = $event"></<#classNameLower#>-filter>
+    </div>
+  </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Resultado</div>
+                <div class="gc-grid table-responsive">
+                    <<#classNameLower#>-grid [dataList]="filterInstance.dataList" [filterInstance]="filterInstance" [saveInstance]="saveInstance" [deleteInstance]="deleteInstance"></<#classNameLower#>-grid>
+                </div>
+                <div class="panel-footer text-center">
+                  <div class="gc-pagination">
+                    <make-pagination [filterInstance]="filterInstance"></make-pagination>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<<#classNameLower#>-save (onSave)="filterInstance.ExecuteFilter()" (instance)="saveInstance = $event"></<#classNameLower#>-save>
+
+<<#classNameLower#>-delete (onDelete)="filterInstance.ExecuteFilter()" (instance)="deleteInstance = $event"></<#classNameLower#>-delete>

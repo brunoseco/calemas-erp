@@ -1,0 +1,20 @@
+import { <#className#>DeleteGeneratedComponent } from './generated/<#classNameLower#>-delete.generated.component';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+
+import { RemoveService } from '../../../common/crud/remove.service';
+import { <#className#> } from '../models/<#classNameLower#>';
+
+@Component({
+    selector: '<#classNameLower#>-delete',
+    templateUrl: './generated/<#classNameLower#>-delete.generated.component.html',
+    providers: [RemoveService],
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+
+export class <#className#>DeleteComponent extends <#className#>DeleteGeneratedComponent {
+
+    constructor(public remove: RemoveService<<#className#>>) {
+        super(remove);
+    }
+
+}

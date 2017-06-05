@@ -1,0 +1,6 @@
+C:\Calemas\Main\Calemas.Erp.Enum\bin\Debug\netcoreapp1.1\Calemas.Erp.Enum.deps.json
+C:\Calemas\Main\Calemas.Erp.Enum\bin\Debug\netcoreapp1.1\Calemas.Erp.Enum.dll
+C:\Calemas\Main\Calemas.Erp.Enum\bin\Debug\netcoreapp1.1\Calemas.Erp.Enum.pdb
+C:\Calemas\Main\Calemas.Erp.Enum\obj\Debug\netcoreapp1.1\Calemas.Erp.Enum.AssemblyInfo.cs
+C:\Calemas\Main\Calemas.Erp.Enum\obj\Debug\netcoreapp1.1\Calemas.Erp.Enum.dll
+C:\Calemas\Main\Calemas.Erp.Enum\obj\Debug\netcoreapp1.1\Calemas.Erp.Enum.pdb

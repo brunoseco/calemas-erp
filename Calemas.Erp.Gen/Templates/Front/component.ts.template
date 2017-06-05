@@ -1,0 +1,25 @@
+import { Component, OnInit } from '@angular/core';
+
+import { RemoveService } from '../../common/crud/remove.service';
+import { FilterService } from '../../common/crud/filter.service';
+import { SaveService } from '../../common/crud/save.service';
+
+import { <#className#>Filter } from './models/<#classNameLower#>.filter';
+import { <#className#> } from './models/<#classNameLower#>';
+
+@Component({
+    selector: '<#classNameLower#>',
+    templateUrl: './<#classNameLower#>.component.html',
+    providers: [FilterService],
+})
+export class <#className#>Component implements OnInit {
+
+    deleteInstance: RemoveService<<#className#>>;
+    saveInstance: SaveService<<#className#>, <#className#>Filter>;
+    filterInstance: FilterService<<#className#>, <#className#>Filter>;
+
+    constructor() { }
+
+    ngOnInit() { }
+
+}

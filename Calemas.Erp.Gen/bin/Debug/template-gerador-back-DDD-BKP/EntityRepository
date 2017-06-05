@@ -1,0 +1,136 @@
+﻿using Common.Domain.Base;
+using Common.Orm;
+using <#namespace#>.Data.Context;
+using <#namespace#>.Domain.Entitys;
+using <#namespace#>.Domain.Filter;
+using <#namespace#>.Domain.Interfaces.Repository;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace <#namespace#>.Data.Repository
+{
+    public class <#className#>Repository : Repository<<#className#>>, I<#className#>Repository
+    {
+        public <#className#>Repository(DbContext<#contextName#> ctx) : base(ctx)
+        {
+
+
+        }
+
+      
+        public IQueryable<<#className#>> GetBySimplefilters(<#className#>Filter filters)
+        {
+            var querybase = this.GetAll(this.DataAgregation(filters))
+								.WithBasicFilters(filters)
+								.WithCustomFilters(filters);
+            return querybase;
+        }
+
+        public <#className#> GetById(<#className#>Filter model)
+        {
+            var _<#classNameLower#> = this.GetAll(this.DataAgregation(model))
+               <#WhereSingle#>
+               .SingleOrDefault();
+
+            return _<#classNameLower#>;
+        }
+
+		 public IEnumerable<dynamic> GetDataItem(<#className#>Filter filters)
+        {
+            var querybase = this.GetBySimplefilters(filters).Select(_ => new
+            {
+                Id = _.<#KeyName#>
+
+            }).ToList(); 
+
+            return querybase;
+        }
+
+        public IEnumerable<dynamic> GetDataListCustom(<#className#>Filter filters)
+        {
+            var querybase = this.GetBySimplefilters(filters).Select(_ => new
+            {
+                Id = _.<#KeyName#>,
+
+            }).ToList();
+
+            return querybase;
+        }
+
+        public dynamic GetDataCustom(<#className#>Filter filters)
+        {
+            var querybase = this.GetBySimplefilters(filters).Select(_ => new
+            {
+                Id = _.<#KeyName#>,
+
+            }).SingleOrDefault();
+
+            return querybase;
+        }
+
+        protected override dynamic DefineFieldsGetOne(IQueryable<<#className#>> source, string queryOptimizerBehavior)
+        {
+            if (queryOptimizerBehavior == "queryOptimizerBehavior")
+            {
+                return source.Select(_ => new
+                {
+
+                }).SingleOrDefault();
+            }
+            return source;
+        }
+
+        protected override IQueryable<dynamic> DefineFieldsGetByFilters(IQueryable<<#className#>> source, FilterBase filters)
+        {
+            if (filters.QueryOptimizerBehavior == "queryOptimizerBehavior")
+            {
+                //if (!filters.IsOrderByDomain)
+                //{
+                //    return source.Select(_ => new
+                //    {
+                //        Id = _.<#className#>Id
+                //    }).OrderBy(_ => _.Id);
+                //}
+
+                return source.Select(_ => new
+                {
+                    //Id = _.<#className#>Id
+                });
+
+            }
+
+            //if (!filters.IsOrderByDomain)
+            //    return source.OrderBy(_ => _.<#className#>Id);
+
+            return source;
+        }
+
+        protected override IQueryable<<#className#>> MapperGetByFiltersToDomainFields(IQueryable<<#className#>> source, IEnumerable<dynamic> result, string queryOptimizerBehavior)
+        {
+            if (queryOptimizerBehavior == "queryOptimizerBehavior")
+            {
+                return result.Select(_ => new <#className#>
+                {
+
+                }).AsQueryable();
+            }
+
+            return result.Select(_ => (<#className#>)_).AsQueryable();
+
+        }
+
+        protected override <#className#> MapperGetOneToDomainFields(IQueryable<<#className#>> source, dynamic result, string queryOptimizerBehavior)
+        {
+            if (queryOptimizerBehavior == "queryOptimizerBehavior")
+            {
+                return new <#className#>
+                {
+
+                };
+            }
+
+            return source.SingleOrDefault();
+        }
+
+    }
+}

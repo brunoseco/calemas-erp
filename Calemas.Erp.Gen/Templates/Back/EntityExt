@@ -1,0 +1,28 @@
+﻿using <#namespace#>.Domain.Validations;
+using System;
+
+namespace <#namespace#>.Domain.Entitys
+{
+    public class <#className#> : <#className#>Base
+    {
+
+        public <#className#>()
+        {
+
+        }
+
+        public <#className#>(<#parametersRequired#>) :
+            base(<#parametersRequiredToBase#>)
+        {
+
+        }
+
+        public bool IsValid()
+        {
+            base._validationResult = new <#className#>EstaConsistenteValidation().Validate(this);
+            return base._validationResult.IsValid;
+
+        }
+        
+    }
+}

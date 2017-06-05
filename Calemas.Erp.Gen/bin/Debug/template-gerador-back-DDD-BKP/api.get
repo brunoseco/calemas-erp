@@ -1,0 +1,15 @@
+﻿		public IActionResult Get(<#KeyType#> id, [FromQuery]<#className#>Filter filters)
+		{
+			var result = new HttpResult<<#className#>Dto>(this._logger);
+            try
+            {
+				filters.<#className#>Id = id;
+                var returnModel = this._app.GetOne(filters);
+                return result.ReturnCustomResponse(this._app, returnModel);
+            }
+            catch (Exception ex)
+            {
+                return result.ReturnCustomException(ex, "<#namespace#> - <#className#>", id);
+            }
+
+		}

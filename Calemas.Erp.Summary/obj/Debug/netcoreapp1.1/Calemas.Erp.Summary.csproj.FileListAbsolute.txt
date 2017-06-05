@@ -1,0 +1,17 @@
+C:\Calemas\Main\Calemas.Erp.Summary\bin\Debug\netcoreapp1.1\Calemas.Erp.Summary.deps.json
+C:\Calemas\Main\Calemas.Erp.Summary\bin\Debug\netcoreapp1.1\Calemas.Erp.Summary.dll
+C:\Calemas\Main\Calemas.Erp.Summary\bin\Debug\netcoreapp1.1\Calemas.Erp.Summary.pdb
+C:\Calemas\Main\Calemas.Erp.Summary\bin\Debug\netcoreapp1.1\Calemas.Erp.Domain.dll
+C:\Calemas\Main\Calemas.Erp.Summary\bin\Debug\netcoreapp1.1\Calemas.Erp.Filter.dll
+C:\Calemas\Main\Calemas.Erp.Summary\bin\Debug\netcoreapp1.1\Common.Domain.dll
+C:\Calemas\Main\Calemas.Erp.Summary\bin\Debug\netcoreapp1.1\Common.Orm.dll
+C:\Calemas\Main\Calemas.Erp.Summary\bin\Debug\netcoreapp1.1\Common.Validation.dll
+C:\Calemas\Main\Calemas.Erp.Summary\bin\Debug\netcoreapp1.1\Calemas.Erp.Domain.pdb
+C:\Calemas\Main\Calemas.Erp.Summary\bin\Debug\netcoreapp1.1\Calemas.Erp.Filter.pdb
+C:\Calemas\Main\Calemas.Erp.Summary\bin\Debug\netcoreapp1.1\Common.Domain.pdb
+C:\Calemas\Main\Calemas.Erp.Summary\bin\Debug\netcoreapp1.1\Common.Orm.pdb
+C:\Calemas\Main\Calemas.Erp.Summary\bin\Debug\netcoreapp1.1\Common.Validation.pdb
+C:\Calemas\Main\Calemas.Erp.Summary\obj\Debug\netcoreapp1.1\Calemas.Erp.Summary.csprojResolveAssemblyReference.cache
+C:\Calemas\Main\Calemas.Erp.Summary\obj\Debug\netcoreapp1.1\Calemas.Erp.Summary.AssemblyInfo.cs
+C:\Calemas\Main\Calemas.Erp.Summary\obj\Debug\netcoreapp1.1\Calemas.Erp.Summary.dll
+C:\Calemas\Main\Calemas.Erp.Summary\obj\Debug\netcoreapp1.1\Calemas.Erp.Summary.pdb

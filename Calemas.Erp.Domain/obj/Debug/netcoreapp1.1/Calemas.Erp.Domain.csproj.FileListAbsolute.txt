@@ -1,0 +1,13 @@
+C:\Calemas\Main\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Calemas.Erp.Domain.deps.json
+C:\Calemas\Main\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Calemas.Erp.Domain.dll
+C:\Calemas\Main\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Calemas.Erp.Domain.pdb
+C:\Calemas\Main\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Calemas.Erp.Filter.dll
+C:\Calemas\Main\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Common.Domain.dll
+C:\Calemas\Main\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Common.Validation.dll
+C:\Calemas\Main\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Calemas.Erp.Filter.pdb
+C:\Calemas\Main\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Common.Domain.pdb
+C:\Calemas\Main\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Common.Validation.pdb
+C:\Calemas\Main\Calemas.Erp.Domain\obj\Debug\netcoreapp1.1\Calemas.Erp.Domain.csprojResolveAssemblyReference.cache
+C:\Calemas\Main\Calemas.Erp.Domain\obj\Debug\netcoreapp1.1\Calemas.Erp.Domain.AssemblyInfo.cs
+C:\Calemas\Main\Calemas.Erp.Domain\obj\Debug\netcoreapp1.1\Calemas.Erp.Domain.dll
+C:\Calemas\Main\Calemas.Erp.Domain\obj\Debug\netcoreapp1.1\Calemas.Erp.Domain.pdb

@@ -1,0 +1,20 @@
+import { <#className#>SaveGeneratedComponent } from './generated/<#classNameLower#>-save.generated.component';
+import { Component } from '@angular/core';
+
+import { SaveService } from '../../../common/crud/save.service';
+import { <#className#>Filter } from '../models/<#classNameLower#>.filter';
+import { <#className#> } from '../models/<#classNameLower#>';
+
+@Component({
+    selector: '<#classNameLower#>-save',
+    templateUrl: './generated/<#classNameLower#>-save.generated.component.html',
+    providers: [SaveService],
+})
+
+export class <#className#>SaveComponent extends <#className#>SaveGeneratedComponent {
+
+    constructor(public save: SaveService<<#className#>, <#className#>Filter>) {
+        super(save);
+    }
+
+}

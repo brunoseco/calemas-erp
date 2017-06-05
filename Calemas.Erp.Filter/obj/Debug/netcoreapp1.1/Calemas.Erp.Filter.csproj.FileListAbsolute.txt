@@ -1,0 +1,9 @@
+C:\Calemas\Main\Calemas.Erp.Filter\bin\Debug\netcoreapp1.1\Calemas.Erp.Filter.deps.json
+C:\Calemas\Main\Calemas.Erp.Filter\bin\Debug\netcoreapp1.1\Calemas.Erp.Filter.dll
+C:\Calemas\Main\Calemas.Erp.Filter\bin\Debug\netcoreapp1.1\Calemas.Erp.Filter.pdb
+C:\Calemas\Main\Calemas.Erp.Filter\bin\Debug\netcoreapp1.1\Common.Domain.dll
+C:\Calemas\Main\Calemas.Erp.Filter\bin\Debug\netcoreapp1.1\Common.Domain.pdb
+C:\Calemas\Main\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.Filter.csprojResolveAssemblyReference.cache
+C:\Calemas\Main\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.Filter.AssemblyInfo.cs
+C:\Calemas\Main\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.Filter.dll
+C:\Calemas\Main\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.Filter.pdb

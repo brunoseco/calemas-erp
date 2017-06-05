@@ -1,0 +1,27 @@
+import { <#className#>Filter } from './../../models/<#classNameLower#>.filter';
+import { <#className#> } from './../../models/<#classNameLower#>';
+import { FilterService } from '../../../../common/crud/filter.service';
+import { SaveService } from '../../../../common/crud/save.service';
+import { RemoveService } from '../../../../common/crud/remove.service';
+import { OnInit, Input } from '@angular/core';
+
+export class <#className#>GridGeneratedComponent implements OnInit {
+
+
+    @Input()
+    dataList: <#className#>[];
+
+    @Input()
+    deleteInstance: RemoveService<<#className#>>;
+
+    @Input()
+    saveInstance: SaveService<<#className#>, <#className#>Filter>;
+
+    @Input()
+    filterInstance: FilterService<<#className#>, <#className#>Filter>;
+
+    constructor() { }
+
+    ngOnInit(): void { }
+
+}

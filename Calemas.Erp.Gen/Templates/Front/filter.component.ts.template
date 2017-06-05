@@ -1,0 +1,20 @@
+import { <#className#>FilterGeneratedComponent } from './generated/<#classNameLower#>-filter.generated.component';
+import { Component } from '@angular/core';
+
+import { FilterService } from '../../../common/crud/filter.service';
+import { <#className#>Filter } from '../models/<#classNameLower#>.filter';
+import { <#className#> } from '../models/<#classNameLower#>';
+
+@Component({
+    selector: '<#classNameLower#>-filter',
+    templateUrl: './generated/<#classNameLower#>-filter.generated.component.html',
+    providers: [FilterService],
+})
+
+export class <#className#>FilterComponent extends <#className#>FilterGeneratedComponent {
+
+    constructor(public filter: FilterService<<#className#>, <#className#>Filter>) {
+        super(filter);
+    }
+
+}

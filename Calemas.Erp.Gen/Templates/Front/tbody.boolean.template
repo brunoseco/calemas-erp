@@ -1,0 +1,1 @@
+            <td><span class='label' [ngClass]="{'label-danger': !item.<#propertyName#>, 'label-success': item.<#propertyName#>}">{{ item.<#propertyName#> ? 'Sim' : 'Não' }}</span></td>

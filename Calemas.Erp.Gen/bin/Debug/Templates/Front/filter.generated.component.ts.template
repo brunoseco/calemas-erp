@@ -1,0 +1,22 @@
+import { OnInit, Output, EventEmitter } from '@angular/core';
+
+import { FilterService } from '../../../../common/crud/filter.service';
+import { <#className#>Filter } from '../../models/<#classNameLower#>.filter';
+import { <#className#> } from '../../models/<#classNameLower#>';
+
+export class <#className#>FilterGeneratedComponent implements OnInit {
+
+    @Output()
+    onFilter = new EventEmitter<void>();
+
+    @Output()
+    instance = new EventEmitter<FilterService<<#className#>, <#className#>Filter>>();
+
+    constructor(public filter: FilterService<<#className#>, <#className#>Filter>) { }
+
+    ngOnInit(): void {
+        this.filter.Start('<#className#>', new <#className#>Filter());
+        this.filter.onFilter$.subscribe(() => this.onFilter.emit());
+        this.instance.emit(this.filter);
+    }
+}

@@ -1,0 +1,6 @@
+					<section class="<#colformField#>">
+						<div class="form-group">
+							<label for="<#propertyName#>"><ng-container i18n><#propertyName#></ng-container></label>
+							<input type="date" class="form-control" name="<#propertyName#>" [(ngModel)]="<#formType#>.model.<#propertyName#>" <#isRequired#> />
+						</div>
+					</section>

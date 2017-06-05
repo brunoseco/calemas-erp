@@ -1,0 +1,25 @@
+import { NgModule } from '@angular/core';
+
+import { <#className#>RoutingModule } from './routing/<#classNameLower#>-routing.module';
+
+import { SharedModule } from './../../common/shared.module';
+
+import { <#className#>Component } from './<#classNameLower#>.component';
+import { <#className#>DeleteComponent } from './delete/<#classNameLower#>-delete.component';
+import { <#className#>SaveComponent } from './save/<#classNameLower#>-save.component';
+import { <#className#>FilterComponent } from './filter/<#classNameLower#>-filter.component';
+import { <#className#>GridComponent } from './grid/<#classNameLower#>-grid.component';
+
+@NgModule({
+    imports: [
+        SharedModule,
+        <#className#>RoutingModule,
+    ],
+    declarations: [
+        <#className#>Component,
+        <#className#>FilterComponent,
+        <#className#>GridComponent,
+        <#className#>DeleteComponent,
+        <#className#>SaveComponent]
+})
+export class <#className#>Module { }

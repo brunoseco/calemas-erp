@@ -1,0 +1,151 @@
+﻿using Common.Domain.Base;
+using Common.Domain.Interfaces;
+using Common.Domain.Model;
+using <#namespace#>.Domain.Entitys;
+using <#namespace#>.Domain.Filter;
+using <#namespace#>.Domain.Interfaces.Repository;
+using <#namespace#>.Domain.Validations;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace <#namespace#>.Domain.Services
+{
+    public class <#className#>ServiceBase : ServiceBase<<#className#>>
+    {
+        protected readonly I<#className#>Repository _rep;
+        public <#className#>ServiceBase(I<#className#>Repository rep, ICache cache)
+            : base(cache)
+        {
+            this._rep = rep;
+        }
+
+        public virtual <#className#> GetOne(<#className#>Filter filters)
+        {
+            return this._rep.GetById(filters);
+        }
+
+        public virtual IEnumerable<<#className#>> GetByFilters(<#className#>Filter filters)
+        {
+            var queryBase = this._rep.GetBySimplefilters(filters);
+            return queryBase.ToList();
+        }
+
+        public virtual PaginateResult<<#className#>> GetByFiltersPaging(<#className#>Filter filters)
+        {
+            var queryBase = this._rep.GetBySimplefilters(filters);
+            return this._rep.PagingAndDefineFields(filters, queryBase);
+        }
+
+        public virtual void Remove(<#className#> <#classNameLower#>)
+        {
+            this._rep.Remove(<#classNameLower#>);
+        }
+
+        public virtual Summary GetSummary(PaginateResult<<#className#>> paginateResult)
+        {
+            return new Summary
+            {
+                Total = paginateResult.TotalCount,
+            };
+        }
+
+        public virtual ValidationSpecificationResult GetDomainValidation(FilterBase filters = null)
+        {
+            return base._validationResult;
+        }
+
+        public virtual ValidationConfirm GetDomainConfirm(FilterBase filters = null)
+        {
+            return base._validationConfirm;
+        }
+
+        public virtual ValidationWarning GetDomainWarning(FilterBase filters = null)
+        {
+            return base._validationWarning;
+        }
+
+        public override <#className#> Save(<#className#> <#classNameLower#>, bool questionToContinue = false)
+        {
+            var <#classNameLower#>Old = this.GetOne(<#GetOneFilterKeys#>);
+            if (questionToContinue)
+            {
+                if (base.Continue(<#classNameLower#>, <#classNameLower#>Old) == false)
+                    return <#classNameLower#>;
+            }
+
+            return this.SaveWithValidation(<#classNameLower#>, <#classNameLower#>Old);
+        }
+
+        public override <#className#> SavePartial(<#className#> <#classNameLower#>, bool questionToContinue = false)
+        {
+            var <#classNameLower#>Old = this.GetOne(<#GetOneFilterKeys#>);
+            if (questionToContinue)
+            {
+                if (base.Continue(<#classNameLower#>, <#classNameLower#>Old) == false)
+                    return <#classNameLower#>;
+            }
+
+            return SaveWithOutValidation(<#classNameLower#>, <#classNameLower#>Old);
+        }
+
+        protected override <#className#> SaveWithOutValidation(<#className#> <#classNameLower#>, <#className#> <#classNameLower#>Old)
+        {
+            <#classNameLower#> = this.SaveDefault(<#classNameLower#>, <#classNameLower#>Old);
+
+            base._validationResult = new ValidationSpecificationResult
+            {
+                Errors = new List<string>(),
+                IsValid = true,
+                Message = "<#classNameLower#> Alterado com sucesso."
+            };
+
+            base._cacheHelper.ClearCache();
+            return <#classNameLower#>;
+
+        }
+
+        protected override <#className#> SaveWithValidation(<#className#> <#classNameLower#>, <#className#> <#classNameLower#>Old)
+        {
+            if (!this.DataAnnotationIsValid())
+                return <#classNameLower#>;
+
+            if (!<#classNameLower#>.IsValid())
+            {
+                base._validationResult = <#classNameLower#>.GetDomainValidation();
+                return <#classNameLower#>;
+            }
+
+            var validationResult = new <#className#>AptoParaCadastroValidation(this._rep).Validate(<#classNameLower#>);
+            base._validationResult = validationResult;
+
+            if (!validationResult.IsValid)
+            {
+                return <#classNameLower#>;
+            }
+            
+            <#classNameLower#> = this.SaveDefault(<#classNameLower#>, <#classNameLower#>Old);
+            validationResult.Message = "<#className#> cadastrado com sucesso :)";
+
+            base._cacheHelper.ClearCache();
+            return <#classNameLower#>;
+        }
+
+        protected virtual <#className#> SaveDefault(<#className#> <#classNameLower#>, <#className#> <#classNameLower#>Old)
+        {
+            var isNew = <#classNameLower#>Old.IsNull();
+            if (isNew)
+            {
+				<#setUserCreate#>
+                <#classNameLower#> = this._rep.Add(<#classNameLower#>);
+            }
+            else
+            {
+				<#setUserCreateOld#>
+				<#setUserUpdate#>
+                <#classNameLower#> = this._rep.Update(<#classNameLower#>);
+            }
+
+            return <#classNameLower#>;
+        }
+    }
+}

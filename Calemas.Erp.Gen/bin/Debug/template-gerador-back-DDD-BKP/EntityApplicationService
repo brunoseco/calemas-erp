@@ -1,0 +1,17 @@
+﻿using Common.Domain.Interfaces;
+using <#namespace#>.Domain.Interfaces.Services;
+
+namespace <#namespace#>.Application
+{
+    public class <#className#>ApplicationService : <#className#>ApplicationServiceBase
+    {
+
+        public <#className#>ApplicationService(I<#className#>Service service, IUnitOfWork uow, ICache cache) :
+            base(service, uow, cache)
+        {
+  
+        }
+
+
+    }
+}

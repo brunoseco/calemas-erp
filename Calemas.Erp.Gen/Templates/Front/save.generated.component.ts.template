@@ -1,0 +1,27 @@
+import { OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+import { ModalDirective } from 'ngx-bootstrap/modal';
+
+import { SaveService } from '../../../../common/crud/save.service';
+import { <#className#>Filter } from '../../models/<#classNameLower#>.filter';
+import { <#className#> } from '../../models/<#classNameLower#>';
+
+export class <#className#>SaveGeneratedComponent implements OnInit {
+
+    @ViewChild('saveModal')
+    public saveModal: ModalDirective;
+
+    @Output()
+    onSave = new EventEmitter<void>();
+
+    @Output()
+    instance = new EventEmitter<SaveService<<#className#>, <#className#>Filter>>();
+
+    constructor(public save: SaveService<<#className#>, <#className#>Filter>) { }
+
+    ngOnInit(): void {
+        this.save.Start('<#className#>', new <#className#>(), new <#className#>Filter(), this.saveModal);
+        this.save.onSave$.subscribe(() => this.onSave.emit());
+        this.instance.emit(this.save);
+    }
+
+}

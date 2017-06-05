@@ -1,0 +1,5 @@
+import { Filter } from '../common/models/filter';
+
+export class <#className#>GeneratedFilter extends Filter {
+<#formFields#>
+}

@@ -1,0 +1,100 @@
+﻿using IdentityServer4.Models;
+using IdentityServer4.Services.InMemory;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+
+namespace SM.Sso.Server.Api
+{
+    public class Config
+    {
+
+        public static List<InMemoryUser> GetUsers()
+        {
+
+            return new List<InMemoryUser>
+            {
+                new InMemoryUser
+                {
+                    Subject = "1",
+                    Username = "adm",
+                    Password = "123456",
+                    Claims = ClaimsForAdmin()
+                },
+            };
+
+        }
+
+        public static List<Claim> ClaimsForAdmin()
+        {
+
+            var tools = new List<dynamic>
+            {
+<#claimsforadmin#>
+            };
+
+            var _toolsForAdmin = JsonConvert.SerializeObject(tools);
+
+            return new List<Claim>
+            {
+                new Claim("name", "Administrator"),
+                new Claim("tools",_toolsForAdmin ),
+                new Claim("role","admin"),
+            };
+        }
+
+        public static IEnumerable<Scope> GetScopes()
+        {
+            return new List<Scope>()
+            {
+                StandardScopes.OpenId,
+                StandardScopes.Profile,
+                new Scope
+                {
+                    Claims = new List<ScopeClaim> {
+                        new ScopeClaim("subscriberId"),
+                        new ScopeClaim("role"),
+                        new ScopeClaim("tools"),
+                    },
+                    Type = ScopeType.Resource,
+                    Name = "ssosm",
+                    Description = "sso basic for Santos & Machado clients",
+                    IncludeAllClaimsForUser = true
+                }
+            };
+        }
+
+
+        public static IEnumerable<Client> GetClients()
+        {
+            var key = "secret".Sha256();
+            return new List<Client>
+            {
+                new Client
+                {
+                    ClientId = "Demo",
+
+                    // no interactive user, use the clientid/secret for authentication
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                    // secret for authentication
+                    ClientSecrets =
+                    {
+                        new Secret(key)
+                    },
+
+                    // scopes that client has access to
+
+
+                    AllowedScopes = {
+                        StandardScopes.OpenId.Name,
+                        StandardScopes.Profile.Name,
+                        "ssosm"
+                    }
+                }
+            };
+
+        }
+
+    }
+}

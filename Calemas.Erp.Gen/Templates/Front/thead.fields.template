@@ -1,0 +1,6 @@
+            <th>
+                <ng-container i18n><#propertyName#></ng-container>
+                <button (click)="filterInstance.OrderBy('<#propertyName#>')" class="btn btn-xs btn-default no-border pull-right">
+                    <i class="fa fa-arrows-v"></i>
+                </button>
+            </th>

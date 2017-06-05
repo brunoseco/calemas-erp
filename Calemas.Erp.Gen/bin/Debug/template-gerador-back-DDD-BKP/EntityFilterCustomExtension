@@ -1,0 +1,29 @@
+﻿using Common.Domain.Model;
+using <#namespace#>.Domain.Entitys;
+using <#namespace#>.Domain.Filter;
+using System.Linq;
+
+namespace <#namespace#>.Data.Repository
+{
+    public static class <#className#>FilterCustomExtension
+    {
+
+        public static IQueryable<<#className#>> WithCustomFilters(this IQueryable<<#className#>> queryBase, <#className#>Filter filters)
+        {
+            var queryFilter = queryBase;
+
+
+            return queryFilter;
+        }
+
+		public static IQueryable<<#className#>> WithLimitSubscriber(this IQueryable<<#className#>> queryBase, CurrentUser user)
+        {
+            var subscriberId = user.GetSubscriberId<int>();
+			var queryFilter = queryBase;
+
+            return queryFilter;
+        }
+
+    }
+}
+

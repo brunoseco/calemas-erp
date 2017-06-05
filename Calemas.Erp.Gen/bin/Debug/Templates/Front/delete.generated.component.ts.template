@@ -1,0 +1,26 @@
+import { OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
+import { ModalDirective } from 'ngx-bootstrap/modal';
+
+import { RemoveService } from '../../../../common/crud/remove.service';
+import { <#className#> } from '../../models/<#classNameLower#>';
+
+export class <#className#>DeleteGeneratedComponent implements OnInit {
+
+    @ViewChild('deleteModal')
+    public deleteModal: ModalDirective;
+
+    @Output()
+    onDelete = new EventEmitter<void>();
+
+    @Output()
+    instance = new EventEmitter<RemoveService<<#className#>>>();
+
+    constructor(public remove: RemoveService<<#className#>>) { }
+
+    ngOnInit(): void {
+        this.remove.Start('<#className#>', this.deleteModal);
+        this.remove.onDelete$.subscribe(() => this.onDelete.emit());
+        this.instance.emit(this.remove);
+    }
+
+}

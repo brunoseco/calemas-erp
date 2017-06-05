@@ -1,0 +1,16 @@
+﻿using Common.Validation;
+using <#namespace#>.Domain.Entitys;
+using <#namespace#>.Domain.Interfaces.Repository;
+
+namespace <#namespace#>.Domain.Validations
+{
+    public class <#className#>AptoParaCadastroValidation : ValidatorSpecification<<#className#>>
+    {
+        public <#className#>AptoParaCadastroValidation(I<#className#>Repository rep)
+        {
+
+            //base.Add("Key", new Rule<<#className#>>(Instance of RuleClassName,"message"));
+        }
+
+    }
+}

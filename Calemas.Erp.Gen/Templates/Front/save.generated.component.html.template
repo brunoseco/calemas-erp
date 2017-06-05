@@ -1,0 +1,23 @@
+<div bsModal #saveModal="bs-modal" class="gc-modal modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header alert-success">
+                <h4 class="modal-title pull-left">Manutenção de <#classNameFormated#></h4>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="saveModal.hide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="save.ConfirmSave()" (keyup.enter)="save.ConfirmSave()" #createForm="ngForm">
+					<div class="row">
+<#formFields#>
+					</div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" type="button" (click)="saveModal.hide()">Cancelar</button>
+                <button type="submit" class="btn btn-success" [disabled]="!createForm.form.valid" (click)="createForm.ngSubmit.emit()">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>

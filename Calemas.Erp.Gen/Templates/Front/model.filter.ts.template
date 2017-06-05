@@ -1,0 +1,5 @@
+import { <#className#>GeneratedFilter } from '../../../models/<#classNameLower#>.generated.filter';
+
+export class <#className#>Filter extends <#className#>GeneratedFilter {
+
+}

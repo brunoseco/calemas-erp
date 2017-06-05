@@ -1,0 +1,15 @@
+import { <#className#>GridGeneratedComponent } from './generated/<#classNameLower#>-grid.generated.component';
+import { Component } from '@angular/core';
+
+@Component({
+    selector: '<#classNameLower#>-grid',
+    templateUrl: './generated/<#classNameLower#>-grid.generated.component.html',
+})
+
+export class <#className#>GridComponent extends <#className#>GridGeneratedComponent {
+
+    constructor() {
+        super();
+    }
+
+}
