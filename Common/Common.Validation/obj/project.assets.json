@@ -7510,10 +7510,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Calemas\\Main\\Common\\Common.Validation\\Common.Validation.csproj",
+      "projectUniqueName": "C:\\Pessoal\\calemas-erp\\Common\\Common.Validation\\Common.Validation.csproj",
       "projectName": "Common.Validation",
-      "projectPath": "C:\\Calemas\\Main\\Common\\Common.Validation\\Common.Validation.csproj",
-      "outputPath": "C:\\Calemas\\Main\\Common\\Common.Validation\\obj\\",
+      "projectPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Validation\\Common.Validation.csproj",
+      "outputPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Validation\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -7521,8 +7521,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "C:\\Calemas\\Main\\Common\\Common.Domain\\Common.Domain.csproj": {
-              "projectPath": "C:\\Calemas\\Main\\Common\\Common.Domain\\Common.Domain.csproj"
+            "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj": {
+              "projectPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj"
             }
           }
         }

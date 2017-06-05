@@ -34,3 +34,12 @@ C:\Calemas\Main\Common\Common.Cache\obj\Debug\netcoreapp1.1\Common.Cache.csprojR
 C:\Calemas\Main\Common\Common.Cache\obj\Debug\netcoreapp1.1\Common.Cache.AssemblyInfo.cs
 C:\Calemas\Main\Common\Common.Cache\obj\Debug\netcoreapp1.1\Common.Cache.dll
 C:\Calemas\Main\Common\Common.Cache\obj\Debug\netcoreapp1.1\Common.Cache.pdb
+C:\Pessoal\calemas-erp\Common\Common.Cache\bin\Debug\netcoreapp1.1\Common.Cache.deps.json
+C:\Pessoal\calemas-erp\Common\Common.Cache\bin\Debug\netcoreapp1.1\Common.Cache.dll
+C:\Pessoal\calemas-erp\Common\Common.Cache\bin\Debug\netcoreapp1.1\Common.Cache.pdb
+C:\Pessoal\calemas-erp\Common\Common.Cache\bin\Debug\netcoreapp1.1\Common.Domain.dll
+C:\Pessoal\calemas-erp\Common\Common.Cache\bin\Debug\netcoreapp1.1\Common.Domain.pdb
+C:\Pessoal\calemas-erp\Common\Common.Cache\obj\Debug\netcoreapp1.1\Common.Cache.csprojResolveAssemblyReference.cache
+C:\Pessoal\calemas-erp\Common\Common.Cache\obj\Debug\netcoreapp1.1\Common.Cache.AssemblyInfo.cs
+C:\Pessoal\calemas-erp\Common\Common.Cache\obj\Debug\netcoreapp1.1\Common.Cache.dll
+C:\Pessoal\calemas-erp\Common\Common.Cache\obj\Debug\netcoreapp1.1\Common.Cache.pdb

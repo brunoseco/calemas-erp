@@ -7582,10 +7582,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Calemas\\Main\\Calemas.Erp.Application\\Calemas.Erp.Application.csproj",
+      "projectUniqueName": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Application\\Calemas.Erp.Application.csproj",
       "projectName": "Calemas.Erp.Application",
-      "projectPath": "C:\\Calemas\\Main\\Calemas.Erp.Application\\Calemas.Erp.Application.csproj",
-      "outputPath": "C:\\Calemas\\Main\\Calemas.Erp.Application\\obj\\",
+      "projectPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Application\\Calemas.Erp.Application.csproj",
+      "outputPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Application\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -7593,17 +7593,17 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "C:\\Calemas\\Main\\Calemas.Erp.Domain\\Calemas.Erp.Domain.csproj": {
-              "projectPath": "C:\\Calemas\\Main\\Calemas.Erp.Domain\\Calemas.Erp.Domain.csproj"
+            "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Domain\\Calemas.Erp.Domain.csproj": {
+              "projectPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Domain\\Calemas.Erp.Domain.csproj"
             },
-            "C:\\Calemas\\Main\\Common\\Common.Dto\\Common.Dto.csproj": {
-              "projectPath": "C:\\Calemas\\Main\\Common\\Common.Dto\\Common.Dto.csproj"
+            "C:\\Pessoal\\calemas-erp\\Common\\Common.Dto\\Common.Dto.csproj": {
+              "projectPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Dto\\Common.Dto.csproj"
             },
-            "C:\\Calemas\\Main\\Common\\Common.Domain\\Common.Domain.csproj": {
-              "projectPath": "C:\\Calemas\\Main\\Common\\Common.Domain\\Common.Domain.csproj"
+            "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj": {
+              "projectPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj"
             },
-            "C:\\Calemas\\Main\\Calemas.Erp.Dto\\Calemas.Erp.Dto.csproj": {
-              "projectPath": "C:\\Calemas\\Main\\Calemas.Erp.Dto\\Calemas.Erp.Dto.csproj"
+            "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Dto\\Calemas.Erp.Dto.csproj": {
+              "projectPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Dto\\Calemas.Erp.Dto.csproj"
             }
           }
         }

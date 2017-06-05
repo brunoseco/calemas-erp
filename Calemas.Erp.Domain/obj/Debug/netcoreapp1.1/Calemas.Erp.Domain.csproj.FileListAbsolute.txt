@@ -11,3 +11,16 @@ C:\Calemas\Main\Calemas.Erp.Domain\obj\Debug\netcoreapp1.1\Calemas.Erp.Domain.cs
 C:\Calemas\Main\Calemas.Erp.Domain\obj\Debug\netcoreapp1.1\Calemas.Erp.Domain.AssemblyInfo.cs
 C:\Calemas\Main\Calemas.Erp.Domain\obj\Debug\netcoreapp1.1\Calemas.Erp.Domain.dll
 C:\Calemas\Main\Calemas.Erp.Domain\obj\Debug\netcoreapp1.1\Calemas.Erp.Domain.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Calemas.Erp.Domain.deps.json
+C:\Pessoal\calemas-erp\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Calemas.Erp.Domain.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Calemas.Erp.Domain.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Calemas.Erp.Filter.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Common.Domain.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Common.Validation.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Calemas.Erp.Filter.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Common.Domain.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Domain\bin\Debug\netcoreapp1.1\Common.Validation.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Domain\obj\Debug\netcoreapp1.1\Calemas.Erp.Domain.csprojResolveAssemblyReference.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Domain\obj\Debug\netcoreapp1.1\Calemas.Erp.Domain.AssemblyInfo.cs
+C:\Pessoal\calemas-erp\Calemas.Erp.Domain\obj\Debug\netcoreapp1.1\Calemas.Erp.Domain.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.Domain\obj\Debug\netcoreapp1.1\Calemas.Erp.Domain.pdb

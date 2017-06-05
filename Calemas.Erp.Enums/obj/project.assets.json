@@ -7042,10 +7042,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Calemas\\Main\\Calemas.Erp.Enums\\Calemas.Erp.Enums.csproj",
+      "projectUniqueName": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Enums\\Calemas.Erp.Enums.csproj",
       "projectName": "Calemas.Erp.Enums",
-      "projectPath": "C:\\Calemas\\Main\\Calemas.Erp.Enums\\Calemas.Erp.Enums.csproj",
-      "outputPath": "C:\\Calemas\\Main\\Calemas.Erp.Enums\\obj\\",
+      "projectPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Enums\\Calemas.Erp.Enums.csproj",
+      "outputPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Enums\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

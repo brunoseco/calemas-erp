@@ -7496,10 +7496,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Calemas\\Main\\Common\\Common.Domain\\Common.Domain.csproj",
+      "projectUniqueName": "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj",
       "projectName": "Common.Domain",
-      "projectPath": "C:\\Calemas\\Main\\Common\\Common.Domain\\Common.Domain.csproj",
-      "outputPath": "C:\\Calemas\\Main\\Common\\Common.Domain\\obj\\",
+      "projectPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj",
+      "outputPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
