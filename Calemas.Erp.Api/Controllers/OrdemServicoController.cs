@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Calemas.Erp.Api.Controllers
 {
-	[Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     public class OrdemServicoController : Controller
     {

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "3c0b5442bdc97065c8d23357bb3e1ba2f3cc5005"
+    "signature": "3a764bc8d5ea2bb5c24b3c6c0b893397114f72d0"
   },
   "compilationOptions": {
     "defines": [
@@ -27,6 +27,7 @@
           "Calemas.Erp.Data": "1.0.0",
           "Calemas.Erp.Domain": "1.0.0",
           "Calemas.Erp.Dto": "1.0.0",
+          "Common.API": "1.0.0",
           "Common.Cache": "1.0.0",
           "Common.Domain": "1.0.0",
           "Common.Dto": "1.0.0",
@@ -46,6 +47,46 @@
         },
         "compile": {
           "Calemas.Erp.Api.dll": {}
+        }
+      },
+      "aspnet.security.openidconnect.extensions/1.0.0": {
+        "dependencies": {
+          "AspNet.Security.OpenIdConnect.Primitives": "1.0.0",
+          "Microsoft.AspNetCore.Authentication": "1.1.2",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.4/AspNet.Security.OpenIdConnect.Extensions.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.4/AspNet.Security.OpenIdConnect.Extensions.dll": {}
+        }
+      },
+      "aspnet.security.openidconnect.primitives/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "1.1.1",
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "10.0.2"
+        },
+        "runtime": {
+          "lib/netstandard1.0/AspNet.Security.OpenIdConnect.Primitives.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.0/AspNet.Security.OpenIdConnect.Primitives.dll": {}
+        }
+      },
+      "aspnet.security.openidconnect.server/1.0.0": {
+        "dependencies": {
+          "AspNet.Security.OpenIdConnect.Extensions": "1.0.0",
+          "Microsoft.AspNetCore.Authentication": "1.1.2",
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "2.1.2",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.6/AspNet.Security.OpenIdConnect.Server.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/AspNet.Security.OpenIdConnect.Server.dll": {}
         }
       },
       "automapper/6.0.2": {
@@ -76,7 +117,7 @@
           "lib/netstandard1.3/AutoMapper.dll": {}
         }
       },
-      "identitymodel/2.8.1": {
+      "identitymodel/2.9.1": {
         "dependencies": {
           "NETStandard.Library": "1.6.1",
           "Newtonsoft.Json": "10.0.2",
@@ -95,7 +136,7 @@
       },
       "identitymodel.aspnetcore.oauth2introspection/2.1.1": {
         "dependencies": {
-          "IdentityModel": "2.8.1",
+          "IdentityModel": "2.9.1",
           "Microsoft.AspNetCore.Authentication": "1.1.2",
           "Microsoft.AspNetCore.Http.Abstractions": "1.1.2",
           "Microsoft.Extensions.Caching.Memory": "1.1.2",
@@ -123,7 +164,7 @@
       },
       "identityserver4.accesstokenvalidation/1.2.1": {
         "dependencies": {
-          "IdentityModel": "2.8.1",
+          "IdentityModel": "2.9.1",
           "IdentityModel.AspNetCore.OAuth2Introspection": "2.1.1",
           "IdentityModel.AspNetCore.ScopeValidation": "1.1.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "1.1.2",
@@ -886,6 +927,18 @@
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Design.dll": {}
+        }
+      },
+      "microsoft.entityframeworkcore.inmemory/1.1.2": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "1.1.2",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.InMemory.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.InMemory.dll": {}
         }
       },
       "microsoft.entityframeworkcore.relational/1.1.2": {
@@ -1922,6 +1975,25 @@
         },
         "compile": {
           "Calemas.Erp.Filter.dll": {}
+        }
+      },
+      "common.api/1.0.0": {
+        "dependencies": {
+          "AspNet.Security.OpenIdConnect.Server": "1.0.0",
+          "Common.Domain": "1.0.0",
+          "IdentityModel": "2.9.1",
+          "Microsoft.AspNetCore.Cors": "1.1.2",
+          "Microsoft.AspNetCore.Http.Abstractions": "1.1.2",
+          "Microsoft.AspNetCore.Mvc.Cors": "1.1.3",
+          "Microsoft.EntityFrameworkCore.InMemory": "1.1.2",
+          "Microsoft.NETCore.App": "1.1.2",
+          "System.IdentityModel.Tokens.Jwt": "5.1.3"
+        },
+        "runtime": {
+          "Common.API.dll": {}
+        },
+        "compile": {
+          "Common.API.dll": {}
         }
       },
       "common.cache/1.0.0": {
@@ -3637,6 +3709,27 @@
       "serviceable": false,
       "sha512": ""
     },
+    "aspnet.security.openidconnect.extensions/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sqjKrzH/mwHyMlMLE5kwivAWs2BKmIZ2LTrENllfwOJwSI+S08jXap/aIXS2WRY46JgjgofL7c73pAdNt4bebQ==",
+      "path": "aspnet.security.openidconnect.extensions/1.0.0",
+      "hashPath": "aspnet.security.openidconnect.extensions.1.0.0.nupkg.sha512"
+    },
+    "aspnet.security.openidconnect.primitives/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8C86Y0Hh3vKBW3ywq5wHXV2l47U186eKeoCoWh38IpezOlXmHyXQf3Lsr7Dt38Jm+XZ+AYFNMO/GwU8YbjNA8Q==",
+      "path": "aspnet.security.openidconnect.primitives/1.0.0",
+      "hashPath": "aspnet.security.openidconnect.primitives.1.0.0.nupkg.sha512"
+    },
+    "aspnet.security.openidconnect.server/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-793Xu4BJvH/4SyI7x+ZC1iM/gxfcZIchmo2jTynsRyNajMS4uHwrp8g/w4NoMGTg6zO6OX7gwjY1wt9cP+KZtw==",
+      "path": "aspnet.security.openidconnect.server/1.0.0",
+      "hashPath": "aspnet.security.openidconnect.server.1.0.0.nupkg.sha512"
+    },
     "automapper/6.0.2": {
       "type": "package",
       "serviceable": true,
@@ -3644,12 +3737,12 @@
       "path": "automapper/6.0.2",
       "hashPath": "automapper.6.0.2.nupkg.sha512"
     },
-    "identitymodel/2.8.1": {
+    "identitymodel/2.9.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bVY5P/wNHvglbNwB3dsdI63sLa6GQAdhjynfRb7sBknbq0Rcz2s/u8VPT/k1+OqnMEjQE1RzRRIeHV0hj02poA==",
-      "path": "identitymodel/2.8.1",
-      "hashPath": "identitymodel.2.8.1.nupkg.sha512"
+      "sha512": "sha512-OLUm1HuVL6ldABJIsRdmk3wxwYd2d0bpPihOTGXn7xr/uho2VpIikI854UNmDE/05FuBxurebGyb3A6aLLrVgA==",
+      "path": "identitymodel/2.9.1",
+      "hashPath": "identitymodel.2.9.1.nupkg.sha512"
     },
     "identitymodel.aspnetcore.oauth2introspection/2.1.1": {
       "type": "package",
@@ -4000,6 +4093,13 @@
       "sha512": "sha512-TFbj0fFE5BWJptL0BKhYOED0QOqY4VxApeLn8r9q8cINxyEj0XgjORl/a3Cp96CeASE5zsQeyMwaQCBRH+roag==",
       "path": "microsoft.entityframeworkcore.design/1.1.2",
       "hashPath": "microsoft.entityframeworkcore.design.1.1.2.nupkg.sha512"
+    },
+    "microsoft.entityframeworkcore.inmemory/1.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p/MB8Yh5Y+oVboCb3hQF2JyAzMJi+O8hNFktE4nv4CAq1/1Ee0kjqpvA/buvMMGm6PUUufC+ZKoz8A+PKL7RMA==",
+      "path": "microsoft.entityframeworkcore.inmemory/1.1.2",
+      "hashPath": "microsoft.entityframeworkcore.inmemory.1.1.2.nupkg.sha512"
     },
     "microsoft.entityframeworkcore.relational/1.1.2": {
       "type": "package",
@@ -4470,6 +4570,11 @@
       "sha512": ""
     },
     "calemas.erp.filter/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "common.api/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

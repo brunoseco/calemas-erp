@@ -30,7 +30,7 @@
     <ProjectReference Include="..\Calemas.Erp.Data\Calemas.Erp.Data.csproj" />
     <ProjectReference Include="..\Calemas.Erp.Domain\Calemas.Erp.Domain.csproj" />
     <ProjectReference Include="..\Calemas.Erp.Dto\Calemas.Erp.Dto.csproj" />
-    <ProjectReference Include="..\Common\Common.Api\Common.Api.csproj" />
+    <ProjectReference Include="..\Common\Common.API\Common.API.csproj" />
     <ProjectReference Include="..\Common\Common.Cache\Common.Cache.csproj" />
     <ProjectReference Include="..\Common\Common.Domain\Common.Domain.csproj" />
     <ProjectReference Include="..\Common\Common.Dto\Common.Dto.csproj" />

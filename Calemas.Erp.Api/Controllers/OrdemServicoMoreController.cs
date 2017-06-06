@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Calemas.Erp.Api.Controllers
 {
-	[Authorize]
+    //[Authorize]
     [Route("api/ordemservico/more")]
     public class OrdemServicoMoreController : Controller
     {

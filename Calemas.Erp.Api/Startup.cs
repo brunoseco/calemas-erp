@@ -1,37 +1,92 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Common.API;
+using Common.Domain.Base;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Calemas.Erp.Application.Config;
+using Calemas.Erp.Data.Context;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using Common.API.Extensions;
+using Newtonsoft.Json.Serialization;
 
 namespace Calemas.Erp.Api
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        public IConfigurationRoot Configuration { get; }
+
+        public Startup(IHostingEnvironment env)
+        {
+            var builder = new ConfigurationBuilder()
+                 .SetBasePath(env.ContentRootPath)
+                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                 .AddEnvironmentVariables();
+
+            Configuration = builder.Build();
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<DbContextCore>(
+             options => options.UseSqlServer(
+                 Configuration
+                    .GetSection("EFCoreConnStrings:Core").Value));
+
+            services.AddDistributedRedisCache(options =>
+            {
+                options.Configuration = Configuration.GetSection("RedisConnStrings:Core").Value;
+                options.InstanceName = "Core";
+            });
+
+            services.Configure<ConfigSettingsBase>(Configuration.GetSection("ConfigSettings"));
+            services.AddSingleton<IConfiguration>(Configuration);
+
+            Cors.Enable(services);
+            ConfigContainerCore.Config(services);
+
+            services.AddMvc().AddJsonOptions(options =>
+            {
+                options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, IOptions<ConfigSettingsBase> configSettingsBase)
         {
-            loggerFactory.AddConsole();
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            app.UseDeveloperExceptionPage();
 
-            app.Run(async (context) =>
+            app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
             {
-                await context.Response.WriteAsync("Hello World!");
+                Authority = configSettingsBase.Value.AuthorityEndPoint,
+                ApiName = "apipdf",
+                RequireHttpsMetadata = false
             });
+
+            var supportedCultures = new[]
+            {
+                new CultureInfo("pt-BR"),
+            };
+
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("pt-BR"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            });
+
+            app.AddTokenMiddleware();
+            app.UseMvc();
+
+            AutoMapperConfigCore.RegisterMappings();
         }
     }
 }
