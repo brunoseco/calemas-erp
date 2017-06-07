@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace <#namespace#>.Api.Controllers
 {
-	//[Authorize]
+	[Authorize]
     [Route("api/[controller]")]
     public class <#className#>Controller : Controller
     {

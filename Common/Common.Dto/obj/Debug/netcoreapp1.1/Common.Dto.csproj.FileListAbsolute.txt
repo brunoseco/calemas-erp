@@ -25,15 +25,6 @@ C:\Projetos\Common-Core\Main\Common.Dto\obj\Debug\netcoreapp1.1\Common.Dto.cspro
 C:\Projetos\Common-Core\Main\Common.Dto\obj\Debug\netcoreapp1.1\Common.Dto.AssemblyInfo.cs
 C:\Projetos\Common-Core\Main\Common.Dto\obj\Debug\netcoreapp1.1\Common.Dto.dll
 C:\Projetos\Common-Core\Main\Common.Dto\obj\Debug\netcoreapp1.1\Common.Dto.pdb
-C:\Calemas\Main\Common\Common.Dto\bin\Debug\netcoreapp1.1\Common.Dto.deps.json
-C:\Calemas\Main\Common\Common.Dto\bin\Debug\netcoreapp1.1\Common.Dto.dll
-C:\Calemas\Main\Common\Common.Dto\bin\Debug\netcoreapp1.1\Common.Dto.pdb
-C:\Calemas\Main\Common\Common.Dto\bin\Debug\netcoreapp1.1\Common.Domain.dll
-C:\Calemas\Main\Common\Common.Dto\bin\Debug\netcoreapp1.1\Common.Domain.pdb
-C:\Calemas\Main\Common\Common.Dto\obj\Debug\netcoreapp1.1\Common.Dto.csprojResolveAssemblyReference.cache
-C:\Calemas\Main\Common\Common.Dto\obj\Debug\netcoreapp1.1\Common.Dto.AssemblyInfo.cs
-C:\Calemas\Main\Common\Common.Dto\obj\Debug\netcoreapp1.1\Common.Dto.dll
-C:\Calemas\Main\Common\Common.Dto\obj\Debug\netcoreapp1.1\Common.Dto.pdb
 C:\Pessoal\calemas-erp\Common\Common.Dto\bin\Debug\netcoreapp1.1\Common.Dto.deps.json
 C:\Pessoal\calemas-erp\Common\Common.Dto\bin\Debug\netcoreapp1.1\Common.Dto.dll
 C:\Pessoal\calemas-erp\Common\Common.Dto\bin\Debug\netcoreapp1.1\Common.Dto.pdb

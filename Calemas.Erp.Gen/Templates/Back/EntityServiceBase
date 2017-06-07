@@ -104,7 +104,7 @@ namespace <#namespace#>.Domain.Services
 
         }
 
-        protected override <#className#> SaveWithValidation(<#className#> <#classNameLower#>, <#className#> <#classNameLower#>Old)
+		protected override <#className#> SaveWithValidation(<#className#> <#classNameLower#>, <#className#> <#classNameLower#>Old)
         {
             if (!this.DataAnnotationIsValid())
                 return <#classNameLower#>;
@@ -115,8 +115,7 @@ namespace <#namespace#>.Domain.Services
                 return <#classNameLower#>;
             }
 
-            base._validationResult  = new <#className#>AptoParaCadastroValidation(this._rep).Validate(<#classNameLower#>);
-			base._validationWarning  = new <#className#>AptoParaCadastroWarning(this._rep).Validate(<#classNameLower#>);
+            this.Specifications(<#classNameLower#>);
 
             if (!base._validationResult.IsValid)
             {
@@ -128,6 +127,12 @@ namespace <#namespace#>.Domain.Services
 
             base._cacheHelper.ClearCache();
             return <#classNameLower#>;
+        }
+
+		protected virtual void Specifications(<#className#> <#classNameLower#>)
+        {
+            base._validationResult  = new <#className#>AptoParaCadastroValidation(this._rep).Validate(<#classNameLower#>);
+			base._validationWarning  = new <#className#>AptoParaCadastroWarning(this._rep).Validate(<#classNameLower#>);
         }
 
         protected virtual <#className#> SaveDefault(<#className#> <#classNameLower#>, <#className#> <#classNameLower#>Old)

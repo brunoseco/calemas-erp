@@ -1,6 +1,7 @@
 ﻿using Common.Domain.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,6 +14,9 @@ namespace Common.Domain.Base
         protected ConfirmEspecificationResult _validationConfirm;
 
         protected WarningSpecificationResult _validationWarning;
+
+        [NotMapped]
+        public string AttributeBehavior { get; protected set; }
 
         public virtual ValidationSpecificationResult GetDomainValidation(FilterBase filters = null)
         {

@@ -16,6 +16,9 @@ namespace Common.Domain.Base
 
         protected WarningSpecificationResult _validationWarning;
 
+       
+
+
         public ServiceBase(ICache cache)
         {
             this._cacheHelper = new CacheHelper(cache);

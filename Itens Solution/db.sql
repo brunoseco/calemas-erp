@@ -1,7 +1,7 @@
 USE [master]
 GO
 
-/****** Object:  Database [Calemas.Erp]    Script Date: 03/06/2017 23:42:00 ******/
+/****** Object:  Database [Calemas.Erp]    Script Date: 05/06/2017 21:07:47 ******/
 CREATE DATABASE [Calemas.Erp]
  CONTAINMENT = NONE
  ON  PRIMARY 
