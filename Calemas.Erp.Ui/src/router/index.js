@@ -1,12 +1,12 @@
-import Vue from 'vue'
+﻿import Vue from 'vue'
 import Router from 'vue-router'
 
 // Containers
-import Full from '@/containers/Full'
+import Template from '@/template'
 
 // Views
-import Dashboard from '@/views/Dashboard'
-import Midia from '@/views/Midia'
+import Dashboard from '@/views/dashboard'
+import Midia from '@/views/midia'
 
 Vue.use(Router)
 
@@ -19,7 +19,7 @@ export default new Router({
       path: '/',
       redirect: '/dashboard',
       name: 'Home',
-      component: Full,
+      component: Template,
       children: [
         {
           path: 'dashboard',
