@@ -1,0 +1,22 @@
+
+
+.no-padding{
+    padding: 0;
+}
+
+table tr td:first-child{
+    padding-left: 10px;
+}
+
+table tr th:first-child{
+    padding-left: 10px;
+}
+
+table.has-tickbox tr th:first-child{
+    width: 40px;
+    text-align: center;
+}
+
+table.has-tickbox tr td:first-child{
+    text-align: center;
+}

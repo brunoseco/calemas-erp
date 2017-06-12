@@ -4,15 +4,16 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-import 'bulma/css/bulma.css'
-import './assets/css/style.css'
-
-Vue.config.productionTip = false
+const moment = require('moment')
+require('moment/locale/pt')
+Vue.use(require('vue-moment'), {
+    moment
+});
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: { App }
+    el: '#app',
+    router,
+    template: '<App/>',
+    components: { App }
 })
