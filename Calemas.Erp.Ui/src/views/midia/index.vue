@@ -68,7 +68,7 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header">
-                            Resultado
+                            <strong>Resultado</strong>
                         </div>
                         <div class="card-block no-padding">
                             <table class="table has-tickbox table-striped table-sm">
@@ -102,7 +102,7 @@
                             </table>
                         </div>
                         <div class="card-block no-padding">
-                            <pagination :total="total" :page-size="api.Filter.PageSize" :callback="pageChanged"></pagination>
+                            <pagination :total="api.filters.total" :page-size="api.filters.pageSize" :callback="pageChanged"></pagination>
                         </div>
                     </div>
                 </div>
@@ -194,8 +194,9 @@
 <script>
 
     import modal from 'vue-strap/src/Modal'
-    import pagination from '../../common/pagination'
+    import pagination from 'vue-pagination-bootstrap'
     import { Api } from '../../common/api'
+    import { Crud } from '../../common/crud'
 
     export default {
         name: 'midia',
@@ -210,31 +211,31 @@
                 editModalIsOpen: false,
                 deleteModalIsOpen: false,
                 list: [],
-                total: 0,
                 api: new Api("midia"),
+                crud: new Crud({ resource: "midia" }),
             }
         },
         methods: {
             pageChanged(page) {
-                this.api.Filter.PageIndex = page;
-                this.api.Get().then(data => { this.list = data.DataList; });
+                this.api.filters.pageIndex = page;
+                this.api.get().then(data => { this.list = data.DataList; });
             },
             loadList() {
-                this.api.Get().then(data => {
+                this.api.get().then(data => {
                     this.total = data.Summary.Total;
                     this.list = data.DataList;
                 });
             },
             saveModel() {
-                this.api.Post(this.model).then(data => {
+                this.api.post(this.model).then(data => {
                     this.loadList();
                     this.createModalIsOpen = false;
                     this.editModalIsOpen = false;
                 });
             },
             deleteModel() {
-                this.api.Filter = this.model;
-                this.api.Delete().then(data => {
+                this.api.filters = this.model;
+                this.api.delete().then(data => {
                     this.loadList();
                     this.deleteModalIsOpen = false;
                 });
@@ -244,16 +245,16 @@
                 this.createModalIsOpen = true;
             },
             excuteEditModal(model) {
-                this.api.Filter = model;
-                this.api.GetMethodCustom("GetByModel").then(data => {
+                this.api.filters = model;
+                this.api.getMethodCustom("GetByModel").then(data => {
                     this.editModalIsOpen = true;
                     this.model = data.Data;
                 });
 
             },
             excuteDeleteModal(model) {
-                this.api.Filter = model;
-                this.api.GetMethodCustom("GetByModel").then(data => {
+                this.api.filters = model;
+                this.api.getMethodCustom("GetByModel").then(data => {
                     this.deleteModalIsOpen = true;
                     this.model = data.Data;
                 });

@@ -1,7 +1,7 @@
 ﻿import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import Cache from '../cache'
+import byCache from '../cache'
 import Constants from '../global'
 
 Vue.use(VueAxios, axios)
@@ -10,98 +10,85 @@ export function Api(o) {
 
     this.Resourse = o;
 
-    this.DefaultFilter = {
-        PageSize: 10,
-        PageIndex: 0,
-        IsPaginate: true,
-        QueryOptimizerBehavior: "",
+    this.defaultFilter = {
+        pageSize: 10,
+        pageIndex: 0,
+        isPaginate: true,
+        queryOptimizerBehavior: "",
     };
 
-    this.EnableLoading = true;
-    this.EnableErrorMessage = true;
-    this.Filter = Object.assign({}, this.DefaultFilter, {});
-    this.Cache = false;
-    this.LastAction = "none";
-    this.Url = "";
+    this.filters = Object.assign({}, this.defaultFilter, {});
+    this.byCache = false;
+    this.lastAction = "none";
+    this.url = "";
 
-    this.SuccessHandle = function (data) { return data; };
-    this.ErrorHandle = function (err) { return err; };
+    this.get = _get;
+    this.getDetails = _getDetails;
+    this.getDataListCustom = _getDataListCustom;
+    this.getDataCustom = _getDataCustom;
+    this.getMethodCustom = _getMethodCustom;
 
-    this.Get = _get;
-    this.GetDetails = _getDetails;
-    this.Post = _post;
-    this.Put = _put;
-    this.Delete = _delete;
-    this.DataItem = _dataitem;
-    this.GetDataListCustom = _getDataListCustom;
-    this.GetDataCustom = _getDataCustom;
-    this.GetMethodCustom = _getMethodCustom;
+    this.post = _post;
+    this.put = _put;
+
+    this.delete = _delete;
+    this.dataItem = _dataitem;
 
     var self = this;
 
     function _post(data) {
 
-        showLoading();
-
-        self.LastAction = "post";
-        self.Url = makeUri();
+        self.lastAction = "post";
+        self.url = makeUri();
 
         return axios
-            .post(self.Url, data)
+            .post(self.url, data)
             .then(res => { handleSuccess(res.data); return res.data; }, err => { handleError(err); return err; });
     }
 
     function _put(data) {
 
-        showLoading();
-
-        self.LastAction = "put";
-        self.Url = makeUri();
+        self.lastAction = "put";
+        self.url = makeUri();
 
         return axios
-            .put(self.Url, data)
+            .put(self.url, data)
             .then(res => { handleSuccess(res.data); return res.data; }, err => { handleError(err); return err; });
     }
 
     function _delete() {
 
-        showLoading();
-
-        self.LastAction = "delete";
-        self.Url = makeDeleteBaseUrl();
+        self.lastAction = "delete";
+        self.url = makeDeleteBaseUrl();
 
         return axios
-            .delete(self.Url)
+            .delete(self.url)
             .then(res => { handleSuccess(res.data); return res.data; }, err => { handleError(err); return err; });
     }
 
     function _get() {
 
-        showLoading();
-
-        self.LastAction = "get";
-        self.Url = makeGetBaseUrl();
+        self.lastAction = "get";
+        self.url = makeGetBaseUrl();
 
         if (isOffline())
-            return loadFromCache();
+            return loadFromCache().then(handleSuccess, handleError);
 
         return axios
-            .get(self.Url)
+            .get(self.url)
             .then(res => { handleSuccess(res.data); return res.data; }, err => { handleError(err); return err; });
     }
 
     function _getMethodCustom(method) {
 
-        showLoading();
-
-        self.LastAction = "get";
-        self.Url = makeGetCustomMethodBaseUrl(method);
+        self.lastAction = "get";
+        self.url = makeGetCustomMethodBaseUrl(method);
 
         if (isOffline())
-            return loadFromCache();
+            return loadFromCache().then(handleSuccess, handleError);
 
         return axios
-            .get(self.Url)
+            .get(self.url)
             .then(handleSuccess, handleError);
     }
 
@@ -130,7 +117,7 @@ export function Api(o) {
     }
 
     function makeDeleteBaseUrl() {
-        return String.format("{0}/?{1}", makeUri(), Object.$httpParamSerializer(self.Filter));
+        return String.format("{0}/?{1}", makeUri(), Object.$httpParamSerializer(self.filters));
     }
 
     function makeUri() {
@@ -147,70 +134,54 @@ export function Api(o) {
 
     function queryStringFilter() {
 
-        if (self.Filter.OrderFields !== undefined) {
-            self.Filter.IsOrderByDynamic = true;
-            if (self.Filter.OrderByType === undefined)
-                self.Filter.OrderByType = 1;
+        if (self.filters.OrderFields !== undefined) {
+            self.filters.IsOrderByDynamic = true;
+            if (self.filters.OrderByType === undefined)
+                self.filters.OrderByType = 1;
         }
 
-        var filter = Object.assign({}, self.DefaultFilter, self.Filter);
+        var filter = Object.assign({}, self.defaultFilter, self.filters);
 
-        if (self.Filter.Id !== undefined)
-            return String.format("{0}?{1}", self.Filter.Id, Object.$httpParamSerializer(filter));
+        if (self.filters.Id !== undefined)
+            return String.format("{0}?{1}", self.filters.Id, Object.$httpParamSerializer(filter));
 
         return String.format("?{0}", Object.$httpParamSerializer(filter));
     }
 
-    function handleSuccess(response) {
-        hideLoading();
-        addCache(response.data);
-        return self.SuccessHandle(response.data);
-    }
+    function handleSuccess(response) { addCache(response.data); }
 
-    function handleError(err) {
-        hideLoading();
-        return self.ErrorHandle(err.data);
-    }
-
-
-    function showLoading() {
-        // if (self.EnableLoading)
-        //     Loading.show();
-    }
-
-    function hideLoading() {
-        // if (self.EnableLoading)
-        //     Loading.hide();
-    }
+    function handleError(err) { }
 
     function addCache(data) {
 
-        if (!self.Cache)
+        if (!self.byCache)
             return;
 
-        if (self.Url == "")
+        if (self.url == "")
             return;
 
-        if (self.LastAction == "get") {
+        if (self.lastAction == "get") {
             if (data.Data != null || (data.DataList != null && data.DataList.length > 0)) {
                 data = JSON.stringify(data);
-                Cache.Add(self.Url, data)
+                byCache.Add(self.url, data)
             }
         }
     }
 
     function loadFromCache() {
 
-        if (!self.Cache)
+        if (!self.byCache)
             return;
 
-        hideLoading();
-
-        var data = Cache.Get(self.Url);
+        var data = byCache.Get(self.url);
         data = JSON.parse(data);
 
-        if (data != null)
-            self.SuccessHandle(data);
+        return new Promise(function (resolve, reject) {
+            if (data != null)
+                resolve(data);
+            else
+                reject("Nada encontrado")
+        })
     }
 
     function isOffline() {
