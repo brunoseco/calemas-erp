@@ -1,7 +1,7 @@
 ﻿import { Api } from '../api'
 
 export function Crud(params) {
-
+    
     this.default = {
         resource: null
     };
@@ -22,33 +22,38 @@ export function Crud(params) {
     this.modelCreate = {};
     this.modelFilter = {};
 
+    this.executeDeleteModal = _executeDeleteModal;
+    this.executeDeleteAction = _executeDeleteAction;
+    this.executeFilterAction = _executeFilterAction;
+    this.executeLoadAction = _executeLoadAction;
+
     var self = this;
 
     makeApi();
 
-    function executeFilterAction() {
-        executeLoadAction(self.modelFilter);
+    function _executeFilterAction() {
+        self.executeLoadAction(self.modelFilter);
     }
 
-    function executeLoadAction(filters) {
+    function _executeLoadAction(filters) {
         self.api.filters = filters;
-        self.api.Get().then(data => {
+        self.api.get().then(data => {
             self.result.total = data.Summary.Total;
             self.result.itens = data.DataList;
         });
     }
 
-    function executeDeleteAction() {
+    function _executeDeleteAction() {
         self.api.filters = self.modelDelete;
-        this.api.Delete().then(data => {
+        self.api.delete().then(data => {
             self.deleteModalIsOpen = false;
             self.executeFilterAction();
         });
     }
 
-    function executeDeleteModal(item) {
+    function _executeDeleteModal(item) {
         self.api.filters = item;
-        self.api.GetMethodCustom("GetByModel").then(data => {
+        self.api.getMethodCustom("GetByModel").then(data => {
             self.deleteModalIsOpen = true;
             self.modelDelete = data.Data;
         });

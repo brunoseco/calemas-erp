@@ -89,7 +89,7 @@ export function Api(o) {
 
         return axios
             .get(self.url)
-            .then(handleSuccess, handleError);
+            .then(res => { handleSuccess(res.data); return res.data; }, err => { handleError(err); return err; });
     }
 
     function _getDataListCustom() {
