@@ -11,7 +11,7 @@ export function Api(o) {
     this.Resourse = o;
 
     this.DefaultFilter = {
-        PageSize: 50,
+        PageSize: 10,
         PageIndex: 0,
         IsPaginate: true,
         QueryOptimizerBehavior: "",
@@ -19,7 +19,7 @@ export function Api(o) {
 
     this.EnableLoading = true;
     this.EnableErrorMessage = true;
-    this.Filter = {};
+    this.Filter = Object.assign({}, this.DefaultFilter, {});
     this.Cache = false;
     this.LastAction = "none";
     this.Url = "";
@@ -38,7 +38,6 @@ export function Api(o) {
     this.GetMethodCustom = _getMethodCustom;
 
     var self = this;
-
 
     function _post(data) {
 

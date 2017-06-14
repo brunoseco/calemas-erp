@@ -102,25 +102,7 @@
                             </table>
                         </div>
                         <div class="card-block no-padding">
-                            <nav>
-                                <ul class="pagination justify-content-center">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                            <span class="sr-only">Next</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
+                            <pagination :total="total" :page-size="api.Filter.PageSize" :callback="pageChanged"></pagination>
                         </div>
                     </div>
                 </div>
@@ -212,11 +194,12 @@
 <script>
 
     import modal from 'vue-strap/src/Modal'
+    import pagination from '../../common/pagination'
     import { Api } from '../../common/api'
 
     export default {
         name: 'midia',
-        components: { modal },
+        components: { modal, pagination },
         data() {
             return {
                 model: {
@@ -226,26 +209,32 @@
                 createModalIsOpen: false,
                 editModalIsOpen: false,
                 deleteModalIsOpen: false,
-                list: []
+                list: [],
+                total: 0,
+                api: new Api("midia"),
             }
         },
         methods: {
+            pageChanged(page) {
+                this.api.Filter.PageIndex = page;
+                this.api.Get().then(data => { this.list = data.DataList; });
+            },
             loadList() {
-                var api = new Api("midia");
-                api.Get().then(data => { this.list = data.DataList; });
+                this.api.Get().then(data => {
+                    this.total = data.Summary.Total;
+                    this.list = data.DataList;
+                });
             },
             saveModel() {
-                var api = new Api("midia");
-                api.Post(this.model).then(data => {
+                this.api.Post(this.model).then(data => {
                     this.loadList();
                     this.createModalIsOpen = false;
                     this.editModalIsOpen = false;
                 });
             },
             deleteModel() {
-                var api = new Api("midia");
-                api.Filter = this.model;
-                api.Delete().then(data => {
+                this.api.Filter = this.model;
+                this.api.Delete().then(data => {
                     this.loadList();
                     this.deleteModalIsOpen = false;
                 });
@@ -255,23 +244,21 @@
                 this.createModalIsOpen = true;
             },
             excuteEditModal(model) {
-                var api = new Api("midia");
-                api.Filter = model;
-                api.GetMethodCustom("GetByModel").then(data => {
+                this.api.Filter = model;
+                this.api.GetMethodCustom("GetByModel").then(data => {
                     this.editModalIsOpen = true;
                     this.model = data.Data;
                 });
 
             },
             excuteDeleteModal(model) {
-                var api = new Api("midia");
-                api.Filter = model;
-                api.GetMethodCustom("GetByModel").then(data => {
+                this.api.Filter = model;
+                this.api.GetMethodCustom("GetByModel").then(data => {
                     this.deleteModalIsOpen = true;
                     this.model = data.Data;
                 });
 
-            }
+            },
         },
         mounted() {
             this.loadList()

@@ -11,7 +11,6 @@ import Midia from '@/views/midia'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'hash',
   linkActiveClass: 'open active',
   scrollBehavior: () => ({ y: 0 }),
   routes: [

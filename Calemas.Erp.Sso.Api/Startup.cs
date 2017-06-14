@@ -42,6 +42,9 @@ namespace Calemas.Erp.Sso.Api
                 RequireHttpsMetadata = false
             });
 
+            app.UseStaticFiles();
+            app.UseMvcWithDefaultRoute();
+
             app.UseIdentityServer();
             app.AddTokenMiddleware();
             app.UseMvc();
@@ -76,6 +79,7 @@ namespace Calemas.Erp.Sso.Api
             services.AddScoped<CurrentUser>();
 
             services.AddMvcCore();
+
             services.AddMvc().AddJsonOptions(options =>
             {
                 options.SerializerSettings.ContractResolver = new DefaultContractResolver();
