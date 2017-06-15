@@ -1,10 +1,7 @@
-﻿
-export function Create(config) {
+﻿import { Validation } from '../validation'
+import Loading from '../loading'
 
-    this.default = {
-        api: null,
-        executeFilterAction: null
-    }
+export function Create(config) {
 
     this.config = config;
 
@@ -12,18 +9,29 @@ export function Create(config) {
     this.model = {};
     this.executeModal = _executeModal;
     this.executeAction = _executeAction;
+    this.loading = Loading;
+
+    this.validation = new Validation({
+        vm: this.config.vm,
+        form: this.config.form
+    });
 
     var self = this;
 
     function _executeAction() {
-        self.config.api.post(this.model).then(data => {
-            self.modalIsOpen = false;
-            self.config.executeFilterAction();
+        self.validation.verifyFormIsValid(() => {
+            self.loading.show();
+            self.config.api.post(this.model).then(data => {
+                self.modalIsOpen = false;
+                self.config.executeFilterAction();
+                self.loading.hide();
+            })
         });
     }
 
     function _executeModal(item) {
-        this.model = {};
+        self.validation.clearFormErrors();
+        self.model = {};
         self.modalIsOpen = true;
     }
 

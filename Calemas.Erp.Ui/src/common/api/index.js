@@ -1,7 +1,7 @@
 ﻿import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import byCache from '../cache'
+import Cache from '../cache'
 import Constants from '../global'
 
 Vue.use(VueAxios, axios)

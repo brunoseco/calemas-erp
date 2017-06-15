@@ -1,10 +1,7 @@
-﻿
-export function Delete(config) {
+﻿import { Validation } from '../validation'
+import Loading from '../loading'
 
-    this.default = {
-        api: null,
-        executeFilterAction: null
-    }
+export function Delete(config) {
 
     this.config = config;
 
@@ -12,22 +9,35 @@ export function Delete(config) {
     this.model = {};
     this.executeModal = _executeModal;
     this.executeAction = _executeAction;
+    this.loading = Loading;
+
+    this.validation = new Validation({
+        vm: this.config.vm,
+        form: this.config.form
+    });
 
     var self = this;
 
     function _executeAction() {
-        self.config.api.filters = self.model;
-        self.config.api.delete().then(data => {
-            self.modalIsOpen = false;
-            self.config.executeFilterAction();
+        self.validation.verifyFormIsValid(() => {
+            self.loading.show();
+            self.config.api.filters = self.model;
+            self.config.api.delete().then(data => {
+                self.modalIsOpen = false;
+                self.config.executeFilterAction();
+                self.loading.hide();
+            });
         });
     }
 
     function _executeModal(item) {
+        self.loading.show();
+        self.validation.clearFormErrors();
         self.config.api.filters = item;
         self.config.api.getMethodCustom("GetByModel").then(data => {
             self.modalIsOpen = true;
             self.model = data.Data;
+            self.loading.hide();
         });
     }
 
