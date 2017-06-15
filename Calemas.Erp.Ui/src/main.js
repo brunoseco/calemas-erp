@@ -2,9 +2,9 @@
 import App from './app'
 import router from './router'
 
-const moment = require('moment')
+const Moment = require('moment')
 require('moment/locale/pt')
-Vue.use(require('vue-moment'), { moment });
+Vue.use(require('vue-moment'), { Moment });
 
 new Vue({
     el: '#app',

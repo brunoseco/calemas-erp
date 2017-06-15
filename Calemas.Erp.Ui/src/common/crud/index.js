@@ -1,4 +1,8 @@
 ﻿import { Api } from '../api'
+import { Delete } from './delete'
+import { Edit } from './edit'
+import { Create } from './create'
+import { Filter } from './filter'
 
 export function Crud(params) {
     
@@ -7,60 +11,30 @@ export function Crud(params) {
     };
 
     this.config = Object.assign({}, this.default, params);
+    
+    this.api = new Api(this.config.resource);
 
-    this.deleteModalIsOpen = false;
-    this.createModalIsOpen = false;
-    this.editModalIsOpen = false;
+    this.filter = new Filter({
+        api: this.api,
+    })
 
-    this.result = {
-        itens: [],
-        total: 0
-    };
+    this.delete = new Delete({
+        api: this.api,
+        executeFilterAction: this.filter.executeAction
+    })
 
-    this.modelDelete = {};
-    this.modelEdit = {};
-    this.modelCreate = {};
-    this.modelFilter = {};
+    this.edit = new Edit({
+        api: this.api,
+        executeFilterAction: this.filter.executeAction
+    })
 
-    this.executeDeleteModal = _executeDeleteModal;
-    this.executeDeleteAction = _executeDeleteAction;
-    this.executeFilterAction = _executeFilterAction;
-    this.executeLoadAction = _executeLoadAction;
+    this.create = new Create({
+        api: this.api,
+        executeFilterAction: this.filter.executeAction
+    })
 
     var self = this;
-
-    makeApi();
-
-    function _executeFilterAction() {
-        self.executeLoadAction(self.modelFilter);
-    }
-
-    function _executeLoadAction(filters) {
-        self.api.filters = filters;
-        self.api.get().then(data => {
-            self.result.total = data.Summary.Total;
-            self.result.itens = data.DataList;
-        });
-    }
-
-    function _executeDeleteAction() {
-        self.api.filters = self.modelDelete;
-        self.api.delete().then(data => {
-            self.deleteModalIsOpen = false;
-            self.executeFilterAction();
-        });
-    }
-
-    function _executeDeleteModal(item) {
-        self.api.filters = item;
-        self.api.getMethodCustom("GetByModel").then(data => {
-            self.deleteModalIsOpen = true;
-            self.modelDelete = data.Data;
-        });
-    }
-
-    function makeApi() {
-        self.api = new Api(self.config.resource);
-    }
-
+    
+    
+    
 }

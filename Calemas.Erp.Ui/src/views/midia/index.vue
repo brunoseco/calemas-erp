@@ -14,7 +14,7 @@
             <a href="javascript:history.back()" class="btn btn-primary btn-sm pull-right header-btn hidden-mobile">
               <i class="fa fa-reply"></i> Voltar
             </a>
-            <button @click="excuteCreateModal()" class="btn btn-success btn-sm pull-right header-btn hidden-mobile">
+            <button @click="crud.create.executeModal()" class="btn btn-success btn-sm pull-right header-btn hidden-mobile">
               <i class="fa fa-plus"></i> Cadastrar
             </button>
           </div>
@@ -27,27 +27,27 @@
               <strong>Filtros</strong>
             </div>
             <div class="card-block">
-              <form method="post">
+              <form v-on:submit.prevent="crud.filter.executeAction()">
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label for="Nome">Nome</label>
-                    <input type="text" id="Nome" name="Nome" class="form-control" placeholder="Nome">
+                    <input type="text" name="Nome" v-model="crud.filter.model.Nome" class="form-control" placeholder="Nome" required />
                   </div>
                   <div class="form-group col-md-6">
                     <label>Ativo?</label>
                     <div class="form-group">
                       <label class="custom-control custom-radio">
-                        <input id="radio1" name="radio" type="radio" class="custom-control-input">
+                        <input type="radio" name="Ativo" v-model="crud.filter.model.Ativo" value="undefined" class="custom-control-input">
                         <span class="custom-control-indicator"></span>
                         <span class="custom-control-description">Todos</span>
                       </label>
                       <label class="custom-control custom-radio">
-                        <input id="radio1" name="radio" type="radio" class="custom-control-input">
+                        <input type="radio" name="Ativo" v-model="crud.filter.model.Ativo" value="true" class="custom-control-input">
                         <span class="custom-control-indicator"></span>
                         <span class="custom-control-description">Sim</span>
                       </label>
                       <label class="custom-control custom-radio">
-                        <input id="radio1" name="radio" type="radio" class="custom-control-input">
+                        <input type="radio" name="Ativo" v-model="crud.filter.model.Ativo" value="false" class="custom-control-input">
                         <span class="custom-control-indicator"></span>
                         <span class="custom-control-description">Não</span>
                       </label>
@@ -57,7 +57,7 @@
               </form>
             </div>
             <div class="card-footer text-right">
-              <button type="submit" class="btn btn-primary">
+              <button type="submit" class="btn btn-primary" @click="crud.filter.executeAction()">
                 <i class="fa fa-search"></i> Filtrar
               </button>
             </div>
@@ -83,17 +83,17 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="item in list" class="animated fadeIn">
+                  <tr v-for="item in crud.filter.result.itens" class="animated fadeIn">
                     <td>{{item.MidiaId}}</td>
                     <td>{{item.Nome}}</td>
                     <td>
                       <span class="badge badge-pill" v-bind:class="{ 'badge-success': item.Ativo, 'badge-danger': !item.Ativo }">{{item.Ativo ? 'Sim' : 'Não'}}</span>
                     </td>
                     <td class="text-center">
-                      <button type="button" class="btn btn-xs btn-primary" @click="excuteEditModal(item)">
+                      <button type="button" class="btn btn-xs btn-primary" @click="crud.edit.executeModal(item)">
                         <i class="fa fa-pencil"></i>
                       </button>
-                      <button type="button" class="btn btn-xs btn-danger" @click="crud.executeDeleteModal(item)">
+                      <button type="button" class="btn btn-xs btn-danger" @click="crud.delete.executeModal(item)">
                         <i class="fa fa-trash-o"></i>
                       </button>
                     </td>
@@ -102,26 +102,26 @@
               </table>
             </div>
             <div class="card-block no-padding">
-              <pagination :total="total" :page-size="api.filters.pageSize" :callback="pageChanged"></pagination>
+              <pagination :total="crud.filter.result.total" :page-size="crud.filter.options.pageSize" :callback="crud.filter.executePageChanged"></pagination>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <modal title="Manutenção de Mídia" v-model="editModalIsOpen" effect="fade/zoom">
+    <modal title="Manutenção de Mídia" v-model="crud.edit.modalIsOpen" effect="fade/zoom">
       <div slot="modal-header" class="modal-header">
         <h4 class="modal-title">Edição de Mídia</h4>
       </div>
-      <form type="post" v-on:submit="saveModel">
+      <form v-on:submit.prevent="crud.edit.executeAction()">
         <div class="row">
           <div class="form-group col-md-12">
             <label for="Nome">Nome</label>
-            <input type="text" class="form-control" name="Nome" placeholder="Nome" v-model="model.Nome">
+            <input type="text" class="form-control" name="Nome" placeholder="Nome" v-model="crud.edit.model.Nome" required />
           </div>
           <div class="form-group col-md-12">
             <label class="custom-control custom-checkbox">
-              <input type="checkbox" name="Ativo" class="custom-control-input" v-model="model.Ativo">
+              <input type="checkbox" name="Ativo" class="custom-control-input" v-model="crud.edit.model.Ativo">
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description"> Ativo?</span>
             </label>
@@ -129,26 +129,26 @@
         </div>
       </form>
       <div slot="modal-footer" class="modal-footer">
-        <button type="button" class="btn btn-default" @click="editModalIsOpen = false">Fechar</button>
-        <button type="button" class="btn btn-success" @click="saveModel()">
+        <button type="button" class="btn btn-default" @click="crud.edit.modalIsOpen = false">Fechar</button>
+        <button type="button" class="btn btn-success" @click="crud.edit.executeAction()">
           <i class="fa fa-check"></i> Salvar
         </button>
       </div>
     </modal>
 
-    <modal title="Cadastro de Mídia" v-model="createModalIsOpen" effect="fade/zoom">
+    <modal title="Cadastro de Mídia" v-model="crud.create.modalIsOpen" effect="fade/zoom">
       <div slot="modal-header" class="modal-header">
         <h4 class="modal-title">Cadastro de Mídia</h4>
       </div>
-      <form type="post" v-on:submit="saveModel">
+      <form type="post" v-on:submit="crud.create.executeAction()">
         <div class="row">
           <div class="form-group col-md-12">
             <label for="Nome">Nome</label>
-            <input type="text" class="form-control" name="Nome" placeholder="Nome" v-model="model.Nome">
+            <input type="text" class="form-control" name="Nome" placeholder="Nome" v-model="crud.create.model.Nome">
           </div>
           <div class="form-group col-md-12">
             <label class="custom-control custom-checkbox">
-              <input type="checkbox" name="Ativo" class="custom-control-input" v-model="model.Ativo">
+              <input type="checkbox" name="Ativo" class="custom-control-input" v-model="crud.create.model.Ativo">
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description"> Ativo?</span>
             </label>
@@ -156,34 +156,34 @@
         </div>
       </form>
       <div slot="modal-footer" class="modal-footer">
-        <button type="button" class="btn btn-default" @click="createModalIsOpen = false">Fechar</button>
-        <button type="button" class="btn btn-success" @click="saveModel()">
+        <button type="button" class="btn btn-default" @click="crud.create.modalIsOpen = false">Fechar</button>
+        <button type="button" class="btn btn-success" @click="crud.create.executeAction()">
           <i class="fa fa-check"></i> Salvar
         </button>
       </div>
     </modal>
 
-    <modal title="Exclusão de Mídia" v-model="crud.deleteModalIsOpen" effect="fade/zoom">
+    <modal title="Exclusão de Mídia" v-model="crud.delete.modalIsOpen" effect="fade/zoom">
       <div slot="modal-header" class="modal-header">
         <h4 class="modal-title">Exclusão de Mídia</h4>
       </div>
-      <form type="post" v-on:submit="crud.executeDeleteAction()">
+      <form type="post" v-on:submit="crud.delete.executeAction()">
         <div class="row">
           <div class="form-group col-md-6">
             <label class="label">Nome</label>
-            <p>{{crud.modelDelete.Nome}}</p>
+            <p>{{crud.delete.model.Nome}}</p>
           </div>
           <div class="form-group col-md-">
             <label class="label">Ativo?</label>
             <p>
-              <span class="badge badge-pill" v-bind:class="{ 'badge-success': crud.modelDelete.Ativo, 'badge-danger': !crud.modelDelete.Ativo }">{{crud.modelDelete.Ativo ? 'Sim' : 'Não'}}</span>
+              <span class="badge badge-pill" v-bind:class="{ 'badge-success': crud.delete.model.Ativo, 'badge-danger': !crud.delete.model.Ativo }">{{crud.delete.model.Ativo ? 'Sim' : 'Não'}}</span>
             </p>
           </div>
         </div>
       </form>
       <div slot="modal-footer" class="modal-footer">
-        <button type="button" class="btn btn-default" @click="crud.deleteModalIsOpen = false">Fechar</button>
-        <button type="button" class="btn btn-danger" @click="crud.executeDeleteAction()">
+        <button type="button" class="btn btn-default" @click="crud.delete.modalIsOpen = false">Fechar</button>
+        <button type="button" class="btn btn-danger" @click="crud.delete.executeAction()">
           <i class="fa fa-trash-o"></i> Remover
         </button>
       </div>
@@ -203,63 +203,11 @@
     components: { modal, pagination },
     data() {
       return {
-        model: {
-          Nome: '',
-          Ativo: true
-        },
-        createModalIsOpen: false,
-        editModalIsOpen: false,
-        deleteModalIsOpen: false,
-        list: [],
-        total: 1000,
-        api: new Api("midia"),
         crud: new Crud({ resource: "midia" }),
       }
     },
-    methods: {
-      pageChanged(page) {
-        this.api.filters.pageIndex = page;
-        this.api.get().then(data => { this.list = data.DataList; });
-      },
-      loadList() {
-        this.api.get().then(data => {
-          this.total = data.Summary.Total;
-          this.list = data.DataList;
-        });
-      },
-      saveModel() {
-        this.api.post(this.model).then(data => {
-          this.loadList();
-          this.createModalIsOpen = false;
-          this.editModalIsOpen = false;
-        });
-      },
-      deleteModel() {
-        this.api.filters = this.model;
-        this.api.delete().then(data => {
-          this.loadList();
-          this.deleteModalIsOpen = false;
-        });
-      },
-      excuteCreateModal() {
-        this.model = {};
-        this.createModalIsOpen = true;
-      },
-      excuteEditModal(model) {
-        this.api.filters = model;
-        this.api.getMethodCustom("GetByModel").then(data => {
-          this.editModalIsOpen = true;
-          this.model = data.Data;
-        });
-
-      },
-      excuteDeleteModal(model) {
-        this.crud.executeDeleteModal(model)
-      },
-    },
     mounted() {
-      console.log(this.crud)
-      this.loadList()
+      this.crud.filter.executeAction();
     }
   }
 </script>
