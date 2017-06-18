@@ -24,6 +24,7 @@
 
                         <div class="dropdown-header text-center"><strong>Conta</strong></div>
 
+                        <a class="dropdown-item" href="#" @click="login"><i class="fa fa-sign-in"></i> Login</a>
                         <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Perfil</a>
                         <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Bloquear</a>
                         <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Sair</a>
@@ -65,6 +66,28 @@
             asideToggle(e) {
                 e.preventDefault()
                 document.body.classList.toggle('aside-menu-hidden')
+            },
+            login(e) {
+                e.preventDefault()
+
+                var authorizationUrl = 'http://localhost:4000/connect/authorize';
+                var client_id = 'ssocalemas';
+                var redirect_uri = 'http://localhost:8080';
+                var response_type = "token";
+                var scope = "calemas";
+                var state = Date.now() + "" + Math.random();
+
+                localStorage["state"] = state;
+
+                var url =
+                    authorizationUrl + "?" +
+                    "client_id=" + encodeURI(client_id) + "&" +
+                    "redirect_uri=" + encodeURI(redirect_uri) + "&" +
+                    "response_type=" + encodeURI(response_type) + "&" +
+                    "scope=" + encodeURI(scope) + "&" +
+                    "state=" + encodeURI(state);
+
+                window.location = url
             }
         }
     }

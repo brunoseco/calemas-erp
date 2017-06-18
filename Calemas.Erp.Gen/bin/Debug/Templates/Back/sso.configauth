@@ -1,8 +1,8 @@
-﻿using IdentityServer4.Models;
-using IdentityServer4.Services.InMemory;
+﻿using IdentityModel;
+using IdentityServer4.Models;
 using Newtonsoft.Json;
+using SM.Sso.Server.Api.Model;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 
 namespace SM.Sso.Server.Api
@@ -10,15 +10,15 @@ namespace SM.Sso.Server.Api
     public class Config
     {
 
-        public static List<InMemoryUser> GetUsers()
+        public static List<User> GetUsers()
         {
 
-            return new List<InMemoryUser>
+            return new List<User>
             {
-                new InMemoryUser
+                new User
                 {
-                    Subject = "1",
-                    Username = "adm",
+                    SubjectId = "1",
+                    Username = "administrator",
                     Password = "123456",
                     Claims = ClaimsForAdmin()
                 },
@@ -26,12 +26,32 @@ namespace SM.Sso.Server.Api
 
         }
 
+        public static List<Claim> ClaimsForAssinante(int assinateId, string name, string email)
+        {
+
+            var tools = new List<dynamic>
+            {
+                 
+             
+            };
+
+            var _toolsForSubscriber = JsonConvert.SerializeObject(tools);
+
+            return new List<Claim>
+            {
+                new Claim(JwtClaimTypes.Name, name),
+                new Claim(JwtClaimTypes.Email, email),
+                new Claim("tools",_toolsForSubscriber),
+                new Claim("role","subscriber"),
+            };
+        }
+
         public static List<Claim> ClaimsForAdmin()
         {
 
             var tools = new List<dynamic>
             {
-<#claimsforadmin#>
+               <#claimsforadmin#>
             };
 
             var _toolsForAdmin = JsonConvert.SerializeObject(tools);
@@ -59,7 +79,7 @@ namespace SM.Sso.Server.Api
                     },
                     Type = ScopeType.Resource,
                     Name = "ssosm",
-                    Description = "sso basic for Santos & Machado clients",
+                    Description = "sso basic",
                     IncludeAllClaimsForUser = true
                 }
             };
@@ -73,7 +93,7 @@ namespace SM.Sso.Server.Api
             {
                 new Client
                 {
-                    ClientId = "Demo",
+                    ClientId = "Client Name",
 
                     // no interactive user, use the clientid/secret for authentication
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,

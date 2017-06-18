@@ -1,5 +1,5 @@
 ﻿
-namespace Cna.Portal.Franqueador.Sso.Api.Model
+namespace Calemas.Erp.Sso.Api.Model
 {
     public class AccountCredencial
     {

@@ -11,27 +11,28 @@ import Midia from '@/views/midia'
 Vue.use(Router)
 
 export default new Router({
-  linkActiveClass: 'open active',
-  scrollBehavior: () => ({ y: 0 }),
-  routes: [
-    {
-      path: '/',
-      redirect: '/dashboard',
-      name: 'Home',
-      component: Template,
-      children: [
+    linkActiveClass: 'open active',
+    scrollBehavior: () => ({ y: 0 }),
+    routes: [
         {
-          path: 'dashboard',
-          name: 'Dashboard',
-          component: Dashboard
-        },
-        {
-          path: 'midia',
-          name: 'Midia',
-          component: Midia
-        }
+            path: '/',
+            redirect: '/dashboard',
+            name: 'Home',
+            component: Template,
+            children: [
+                {
+                    path: 'dashboard',
+                    name: 'Dashboard',
+                    component: Dashboard
+                },
+                {
+                    path: 'midia',
+                    name: 'Midia',
+                    component: Midia
+                }
 
-      ]
-    }
-  ]
+            ]
+        },
+        { path: "*", redirect: '/dashboard', }
+    ]
 })

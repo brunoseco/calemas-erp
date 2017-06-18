@@ -24,6 +24,14 @@ namespace Calemas.Erp.Api
 			services.AddScoped<IOrdemServicoService, OrdemServicoService>();
 			services.AddScoped<IOrdemServicoRepository, OrdemServicoRepository>();
 
+			services.AddScoped<IPessoaApplicationService, PessoaApplicationService>();
+			services.AddScoped<IPessoaService, PessoaService>();
+			services.AddScoped<IPessoaRepository, PessoaRepository>();
+
+			services.AddScoped<IColaboradorApplicationService, ColaboradorApplicationService>();
+			services.AddScoped<IColaboradorService, ColaboradorService>();
+			services.AddScoped<IColaboradorRepository, ColaboradorRepository>();
+
 
 
             RegisterOtherComponents(services);

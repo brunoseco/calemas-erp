@@ -104,7 +104,7 @@ namespace Calemas.Erp.Domain.Services
 
         }
 
-        protected override OrdemServico SaveWithValidation(OrdemServico ordemservico, OrdemServico ordemservicoOld)
+		protected override OrdemServico SaveWithValidation(OrdemServico ordemservico, OrdemServico ordemservicoOld)
         {
             if (!this.DataAnnotationIsValid())
                 return ordemservico;
@@ -115,8 +115,7 @@ namespace Calemas.Erp.Domain.Services
                 return ordemservico;
             }
 
-            base._validationResult  = new OrdemServicoAptoParaCadastroValidation(this._rep).Validate(ordemservico);
-			base._validationWarning  = new OrdemServicoAptoParaCadastroWarning(this._rep).Validate(ordemservico);
+            this.Specifications(ordemservico);
 
             if (!base._validationResult.IsValid)
             {
@@ -128,6 +127,12 @@ namespace Calemas.Erp.Domain.Services
 
             base._cacheHelper.ClearCache();
             return ordemservico;
+        }
+
+		protected virtual void Specifications(OrdemServico ordemservico)
+        {
+            base._validationResult  = new OrdemServicoAptoParaCadastroValidation(this._rep).Validate(ordemservico);
+			base._validationWarning  = new OrdemServicoAptoParaCadastroWarning(this._rep).Validate(ordemservico);
         }
 
         protected virtual OrdemServico SaveDefault(OrdemServico ordemservico, OrdemServico ordemservicoOld)

@@ -13,6 +13,16 @@ namespace Calemas.Erp.Application.Config
             CreateMap(typeof(OrdemServico), typeof(OrdemServicoDtoSpecializedResult));
             CreateMap(typeof(OrdemServico), typeof(OrdemServicoDtoSpecializedReport));
             CreateMap(typeof(OrdemServico), typeof(OrdemServicoDtoSpecializedDetails));
+            CreateMap(typeof(Pessoa), typeof(PessoaDto)).ReverseMap();
+            CreateMap(typeof(Pessoa), typeof(PessoaDtoSpecialized));
+            CreateMap(typeof(Pessoa), typeof(PessoaDtoSpecializedResult));
+            CreateMap(typeof(Pessoa), typeof(PessoaDtoSpecializedReport));
+            CreateMap(typeof(Pessoa), typeof(PessoaDtoSpecializedDetails));
+            CreateMap(typeof(Colaborador), typeof(ColaboradorDto)).ReverseMap();
+            CreateMap(typeof(Colaborador), typeof(ColaboradorDtoSpecialized));
+            CreateMap(typeof(Colaborador), typeof(ColaboradorDtoSpecializedResult));
+            CreateMap(typeof(Colaborador), typeof(ColaboradorDtoSpecializedReport));
+            CreateMap(typeof(Colaborador), typeof(ColaboradorDtoSpecializedDetails));
 
         }
 

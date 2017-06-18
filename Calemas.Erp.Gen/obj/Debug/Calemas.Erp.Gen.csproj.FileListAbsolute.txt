@@ -230,3 +230,4 @@ C:\Pessoal\calemas-erp\Calemas.Erp.Gen\bin\Debug\EntityFramework.SqlServer.xml
 C:\Pessoal\calemas-erp\Calemas.Erp.Gen\obj\Debug\Calemas.Erp.Gen.csprojResolveAssemblyReference.cache
 C:\Pessoal\calemas-erp\Calemas.Erp.Gen\obj\Debug\Calemas.Erp.Gen.exe
 C:\Pessoal\calemas-erp\Calemas.Erp.Gen\obj\Debug\Calemas.Erp.Gen.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Back\README.md

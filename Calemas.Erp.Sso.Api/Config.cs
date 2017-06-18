@@ -1,7 +1,8 @@
 using IdentityModel;
 using IdentityServer4.Models;
-using IdentityServer4.Test;
 using Newtonsoft.Json;
+using Calemas.Erp.Sso.Api.Model;
+using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using static IdentityServer4.IdentityServerConstants;
@@ -10,28 +11,35 @@ namespace Calemas.Erp.Sso.Api
 {
     public class Config
     {
-        public static TestUser MakeUsersAdmin()
+        public static User MakeUsersAdmin()
         {
-            var tools = new List<dynamic>
+            return new User
             {
-                new { Name = "Bancos", Value = "/banco" },
-                new { Name = "Campanhas", Value = "/campanha" },
-                new { Name = "Mídias", Value = "/midia" },
+                SubjectId = "1",
+                Username = "admin",
+                Password = "admin",
+                Claims = ClaimsForAdmin("Administrador", "admin@email.com.br")
             };
+        }
 
-            var _toolsForAdmin = JsonConvert.SerializeObject(tools);
-
-            return new TestUser
+        public static List<Claim> ClaimsForAdmin(string name, string email)
+        {
+            return new List<Claim>
             {
-                SubjectId = "32",
-                Username = "teste@cna.com.br",
-                Password = "123456",
-                Claims = new[]
-                {
-                    new Claim(JwtClaimTypes.Name, "Usuário CNA"),
-                    new Claim(JwtClaimTypes.Email, "teste@cna.com.br"),
-                    new Claim("tools", _toolsForAdmin),
-                }
+                new Claim(JwtClaimTypes.Name, name),
+                new Claim(JwtClaimTypes.Email, email),
+                new Claim("role", "admin"),
+            };
+        }
+
+        public static List<Claim> ClaimsForColaborador(string colaboradorId, string name, string email)
+        {
+            return new List<Claim>
+            {
+                new Claim(JwtClaimTypes.Subject, colaboradorId),
+                new Claim(JwtClaimTypes.Name, name),
+                new Claim(JwtClaimTypes.Email, email),
+                new Claim("role", "colaborador"),
             };
         }
 
@@ -39,15 +47,15 @@ namespace Calemas.Erp.Sso.Api
         {
             return new List<ApiResource>
             {
-                new ApiResource("apipdf", "Portal do Franqueador Api")
+                new ApiResource("ssocalemas", "SPA Client Implicit")
                 {
                     Scopes = new List<Scope>()
                     {
                         new Scope
                         {
-                            UserClaims = new List<string> {"name", "email", "role", "tools"},
-                            Name = "apipdf",
-                            Description = "sso basic",
+                            UserClaims = new List<string> {"name", "openid", "email", "role"},
+                            Name = "calemas",
+                            Description = "SPA Client Implicit",
                         }
                     }
                 }
@@ -70,31 +78,36 @@ namespace Calemas.Erp.Sso.Api
             {
                 new Client
                 {
-                    ClientId = "ssopdf",
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
-                    ClientSecrets =
-                    {
-                        new Secret("secret".Sha256())
+                    ClientId = "ssocalemas",
+                    ClientName = "SPA Client Implicit",
+                    ClientSecrets = { new Secret("segredo".Sha256()) },
+                    
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+
+                    RedirectUris = {
+                        "http://localhost:8080"
                     },
-                    AllowedScopes =
+                    PostLogoutRedirectUris =
                     {
-                        StandardScopes.OpenId,
-                        StandardScopes.Profile,
-                        StandardScopes.Email,
-                        "apipdf"
+                        "http://localhost:8080"
                     },
-                    AlwaysIncludeUserClaimsInIdToken = false
-                }
+
+                    AllowedCorsOrigins = { "http://localhost:8080" },
+
+                    AllowedScopes = { "openid", "profile", "email", "calemas" }
+                },
+
             };
         }
 
-        public static List<TestUser> GetUsers()
+        public static List<User> GetUsers()
         {
-            return new List<TestUser>()
+            return new List<User>()
             {
                 MakeUsersAdmin()
             };
-        }        
+        }
 
     }
 }

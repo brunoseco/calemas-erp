@@ -2,7 +2,7 @@
   "version": 2,
   "targets": {
     ".NETCoreApp,Version=v1.1": {
-      "AutoMapper/6.0.2": {
+      "AutoMapper/6.1.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
@@ -2447,7 +2447,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v1.1",
         "dependencies": {
-          "AutoMapper": "6.0.2",
+          "AutoMapper": "6.1.0",
           "Microsoft.NETCore.App": "1.1.2",
           "Newtonsoft.Json": "10.0.2"
         }
@@ -2473,12 +2473,12 @@
     }
   },
   "libraries": {
-    "AutoMapper/6.0.2": {
-      "sha512": "uI4uPyibgP4+2zn21fVqy0ep+eYeB5IcfjanyUESj+F0qcrOYpAW4iH2+xKET0vfhgJn4U1c4xN3stKUhygTmQ==",
+    "AutoMapper/6.1.0": {
+      "sha512": "ru/p4rBwLH2CGSdlk0Bj6UZQeFpgIDT3sQNL5EEaVhrAT1qNd4SUEOjSzFRBAZbIgIHhifrZ9MbR5BMWgP1vsQ==",
       "type": "package",
-      "path": "automapper/6.0.2",
+      "path": "automapper/6.1.0",
       "files": [
-        "automapper.6.0.2.nupkg.sha512",
+        "automapper.6.1.0.nupkg.sha512",
         "automapper.nuspec",
         "lib/net45/AutoMapper.dll",
         "lib/net45/AutoMapper.xml",
@@ -7568,7 +7568,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v1.1": [
-      "AutoMapper >= 6.0.2",
+      "AutoMapper >= 6.1.0",
       "Calemas.Erp.Domain >= 1.0.0",
       "Calemas.Erp.Dto >= 1.0.0",
       "Common.Domain >= 1.0.0",
@@ -7619,7 +7619,7 @@
           },
           "AutoMapper": {
             "target": "Package",
-            "version": "6.0.2"
+            "version": "6.1.0"
           }
         }
       }

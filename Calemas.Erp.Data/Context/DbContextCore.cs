@@ -15,7 +15,10 @@ namespace Calemas.Erp.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            new OrdemServicoMap(modelBuilder.Entity<OrdemServico>());
+                        new OrdemServicoMap(modelBuilder.Entity<OrdemServico>());
+            new PessoaMap(modelBuilder.Entity<Pessoa>());
+            new ColaboradorMap(modelBuilder.Entity<Colaborador>());
+
         }
 
 

@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 using Common.Domain.Model;
 using Microsoft.AspNetCore.Authorization;
 
-namespace Cna.Portal.Franqueador.Sso.Api.Controllers
+namespace Calemas.Erp.Sso.Api.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]
@@ -34,7 +34,7 @@ namespace Cna.Portal.Franqueador.Sso.Api.Controllers
             }
             catch (Exception ex)
             {
-                return result.ReturnCustomException(ex, "Cna.Portal.Franqueador - CurrentUser");
+                return result.ReturnCustomException(ex, "Sso - CurrentUser");
             }
         }
     }

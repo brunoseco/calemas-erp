@@ -45,7 +45,7 @@
           "lib/netstandard1.6/AspNet.Security.OpenIdConnect.Server.dll": {}
         }
       },
-      "AutoMapper/6.0.2": {
+      "AutoMapper/6.1.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
@@ -209,7 +209,7 @@
           "lib/netstandard1.5/Microsoft.ApplicationInsights.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.AspNetCore/2.0.0": {
+      "Microsoft.ApplicationInsights.AspNetCore/2.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.ApplicationInsights": "2.2.0",
@@ -1604,7 +1604,7 @@
           "lib/netstandard1.0/Microsoft.Extensions.WebEncoders.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/1.1.3": {
+      "Microsoft.IdentityModel.Logging/1.1.4": {
         "type": "package",
         "dependencies": {
           "System.Diagnostics.Tracing": "4.3.0",
@@ -1647,10 +1647,10 @@
           "lib/netstandard1.4/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/5.1.3": {
+      "Microsoft.IdentityModel.Tokens/5.1.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Logging": "1.1.3",
+          "Microsoft.IdentityModel.Logging": "1.1.4",
           "Newtonsoft.Json": "9.0.1",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Tools": "4.3.0",
@@ -2675,10 +2675,10 @@
           }
         }
       },
-      "System.IdentityModel.Tokens.Jwt/5.1.3": {
+      "System.IdentityModel.Tokens.Jwt/5.1.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "5.1.3"
+          "Microsoft.IdentityModel.Tokens": "5.1.4"
         },
         "compile": {
           "lib/netstandard1.4/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -4192,7 +4192,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v1.1",
         "dependencies": {
-          "AutoMapper": "6.0.2",
+          "AutoMapper": "6.1.0",
           "Calemas.Erp.Domain": "1.0.0",
           "Calemas.Erp.Dto": "1.0.0",
           "Common.Domain": "1.0.0",
@@ -4251,7 +4251,7 @@
           "Microsoft.AspNetCore.Mvc.Cors": "1.1.3",
           "Microsoft.EntityFrameworkCore.InMemory": "1.1.2",
           "Microsoft.NETCore.App": "1.1.2",
-          "System.IdentityModel.Tokens.Jwt": "5.1.3"
+          "System.IdentityModel.Tokens.Jwt": "5.1.4"
         }
       },
       "Common.Cache/1.0.0": {
@@ -4269,7 +4269,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v1.1",
         "dependencies": {
-          "AutoMapper": "6.0.2",
+          "AutoMapper": "6.1.0",
           "Microsoft.NETCore.App": "1.1.2",
           "Newtonsoft.Json": "10.0.2"
         }
@@ -4345,12 +4345,12 @@
         "lib/netstandard1.6/AspNet.Security.OpenIdConnect.Server.xml"
       ]
     },
-    "AutoMapper/6.0.2": {
-      "sha512": "uI4uPyibgP4+2zn21fVqy0ep+eYeB5IcfjanyUESj+F0qcrOYpAW4iH2+xKET0vfhgJn4U1c4xN3stKUhygTmQ==",
+    "AutoMapper/6.1.0": {
+      "sha512": "ru/p4rBwLH2CGSdlk0Bj6UZQeFpgIDT3sQNL5EEaVhrAT1qNd4SUEOjSzFRBAZbIgIHhifrZ9MbR5BMWgP1vsQ==",
       "type": "package",
-      "path": "automapper/6.0.2",
+      "path": "automapper/6.1.0",
       "files": [
-        "automapper.6.0.2.nupkg.sha512",
+        "automapper.6.1.0.nupkg.sha512",
         "automapper.nuspec",
         "lib/net45/AutoMapper.dll",
         "lib/net45/AutoMapper.xml",
@@ -4444,16 +4444,16 @@
         "microsoft.applicationinsights.nuspec"
       ]
     },
-    "Microsoft.ApplicationInsights.AspNetCore/2.0.0": {
-      "sha512": "LcbwEaO9oA063w5yzxLgkxZkFIF9VCYxG98E2XZ2Ua/Uj2I3WMhyRp/gE7HI9sUapYRT3WCyJ/LYXT69WYrKow==",
+    "Microsoft.ApplicationInsights.AspNetCore/2.0.1": {
+      "sha512": "6XR356YN/o9RveaYPfZpgMEHVOM2PBS09h87lxRgupQ136Z82AviP8EvHOUjstnBizKQOjpzMkxAsGvTu4HZgg==",
       "type": "package",
-      "path": "microsoft.applicationinsights.aspnetcore/2.0.0",
+      "path": "microsoft.applicationinsights.aspnetcore/2.0.1",
       "files": [
         "lib/net451/Microsoft.ApplicationInsights.AspNetCore.dll",
         "lib/net451/Microsoft.ApplicationInsights.AspNetCore.xml",
         "lib/netstandard1.6/Microsoft.ApplicationInsights.AspNetCore.dll",
         "lib/netstandard1.6/Microsoft.ApplicationInsights.AspNetCore.xml",
-        "microsoft.applicationinsights.aspnetcore.2.0.0.nupkg.sha512",
+        "microsoft.applicationinsights.aspnetcore.2.0.1.nupkg.sha512",
         "microsoft.applicationinsights.aspnetcore.nuspec"
       ]
     },
@@ -5602,16 +5602,18 @@
         "microsoft.extensions.webencoders.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.Logging/1.1.3": {
-      "sha512": "2QS51c01mQVcy2Jsx7E3g1A2aXt3HBTN1in4YcBAFbIgfXkVIwquGAlaw1H+UwM2BvPajs5DCeyvMrse6Uxshw==",
+    "Microsoft.IdentityModel.Logging/1.1.4": {
+      "sha512": "j7t22EsDOuo0IXqAbp6ijdB1GuaY8cu3YoPNZpymOhUMTVC+wRTV0IHqxL31HacCnJHU/igsqe70fDKZgZu3oA==",
       "type": "package",
-      "path": "microsoft.identitymodel.logging/1.1.3",
+      "path": "microsoft.identitymodel.logging/1.1.4",
       "files": [
+        "lib/net45/Microsoft.IdentityModel.Logging.dll",
+        "lib/net45/Microsoft.IdentityModel.Logging.xml",
         "lib/net451/Microsoft.IdentityModel.Logging.dll",
         "lib/net451/Microsoft.IdentityModel.Logging.xml",
         "lib/netstandard1.4/Microsoft.IdentityModel.Logging.dll",
         "lib/netstandard1.4/Microsoft.IdentityModel.Logging.xml",
-        "microsoft.identitymodel.logging.1.1.3.nupkg.sha512",
+        "microsoft.identitymodel.logging.1.1.4.nupkg.sha512",
         "microsoft.identitymodel.logging.nuspec"
       ]
     },
@@ -5641,16 +5643,18 @@
         "microsoft.identitymodel.protocols.openidconnect.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.Tokens/5.1.3": {
-      "sha512": "bmfaPlcQEtYVuu440OSzY8IxSM5dFyyDmFnZ9aLjswtkPilD/NOvCWQDV9krwNsfL/ge7B+s+omaS2xhIYL8TQ==",
+    "Microsoft.IdentityModel.Tokens/5.1.4": {
+      "sha512": "SsJbZVPvjSlKFDAQmR2wpL6ZD/vCFlIsf0jxRlBJwyzKXZy3Wi/Xo+fE2MzAerLsJgG1UCdtplRwqDyq1euayw==",
       "type": "package",
-      "path": "microsoft.identitymodel.tokens/5.1.3",
+      "path": "microsoft.identitymodel.tokens/5.1.4",
       "files": [
+        "lib/net45/Microsoft.IdentityModel.Tokens.dll",
+        "lib/net45/Microsoft.IdentityModel.Tokens.xml",
         "lib/net451/Microsoft.IdentityModel.Tokens.dll",
         "lib/net451/Microsoft.IdentityModel.Tokens.xml",
         "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.dll",
         "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.xml",
-        "microsoft.identitymodel.tokens.5.1.3.nupkg.sha512",
+        "microsoft.identitymodel.tokens.5.1.4.nupkg.sha512",
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
@@ -7478,16 +7482,18 @@
         "system.globalization.extensions.nuspec"
       ]
     },
-    "System.IdentityModel.Tokens.Jwt/5.1.3": {
-      "sha512": "4vQI+9vjMmcg4GJM2N9udsAc7d+Eu/yEZQgp/henwx3moZUD8PGq2uGo224UNQrVwQuI/YLlBOusZUVqCqdRHA==",
+    "System.IdentityModel.Tokens.Jwt/5.1.4": {
+      "sha512": "hLUU1N99aL9uyxiTraBnCKlpUKsbP/+5ygD7cswspH9/+M7fAAL0hRzt2aA4w7VEQlSSiu8j+xWFk3NRcqhfQQ==",
       "type": "package",
-      "path": "system.identitymodel.tokens.jwt/5.1.3",
+      "path": "system.identitymodel.tokens.jwt/5.1.4",
       "files": [
+        "lib/net45/System.IdentityModel.Tokens.Jwt.dll",
+        "lib/net45/System.IdentityModel.Tokens.Jwt.xml",
         "lib/net451/System.IdentityModel.Tokens.Jwt.dll",
         "lib/net451/System.IdentityModel.Tokens.Jwt.xml",
         "lib/netstandard1.4/System.IdentityModel.Tokens.Jwt.dll",
         "lib/netstandard1.4/System.IdentityModel.Tokens.Jwt.xml",
-        "system.identitymodel.tokens.jwt.5.1.3.nupkg.sha512",
+        "system.identitymodel.tokens.jwt.5.1.4.nupkg.sha512",
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
@@ -11002,7 +11008,7 @@
       "Common.Dto >= 1.0.0",
       "Common.Orm >= 1.0.0",
       "IdentityServer4.AccessTokenValidation >= 1.2.1",
-      "Microsoft.ApplicationInsights.AspNetCore >= 2.0.0",
+      "Microsoft.ApplicationInsights.AspNetCore >= 2.0.1",
       "Microsoft.AspNetCore >= 1.1.2",
       "Microsoft.AspNetCore.Authorization >= 1.1.2",
       "Microsoft.AspNetCore.Mvc >= 1.1.3",
@@ -11094,7 +11100,7 @@
           },
           "Microsoft.ApplicationInsights.AspNetCore": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "2.0.1"
           },
           "Microsoft.AspNetCore.Authorization": {
             "target": "Package",

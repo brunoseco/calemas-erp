@@ -313,6 +313,9 @@
     <None Include="Templates\Back\profileCustom">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Templates\Back\README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Templates\Back\sso.configauth">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -11,11 +11,10 @@ namespace Calemas.Erp.Sso.Api
     {
         public static void Main(string[] args)
         {
-            Console.Title = "IdentityServer";
 
             var host = new WebHostBuilder()
                 .UseKestrel()
-                .UseUrls("http://localhost:5000")
+                //.UseUrls("http://localhost:4000")
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()

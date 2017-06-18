@@ -1,6 +1,8 @@
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.deps.json
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.runtimeconfig.json
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.runtimeconfig.dev.json
+C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.csprojResolveAssemblyReference.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Data.dll
@@ -10,14 +12,12 @@ C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Common.API.dl
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Common.Domain.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Common.Orm.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Common.Validation.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Domain.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Common.API.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Common.Domain.pdb
-C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Data.pdb
-C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Domain.pdb
-C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Filter.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Common.Orm.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Data.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Filter.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Common.Validation.pdb
-C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.csprojResolveAssemblyReference.cache
-C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.pdb

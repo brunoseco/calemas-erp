@@ -1,0 +1,598 @@
+2017-06-17T20:11:24.7980960-03:00  [INF] User profile is available. Using '"C:\Users\bruun\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-06-17T20:11:25.4910576-03:00 0HL5LQOMM0CP6 [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/Health   (e5be5b71)
+2017-06-17T20:11:26.7418920-03:00 0HL5LQOMM0CP6 [INF] Executing action method "Calemas.Erp.Sso.Api.Controllers.HealthController.Get (Calemas.Erp.Sso.Api)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-17T20:11:26.8589703-03:00 0HL5LQOMM0CP6 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-17T20:11:27.1171433-03:00 0HL5LQOMM0CP6 [INF] Executed action "Calemas.Erp.Sso.Api.Controllers.HealthController.Get (Calemas.Erp.Sso.Api)" in 552.7703ms (afa2e885)
+2017-06-17T20:11:27.1761821-03:00 0HL5LQOMM0CP6 [INF] Request finished in 1701.9681ms 200 text/plain; charset=utf-8 (15c52c40)
+2017-06-17T20:11:27.5274158-03:00 0HL5LQOMM0CP7 [INF] Request starting HTTP/1.1 GET http://localhost:4000/favicon.ico   (e5be5b71)
+2017-06-17T20:11:27.5489309-03:00 0HL5LQOMM0CP7 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\wwwroot\favicon.ico"' (27b0a520)
+2017-06-17T20:11:27.7415586-03:00 0HL5LQOMM0CP7 [INF] Request finished in 214.0775ms 200 image/x-icon (15c52c40)
+2017-06-17T20:14:23.0512204-03:00 0HL5LQOMM0CP8 [INF] Request starting HTTP/1.1 GET http://localhost:4000/api   (e5be5b71)
+2017-06-17T20:14:23.1072574-03:00 0HL5LQOMM0CP8 [INF] Request finished in 56.1063ms 404  (15c52c40)
+2017-06-17T20:14:31.2762127-03:00 0HL5LQOMM0CP9 [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/Auth   (e5be5b71)
+2017-06-17T20:14:31.2827176-03:00 0HL5LQOMM0CP9 [INF] Request finished in 6.9379ms 404  (15c52c40)
+2017-06-17T20:14:53.6065902-03:00 0HL5LQOMM0CPA [INF] Request starting HTTP/1.1 GET http://localhost:4000/connect/authorize   (e5be5b71)
+2017-06-17T20:14:53.6311071-03:00 0HL5LQOMM0CPA [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.AuthorizeEndpoint" for "/connect/authorize" (f7642de5)
+2017-06-17T20:14:54.1944827-03:00 0HL5LQOMM0CPA [ERR] client_id is missing or too long
+"{
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {}
+}" (2ff7de97)
+2017-06-17T20:14:54.2009859-03:00 0HL5LQOMM0CPA [ERR] Request validation failed (abd529bc)
+2017-06-17T20:14:54.2019880-03:00 0HL5LQOMM0CPA [INF] "{
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {}
+}" (9899f104)
+2017-06-17T20:14:54.3130611-03:00 0HL5LQOMM0CPA [INF] Creating key {973df913-ea36-480e-be62-c106da75df5e} with creation date 2017-06-17 23:14:54Z, activation date 2017-06-17 23:14:54Z, and expiration date 2017-09-15 23:14:54Z. (77afce94)
+2017-06-17T20:14:54.3791068-03:00 0HL5LQOMM0CPA [INF] Writing data to file '"C:\Users\bruun\AppData\Local\ASP.NET\DataProtection-Keys\key-973df913-ea36-480e-be62-c106da75df5e.xml"'. (da22a8b1)
+2017-06-17T20:14:54.5071927-03:00 0HL5LQOMM0CPA [INF] Request finished in 901.0441ms 302  (15c52c40)
+2017-06-17T20:14:54.5237021-03:00 0HL5LQOMM0CPB [INF] Request starting HTTP/1.1 GET http://localhost:4000/home/error?errorId=c10aefd42751cdcf740d8e6f61ba3100   (e5be5b71)
+2017-06-17T20:14:54.7498530-03:00 0HL5LQOMM0CPB [INF] Executing action method "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" with arguments (["c10aefd42751cdcf740d8e6f61ba3100"]) - ModelState is Valid (ba7f4ac2)
+2017-06-17T20:14:58.2341769-03:00 0HL5LQOMM0CPB [INF] Executing ViewResult, running view at path "/Views/Shared/Error.cshtml". (9707eebe)
+2017-06-17T20:14:59.0262051-03:00 0HL5LQOMM0CPB [INF] Executed action "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" in 4486.225ms (afa2e885)
+2017-06-17T20:14:59.0362122-03:00 0HL5LQOMM0CPB [INF] Request finished in 4512.3076ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-17T20:14:59.0412158-03:00 0HL5LQOMM0CPC [INF] Request starting HTTP/1.1 GET http://localhost:4000/css/site.css   (e5be5b71)
+2017-06-17T20:14:59.0427171-03:00 0HL5LQOMM0CPC [INF] Sending file. Request path: '"/css/site.css"'. Physical path: '"C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\wwwroot\css\site.css"' (27b0a520)
+2017-06-17T20:14:59.0467206-03:00 0HL5LQOMM0CPC [INF] Request finished in 4.6685ms 200 text/css (15c52c40)
+2017-06-17T20:14:59.2208359-03:00 0HL5LQOMM0CPD [INF] Request starting HTTP/1.1 GET http://localhost:4000/lib/bootstrap/css/bootstrap.css   (e5be5b71)
+2017-06-17T20:14:59.2213359-03:00 0HL5LQOMM0CPD [INF] Sending file. Request path: '"/lib/bootstrap/css/bootstrap.css"'. Physical path: '"C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\wwwroot\lib\bootstrap\css\bootstrap.css"' (27b0a520)
+2017-06-17T20:14:59.2408484-03:00 0HL5LQOMM0CPD [INF] Request finished in 20.2999ms 200 text/css (15c52c40)
+2017-06-17T20:14:59.4024635-03:00 0HL5LQOMM0CPE [INF] Request starting HTTP/1.1 GET http://localhost:4000/lib/jquery/jquery.js   (e5be5b71)
+2017-06-17T20:14:59.4029640-03:00 0HL5LQOMM0CPE [INF] Sending file. Request path: '"/lib/jquery/jquery.js"'. Physical path: '"C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\wwwroot\lib\jquery\jquery.js"' (27b0a520)
+2017-06-17T20:14:59.4264799-03:00 0HL5LQOMM0CPE [INF] Request finished in 23.7348ms 200 application/javascript (15c52c40)
+2017-06-17T20:14:59.6921567-03:00 0HL5LQOMM0CPF [INF] Request starting HTTP/1.1 GET http://localhost:4000/lib/bootstrap/js/bootstrap.js   (e5be5b71)
+2017-06-17T20:14:59.6926575-03:00 0HL5LQOMM0CPF [INF] Sending file. Request path: '"/lib/bootstrap/js/bootstrap.js"'. Physical path: '"C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\wwwroot\lib\bootstrap\js\bootstrap.js"' (27b0a520)
+2017-06-17T20:14:59.7026638-03:00 0HL5LQOMM0CPF [INF] Request finished in 10.4886ms 200 application/javascript (15c52c40)
+2017-06-17T20:14:59.7071665-03:00 0HL5LQOMM0CPG [INF] Request starting HTTP/1.1 GET http://localhost:4000/icon.png   (e5be5b71)
+2017-06-17T20:14:59.7076669-03:00 0HL5LQOMM0CPG [INF] Sending file. Request path: '"/icon.png"'. Physical path: '"C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\wwwroot\icon.png"' (27b0a520)
+2017-06-17T20:14:59.7086678-03:00 0HL5LQOMM0CPG [INF] Request finished in 1.3904ms 200 image/png (15c52c40)
+2017-06-17T20:17:16.6916509-03:00 0HL5LQOMM0CPH [INF] Request starting HTTP/1.1 GET http://localhost:4000/connect/authorize?client_id=js-client&redirect_uri=http://localhost:6270/institucional&response_type=token&scope=ssosm&state=14977414364610.8965550317500863   (e5be5b71)
+2017-06-17T20:17:16.6951539-03:00 0HL5LQOMM0CPH [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.AuthorizeEndpoint" for "/connect/authorize" (f7642de5)
+2017-06-17T20:17:17.1509587-03:00 0HL5LQOMM0CPH [INF] Executed DbCommand (11ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AbsoluteRefreshTokenLifetime], [x].[AccessTokenLifetime], [x].[AccessTokenType], [x].[AllowAccessTokensViaBrowser], [x].[AllowOfflineAccess], [x].[AllowPlainTextPkce], [x].[AllowRememberConsent], [x].[AlwaysIncludeUserClaimsInIdToken], [x].[AlwaysSendClientClaims], [x].[AuthorizationCodeLifetime], [x].[ClientId], [x].[ClientName], [x].[ClientUri], [x].[EnableLocalLogin], [x].[Enabled], [x].[IdentityTokenLifetime], [x].[IncludeJwtId], [x].[LogoUri], [x].[LogoutSessionRequired], [x].[LogoutUri], [x].[PrefixClientClaims], [x].[ProtocolType], [x].[RefreshTokenExpiration], [x].[RefreshTokenUsage], [x].[RequireClientSecret], [x].[RequireConsent], [x].[RequirePkce], [x].[SlidingRefreshTokenLifetime], [x].[UpdateAccessTokenClaimsOnRefresh]
+FROM [Clients] AS [x]
+WHERE [x].[ClientId] = @__clientId_0
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-17T20:17:17.4871818-03:00 0HL5LQOMM0CPH [INF] Executed DbCommand (88ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c6].[Id], [c6].[ClientId], [c6].[Origin]
+FROM [ClientCorsOrigins] AS [c6]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x7] ON [c6].[ClientId] = [x7].[Id]
+ORDER BY [x7].[Id] (6438bdd5)
+2017-06-17T20:17:17.5687357-03:00 0HL5LQOMM0CPH [INF] Executed DbCommand (68ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c5].[Id], [c5].[ClientId], [c5].[Provider]
+FROM [ClientIdPRestrictions] AS [c5]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x6] ON [c5].[ClientId] = [x6].[Id]
+ORDER BY [x6].[Id] (6438bdd5)
+2017-06-17T20:17:17.5917520-03:00 0HL5LQOMM0CPH [INF] Executed DbCommand (19ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c4].[Id], [c4].[ClientId], [c4].[Type], [c4].[Value]
+FROM [ClientClaims] AS [c4]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x5] ON [c4].[ClientId] = [x5].[Id]
+ORDER BY [x5].[Id] (6438bdd5)
+2017-06-17T20:17:17.6237730-03:00 0HL5LQOMM0CPH [INF] Executed DbCommand (27ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c3].[Id], [c3].[ClientId], [c3].[Description], [c3].[Expiration], [c3].[Type], [c3].[Value]
+FROM [ClientSecrets] AS [c3]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x4] ON [c3].[ClientId] = [x4].[Id]
+ORDER BY [x4].[Id] (6438bdd5)
+2017-06-17T20:17:17.6457873-03:00 0HL5LQOMM0CPH [INF] Executed DbCommand (19ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c2].[Id], [c2].[ClientId], [c2].[Scope]
+FROM [ClientScopes] AS [c2]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x3] ON [c2].[ClientId] = [x3].[Id]
+ORDER BY [x3].[Id] (6438bdd5)
+2017-06-17T20:17:17.6602983-03:00 0HL5LQOMM0CPH [INF] Executed DbCommand (13ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[ClientId], [c1].[PostLogoutRedirectUri]
+FROM [ClientPostLogoutRedirectUris] AS [c1]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x2] ON [c1].[ClientId] = [x2].[Id]
+ORDER BY [x2].[Id] (6438bdd5)
+2017-06-17T20:17:17.6838139-03:00 0HL5LQOMM0CPH [INF] Executed DbCommand (21ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c0].[Id], [c0].[ClientId], [c0].[RedirectUri]
+FROM [ClientRedirectUris] AS [c0]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x1] ON [c0].[ClientId] = [x1].[Id]
+ORDER BY [x1].[Id] (6438bdd5)
+2017-06-17T20:17:17.7053273-03:00 0HL5LQOMM0CPH [INF] Executed DbCommand (20ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[ClientId], [c].[GrantType]
+FROM [ClientGrantTypes] AS [c]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x0] ON [c].[ClientId] = [x0].[Id]
+ORDER BY [x0].[Id] (6438bdd5)
+2017-06-17T20:17:17.9469884-03:00 0HL5LQOMM0CPH [ERR] Invalid redirect_uri: http://localhost:6270/institucional
+"{
+  \"ClientId\": \"js-client\",
+  \"ClientName\": \"SPA Client Implicit\",
+  \"RedirectUri\": \"http://localhost:6270/institucional\",
+  \"AllowedRedirectUris\": [
+    \"http://localhost:8080/#/dashboard\"
+  ],
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"js-client\",
+    \"redirect_uri\": \"http://localhost:6270/institucional\",
+    \"response_type\": \"token\",
+    \"scope\": \"ssosm\",
+    \"state\": \"14977414364610.8965550317500863\"
+  }
+}" (fdb9b185)
+2017-06-17T20:17:17.9474897-03:00 0HL5LQOMM0CPH [ERR] Request validation failed (abd529bc)
+2017-06-17T20:17:17.9474897-03:00 0HL5LQOMM0CPH [INF] "{
+  \"ClientId\": \"js-client\",
+  \"ClientName\": \"SPA Client Implicit\",
+  \"RedirectUri\": \"http://localhost:6270/institucional\",
+  \"AllowedRedirectUris\": [
+    \"http://localhost:8080/#/dashboard\"
+  ],
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"js-client\",
+    \"redirect_uri\": \"http://localhost:6270/institucional\",
+    \"response_type\": \"token\",
+    \"scope\": \"ssosm\",
+    \"state\": \"14977414364610.8965550317500863\"
+  }
+}" (9899f104)
+2017-06-17T20:17:17.9499902-03:00 0HL5LQOMM0CPH [INF] Request finished in 1258.9296ms 302  (15c52c40)
+2017-06-17T20:17:17.9564950-03:00 0HL5LQOMM0CPI [INF] Request starting HTTP/1.1 GET http://localhost:4000/home/error?errorId=fc0a3df6069f79cf0887d89f0a4fa57d   (e5be5b71)
+2017-06-17T20:17:17.9629991-03:00 0HL5LQOMM0CPI [INF] Executing action method "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" with arguments (["fc0a3df6069f79cf0887d89f0a4fa57d"]) - ModelState is Valid (ba7f4ac2)
+2017-06-17T20:17:17.9670017-03:00 0HL5LQOMM0CPI [INF] Executing ViewResult, running view at path "/Views/Shared/Error.cshtml". (9707eebe)
+2017-06-17T20:17:17.9685031-03:00 0HL5LQOMM0CPI [INF] Executed action "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" in 10.9418ms (afa2e885)
+2017-06-17T20:17:17.9685031-03:00 0HL5LQOMM0CPI [INF] Request finished in 12.0617ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-17T20:17:18.2216713-03:00 0HL5LQOMM0CPJ [INF] Request starting HTTP/1.1 GET http://localhost:4000/lib/bootstrap/css/bootstrap.css.map   (e5be5b71)
+2017-06-17T20:17:18.2221722-03:00 0HL5LQOMM0CPJ [INF] Sending file. Request path: '"/lib/bootstrap/css/bootstrap.css.map"'. Physical path: '"C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\wwwroot\lib\bootstrap\css\bootstrap.css.map"' (27b0a520)
+2017-06-17T20:17:18.2256748-03:00 0HL5LQOMM0CPJ [INF] Request finished in 3.8171ms 200 text/plain (15c52c40)
+2017-06-17T20:19:52.2097569-03:00  [INF] User profile is available. Using '"C:\Users\bruun\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-06-17T20:19:52.6830716-03:00 0HL5LQTDQUG81 [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/Health  0 (e5be5b71)
+2017-06-17T20:19:53.5366408-03:00 0HL5LQTDQUG81 [INF] Executing action method "Calemas.Erp.Sso.Api.Controllers.HealthController.Get (Calemas.Erp.Sso.Api)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-17T20:19:53.6126915-03:00 0HL5LQTDQUG81 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-17T20:19:53.8023179-03:00 0HL5LQTDQUG81 [INF] Executed action "Calemas.Erp.Sso.Api.Controllers.HealthController.Get (Calemas.Erp.Sso.Api)" in 376.5999ms (afa2e885)
+2017-06-17T20:19:53.8378419-03:00 0HL5LQTDQUG81 [INF] Request finished in 1193.9016ms 200 text/plain; charset=utf-8 (15c52c40)
+2017-06-17T20:21:50.6107580-03:00 0HL5LQTDQUG82 [INF] Request starting HTTP/1.1 GET http://localhost:4000/connect/authorize?client_id=calemasfront&redirect_uri=http://localhost:6270/institucional&response_type=token&scope=ssocalemas&state=14977417103170.3802762766445589   (e5be5b71)
+2017-06-17T20:21:50.6507851-03:00 0HL5LQTDQUG82 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.AuthorizeEndpoint" for "/connect/authorize" (f7642de5)
+2017-06-17T20:21:51.3397448-03:00 0HL5LQTDQUG82 [INF] Executed DbCommand (95ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AbsoluteRefreshTokenLifetime], [x].[AccessTokenLifetime], [x].[AccessTokenType], [x].[AllowAccessTokensViaBrowser], [x].[AllowOfflineAccess], [x].[AllowPlainTextPkce], [x].[AllowRememberConsent], [x].[AlwaysIncludeUserClaimsInIdToken], [x].[AlwaysSendClientClaims], [x].[AuthorizationCodeLifetime], [x].[ClientId], [x].[ClientName], [x].[ClientUri], [x].[EnableLocalLogin], [x].[Enabled], [x].[IdentityTokenLifetime], [x].[IncludeJwtId], [x].[LogoUri], [x].[LogoutSessionRequired], [x].[LogoutUri], [x].[PrefixClientClaims], [x].[ProtocolType], [x].[RefreshTokenExpiration], [x].[RefreshTokenUsage], [x].[RequireClientSecret], [x].[RequireConsent], [x].[RequirePkce], [x].[SlidingRefreshTokenLifetime], [x].[UpdateAccessTokenClaimsOnRefresh]
+FROM [Clients] AS [x]
+WHERE [x].[ClientId] = @__clientId_0
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-17T20:21:51.7860425-03:00 0HL5LQTDQUG82 [ERR] Unknown client or not enabled: calemasfront
+"{
+  \"RedirectUri\": \"http://localhost:6270/institucional\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"calemasfront\",
+    \"redirect_uri\": \"http://localhost:6270/institucional\",
+    \"response_type\": \"token\",
+    \"scope\": \"ssocalemas\",
+    \"state\": \"14977417103170.3802762766445589\"
+  }
+}" (f0a4f74f)
+2017-06-17T20:21:51.7960487-03:00 0HL5LQTDQUG82 [ERR] Request validation failed (abd529bc)
+2017-06-17T20:21:51.7965488-03:00 0HL5LQTDQUG82 [INF] "{
+  \"RedirectUri\": \"http://localhost:6270/institucional\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"calemasfront\",
+    \"redirect_uri\": \"http://localhost:6270/institucional\",
+    \"response_type\": \"token\",
+    \"scope\": \"ssocalemas\",
+    \"state\": \"14977417103170.3802762766445589\"
+  }
+}" (9899f104)
+2017-06-17T20:21:52.5715663-03:00 0HL5LQTDQUG82 [INF] Request finished in 1961.764ms 302  (15c52c40)
+2017-06-17T20:21:52.6381108-03:00 0HL5LQTDQUG83 [INF] Request starting HTTP/1.1 GET http://localhost:4000/home/error?errorId=aba4ddeabd360e2b399faf5a369b1ca8   (e5be5b71)
+2017-06-17T20:21:53.1634618-03:00 0HL5LQTDQUG83 [INF] Executing action method "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" with arguments (["aba4ddeabd360e2b399faf5a369b1ca8"]) - ModelState is Valid (ba7f4ac2)
+2017-06-17T20:21:57.4618278-03:00 0HL5LQTDQUG83 [INF] Executing ViewResult, running view at path "/Views/Shared/Error.cshtml". (9707eebe)
+2017-06-17T20:21:58.6466186-03:00 0HL5LQTDQUG83 [INF] Executed action "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" in 5890.8469ms (afa2e885)
+2017-06-17T20:21:58.6501204-03:00 0HL5LQTDQUG83 [INF] Request finished in 6012.0088ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-17T20:22:11.7128416-03:00 0HL5LQTDQUG84 [INF] Request starting HTTP/1.1 GET http://localhost:4000/connect/authorize?client_id=calemasfront&redirect_uri=http://localhost:6270/institucional&response_type=token&scope=ssocalemas&state=14977417315030.26729783487222747   (e5be5b71)
+2017-06-17T20:22:11.7138425-03:00 0HL5LQTDQUG84 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.AuthorizeEndpoint" for "/connect/authorize" (f7642de5)
+2017-06-17T20:22:11.7333550-03:00 0HL5LQTDQUG84 [INF] Executed DbCommand (4ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AbsoluteRefreshTokenLifetime], [x].[AccessTokenLifetime], [x].[AccessTokenType], [x].[AllowAccessTokensViaBrowser], [x].[AllowOfflineAccess], [x].[AllowPlainTextPkce], [x].[AllowRememberConsent], [x].[AlwaysIncludeUserClaimsInIdToken], [x].[AlwaysSendClientClaims], [x].[AuthorizationCodeLifetime], [x].[ClientId], [x].[ClientName], [x].[ClientUri], [x].[EnableLocalLogin], [x].[Enabled], [x].[IdentityTokenLifetime], [x].[IncludeJwtId], [x].[LogoUri], [x].[LogoutSessionRequired], [x].[LogoutUri], [x].[PrefixClientClaims], [x].[ProtocolType], [x].[RefreshTokenExpiration], [x].[RefreshTokenUsage], [x].[RequireClientSecret], [x].[RequireConsent], [x].[RequirePkce], [x].[SlidingRefreshTokenLifetime], [x].[UpdateAccessTokenClaimsOnRefresh]
+FROM [Clients] AS [x]
+WHERE [x].[ClientId] = @__clientId_0
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-17T20:22:11.7343563-03:00 0HL5LQTDQUG84 [ERR] Unknown client or not enabled: calemasfront
+"{
+  \"RedirectUri\": \"http://localhost:6270/institucional\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"calemasfront\",
+    \"redirect_uri\": \"http://localhost:6270/institucional\",
+    \"response_type\": \"token\",
+    \"scope\": \"ssocalemas\",
+    \"state\": \"14977417315030.26729783487222747\"
+  }
+}" (f0a4f74f)
+2017-06-17T20:22:11.7348563-03:00 0HL5LQTDQUG84 [ERR] Request validation failed (abd529bc)
+2017-06-17T20:22:11.7348563-03:00 0HL5LQTDQUG84 [INF] "{
+  \"RedirectUri\": \"http://localhost:6270/institucional\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"calemasfront\",
+    \"redirect_uri\": \"http://localhost:6270/institucional\",
+    \"response_type\": \"token\",
+    \"scope\": \"ssocalemas\",
+    \"state\": \"14977417315030.26729783487222747\"
+  }
+}" (9899f104)
+2017-06-17T20:22:11.7363572-03:00 0HL5LQTDQUG84 [INF] Request finished in 24.0225ms 302  (15c52c40)
+2017-06-17T20:22:11.7568710-03:00 0HL5LQTDQUG85 [INF] Request starting HTTP/1.1 GET http://localhost:4000/home/error?errorId=2b787e27fc6334cc102f34d823f0d35e   (e5be5b71)
+2017-06-17T20:22:11.7653764-03:00 0HL5LQTDQUG85 [INF] Executing action method "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" with arguments (["2b787e27fc6334cc102f34d823f0d35e"]) - ModelState is Valid (ba7f4ac2)
+2017-06-17T20:22:11.7693795-03:00 0HL5LQTDQUG85 [INF] Executing ViewResult, running view at path "/Views/Shared/Error.cshtml". (9707eebe)
+2017-06-17T20:22:11.7708808-03:00 0HL5LQTDQUG85 [INF] Executed action "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" in 11.0806ms (afa2e885)
+2017-06-17T20:22:11.7713808-03:00 0HL5LQTDQUG85 [INF] Request finished in 14.5972ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-17T20:24:38.7204044-03:00 0HL5LQTDQUG86 [INF] Request starting HTTP/1.1 GET http://localhost:4000/connect/authorize?client_id=calemasfront&redirect_uri=http://localhost:8080/   (e5be5b71)
+2017-06-17T20:24:38.7214053-03:00 0HL5LQTDQUG86 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.AuthorizeEndpoint" for "/connect/authorize" (f7642de5)
+2017-06-17T20:24:38.7304123-03:00 0HL5LQTDQUG86 [INF] Executed DbCommand (4ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AbsoluteRefreshTokenLifetime], [x].[AccessTokenLifetime], [x].[AccessTokenType], [x].[AllowAccessTokensViaBrowser], [x].[AllowOfflineAccess], [x].[AllowPlainTextPkce], [x].[AllowRememberConsent], [x].[AlwaysIncludeUserClaimsInIdToken], [x].[AlwaysSendClientClaims], [x].[AuthorizationCodeLifetime], [x].[ClientId], [x].[ClientName], [x].[ClientUri], [x].[EnableLocalLogin], [x].[Enabled], [x].[IdentityTokenLifetime], [x].[IncludeJwtId], [x].[LogoUri], [x].[LogoutSessionRequired], [x].[LogoutUri], [x].[PrefixClientClaims], [x].[ProtocolType], [x].[RefreshTokenExpiration], [x].[RefreshTokenUsage], [x].[RequireClientSecret], [x].[RequireConsent], [x].[RequirePkce], [x].[SlidingRefreshTokenLifetime], [x].[UpdateAccessTokenClaimsOnRefresh]
+FROM [Clients] AS [x]
+WHERE [x].[ClientId] = @__clientId_0
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-17T20:24:38.7309115-03:00 0HL5LQTDQUG86 [ERR] Unknown client or not enabled: calemasfront
+"{
+  \"RedirectUri\": \"http://localhost:8080/\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"calemasfront\",
+    \"redirect_uri\": \"http://localhost:8080/\"
+  }
+}" (f0a4f74f)
+2017-06-17T20:24:38.7309115-03:00 0HL5LQTDQUG86 [ERR] Request validation failed (abd529bc)
+2017-06-17T20:24:38.7309115-03:00 0HL5LQTDQUG86 [INF] "{
+  \"RedirectUri\": \"http://localhost:8080/\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"calemasfront\",
+    \"redirect_uri\": \"http://localhost:8080/\"
+  }
+}" (9899f104)
+2017-06-17T20:24:38.7319120-03:00 0HL5LQTDQUG86 [INF] Request finished in 11.6746ms 302  (15c52c40)
+2017-06-17T20:24:38.7364151-03:00 0HL5LQTDQUG87 [INF] Request starting HTTP/1.1 GET http://localhost:4000/home/error?errorId=efea660d185563ad6bf136656f88e66e   (e5be5b71)
+2017-06-17T20:24:38.7374160-03:00 0HL5LQTDQUG87 [INF] Executing action method "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" with arguments (["efea660d185563ad6bf136656f88e66e"]) - ModelState is Valid (ba7f4ac2)
+2017-06-17T20:24:38.7384169-03:00 0HL5LQTDQUG87 [INF] Executing ViewResult, running view at path "/Views/Shared/Error.cshtml". (9707eebe)
+2017-06-17T20:24:38.7389169-03:00 0HL5LQTDQUG87 [INF] Executed action "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" in 1.5526ms (afa2e885)
+2017-06-17T20:24:38.7464218-03:00 0HL5LQTDQUG87 [INF] Request finished in 2.5403ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-17T20:25:02.9013185-03:00 0HL5LQTDQUG88 [INF] Request starting HTTP/1.1 GET http://localhost:4000/connect/authorize?client_id=calemasfront&redirect_uri=http://localhost:8080/   (e5be5b71)
+2017-06-17T20:25:02.9023190-03:00 0HL5LQTDQUG88 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.AuthorizeEndpoint" for "/connect/authorize" (f7642de5)
+2017-06-17T20:25:02.9048204-03:00 0HL5LQTDQUG88 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AbsoluteRefreshTokenLifetime], [x].[AccessTokenLifetime], [x].[AccessTokenType], [x].[AllowAccessTokensViaBrowser], [x].[AllowOfflineAccess], [x].[AllowPlainTextPkce], [x].[AllowRememberConsent], [x].[AlwaysIncludeUserClaimsInIdToken], [x].[AlwaysSendClientClaims], [x].[AuthorizationCodeLifetime], [x].[ClientId], [x].[ClientName], [x].[ClientUri], [x].[EnableLocalLogin], [x].[Enabled], [x].[IdentityTokenLifetime], [x].[IncludeJwtId], [x].[LogoUri], [x].[LogoutSessionRequired], [x].[LogoutUri], [x].[PrefixClientClaims], [x].[ProtocolType], [x].[RefreshTokenExpiration], [x].[RefreshTokenUsage], [x].[RequireClientSecret], [x].[RequireConsent], [x].[RequirePkce], [x].[SlidingRefreshTokenLifetime], [x].[UpdateAccessTokenClaimsOnRefresh]
+FROM [Clients] AS [x]
+WHERE [x].[ClientId] = @__clientId_0
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-17T20:25:02.9058212-03:00 0HL5LQTDQUG88 [ERR] Unknown client or not enabled: calemasfront
+"{
+  \"RedirectUri\": \"http://localhost:8080/\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"calemasfront\",
+    \"redirect_uri\": \"http://localhost:8080/\"
+  }
+}" (f0a4f74f)
+2017-06-17T20:25:02.9063213-03:00 0HL5LQTDQUG88 [ERR] Request validation failed (abd529bc)
+2017-06-17T20:25:02.9068225-03:00 0HL5LQTDQUG88 [INF] "{
+  \"RedirectUri\": \"http://localhost:8080/\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"calemasfront\",
+    \"redirect_uri\": \"http://localhost:8080/\"
+  }
+}" (9899f104)
+2017-06-17T20:25:02.9088234-03:00 0HL5LQTDQUG88 [INF] Request finished in 7.1395ms 302  (15c52c40)
+2017-06-17T20:25:02.9278359-03:00 0HL5LQTDQUG89 [INF] Request starting HTTP/1.1 GET http://localhost:4000/home/error?errorId=c024eac14976eedfcd873ae5e5ff309a   (e5be5b71)
+2017-06-17T20:25:02.9288368-03:00 0HL5LQTDQUG89 [INF] Executing action method "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" with arguments (["c024eac14976eedfcd873ae5e5ff309a"]) - ModelState is Valid (ba7f4ac2)
+2017-06-17T20:25:02.9293381-03:00 0HL5LQTDQUG89 [INF] Executing ViewResult, running view at path "/Views/Shared/Error.cshtml". (9707eebe)
+2017-06-17T20:25:02.9298377-03:00 0HL5LQTDQUG89 [INF] Executed action "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" in 1.6064ms (afa2e885)
+2017-06-17T20:25:02.9303377-03:00 0HL5LQTDQUG89 [INF] Request finished in 2.5034ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-17T20:26:05.3891837-03:00  [INF] User profile is available. Using '"C:\Users\bruun\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-06-17T20:26:05.9330456-03:00 0HL5LR0T2HBH5 [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/Health   (e5be5b71)
+2017-06-17T20:26:07.2139000-03:00 0HL5LR0T2HBH5 [INF] Executing action method "Calemas.Erp.Sso.Api.Controllers.HealthController.Get (Calemas.Erp.Sso.Api)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-17T20:26:07.3314800-03:00 0HL5LR0T2HBH5 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-17T20:26:07.7227403-03:00 0HL5LR0T2HBH5 [INF] Executed action "Calemas.Erp.Sso.Api.Controllers.HealthController.Get (Calemas.Erp.Sso.Api)" in 766.0154ms (afa2e885)
+2017-06-17T20:26:07.7872827-03:00 0HL5LR0T2HBH5 [INF] Request finished in 1889.8818ms 200 text/plain; charset=utf-8 (15c52c40)
+2017-06-17T20:26:19.0322839-03:00 0HL5LR0T2HBH6 [INF] Request starting HTTP/1.1 GET http://localhost:4000/connect/authorize?client_id=calemasfront&redirect_uri=http://localhost:8080&response_type=token&scope=ssocalemas&state=14977419787990.7000327260360322   (e5be5b71)
+2017-06-17T20:26:19.0502959-03:00 0HL5LR0T2HBH6 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.AuthorizeEndpoint" for "/connect/authorize" (f7642de5)
+2017-06-17T20:26:19.7227449-03:00 0HL5LR0T2HBH6 [INF] Executed DbCommand (84ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AbsoluteRefreshTokenLifetime], [x].[AccessTokenLifetime], [x].[AccessTokenType], [x].[AllowAccessTokensViaBrowser], [x].[AllowOfflineAccess], [x].[AllowPlainTextPkce], [x].[AllowRememberConsent], [x].[AlwaysIncludeUserClaimsInIdToken], [x].[AlwaysSendClientClaims], [x].[AuthorizationCodeLifetime], [x].[ClientId], [x].[ClientName], [x].[ClientUri], [x].[EnableLocalLogin], [x].[Enabled], [x].[IdentityTokenLifetime], [x].[IncludeJwtId], [x].[LogoUri], [x].[LogoutSessionRequired], [x].[LogoutUri], [x].[PrefixClientClaims], [x].[ProtocolType], [x].[RefreshTokenExpiration], [x].[RefreshTokenUsage], [x].[RequireClientSecret], [x].[RequireConsent], [x].[RequirePkce], [x].[SlidingRefreshTokenLifetime], [x].[UpdateAccessTokenClaimsOnRefresh]
+FROM [Clients] AS [x]
+WHERE [x].[ClientId] = @__clientId_0
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-17T20:26:20.1815510-03:00 0HL5LR0T2HBH6 [ERR] Unknown client or not enabled: calemasfront
+"{
+  \"RedirectUri\": \"http://localhost:8080\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"calemasfront\",
+    \"redirect_uri\": \"http://localhost:8080\",
+    \"response_type\": \"token\",
+    \"scope\": \"ssocalemas\",
+    \"state\": \"14977419787990.7000327260360322\"
+  }
+}" (f0a4f74f)
+2017-06-17T20:26:20.1855533-03:00 0HL5LR0T2HBH6 [ERR] Request validation failed (abd529bc)
+2017-06-17T20:26:20.1860537-03:00 0HL5LR0T2HBH6 [INF] "{
+  \"RedirectUri\": \"http://localhost:8080\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"calemasfront\",
+    \"redirect_uri\": \"http://localhost:8080\",
+    \"response_type\": \"token\",
+    \"scope\": \"ssocalemas\",
+    \"state\": \"14977419787990.7000327260360322\"
+  }
+}" (9899f104)
+2017-06-17T20:26:20.5728118-03:00 0HL5LR0T2HBH6 [INF] Request finished in 1540.5324ms 302  (15c52c40)
+2017-06-17T20:26:20.5813172-03:00 0HL5LR0T2HBH7 [INF] Request starting HTTP/1.1 GET http://localhost:4000/home/error?errorId=f11d1397488c9b7200ee4dce0d0042a0   (e5be5b71)
+2017-06-17T20:26:20.8019645-03:00 0HL5LR0T2HBH7 [INF] Executing action method "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" with arguments (["f11d1397488c9b7200ee4dce0d0042a0"]) - ModelState is Valid (ba7f4ac2)
+2017-06-17T20:26:24.9597378-03:00 0HL5LR0T2HBH7 [INF] Executing ViewResult, running view at path "/Views/Shared/Error.cshtml". (9707eebe)
+2017-06-17T20:26:25.8973639-03:00 0HL5LR0T2HBH7 [INF] Executed action "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" in 5256.2915ms (afa2e885)
+2017-06-17T20:26:25.9018674-03:00 0HL5LR0T2HBH7 [INF] Request finished in 5320.3515ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-17T20:27:37.2334671-03:00  [INF] User profile is available. Using '"C:\Users\bruun\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-06-17T20:27:37.7413053-03:00 0HL5LR1OE30IB [INF] Request starting HTTP/1.1 GET http://localhost:4000/connect/authorize?client_id=calemasfront&redirect_uri=http://localhost:8080&response_type=token&scope=ssocalemas&state=14977420517000.9678764476212742   (e5be5b71)
+2017-06-17T20:27:37.9704584-03:00 0HL5LR1OE30IB [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.AuthorizeEndpoint" for "/connect/authorize" (f7642de5)
+2017-06-17T20:27:38.5633540-03:00 0HL5LR1OE30IB [INF] Executed DbCommand (72ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AbsoluteRefreshTokenLifetime], [x].[AccessTokenLifetime], [x].[AccessTokenType], [x].[AllowAccessTokensViaBrowser], [x].[AllowOfflineAccess], [x].[AllowPlainTextPkce], [x].[AllowRememberConsent], [x].[AlwaysIncludeUserClaimsInIdToken], [x].[AlwaysSendClientClaims], [x].[AuthorizationCodeLifetime], [x].[ClientId], [x].[ClientName], [x].[ClientUri], [x].[EnableLocalLogin], [x].[Enabled], [x].[IdentityTokenLifetime], [x].[IncludeJwtId], [x].[LogoUri], [x].[LogoutSessionRequired], [x].[LogoutUri], [x].[PrefixClientClaims], [x].[ProtocolType], [x].[RefreshTokenExpiration], [x].[RefreshTokenUsage], [x].[RequireClientSecret], [x].[RequireConsent], [x].[RequirePkce], [x].[SlidingRefreshTokenLifetime], [x].[UpdateAccessTokenClaimsOnRefresh]
+FROM [Clients] AS [x]
+WHERE [x].[ClientId] = @__clientId_0
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-17T20:27:39.0126605-03:00 0HL5LR1OE30IB [ERR] Unknown client or not enabled: calemasfront
+"{
+  \"RedirectUri\": \"http://localhost:8080\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"calemasfront\",
+    \"redirect_uri\": \"http://localhost:8080\",
+    \"response_type\": \"token\",
+    \"scope\": \"ssocalemas\",
+    \"state\": \"14977420517000.9678764476212742\"
+  }
+}" (f0a4f74f)
+2017-06-17T20:27:39.0171640-03:00 0HL5LR1OE30IB [ERR] Request validation failed (abd529bc)
+2017-06-17T20:27:39.0186649-03:00 0HL5LR1OE30IB [INF] "{
+  \"RedirectUri\": \"http://localhost:8080\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"calemasfront\",
+    \"redirect_uri\": \"http://localhost:8080\",
+    \"response_type\": \"token\",
+    \"scope\": \"ssocalemas\",
+    \"state\": \"14977420517000.9678764476212742\"
+  }
+}" (9899f104)
+2017-06-17T20:27:39.6300730-03:00 0HL5LR1OE30IB [INF] Request finished in 1924.1106ms 302  (15c52c40)
+2017-06-17T20:27:39.6650966-03:00 0HL5LR1OE30IC [INF] Request starting HTTP/1.1 GET http://localhost:4000/home/error?errorId=5f0fb24eece431ce19976cf2661c994f   (e5be5b71)
+2017-06-17T20:27:40.6582592-03:00 0HL5LR1OE30IC [INF] Executing action method "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" with arguments (["5f0fb24eece431ce19976cf2661c994f"]) - ModelState is Valid (ba7f4ac2)
+2017-06-17T20:27:44.5353456-03:00 0HL5LR1OE30IC [INF] Executing ViewResult, running view at path "/Views/Shared/Error.cshtml". (9707eebe)
+2017-06-17T20:27:45.5700358-03:00 0HL5LR1OE30IC [INF] Executed action "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" in 5218.7387ms (afa2e885)
+2017-06-17T20:27:45.5870465-03:00 0HL5LR1OE30IC [INF] Request finished in 5921.6026ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-17T20:30:52.3392653-03:00  [INF] User profile is available. Using '"C:\Users\bruun\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-06-17T20:30:52.8776244-03:00 0HL5LR3IJ1NPL [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/Health   (e5be5b71)
+2017-06-17T20:30:53.5325618-03:00 0HL5LR3IJ1NPL [INF] Executing action method "Calemas.Erp.Sso.Api.Controllers.HealthController.Get (Calemas.Erp.Sso.Api)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-17T20:30:53.5815939-03:00 0HL5LR3IJ1NPL [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-17T20:30:53.7056767-03:00 0HL5LR3IJ1NPL [INF] Executed action "Calemas.Erp.Sso.Api.Controllers.HealthController.Get (Calemas.Erp.Sso.Api)" in 255.2213ms (afa2e885)
+2017-06-17T20:30:53.7311936-03:00 0HL5LR3IJ1NPL [INF] Request finished in 887.3595ms 200 text/plain; charset=utf-8 (15c52c40)
+2017-06-17T20:30:54.6713210-03:00 0HL5LR3IJ1NPM [INF] Request starting HTTP/1.1 GET http://localhost:4000/connect/authorize?client_id=calemasfront&redirect_uri=http://localhost:8080&response_type=token&scope=ssocalemas&state=14977422544250.5671425868600131   (e5be5b71)
+2017-06-17T20:30:54.6898331-03:00 0HL5LR3IJ1NPM [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.AuthorizeEndpoint" for "/connect/authorize" (f7642de5)
+2017-06-17T20:30:55.3327629-03:00 0HL5LR3IJ1NPM [INF] Executed DbCommand (67ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AbsoluteRefreshTokenLifetime], [x].[AccessTokenLifetime], [x].[AccessTokenType], [x].[AllowAccessTokensViaBrowser], [x].[AllowOfflineAccess], [x].[AllowPlainTextPkce], [x].[AllowRememberConsent], [x].[AlwaysIncludeUserClaimsInIdToken], [x].[AlwaysSendClientClaims], [x].[AuthorizationCodeLifetime], [x].[ClientId], [x].[ClientName], [x].[ClientUri], [x].[EnableLocalLogin], [x].[Enabled], [x].[IdentityTokenLifetime], [x].[IncludeJwtId], [x].[LogoUri], [x].[LogoutSessionRequired], [x].[LogoutUri], [x].[PrefixClientClaims], [x].[ProtocolType], [x].[RefreshTokenExpiration], [x].[RefreshTokenUsage], [x].[RequireClientSecret], [x].[RequireConsent], [x].[RequirePkce], [x].[SlidingRefreshTokenLifetime], [x].[UpdateAccessTokenClaimsOnRefresh]
+FROM [Clients] AS [x]
+WHERE [x].[ClientId] = @__clientId_0
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-17T20:30:55.7005077-03:00 0HL5LR3IJ1NPM [ERR] Unknown client or not enabled: calemasfront
+"{
+  \"RedirectUri\": \"http://localhost:8080\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"calemasfront\",
+    \"redirect_uri\": \"http://localhost:8080\",
+    \"response_type\": \"token\",
+    \"scope\": \"ssocalemas\",
+    \"state\": \"14977422544250.5671425868600131\"
+  }
+}" (f0a4f74f)
+2017-06-17T20:30:55.7045099-03:00 0HL5LR3IJ1NPM [ERR] Request validation failed (abd529bc)
+2017-06-17T20:30:55.7050104-03:00 0HL5LR3IJ1NPM [INF] "{
+  \"RedirectUri\": \"http://localhost:8080\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"calemasfront\",
+    \"redirect_uri\": \"http://localhost:8080\",
+    \"response_type\": \"token\",
+    \"scope\": \"ssocalemas\",
+    \"state\": \"14977422544250.5671425868600131\"
+  }
+}" (9899f104)
+2017-06-17T20:30:56.0527426-03:00 0HL5LR3IJ1NPM [INF] Request finished in 1381.3169ms 302  (15c52c40)
+2017-06-17T20:30:56.0647506-03:00 0HL5LR3IJ1NPN [INF] Request starting HTTP/1.1 GET http://localhost:4000/home/error?errorId=35da6992ae42c84204c67808e18c4849   (e5be5b71)
+2017-06-17T20:30:56.3944705-03:00 0HL5LR3IJ1NPN [INF] Executing action method "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" with arguments (["35da6992ae42c84204c67808e18c4849"]) - ModelState is Valid (ba7f4ac2)
+2017-06-17T20:30:59.5961061-03:00 0HL5LR3IJ1NPN [INF] Executing ViewResult, running view at path "/Views/Shared/Error.cshtml". (9707eebe)
+2017-06-17T20:31:00.1905030-03:00 0HL5LR3IJ1NPN [INF] Executed action "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" in 4060.6546ms (afa2e885)
+2017-06-17T20:31:00.1955062-03:00 0HL5LR3IJ1NPN [INF] Request finished in 4130.3786ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-17T23:34:07.2153619-03:00  [INF] User profile is available. Using '"C:\Users\bruun\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-06-17T23:34:07.8137598-03:00 0HL5LU9VATQ3F [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/Health   (e5be5b71)
+2017-06-17T23:34:08.4056542-03:00 0HL5LU9VATQ3F [INF] Executing action method "Calemas.Erp.Sso.Api.Controllers.HealthController.Get (Calemas.Erp.Sso.Api)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-17T23:34:08.4651942-03:00 0HL5LU9VATQ3F [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-17T23:34:08.5952805-03:00 0HL5LU9VATQ3F [INF] Executed action "Calemas.Erp.Sso.Api.Controllers.HealthController.Get (Calemas.Erp.Sso.Api)" in 271.7431ms (afa2e885)
+2017-06-17T23:34:08.6678290-03:00 0HL5LU9VATQ3F [INF] Request finished in 878.6965ms 200 text/plain; charset=utf-8 (15c52c40)
+2017-06-17T23:34:55.3653101-03:00 0HL5LU9VATQ3G [INF] Request starting HTTP/1.1 GET http://localhost:4000/connect/authorize?client_id=calemasfront&redirect_uri=http://localhost:8080&response_type=token&scope=ssocalemas&state=14977532951550.2701968651534563   (e5be5b71)
+2017-06-17T23:34:55.3823217-03:00 0HL5LU9VATQ3G [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.AuthorizeEndpoint" for "/connect/authorize" (f7642de5)
+2017-06-17T23:34:55.7475643-03:00 0HL5LU9VATQ3G [INF] Executed DbCommand (47ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AbsoluteRefreshTokenLifetime], [x].[AccessTokenLifetime], [x].[AccessTokenType], [x].[AllowAccessTokensViaBrowser], [x].[AllowOfflineAccess], [x].[AllowPlainTextPkce], [x].[AllowRememberConsent], [x].[AlwaysIncludeUserClaimsInIdToken], [x].[AlwaysSendClientClaims], [x].[AuthorizationCodeLifetime], [x].[ClientId], [x].[ClientName], [x].[ClientUri], [x].[EnableLocalLogin], [x].[Enabled], [x].[IdentityTokenLifetime], [x].[IncludeJwtId], [x].[LogoUri], [x].[LogoutSessionRequired], [x].[LogoutUri], [x].[PrefixClientClaims], [x].[ProtocolType], [x].[RefreshTokenExpiration], [x].[RefreshTokenUsage], [x].[RequireClientSecret], [x].[RequireConsent], [x].[RequirePkce], [x].[SlidingRefreshTokenLifetime], [x].[UpdateAccessTokenClaimsOnRefresh]
+FROM [Clients] AS [x]
+WHERE [x].[ClientId] = @__clientId_0
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-17T23:34:55.9747657-03:00 0HL5LU9VATQ3G [ERR] Unknown client or not enabled: calemasfront
+"{
+  \"RedirectUri\": \"http://localhost:8080\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"calemasfront\",
+    \"redirect_uri\": \"http://localhost:8080\",
+    \"response_type\": \"token\",
+    \"scope\": \"ssocalemas\",
+    \"state\": \"14977532951550.2701968651534563\"
+  }
+}" (f0a4f74f)
+2017-06-17T23:34:55.9772675-03:00 0HL5LU9VATQ3G [ERR] Request validation failed (abd529bc)
+2017-06-17T23:34:55.9777675-03:00 0HL5LU9VATQ3G [INF] "{
+  \"RedirectUri\": \"http://localhost:8080\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"calemasfront\",
+    \"redirect_uri\": \"http://localhost:8080\",
+    \"response_type\": \"token\",
+    \"scope\": \"ssocalemas\",
+    \"state\": \"14977532951550.2701968651534563\"
+  }
+}" (9899f104)
+2017-06-17T23:34:56.1438787-03:00 0HL5LU9VATQ3G [INF] Request finished in 778.8732ms 302  (15c52c40)
+2017-06-17T23:34:56.1503827-03:00 0HL5LU9VATQ3H [INF] Request starting HTTP/1.1 GET http://localhost:4000/home/error?errorId=c70fc82b55d87a6d03fe17d8698a23b3   (e5be5b71)
+2017-06-17T23:34:56.3470140-03:00 0HL5LU9VATQ3H [INF] Executing action method "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" with arguments (["c70fc82b55d87a6d03fe17d8698a23b3"]) - ModelState is Valid (ba7f4ac2)
+2017-06-17T23:34:58.7936463-03:00 0HL5LU9VATQ3H [INF] Executing ViewResult, running view at path "/Views/Shared/Error.cshtml". (9707eebe)
+2017-06-17T23:34:59.6181963-03:00 0HL5LU9VATQ3H [INF] Executed action "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" in 3400.6873ms (afa2e885)
+2017-06-17T23:34:59.6221990-03:00 0HL5LU9VATQ3H [INF] Request finished in 3471.8277ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-17T23:47:38.2451775-03:00  [INF] User profile is available. Using '"C:\Users\bruun\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-06-17T23:47:38.6092431-03:00 0HL5LUHGV93KK [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/Health  0 (e5be5b71)
+2017-06-17T23:47:39.1150808-03:00 0HL5LUHGV93KK [INF] Executing action method "Calemas.Erp.Sso.Api.Controllers.HealthController.Get (Calemas.Erp.Sso.Api)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-17T23:47:39.1646138-03:00 0HL5LUHGV93KK [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-17T23:47:39.2661814-03:00 0HL5LUHGV93KK [INF] Executed action "Calemas.Erp.Sso.Api.Controllers.HealthController.Get (Calemas.Erp.Sso.Api)" in 234.6196ms (afa2e885)
+2017-06-17T23:47:39.2942005-03:00 0HL5LUHGV93KK [INF] Request finished in 720.4461ms 200 text/plain; charset=utf-8 (15c52c40)
+2017-06-17T23:48:12.6410288-03:00  [INF] User profile is available. Using '"C:\Users\bruun\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-06-17T23:48:13.0808180-03:00 0HL5LUHR80HEF [INF] Request starting HTTP/1.1 GET http://localhost:4000/connect/authorize?client_id=ssocalemas&redirect_uri=http://localhost:8080&response_type=token&scope=ssocalemas&state=14977540833260.4656614952888962   (e5be5b71)
+2017-06-17T23:48:13.2194101-03:00 0HL5LUHR80HEF [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.AuthorizeEndpoint" for "/connect/authorize" (f7642de5)
+2017-06-17T23:48:13.5851544-03:00 0HL5LUHR80HEF [INF] Executed DbCommand (46ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AbsoluteRefreshTokenLifetime], [x].[AccessTokenLifetime], [x].[AccessTokenType], [x].[AllowAccessTokensViaBrowser], [x].[AllowOfflineAccess], [x].[AllowPlainTextPkce], [x].[AllowRememberConsent], [x].[AlwaysIncludeUserClaimsInIdToken], [x].[AlwaysSendClientClaims], [x].[AuthorizationCodeLifetime], [x].[ClientId], [x].[ClientName], [x].[ClientUri], [x].[EnableLocalLogin], [x].[Enabled], [x].[IdentityTokenLifetime], [x].[IncludeJwtId], [x].[LogoUri], [x].[LogoutSessionRequired], [x].[LogoutUri], [x].[PrefixClientClaims], [x].[ProtocolType], [x].[RefreshTokenExpiration], [x].[RefreshTokenUsage], [x].[RequireClientSecret], [x].[RequireConsent], [x].[RequirePkce], [x].[SlidingRefreshTokenLifetime], [x].[UpdateAccessTokenClaimsOnRefresh]
+FROM [Clients] AS [x]
+WHERE [x].[ClientId] = @__clientId_0
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-17T23:48:13.8093031-03:00 0HL5LUHR80HEF [ERR] Unknown client or not enabled: ssocalemas
+"{
+  \"RedirectUri\": \"http://localhost:8080\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"ssocalemas\",
+    \"redirect_uri\": \"http://localhost:8080\",
+    \"response_type\": \"token\",
+    \"scope\": \"ssocalemas\",
+    \"state\": \"14977540833260.4656614952888962\"
+  }
+}" (7dcfca06)
+2017-06-17T23:48:13.8123066-03:00 0HL5LUHR80HEF [ERR] Request validation failed (abd529bc)
+2017-06-17T23:48:13.8128074-03:00 0HL5LUHR80HEF [INF] "{
+  \"RedirectUri\": \"http://localhost:8080\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"ssocalemas\",
+    \"redirect_uri\": \"http://localhost:8080\",
+    \"response_type\": \"token\",
+    \"scope\": \"ssocalemas\",
+    \"state\": \"14977540833260.4656614952888962\"
+  }
+}" (9899f104)
+2017-06-17T23:48:14.0374557-03:00 0HL5LUHR80HEF [INF] Request finished in 977.7726ms 302  (15c52c40)
+2017-06-17T23:48:14.0489641-03:00 0HL5LUHR80HEG [INF] Request starting HTTP/1.1 GET http://localhost:4000/home/error?errorId=75e97cc97a2bc24b3c3c22f88aaf2b34   (e5be5b71)
+2017-06-17T23:48:14.7024014-03:00 0HL5LUHR80HEG [INF] Executing action method "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" with arguments (["75e97cc97a2bc24b3c3c22f88aaf2b34"]) - ModelState is Valid (ba7f4ac2)
+2017-06-17T23:48:16.9749151-03:00 0HL5LUHR80HEG [INF] Executing ViewResult, running view at path "/Views/Shared/Error.cshtml". (9707eebe)
+2017-06-17T23:48:17.4957631-03:00 0HL5LUHR80HEG [INF] Executed action "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" in 3106.6245ms (afa2e885)
+2017-06-17T23:48:17.5072707-03:00 0HL5LUHR80HEG [INF] Request finished in 3458.1493ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-17T23:50:15.8638827-03:00  [INF] User profile is available. Using '"C:\Users\bruun\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-06-17T23:50:16.3464401-03:00 0HL5LUIVVIC5L [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/Health  0 (e5be5b71)
+2017-06-17T23:50:16.8272613-03:00 0HL5LUIVVIC5L [INF] Executing action method "Calemas.Erp.Sso.Api.Controllers.HealthController.Get (Calemas.Erp.Sso.Api)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-17T23:50:16.8662876-03:00 0HL5LUIVVIC5L [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-17T23:50:16.9608491-03:00 0HL5LUIVVIC5L [INF] Executed action "Calemas.Erp.Sso.Api.Controllers.HealthController.Get (Calemas.Erp.Sso.Api)" in 193.4418ms (afa2e885)
+2017-06-17T23:50:16.9843647-03:00 0HL5LUIVVIC5L [INF] Request finished in 655.7687ms 200 text/plain; charset=utf-8 (15c52c40)
+2017-06-17T23:50:48.6711211-03:00 0HL5LUIVVIC5M [INF] Request starting HTTP/1.1 GET http://localhost:4000/connect/authorize?client_id=ssocalemas&redirect_uri=http://localhost:8080&response_type=token&scope=calemas&state=14977542484550.45069814057685864   (e5be5b71)
+2017-06-17T23:50:48.6911336-03:00 0HL5LUIVVIC5M [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.AuthorizeEndpoint" for "/connect/authorize" (f7642de5)
+2017-06-17T23:50:49.0949016-03:00 0HL5LUIVVIC5M [INF] Executed DbCommand (49ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AbsoluteRefreshTokenLifetime], [x].[AccessTokenLifetime], [x].[AccessTokenType], [x].[AllowAccessTokensViaBrowser], [x].[AllowOfflineAccess], [x].[AllowPlainTextPkce], [x].[AllowRememberConsent], [x].[AlwaysIncludeUserClaimsInIdToken], [x].[AlwaysSendClientClaims], [x].[AuthorizationCodeLifetime], [x].[ClientId], [x].[ClientName], [x].[ClientUri], [x].[EnableLocalLogin], [x].[Enabled], [x].[IdentityTokenLifetime], [x].[IncludeJwtId], [x].[LogoUri], [x].[LogoutSessionRequired], [x].[LogoutUri], [x].[PrefixClientClaims], [x].[ProtocolType], [x].[RefreshTokenExpiration], [x].[RefreshTokenUsage], [x].[RequireClientSecret], [x].[RequireConsent], [x].[RequirePkce], [x].[SlidingRefreshTokenLifetime], [x].[UpdateAccessTokenClaimsOnRefresh]
+FROM [Clients] AS [x]
+WHERE [x].[ClientId] = @__clientId_0
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-17T23:50:49.3180515-03:00 0HL5LUIVVIC5M [ERR] Unknown client or not enabled: ssocalemas
+"{
+  \"RedirectUri\": \"http://localhost:8080\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"ssocalemas\",
+    \"redirect_uri\": \"http://localhost:8080\",
+    \"response_type\": \"token\",
+    \"scope\": \"calemas\",
+    \"state\": \"14977542484550.45069814057685864\"
+  }
+}" (7dcfca06)
+2017-06-17T23:50:49.3205521-03:00 0HL5LUIVVIC5M [ERR] Request validation failed (abd529bc)
+2017-06-17T23:50:49.3210521-03:00 0HL5LUIVVIC5M [INF] "{
+  \"RedirectUri\": \"http://localhost:8080\",
+  \"SubjectId\": \"anonymous\",
+  \"RequestedScopes\": \"\",
+  \"Raw\": {
+    \"client_id\": \"ssocalemas\",
+    \"redirect_uri\": \"http://localhost:8080\",
+    \"response_type\": \"token\",
+    \"scope\": \"calemas\",
+    \"state\": \"14977542484550.45069814057685864\"
+  }
+}" (9899f104)
+2017-06-17T23:50:49.5642145-03:00 0HL5LUIVVIC5M [INF] Request finished in 893.1471ms 302  (15c52c40)
+2017-06-17T23:50:49.5712530-03:00 0HL5LUIVVIC5N [INF] Request starting HTTP/1.1 GET http://localhost:4000/home/error?errorId=8e5a498bf9d9afb7b56b0881dc54f7f9   (e5be5b71)
+2017-06-17T23:50:49.9199858-03:00 0HL5LUIVVIC5N [INF] Executing action method "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" with arguments (["8e5a498bf9d9afb7b56b0881dc54f7f9"]) - ModelState is Valid (ba7f4ac2)
+2017-06-17T23:50:52.8004077-03:00 0HL5LUIVVIC5N [INF] Executing ViewResult, running view at path "/Views/Shared/Error.cshtml". (9707eebe)
+2017-06-17T23:50:53.3142500-03:00 0HL5LUIVVIC5N [INF] Executed action "IdentityServer4.Quickstart.UI.HomeController.Error (Calemas.Erp.Sso.Api)" in 3680.9165ms (afa2e885)
+2017-06-17T23:50:53.3417678-03:00 0HL5LUIVVIC5N [INF] Request finished in 3770.6851ms 200 text/html; charset=utf-8 (15c52c40)
