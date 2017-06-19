@@ -53,7 +53,9 @@ export function Api(o) {
 
         return axios
             .put(self.url, data)
-            .then(res => { handleSuccess(res.data); return res.data; }, err => { handleError(err); return err; });
+            .then(
+            res => { handleSuccess(res.data); return res.data; },
+            err => { handleError(err); return err; });
     }
 
     function _delete() {

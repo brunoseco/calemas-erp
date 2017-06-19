@@ -1,10 +1,10 @@
-﻿import classie from '../classie'
+﻿import helperclass from 'helperclass' 
 
 export default {
     show: function () {
-        classie.remove(document.getElementById("spinner"), "hide");
+        helperclass.remove(document.getElementById("spinner"), "hide");
     },
     hide: function () {
-        classie.add(document.getElementById("spinner"), "hide");
+        helperclass.add(document.getElementById("spinner"), "hide");
     },
 }

@@ -29,7 +29,7 @@ export function Create(config) {
         });
     }
 
-    function _executeModal(item) {
+    function _executeModal() {
         self.validation.clearFormErrors();
         self.model = {};
         self.modalIsOpen = true;
