@@ -7,6 +7,7 @@ import Template from '@/template'
 // Views
 import Dashboard from '@/views/dashboard'
 import Midia from '@/views/midia'
+import Authorized from '@/views/authorized'
 
 Vue.use(Router)
 
@@ -33,6 +34,11 @@ export default new Router({
 
             ]
         },
-        { path: "*", redirect: '/dashboard', }
+        {
+            path: '/authorized',
+            name: 'Authorized',
+            component: Authorized,
+        },
+        { path: "*", redirect: '/dashboard', },
     ]
 })

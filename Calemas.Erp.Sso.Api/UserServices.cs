@@ -30,6 +30,8 @@ namespace Calemas.Erp.Sso.Api
                 user.Claims = Config.ClaimsForColaborador(colaborador.ColaboradorId.ToString(), colaborador.Pessoa.Nome, colaborador.Pessoa.Email);
                 user.SubjectId = colaborador.ColaboradorId.ToString();
                 user.Username = colaborador.Pessoa.Nome;
+
+                return user;
             }
 
             var userAdmin = Config.GetUsers()
@@ -38,9 +40,9 @@ namespace Calemas.Erp.Sso.Api
                 .SingleOrDefault();
 
             if (userAdmin.IsNotNull())
-                user = userAdmin;
+                return userAdmin;
 
-            return user;
+            return null;
         }
 
     }

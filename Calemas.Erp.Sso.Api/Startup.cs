@@ -51,11 +51,7 @@ namespace Calemas.Erp.Sso.Api
             services.AddDbContext<DbContextCore>(options => options.UseSqlServer(cns));
 
             services.AddIdentityServer()
-                //.AddSigningCredential(GetRSAParameters())
                 .AddTemporarySigningCredential()
-                //.AddInMemoryApiResources(Config.GetApiResources())
-                //.AddInMemoryIdentityResources(Config.GetIdentityResources())
-                //.AddInMemoryClients(Config.GetClients());
                 .AddConfigurationStore(builder =>
                         builder.UseSqlServer(cns, options =>
                             options.MigrationsAssembly(migrationAssembly)))

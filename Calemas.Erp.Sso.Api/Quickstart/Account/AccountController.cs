@@ -99,7 +99,7 @@ namespace IdentityServer4.Quickstart.UI
                     // issue authentication cookie with subject ID and username
                     //var user = _users.FindByUsername(model.Username);
                     await _events.RaiseAsync(new UserLoginSuccessEvent(user.Username, user.SubjectId, user.Username));
-                    await HttpContext.Authentication.SignInAsync(user.SubjectId, user.Username, user.Claims.ToArray());
+                    await HttpContext.Authentication.SignInAsync(user.SubjectId, user.Username, props, user.Claims.ToArray());
 
                     // make sure the returnUrl is still valid, and if yes - redirect back to authorize endpoint or a local page
                     if (_interaction.IsValidReturnUrl(model.ReturnUrl) || Url.IsLocalUrl(model.ReturnUrl))

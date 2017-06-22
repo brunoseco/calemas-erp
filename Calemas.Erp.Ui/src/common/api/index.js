@@ -165,7 +165,7 @@ export function Api(o) {
         if (self.lastAction == "get") {
             if (data.Data != null || (data.DataList != null && data.DataList.length > 0)) {
                 data = JSON.stringify(data);
-                byCache.Add(self.url, data)
+                Cache.Add(self.url, data)
             }
         }
     }
@@ -175,7 +175,7 @@ export function Api(o) {
         if (!self.byCache)
             return;
 
-        var data = byCache.Get(self.url);
+        var data = Cache.Get(self.url);
         data = JSON.parse(data);
 
         return new Promise(function (resolve, reject) {

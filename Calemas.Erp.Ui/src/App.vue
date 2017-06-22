@@ -7,17 +7,19 @@
 </template>
 <script>
     export default {
-        name: 'app'
+        name: 'app',
+        mounted() {
+        }
     }
 </script>
 <style lang="scss">
     .hide {
         display: none !important;
     }
-        
-    $spinner-color:               #6599e7;
-    $spinner-background-color:    #000000;
 
+    $spinner-color: #6599e7; 
+    $spinner-background-color: #000000; 
+    
     body > .spinner-wrap {
         width: 100%;
         height: 100%;

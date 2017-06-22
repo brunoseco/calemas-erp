@@ -1,35 +1,28 @@
-function Cache() {
+﻿
+function _get(key) {
+    return window.localStorage.getItem(key);
+};
 
-    return {
-        Get: _get,
-        Add: _add,
-        Update: _update,
-        Remove: _remove,
-        Reset: _reset,
-    }
+function _add(key, data) {
+    window.localStorage.setItem(key, data);
+};
 
-    function _get(key) {
-        return window.localStorage.getItem(key);
-    };
+function _update(key, data) {
+    window.localStorage.setItem(key, data);
+};
 
-    function _add(key, data) {
-        window.localStorage.setItem(key, data);
-    };
+function _remove(key) {
+    window.localStorage.removeItem(key);
+};
 
-    function _update(key, data) {
-        window.localStorage.setItem(key, data);
-    };
-
-    function _remove(key) {
-        window.localStorage.removeItem(key);
-    };
-
-    function _reset() {
-        window.localStorage.clear();
-    };
-
-}
+function _reset() {
+    window.localStorage.clear();
+};
 
 export default {
-    Cache
+    get: _get,
+    add: _add,
+    update: _update,
+    remove: _remove,
+    reset: _reset,
 }
