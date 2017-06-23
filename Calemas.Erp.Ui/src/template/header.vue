@@ -28,6 +28,7 @@
                         <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Perfil</a>
                         <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Bloquear</a>
                         <a class="dropdown-item" href="#" @click="logout"><i class="fa fa-sign-out"></i> Sair</a>
+
                     </div>
                 </dropdown>
             </li>
@@ -76,6 +77,9 @@
                 e.preventDefault()
                 Auth.logout();
             }
+        },
+        mounted() {
+            Auth.userinfo();
         }
     }
 </script>

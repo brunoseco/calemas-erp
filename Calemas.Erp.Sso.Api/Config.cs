@@ -86,11 +86,11 @@ namespace Calemas.Erp.Sso.Api
                     AllowAccessTokensViaBrowser = true,
 
                     RedirectUris = {
-                        "http://localhost:8080"
+                        "http://localhost:8080/#/authorized/?"
                     },
                     PostLogoutRedirectUris =
                     {
-                        "http://localhost:8080"
+                        "http://localhost:8080/#/loggedout/?"
                     },
 
                     AllowedCorsOrigins = { "http://localhost:8080" },

@@ -9,9 +9,12 @@ import Dashboard from '@/views/dashboard'
 import Midia from '@/views/midia'
 import Authorized from '@/views/authorized'
 
+//Auth 
+import Auth from '../common/auth'
+
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
     linkActiveClass: 'open active',
     scrollBehavior: () => ({ y: 0 }),
     routes: [
@@ -20,6 +23,7 @@ export default new Router({
             redirect: '/dashboard',
             name: 'Home',
             component: Template,
+            meta: { requiresAuth: true },
             children: [
                 {
                     path: 'dashboard',
@@ -41,4 +45,18 @@ export default new Router({
         },
         { path: "*", redirect: '/dashboard', },
     ]
+});
+
+router.beforeEach((to, from, next) => {
+
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+        if (!Auth.logged()) {
+            Auth.login();
+            return;
+        }
+    }
+
+    next();
 })
+
+export default router

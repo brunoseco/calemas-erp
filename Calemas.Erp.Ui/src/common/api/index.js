@@ -2,13 +2,17 @@
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import Cache from '../cache'
-import Constants from '../global'
+import Global from '../global'
 
 Vue.use(VueAxios, axios)
 
-export function Api(o) {
+axios.defaults.headers.common['Authorization'] = "Bearer " + Cache.get(Global.ACCESS_TOKEN);
+axios.defaults.headers.common['Token'] = "Bearer " + Cache.get(Global.ACCESS_TOKEN);
 
-    this.Resourse = o;
+export function Api(resource, endpoint) {
+
+    this.Resourse = resource;
+    this.EndPoint = endpoint;
 
     this.defaultFilter = {
         pageSize: 10,
@@ -17,8 +21,9 @@ export function Api(o) {
         queryOptimizerBehavior: "",
     };
 
-    this.filters = Object.assign({}, this.defaultFilter, {});
+    this.filters = {};
     this.byCache = false;
+    this.hasDefaultFilters = true;
     this.lastAction = "none";
     this.url = "";
 
@@ -35,6 +40,7 @@ export function Api(o) {
     this.dataItem = _dataitem;
 
     var self = this;
+
 
     function _post(data) {
 
@@ -78,7 +84,7 @@ export function Api(o) {
 
         return axios
             .get(self.url)
-            .then(res => { handleSuccess(res.data); return res.data; }, err => { handleError(err); return err; });
+            .then(res => { handleSuccess(res.data); return res.data; }, err => { console.log(err); handleError(err); return err; });
     }
 
     function _getMethodCustom(method) {
@@ -129,25 +135,32 @@ export function Api(o) {
     function makeEndPont() {
 
         if (!self.EndPoint)
-            return Constants.END_POINT_DEFAULT;
+            return Global.END_POINT_DEFAULT;
 
-        return Constants[self.EndPoint];
+        return self.EndPoint;
     }
 
     function queryStringFilter() {
 
-        if (self.filters.OrderFields !== undefined) {
-            self.filters.IsOrderByDynamic = true;
-            if (self.filters.OrderByType === undefined)
-                self.filters.OrderByType = 1;
+        var filters = getFilter();
+
+        if (filters.OrderFields !== undefined) {
+            filters.IsOrderByDynamic = true;
+            if (filters.OrderByType === undefined)
+                filters.OrderByType = 1;
         }
 
-        var filter = Object.assign({}, self.defaultFilter, self.filters);
+        if (filters.Id !== undefined)
+            return String.format("{0}?{1}", filters.Id, Object.$httpParamSerializer(filters));
 
-        if (self.filters.Id !== undefined)
-            return String.format("{0}?{1}", self.filters.Id, Object.$httpParamSerializer(filter));
+        return String.format("?{0}", Object.$httpParamSerializer(filters));
+    }
 
-        return String.format("?{0}", Object.$httpParamSerializer(filter));
+    function getFilter() {
+        if (self.hasDefaultFilters)
+            return Object.assign({}, self.defaultFilter, self.filters)
+
+        return self.filters;
     }
 
     function handleSuccess(response) { addCache(response.data); }

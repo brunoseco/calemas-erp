@@ -2,6 +2,8 @@
 import App from './app'
 import router from './router'
 
+import '../static/scss/style.scss'
+
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate, {
     errorBagName: 'formErrors',

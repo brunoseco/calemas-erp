@@ -99,5 +99,8 @@
     <ProjectReference Include="..\Common\Common.Orm\Common.Orm.csproj" />
     <ProjectReference Include="..\Calemas.Erp.Data\Calemas.Erp.Data.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
 
 </Project>
