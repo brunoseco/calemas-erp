@@ -9,6 +9,7 @@
     <Content Include="wwwroot\css\font-awesome.css.map" />
     <Content Include="wwwroot\css\font-awesome.min.css" />
     <Content Include="wwwroot\css\simple-line-icons.css" />
+    <Content Include="wwwroot\css\site.css" />
     <Content Include="wwwroot\css\style.css" />
     <Content Include="wwwroot\css\style.min.css" />
     <Content Include="wwwroot\favicon.ico" />

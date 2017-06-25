@@ -2,14 +2,14 @@
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import Cache from '../cache'
+import Cookie from '../cookie'
 import Global from '../global'
 
 Vue.use(VueAxios, axios)
 
-axios.defaults.headers.common['Authorization'] = "Bearer " + Cache.get(Global.ACCESS_TOKEN);
-axios.defaults.headers.common['Token'] = "Bearer " + Cache.get(Global.ACCESS_TOKEN);
-
 export function Api(resource, endpoint) {
+
+    axios.defaults.headers.common['Authorization'] = "Bearer " + Cookie.get(Global.ACCESS_TOKEN);
 
     this.Resourse = resource;
     this.EndPoint = endpoint;
@@ -84,7 +84,8 @@ export function Api(resource, endpoint) {
 
         return axios
             .get(self.url)
-            .then(res => { handleSuccess(res.data); return res.data; }, err => { console.log(err); handleError(err); return err; });
+            .then(res => { handleSuccess(res.data); return res.data; })
+            .catch(err => { handleError(err.response); throw err.response; })
     }
 
     function _getMethodCustom(method) {

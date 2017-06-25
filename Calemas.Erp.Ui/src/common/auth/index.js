@@ -1,10 +1,9 @@
 ﻿import Cache from '../cache'
+import Cookie from '../cookie'
 import Global from '../global'
 import { Api } from '../api'
 
 export default {
-
-    state: 'STATE_AUTH',
 
     authorize_url: Global.SSO_END_POINT + '/authorize',
     endsession_url: Global.SSO_END_POINT + '/endsession',
@@ -16,20 +15,20 @@ export default {
     scope: Global.SSO_SCOPE,
 
     getToken: function () {
-        return Cache.get(Global.ID_TOKEN);
+        return Cookie.get(Global.ID_TOKEN);
     },
 
     getState: function () {
-        return Cache.get(this.state);
+        return Cookie.get(Global.ID_STATE);
     },
 
     logged: function () {
-        return Cache.get(Global.ID_TOKEN);
+        return Cookie.get(Global.ID_TOKEN);
     },
 
     login: function () {
 
-        Cache.add(this.state, Date.now());
+        Cookie.add(Global.ID_STATE, Date.now());
 
         var url = this.authorize_url + "?" +
             "client_id=" + encodeURIComponent(this.client_id) + "&" +
@@ -43,9 +42,7 @@ export default {
     },
 
     userinfo: function () {
-        var api = new Api("userinfo", Global.SSO_END_POINT);
-        api.hasDefaultFilters = false;
-        api.get().then(a => { console.log(a) }, b => { console.log(b) });
+        return JSON.parse(Cache.get(Global.USER_INFO));
     },
 
     logout: function () {
@@ -55,8 +52,9 @@ export default {
             "post_logout_redirect_uri=" + encodeURIComponent(this.post_logout_redirect_uri) + "&" +
             "state=" + encodeURIComponent(this.getState());
 
-        Cache.remove(Global.ACCESS_TOKEN);
-        Cache.remove(Global.ID_TOKEN);
+        Cookie.remove(Global.ACCESS_TOKEN);
+        Cookie.remove(Global.ID_TOKEN);
+        Cache.remove(Global.USER_INFO);
 
         window.location = url;
     },
@@ -73,11 +71,18 @@ export default {
             return result;
         }, {});
 
-        Cache.add(Global.ACCESS_TOKEN, result.access_token);
-        Cache.add(Global.ID_TOKEN, result.id_token);
+        Cookie.add(Global.ACCESS_TOKEN, result.access_token, result.expires_in);
+        Cookie.add(Global.ID_TOKEN, result.id_token, result.expires_in);
 
-        setTimeout(() => { window.location = '/'; }, 1000)
-
+        var api = new Api("userinfo", Global.SSO_END_POINT);
+        api.hasDefaultFilters = false;
+        api.get().then(response => {
+            Cache.add(Global.USER_INFO, JSON.stringify(response));
+            setTimeout(() => { window.location = '/'; }, 500);
+        }, err => {
+            if (err.status == 401)
+                this.login();
+        });
     }
 
 }

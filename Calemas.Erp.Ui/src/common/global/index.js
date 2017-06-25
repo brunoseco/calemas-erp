@@ -7,8 +7,11 @@ export default {
     SSO_REDIRECT_LOGOUT_URL: "http://localhost:8080/#/loggedout/?",
     SSO_CLIENT_ID: "ssocalemas",
     SSO_RESPONSE_TYPE: "id_token token",
-    SSO_SCOPE: "openid calemas",
+    SSO_SCOPE: "openid calemas profile email",
+
     ACCESS_TOKEN: "ACCESS_TOKEN",
-    ID_TOKEN: "ID_TOKEN"
+    ID_TOKEN: "ID_TOKEN",
+    USER_INFO: "USER_INFO",
+    ID_STATE: "ID_STATE"
 
 }

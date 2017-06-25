@@ -16,8 +16,8 @@ namespace Calemas.Erp.Sso.Api
             return new User
             {
                 SubjectId = "1",
-                Username = "admin",
-                Password = "admin",
+                Username = "Administrador",
+                Password = "admin123",
                 Claims = ClaimsForAdmin("Administrador", "admin@email.com.br")
             };
         }

@@ -1,8 +1,4 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
-
-
-using IdentityModel;
+﻿using IdentityModel;
 using IdentityServer4.Extensions;
 using IdentityServer4.Services;
 using IdentityServer4.Stores;
@@ -33,62 +29,19 @@ namespace IdentityServer4.Quickstart.UI
             var context = await _interaction.GetAuthorizationContextAsync(returnUrl);
             if (context?.IdP != null)
             {
-                // this is meant to short circuit the UI and only trigger the one external IdP
                 return new LoginViewModel
                 {
                     EnableLocalLogin = false,
                     ReturnUrl = returnUrl,
                     Username = context?.LoginHint,
-                    ExternalProviders = new ExternalProvider[] {new ExternalProvider { AuthenticationScheme = context.IdP } }
                 };
-            }
-
-            var schemes = _httpContextAccessor.HttpContext.Authentication.GetAuthenticationSchemes();
-
-            var providers = schemes
-                .Where(x => x.DisplayName != null && !AccountOptions.WindowsAuthenticationSchemes.Contains(x.AuthenticationScheme))
-                .Select(x => new ExternalProvider
-                {
-                    DisplayName = x.DisplayName,
-                    AuthenticationScheme = x.AuthenticationScheme
-                }).ToList();
-
-            if (AccountOptions.WindowsAuthenticationEnabled)
-            {
-                // this is needed to handle windows auth schemes
-                var windowsSchemes = schemes.Where(s => AccountOptions.WindowsAuthenticationSchemes.Contains(s.AuthenticationScheme));
-                if (windowsSchemes.Any())
-                {
-                    providers.Add(new ExternalProvider
-                    {
-                        AuthenticationScheme = AccountOptions.WindowsAuthenticationSchemes.First(),
-                        DisplayName = AccountOptions.WindowsAuthenticationDisplayName
-                    });
-                }
-            }
-
-            var allowLocal = true;
-            if (context?.ClientId != null)
-            {
-                var client = await _clientStore.FindEnabledClientByIdAsync(context.ClientId);
-                if (client != null)
-                {
-                    allowLocal = client.EnableLocalLogin;
-
-                    if (client.IdentityProviderRestrictions != null && client.IdentityProviderRestrictions.Any())
-                    {
-                        providers = providers.Where(provider => client.IdentityProviderRestrictions.Contains(provider.AuthenticationScheme)).ToList();
-                    }
-                }
             }
 
             return new LoginViewModel
             {
                 AllowRememberLogin = AccountOptions.AllowRememberLogin,
-                EnableLocalLogin = allowLocal && AccountOptions.AllowLocalLogin,
                 ReturnUrl = returnUrl,
                 Username = context?.LoginHint,
-                ExternalProviders = providers.ToArray()
             };
         }
 
@@ -107,7 +60,6 @@ namespace IdentityServer4.Quickstart.UI
             var user = await _httpContextAccessor.HttpContext.GetIdentityServerUserAsync();
             if (user == null || user.Identity.IsAuthenticated == false)
             {
-                // if the user is not authenticated, then just show logged out page
                 vm.ShowLogoutPrompt = false;
                 return vm;
             }
@@ -115,19 +67,15 @@ namespace IdentityServer4.Quickstart.UI
             var context = await _interaction.GetLogoutContextAsync(logoutId);
             if (context?.ShowSignoutPrompt == false)
             {
-                // it's safe to automatically sign-out
                 vm.ShowLogoutPrompt = false;
                 return vm;
             }
 
-            // show the logout prompt. this prevents attacks where the user
-            // is automatically signed out by another malicious web page.
             return vm;
         }
 
         public async Task<LoggedOutViewModel> BuildLoggedOutViewModelAsync(string logoutId)
         {
-            // get context information (client name, post logout redirect URI and iframe for federated signout)
             var logout = await _interaction.GetLogoutContextAsync(logoutId);
 
             var vm = new LoggedOutViewModel
@@ -146,14 +94,7 @@ namespace IdentityServer4.Quickstart.UI
                 if (idp != null && idp != IdentityServer4.IdentityServerConstants.LocalIdentityProvider)
                 {
                     if (vm.LogoutId == null)
-                    {
-                        // if there's no current logout context, we need to create one
-                        // this captures necessary info from the current logged in user
-                        // before we signout and redirect away to the external IdP for signout
                         vm.LogoutId = await _interaction.CreateLogoutContextAsync();
-                    }
-
-                    vm.ExternalAuthenticationScheme = idp;
                 }
             }
 

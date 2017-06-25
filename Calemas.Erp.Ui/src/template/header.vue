@@ -11,24 +11,18 @@
             <li class="nav-item d-md-down-none">
                 <dropdown size="nav" class="nav-item">
                     <span slot="button">
-                        <img src="static/img/avatars/6.jpg" class="img-avatar">
-                        <span class="d-md-down-none">Bruno Henrique</span>
+                        <span class="d-md-down-none">{{ user.name }}</span>
                     </span>
                     <div slot="dropdown-menu" class="dropdown-menu dropdown-menu-right">
-                        <div class="dropdown-header text-center"><strong>Acesso</strong></div>
+                        <div class="dropdown-header text-center"><strong>Central</strong></div>
 
                         <a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> Novidades<span class="badge badge-info">2</span></a>
                         <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> Mensagens<span class="badge badge-success">0</span></a>
                         <a class="dropdown-item" href="#"><i class="fa fa-tasks"></i> Tarefas<span class="badge badge-danger">5</span></a>
                         <a class="dropdown-item" href="#"><i class="fa fa-reply"></i> Acessar RadiusNet</a>
 
-                        <div class="dropdown-header text-center"><strong>Conta</strong></div>
-
-                        <a class="dropdown-item" href="#" @click="login"><i class="fa fa-sign-in"></i> Login</a>
-                        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Perfil</a>
-                        <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Bloquear</a>
+                        <div class="dropdown-header text-center"><strong>Acesso</strong></div>
                         <a class="dropdown-item" href="#" @click="logout"><i class="fa fa-sign-out"></i> Sair</a>
-
                     </div>
                 </dropdown>
             </li>
@@ -48,6 +42,11 @@
 
     export default {
         name: 'header',
+        data() {
+            return {
+                user: {},
+            }
+        },
         components: {
             navbar,
             dropdown
@@ -79,7 +78,7 @@
             }
         },
         mounted() {
-            Auth.userinfo();
+            this.user = Auth.userinfo();
         }
     }
 </script>

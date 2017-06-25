@@ -9,7 +9,7 @@
             }
             <h1>
                 @Model.ClientName
-                <small>is requesting your permission</small>
+                <small>está pedindo sua permissão</small>
             </h1>
         </div>
     </div>
@@ -21,14 +21,14 @@
             <form asp-action="Index" class="consent-form">
                 <input type="hidden" asp-for="ReturnUrl" />
 
-                <div>Uncheck the permissions you do not wish to grant.</div>
+                <div>Permissões a conceder.</div>
                 
                 @if (Model.IdentityScopes.Any())
                 {
                     <div class="panel panel-default consent-buttons">
                         <div class="panel-heading">
                             <span class="glyphicon glyphicon-user"></span>
-                            Personal Information
+                            Informações pessoais
                         </div>
                         <ul class="list-group">
                             @foreach (var scope in Model.IdentityScopes)
@@ -44,7 +44,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <span class="glyphicon glyphicon-tasks"></span>
-                            Application Access
+                            Acesso a aplicação
                         </div>
                         <ul class="list-group">
                             @foreach (var scope in Model.ResourceScopes)
@@ -60,17 +60,17 @@
                     <div class="consent-remember">
                         <label>
                             <input class="consent-scopecheck" asp-for="RememberConsent" />
-                            <strong>Remember My Decision</strong>
+                            <strong>Relembrar minha decisão</strong>
                         </label>
                     </div>
                 }
 
                 <div class="consent-buttons">
                     <button name="button" value="yes" class="btn btn-primary" autofocus>Yes, Allow</button>
-                    <button name="button" value="no" class="btn">No, Do Not Allow</button>
+                    <button name="button" value="no" class="btn">Não, não liberar</button>
                     @if (Model.ClientUrl != null)
                     {
-                        <a class="pull-right btn btn-default" target="_blank" href="@Model.ClientUrl">
+                        <a class="pull-right btn btn-default" href="@Model.ClientUrl">
                             <span class="glyphicon glyphicon-info-sign"></span>
                             <strong>@Model.ClientName</strong>
                         </a>

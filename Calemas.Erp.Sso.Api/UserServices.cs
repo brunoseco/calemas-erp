@@ -19,9 +19,12 @@ namespace Calemas.Erp.Sso.Api
 
         public async Task<User> Auth(string userName, string password)
         {
+            var _userName = userName.ToLower();
+            var _password = password.ToLower();
+
             var colaborador = await this._rep.SingleOrDefaultAsync(this._rep.GetAll()
-                .Where(_ => _.Account == userName)
-                .Where(_ => _.Password == password));
+                .Where(_ => _.Account == _userName)
+                .Where(_ => _.Password == _password));
 
             var user = new User();
 
@@ -35,8 +38,8 @@ namespace Calemas.Erp.Sso.Api
             }
 
             var userAdmin = Config.GetUsers()
-                .Where(_ => _.Username == userName)
-                .Where(_ => _.Password == password)
+                .Where(_ => _.Username.ToLower() == _userName)
+                .Where(_ => _.Password.ToLower() == _password)
                 .SingleOrDefault();
 
             if (userAdmin.IsNotNull())
