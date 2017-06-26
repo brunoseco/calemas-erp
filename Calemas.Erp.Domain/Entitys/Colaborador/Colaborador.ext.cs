@@ -42,7 +42,6 @@ namespace Calemas.Erp.Domain.Entitys
             this.Pessoa.SetarEstadoCivilId(estadoCivilId);
             this.Pessoa.SetarSexo(sexo);
             this.Pessoa.SetarJuridica(juridica);
-
         }
 
         public Colaborador(int colaboradorId, string account, string password, bool ativo)
@@ -54,7 +53,6 @@ namespace Calemas.Erp.Domain.Entitys
         {
             base._validationResult = new ColaboradorEstaConsistenteValidation().Validate(this);
             return base._validationResult.IsValid;
-
         }
 
     }

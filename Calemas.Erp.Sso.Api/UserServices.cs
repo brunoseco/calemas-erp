@@ -22,7 +22,7 @@ namespace Calemas.Erp.Sso.Api
             var _userName = userName.ToLower();
             var _password = password.ToLower();
 
-            var colaborador = await this._rep.SingleOrDefaultAsync(this._rep.GetAll()
+            var colaborador = await this._rep.SingleOrDefaultAsync(this._rep.GetAll(_ => _.Pessoa)
                 .Where(_ => _.Account == _userName)
                 .Where(_ => _.Password == _password));
 

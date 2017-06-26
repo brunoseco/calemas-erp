@@ -7,6 +7,8 @@ using Calemas.Erp.Domain.Interfaces.Repository;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System;
+using System.Linq.Expressions;
 
 namespace Calemas.Erp.Data.Repository
 {
@@ -18,30 +20,30 @@ namespace Calemas.Erp.Data.Repository
 
         }
 
-      
+
         public IQueryable<Colaborador> GetBySimplefilters(ColaboradorFilter filters)
         {
             var querybase = this.GetAll(this.DataAgregation(filters))
-								.WithBasicFilters(filters)
-								.WithCustomFilters(filters);
+                                .WithBasicFilters(filters)
+                                .WithCustomFilters(filters);
             return querybase;
         }
 
         public async Task<Colaborador> GetById(ColaboradorFilter model)
         {
             var _colaborador = await this.SingleOrDefaultAsync(this.GetAll(this.DataAgregation(model))
-               .Where(_=>_.ColaboradorId == model.ColaboradorId));
+               .Where(_ => _.ColaboradorId == model.ColaboradorId));
 
             return _colaborador;
         }
 
-		 public async Task<IEnumerable<dynamic>> GetDataItem(ColaboradorFilter filters)
+        public async Task<IEnumerable<dynamic>> GetDataItem(ColaboradorFilter filters)
         {
             var querybase = await this.ToListAsync(this.GetBySimplefilters(filters).Select(_ => new
             {
                 Id = _.ColaboradorId
 
-            })); 
+            }));
 
             return querybase;
         }
@@ -130,6 +132,11 @@ namespace Calemas.Erp.Data.Repository
             }
 
             return source.SingleOrDefault();
+        }
+
+        protected override Expression<Func<Colaborador, object>>[] DataAgregation(Expression<Func<Colaborador, object>>[] includes, FilterBase filter)
+        {
+            return includes.Add(_ => _.Pessoa);
         }
 
     }

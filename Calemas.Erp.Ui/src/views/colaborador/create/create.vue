@@ -10,8 +10,8 @@
                     <input type="text" class="form-control" name="nome" placeholder="Nome" v-model="crud.create.model.pessoa.nome">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="nome">Apelido</label>
-                    <input type="text" class="form-control" name="nome" placeholder="Apelido" v-model="crud.create.model.pessoa.nome">
+                    <label for="apelido">Apelido</label>
+                    <input type="text" class="form-control" name="apelido" placeholder="Apelido" v-model="crud.create.model.pessoa.apelido">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="account">Acesso</label>

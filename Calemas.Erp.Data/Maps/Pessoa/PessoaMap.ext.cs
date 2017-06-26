@@ -13,7 +13,6 @@ namespace Calemas.Erp.Data.Map
 
         protected override void CustomConfig(EntityTypeBuilder<Pessoa> type)
         {
-
         }
 
     }

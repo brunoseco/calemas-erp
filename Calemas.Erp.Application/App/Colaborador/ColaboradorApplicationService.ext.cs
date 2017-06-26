@@ -5,6 +5,8 @@ using Calemas.Erp.Domain.Filter;
 using Calemas.Erp.Domain.Interfaces.Services;
 using Calemas.Erp.Dto;
 using System.Linq;
+using System.Collections.Generic;
+using Common.Domain.Base;
 
 namespace Calemas.Erp.Application
 {
@@ -15,6 +17,11 @@ namespace Calemas.Erp.Application
             base(service, uow, cache)
         {
 
+        }
+
+        protected override IEnumerable<TDS> MapperDomainToResult<TDS>(FilterBase filter, PaginateResult<Colaborador> dataList)
+        {
+            return base.MapperDomainToResult<ColaboradorDtoSpecializedResult>(filter, dataList) as IEnumerable<TDS>;
         }
 
         protected override Colaborador MapperDtoToDomain<TDS>(TDS dto)

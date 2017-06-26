@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "105af6d8da2b05d0682ad6355f59b13111ca8ce7"
+    "signature": "d0e6b8838a770a2b447db79d6f4e04f419b85232"
   },
   "compilationOptions": {
     "defines": [
@@ -40,7 +40,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.2",
           "Microsoft.Extensions.Caching.Redis.Core": "1.0.3",
           "Microsoft.Extensions.Logging.Debug": "1.1.2",
-          "Microsoft.NETCore.App": "1.1.2"
+          "Microsoft.NETCore.App": "1.1.2",
+          "Serilog.Extensions.Logging.File": "1.0.1"
         },
         "runtime": {
           "Calemas.Erp.Api.dll": {}
@@ -1514,6 +1515,117 @@
             "rid": "win7-x86",
             "assetType": "native"
           }
+        }
+      },
+      "serilog/2.3.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.3.0",
+          "System.Collections": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        }
+      },
+      "serilog.extensions.logging/1.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "1.1.2",
+          "Serilog": "2.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Extensions.Logging.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Extensions.Logging.dll": {}
+        }
+      },
+      "serilog.extensions.logging.file/1.0.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "1.1.2",
+          "Serilog": "2.3.0",
+          "Serilog.Extensions.Logging": "1.2.0",
+          "Serilog.Formatting.Compact": "1.0.0",
+          "Serilog.Sinks.Async": "1.0.1",
+          "Serilog.Sinks.RollingFile": "3.1.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Extensions.Logging.File.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Extensions.Logging.File.dll": {}
+        }
+      },
+      "serilog.formatting.compact/1.0.0": {
+        "dependencies": {
+          "Serilog": "2.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Serilog.Formatting.Compact.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.1/Serilog.Formatting.Compact.dll": {}
+        }
+      },
+      "serilog.sinks.async/1.0.1": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.3.0",
+          "Serilog": "2.3.0",
+          "System.Collections": "4.3.0",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Thread": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.Async.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.Async.dll": {}
+        }
+      },
+      "serilog.sinks.file/3.1.0": {
+        "dependencies": {
+          "Serilog": "2.3.0",
+          "System.IO": "4.3.0",
+          "System.IO.FileSystem": "4.3.0",
+          "System.IO.FileSystem.Primitives": "4.3.0",
+          "System.Text.Encoding.Extensions": "4.3.0",
+          "System.Threading.Timer": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.File.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.File.dll": {}
+        }
+      },
+      "serilog.sinks.rollingfile/3.1.0": {
+        "dependencies": {
+          "Serilog.Sinks.File": "3.1.0",
+          "System.IO": "4.3.0",
+          "System.IO.FileSystem.Primitives": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Text.Encoding.Extensions": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll": {}
         }
       },
       "stackexchange.redis.strongname/1.1.608": {
@@ -4408,6 +4520,55 @@
       "sha512": "sha512-4cXRTIcttvIreAoqK/5hzTtzepeggac+m5A0rzH+9zLtnFh2J0rLuGeJR4KjNLyKqPzO0kjqrs5lkRJEKX8HAA==",
       "path": "runtime.win7-x86.runtime.native.system.data.sqlclient.sni/4.3.0",
       "hashPath": "runtime.win7-x86.runtime.native.system.data.sqlclient.sni.4.3.0.nupkg.sha512"
+    },
+    "serilog/2.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JJMEqTUGe/bA4OEMefGd8W6si9oStSa3CF47dIHzkRKJHqFWFOW8D2aZTOW6VIgNLY2hzruQXhvp2tX0NVkgsw==",
+      "path": "serilog/2.3.0",
+      "hashPath": "serilog.2.3.0.nupkg.sha512"
+    },
+    "serilog.extensions.logging/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kAZoUF/U/X+/ep5ZytpydcURbt1tvhyArOrWct0QLW72j6cquu2JyJlzNAaKW1yBZcblx1PvzvFJADhBuaIiMQ==",
+      "path": "serilog.extensions.logging/1.2.0",
+      "hashPath": "serilog.extensions.logging.1.2.0.nupkg.sha512"
+    },
+    "serilog.extensions.logging.file/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0d14iB5YYCgyu8EFOEmr0nO1yZLve24PUkGI53UrQeN/p3xpu/DkozrVPDbx2cUGO213h/l9FOQ4Z2mWEe+W2Q==",
+      "path": "serilog.extensions.logging.file/1.0.1",
+      "hashPath": "serilog.extensions.logging.file.1.0.1.nupkg.sha512"
+    },
+    "serilog.formatting.compact/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-r3QYz02y7+B7Ng30hyJM929OJhem7SsJ4XDUE0Zfptj2MRiQfpPUb5f58juAFjp/TnNeSX2QNzZEnHwLeoJfHQ==",
+      "path": "serilog.formatting.compact/1.0.0",
+      "hashPath": "serilog.formatting.compact.1.0.0.nupkg.sha512"
+    },
+    "serilog.sinks.async/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nxieu6HWPU890KWp5V8bP4zLUboGps1GYsLEjLTO56ifCPmy32H5/ZZNnrGv8m2FzP65pq/Fea/ZBct2kcD+PA==",
+      "path": "serilog.sinks.async/1.0.1",
+      "hashPath": "serilog.sinks.async.1.0.1.nupkg.sha512"
+    },
+    "serilog.sinks.file/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/ArxCBDAXzMNIYVxO+4QbfTnytQ1qBlNGv+8Lyx5z1+PTrp0+xjf4o5km+Gn8TbRNg5Kh137TSEKeNwCRCkp8w==",
+      "path": "serilog.sinks.file/3.1.0",
+      "hashPath": "serilog.sinks.file.3.1.0.nupkg.sha512"
+    },
+    "serilog.sinks.rollingfile/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ez99SplfbMaQYjRbeqUQz4wMNFKs94ehloB7iN+aSEfjTlncTcYj+SvphdSpxqWdMsa3sYduVcBTE0DK3KVC2w==",
+      "path": "serilog.sinks.rollingfile/3.1.0",
+      "hashPath": "serilog.sinks.rollingfile.3.1.0.nupkg.sha512"
     },
     "stackexchange.redis.strongname/1.1.608": {
       "type": "package",

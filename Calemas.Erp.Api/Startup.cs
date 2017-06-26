@@ -50,10 +50,7 @@ namespace Calemas.Erp.Api
             Cors.Enable(services);
             ConfigContainerCore.Config(services);
 
-            services.AddMvc().AddJsonOptions(options =>
-            {
-                options.SerializerSettings.ContractResolver = new DefaultContractResolver();
-            });
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +58,7 @@ namespace Calemas.Erp.Api
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            loggerFactory.AddFile("Logs/calemas-api-{Date}.log");
 
             app.UseDeveloperExceptionPage();
 

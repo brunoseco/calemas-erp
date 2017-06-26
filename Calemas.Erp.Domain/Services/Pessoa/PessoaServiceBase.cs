@@ -138,6 +138,20 @@ namespace Calemas.Erp.Domain.Services
 			base._validationWarning  = new PessoaAptoParaCadastroWarning(this._rep).Validate(pessoa);
         }
 
+        public virtual Pessoa AuditDefault(Pessoa pessoa, Pessoa pessoaOld)
+        {
+            var isNew = pessoaOld.IsNull();
+            if (isNew)
+                pessoa.SetUserCreate(this._user.GetSubjectId<int>());
+            else
+            {
+                pessoa.SetUserUpdate(this._user.GetSubjectId<int>());
+                pessoa.SetUserCreate(pessoaOld.UserCreateId, pessoaOld.UserCreateDate);
+            }
+
+            return pessoa;
+        }
+
         protected virtual Pessoa SaveDefault(Pessoa pessoa, Pessoa pessoaOld)
         {
             var isNew = pessoaOld.IsNull();

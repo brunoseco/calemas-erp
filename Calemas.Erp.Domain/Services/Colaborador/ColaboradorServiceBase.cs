@@ -13,13 +13,13 @@ namespace Calemas.Erp.Domain.Services
     public class ColaboradorServiceBase : ServiceBase<Colaborador>
     {
         protected readonly IColaboradorRepository _rep;
-		protected readonly CurrentUser _user;
+        protected readonly CurrentUser _user;
 
         public ColaboradorServiceBase(IColaboradorRepository rep, ICache cache, CurrentUser user)
             : base(cache)
         {
             this._rep = rep;
-			this._user = user;
+            this._user = user;
         }
 
         public virtual async Task<Colaborador> GetOne(ColaboradorFilter filters)
@@ -107,7 +107,7 @@ namespace Calemas.Erp.Domain.Services
 
         }
 
-		protected override Colaborador SaveWithValidation(Colaborador colaborador, Colaborador colaboradorOld)
+        protected override Colaborador SaveWithValidation(Colaborador colaborador, Colaborador colaboradorOld)
         {
             if (!this.DataAnnotationIsValid())
                 return colaborador;
@@ -124,7 +124,7 @@ namespace Calemas.Erp.Domain.Services
             {
                 return colaborador;
             }
-            
+
             colaborador = this.SaveDefault(colaborador, colaboradorOld);
             base._validationResult.Message = "Colaborador cadastrado com sucesso :)";
 
@@ -132,26 +132,36 @@ namespace Calemas.Erp.Domain.Services
             return colaborador;
         }
 
-		protected virtual void Specifications(Colaborador colaborador)
+        protected virtual void Specifications(Colaborador colaborador)
         {
-            base._validationResult  = new ColaboradorAptoParaCadastroValidation(this._rep).Validate(colaborador);
-			base._validationWarning  = new ColaboradorAptoParaCadastroWarning(this._rep).Validate(colaborador);
+            base._validationResult = new ColaboradorAptoParaCadastroValidation(this._rep).Validate(colaborador);
+            base._validationWarning = new ColaboradorAptoParaCadastroWarning(this._rep).Validate(colaborador);
+        }
+
+        public virtual Colaborador AuditDefault(Colaborador colaborador, Colaborador colaboradorOld)
+        {
+            var isNew = colaboradorOld.IsNull();
+            if (isNew)
+                colaborador.SetUserCreate(this._user.GetSubjectId<int>());
+            else
+            {
+                colaborador.SetUserUpdate(this._user.GetSubjectId<int>());
+                colaborador.SetUserCreate(colaboradorOld.UserCreateId, colaboradorOld.UserCreateDate);
+            }
+
+            return colaborador;
         }
 
         protected virtual Colaborador SaveDefault(Colaborador colaborador, Colaborador colaboradorOld)
         {
             var isNew = colaboradorOld.IsNull();
+
+            this.AuditDefault(colaborador, colaboradorOld);
+
             if (isNew)
-            {
-				colaborador.SetUserCreate(this._user.GetSubjectId<int>());
                 colaborador = this._rep.Add(colaborador);
-            }
             else
-            {
-				colaborador.SetUserUpdate(this._user.GetSubjectId<int>());
-				colaborador.SetUserCreate(colaboradorOld.UserCreateId, colaboradorOld.UserCreateDate);
                 colaborador = this._rep.Update(colaborador);
-            }
 
             return colaborador;
         }

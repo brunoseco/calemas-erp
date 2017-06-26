@@ -42,7 +42,8 @@ export default {
     },
 
     userinfo: function () {
-        return JSON.parse(Cache.get(Global.USER_INFO));
+        var _user = JSON.parse(Cache.get(Global.USER_INFO));
+        return _user;
     },
 
     logout: function () {
@@ -79,9 +80,6 @@ export default {
         api.get().then(response => {
             Cache.add(Global.USER_INFO, JSON.stringify(response));
             setTimeout(() => { window.location = '/'; }, 500);
-        }, err => {
-            if (err.status == 401)
-                this.login();
         });
     }
 

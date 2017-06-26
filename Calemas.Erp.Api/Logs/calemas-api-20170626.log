@@ -1,0 +1,791 @@
+2017-06-26T17:56:28.1237280-03:00 0HL5SQN8B3JSC [INF] Request starting HTTP/1.1 GET http://localhost:56307/   (e5be5b71)
+2017-06-26T17:56:28.3623876-03:00 0HL5SQN8B3JSC [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T17:56:28.9772986-03:00 0HL5SQN8B3JSC [INF] Request finished in 898.174ms 404  (15c52c40)
+2017-06-26T17:56:37.7166391-03:00 0HL5SQN8B3JSD [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T17:56:37.7181412-03:00 0HL5SQN8B3JSD [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T17:56:38.2645064-03:00 0HL5SQN8B3JSD [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T17:56:38.2790145-03:00 0HL5SQN8B3JSD [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T17:56:38.3235448-03:00 0HL5SQN8B3JSD [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 204.9973ms (afa2e885)
+2017-06-26T17:56:38.3270471-03:00 0HL5SQN8B3JSD [INF] Request finished in 610.7367ms 200  (15c52c40)
+2017-06-26T17:56:39.1280821-03:00 0HL5SQN8B3JSE [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T17:56:43.2653471-03:00 0HL5SQN8B3JSE [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IjIxZTVkYTU3NmFmYjIzMWJlZGExYjFkNDcxNWUzYTJjIiwidHlwIjoiSldUIn0.eyJuYmYiOjE0OTg1MTAwOTYsImV4cCI6MTQ5ODUxMzY5NiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo0MDAwIiwiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDAwMC9yZXNvdXJjZXMiLCJzc29jYWxlbWFzIl0sImNsaWVudF9pZCI6InNzb2NhbGVtYXMiLCJzdWIiOiIxIiwiYXV0aF90aW1lIjoxNDk4NTAxODQzLCJpZHAiOiJsb2NhbCIsIm5hbWUiOiJBZG1pbmlzdHJhZG9yIiwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20uYnIiLCJyb2xlIjoiYWRtaW4iLCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiZW1haWwiLCJjYWxlbWFzIl0sImFtciI6WyJwd2QiXX0.jeSzGDyTiAjTKeTVVpG_wIqqcpPgfVdHNYjPYXebTg8k09IRpxpzmzzA2dty9zMffT1lv1n9hI7g9_IoRHcmNKjX64vIZfnO5ixv2h5d9NUcXUm1ktHoQPEF1Gj-nnUGYUKHgvNwEcH2gFVfW9NwCZk8uguBDWxz_0-h7seFze0Ga8eAjBWBMNmG7cgngvMTqJa_dk1_1Sp__CgwKOAv0oM3IPR77N5b8oDN33KlOtl5WBpIfiICkrNGbASLldGvO4AcCNVABlsGFhhw3cOPdihQID8v9tbvUnf3k5MKVZWuSu74kLzGORO9NAce4ah6Oe4zNUnjbu0qgZS2J2fooQ". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10501: Signature validation failed. Unable to match 'kid': '21e5da576afb231beda1b1d4715e3a2c', 
+token: '{"alg":"RS256","typ":"JWT","kid":"21e5da576afb231beda1b1d4715e3a2c"}.{"nbf":1498510096,"exp":1498513696,"iss":"http://localhost:4000","aud":["http://localhost:4000/resources","ssocalemas"],"client_id":"ssocalemas","sub":"1","auth_time":1498501843,"idp":"local","name":"Administrador","email":"admin@email.com.br","role":"admin","scope":["openid","profile","email","calemas"],"amr":["pwd"]}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-06-26T17:56:43.2708511-03:00 0HL5SQN8B3JSE [INF] "Bearer" was not authenticated. Failure message: "IDX10501: Signature validation failed. Unable to match 'kid': '21e5da576afb231beda1b1d4715e3a2c', 
+token: '{\"alg\":\"RS256\",\"typ\":\"JWT\",\"kid\":\"21e5da576afb231beda1b1d4715e3a2c\"}.{\"nbf\":1498510096,\"exp\":1498513696,\"iss\":\"http://localhost:4000\",\"aud\":[\"http://localhost:4000/resources\",\"ssocalemas\"],\"client_id\":\"ssocalemas\",\"sub\":\"1\",\"auth_time\":1498501843,\"idp\":\"local\",\"name\":\"Administrador\",\"email\":\"admin@email.com.br\",\"role\":\"admin\",\"scope\":[\"openid\",\"profile\",\"email\",\"calemas\"],\"amr\":[\"pwd\"]}'." (48071232)
+2017-06-26T17:56:43.3559078-03:00 0HL5SQN8B3JSE [INF] Authorization failed for user: null. (a4ab1676)
+2017-06-26T17:56:43.3574091-03:00 0HL5SQN8B3JSE [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'. (8b6446cb)
+2017-06-26T17:56:43.3669157-03:00 0HL5SQN8B3JSE [INF] Executing ChallengeResult with authentication schemes ([]). (f3dca807)
+2017-06-26T17:56:43.4329595-03:00 0HL5SQN8B3JSE [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2017-06-26T17:56:43.4589769-03:00 0HL5SQN8B3JSE [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 169.4473ms (afa2e885)
+2017-06-26T17:56:43.4624795-03:00 0HL5SQN8B3JSE [INF] Request finished in 4334.2479ms 401  (15c52c40)
+2017-06-26T17:57:18.2214052-03:00 0HL5SQN8B3JSF [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T17:57:18.2219056-03:00 0HL5SQN8B3JSF [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T17:57:18.2219056-03:00 0HL5SQN8B3JSF [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T17:57:18.2224060-03:00 0HL5SQN8B3JSF [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T17:57:18.2224060-03:00 0HL5SQN8B3JSF [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.3358ms (afa2e885)
+2017-06-26T17:57:18.2224060-03:00 0HL5SQN8B3JSF [INF] Request finished in 1.4861ms 200  (15c52c40)
+2017-06-26T17:57:18.9218733-03:00 0HL5SQN8B3JSG [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T17:57:18.9238746-03:00 0HL5SQN8B3JSG [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IjIxZTVkYTU3NmFmYjIzMWJlZGExYjFkNDcxNWUzYTJjIiwidHlwIjoiSldUIn0.eyJuYmYiOjE0OTg1MTAwOTYsImV4cCI6MTQ5ODUxMzY5NiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo0MDAwIiwiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDAwMC9yZXNvdXJjZXMiLCJzc29jYWxlbWFzIl0sImNsaWVudF9pZCI6InNzb2NhbGVtYXMiLCJzdWIiOiIxIiwiYXV0aF90aW1lIjoxNDk4NTAxODQzLCJpZHAiOiJsb2NhbCIsIm5hbWUiOiJBZG1pbmlzdHJhZG9yIiwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20uYnIiLCJyb2xlIjoiYWRtaW4iLCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiZW1haWwiLCJjYWxlbWFzIl0sImFtciI6WyJwd2QiXX0.jeSzGDyTiAjTKeTVVpG_wIqqcpPgfVdHNYjPYXebTg8k09IRpxpzmzzA2dty9zMffT1lv1n9hI7g9_IoRHcmNKjX64vIZfnO5ixv2h5d9NUcXUm1ktHoQPEF1Gj-nnUGYUKHgvNwEcH2gFVfW9NwCZk8uguBDWxz_0-h7seFze0Ga8eAjBWBMNmG7cgngvMTqJa_dk1_1Sp__CgwKOAv0oM3IPR77N5b8oDN33KlOtl5WBpIfiICkrNGbASLldGvO4AcCNVABlsGFhhw3cOPdihQID8v9tbvUnf3k5MKVZWuSu74kLzGORO9NAce4ah6Oe4zNUnjbu0qgZS2J2fooQ". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10501: Signature validation failed. Unable to match 'kid': '21e5da576afb231beda1b1d4715e3a2c', 
+token: '{"alg":"RS256","typ":"JWT","kid":"21e5da576afb231beda1b1d4715e3a2c"}.{"nbf":1498510096,"exp":1498513696,"iss":"http://localhost:4000","aud":["http://localhost:4000/resources","ssocalemas"],"client_id":"ssocalemas","sub":"1","auth_time":1498501843,"idp":"local","name":"Administrador","email":"admin@email.com.br","role":"admin","scope":["openid","profile","email","calemas"],"amr":["pwd"]}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-06-26T17:57:18.9238746-03:00 0HL5SQN8B3JSG [INF] "Bearer" was not authenticated. Failure message: "IDX10501: Signature validation failed. Unable to match 'kid': '21e5da576afb231beda1b1d4715e3a2c', 
+token: '{\"alg\":\"RS256\",\"typ\":\"JWT\",\"kid\":\"21e5da576afb231beda1b1d4715e3a2c\"}.{\"nbf\":1498510096,\"exp\":1498513696,\"iss\":\"http://localhost:4000\",\"aud\":[\"http://localhost:4000/resources\",\"ssocalemas\"],\"client_id\":\"ssocalemas\",\"sub\":\"1\",\"auth_time\":1498501843,\"idp\":\"local\",\"name\":\"Administrador\",\"email\":\"admin@email.com.br\",\"role\":\"admin\",\"scope\":[\"openid\",\"profile\",\"email\",\"calemas\"],\"amr\":[\"pwd\"]}'." (48071232)
+2017-06-26T17:57:18.9248759-03:00 0HL5SQN8B3JSG [INF] Authorization failed for user: null. (a4ab1676)
+2017-06-26T17:57:18.9248759-03:00 0HL5SQN8B3JSG [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'. (8b6446cb)
+2017-06-26T17:57:18.9248759-03:00 0HL5SQN8B3JSG [INF] Executing ChallengeResult with authentication schemes ([]). (f3dca807)
+2017-06-26T17:57:18.9253755-03:00 0HL5SQN8B3JSG [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2017-06-26T17:57:18.9253755-03:00 0HL5SQN8B3JSG [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.7771ms (afa2e885)
+2017-06-26T17:57:18.9253755-03:00 0HL5SQN8B3JSG [INF] Request finished in 3.8437ms 401  (15c52c40)
+2017-06-26T17:57:25.8720800-03:00 0HL5SQN8B3JSH [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T17:57:25.8725796-03:00 0HL5SQN8B3JSH [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T17:57:25.8725796-03:00 0HL5SQN8B3JSH [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T17:57:25.8730793-03:00 0HL5SQN8B3JSH [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T17:57:25.8730793-03:00 0HL5SQN8B3JSH [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.2372ms (afa2e885)
+2017-06-26T17:57:25.8730793-03:00 0HL5SQN8B3JSH [INF] Request finished in 0.8826ms 200  (15c52c40)
+2017-06-26T17:57:26.1890566-03:00 0HL5SQN8B3JSI [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T17:57:26.2485737-03:00 0HL5SQN8B3JSI [INF] Successfully validated the token. (60169667)
+2017-06-26T17:57:26.2555777-03:00 0HL5SQN8B3JSI [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T17:57:26.2600813-03:00 0HL5SQN8B3JSI [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T17:57:27.4298624-03:00 0HL5SQN8B3JSI [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Domain.Filter.ColaboradorFilter"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T17:57:28.3079492-03:00 0HL5SQN8B3JSI [INF] Executed DbCommand (84ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T17:57:28.4510458-03:00 0HL5SQN8B3JSI [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Account], [c].[Ativo], [c].[Password], [c].[UserAlterDate], [c].[UserAlterId], [c].[UserCreateDate], [c].[UserCreateId]
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T17:57:28.5526124-03:00 0HL5SQN8B3JSI [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T17:57:28.6301641-03:00 0HL5SQN8B3JSI [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 2370.7548ms (afa2e885)
+2017-06-26T17:57:28.6351676-03:00 0HL5SQN8B3JSI [INF] Request finished in 2445.7571ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T17:57:49.1708216-03:00 0HL5SQN8B3JSJ [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador   (e5be5b71)
+2017-06-26T17:57:49.1708216-03:00 0HL5SQN8B3JSJ [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T17:57:49.1728242-03:00 0HL5SQN8B3JSJ [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T17:57:49.1728242-03:00 0HL5SQN8B3JSJ [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T17:57:49.1728242-03:00 0HL5SQN8B3JSJ [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Post (Calemas.Erp.Api)" in 0.2454ms (afa2e885)
+2017-06-26T17:57:49.1728242-03:00 0HL5SQN8B3JSJ [INF] Request finished in 2.441ms 200  (15c52c40)
+2017-06-26T17:57:49.9612875-03:00 0HL5SQN8B3JSK [INF] Request starting HTTP/1.1 POST http://localhost:56307/api/colaborador application/json;charset=UTF-8 149 (e5be5b71)
+2017-06-26T17:57:49.9622880-03:00 0HL5SQN8B3JSK [INF] Successfully validated the token. (60169667)
+2017-06-26T17:57:49.9622880-03:00 0HL5SQN8B3JSK [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T17:57:49.9627888-03:00 0HL5SQN8B3JSK [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T17:57:50.0463450-03:00 0HL5SQN8B3JSK [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Post (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Dto.ColaboradorDtoSpecialized"]) - ModelState is Invalid (ba7f4ac2)
+2017-06-26T17:57:50.4401076-03:00 0HL5SQN8B3JSK [INF] Executed DbCommand (73ms) [Parameters=[@__model_ColaboradorId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [_].[Id], [_].[Account], [_].[Ativo], [_].[Password], [_].[UserAlterDate], [_].[UserAlterId], [_].[UserCreateDate], [_].[UserCreateId]
+FROM [Colaborador] AS [_]
+WHERE [_].[Id] = @__model_ColaboradorId_0 (6438bdd5)
+2017-06-26T17:57:50.7693279-03:00 0HL5SQN8B3JSK [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (Size = 4000), @p1='?', @p2='?' (Size = 4000), @p3='?', @p4='?', @p5='?', @p6='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Colaborador] ([Account], [Ativo], [Password], [UserAlterDate], [UserAlterId], [UserCreateDate], [UserCreateId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [Colaborador]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-06-26T17:57:50.7903413-03:00 0HL5SQN8B3JSK [ERR] An exception occurred in the database while saving changes.
+ (3b5ca34b)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert the value NULL into column 'Id', table 'Calemas.Erp.dbo.Colaborador'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__107_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.<ExecuteAsync>d__26.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.<ExecuteAsync>d__32.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.<ExecuteAsync>d__32.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.<ExecuteAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.<ExecuteAsync>d__6`2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<SaveChangesAsync>d__54.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<SaveChangesAsync>d__52.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.DbContext.<SaveChangesAsync>d__35.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Common.Orm.UnitOfWork`1.<CommitAsync>d__5.MoveNext() in C:\Pessoal\calemas-erp\Common\Common.Orm\UnitofWork.cs:line 30
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Common.Domain.Base.ApplicationServiceBase`3.<CommitAsync>d__6.MoveNext() in C:\Pessoal\calemas-erp\Common\Common.Domain\Base\AplicationServiceBase.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Common.Domain.Base.ApplicationServiceBase`3.<Save>d__13.MoveNext() in C:\Pessoal\calemas-erp\Common\Common.Domain\Base\AplicationServiceBase.cs:line 121
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Calemas.Erp.Api.Controllers.ColaboradorController.<Post>d__5.MoveNext() in C:\Pessoal\calemas-erp\Calemas.Erp.Api\Controllers\ColaboradorController.cs:line 75
+2017-06-26T17:57:50.8138573-03:00 0HL5SQN8B3JSK [FTL] "[Calemas.Erp - Colaborador] - An error occurred while updating the entries. See the inner exception for details. - [{\"Pessoa\":{\"PessoaId\":0,\"CPF_CNPJ\":\"asd\",\"RG_IE\":\"asd\",\"Nome\":\"asd\",\"Apelido\":null,\"Email\":\"asd\",\"Telefone\":\"asd\",\"Celular\":\"asd\",\"Comercial\":null,\"DataNascimento\":null,\"EstadoCivilId\":null,\"Sexo\":null,\"Juridica\":null,\"EnderecoId\":null,\"AttributeBehavior\":null},\"ColaboradorId\":0,\"Account\":\"asd\",\"Password\":\"asd\",\"Ativo\":true,\"AttributeBehavior\":null}]" - [1] (4da76d2f)
+2017-06-26T17:57:50.8138573-03:00 0HL5SQN8B3JSK [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T17:57:50.8173604-03:00 0HL5SQN8B3JSK [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Post (Calemas.Erp.Api)" in 854.8367ms (afa2e885)
+2017-06-26T17:57:50.8188613-03:00 0HL5SQN8B3JSK [INF] Request finished in 857.2473ms 500 application/json; charset=utf-8 (15c52c40)
+2017-06-26T17:57:50.9709629-03:00 0HL5SQN8B3JSL [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T17:57:50.9709629-03:00 0HL5SQN8B3JSL [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T17:57:50.9714629-03:00 0HL5SQN8B3JSL [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T17:57:50.9714629-03:00 0HL5SQN8B3JSL [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T17:57:50.9714629-03:00 0HL5SQN8B3JSL [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.2413ms (afa2e885)
+2017-06-26T17:57:50.9719630-03:00 0HL5SQN8B3JSL [INF] Request finished in 0.9581ms 200  (15c52c40)
+2017-06-26T17:57:51.1484834-03:00 0HL5SQN8B3JSM [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T17:57:51.1494843-03:00 0HL5SQN8B3JSM [INF] Successfully validated the token. (60169667)
+2017-06-26T17:57:51.1499851-03:00 0HL5SQN8B3JSM [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T17:57:51.1504847-03:00 0HL5SQN8B3JSM [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T17:57:51.1519861-03:00 0HL5SQN8B3JSM [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Domain.Filter.ColaboradorFilter"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T17:57:51.1564888-03:00 0HL5SQN8B3JSM [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T17:57:51.1579888-03:00 0HL5SQN8B3JSM [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Account], [c].[Ativo], [c].[Password], [c].[UserAlterDate], [c].[UserAlterId], [c].[UserCreateDate], [c].[UserCreateId]
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T17:57:51.1589901-03:00 0HL5SQN8B3JSM [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T17:57:51.1589901-03:00 0HL5SQN8B3JSM [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 8.5308ms (afa2e885)
+2017-06-26T17:57:51.1589901-03:00 0HL5SQN8B3JSM [INF] Request finished in 10.5621ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:05:10.8197300-03:00 0HL5SQS43V4VU [INF] Request starting HTTP/1.1 GET http://localhost:56307/   (e5be5b71)
+2017-06-26T18:05:11.0518872-03:00 0HL5SQS43V4VU [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:05:11.8354085-03:00 0HL5SQS43V4VU [INF] Request finished in 1093.3739ms 404  (15c52c40)
+2017-06-26T18:05:13.1427824-03:00 0HL5SQS43V4VV [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:05:13.1437828-03:00 0HL5SQS43V4VV [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:05:13.4795075-03:00 0HL5SQS43V4VV [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:05:13.5000230-03:00 0HL5SQS43V4VV [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:05:13.5090271-03:00 0HL5SQS43V4VV [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 145.6772ms (afa2e885)
+2017-06-26T18:05:13.5115297-03:00 0HL5SQS43V4VV [INF] Request finished in 368.7941ms 200  (15c52c40)
+2017-06-26T18:05:16.2223404-03:00 0HL5SQS43V500 [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:05:19.3365471-03:00 0HL5SQS43V500 [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6ImJhNGQ1YjcyNjM1MDFkNmE1YjRmMDRkNDVhNDJiZWEyIiwidHlwIjoiSldUIn0.eyJuYmYiOjE0OTg1MTA2NDAsImV4cCI6MTQ5ODUxNDI0MCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo0MDAwIiwiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDAwMC9yZXNvdXJjZXMiLCJzc29jYWxlbWFzIl0sImNsaWVudF9pZCI6InNzb2NhbGVtYXMiLCJzdWIiOiIxIiwiYXV0aF90aW1lIjoxNDk4NTAxODQzLCJpZHAiOiJsb2NhbCIsIm5hbWUiOiJBZG1pbmlzdHJhZG9yIiwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20uYnIiLCJyb2xlIjoiYWRtaW4iLCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiZW1haWwiLCJjYWxlbWFzIl0sImFtciI6WyJwd2QiXX0.kI4V5uhcjB-r_e3uXRM7yYNaduTpLa6tSUDVsZO3_fjK-0z9kxA7xGNvGl6Nt9Z4-NWa9JpBCbA_XCIrRt9mbAw2yXXZ0WFn0zZz9dYa-JNm0P1XcB1sDaTkkni9iPvpjZP0OxsIq3H81WtSoI9XK9YhVoQSlwjNTMi4VjD3NmuaUPKoReTFyBCVMoOLGJoHm47lo79FgyUZlttiSdkvTIiu_jctnY60qstKKDiATsleW31HkgJ7lSc3xMKXsjAjtZFSzvob7GNu99UCZMDwPUVYhhMRYrg8jz10SIYyPdTGsioy8lFO-2NB_QWDKg-P8X8ocNRY7qzjLrEeJf31_w". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10501: Signature validation failed. Unable to match 'kid': 'ba4d5b7263501d6a5b4f04d45a42bea2', 
+token: '{"alg":"RS256","typ":"JWT","kid":"ba4d5b7263501d6a5b4f04d45a42bea2"}.{"nbf":1498510640,"exp":1498514240,"iss":"http://localhost:4000","aud":["http://localhost:4000/resources","ssocalemas"],"client_id":"ssocalemas","sub":"1","auth_time":1498501843,"idp":"local","name":"Administrador","email":"admin@email.com.br","role":"admin","scope":["openid","profile","email","calemas"],"amr":["pwd"]}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-06-26T18:05:19.3380480-03:00 0HL5SQS43V500 [INF] "Bearer" was not authenticated. Failure message: "IDX10501: Signature validation failed. Unable to match 'kid': 'ba4d5b7263501d6a5b4f04d45a42bea2', 
+token: '{\"alg\":\"RS256\",\"typ\":\"JWT\",\"kid\":\"ba4d5b7263501d6a5b4f04d45a42bea2\"}.{\"nbf\":1498510640,\"exp\":1498514240,\"iss\":\"http://localhost:4000\",\"aud\":[\"http://localhost:4000/resources\",\"ssocalemas\"],\"client_id\":\"ssocalemas\",\"sub\":\"1\",\"auth_time\":1498501843,\"idp\":\"local\",\"name\":\"Administrador\",\"email\":\"admin@email.com.br\",\"role\":\"admin\",\"scope\":[\"openid\",\"profile\",\"email\",\"calemas\"],\"amr\":[\"pwd\"]}'." (48071232)
+2017-06-26T18:05:19.3740746-03:00 0HL5SQS43V500 [INF] Authorization failed for user: null. (a4ab1676)
+2017-06-26T18:05:19.3745726-03:00 0HL5SQS43V500 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'. (8b6446cb)
+2017-06-26T18:05:19.3800765-03:00 0HL5SQS43V500 [INF] Executing ChallengeResult with authentication schemes ([]). (f3dca807)
+2017-06-26T18:05:19.4005908-03:00 0HL5SQS43V500 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2017-06-26T18:05:19.4010916-03:00 0HL5SQS43V500 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 58.4977ms (afa2e885)
+2017-06-26T18:05:19.4020925-03:00 0HL5SQS43V500 [INF] Request finished in 3179.961ms 401  (15c52c40)
+2017-06-26T18:05:35.6381432-03:00 0HL5SQS43V501 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:05:35.6386428-03:00 0HL5SQS43V501 [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:05:35.6386428-03:00 0HL5SQS43V501 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:05:35.6391436-03:00 0HL5SQS43V501 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:05:35.6391436-03:00 0HL5SQS43V501 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.3218ms (afa2e885)
+2017-06-26T18:05:35.6396445-03:00 0HL5SQS43V501 [INF] Request finished in 1.1675ms 200  (15c52c40)
+2017-06-26T18:05:35.9552950-03:00 0HL5SQS43V502 [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:05:35.9828133-03:00 0HL5SQS43V502 [INF] Successfully validated the token. (60169667)
+2017-06-26T18:05:35.9883165-03:00 0HL5SQS43V502 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:05:35.9923204-03:00 0HL5SQS43V502 [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:05:37.0145038-03:00 0HL5SQS43V502 [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Domain.Filter.ColaboradorFilter"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T18:05:37.9941575-03:00 0HL5SQS43V502 [INF] Executed DbCommand (103ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T18:05:38.1147378-03:00 0HL5SQS43V502 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Account], [c].[Ativo], [c].[Password], [c].[UserAlterDate], [c].[UserAlterId], [c].[UserCreateDate], [c].[UserCreateId]
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T18:05:38.2398212-03:00 0HL5SQS43V502 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:05:38.3123702-03:00 0HL5SQS43V502 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 2320.5994ms (afa2e885)
+2017-06-26T18:05:38.3168737-03:00 0HL5SQS43V502 [INF] Request finished in 2361.3885ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:05:47.4515023-03:00 0HL5SQS43V503 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador   (e5be5b71)
+2017-06-26T18:05:47.4515023-03:00 0HL5SQS43V503 [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:05:47.4550054-03:00 0HL5SQS43V503 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:05:47.4550054-03:00 0HL5SQS43V503 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:05:47.4555050-03:00 0HL5SQS43V503 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Post (Calemas.Erp.Api)" in 0.3083ms (afa2e885)
+2017-06-26T18:05:47.4555050-03:00 0HL5SQS43V503 [INF] Request finished in 4.1623ms 200  (15c52c40)
+2017-06-26T18:05:47.7259175-03:00 0HL5SQS43V504 [INF] Request starting HTTP/1.1 POST http://localhost:56307/api/colaborador application/json;charset=UTF-8 139 (e5be5b71)
+2017-06-26T18:05:47.7269180-03:00 0HL5SQS43V504 [INF] Successfully validated the token. (60169667)
+2017-06-26T18:05:47.7269180-03:00 0HL5SQS43V504 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:05:47.7274184-03:00 0HL5SQS43V504 [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:05:47.8049706-03:00 0HL5SQS43V504 [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Post (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Dto.ColaboradorDtoSpecialized"]) - ModelState is Invalid (ba7f4ac2)
+2017-06-26T18:05:48.1842246-03:00 0HL5SQS43V504 [INF] Executed DbCommand (51ms) [Parameters=[@__model_ColaboradorId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [_].[Id], [_].[Account], [_].[Ativo], [_].[Password], [_].[UserAlterDate], [_].[UserAlterId], [_].[UserCreateDate], [_].[UserCreateId]
+FROM [Colaborador] AS [_]
+WHERE [_].[Id] = @__model_ColaboradorId_0 (6438bdd5)
+2017-06-26T18:05:48.5467446-03:00 0HL5SQS43V504 [INF] Executed DbCommand (38ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?', @p7='?', @p8='?', @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?', @p12='?' (Size = 4000), @p13='?', @p14='?', @p15='?', @p16='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Pessoa] ([Apelido], [CPF_CNPJ], [Celular], [Comercial], [DataNascimento], [Email], [EnderecoId], [EstadoCivilId], [Juridica], [Nome], [RG_IE], [Sexo], [Telefone], [UserAlterDate], [UserAlterId], [UserCreateDate], [UserCreateId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+SELECT [Id]
+FROM [Pessoa]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-06-26T18:05:48.5697602-03:00 0HL5SQS43V504 [ERR] An exception occurred in the database while saving changes.
+ (3b5ca34b)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert the value NULL into column 'Apelido', table 'Calemas.Erp.dbo.Pessoa'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__107_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.<ExecuteAsync>d__26.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.<ExecuteAsync>d__32.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.<ExecuteAsync>d__32.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.<ExecuteAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.<ExecuteAsync>d__6`2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<SaveChangesAsync>d__54.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<SaveChangesAsync>d__52.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.DbContext.<SaveChangesAsync>d__35.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Common.Orm.UnitOfWork`1.<CommitAsync>d__5.MoveNext() in C:\Pessoal\calemas-erp\Common\Common.Orm\UnitofWork.cs:line 30
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Common.Domain.Base.ApplicationServiceBase`3.<CommitAsync>d__6.MoveNext() in C:\Pessoal\calemas-erp\Common\Common.Domain\Base\AplicationServiceBase.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Common.Domain.Base.ApplicationServiceBase`3.<Save>d__13.MoveNext() in C:\Pessoal\calemas-erp\Common\Common.Domain\Base\AplicationServiceBase.cs:line 121
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Calemas.Erp.Api.Controllers.ColaboradorController.<Post>d__5.MoveNext() in C:\Pessoal\calemas-erp\Calemas.Erp.Api\Controllers\ColaboradorController.cs:line 75
+2017-06-26T18:05:48.5992803-03:00 0HL5SQS43V504 [FTL] "[Calemas.Erp - Colaborador] - An error occurred while updating the entries. See the inner exception for details. - [{\"Pessoa\":{\"PessoaId\":0,\"CPF_CNPJ\":\"ASD\",\"RG_IE\":\"ASDA\",\"Nome\":\"ASD\",\"Apelido\":null,\"Email\":\"SDAS\",\"Telefone\":\"DASD\",\"Celular\":\"ASD\",\"Comercial\":null,\"DataNascimento\":null,\"EstadoCivilId\":null,\"Sexo\":null,\"Juridica\":null,\"EnderecoId\":null,\"AttributeBehavior\":null},\"ColaboradorId\":0,\"Account\":\"ASD\",\"Password\":\"ASD\",\"Ativo\":false,\"AttributeBehavior\":null}]" - [1] (4da76d2f)
+2017-06-26T18:05:48.6002816-03:00 0HL5SQS43V504 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:05:48.6042842-03:00 0HL5SQS43V504 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Post (Calemas.Erp.Api)" in 877.2414ms (afa2e885)
+2017-06-26T18:05:48.6062847-03:00 0HL5SQS43V504 [INF] Request finished in 880.1537ms 500 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:05:48.7578864-03:00 0HL5SQS43V505 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:05:48.7578864-03:00 0HL5SQS43V505 [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:05:48.7583868-03:00 0HL5SQS43V505 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:05:48.7583868-03:00 0HL5SQS43V505 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:05:48.7583868-03:00 0HL5SQS43V505 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.3542ms (afa2e885)
+2017-06-26T18:05:48.7588868-03:00 0HL5SQS43V505 [INF] Request finished in 1.0423ms 200  (15c52c40)
+2017-06-26T18:05:49.0725077-03:00 0HL5SQS43V506 [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:05:49.0730094-03:00 0HL5SQS43V506 [INF] Successfully validated the token. (60169667)
+2017-06-26T18:05:49.0730094-03:00 0HL5SQS43V506 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:05:49.0735094-03:00 0HL5SQS43V506 [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:05:49.0750099-03:00 0HL5SQS43V506 [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Domain.Filter.ColaboradorFilter"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T18:05:49.0795126-03:00 0HL5SQS43V506 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T18:05:49.0810139-03:00 0HL5SQS43V506 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Account], [c].[Ativo], [c].[Password], [c].[UserAlterDate], [c].[UserAlterId], [c].[UserCreateDate], [c].[UserCreateId]
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T18:05:49.0820152-03:00 0HL5SQS43V506 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:05:49.0820152-03:00 0HL5SQS43V506 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 8.6884ms (afa2e885)
+2017-06-26T18:05:49.0820152-03:00 0HL5SQS43V506 [INF] Request finished in 9.8769ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:17:46.0760149-03:00 0HL5SR356JRI5 [INF] Request starting HTTP/1.1 GET http://localhost:56307/   (e5be5b71)
+2017-06-26T18:17:46.3061699-03:00 0HL5SR356JRI5 [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:17:46.8805521-03:00 0HL5SR356JRI5 [INF] Request finished in 874.527ms 404  (15c52c40)
+2017-06-26T18:20:21.8534854-03:00 0HL5SR356JRI6 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:20:21.8549867-03:00 0HL5SR356JRI6 [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:20:22.3538198-03:00 0HL5SR356JRI6 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:20:22.3838395-03:00 0HL5SR356JRI6 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:20:22.3983497-03:00 0HL5SR356JRI6 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 155.532ms (afa2e885)
+2017-06-26T18:20:22.4018519-03:00 0HL5SR356JRI6 [INF] Request finished in 548.3521ms 200  (15c52c40)
+2017-06-26T18:20:22.5649615-03:00 0HL5SR356JRI7 [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:20:25.4954193-03:00 0HL5SR356JRI7 [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNhNzM2NWZlZTE5MDU0ZjRkOWVkMzFlYmE0NDQ3ZDQ5IiwidHlwIjoiSldUIn0.eyJuYmYiOjE0OTg1MTExMjAsImV4cCI6MTQ5ODUxNDcyMCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo0MDAwIiwiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDAwMC9yZXNvdXJjZXMiLCJzc29jYWxlbWFzIl0sImNsaWVudF9pZCI6InNzb2NhbGVtYXMiLCJzdWIiOiIxIiwiYXV0aF90aW1lIjoxNDk4NTAxODQzLCJpZHAiOiJsb2NhbCIsIm5hbWUiOiJBZG1pbmlzdHJhZG9yIiwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20uYnIiLCJyb2xlIjoiYWRtaW4iLCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiZW1haWwiLCJjYWxlbWFzIl0sImFtciI6WyJwd2QiXX0.HSzF7ZvKGxRlIWQ7vOoQ3uE6YUXhPhqG2LQHuDi108JMnVlCw3eVKykiMZjqmVUe17JslWMRQPOCT4xrPTwOsOhO4yM9pAHK2x94u5GhQ3_Ij4ROiC8WbR2_1tQExUZ8Cgq8w-7rt_2aKBvMb4-bgviZ8OHNqG6WrnzWZo6ajI0bwnYCGijwEVQ7vb7ICVshfHNPFWdB85I123kcNSdvIC7p1rmNdy26J9lZD862CY3cY-wP09SE6XvA9EO_aMNIVhnqOby0i2Uop0RRZFVpDyWQKtgHMTcRuQx_b1JctRK4E9B5Msa0TkoVGzHkwVvH17sX_kB3BSF_ZD2UtGAOHQ". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10501: Signature validation failed. Unable to match 'kid': '3a7365fee19054f4d9ed31eba4447d49', 
+token: '{"alg":"RS256","typ":"JWT","kid":"3a7365fee19054f4d9ed31eba4447d49"}.{"nbf":1498511120,"exp":1498514720,"iss":"http://localhost:4000","aud":["http://localhost:4000/resources","ssocalemas"],"client_id":"ssocalemas","sub":"1","auth_time":1498501843,"idp":"local","name":"Administrador","email":"admin@email.com.br","role":"admin","scope":["openid","profile","email","calemas"],"amr":["pwd"]}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-06-26T18:20:25.4974202-03:00 0HL5SR356JRI7 [INF] "Bearer" was not authenticated. Failure message: "IDX10501: Signature validation failed. Unable to match 'kid': '3a7365fee19054f4d9ed31eba4447d49', 
+token: '{\"alg\":\"RS256\",\"typ\":\"JWT\",\"kid\":\"3a7365fee19054f4d9ed31eba4447d49\"}.{\"nbf\":1498511120,\"exp\":1498514720,\"iss\":\"http://localhost:4000\",\"aud\":[\"http://localhost:4000/resources\",\"ssocalemas\"],\"client_id\":\"ssocalemas\",\"sub\":\"1\",\"auth_time\":1498501843,\"idp\":\"local\",\"name\":\"Administrador\",\"email\":\"admin@email.com.br\",\"role\":\"admin\",\"scope\":[\"openid\",\"profile\",\"email\",\"calemas\"],\"amr\":[\"pwd\"]}'." (48071232)
+2017-06-26T18:20:25.5294420-03:00 0HL5SR356JRI7 [INF] Authorization failed for user: null. (a4ab1676)
+2017-06-26T18:20:25.5299420-03:00 0HL5SR356JRI7 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'. (8b6446cb)
+2017-06-26T18:20:25.5354460-03:00 0HL5SR356JRI7 [INF] Executing ChallengeResult with authentication schemes ([]). (f3dca807)
+2017-06-26T18:20:25.5644648-03:00 0HL5SR356JRI7 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2017-06-26T18:20:25.5654661-03:00 0HL5SR356JRI7 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 62.1986ms (afa2e885)
+2017-06-26T18:20:25.5664665-03:00 0HL5SR356JRI7 [INF] Request finished in 3001.507ms 401  (15c52c40)
+2017-06-26T18:20:32.6131932-03:00 0HL5SR356JRI8 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:20:32.6131932-03:00 0HL5SR356JRI8 [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:20:32.6136924-03:00 0HL5SR356JRI8 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:20:32.6136924-03:00 0HL5SR356JRI8 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:20:32.6136924-03:00 0HL5SR356JRI8 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.2943ms (afa2e885)
+2017-06-26T18:20:32.6141928-03:00 0HL5SR356JRI8 [INF] Request finished in 1.0591ms 200  (15c52c40)
+2017-06-26T18:20:32.9281832-03:00 0HL5SR356JRI9 [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:20:32.9552006-03:00 0HL5SR356JRI9 [INF] Successfully validated the token. (60169667)
+2017-06-26T18:20:32.9642072-03:00 0HL5SR356JRI9 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:20:32.9687095-03:00 0HL5SR356JRI9 [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:20:34.4822207-03:00 0HL5SR356JRI9 [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Domain.Filter.ColaboradorFilter"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T18:20:35.5884603-03:00 0HL5SR356JRI9 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T18:20:35.6975338-03:00 0HL5SR356JRI9 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Account], [c].[Ativo], [c].[Password], [c].[UserAlterDate], [c].[UserAlterId], [c].[UserCreateDate], [c].[UserCreateId]
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T18:20:35.7855931-03:00 0HL5SR356JRI9 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:20:35.8696480-03:00 0HL5SR356JRI9 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 2901.3453ms (afa2e885)
+2017-06-26T18:20:35.8781542-03:00 0HL5SR356JRI9 [INF] Request finished in 2950.2198ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:20:42.8958210-03:00 0HL5SR356JRIA [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador   (e5be5b71)
+2017-06-26T18:20:42.8958210-03:00 0HL5SR356JRIA [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:20:42.8978265-03:00 0HL5SR356JRIA [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:20:42.8978265-03:00 0HL5SR356JRIA [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:20:42.8978265-03:00 0HL5SR356JRIA [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Post (Calemas.Erp.Api)" in 0.2434ms (afa2e885)
+2017-06-26T18:20:42.8983253-03:00 0HL5SR356JRIA [INF] Request finished in 2.3404ms 200  (15c52c40)
+2017-06-26T18:20:43.3482116-03:00 0HL5SR356JRIB [INF] Request starting HTTP/1.1 POST http://localhost:56307/api/colaborador application/json;charset=UTF-8 151 (e5be5b71)
+2017-06-26T18:20:43.3492120-03:00 0HL5SR356JRIB [INF] Successfully validated the token. (60169667)
+2017-06-26T18:20:43.3492120-03:00 0HL5SR356JRIB [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:20:43.3497120-03:00 0HL5SR356JRIB [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:20:43.4122548-03:00 0HL5SR356JRIB [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Post (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Dto.ColaboradorDtoSpecialized"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T18:20:43.7424065-03:00 0HL5SR356JRIB [INF] Executed DbCommand (49ms) [Parameters=[@__model_ColaboradorId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [_].[Id], [_].[Account], [_].[Ativo], [_].[Password], [_].[UserAlterDate], [_].[UserAlterId], [_].[UserCreateDate], [_].[UserCreateId]
+FROM [Colaborador] AS [_]
+WHERE [_].[Id] = @__model_ColaboradorId_0 (6438bdd5)
+2017-06-26T18:20:44.1056490-03:00 0HL5SR356JRIB [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?', @p7='?', @p8='?', @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?', @p12='?' (Size = 4000), @p13='?', @p14='?', @p15='?', @p16='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Pessoa] ([Apelido], [CPF_CNPJ], [Celular], [Comercial], [DataNascimento], [Email], [EnderecoId], [EstadoCivilId], [Juridica], [Nome], [RG_IE], [Sexo], [Telefone], [UserAlterDate], [UserAlterId], [UserCreateDate], [UserCreateId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+SELECT [Id]
+FROM [Pessoa]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-06-26T18:20:44.1281646-03:00 0HL5SR356JRIB [INF] Executed DbCommand (8ms) [Parameters=[@p17='?', @p18='?' (Size = 4000), @p19='?', @p20='?' (Size = 4000), @p21='?', @p22='?', @p23='?', @p24='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Colaborador] ([Id], [Account], [Ativo], [Password], [UserAlterDate], [UserAlterId], [UserCreateDate], [UserCreateId])
+VALUES (@p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24); (6438bdd5)
+2017-06-26T18:20:44.1381705-03:00 0HL5SR356JRIB [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:20:44.1476767-03:00 0HL5SR356JRIB [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Post (Calemas.Erp.Api)" in 797.9971ms (afa2e885)
+2017-06-26T18:20:44.1486792-03:00 0HL5SR356JRIB [INF] Request finished in 800.4656ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:20:44.3977014-03:00 0HL5SR356JRIC [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:20:44.3977014-03:00 0HL5SR356JRIC [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:20:44.3982019-03:00 0HL5SR356JRIC [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:20:44.3987023-03:00 0HL5SR356JRIC [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:20:44.3987023-03:00 0HL5SR356JRIC [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.3222ms (afa2e885)
+2017-06-26T18:20:44.3987023-03:00 0HL5SR356JRIC [INF] Request finished in 1.0624ms 200  (15c52c40)
+2017-06-26T18:20:44.6390660-03:00 0HL5SR356JRID [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:20:44.6400677-03:00 0HL5SR356JRID [INF] Successfully validated the token. (60169667)
+2017-06-26T18:20:44.6400677-03:00 0HL5SR356JRID [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:20:44.6415699-03:00 0HL5SR356JRID [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:20:44.6435691-03:00 0HL5SR356JRID [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Domain.Filter.ColaboradorFilter"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T18:20:44.6495732-03:00 0HL5SR356JRID [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T18:20:44.6505740-03:00 0HL5SR356JRID [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Account], [c].[Ativo], [c].[Password], [c].[UserAlterDate], [c].[UserAlterId], [c].[UserCreateDate], [c].[UserCreateId]
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T18:20:44.6810941-03:00 0HL5SR356JRID [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:20:44.6810941-03:00 0HL5SR356JRID [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 39.6478ms (afa2e885)
+2017-06-26T18:20:44.6815946-03:00 0HL5SR356JRID [INF] Request finished in 42.3597ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:21:02.2215201-03:00 0HL5SR356JRIE [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:21:02.2215201-03:00 0HL5SR356JRIE [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:21:02.2220201-03:00 0HL5SR356JRIE [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:21:02.2220201-03:00 0HL5SR356JRIE [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:21:02.2220201-03:00 0HL5SR356JRIE [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.2364ms (afa2e885)
+2017-06-26T18:21:02.2225202-03:00 0HL5SR356JRIE [INF] Request finished in 1.0579ms 200  (15c52c40)
+2017-06-26T18:21:02.6702709-03:00 0HL5SR356JRIF [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:21:02.6717714-03:00 0HL5SR356JRIF [INF] Successfully validated the token. (60169667)
+2017-06-26T18:21:02.6717714-03:00 0HL5SR356JRIF [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:21:02.6722718-03:00 0HL5SR356JRIF [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:21:02.6727718-03:00 0HL5SR356JRIF [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Domain.Filter.ColaboradorFilter"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T18:21:02.6792775-03:00 0HL5SR356JRIF [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T18:21:02.6802776-03:00 0HL5SR356JRIF [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Account], [c].[Ativo], [c].[Password], [c].[UserAlterDate], [c].[UserAlterId], [c].[UserCreateDate], [c].[UserCreateId]
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T18:21:02.6807776-03:00 0HL5SR356JRIF [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:21:02.6807776-03:00 0HL5SR356JRIF [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 8.6979ms (afa2e885)
+2017-06-26T18:21:02.6812776-03:00 0HL5SR356JRIF [INF] Request finished in 10.9373ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:21:37.2256870-03:00 0HL5SR5A2UCK4 [INF] Request starting HTTP/1.1 GET http://localhost:56307/   (e5be5b71)
+2017-06-26T18:21:37.4398293-03:00 0HL5SR5A2UCK4 [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:21:38.2168483-03:00 0HL5SR5A2UCK4 [INF] Request finished in 1062.2676ms 404  (15c52c40)
+2017-06-26T18:21:45.8310048-03:00 0HL5SR5A2UCK5 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:21:45.8315056-03:00 0HL5SR5A2UCK5 [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:21:46.2032544-03:00 0HL5SR5A2UCK5 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:21:46.2167633-03:00 0HL5SR5A2UCK5 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:21:46.2267704-03:00 0HL5SR5A2UCK5 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 92.8809ms (afa2e885)
+2017-06-26T18:21:46.2292718-03:00 0HL5SR5A2UCK5 [INF] Request finished in 397.9336ms 200  (15c52c40)
+2017-06-26T18:21:46.5148144-03:00 0HL5SR5A2UCK6 [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:21:48.4984239-03:00 0HL5SR5A2UCK6 [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ4OWYzNjEyNWQyNzM0YjE5MDIyMmU5MmU4MjNkOTlhIiwidHlwIjoiSldUIn0.eyJuYmYiOjE0OTg1MTIwMjYsImV4cCI6MTQ5ODUxNTYyNiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo0MDAwIiwiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDAwMC9yZXNvdXJjZXMiLCJzc29jYWxlbWFzIl0sImNsaWVudF9pZCI6InNzb2NhbGVtYXMiLCJzdWIiOiIxIiwiYXV0aF90aW1lIjoxNDk4NTAxODQzLCJpZHAiOiJsb2NhbCIsIm5hbWUiOiJBZG1pbmlzdHJhZG9yIiwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20uYnIiLCJyb2xlIjoiYWRtaW4iLCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiZW1haWwiLCJjYWxlbWFzIl0sImFtciI6WyJwd2QiXX0.XRqtARCyCt30PgWz1tBysUyxGHOW43j_YnewM7tVrkKEk4Mb-w4xwnyF8qCtuKjC7p4JnXjsdGZEpCegTQ44Gm7yY2jisLdUhzPUgKDung5ckdFUcKRHx_WiCBSa6TBI6mrcST6TmtK-8i6LHer-cxWSqfJMSBx3VQT0mqrlz1Ro7BBhVVoieBf7xPEpomBk8bElPZzBXib2LY8l1e1WC98QDgmIlvJd8_4Xt3uefffElg2Bja96GOeeVldHHLpnDubOdzIujdPXUStEa9cYS2uSSarxajixthwgLmNT1O3FPdhYyvFNLvKBa20USMB01QDGRB7nB7sMyNEAHi27Rg". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10501: Signature validation failed. Unable to match 'kid': '489f36125d2734b190222e92e823d99a', 
+token: '{"alg":"RS256","typ":"JWT","kid":"489f36125d2734b190222e92e823d99a"}.{"nbf":1498512026,"exp":1498515626,"iss":"http://localhost:4000","aud":["http://localhost:4000/resources","ssocalemas"],"client_id":"ssocalemas","sub":"1","auth_time":1498501843,"idp":"local","name":"Administrador","email":"admin@email.com.br","role":"admin","scope":["openid","profile","email","calemas"],"amr":["pwd"]}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-06-26T18:21:48.4999253-03:00 0HL5SR5A2UCK6 [INF] "Bearer" was not authenticated. Failure message: "IDX10501: Signature validation failed. Unable to match 'kid': '489f36125d2734b190222e92e823d99a', 
+token: '{\"alg\":\"RS256\",\"typ\":\"JWT\",\"kid\":\"489f36125d2734b190222e92e823d99a\"}.{\"nbf\":1498512026,\"exp\":1498515626,\"iss\":\"http://localhost:4000\",\"aud\":[\"http://localhost:4000/resources\",\"ssocalemas\"],\"client_id\":\"ssocalemas\",\"sub\":\"1\",\"auth_time\":1498501843,\"idp\":\"local\",\"name\":\"Administrador\",\"email\":\"admin@email.com.br\",\"role\":\"admin\",\"scope\":[\"openid\",\"profile\",\"email\",\"calemas\"],\"amr\":[\"pwd\"]}'." (48071232)
+2017-06-26T18:21:48.5234413-03:00 0HL5SR5A2UCK6 [INF] Authorization failed for user: null. (a4ab1676)
+2017-06-26T18:21:48.5239409-03:00 0HL5SR5A2UCK6 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'. (8b6446cb)
+2017-06-26T18:21:48.5299449-03:00 0HL5SR5A2UCK6 [INF] Executing ChallengeResult with authentication schemes ([]). (f3dca807)
+2017-06-26T18:21:48.5554635-03:00 0HL5SR5A2UCK6 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2017-06-26T18:21:48.5579636-03:00 0HL5SR5A2UCK6 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 51.9543ms (afa2e885)
+2017-06-26T18:21:48.5589641-03:00 0HL5SR5A2UCK6 [INF] Request finished in 2043.9703ms 401  (15c52c40)
+2017-06-26T18:21:55.8458976-03:00 0HL5SR5A2UCK7 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:21:55.8463911-03:00 0HL5SR5A2UCK7 [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:21:55.8463911-03:00 0HL5SR5A2UCK7 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:21:55.8468907-03:00 0HL5SR5A2UCK7 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:21:55.8468907-03:00 0HL5SR5A2UCK7 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.3029ms (afa2e885)
+2017-06-26T18:21:55.8468907-03:00 0HL5SR5A2UCK7 [INF] Request finished in 1.0328ms 200  (15c52c40)
+2017-06-26T18:21:56.2943877-03:00 0HL5SR5A2UCK8 [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:21:56.3294113-03:00 0HL5SR5A2UCK8 [INF] Successfully validated the token. (60169667)
+2017-06-26T18:21:56.3344144-03:00 0HL5SR5A2UCK8 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:21:56.3394172-03:00 0HL5SR5A2UCK8 [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:21:57.2785453-03:00 0HL5SR5A2UCK8 [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Domain.Filter.ColaboradorFilter"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T18:21:58.1861529-03:00 0HL5SR5A2UCK8 [INF] Executed DbCommand (61ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T18:21:58.2922230-03:00 0HL5SR5A2UCK8 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Account], [c].[Ativo], [c].[Password], [c].[UserAlterDate], [c].[UserAlterId], [c].[UserCreateDate], [c].[UserCreateId]
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T18:21:58.4588352-03:00 0HL5SR5A2UCK8 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:21:58.5373862-03:00 0HL5SR5A2UCK8 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 2198.9358ms (afa2e885)
+2017-06-26T18:21:58.5418893-03:00 0HL5SR5A2UCK8 [INF] Request finished in 2247.5857ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:27:38.7197690-03:00 0HL5SR8LQECMD [INF] Request starting HTTP/1.1 GET http://localhost:56307/   (e5be5b71)
+2017-06-26T18:27:38.9454189-03:00 0HL5SR8LQECMD [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:27:39.6478879-03:00 0HL5SR8LQECMD [INF] Request finished in 1019.2748ms 404  (15c52c40)
+2017-06-26T18:27:48.1505595-03:00 0HL5SR8LQECME [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:27:48.1510599-03:00 0HL5SR8LQECME [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:27:48.4827819-03:00 0HL5SR8LQECME [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:27:48.4987926-03:00 0HL5SR8LQECME [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:27:48.5087993-03:00 0HL5SR8LQECME [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 87.4307ms (afa2e885)
+2017-06-26T18:27:48.5113011-03:00 0HL5SR8LQECME [INF] Request finished in 360.8902ms 200  (15c52c40)
+2017-06-26T18:27:49.1922571-03:00 0HL5SR8LQECMF [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:27:53.1689135-03:00 0HL5SR8LQECMF [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IjQwOGFkMGFiZmM1MjkxYTQ2MmZkNjc5YjYzMjU0YzYxIiwidHlwIjoiSldUIn0.eyJuYmYiOjE0OTg1MTIxMDksImV4cCI6MTQ5ODUxNTcwOSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo0MDAwIiwiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDAwMC9yZXNvdXJjZXMiLCJzc29jYWxlbWFzIl0sImNsaWVudF9pZCI6InNzb2NhbGVtYXMiLCJzdWIiOiIxIiwiYXV0aF90aW1lIjoxNDk4NTAxODQzLCJpZHAiOiJsb2NhbCIsIm5hbWUiOiJBZG1pbmlzdHJhZG9yIiwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20uYnIiLCJyb2xlIjoiYWRtaW4iLCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiZW1haWwiLCJjYWxlbWFzIl0sImFtciI6WyJwd2QiXX0.QgqGRO3gSANjab58a35CSMAlus287S_2wPgz2R3EgGGpg1A95w0trpNM95ZrpYsfL48-ReqblOHzgimo3rykJn-yFiHhFmYy-653bb38wHjaJGnzDcu9ZMsk8HT4SDEu7LOHhsfTfXkzZxCeQIYTbWGM4F9pCyPQQ5pFexjypZKfnVB5CKbc7GTIG9tHYjf3uCh63NrOHdDR11wNxY4IuUjx03mP9N5hEXKVjvnj2OgBZcKZu4DmMlWQfJ6pi8EN3THQcVYej_ed-3AD3ieB0mMXsxbWG1L08_40Xu-mzsbrDI2jeBFROyIV0qI0KxnVMWhqIyAOM-scNjc1a7p3Qw". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10501: Signature validation failed. Unable to match 'kid': '408ad0abfc5291a462fd679b63254c61', 
+token: '{"alg":"RS256","typ":"JWT","kid":"408ad0abfc5291a462fd679b63254c61"}.{"nbf":1498512109,"exp":1498515709,"iss":"http://localhost:4000","aud":["http://localhost:4000/resources","ssocalemas"],"client_id":"ssocalemas","sub":"1","auth_time":1498501843,"idp":"local","name":"Administrador","email":"admin@email.com.br","role":"admin","scope":["openid","profile","email","calemas"],"amr":["pwd"]}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-06-26T18:27:53.1784197-03:00 0HL5SR8LQECMF [INF] "Bearer" was not authenticated. Failure message: "IDX10501: Signature validation failed. Unable to match 'kid': '408ad0abfc5291a462fd679b63254c61', 
+token: '{\"alg\":\"RS256\",\"typ\":\"JWT\",\"kid\":\"408ad0abfc5291a462fd679b63254c61\"}.{\"nbf\":1498512109,\"exp\":1498515709,\"iss\":\"http://localhost:4000\",\"aud\":[\"http://localhost:4000/resources\",\"ssocalemas\"],\"client_id\":\"ssocalemas\",\"sub\":\"1\",\"auth_time\":1498501843,\"idp\":\"local\",\"name\":\"Administrador\",\"email\":\"admin@email.com.br\",\"role\":\"admin\",\"scope\":[\"openid\",\"profile\",\"email\",\"calemas\"],\"amr\":[\"pwd\"]}'." (48071232)
+2017-06-26T18:27:53.2304541-03:00 0HL5SR8LQECMF [INF] Authorization failed for user: null. (a4ab1676)
+2017-06-26T18:27:53.2309549-03:00 0HL5SR8LQECMF [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'. (8b6446cb)
+2017-06-26T18:27:53.2374586-03:00 0HL5SR8LQECMF [INF] Executing ChallengeResult with authentication schemes ([]). (f3dca807)
+2017-06-26T18:27:53.2659781-03:00 0HL5SR8LQECMF [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2017-06-26T18:27:53.2669790-03:00 0HL5SR8LQECMF [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 77.1465ms (afa2e885)
+2017-06-26T18:27:53.2674790-03:00 0HL5SR8LQECMF [INF] Request finished in 4075.77ms 401  (15c52c40)
+2017-06-26T18:28:00.9828322-03:00 0HL5SR8LQECMG [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:28:00.9828322-03:00 0HL5SR8LQECMG [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:28:00.9833326-03:00 0HL5SR8LQECMG [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:28:00.9833326-03:00 0HL5SR8LQECMG [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:28:00.9838331-03:00 0HL5SR8LQECMG [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.2894ms (afa2e885)
+2017-06-26T18:28:00.9838331-03:00 0HL5SR8LQECMG [INF] Request finished in 0.9076ms 200  (15c52c40)
+2017-06-26T18:28:01.4377298-03:00 0HL5SR8LQECMH [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:28:01.4747548-03:00 0HL5SR8LQECMH [INF] Successfully validated the token. (60169667)
+2017-06-26T18:28:01.4852640-03:00 0HL5SR8LQECMH [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:28:01.4952686-03:00 0HL5SR8LQECMH [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:28:02.7906356-03:00 0HL5SR8LQECMH [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Domain.Filter.ColaboradorFilter"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T18:28:03.5461083-03:00 0HL5SR8LQECMH [INF] Executed DbCommand (62ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T18:28:03.7582505-03:00 0HL5SR8LQECMH [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Account], [c].[Ativo], [c].[Password], [c].[UserAlterDate], [c].[UserAlterId], [c].[UserCreateDate], [c].[UserCreateId]
+FROM [Colaborador] AS [c] (6438bdd5)
+2017-06-26T18:28:03.9698914-03:00 0HL5SR8LQECMH [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:28:04.0799650-03:00 0HL5SR8LQECMH [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 2585.9871ms (afa2e885)
+2017-06-26T18:28:04.0869699-03:00 0HL5SR8LQECMH [INF] Request finished in 2649.2207ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:29:00.4555621-03:00 0HL5SR9E5SUNE [INF] Request starting HTTP/1.1 GET http://localhost:56307/   (e5be5b71)
+2017-06-26T18:29:00.6261774-03:00 0HL5SR9E5SUNE [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:29:01.1640355-03:00 0HL5SR9E5SUNE [INF] Request finished in 761.1244ms 404  (15c52c40)
+2017-06-26T18:30:34.3308030-03:00 0HL5SRAA55RP4 [INF] Request starting HTTP/1.1 GET http://localhost:56307/   (e5be5b71)
+2017-06-26T18:30:34.4588874-03:00 0HL5SRAA55RP4 [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:30:34.9086887-03:00 0HL5SRAA55RP4 [INF] Request finished in 616.2986ms 404  (15c52c40)
+2017-06-26T18:30:43.4185724-03:00 0HL5SRAA55RP5 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:30:43.4190729-03:00 0HL5SRAA55RP5 [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:30:43.7377868-03:00 0HL5SRAA55RP5 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:30:43.7517961-03:00 0HL5SRAA55RP5 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:30:43.7618024-03:00 0HL5SRAA55RP5 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 68.9108ms (afa2e885)
+2017-06-26T18:30:43.7643042-03:00 0HL5SRAA55RP5 [INF] Request finished in 346.0228ms 200  (15c52c40)
+2017-06-26T18:30:44.0953636-03:00 0HL5SRAA55RP6 [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:30:46.2558930-03:00 0HL5SRAA55RP6 [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IjM3MmE3ZjI4ZWMyNzM0ZDRjNTA0ZDgyNmM1OWRjZTk0IiwidHlwIjoiSldUIn0.eyJuYmYiOjE0OTg1MTI0NzQsImV4cCI6MTQ5ODUxNjA3NCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo0MDAwIiwiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDAwMC9yZXNvdXJjZXMiLCJzc29jYWxlbWFzIl0sImNsaWVudF9pZCI6InNzb2NhbGVtYXMiLCJzdWIiOiIxIiwiYXV0aF90aW1lIjoxNDk4NTAxODQzLCJpZHAiOiJsb2NhbCIsIm5hbWUiOiJBZG1pbmlzdHJhZG9yIiwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20uYnIiLCJyb2xlIjoiYWRtaW4iLCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiZW1haWwiLCJjYWxlbWFzIl0sImFtciI6WyJwd2QiXX0.Anijc3Dc7_DoZAE8sCvCm56xYKSESwhZ-hAP5t5hsbctz8FkxhRUvtpDRyfsiB9F5N7sDQPnlvhjFcqnWLHdKUfw4QeVVGLR2tjtWP1i8sHpL2nMEC9Ku1YBQ0cbQE8Z7osjH_9jnlZ_mQb_II7oZUfQh4RQC6VEoaIk9g-cz9XGRsZRD3wF0X4ZNFRdFWg-Nv2c_m-nsEnnOK_N4avu8jjaA-W0Cjjsc8NXqSQGL78L2HIop0LZfQ7FB8te1cAApZlDKlSY2YEPmrevfniH1pQ-zqdPIpM_wiTugV67_8UpGHQCfRnklmqOjYCwcRtlhnsVhDJHYRzkO6LYC_Wiug". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10501: Signature validation failed. Unable to match 'kid': '372a7f28ec2734d4c504d826c59dce94', 
+token: '{"alg":"RS256","typ":"JWT","kid":"372a7f28ec2734d4c504d826c59dce94"}.{"nbf":1498512474,"exp":1498516074,"iss":"http://localhost:4000","aud":["http://localhost:4000/resources","ssocalemas"],"client_id":"ssocalemas","sub":"1","auth_time":1498501843,"idp":"local","name":"Administrador","email":"admin@email.com.br","role":"admin","scope":["openid","profile","email","calemas"],"amr":["pwd"]}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-06-26T18:30:46.2578948-03:00 0HL5SRAA55RP6 [INF] "Bearer" was not authenticated. Failure message: "IDX10501: Signature validation failed. Unable to match 'kid': '372a7f28ec2734d4c504d826c59dce94', 
+token: '{\"alg\":\"RS256\",\"typ\":\"JWT\",\"kid\":\"372a7f28ec2734d4c504d826c59dce94\"}.{\"nbf\":1498512474,\"exp\":1498516074,\"iss\":\"http://localhost:4000\",\"aud\":[\"http://localhost:4000/resources\",\"ssocalemas\"],\"client_id\":\"ssocalemas\",\"sub\":\"1\",\"auth_time\":1498501843,\"idp\":\"local\",\"name\":\"Administrador\",\"email\":\"admin@email.com.br\",\"role\":\"admin\",\"scope\":[\"openid\",\"profile\",\"email\",\"calemas\"],\"amr\":[\"pwd\"]}'." (48071232)
+2017-06-26T18:30:46.2839109-03:00 0HL5SRAA55RP6 [INF] Authorization failed for user: null. (a4ab1676)
+2017-06-26T18:30:46.2839109-03:00 0HL5SRAA55RP6 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'. (8b6446cb)
+2017-06-26T18:30:46.2899150-03:00 0HL5SRAA55RP6 [INF] Executing ChallengeResult with authentication schemes ([]). (f3dca807)
+2017-06-26T18:30:46.3174345-03:00 0HL5SRAA55RP6 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2017-06-26T18:30:46.3184345-03:00 0HL5SRAA55RP6 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 55.5255ms (afa2e885)
+2017-06-26T18:30:46.3194346-03:00 0HL5SRAA55RP6 [INF] Request finished in 2223.9465ms 401  (15c52c40)
+2017-06-26T18:30:59.8324929-03:00 0HL5SRAA55RP7 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:30:59.8324929-03:00 0HL5SRAA55RP7 [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:30:59.8329930-03:00 0HL5SRAA55RP7 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:30:59.8329930-03:00 0HL5SRAA55RP7 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:30:59.8329930-03:00 0HL5SRAA55RP7 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.2656ms (afa2e885)
+2017-06-26T18:30:59.8329930-03:00 0HL5SRAA55RP7 [INF] Request finished in 0.8855ms 200  (15c52c40)
+2017-06-26T18:31:00.2721866-03:00 0HL5SRAA55RP8 [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:31:00.3097099-03:00 0HL5SRAA55RP8 [INF] Successfully validated the token. (60169667)
+2017-06-26T18:31:00.3162144-03:00 0HL5SRAA55RP8 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:31:00.3247198-03:00 0HL5SRAA55RP8 [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:31:01.3609130-03:00 0HL5SRAA55RP8 [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Domain.Filter.ColaboradorFilter"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T18:31:02.4481388-03:00 0HL5SRAA55RP8 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Colaborador] AS [_] (6438bdd5)
+2017-06-26T18:31:02.6222552-03:00 0HL5SRAA55RP8 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [_].[Id], [_].[Account], [_].[Ativo], [_].[Password], [_].[UserAlterDate], [_].[UserAlterId], [_].[UserCreateDate], [_].[UserCreateId], [p].[Id], [p].[Apelido], [p].[CPF_CNPJ], [p].[Celular], [p].[Comercial], [p].[DataNascimento], [p].[Email], [p].[EnderecoId], [p].[EstadoCivilId], [p].[Juridica], [p].[Nome], [p].[RG_IE], [p].[Sexo], [p].[Telefone], [p].[UserAlterDate], [p].[UserAlterId], [p].[UserCreateDate], [p].[UserCreateId]
+FROM [Colaborador] AS [_]
+INNER JOIN [Pessoa] AS [p] ON [_].[Id] = [p].[Id] (6438bdd5)
+2017-06-26T18:31:02.8954376-03:00 0HL5SRAA55RP8 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:31:02.9970074-03:00 0HL5SRAA55RP8 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 2673.5841ms (afa2e885)
+2017-06-26T18:31:03.0075149-03:00 0HL5SRAA55RP8 [INF] Request finished in 2735.2482ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:31:41.6980552-03:00  [FTL] Application startup exception (6c57a5ba)
+System.InvalidOperationException: Unable to find the required services. Please add all the required services by calling 'IServiceCollection.AddMvc' inside the call to 'ConfigureServices(...)' in the application startup code.
+   at Microsoft.AspNetCore.Builder.MvcApplicationBuilderExtensions.UseMvc(IApplicationBuilder app, Action`1 configureRoutes)
+   at Calemas.Erp.Api.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, IOptions`1 configSettingsBase) in C:\Pessoal\calemas-erp\Calemas.Erp.Api\Startup.cs:line 83
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2017-06-26T18:31:42.3059622-03:00 0HL5SRAUDD5FL [INF] Request starting HTTP/1.1 GET http://localhost:56307/   (e5be5b71)
+2017-06-26T18:31:42.5556302-03:00 0HL5SRAUDD5FL [INF] Request finished in 296.5518ms 500 text/html; charset=utf-8 (15c52c40)
+2017-06-26T18:31:43.1280111-03:00 0HL5SRAUDD5FM [INF] Request starting HTTP/1.1 GET http://localhost:56307/favicon.ico   (e5be5b71)
+2017-06-26T18:31:43.1330142-03:00 0HL5SRAUDD5FM [INF] Request finished in 5.4666ms 500 text/html; charset=utf-8 (15c52c40)
+2017-06-26T18:31:53.2596116-03:00 0HL5SRAUDD5FN [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:31:53.2641143-03:00 0HL5SRAUDD5FN [INF] Request finished in 4.6024ms 500 text/html; charset=utf-8 (15c52c40)
+2017-06-26T18:32:24.9358334-03:00 0HL5SRBB40EIP [INF] Request starting HTTP/1.1 GET http://localhost:56307/   (e5be5b71)
+2017-06-26T18:32:25.1744938-03:00 0HL5SRBB40EIP [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:32:26.2772304-03:00 0HL5SRBB40EIP [INF] Request finished in 1411.4819ms 404  (15c52c40)
+2017-06-26T18:32:34.2135205-03:00 0HL5SRBB40EIQ [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:32:34.2140210-03:00 0HL5SRBB40EIQ [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:32:34.5727604-03:00 0HL5SRBB40EIQ [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:32:34.5837684-03:00 0HL5SRBB40EIQ [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:32:34.5962764-03:00 0HL5SRBB40EIQ [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 102.7891ms (afa2e885)
+2017-06-26T18:32:34.5997782-03:00 0HL5SRBB40EIQ [INF] Request finished in 386.5754ms 200  (15c52c40)
+2017-06-26T18:32:34.8824673-03:00 0HL5SRBB40EIR [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:32:37.1449791-03:00 0HL5SRBB40EIR [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6ImJkZTBmYjM4OTUwODQ3MjZmODYyZWJhOWI4MTdiZGQyIiwidHlwIjoiSldUIn0.eyJuYmYiOjE0OTg1MTI2NDcsImV4cCI6MTQ5ODUxNjI0NywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo0MDAwIiwiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDAwMC9yZXNvdXJjZXMiLCJzc29jYWxlbWFzIl0sImNsaWVudF9pZCI6InNzb2NhbGVtYXMiLCJzdWIiOiIxIiwiYXV0aF90aW1lIjoxNDk4NTAxODQzLCJpZHAiOiJsb2NhbCIsIm5hbWUiOiJBZG1pbmlzdHJhZG9yIiwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20uYnIiLCJyb2xlIjoiYWRtaW4iLCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiZW1haWwiLCJjYWxlbWFzIl0sImFtciI6WyJwd2QiXX0.BlG2wGXYLLaWIFs7JvfdLN8qeX8USBKnfvIeCyU8bGWfpQVdyBDIw5-4X0RF6LfbPCpoTn3C8OKMvHvdvftF4qZDqrL-ukKxd6WAUPUpzvbfYFjQDGR9QnrV7hHbR9QzZ5drvRkOJ6KC8GtWSEGY0lVoEDEAJJhgWCyFk-4fhJmA2547wDGY_XSJR1Mm1ZiMhr9TKlScTn_a0GtZEnAu2-cwwfLZeejOye2jrtccPld_6FES2sb4sTYlRNbzVHSbEpyvg4n_J_l3eaKVYe9adzJ5CLRq7uFi4bT_qz8vDtqFszbpOu-VP26zEWzPACM61klLTsTgHXd_LneDOqkviw". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10501: Signature validation failed. Unable to match 'kid': 'bde0fb3895084726f862eba9b817bdd2', 
+token: '{"alg":"RS256","typ":"JWT","kid":"bde0fb3895084726f862eba9b817bdd2"}.{"nbf":1498512647,"exp":1498516247,"iss":"http://localhost:4000","aud":["http://localhost:4000/resources","ssocalemas"],"client_id":"ssocalemas","sub":"1","auth_time":1498501843,"idp":"local","name":"Administrador","email":"admin@email.com.br","role":"admin","scope":["openid","profile","email","calemas"],"amr":["pwd"]}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-06-26T18:32:37.1469805-03:00 0HL5SRBB40EIR [INF] "Bearer" was not authenticated. Failure message: "IDX10501: Signature validation failed. Unable to match 'kid': 'bde0fb3895084726f862eba9b817bdd2', 
+token: '{\"alg\":\"RS256\",\"typ\":\"JWT\",\"kid\":\"bde0fb3895084726f862eba9b817bdd2\"}.{\"nbf\":1498512647,\"exp\":1498516247,\"iss\":\"http://localhost:4000\",\"aud\":[\"http://localhost:4000/resources\",\"ssocalemas\"],\"client_id\":\"ssocalemas\",\"sub\":\"1\",\"auth_time\":1498501843,\"idp\":\"local\",\"name\":\"Administrador\",\"email\":\"admin@email.com.br\",\"role\":\"admin\",\"scope\":[\"openid\",\"profile\",\"email\",\"calemas\"],\"amr\":[\"pwd\"]}'." (48071232)
+2017-06-26T18:32:37.1785018-03:00 0HL5SRBB40EIR [INF] Authorization failed for user: null. (a4ab1676)
+2017-06-26T18:32:37.1785018-03:00 0HL5SRBB40EIR [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'. (8b6446cb)
+2017-06-26T18:32:37.1835050-03:00 0HL5SRBB40EIR [INF] Executing ChallengeResult with authentication schemes ([]). (f3dca807)
+2017-06-26T18:32:37.2070218-03:00 0HL5SRBB40EIR [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2017-06-26T18:32:37.2080223-03:00 0HL5SRBB40EIR [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 54.8608ms (afa2e885)
+2017-06-26T18:32:37.2085227-03:00 0HL5SRBB40EIR [INF] Request finished in 2326.5004ms 401  (15c52c40)
+2017-06-26T18:32:45.3909823-03:00 0HL5SRBB40EIS [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:32:45.3914807-03:00 0HL5SRBB40EIS [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:32:45.3919803-03:00 0HL5SRBB40EIS [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:32:45.3919803-03:00 0HL5SRBB40EIS [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:32:45.3919803-03:00 0HL5SRBB40EIS [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.3522ms (afa2e885)
+2017-06-26T18:32:45.3924803-03:00 0HL5SRBB40EIS [INF] Request finished in 1.7045ms 200  (15c52c40)
+2017-06-26T18:32:45.8235208-03:00 0HL5SRBB40EIT [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:32:45.8595445-03:00 0HL5SRBB40EIT [INF] Successfully validated the token. (60169667)
+2017-06-26T18:32:45.8655485-03:00 0HL5SRBB40EIT [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:32:45.8745555-03:00 0HL5SRBB40EIT [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:32:46.9777942-03:00 0HL5SRBB40EIT [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Domain.Filter.ColaboradorFilter"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T18:32:47.9889680-03:00 0HL5SRBB40EIT [INF] Executed DbCommand (161ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Colaborador] AS [_] (6438bdd5)
+2017-06-26T18:32:48.2206223-03:00 0HL5SRBB40EIT [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [_].[Id], [_].[Account], [_].[Ativo], [_].[Password], [_].[UserAlterDate], [_].[UserAlterId], [_].[UserCreateDate], [_].[UserCreateId], [p].[Id], [p].[Apelido], [p].[CPF_CNPJ], [p].[Celular], [p].[Comercial], [p].[DataNascimento], [p].[Email], [p].[EnderecoId], [p].[EstadoCivilId], [p].[Juridica], [p].[Nome], [p].[RG_IE], [p].[Sexo], [p].[Telefone], [p].[UserAlterDate], [p].[UserAlterId], [p].[UserCreateDate], [p].[UserCreateId]
+FROM [Colaborador] AS [_]
+INNER JOIN [Pessoa] AS [p] ON [_].[Id] = [p].[Id] (6438bdd5)
+2017-06-26T18:32:48.4908041-03:00 0HL5SRBB40EIT [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:32:48.6093830-03:00 0HL5SRBB40EIT [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 2736.7438ms (afa2e885)
+2017-06-26T18:32:48.6153866-03:00 0HL5SRBB40EIT [INF] Request finished in 2792.2262ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:34:27.9175348-03:00 0HL5SRBB40EIU [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:34:27.9180348-03:00 0HL5SRBB40EIU [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:34:27.9180348-03:00 0HL5SRBB40EIU [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:34:27.9185353-03:00 0HL5SRBB40EIU [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:34:27.9185353-03:00 0HL5SRBB40EIU [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.5094ms (afa2e885)
+2017-06-26T18:34:27.9190357-03:00 0HL5SRBB40EIU [INF] Request finished in 1.3416ms 200  (15c52c40)
+2017-06-26T18:34:28.3609516-03:00 0HL5SRBB40EIV [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:34:28.3619504-03:00 0HL5SRBB40EIV [INF] Successfully validated the token. (60169667)
+2017-06-26T18:34:28.3619504-03:00 0HL5SRBB40EIV [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:34:28.3624508-03:00 0HL5SRBB40EIV [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:34:28.3654518-03:00 0HL5SRBB40EIV [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Domain.Filter.ColaboradorFilter"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T18:34:28.4024767-03:00 0HL5SRBB40EIV [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Colaborador] AS [_] (6438bdd5)
+2017-06-26T18:34:28.4079807-03:00 0HL5SRBB40EIV [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [_].[Id], [_].[Account], [_].[Ativo], [_].[Password], [_].[UserAlterDate], [_].[UserAlterId], [_].[UserCreateDate], [_].[UserCreateId], [p].[Id], [p].[Apelido], [p].[CPF_CNPJ], [p].[Celular], [p].[Comercial], [p].[DataNascimento], [p].[Email], [p].[EnderecoId], [p].[EstadoCivilId], [p].[Juridica], [p].[Nome], [p].[RG_IE], [p].[Sexo], [p].[Telefone], [p].[UserAlterDate], [p].[UserAlterId], [p].[UserCreateDate], [p].[UserCreateId]
+FROM [Colaborador] AS [_]
+INNER JOIN [Pessoa] AS [p] ON [_].[Id] = [p].[Id] (6438bdd5)
+2017-06-26T18:34:28.4104833-03:00 0HL5SRBB40EIV [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:34:28.4109829-03:00 0HL5SRBB40EIV [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 48.5042ms (afa2e885)
+2017-06-26T18:34:28.4109829-03:00 0HL5SRBB40EIV [INF] Request finished in 50.1019ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:34:37.9465987-03:00 0HL5SRBB40EJ0 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:34:37.9470979-03:00 0HL5SRBB40EJ0 [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:34:37.9470979-03:00 0HL5SRBB40EJ0 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:34:37.9470979-03:00 0HL5SRBB40EJ0 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:34:37.9475984-03:00 0HL5SRBB40EJ0 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.2278ms (afa2e885)
+2017-06-26T18:34:37.9475984-03:00 0HL5SRBB40EJ0 [INF] Request finished in 0.9253ms 200  (15c52c40)
+2017-06-26T18:34:38.1875799-03:00 0HL5SRBB40EJ1 [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:34:38.1885824-03:00 0HL5SRBB40EJ1 [INF] Successfully validated the token. (60169667)
+2017-06-26T18:34:38.1890812-03:00 0HL5SRBB40EJ1 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:34:38.1895804-03:00 0HL5SRBB40EJ1 [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:34:38.1900808-03:00 0HL5SRBB40EJ1 [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Domain.Filter.ColaboradorFilter"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T18:34:38.1915863-03:00 0HL5SRBB40EJ1 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Colaborador] AS [_] (6438bdd5)
+2017-06-26T18:34:38.1925830-03:00 0HL5SRBB40EJ1 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [_].[Id], [_].[Account], [_].[Ativo], [_].[Password], [_].[UserAlterDate], [_].[UserAlterId], [_].[UserCreateDate], [_].[UserCreateId], [p].[Id], [p].[Apelido], [p].[CPF_CNPJ], [p].[Celular], [p].[Comercial], [p].[DataNascimento], [p].[Email], [p].[EnderecoId], [p].[EstadoCivilId], [p].[Juridica], [p].[Nome], [p].[RG_IE], [p].[Sexo], [p].[Telefone], [p].[UserAlterDate], [p].[UserAlterId], [p].[UserCreateDate], [p].[UserCreateId]
+FROM [Colaborador] AS [_]
+INNER JOIN [Pessoa] AS [p] ON [_].[Id] = [p].[Id] (6438bdd5)
+2017-06-26T18:34:38.1930831-03:00 0HL5SRBB40EJ1 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:34:38.1935835-03:00 0HL5SRBB40EJ1 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 3.8487ms (afa2e885)
+2017-06-26T18:34:38.1935835-03:00 0HL5SRBB40EJ1 [INF] Request finished in 6.2544ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:37:16.3584009-03:00 0HL5SRBB40EJ2 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:37:16.3589018-03:00 0HL5SRBB40EJ2 [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:37:16.3589018-03:00 0HL5SRBB40EJ2 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:37:16.3589018-03:00 0HL5SRBB40EJ2 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:37:16.3594018-03:00 0HL5SRBB40EJ2 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.2315ms (afa2e885)
+2017-06-26T18:37:16.3594018-03:00 0HL5SRBB40EJ2 [INF] Request finished in 0.9631ms 200  (15c52c40)
+2017-06-26T18:37:16.7974139-03:00 0HL5SRBB40EJ3 [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:37:16.7984144-03:00 0HL5SRBB40EJ3 [INF] Successfully validated the token. (60169667)
+2017-06-26T18:37:16.7984144-03:00 0HL5SRBB40EJ3 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:37:16.7989148-03:00 0HL5SRBB40EJ3 [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:37:16.7994148-03:00 0HL5SRBB40EJ3 [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Domain.Filter.ColaboradorFilter"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T18:37:16.8014158-03:00 0HL5SRBB40EJ3 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Colaborador] AS [_] (6438bdd5)
+2017-06-26T18:37:16.8054184-03:00 0HL5SRBB40EJ3 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [_].[Id], [_].[Account], [_].[Ativo], [_].[Password], [_].[UserAlterDate], [_].[UserAlterId], [_].[UserCreateDate], [_].[UserCreateId], [p].[Id], [p].[Apelido], [p].[CPF_CNPJ], [p].[Celular], [p].[Comercial], [p].[DataNascimento], [p].[Email], [p].[EnderecoId], [p].[EstadoCivilId], [p].[Juridica], [p].[Nome], [p].[RG_IE], [p].[Sexo], [p].[Telefone], [p].[UserAlterDate], [p].[UserAlterId], [p].[UserCreateDate], [p].[UserCreateId]
+FROM [Colaborador] AS [_]
+INNER JOIN [Pessoa] AS [p] ON [_].[Id] = [p].[Id] (6438bdd5)
+2017-06-26T18:37:16.8054184-03:00 0HL5SRBB40EJ3 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:37:16.8059189-03:00 0HL5SRBB40EJ3 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 6.9199ms (afa2e885)
+2017-06-26T18:37:16.8059189-03:00 0HL5SRBB40EJ3 [INF] Request finished in 8.3497ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:41:26.4447606-03:00 0HL5SRBB40EJ4 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador   (e5be5b71)
+2017-06-26T18:41:26.4447606-03:00 0HL5SRBB40EJ4 [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:41:26.4467603-03:00 0HL5SRBB40EJ4 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:41:26.4467603-03:00 0HL5SRBB40EJ4 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:41:26.4467603-03:00 0HL5SRBB40EJ4 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Post (Calemas.Erp.Api)" in 0.2943ms (afa2e885)
+2017-06-26T18:41:26.4472607-03:00 0HL5SRBB40EJ4 [INF] Request finished in 2.7526ms 200  (15c52c40)
+2017-06-26T18:41:26.9203354-03:00 0HL5SRBB40EJ5 [INF] Request starting HTTP/1.1 POST http://localhost:56307/api/colaborador application/json;charset=UTF-8 171 (e5be5b71)
+2017-06-26T18:41:26.9213363-03:00 0HL5SRBB40EJ5 [INF] Successfully validated the token. (60169667)
+2017-06-26T18:41:26.9213363-03:00 0HL5SRBB40EJ5 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:41:26.9218363-03:00 0HL5SRBB40EJ5 [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:41:26.9903835-03:00 0HL5SRBB40EJ5 [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Post (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Dto.ColaboradorDtoSpecialized"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T18:41:27.2795757-03:00 0HL5SRBB40EJ5 [INF] Executed DbCommand (82ms) [Parameters=[@__model_ColaboradorId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [_].[Id], [_].[Account], [_].[Ativo], [_].[Password], [_].[UserAlterDate], [_].[UserAlterId], [_].[UserCreateDate], [_].[UserCreateId], [p].[Id], [p].[Apelido], [p].[CPF_CNPJ], [p].[Celular], [p].[Comercial], [p].[DataNascimento], [p].[Email], [p].[EnderecoId], [p].[EstadoCivilId], [p].[Juridica], [p].[Nome], [p].[RG_IE], [p].[Sexo], [p].[Telefone], [p].[UserAlterDate], [p].[UserAlterId], [p].[UserCreateDate], [p].[UserCreateId]
+FROM [Colaborador] AS [_]
+INNER JOIN [Pessoa] AS [p] ON [_].[Id] = [p].[Id]
+WHERE [_].[Id] = @__model_ColaboradorId_0 (6438bdd5)
+2017-06-26T18:41:27.6548267-03:00 0HL5SRBB40EJ5 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?', @p7='?', @p8='?', @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?', @p12='?' (Size = 4000), @p13='?', @p14='?', @p15='?', @p16='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Pessoa] ([Apelido], [CPF_CNPJ], [Celular], [Comercial], [DataNascimento], [Email], [EnderecoId], [EstadoCivilId], [Juridica], [Nome], [RG_IE], [Sexo], [Telefone], [UserAlterDate], [UserAlterId], [UserCreateDate], [UserCreateId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+SELECT [Id]
+FROM [Pessoa]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-06-26T18:41:27.6723383-03:00 0HL5SRBB40EJ5 [INF] Executed DbCommand (2ms) [Parameters=[@p17='?', @p18='?' (Size = 4000), @p19='?', @p20='?' (Size = 4000), @p21='?', @p22='?', @p23='?', @p24='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Colaborador] ([Id], [Account], [Ativo], [Password], [UserAlterDate], [UserAlterId], [UserCreateDate], [UserCreateId])
+VALUES (@p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24); (6438bdd5)
+2017-06-26T18:41:27.6843468-03:00 0HL5SRBB40EJ5 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:41:27.6928521-03:00 0HL5SRBB40EJ5 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Post (Calemas.Erp.Api)" in 771.0404ms (afa2e885)
+2017-06-26T18:41:27.6938530-03:00 0HL5SRBB40EJ5 [INF] Request finished in 773.474ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:41:27.9119988-03:00 0HL5SRBB40EJ6 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:41:27.9124992-03:00 0HL5SRBB40EJ6 [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:41:27.9129997-03:00 0HL5SRBB40EJ6 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:41:27.9129997-03:00 0HL5SRBB40EJ6 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:41:27.9129997-03:00 0HL5SRBB40EJ6 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.2693ms (afa2e885)
+2017-06-26T18:41:27.9129997-03:00 0HL5SRBB40EJ6 [INF] Request finished in 1.1531ms 200  (15c52c40)
+2017-06-26T18:41:28.3512971-03:00 0HL5SRBB40EJ7 [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:41:28.3522980-03:00 0HL5SRBB40EJ7 [INF] Successfully validated the token. (60169667)
+2017-06-26T18:41:28.3522980-03:00 0HL5SRBB40EJ7 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:41:28.3527980-03:00 0HL5SRBB40EJ7 [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:41:28.3532989-03:00 0HL5SRBB40EJ7 [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Domain.Filter.ColaboradorFilter"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T18:41:28.3553002-03:00 0HL5SRBB40EJ7 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Colaborador] AS [_] (6438bdd5)
+2017-06-26T18:41:28.3603033-03:00 0HL5SRBB40EJ7 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [_].[Id], [_].[Account], [_].[Ativo], [_].[Password], [_].[UserAlterDate], [_].[UserAlterId], [_].[UserCreateDate], [_].[UserCreateId], [p].[Id], [p].[Apelido], [p].[CPF_CNPJ], [p].[Celular], [p].[Comercial], [p].[DataNascimento], [p].[Email], [p].[EnderecoId], [p].[EstadoCivilId], [p].[Juridica], [p].[Nome], [p].[RG_IE], [p].[Sexo], [p].[Telefone], [p].[UserAlterDate], [p].[UserAlterId], [p].[UserCreateDate], [p].[UserCreateId]
+FROM [Colaborador] AS [_]
+INNER JOIN [Pessoa] AS [p] ON [_].[Id] = [p].[Id] (6438bdd5)
+2017-06-26T18:41:28.3608038-03:00 0HL5SRBB40EJ7 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:41:28.3613050-03:00 0HL5SRBB40EJ7 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 8.6429ms (afa2e885)
+2017-06-26T18:41:28.3618050-03:00 0HL5SRBB40EJ7 [INF] Request finished in 10.519ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:41:58.1080502-03:00 0HL5SRBB40EJ8 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador   (e5be5b71)
+2017-06-26T18:41:58.1085511-03:00 0HL5SRBB40EJ8 [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:41:58.1085511-03:00 0HL5SRBB40EJ8 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:41:58.1085511-03:00 0HL5SRBB40EJ8 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:41:58.1090511-03:00 0HL5SRBB40EJ8 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Post (Calemas.Erp.Api)" in 0.2257ms (afa2e885)
+2017-06-26T18:41:58.1090511-03:00 0HL5SRBB40EJ8 [INF] Request finished in 0.9577ms 200  (15c52c40)
+2017-06-26T18:41:58.5534601-03:00 0HL5SRBB40EJ9 [INF] Request starting HTTP/1.1 POST http://localhost:56307/api/colaborador application/json;charset=UTF-8 227 (e5be5b71)
+2017-06-26T18:41:58.5539605-03:00 0HL5SRBB40EJ9 [INF] Successfully validated the token. (60169667)
+2017-06-26T18:41:58.5544614-03:00 0HL5SRBB40EJ9 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:41:58.5544614-03:00 0HL5SRBB40EJ9 [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:41:58.5559619-03:00 0HL5SRBB40EJ9 [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Post (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Dto.ColaboradorDtoSpecialized"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T18:41:58.5604650-03:00 0HL5SRBB40EJ9 [INF] Executed DbCommand (1ms) [Parameters=[@__model_ColaboradorId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [_].[Id], [_].[Account], [_].[Ativo], [_].[Password], [_].[UserAlterDate], [_].[UserAlterId], [_].[UserCreateDate], [_].[UserCreateId], [p].[Id], [p].[Apelido], [p].[CPF_CNPJ], [p].[Celular], [p].[Comercial], [p].[DataNascimento], [p].[Email], [p].[EnderecoId], [p].[EstadoCivilId], [p].[Juridica], [p].[Nome], [p].[RG_IE], [p].[Sexo], [p].[Telefone], [p].[UserAlterDate], [p].[UserAlterId], [p].[UserCreateDate], [p].[UserCreateId]
+FROM [Colaborador] AS [_]
+INNER JOIN [Pessoa] AS [p] ON [_].[Id] = [p].[Id]
+WHERE [_].[Id] = @__model_ColaboradorId_0 (6438bdd5)
+2017-06-26T18:41:58.5659690-03:00 0HL5SRBB40EJ9 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?', @p7='?', @p8='?', @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?', @p12='?' (Size = 4000), @p13='?', @p14='?', @p15='?', @p16='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Pessoa] ([Apelido], [CPF_CNPJ], [Celular], [Comercial], [DataNascimento], [Email], [EnderecoId], [EstadoCivilId], [Juridica], [Nome], [RG_IE], [Sexo], [Telefone], [UserAlterDate], [UserAlterId], [UserCreateDate], [UserCreateId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+SELECT [Id]
+FROM [Pessoa]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-06-26T18:41:58.5689708-03:00 0HL5SRBB40EJ9 [INF] Executed DbCommand (2ms) [Parameters=[@p17='?', @p18='?' (Size = 4000), @p19='?', @p20='?' (Size = 4000), @p21='?', @p22='?', @p23='?', @p24='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Colaborador] ([Id], [Account], [Ativo], [Password], [UserAlterDate], [UserAlterId], [UserCreateDate], [UserCreateId])
+VALUES (@p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24); (6438bdd5)
+2017-06-26T18:41:58.5714721-03:00 0HL5SRBB40EJ9 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:41:58.5714721-03:00 0HL5SRBB40EJ9 [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Post (Calemas.Erp.Api)" in 16.9356ms (afa2e885)
+2017-06-26T18:41:58.5719726-03:00 0HL5SRBB40EJ9 [INF] Request finished in 18.5305ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:41:58.7975465-03:00 0HL5SRBB40EJA [INF] Request starting HTTP/1.1 OPTIONS http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:41:58.7980461-03:00 0HL5SRBB40EJA [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:41:58.7980461-03:00 0HL5SRBB40EJA [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter"'. (8b6446cb)
+2017-06-26T18:41:58.7985462-03:00 0HL5SRBB40EJA [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-06-26T18:41:58.7985462-03:00 0HL5SRBB40EJA [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 0.2077ms (afa2e885)
+2017-06-26T18:41:58.7985462-03:00 0HL5SRBB40EJA [INF] Request finished in 0.821ms 200  (15c52c40)
+2017-06-26T18:41:59.2600287-03:00 0HL5SRBB40EJB [INF] Request starting HTTP/1.1 GET http://localhost:56307/api/colaborador/?pageSize=10&pageIndex=1&isPaginate=true&queryOptimizerBehavior=   (e5be5b71)
+2017-06-26T18:41:59.2605308-03:00 0HL5SRBB40EJB [INF] Successfully validated the token. (60169667)
+2017-06-26T18:41:59.2610284-03:00 0HL5SRBB40EJB [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-26T18:41:59.2610284-03:00 0HL5SRBB40EJB [INF] Authorization was successful for user: "Administrador". (d7eb274a)
+2017-06-26T18:41:59.2615296-03:00 0HL5SRBB40EJB [INF] Executing action method "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" with arguments (["Calemas.Erp.Domain.Filter.ColaboradorFilter"]) - ModelState is Valid (ba7f4ac2)
+2017-06-26T18:41:59.2625313-03:00 0HL5SRBB40EJB [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Colaborador] AS [_] (6438bdd5)
+2017-06-26T18:41:59.2630309-03:00 0HL5SRBB40EJB [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [_].[Id], [_].[Account], [_].[Ativo], [_].[Password], [_].[UserAlterDate], [_].[UserAlterId], [_].[UserCreateDate], [_].[UserCreateId], [p].[Id], [p].[Apelido], [p].[CPF_CNPJ], [p].[Celular], [p].[Comercial], [p].[DataNascimento], [p].[Email], [p].[EnderecoId], [p].[EstadoCivilId], [p].[Juridica], [p].[Nome], [p].[RG_IE], [p].[Sexo], [p].[Telefone], [p].[UserAlterDate], [p].[UserAlterId], [p].[UserCreateDate], [p].[UserCreateId]
+FROM [Colaborador] AS [_]
+INNER JOIN [Pessoa] AS [p] ON [_].[Id] = [p].[Id] (6438bdd5)
+2017-06-26T18:41:59.2635310-03:00 0HL5SRBB40EJB [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-26T18:41:59.2655327-03:00 0HL5SRBB40EJB [INF] Executed action "Calemas.Erp.Api.Controllers.ColaboradorController.Get (Calemas.Erp.Api)" in 4.3643ms (afa2e885)
+2017-06-26T18:41:59.2655327-03:00 0HL5SRBB40EJB [INF] Request finished in 5.6759ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-26T18:43:46.9737726-03:00 0HL5SRHMCCR4F [INF] Request starting HTTP/1.1 GET http://localhost:56307/   (e5be5b71)
+2017-06-26T18:43:47.1498907-03:00 0HL5SRHMCCR4F [INF] "Bearer" was not authenticated. Failure message: "No token found." (48071232)
+2017-06-26T18:43:47.6727398-03:00 0HL5SRHMCCR4F [INF] Request finished in 744.7036ms 404  (15c52c40)

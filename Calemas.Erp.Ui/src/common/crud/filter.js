@@ -39,8 +39,8 @@ export function Filter(config) {
         self.config.api.filters = Object.assign({}, self.options, filters);
 
         self.config.api.get().then(data => {
-            self.result.total = data.Summary.Total;
-            self.result.itens = data.DataList;
+            self.result.total = data.summary.total;
+            self.result.itens = data.dataList;
         });
     }
 

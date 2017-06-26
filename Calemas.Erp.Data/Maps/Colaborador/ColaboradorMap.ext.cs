@@ -13,7 +13,7 @@ namespace Calemas.Erp.Data.Map
 
         protected override void CustomConfig(EntityTypeBuilder<Colaborador> type)
         {
-            type.HasOne(_ => _.Pessoa).WithOne(_ => _.Colaborador).HasForeignKey<Pessoa>(_ => _.PessoaId);
+            type.HasOne(_ => _.Pessoa).WithOne(_ => _.Colaborador).HasPrincipalKey<Pessoa>(_ => _.PessoaId).IsRequired();
         }
 
     }

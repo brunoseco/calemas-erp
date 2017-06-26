@@ -4,6 +4,7 @@ import VueAxios from 'vue-axios'
 import Cache from '../cache'
 import Cookie from '../cookie'
 import Global from '../global'
+import Auth from '../auth'
 
 Vue.use(VueAxios, axios)
 
@@ -166,7 +167,10 @@ export function Api(resource, endpoint) {
 
     function handleSuccess(response) { addCache(response.data); }
 
-    function handleError(err) { }
+    function handleError(err) {
+        if (err.status == 401)
+            Auth.login();
+    }
 
     function addCache(data) {
 
