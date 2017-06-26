@@ -67,7 +67,7 @@ namespace Calemas.Erp.Api
             app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
             {
                 Authority = configSettingsBase.Value.AuthorityEndPoint,
-                ApiName = "apipdf",
+                ApiName = "ssocalemas",
                 RequireHttpsMetadata = false
             });
 

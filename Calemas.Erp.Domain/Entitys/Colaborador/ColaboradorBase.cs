@@ -9,17 +9,19 @@ namespace Calemas.Erp.Domain.Entitys
         {
 
         }
-        public ColaboradorBase(int colaboradorid, string account, string password)
+        public ColaboradorBase(int colaboradorid, string account, string password, bool ativo)
         {
             this.ColaboradorId = colaboradorid;
             this.Account = account;
             this.Password = password;
+            this.Ativo = ativo;
 
         }
 
         public int ColaboradorId { get; protected set; }
         public string Account { get; protected set; }
         public string Password { get; protected set; }
+        public bool Ativo { get; protected set; }
 
 
 

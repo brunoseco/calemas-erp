@@ -13,10 +13,13 @@ namespace Calemas.Erp.Domain.Services
     public class PessoaServiceBase : ServiceBase<Pessoa>
     {
         protected readonly IPessoaRepository _rep;
-        public PessoaServiceBase(IPessoaRepository rep, ICache cache)
+		protected readonly CurrentUser _user;
+
+        public PessoaServiceBase(IPessoaRepository rep, ICache cache, CurrentUser user)
             : base(cache)
         {
             this._rep = rep;
+			this._user = user;
         }
 
         public virtual async Task<Pessoa> GetOne(PessoaFilter filters)
@@ -140,13 +143,13 @@ namespace Calemas.Erp.Domain.Services
             var isNew = pessoaOld.IsNull();
             if (isNew)
             {
-				pessoa.SetUserCreate(1);
+				pessoa.SetUserCreate(this._user.GetSubjectId<int>());
                 pessoa = this._rep.Add(pessoa);
             }
             else
             {
+				pessoa.SetUserUpdate(this._user.GetSubjectId<int>());
 				pessoa.SetUserCreate(pessoaOld.UserCreateId, pessoaOld.UserCreateDate);
-				pessoa.SetUserUpdate(1);
                 pessoa = this._rep.Update(pessoa);
             }
 

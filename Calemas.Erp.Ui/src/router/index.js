@@ -7,6 +7,7 @@ import Template from '@/template'
 // Views
 import Dashboard from '@/views/dashboard'
 import Midia from '@/views/midia'
+import Colaborador from '@/views/colaborador'
 import Authorized from '@/views/authorized'
 
 //Auth 
@@ -34,6 +35,11 @@ const router = new Router({
                     path: 'midia',
                     name: 'Midia',
                     component: Midia
+                },
+                {
+                    path: 'colaborador',
+                    name: 'Colaborador',
+                    component: Colaborador
                 }
 
             ]

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "03863f41f82321e2c734eb211fe37cc8ca01159d"
+    "signature": "6aa410bce32defbdf5642ab1dd04beff78256c98"
   },
   "compilationOptions": {},
   "targets": {
@@ -15,7 +15,7 @@
           "Common.Orm.dll": {}
         }
       },
-      "automapper/6.1.0": {
+      "automapper/6.0.2": {
         "dependencies": {
           "System.Collections.Specialized": "4.3.0",
           "System.ComponentModel.TypeConverter": "4.3.0"
@@ -259,7 +259,7 @@
       },
       "common.domain/1.0.0": {
         "dependencies": {
-          "AutoMapper": "6.1.0",
+          "AutoMapper": "6.0.2",
           "Newtonsoft.Json": "10.0.2"
         },
         "runtime": {
@@ -274,12 +274,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "automapper/6.1.0": {
+    "automapper/6.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ru/p4rBwLH2CGSdlk0Bj6UZQeFpgIDT3sQNL5EEaVhrAT1qNd4SUEOjSzFRBAZbIgIHhifrZ9MbR5BMWgP1vsQ==",
-      "path": "automapper/6.1.0",
-      "hashPath": "automapper.6.1.0.nupkg.sha512"
+      "sha512": "sha512-uI4uPyibgP4+2zn21fVqy0ep+eYeB5IcfjanyUESj+F0qcrOYpAW4iH2+xKET0vfhgJn4U1c4xN3stKUhygTmQ==",
+      "path": "automapper/6.0.2",
+      "hashPath": "automapper.6.0.2.nupkg.sha512"
     },
     "microsoft.entityframeworkcore/1.1.2": {
       "type": "package",

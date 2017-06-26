@@ -19,6 +19,9 @@ namespace Calemas.Erp.Dto
         [MaxLength(100, ErrorMessage = "Colaborador - Quantidade de caracteres maior que o permitido para o campo Password")]
         public virtual string Password {get; set;}
 
+        [Required(ErrorMessage="Colaborador - Campo Ativo é Obrigatório")]
+        public virtual bool Ativo {get; set;}
+
 
 		
 	}

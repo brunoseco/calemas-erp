@@ -1,6 +1,6 @@
 ﻿
 export default {
-    END_POINT_DEFAULT: "http://cnabox.com.br:8077/FranqueadorApi/api",
+    END_POINT_DEFAULT: "http://localhost:56307/api",
 
     SSO_END_POINT: "http://localhost:4000/connect",
     SSO_REDIRECT_LOGIN_URL: "http://localhost:8080/#/authorized/?",

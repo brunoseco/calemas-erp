@@ -16,7 +16,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Cors" Version="1.1.3" />
     <PackageReference Include="IdentityModel" Version="2.9.1" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.1.4" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="1.1.2" />
   </ItemGroup>
 

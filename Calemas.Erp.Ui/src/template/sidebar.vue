@@ -8,8 +8,8 @@
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link :to="'/midia'" class="nav-link">
-                        <i class="icon-pencil"></i> Mídia
+                    <router-link :to="'/colaborador'" class="nav-link">
+                        <i class="icon-user"></i> Colaborador
                     </router-link>
                 </li>
             </ul>

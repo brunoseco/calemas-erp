@@ -32,7 +32,8 @@ namespace Calemas.Erp.Application
 
             var domain = new Colaborador(_dto.ColaboradorId,
                                         _dto.Account,
-                                        _dto.Password);
+                                        _dto.Password,
+                                        _dto.Ativo);
 
 
 

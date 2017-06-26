@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Api", "Common.Api\Common.Api.csproj", "{4620D090-5163-4C22-A1D2-98832EAD0C88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Cache", "Common.Cache\Common.Cache.csproj", "{DC268BED-7BA1-4BCC-B135-250873C1DFF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Domain", "Common.Domain\Common.Domain.csproj", "{D1EA767C-15E3-4AA2-A47F-B220B14C4BB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Dto", "Common.Dto\Common.Dto.csproj", "{8D41F530-4A18-4379-AAA7-7A59E52217BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Orm", "Common.Orm\Common.Orm.csproj", "{B13A1B5D-ABB4-41B2-AE76-4C8B4AD74093}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Validation", "Common.Validation\Common.Validation.csproj", "{502922B9-AAA6-4FC3-88C2-4B6004A76559}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4620D090-5163-4C22-A1D2-98832EAD0C88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4620D090-5163-4C22-A1D2-98832EAD0C88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4620D090-5163-4C22-A1D2-98832EAD0C88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4620D090-5163-4C22-A1D2-98832EAD0C88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC268BED-7BA1-4BCC-B135-250873C1DFF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC268BED-7BA1-4BCC-B135-250873C1DFF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC268BED-7BA1-4BCC-B135-250873C1DFF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC268BED-7BA1-4BCC-B135-250873C1DFF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1EA767C-15E3-4AA2-A47F-B220B14C4BB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1EA767C-15E3-4AA2-A47F-B220B14C4BB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1EA767C-15E3-4AA2-A47F-B220B14C4BB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1EA767C-15E3-4AA2-A47F-B220B14C4BB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D41F530-4A18-4379-AAA7-7A59E52217BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D41F530-4A18-4379-AAA7-7A59E52217BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D41F530-4A18-4379-AAA7-7A59E52217BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D41F530-4A18-4379-AAA7-7A59E52217BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B13A1B5D-ABB4-41B2-AE76-4C8B4AD74093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B13A1B5D-ABB4-41B2-AE76-4C8B4AD74093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B13A1B5D-ABB4-41B2-AE76-4C8B4AD74093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B13A1B5D-ABB4-41B2-AE76-4C8B4AD74093}.Release|Any CPU.Build.0 = Release|Any CPU
+		{502922B9-AAA6-4FC3-88C2-4B6004A76559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{502922B9-AAA6-4FC3-88C2-4B6004A76559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{502922B9-AAA6-4FC3-88C2-4B6004A76559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{502922B9-AAA6-4FC3-88C2-4B6004A76559}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.1.121:18081/tfs/defaultcollection
+		SccProjectUniqueName0 = Common.Cache\\Common.Cache.csproj
+		SccProjectName0 = Common.Cache
+		SccLocalPath0 = Common.Cache
+		SccProjectUniqueName1 = Common.Dto\\Common.Dto.csproj
+		SccProjectName1 = Common.Dto
+		SccLocalPath1 = Common.Dto
+		SccProjectUniqueName2 = Common.Orm\\Common.Orm.csproj
+		SccProjectName2 = Common.Orm
+		SccLocalPath2 = Common.Orm
+		SccProjectUniqueName3 = Common.Validation\\Common.Validation.csproj
+		SccProjectName3 = Common.Validation
+		SccLocalPath3 = Common.Validation
+		SccLocalPath4 = .
+		SccProjectUniqueName5 = Common.Domain\\Common.Domain.csproj
+		SccProjectName5 = Common.Domain
+		SccLocalPath5 = Common.Domain
+		SccProjectUniqueName6 = Common.Api\\Common.Api.csproj
+		SccProjectName6 = Common.Api
+		SccLocalPath6 = Common.Api
+	EndGlobalSection
+EndGlobal

@@ -22,6 +22,7 @@ export function Crud(params) {
             alertMessage: "Parece que você não preencheu o campo corretamente."
         },
         create: {
+            model: {},
             form: "form-create",
             showFieldErrorMessage: true,
             showAlertMessage: true,
@@ -56,6 +57,7 @@ export function Crud(params) {
         api: this.api,
         executeFilterAction: this.filter.executeAction,
         form: this.config.create.form,
+        model: this.config.create.model,
     })
 
 }

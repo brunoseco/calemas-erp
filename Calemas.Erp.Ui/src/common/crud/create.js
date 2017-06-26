@@ -6,7 +6,7 @@ export function Create(config) {
     this.config = config;
 
     this.modalIsOpen = false;
-    this.model = {};
+    this.model = config.model;
     this.executeModal = _executeModal;
     this.executeAction = _executeAction;
     this.loading = Loading;
@@ -31,7 +31,7 @@ export function Create(config) {
 
     function _executeModal() {
         self.validation.clearFormErrors();
-        self.model = {};
+        self.model = self.config.model;
         self.modalIsOpen = true;
     }
 

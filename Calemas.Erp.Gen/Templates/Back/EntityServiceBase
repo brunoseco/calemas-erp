@@ -13,10 +13,13 @@ namespace <#namespace#>.Domain.Services
     public class <#className#>ServiceBase : ServiceBase<<#className#>>
     {
         protected readonly I<#className#>Repository _rep;
-        public <#className#>ServiceBase(I<#className#>Repository rep, ICache cache)
+		protected readonly CurrentUser _user;
+
+        public <#className#>ServiceBase(I<#className#>Repository rep, ICache cache, CurrentUser user)
             : base(cache)
         {
             this._rep = rep;
+			this._user = user;
         }
 
         public virtual async Task<<#className#>> GetOne(<#className#>Filter filters)
@@ -145,8 +148,8 @@ namespace <#namespace#>.Domain.Services
             }
             else
             {
-				<#setUserCreateOld#>
 				<#setUserUpdate#>
+				<#setUserCreateOld#>
                 <#classNameLower#> = this._rep.Update(<#classNameLower#>);
             }
 

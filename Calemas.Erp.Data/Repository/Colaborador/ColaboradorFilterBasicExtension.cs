@@ -26,6 +26,11 @@ namespace Calemas.Erp.Data.Repository
 				
 				queryFilter = queryFilter.Where(_=>_.Password.Contains(filters.Password));
 			};
+            if (filters.Ativo.IsSent()) 
+			{ 
+				
+				queryFilter = queryFilter.Where(_=>_.Ativo == filters.Ativo);
+			};
             if (filters.UserCreateId.IsSent()) 
 			{ 
 				

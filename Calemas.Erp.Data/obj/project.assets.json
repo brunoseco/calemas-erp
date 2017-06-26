@@ -2,7 +2,7 @@
   "version": 2,
   "targets": {
     ".NETCoreApp,Version=v1.1": {
-      "AutoMapper/6.1.0": {
+      "AutoMapper/6.0.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
@@ -2952,7 +2952,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v1.1",
         "dependencies": {
-          "AutoMapper": "6.1.0",
+          "AutoMapper": "6.0.2",
           "Microsoft.NETCore.App": "1.1.2",
           "Newtonsoft.Json": "10.0.2"
         }
@@ -2978,12 +2978,12 @@
     }
   },
   "libraries": {
-    "AutoMapper/6.1.0": {
-      "sha512": "ru/p4rBwLH2CGSdlk0Bj6UZQeFpgIDT3sQNL5EEaVhrAT1qNd4SUEOjSzFRBAZbIgIHhifrZ9MbR5BMWgP1vsQ==",
+    "AutoMapper/6.0.2": {
+      "sha512": "uI4uPyibgP4+2zn21fVqy0ep+eYeB5IcfjanyUESj+F0qcrOYpAW4iH2+xKET0vfhgJn4U1c4xN3stKUhygTmQ==",
       "type": "package",
-      "path": "automapper/6.1.0",
+      "path": "automapper/6.0.2",
       "files": [
-        "automapper.6.1.0.nupkg.sha512",
+        "automapper.6.0.2.nupkg.sha512",
         "automapper.nuspec",
         "lib/net45/AutoMapper.dll",
         "lib/net45/AutoMapper.xml",

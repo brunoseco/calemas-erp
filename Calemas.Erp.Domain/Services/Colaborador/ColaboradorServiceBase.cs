@@ -13,10 +13,13 @@ namespace Calemas.Erp.Domain.Services
     public class ColaboradorServiceBase : ServiceBase<Colaborador>
     {
         protected readonly IColaboradorRepository _rep;
-        public ColaboradorServiceBase(IColaboradorRepository rep, ICache cache)
+		protected readonly CurrentUser _user;
+
+        public ColaboradorServiceBase(IColaboradorRepository rep, ICache cache, CurrentUser user)
             : base(cache)
         {
             this._rep = rep;
+			this._user = user;
         }
 
         public virtual async Task<Colaborador> GetOne(ColaboradorFilter filters)
@@ -140,13 +143,13 @@ namespace Calemas.Erp.Domain.Services
             var isNew = colaboradorOld.IsNull();
             if (isNew)
             {
-				colaborador.SetUserCreate(1);
+				colaborador.SetUserCreate(this._user.GetSubjectId<int>());
                 colaborador = this._rep.Add(colaborador);
             }
             else
             {
+				colaborador.SetUserUpdate(this._user.GetSubjectId<int>());
 				colaborador.SetUserCreate(colaboradorOld.UserCreateId, colaboradorOld.UserCreateDate);
-				colaborador.SetUserUpdate(1);
                 colaborador = this._rep.Update(colaborador);
             }
 

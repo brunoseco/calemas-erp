@@ -9,6 +9,7 @@ namespace Calemas.Erp.Domain.Filter
         public int ColaboradorId { get; set;} 
         public string Account { get; set;} 
         public string Password { get; set;} 
+        public bool? Ativo { get; set;} 
         public int UserCreateId { get; set;} 
         public DateTime UserCreateDateStart { get; set;} 
         public DateTime UserCreateDateEnd { get; set;} 

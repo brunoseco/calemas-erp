@@ -18,7 +18,7 @@ namespace <#namespace#>.Data.Repository
 
 		public static IQueryable<<#className#>> WithLimitSubscriber(this IQueryable<<#className#>> queryBase, CurrentUser user)
         {
-            var subscriberId = user.GetSubjectId<int>();
+            var subscriberId = user.GetSubscriberId<int>();
 			var queryFilter = queryBase;
 
             return queryFilter;

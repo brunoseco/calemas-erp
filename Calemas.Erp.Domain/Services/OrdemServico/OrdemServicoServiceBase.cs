@@ -13,10 +13,13 @@ namespace Calemas.Erp.Domain.Services
     public class OrdemServicoServiceBase : ServiceBase<OrdemServico>
     {
         protected readonly IOrdemServicoRepository _rep;
-        public OrdemServicoServiceBase(IOrdemServicoRepository rep, ICache cache)
+		protected readonly CurrentUser _user;
+
+        public OrdemServicoServiceBase(IOrdemServicoRepository rep, ICache cache, CurrentUser user)
             : base(cache)
         {
             this._rep = rep;
+			this._user = user;
         }
 
         public virtual async Task<OrdemServico> GetOne(OrdemServicoFilter filters)
@@ -140,13 +143,13 @@ namespace Calemas.Erp.Domain.Services
             var isNew = ordemservicoOld.IsNull();
             if (isNew)
             {
-				ordemservico.SetUserCreate(1);
+				ordemservico.SetUserCreate(this._user.GetSubjectId<int>());
                 ordemservico = this._rep.Add(ordemservico);
             }
             else
             {
+				ordemservico.SetUserUpdate(this._user.GetSubjectId<int>());
 				ordemservico.SetUserCreate(ordemservicoOld.UserCreateId, ordemservicoOld.UserCreateDate);
-				ordemservico.SetUserUpdate(1);
                 ordemservico = this._rep.Update(ordemservico);
             }
 

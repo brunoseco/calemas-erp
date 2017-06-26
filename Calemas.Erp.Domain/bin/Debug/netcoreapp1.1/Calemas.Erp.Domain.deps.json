@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "813a7bd84cbc9cc31023dc2464d9d5120f229aec"
+    "signature": "817d87d19d5e3757641b4d8fbe929b06669d59b7"
   },
   "compilationOptions": {},
   "targets": {
@@ -16,7 +16,7 @@
           "Calemas.Erp.Domain.dll": {}
         }
       },
-      "automapper/6.1.0": {
+      "automapper/6.0.2": {
         "dependencies": {
           "System.Collections.Specialized": "4.3.0",
           "System.ComponentModel.TypeConverter": "4.3.0"
@@ -92,7 +92,7 @@
       },
       "common.domain/1.0.0": {
         "dependencies": {
-          "AutoMapper": "6.1.0",
+          "AutoMapper": "6.0.2",
           "Newtonsoft.Json": "10.0.2"
         },
         "runtime": {
@@ -115,12 +115,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "automapper/6.1.0": {
+    "automapper/6.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ru/p4rBwLH2CGSdlk0Bj6UZQeFpgIDT3sQNL5EEaVhrAT1qNd4SUEOjSzFRBAZbIgIHhifrZ9MbR5BMWgP1vsQ==",
-      "path": "automapper/6.1.0",
-      "hashPath": "automapper.6.1.0.nupkg.sha512"
+      "sha512": "sha512-uI4uPyibgP4+2zn21fVqy0ep+eYeB5IcfjanyUESj+F0qcrOYpAW4iH2+xKET0vfhgJn4U1c4xN3stKUhygTmQ==",
+      "path": "automapper/6.0.2",
+      "hashPath": "automapper.6.0.2.nupkg.sha512"
     },
     "newtonsoft.json/10.0.2": {
       "type": "package",

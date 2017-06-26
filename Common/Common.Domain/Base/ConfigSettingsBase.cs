@@ -12,5 +12,12 @@ namespace Common.Domain.Base
 
         public string AuthorityEndPoint { get; set; }
 
+        public string ClientAuthorityEndPoint { get; set; }
+
+        public string RedirectUris { get; set; }
+
+        public string PostLogoutRedirectUris { get; set; }
+
+
     }
 }
