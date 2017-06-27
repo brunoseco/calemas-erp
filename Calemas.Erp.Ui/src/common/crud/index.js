@@ -10,12 +10,14 @@ export function Crud(params) {
         resource: null,
         vm: null,
         edit: {
+            model: {},
             form: "form-edit",
             showFieldErrorMessage: true,
             showAlertMessage: true,
             alertMessage: "Parece que você não preencheu todos os campos."
         },
         delete: {
+            model: {},
             form: "form-delete",
             showFieldErrorMessage: false,
             showAlertMessage: true,
@@ -43,6 +45,7 @@ export function Crud(params) {
         api: this.api,
         executeFilterAction: this.filter.executeAction,
         form: this.config.delete.form,
+        model: this.config.delete.model,
     })
 
     this.edit = new Edit({
@@ -50,6 +53,7 @@ export function Crud(params) {
         api: this.api,
         executeFilterAction: this.filter.executeAction,
         form: this.config.edit.form,
+        model: this.config.edit.model,
     })
 
     this.create = new Create({

@@ -6,7 +6,7 @@ export function Delete(config) {
     this.config = config;
 
     this.modalIsOpen = false;
-    this.model = {};
+    this.model = config.model;
     this.executeModal = _executeModal;
     this.executeAction = _executeAction;
     this.loading = Loading;
@@ -36,7 +36,7 @@ export function Delete(config) {
         self.config.api.filters = item;
         self.config.api.getMethodCustom("GetByModel").then(data => {
             self.modalIsOpen = true;
-            self.model = data.Data;
+            self.model = data.data;
             self.loading.hide();
         });
     }

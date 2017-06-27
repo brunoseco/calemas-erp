@@ -89,9 +89,10 @@ export function Api(resource, endpoint) {
             .catch(err => { handleError(err.response); throw err.response; })
     }
 
-    function _getMethodCustom(method) {
+    function _getMethodCustom(behavior) {
 
         self.lastAction = "get";
+        self.filters.filterBehavior = behavior;
         self.url = makeGetCustomMethodBaseUrl(method);
 
         if (isOffline())
@@ -122,8 +123,8 @@ export function Api(resource, endpoint) {
         return String.format("{0}/{1}", makeUri(), queryStringFilter());
     }
 
-    function makeGetCustomMethodBaseUrl(method) {
-        return String.format("{0}/{1}/{2}", makeUri(), method, queryStringFilter());
+    function makeGetCustomMethodBaseUrl() {
+        return String.format("{0}/more/{1}", makeUri(), queryStringFilter());
     }
 
     function makeDeleteBaseUrl() {
@@ -146,14 +147,14 @@ export function Api(resource, endpoint) {
 
         var filters = getFilter();
 
-        if (filters.OrderFields !== undefined) {
-            filters.IsOrderByDynamic = true;
-            if (filters.OrderByType === undefined)
-                filters.OrderByType = 1;
+        if (filters.orderFields !== undefined) {
+            filters.isOrderByDynamic = true;
+            if (filters.orderByType === undefined)
+                filters.orderByType = 1;
         }
-
-        if (filters.Id !== undefined)
-            return String.format("{0}?{1}", filters.Id, Object.$httpParamSerializer(filters));
+        
+        if (filters.id !== undefined)
+            return String.format("{0}?{1}", filters.id, Object.$httpParamSerializer(filters));
 
         return String.format("?{0}", Object.$httpParamSerializer(filters));
     }

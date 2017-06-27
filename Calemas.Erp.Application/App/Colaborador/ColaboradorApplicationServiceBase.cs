@@ -7,6 +7,7 @@ using Calemas.Erp.Domain.Filter;
 using Calemas.Erp.Domain.Interfaces.Services;
 using Calemas.Erp.Dto;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Calemas.Erp.Application
 {
@@ -39,8 +40,7 @@ namespace Calemas.Erp.Application
 
             return domain;
         }
-
-
+        
         protected override async Task<Colaborador> AlterDomainWithDto<TDS>(TDS dto)
         {
 			var colaborador = dto as ColaboradorDto;

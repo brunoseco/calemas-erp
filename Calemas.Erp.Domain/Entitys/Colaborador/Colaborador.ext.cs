@@ -10,43 +10,38 @@ namespace Calemas.Erp.Domain.Entitys
         {
 
         }
-
-        public Colaborador(
-            int colaboradorId, 
-            string account, 
-            string password, 
-            bool ativo, 
-            int pessoaid,
-            string nome,
-            string apelido,
-            string cpf_cnpj,
-            string rg_ie,
-            string email,
-            string telefone,
-            string celular,
-            string comercial,
-            DateTime? dataNascimento,
-            int? estadoCivilId,
-            int? sexo,
-            bool? juridica)
-            : base(colaboradorId, account, password, ativo)
+        
+        public class FactoryColaborador
         {
-            this.Pessoa = new Pessoa(pessoaid, nome, apelido);
-            this.Pessoa.SetarCPF_CNPJ(cpf_cnpj);
-            this.Pessoa.SetarRG_IE(rg_ie);
-            this.Pessoa.SetarEmail(email);
-            this.Pessoa.SetarTelefone(telefone);
-            this.Pessoa.SetarCelular(celular);
-            this.Pessoa.SetarComercial(comercial);
-            this.Pessoa.SetarDataNascimento(dataNascimento);
-            this.Pessoa.SetarEstadoCivilId(estadoCivilId);
-            this.Pessoa.SetarSexo(sexo);
-            this.Pessoa.SetarJuridica(juridica);
+            public Colaborador GetInstance(dynamic model)
+            {
+                var _colaborador = new Colaborador()
+                {
+                    ColaboradorId = model.ColaboradorId,
+                    Account = model.Account,
+                    Password = model.Password,
+                    Ativo = model.Ativo
+                };
+
+                _colaborador.Pessoa = new Pessoa(model.Pessoa.PessoaId, model.Pessoa.Nome, model.Pessoa.Apelido);
+                _colaborador.Pessoa.SetarCPF_CNPJ(model.Pessoa.CPF_CNPJ);
+                _colaborador.Pessoa.SetarRG_IE(model.Pessoa.RG_IE);
+                _colaborador.Pessoa.SetarEmail(model.Pessoa.Email);
+                _colaborador.Pessoa.SetarTelefone(model.Pessoa.Telefone);
+                _colaborador.Pessoa.SetarCelular(model.Pessoa.Celular);
+                _colaborador.Pessoa.SetarComercial(model.Pessoa.Comercial);
+                _colaborador.Pessoa.SetarDataNascimento(model.Pessoa.DataNascimento);
+                _colaborador.Pessoa.SetarEstadoCivilId(model.Pessoa.EstadoCivilId);
+                _colaborador.Pessoa.SetarSexo(model.Pessoa.Sexo);
+                _colaborador.Pessoa.SetarJuridica(model.Pessoa.Juridica);
+
+                return _colaborador;
+            }
         }
 
         public Colaborador(int colaboradorId, string account, string password, bool ativo)
             : base(colaboradorId, account, password, ativo) { }
-
+        
         public virtual Pessoa Pessoa { get; set; }
 
         public bool IsValid()

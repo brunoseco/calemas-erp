@@ -6,7 +6,7 @@ export function Edit(config) {
     this.config = config;
 
     this.modalIsOpen = false;
-    this.model = {};
+    this.model = config.model;
     this.executeModal = _executeModal;
     this.executeAction = _executeAction;
     this.loading = Loading;
@@ -29,13 +29,14 @@ export function Edit(config) {
         });
     }
 
-    function _executeModal(item) {
+    function _executeModal(id, item) {
         self.loading.show();
         self.validation.clearFormErrors();
         self.config.api.filters = item;
-        self.config.api.getMethodCustom("GetByModel").then(data => {
+        self.config.api.filters.id = id;
+        self.config.api.get().then(data => {
             self.modalIsOpen = true;
-            self.model = data.Data;
+            self.model = data.data;
             self.loading.hide();
         });
     }

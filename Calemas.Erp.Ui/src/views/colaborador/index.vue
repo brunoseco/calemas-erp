@@ -20,6 +20,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card">
@@ -64,6 +65,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card">
@@ -96,7 +98,7 @@
                                             <span class="badge badge-pill" v-bind:class="{ 'badge-success': item.Ativo, 'badge-danger': !item.Ativo }">{{item.Ativo ? 'Sim' : 'Não'}}</span>
                                         </td>
                                         <td class="text-center">
-                                            <button type="button" class="btn btn-xs btn-primary" @click="crud.edit.executeModal(item)">
+                                            <button type="button" class="btn btn-xs btn-primary" @click="crud.edit.executeModal(item.colaboradorId, item)">
                                                 <i class="fa fa-pencil"></i>
                                             </button>
                                             <button type="button" class="btn btn-xs btn-danger" @click="crud.delete.executeModal(item)">
@@ -116,26 +118,8 @@
         </div>
 
         <create :crud="crud" />
-
-        <!--<modal title="Exclusão de Mídia" v-model="crud.delete.modalIsOpen" effect="fade/zoom">
-            <div slot="modal-header" class="modal-header">
-                <h4 class="modal-title">Exclusão de Colaborador</h4>
-            </div>
-            <form type="post" v-on:submit="crud.delete.executeAction()">
-                <div class="row">
-                    <div class="form-group col-md-6">
-                        <label class="label">Nome</label>
-                        <p>{{crud.delete.model.pessoa.nome}}</p>
-                    </div>
-                </div>
-            </form>
-            <div slot="modal-footer" class="modal-footer">
-                <button type="button" class="btn btn-default" @click="crud.delete.modalIsOpen = false">Fechar</button>
-                <button type="button" class="btn btn-danger" @click="crud.delete.executeAction()">
-                    <i class="fa fa-trash-o"></i> Remover
-                </button>
-            </div>
-        </modal>-->
+        <edit :crud="crud" />
+        <remove :crud="crud" />
 
     </div>
 </template>
@@ -143,13 +127,23 @@
 
     import modal from 'vue-strap/src/Modal'
     import pagination from 'vue-pagination-bootstrap'
+
+    import create from './create'
+    import edit from './edit'
+    import remove from './remove'
+
     import { Api } from '../../common/api'
     import { Crud } from '../../common/crud'
-    import create from './create/create'
 
     export default {
         name: 'colaborador',
-        components: { modal, pagination, create },
+        components: {
+            modal,
+            pagination,
+            create,
+            edit,
+            remove
+        },
         data() {
             return {
                 crud: new Crud(
@@ -157,9 +151,13 @@
                         resource: "colaborador",
                         vm: this,
                         create: {
-                            model: {
-                                pessoa: {}
-                            }
+                            model: { pessoa: {} }
+                        },
+                        edit: {
+                            model: { pessoa: {} }
+                        },
+                        delete: {
+                            model: { pessoa: {} }
                         }
                     }),
             }

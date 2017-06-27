@@ -3,11 +3,19 @@
         <div slot="modal-header" class="modal-header">
             <h4 class="modal-title">Cadastro de Colaborador</h4>
         </div>
-        <form type="post" v-on:submit.prevent="crud.create.executeAction()">
+        <form data-vv-scope="form-create" @submit.prevent="crud.create.executeAction()">
+            <div class="row" v-show="formErrors.any('form-create') && crud.config.create.showAlertMessage">
+                <div class="col-md-12">
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Ops!</strong> {{ crud.config.create.alertMessage }}
+                    </div>
+                </div>
+            </div>
             <div class="row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-6" v-bind:class="{ 'has-danger': formErrors.has('form-create.nome') }">
                     <label for="nome">Nome</label>
-                    <input type="text" class="form-control" name="nome" placeholder="Nome" v-model="crud.create.model.pessoa.nome">
+                    <input type="text" class="form-control" name="nome" placeholder="Nome" v-model="crud.create.model.pessoa.nome" v-validate="'required'" />
+                    <small v-show="formErrors.has('form-create.nome') && crud.config.create.showFieldErrorMessage" class="help is-danger">Desculpe, este campo é obrigatório.</small>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="apelido">Apelido</label>
@@ -60,9 +68,7 @@
 
 </template>
 <script>
-
     import modal from 'vue-strap/src/Modal'
-
     export default {
         name: 'create',
         props: ['crud'],
