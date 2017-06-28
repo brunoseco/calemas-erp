@@ -2,7 +2,8 @@
 import App from './app'
 import router from './router'
 
-import '../static/scss/style.scss'
+import Notifications from 'vue-notification'
+Vue.use(Notifications)
 
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate, {
@@ -14,6 +15,8 @@ Vue.use(VeeValidate, {
 const Moment = require('moment')
 require('moment/locale/pt')
 Vue.use(require('vue-moment'), { Moment });
+
+import '../static/scss/style.scss'
 
 new Vue({
     el: '#app',

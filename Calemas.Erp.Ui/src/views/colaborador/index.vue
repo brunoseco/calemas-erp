@@ -19,7 +19,6 @@
     import editPartial from './edit.partial'
     import deletePartial from './delete.partial'
 
-    import { Api } from '../../common/api'
     import { Crud } from '../../common/crud'
 
     export default {

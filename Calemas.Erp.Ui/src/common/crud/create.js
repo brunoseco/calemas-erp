@@ -5,13 +5,14 @@ export function Create(params) {
 
     this.config = params.config;
     this.api = params.api;
+    this.notification = params.notification;
     this.executeFilterAction = params.executeFilterAction;
     this.model = params.config.model;
 
     this.modalIsOpen = false;
     this.setVm = _setVm;
     this.executeModal = _executeModal;
-    this.executeAction = _executeAction;    
+    this.executeAction = _executeAction;
     this.loading = Loading;
     this.validation = null;
 
@@ -21,9 +22,15 @@ export function Create(params) {
         self.validation.formIsValid(() => {
             self.loading.show();
             self.api.post(this.model).then(data => {
+                self.notification.success('Sucesso', 'Registro inserido com sucesso!');
                 self.modalIsOpen = false;
                 self.executeFilterAction();
                 self.loading.hide();
+            }, err => {
+                self.loading.hide();
+
+                if (err.data && err.data.result && err.data.result.errors)
+                    self.notification.error('Erro', err.data.result.errors[0]);
             })
         });
     }
