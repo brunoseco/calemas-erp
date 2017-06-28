@@ -1,10 +1,11 @@
-﻿
-export default {
-    END_POINT_DEFAULT: "http://localhost:56307/api",
+﻿export default {
 
-    SSO_END_POINT: "http://localhost:4000/connect",
-    SSO_REDIRECT_LOGIN_URL: "http://localhost:8080/#/authorized/?",
-    SSO_REDIRECT_LOGOUT_URL: "http://localhost:8080/#/loggedout/?",
+    END_POINT_DEFAULT: process.env.ENDPOINT_DEFAULT,
+    SSO_END_POINT: process.env.ENDPOINT_SSO,
+
+    SSO_REDIRECT_LOGIN_URL: process.env.LOCATION_URL + "/#/authorized/?",
+    SSO_REDIRECT_LOGOUT_URL: process.env.LOCATION_URL + "/#/loggedout/?",
+
     SSO_CLIENT_ID: "ssocalemas",
     SSO_RESPONSE_TYPE: "id_token token",
     SSO_SCOPE: "openid calemas profile email",
