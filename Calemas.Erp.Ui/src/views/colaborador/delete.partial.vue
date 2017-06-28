@@ -22,8 +22,11 @@
 <script>
     import modal from 'vue-strap/src/Modal'
     export default {
-        name: 'remove',
+        name: 'delete-partial',
         props: ['crud'],
-        components: { modal }
+        components: { modal },
+        mounted() {
+            this.crud.delete.setVm(this);
+        }
     }
 </script>

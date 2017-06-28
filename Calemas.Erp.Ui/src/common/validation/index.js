@@ -8,17 +8,19 @@ export function Validation(config) {
 
     this.config = config;
 
-    this.verifyFormIsValid = _verifyFormIsValid;
-    this.clearFormErrors = _clearFormErrors;
+    this.formIsValid = _formIsValid;
+    this.clearForm = _clearForm;
 
     var self = this;
 
-    function _verifyFormIsValid(actionIfValid) {
-        self.config.vm.$validator.validateAll(self.config.form)
-            .then(actionIfValid).catch(() => { })
+    function _formIsValid(actionIfValid) {
+        self.config.vm.$validator
+            .validateAll(self.config.form)
+            .then(actionIfValid)
+            .catch(() => { })
     }
 
-    function _clearFormErrors() {
+    function _clearForm() {
         self.config.vm.formErrors.errors = self.config.vm.formErrors.errors
             .filter(function (e) {
                 return e.scope !== self.config.form;

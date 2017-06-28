@@ -50,7 +50,8 @@ export function Api(resource, endpoint) {
 
         return axios
             .post(self.url, data)
-            .then(res => { handleSuccess(res.data); return res.data; }, err => { handleError(err); return err; });
+            .then(res => { handleSuccess(res.data); return res.data; })
+            .catch(err => { handleError(err.response); throw err.response; })
     }
 
     function _put(data) {
@@ -60,9 +61,8 @@ export function Api(resource, endpoint) {
 
         return axios
             .put(self.url, data)
-            .then(
-            res => { handleSuccess(res.data); return res.data; },
-            err => { handleError(err); return err; });
+            .then(res => { handleSuccess(res.data); return res.data; })
+            .catch(err => { handleError(err.response); throw err.response; })
     }
 
     function _delete() {
@@ -72,7 +72,8 @@ export function Api(resource, endpoint) {
 
         return axios
             .delete(self.url)
-            .then(res => { handleSuccess(res.data); return res.data; }, err => { handleError(err); return err; });
+            .then(res => { handleSuccess(res.data); return res.data; })
+            .catch(err => { handleError(err.response); throw err.response; })
     }
 
     function _get() {

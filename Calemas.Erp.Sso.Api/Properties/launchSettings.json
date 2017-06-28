@@ -11,7 +11,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:4000/api/Health",
+      "launchUrl": "http://localhost:4000/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

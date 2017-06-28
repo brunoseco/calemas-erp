@@ -41,27 +41,21 @@ export function Crud(params) {
     })
 
     this.delete = new Delete({
-        vm: this.config.vm,
         api: this.api,
         executeFilterAction: this.filter.executeAction,
-        form: this.config.delete.form,
-        model: this.config.delete.model,
+        config: Object.assign({}, this.default.delete, this.config.delete),
     })
 
     this.edit = new Edit({
-        vm: this.config.vm,
         api: this.api,
         executeFilterAction: this.filter.executeAction,
-        form: this.config.edit.form,
-        model: this.config.edit.model,
+        config: Object.assign({}, this.default.edit, this.config.edit),
     })
 
     this.create = new Create({
-        vm: this.config.vm,
         api: this.api,
         executeFilterAction: this.filter.executeAction,
-        form: this.config.create.form,
-        model: this.config.create.model,
+        config: Object.assign({}, this.default.create, this.config.create),
     })
 
 }
