@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Presentation", "1-Presentation", "{1BDD72EA-F258-4FAC-AFEB-989CB5A969C2}"
 EndProject
@@ -19,19 +19,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7-Common", "7-Common", "{59
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8-Generator", "8-Generator", "{11C89BE7-58AF-45DA-AE92-69AF95C2BF47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calemas.Erp.Api", "Calemas.Erp.Api\Calemas.Erp.Api.csproj", "{62327439-5422-42AB-96E5-4058B2D5D3BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calemas.Erp.Api", "Calemas.Erp.Api\Calemas.Erp.Api.csproj", "{62327439-5422-42AB-96E5-4058B2D5D3BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calemas.Erp.Application", "Calemas.Erp.Application\Calemas.Erp.Application.csproj", "{0732E65D-A9BB-46F0-8190-13A4F12FB7DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calemas.Erp.Application", "Calemas.Erp.Application\Calemas.Erp.Application.csproj", "{0732E65D-A9BB-46F0-8190-13A4F12FB7DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calemas.Erp.Dto", "Calemas.Erp.Dto\Calemas.Erp.Dto.csproj", "{F4EF48E6-6021-40FF-B943-6724302A5FA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calemas.Erp.Dto", "Calemas.Erp.Dto\Calemas.Erp.Dto.csproj", "{F4EF48E6-6021-40FF-B943-6724302A5FA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calemas.Erp.Domain", "Calemas.Erp.Domain\Calemas.Erp.Domain.csproj", "{587CF8FE-5090-459D-AF70-50D665BAADE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calemas.Erp.Domain", "Calemas.Erp.Domain\Calemas.Erp.Domain.csproj", "{587CF8FE-5090-459D-AF70-50D665BAADE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calemas.Erp.Filter", "Calemas.Erp.Filter\Calemas.Erp.Filter.csproj", "{2AA54B4A-AEAA-4409-88FC-1AACAF431F23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calemas.Erp.Filter", "Calemas.Erp.Filter\Calemas.Erp.Filter.csproj", "{2AA54B4A-AEAA-4409-88FC-1AACAF431F23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calemas.Erp.Summary", "Calemas.Erp.Summary\Calemas.Erp.Summary.csproj", "{D888493A-DF0C-42AB-913A-F91B32F197AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calemas.Erp.Summary", "Calemas.Erp.Summary\Calemas.Erp.Summary.csproj", "{D888493A-DF0C-42AB-913A-F91B32F197AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calemas.Erp.Data", "Calemas.Erp.Data\Calemas.Erp.Data.csproj", "{60568E72-8D22-47F8-9750-45374FD5404F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calemas.Erp.Data", "Calemas.Erp.Data\Calemas.Erp.Data.csproj", "{60568E72-8D22-47F8-9750-45374FD5404F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calemas.Erp.Gen", "Calemas.Erp.Gen\Calemas.Erp.Gen.csproj", "{F088C745-6203-4F98-8867-DC9A9BE7ECAC}"
 EndProject
@@ -49,7 +49,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Validation", "Common
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calemas.Erp.Enums", "Calemas.Erp.Enums\Calemas.Erp.Enums.csproj", "{146A51DF-CB44-445D-95F1-5ADC34BF647A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calemas.Erp.Sso.Api", "Calemas.Erp.Sso.Api\Calemas.Erp.Sso.Api.csproj", "{9A9C2365-F0BF-4460-8263-C6720F939B70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calemas.Erp.Sso.Api", "Calemas.Erp.Sso.Api\Calemas.Erp.Sso.Api.csproj", "{9A9C2365-F0BF-4460-8263-C6720F939B70}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Calemas.Erp.Ui", "Calemas.Erp.Ui\", "{3ABEE050-694D-43AE-B63F-83A47276D840}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -69,6 +69,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Calemas.Erp.Ui", "Calemas.E
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "62013"
+		SlnRelativePath = "Calemas.Erp.Ui\"
 	EndProjectSection
 EndProject
 Global
@@ -264,7 +265,6 @@ Global
 		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Azure|Any CPU.ActiveCfg = Debug|Any CPU
 		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Azure|Any CPU.Build.0 = Debug|Any CPU
 		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Homolog|Any CPU.ActiveCfg = Debug|Any CPU
 		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Homolog|Any CPU.Build.0 = Debug|Any CPU
 		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Migration|Any CPU.ActiveCfg = Debug|Any CPU
@@ -276,7 +276,6 @@ Global
 		{3ABEE050-694D-43AE-B63F-83A47276D840}.Azure|Any CPU.ActiveCfg = Debug|Any CPU
 		{3ABEE050-694D-43AE-B63F-83A47276D840}.Azure|Any CPU.Build.0 = Debug|Any CPU
 		{3ABEE050-694D-43AE-B63F-83A47276D840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3ABEE050-694D-43AE-B63F-83A47276D840}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3ABEE050-694D-43AE-B63F-83A47276D840}.Homolog|Any CPU.ActiveCfg = Debug|Any CPU
 		{3ABEE050-694D-43AE-B63F-83A47276D840}.Homolog|Any CPU.Build.0 = Debug|Any CPU
 		{3ABEE050-694D-43AE-B63F-83A47276D840}.Migration|Any CPU.ActiveCfg = Debug|Any CPU

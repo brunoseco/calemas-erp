@@ -13,7 +13,6 @@ namespace <#namespace#>.Domain.Services
     public class <#className#>ServiceBase : ServiceBase<<#className#>>
     {
         protected readonly I<#className#>Repository _rep;
-		protected readonly CurrentUser _user;
 
         public <#className#>ServiceBase(I<#className#>Repository rep, ICache cache, CurrentUser user)
             : base(cache)
@@ -140,18 +139,17 @@ namespace <#namespace#>.Domain.Services
 
         protected virtual <#className#> SaveDefault(<#className#> <#classNameLower#>, <#className#> <#classNameLower#>Old)
         {
+			
+			<#AuditDefault#>
+
             var isNew = <#classNameLower#>Old.IsNull();
             if (isNew)
-            {
-				<#setUserCreate#>
                 <#classNameLower#> = this._rep.Add(<#classNameLower#>);
-            }
             else
             {
-				<#setUserUpdate#>
-				<#setUserCreateOld#>
                 <#classNameLower#> = this._rep.Update(<#classNameLower#>);
             }
+
 
             return <#classNameLower#>;
         }

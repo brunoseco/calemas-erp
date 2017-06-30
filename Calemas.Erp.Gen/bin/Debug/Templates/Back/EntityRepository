@@ -7,6 +7,8 @@ using <#namespace#>.Domain.Interfaces.Repository;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Linq.Expressions;
+using System;
 
 namespace <#namespace#>.Data.Repository
 {
@@ -130,6 +132,11 @@ namespace <#namespace#>.Data.Repository
             }
 
             return source.SingleOrDefault();
+        }
+
+		protected override Expression<Func<<#className#>, object>>[] DataAgregation(Expression<Func<<#className#>, object>>[] includes, FilterBase filter)
+        {
+            return base.DataAgregation(includes, filter);
         }
 
     }

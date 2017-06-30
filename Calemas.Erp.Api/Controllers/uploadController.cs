@@ -75,7 +75,7 @@ namespace Calemas.Erp.Api.Controllers
             }
             catch (Exception ex)
             {
-                return result.ReturnCustomException(ex, "Calemas.Erp - upload");
+                return result.ReturnCustomException(ex, "SmartSecretary - upload");
             }
         }
     }

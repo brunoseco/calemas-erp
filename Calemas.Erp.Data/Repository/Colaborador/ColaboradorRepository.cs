@@ -7,8 +7,8 @@ using Calemas.Erp.Domain.Interfaces.Repository;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System;
 using System.Linq.Expressions;
+using System;
 
 namespace Calemas.Erp.Data.Repository
 {

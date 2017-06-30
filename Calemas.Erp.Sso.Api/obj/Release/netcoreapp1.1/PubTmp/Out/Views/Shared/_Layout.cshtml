@@ -1,0 +1,31 @@
+﻿@using IdentityServer4.Extensions
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calemas - Acesso</title>
+
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
+
+    <link href="~/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/css/simple-line-icons.css" rel="stylesheet">
+
+    <link href="~/css/style.css" rel="stylesheet">
+
+</head>
+
+
+<body class="app flex-row align-items-center">
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

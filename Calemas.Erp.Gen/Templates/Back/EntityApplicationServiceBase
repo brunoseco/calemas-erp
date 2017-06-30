@@ -26,14 +26,11 @@ namespace <#namespace#>.Application
 
         protected override <#className#> MapperDtoToDomain<TDS>(TDS dto)
         {
-			var _dto = dto as <#className#>Dto;
+			var _dto = dto as <#className#>DtoSpecialized;
             this._validatorAnnotations.Validate(_dto);
             this._serviceBase.AddDomainValidation(this._validatorAnnotations.GetErros());
 
-            var domain = new <#className#>(<#parametersRequiredApplication#>);
-
-<#methodsSetersApplication#>
-
+			var domain = new <#className#>.<#className#>Factory().GetDefaaultInstance(_dto);
             return domain;
         }
 

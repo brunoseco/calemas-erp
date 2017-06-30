@@ -1,0 +1,11 @@
+C:\Pessoal\calemas-erp\Calemas.Erp.Dto\bin\Release\netcoreapp1.1\Calemas.Erp.Dto.deps.json
+C:\Pessoal\calemas-erp\Calemas.Erp.Dto\bin\Release\netcoreapp1.1\Calemas.Erp.Dto.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.Dto\bin\Release\netcoreapp1.1\Calemas.Erp.Dto.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Dto\bin\Release\netcoreapp1.1\Common.Domain.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.Dto\bin\Release\netcoreapp1.1\Common.Dto.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.Dto\bin\Release\netcoreapp1.1\Common.Dto.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Dto\bin\Release\netcoreapp1.1\Common.Domain.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Dto\obj\Release\netcoreapp1.1\Calemas.Erp.Dto.csprojResolveAssemblyReference.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Dto\obj\Release\netcoreapp1.1\Calemas.Erp.Dto.AssemblyInfo.cs
+C:\Pessoal\calemas-erp\Calemas.Erp.Dto\obj\Release\netcoreapp1.1\Calemas.Erp.Dto.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.Dto\obj\Release\netcoreapp1.1\Calemas.Erp.Dto.pdb

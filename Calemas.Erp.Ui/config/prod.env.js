@@ -1,9 +1,8 @@
 ﻿module.exports = {
     NODE_ENV: '"production"',
-
-
-    ENDPOINT_DEFAULT: '"http://localhost:56307/api"',
-    ENDPOINT_SSO: '"http://localhost:4000/connect"',
-    LOCATION_URL: '"http://localhost:8080"',
+    
+    ENDPOINT_DEFAULT: '"http://calemas-api.azurewebsites.net/api"',
+    ENDPOINT_SSO: '"http://calemas-sso.azurewebsites.net/connect"',
+    LOCATION_URL: '"http://calemas-front.azurewebsites.net"',
 
 }

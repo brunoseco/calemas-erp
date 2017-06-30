@@ -1,0 +1,1437 @@
+2017-06-30T10:42:44.4605661-03:00  [INF] User profile is available. Using '"C:\Users\bruun\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-06-30T10:42:45.4482255-03:00 0HL5VNNHPQHUO [INF] Request starting HTTP/1.1 GET http://localhost:4000/   (e5be5b71)
+2017-06-30T10:42:46.6410231-03:00 0HL5VNNHPQHUO [INF] Executing action method "IdentityServer4.Quickstart.UI.HomeController.Index (Calemas.Erp.Sso.Api)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-30T10:42:50.5516362-03:00 0HL5VNNHPQHUO [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-30T10:42:51.9095439-03:00 0HL5VNNHPQHUO [INF] Executed action "IdentityServer4.Quickstart.UI.HomeController.Index (Calemas.Erp.Sso.Api)" in 5436.0473ms (afa2e885)
+2017-06-30T10:42:51.9535737-03:00 0HL5VNNHPQHUO [INF] Request finished in 6566.9696ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-30T10:42:52.6590446-03:00 0HL5VNNHPQHUP [INF] Request starting HTTP/1.1 GET http://localhost:4000/css/font-awesome.min.css   (e5be5b71)
+2017-06-30T10:42:52.6650490-03:00 0HL5VNNHPQHUQ [INF] Request starting HTTP/1.1 GET http://localhost:4000/css/simple-line-icons.css   (e5be5b71)
+2017-06-30T10:42:52.6870629-03:00 0HL5VNNHPQHUP [INF] The file "/css/font-awesome.min.css" was not modified (f1f8d725)
+2017-06-30T10:42:52.6870629-03:00 0HL5VNNHPQHUQ [INF] The file "/css/simple-line-icons.css" was not modified (f1f8d725)
+2017-06-30T10:42:52.6990717-03:00 0HL5VNNHPQHUR [INF] Request starting HTTP/1.1 GET http://localhost:4000/css/style.css   (e5be5b71)
+2017-06-30T10:42:52.7000726-03:00 0HL5VNNHPQHUR [INF] The file "/css/style.css" was not modified (f1f8d725)
+2017-06-30T10:42:52.7010731-03:00 0HL5VNNHPQHUQ [INF] Request finished in 36.6567ms 304 text/css (15c52c40)
+2017-06-30T10:42:52.7010731-03:00 0HL5VNNHPQHUP [INF] Request finished in 41.7099ms 304 text/css (15c52c40)
+2017-06-30T10:42:52.7010731-03:00 0HL5VNNHPQHUR [INF] Request finished in 2.4796ms 304 text/css (15c52c40)
+2017-06-30T10:42:52.7170833-03:00 0HL5VNNHPQHUS [INF] Request starting HTTP/1.1 GET http://localhost:4000/lib/jquery/jquery.js   (e5be5b71)
+2017-06-30T10:42:52.7170833-03:00 0HL5VNNHPQHUT [INF] Request starting HTTP/1.1 GET http://localhost:4000/lib/bootstrap/js/bootstrap.js   (e5be5b71)
+2017-06-30T10:42:52.7170833-03:00 0HL5VNNHPQHUT [INF] The file "/lib/bootstrap/js/bootstrap.js" was not modified (f1f8d725)
+2017-06-30T10:42:52.7180834-03:00 0HL5VNNHPQHUT [INF] Request finished in 0.8428ms 304 application/javascript (15c52c40)
+2017-06-30T10:42:52.7180834-03:00 0HL5VNNHPQHUS [INF] The file "/lib/jquery/jquery.js" was not modified (f1f8d725)
+2017-06-30T10:42:52.7180834-03:00 0HL5VNNHPQHUS [INF] Request finished in 1.1847ms 304 application/javascript (15c52c40)
+2017-06-30T10:42:53.9639166-03:00 0HL5VNNHPQHUU [INF] Request starting HTTP/1.1 GET http://localhost:4000/connect/authorize?client_id=ssocalemas&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2F%23%2Fauthorized%2F%3F&response_type=id_token%20token&scope=openid%20calemas%20profile%20email&state=1498830173820&nonce=xyz   (e5be5b71)
+2017-06-30T10:42:53.9789260-03:00 0HL5VNNHPQHUU [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.AuthorizeEndpoint" for "/connect/authorize" (f7642de5)
+2017-06-30T10:42:57.0159576-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (272ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AbsoluteRefreshTokenLifetime], [x].[AccessTokenLifetime], [x].[AccessTokenType], [x].[AllowAccessTokensViaBrowser], [x].[AllowOfflineAccess], [x].[AllowPlainTextPkce], [x].[AllowRememberConsent], [x].[AlwaysIncludeUserClaimsInIdToken], [x].[AlwaysSendClientClaims], [x].[AuthorizationCodeLifetime], [x].[ClientId], [x].[ClientName], [x].[ClientUri], [x].[EnableLocalLogin], [x].[Enabled], [x].[IdentityTokenLifetime], [x].[IncludeJwtId], [x].[LogoUri], [x].[LogoutSessionRequired], [x].[LogoutUri], [x].[PrefixClientClaims], [x].[ProtocolType], [x].[RefreshTokenExpiration], [x].[RefreshTokenUsage], [x].[RequireClientSecret], [x].[RequireConsent], [x].[RequirePkce], [x].[SlidingRefreshTokenLifetime], [x].[UpdateAccessTokenClaimsOnRefresh]
+FROM [Clients] AS [x]
+WHERE [x].[ClientId] = @__clientId_0
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T10:42:57.2481111-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (8ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c6].[Id], [c6].[ClientId], [c6].[Origin]
+FROM [ClientCorsOrigins] AS [c6]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x7] ON [c6].[ClientId] = [x7].[Id]
+ORDER BY [x7].[Id] (6438bdd5)
+2017-06-30T10:42:57.2831343-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (3ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c5].[Id], [c5].[ClientId], [c5].[Provider]
+FROM [ClientIdPRestrictions] AS [c5]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x6] ON [c5].[ClientId] = [x6].[Id]
+ORDER BY [x6].[Id] (6438bdd5)
+2017-06-30T10:42:57.2921409-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (5ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c4].[Id], [c4].[ClientId], [c4].[Type], [c4].[Value]
+FROM [ClientClaims] AS [c4]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x5] ON [c4].[ClientId] = [x5].[Id]
+ORDER BY [x5].[Id] (6438bdd5)
+2017-06-30T10:42:57.2991450-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (3ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c3].[Id], [c3].[ClientId], [c3].[Description], [c3].[Expiration], [c3].[Type], [c3].[Value]
+FROM [ClientSecrets] AS [c3]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x4] ON [c3].[ClientId] = [x4].[Id]
+ORDER BY [x4].[Id] (6438bdd5)
+2017-06-30T10:42:57.3091521-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (5ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c2].[Id], [c2].[ClientId], [c2].[Scope]
+FROM [ClientScopes] AS [c2]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x3] ON [c2].[ClientId] = [x3].[Id]
+ORDER BY [x3].[Id] (6438bdd5)
+2017-06-30T10:42:57.3191587-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (3ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[ClientId], [c1].[PostLogoutRedirectUri]
+FROM [ClientPostLogoutRedirectUris] AS [c1]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x2] ON [c1].[ClientId] = [x2].[Id]
+ORDER BY [x2].[Id] (6438bdd5)
+2017-06-30T10:42:57.3291667-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (3ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c0].[Id], [c0].[ClientId], [c0].[RedirectUri]
+FROM [ClientRedirectUris] AS [c0]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x1] ON [c0].[ClientId] = [x1].[Id]
+ORDER BY [x1].[Id] (6438bdd5)
+2017-06-30T10:42:57.3391734-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (3ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[ClientId], [c].[GrantType]
+FROM [ClientGrantTypes] AS [c]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x0] ON [c].[ClientId] = [x0].[Id]
+ORDER BY [x0].[Id] (6438bdd5)
+2017-06-30T10:42:58.3128226-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [identityResource].[Id], [identityResource].[Description], [identityResource].[DisplayName], [identityResource].[Emphasize], [identityResource].[Enabled], [identityResource].[Name], [identityResource].[Required], [identityResource].[ShowInDiscoveryDocument]
+FROM [IdentityResources] AS [identityResource]
+WHERE [identityResource].[Name] IN (N'openid', N'calemas', N'profile', N'email')
+ORDER BY [identityResource].[Id] (6438bdd5)
+2017-06-30T10:42:58.3228293-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[IdentityResourceId], [i].[Type]
+FROM [IdentityClaims] AS [i]
+WHERE EXISTS (
+    SELECT 1
+    FROM [IdentityResources] AS [identityResource]
+    WHERE [identityResource].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([i].[IdentityResourceId] = [identityResource].[Id]))
+ORDER BY [i].[IdentityResourceId] (6438bdd5)
+2017-06-30T10:42:58.5439777-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [api].[Id], [api].[Description], [api].[DisplayName], [api].[Enabled], [api].[Name]
+FROM [ApiResources] AS [api]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiScopes] AS [x]
+    WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId]))
+ORDER BY [api].[Id] (6438bdd5)
+2017-06-30T10:42:58.5960121-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a3].[Id], [a3].[ApiResourceId], [a3].[Type]
+FROM [ApiClaims] AS [a3]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a3].[ApiResourceId] = [api].[Id]))
+ORDER BY [a3].[ApiResourceId] (6438bdd5)
+2017-06-30T10:42:58.6300348-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a2].[Id], [a2].[ApiResourceId], [a2].[Description], [a2].[Expiration], [a2].[Type], [a2].[Value]
+FROM [ApiSecrets] AS [a2]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a2].[ApiResourceId] = [api].[Id]))
+ORDER BY [a2].[ApiResourceId] (6438bdd5)
+2017-06-30T10:42:58.6650580-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ApiResourceId], [a].[Description], [a].[DisplayName], [a].[Emphasize], [a].[Name], [a].[Required], [a].[ShowInDiscoveryDocument]
+FROM [ApiScopes] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a].[ApiResourceId] = [api].[Id]))
+ORDER BY [a].[ApiResourceId], [a].[Id] (6438bdd5)
+2017-06-30T10:42:58.7301013-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[ApiScopeId], [a0].[Type]
+FROM [ApiScopeClaims] AS [a0]
+INNER JOIN (
+    SELECT DISTINCT [a].[ApiResourceId], [a].[Id]
+    FROM [ApiScopes] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiResources] AS [api]
+        WHERE EXISTS (
+            SELECT 1
+            FROM [ApiScopes] AS [x]
+            WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a].[ApiResourceId] = [api].[Id]))
+) AS [a1] ON [a0].[ApiScopeId] = [a1].[Id]
+ORDER BY [a1].[ApiResourceId], [a1].[Id] (6438bdd5)
+2017-06-30T10:42:58.9022163-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [identityResource].[Id], [identityResource].[Description], [identityResource].[DisplayName], [identityResource].[Emphasize], [identityResource].[Enabled], [identityResource].[Name], [identityResource].[Required], [identityResource].[ShowInDiscoveryDocument]
+FROM [IdentityResources] AS [identityResource]
+WHERE [identityResource].[Name] IN (N'openid', N'calemas', N'profile', N'email')
+ORDER BY [identityResource].[Id] (6438bdd5)
+2017-06-30T10:42:58.9032176-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[IdentityResourceId], [i].[Type]
+FROM [IdentityClaims] AS [i]
+WHERE EXISTS (
+    SELECT 1
+    FROM [IdentityResources] AS [identityResource]
+    WHERE [identityResource].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([i].[IdentityResourceId] = [identityResource].[Id]))
+ORDER BY [i].[IdentityResourceId] (6438bdd5)
+2017-06-30T10:42:58.9092212-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [api].[Id], [api].[Description], [api].[DisplayName], [api].[Enabled], [api].[Name]
+FROM [ApiResources] AS [api]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiScopes] AS [x]
+    WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId]))
+ORDER BY [api].[Id] (6438bdd5)
+2017-06-30T10:42:58.9102221-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a3].[Id], [a3].[ApiResourceId], [a3].[Type]
+FROM [ApiClaims] AS [a3]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a3].[ApiResourceId] = [api].[Id]))
+ORDER BY [a3].[ApiResourceId] (6438bdd5)
+2017-06-30T10:42:58.9122234-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a2].[Id], [a2].[ApiResourceId], [a2].[Description], [a2].[Expiration], [a2].[Type], [a2].[Value]
+FROM [ApiSecrets] AS [a2]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a2].[ApiResourceId] = [api].[Id]))
+ORDER BY [a2].[ApiResourceId] (6438bdd5)
+2017-06-30T10:42:58.9132239-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ApiResourceId], [a].[Description], [a].[DisplayName], [a].[Emphasize], [a].[Name], [a].[Required], [a].[ShowInDiscoveryDocument]
+FROM [ApiScopes] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a].[ApiResourceId] = [api].[Id]))
+ORDER BY [a].[ApiResourceId], [a].[Id] (6438bdd5)
+2017-06-30T10:42:58.9142243-03:00 0HL5VNNHPQHUU [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[ApiScopeId], [a0].[Type]
+FROM [ApiScopeClaims] AS [a0]
+INNER JOIN (
+    SELECT DISTINCT [a].[ApiResourceId], [a].[Id]
+    FROM [ApiScopes] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiResources] AS [api]
+        WHERE EXISTS (
+            SELECT 1
+            FROM [ApiScopes] AS [x]
+            WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a].[ApiResourceId] = [api].[Id]))
+) AS [a1] ON [a0].[ApiScopeId] = [a1].[Id]
+ORDER BY [a1].[ApiResourceId], [a1].[Id] (6438bdd5)
+2017-06-30T10:42:59.2274347-03:00 0HL5VNNHPQHUU [INF] ValidatedAuthorizeRequest
+"{
+  \"ClientId\": \"ssocalemas\",
+  \"ClientName\": \"Calemas\",
+  \"RedirectUri\": \"http://localhost:8080/#/authorized/?\",
+  \"AllowedRedirectUris\": [
+    \"http://localhost:8080/#/authorized/?\"
+  ],
+  \"SubjectId\": \"anonymous\",
+  \"ResponseType\": \"id_token token\",
+  \"ResponseMode\": \"fragment\",
+  \"GrantType\": \"implicit\",
+  \"RequestedScopes\": \"openid calemas profile email\",
+  \"State\": \"1498830173820\",
+  \"Nonce\": \"xyz\",
+  \"Raw\": {
+    \"client_id\": \"ssocalemas\",
+    \"redirect_uri\": \"http://localhost:8080/#/authorized/?\",
+    \"response_type\": \"id_token token\",
+    \"scope\": \"openid calemas profile email\",
+    \"state\": \"1498830173820\",
+    \"nonce\": \"xyz\"
+  }
+}" (9a175e33)
+2017-06-30T10:42:59.2384422-03:00 0HL5VNNHPQHUU [INF] Showing login: User is not authenticated (4b8d50b2)
+2017-06-30T10:42:59.2604570-03:00 0HL5VNNHPQHUU [INF] Request finished in 5296.8662ms 302  (15c52c40)
+2017-06-30T10:42:59.2684611-03:00 0HL5VNNHPQHUV [INF] Request starting HTTP/1.1 GET http://localhost:4000/account/login?returnUrl=%2Fconnect%2Fauthorize%2Flogin%3Fclient_id%3Dssocalemas%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A8080%252F%2523%252Fauthorized%252F%253F%26response_type%3Did_token%2520token%26scope%3Dopenid%2520calemas%2520profile%2520email%26state%3D1498830173820%26nonce%3Dxyz   (e5be5b71)
+2017-06-30T10:42:59.6657268-03:00 0HL5VNNHPQHUV [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (Calemas.Erp.Sso.Api)" with arguments (["/connect/authorize/login?client_id=ssocalemas&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2F%23%2Fauthorized%2F%3F&response_type=id_token%20token&scope=openid%20calemas%20profile%20email&state=1498830173820&nonce=xyz"]) - ModelState is Valid (ba7f4ac2)
+2017-06-30T10:42:59.7798030-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (76ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AbsoluteRefreshTokenLifetime], [x].[AccessTokenLifetime], [x].[AccessTokenType], [x].[AllowAccessTokensViaBrowser], [x].[AllowOfflineAccess], [x].[AllowPlainTextPkce], [x].[AllowRememberConsent], [x].[AlwaysIncludeUserClaimsInIdToken], [x].[AlwaysSendClientClaims], [x].[AuthorizationCodeLifetime], [x].[ClientId], [x].[ClientName], [x].[ClientUri], [x].[EnableLocalLogin], [x].[Enabled], [x].[IdentityTokenLifetime], [x].[IncludeJwtId], [x].[LogoUri], [x].[LogoutSessionRequired], [x].[LogoutUri], [x].[PrefixClientClaims], [x].[ProtocolType], [x].[RefreshTokenExpiration], [x].[RefreshTokenUsage], [x].[RequireClientSecret], [x].[RequireConsent], [x].[RequirePkce], [x].[SlidingRefreshTokenLifetime], [x].[UpdateAccessTokenClaimsOnRefresh]
+FROM [Clients] AS [x]
+WHERE [x].[ClientId] = @__clientId_0
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T10:42:59.7848066-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (4ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c6].[Id], [c6].[ClientId], [c6].[Origin]
+FROM [ClientCorsOrigins] AS [c6]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x7] ON [c6].[ClientId] = [x7].[Id]
+ORDER BY [x7].[Id] (6438bdd5)
+2017-06-30T10:42:59.7858070-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c5].[Id], [c5].[ClientId], [c5].[Provider]
+FROM [ClientIdPRestrictions] AS [c5]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x6] ON [c5].[ClientId] = [x6].[Id]
+ORDER BY [x6].[Id] (6438bdd5)
+2017-06-30T10:42:59.7878096-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c4].[Id], [c4].[ClientId], [c4].[Type], [c4].[Value]
+FROM [ClientClaims] AS [c4]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x5] ON [c4].[ClientId] = [x5].[Id]
+ORDER BY [x5].[Id] (6438bdd5)
+2017-06-30T10:42:59.8048232-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (16ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c3].[Id], [c3].[ClientId], [c3].[Description], [c3].[Expiration], [c3].[Type], [c3].[Value]
+FROM [ClientSecrets] AS [c3]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x4] ON [c3].[ClientId] = [x4].[Id]
+ORDER BY [x4].[Id] (6438bdd5)
+2017-06-30T10:42:59.8068217-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c2].[Id], [c2].[ClientId], [c2].[Scope]
+FROM [ClientScopes] AS [c2]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x3] ON [c2].[ClientId] = [x3].[Id]
+ORDER BY [x3].[Id] (6438bdd5)
+2017-06-30T10:42:59.8088226-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[ClientId], [c1].[PostLogoutRedirectUri]
+FROM [ClientPostLogoutRedirectUris] AS [c1]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x2] ON [c1].[ClientId] = [x2].[Id]
+ORDER BY [x2].[Id] (6438bdd5)
+2017-06-30T10:42:59.8098231-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c0].[Id], [c0].[ClientId], [c0].[RedirectUri]
+FROM [ClientRedirectUris] AS [c0]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x1] ON [c0].[ClientId] = [x1].[Id]
+ORDER BY [x1].[Id] (6438bdd5)
+2017-06-30T10:42:59.8098231-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[ClientId], [c].[GrantType]
+FROM [ClientGrantTypes] AS [c]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x0] ON [c].[ClientId] = [x0].[Id]
+ORDER BY [x0].[Id] (6438bdd5)
+2017-06-30T10:42:59.8118244-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [identityResource].[Id], [identityResource].[Description], [identityResource].[DisplayName], [identityResource].[Emphasize], [identityResource].[Enabled], [identityResource].[Name], [identityResource].[Required], [identityResource].[ShowInDiscoveryDocument]
+FROM [IdentityResources] AS [identityResource]
+WHERE [identityResource].[Name] IN (N'openid', N'calemas', N'profile', N'email')
+ORDER BY [identityResource].[Id] (6438bdd5)
+2017-06-30T10:42:59.8128253-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[IdentityResourceId], [i].[Type]
+FROM [IdentityClaims] AS [i]
+WHERE EXISTS (
+    SELECT 1
+    FROM [IdentityResources] AS [identityResource]
+    WHERE [identityResource].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([i].[IdentityResourceId] = [identityResource].[Id]))
+ORDER BY [i].[IdentityResourceId] (6438bdd5)
+2017-06-30T10:42:59.8158271-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [api].[Id], [api].[Description], [api].[DisplayName], [api].[Enabled], [api].[Name]
+FROM [ApiResources] AS [api]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiScopes] AS [x]
+    WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId]))
+ORDER BY [api].[Id] (6438bdd5)
+2017-06-30T10:42:59.8158271-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a3].[Id], [a3].[ApiResourceId], [a3].[Type]
+FROM [ApiClaims] AS [a3]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a3].[ApiResourceId] = [api].[Id]))
+ORDER BY [a3].[ApiResourceId] (6438bdd5)
+2017-06-30T10:42:59.8168280-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a2].[Id], [a2].[ApiResourceId], [a2].[Description], [a2].[Expiration], [a2].[Type], [a2].[Value]
+FROM [ApiSecrets] AS [a2]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a2].[ApiResourceId] = [api].[Id]))
+ORDER BY [a2].[ApiResourceId] (6438bdd5)
+2017-06-30T10:42:59.8168280-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ApiResourceId], [a].[Description], [a].[DisplayName], [a].[Emphasize], [a].[Name], [a].[Required], [a].[ShowInDiscoveryDocument]
+FROM [ApiScopes] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a].[ApiResourceId] = [api].[Id]))
+ORDER BY [a].[ApiResourceId], [a].[Id] (6438bdd5)
+2017-06-30T10:42:59.8178284-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[ApiScopeId], [a0].[Type]
+FROM [ApiScopeClaims] AS [a0]
+INNER JOIN (
+    SELECT DISTINCT [a].[ApiResourceId], [a].[Id]
+    FROM [ApiScopes] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiResources] AS [api]
+        WHERE EXISTS (
+            SELECT 1
+            FROM [ApiScopes] AS [x]
+            WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a].[ApiResourceId] = [api].[Id]))
+) AS [a1] ON [a0].[ApiScopeId] = [a1].[Id]
+ORDER BY [a1].[ApiResourceId], [a1].[Id] (6438bdd5)
+2017-06-30T10:42:59.8198306-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [identityResource].[Id], [identityResource].[Description], [identityResource].[DisplayName], [identityResource].[Emphasize], [identityResource].[Enabled], [identityResource].[Name], [identityResource].[Required], [identityResource].[ShowInDiscoveryDocument]
+FROM [IdentityResources] AS [identityResource]
+WHERE [identityResource].[Name] IN (N'openid', N'calemas', N'profile', N'email')
+ORDER BY [identityResource].[Id] (6438bdd5)
+2017-06-30T10:42:59.8218331-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[IdentityResourceId], [i].[Type]
+FROM [IdentityClaims] AS [i]
+WHERE EXISTS (
+    SELECT 1
+    FROM [IdentityResources] AS [identityResource]
+    WHERE [identityResource].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([i].[IdentityResourceId] = [identityResource].[Id]))
+ORDER BY [i].[IdentityResourceId] (6438bdd5)
+2017-06-30T10:42:59.8248333-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [api].[Id], [api].[Description], [api].[DisplayName], [api].[Enabled], [api].[Name]
+FROM [ApiResources] AS [api]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiScopes] AS [x]
+    WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId]))
+ORDER BY [api].[Id] (6438bdd5)
+2017-06-30T10:42:59.8258338-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a3].[Id], [a3].[ApiResourceId], [a3].[Type]
+FROM [ApiClaims] AS [a3]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a3].[ApiResourceId] = [api].[Id]))
+ORDER BY [a3].[ApiResourceId] (6438bdd5)
+2017-06-30T10:42:59.8258338-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a2].[Id], [a2].[ApiResourceId], [a2].[Description], [a2].[Expiration], [a2].[Type], [a2].[Value]
+FROM [ApiSecrets] AS [a2]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a2].[ApiResourceId] = [api].[Id]))
+ORDER BY [a2].[ApiResourceId] (6438bdd5)
+2017-06-30T10:42:59.8268346-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ApiResourceId], [a].[Description], [a].[DisplayName], [a].[Emphasize], [a].[Name], [a].[Required], [a].[ShowInDiscoveryDocument]
+FROM [ApiScopes] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a].[ApiResourceId] = [api].[Id]))
+ORDER BY [a].[ApiResourceId], [a].[Id] (6438bdd5)
+2017-06-30T10:42:59.8278351-03:00 0HL5VNNHPQHUV [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[ApiScopeId], [a0].[Type]
+FROM [ApiScopeClaims] AS [a0]
+INNER JOIN (
+    SELECT DISTINCT [a].[ApiResourceId], [a].[Id]
+    FROM [ApiScopes] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiResources] AS [api]
+        WHERE EXISTS (
+            SELECT 1
+            FROM [ApiScopes] AS [x]
+            WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a].[ApiResourceId] = [api].[Id]))
+) AS [a1] ON [a0].[ApiScopeId] = [a1].[Id]
+ORDER BY [a1].[ApiResourceId], [a1].[Id] (6438bdd5)
+2017-06-30T10:43:00.2771372-03:00 0HL5VNNHPQHUV [INF] Executing ViewResult, running view at path "/Views/Account/Login.cshtml". (9707eebe)
+2017-06-30T10:43:00.7494512-03:00 0HL5VNNHPQHUV [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (Calemas.Erp.Sso.Api)" in 1460.3236ms (afa2e885)
+2017-06-30T10:43:00.7504517-03:00 0HL5VNNHPQHUV [INF] Request finished in 1481.7607ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-30T10:43:00.8635275-03:00 0HL5VNNHPQHV0 [INF] Request starting HTTP/1.1 GET http://localhost:4000/fonts/Simple-Line-Icons.woff2?v=2.4.0   (e5be5b71)
+2017-06-30T10:43:00.8785373-03:00 0HL5VNNHPQHV0 [INF] Sending file. Request path: '"/fonts/Simple-Line-Icons.woff2"'. Physical path: '"C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\wwwroot\fonts\Simple-Line-Icons.woff2"' (27b0a520)
+2017-06-30T10:43:00.9045555-03:00 0HL5VNNHPQHV0 [INF] Request finished in 41.4176ms 200 application/font-woff2 (15c52c40)
+2017-06-30T10:43:00.9664533-03:00 0HL5VNNHPQHV1 [INF] Request starting HTTP/1.1 GET http://localhost:4000/fonts/Simple-Line-Icons.ttf?v=2.4.0   (e5be5b71)
+2017-06-30T10:43:00.9674542-03:00 0HL5VNNHPQHV1 [INF] Sending file. Request path: '"/fonts/Simple-Line-Icons.ttf"'. Physical path: '"C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\wwwroot\fonts\Simple-Line-Icons.ttf"' (27b0a520)
+2017-06-30T10:43:00.9684559-03:00 0HL5VNNHPQHV1 [INF] Request finished in 1.9138ms 200 application/x-font-ttf (15c52c40)
+2017-06-30T10:45:40.4955035-03:00 0HL5VNNHPQHV2 [INF] Request starting HTTP/1.1 POST http://localhost:4000/account/login?returnUrl=%2Fconnect%2Fauthorize%2Flogin%3Fclient_id%3Dssocalemas%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A8080%252F%2523%252Fauthorized%252F%253F%26response_type%3Did_token%2520token%26scope%3Dopenid%2520calemas%2520profile%2520email%26state%3D1498830173820%26nonce%3Dxyz application/x-www-form-urlencoded 525 (e5be5b71)
+2017-06-30T10:45:40.5945695-03:00 0HL5VNNHPQHV2 [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (Calemas.Erp.Sso.Api)" with arguments (["IdentityServer4.Quickstart.UI.LoginInputModel"]) - ModelState is Valid (ba7f4ac2)
+2017-06-30T10:45:40.7196533-03:00 0HL5VNNHPQHV2 [INF] Executed DbCommand (31ms) [Parameters=[@___userName_0='?' (Size = 4000), @___password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [_].[Id], [_].[Account], [_].[Ativo], [_].[NivelAcessoId], [_].[Password], [_].[UserAlterDate], [_].[UserAlterId], [_].[UserCreateDate], [_].[UserCreateId], [p].[Id], [p].[Apelido], [p].[CPF_CNPJ], [p].[Celular], [p].[Comercial], [p].[DataNascimento], [p].[Email], [p].[EnderecoId], [p].[EstadoCivilId], [p].[Juridica], [p].[Nome], [p].[RG_IE], [p].[Sexo], [p].[Telefone], [p].[UserAlterDate], [p].[UserAlterId], [p].[UserCreateDate], [p].[UserCreateId]
+FROM [Colaborador] AS [_]
+INNER JOIN [Pessoa] AS [p] ON [_].[Id] = [p].[Id]
+WHERE ([_].[Account] = @___userName_0) AND ([_].[Password] = @___password_1) (6438bdd5)
+2017-06-30T10:45:40.8017085-03:00 0HL5VNNHPQHV2 [INF] AuthenticationScheme: "idsrv" signed in. (c66dd7e7)
+2017-06-30T10:45:40.8097130-03:00 0HL5VNNHPQHV2 [INF] Executing RedirectResult, redirecting to "/connect/authorize/login?client_id=ssocalemas&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2F%23%2Fauthorized%2F%3F&response_type=id_token%20token&scope=openid%20calemas%20profile%20email&state=1498830173820&nonce=xyz". (d98d540e)
+2017-06-30T10:45:40.8107135-03:00 0HL5VNNHPQHV2 [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (Calemas.Erp.Sso.Api)" in 309.5356ms (afa2e885)
+2017-06-30T10:45:40.8107135-03:00 0HL5VNNHPQHV2 [INF] Request finished in 314.7699ms 302  (15c52c40)
+2017-06-30T10:45:40.8157171-03:00 0HL5VNNHPQHV3 [INF] Request starting HTTP/1.1 GET http://localhost:4000/connect/authorize/login?client_id=ssocalemas&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2F%23%2Fauthorized%2F%3F&response_type=id_token%20token&scope=openid%20calemas%20profile%20email&state=1498830173820&nonce=xyz   (e5be5b71)
+2017-06-30T10:45:40.8287251-03:00 0HL5VNNHPQHV3 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "idsrv". (bdba1d38)
+2017-06-30T10:45:40.8297264-03:00 0HL5VNNHPQHV3 [INF] AuthenticationScheme: "idsrv" was successfully authenticated. (1805f3b3)
+2017-06-30T10:45:40.8297264-03:00 0HL5VNNHPQHV3 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.AuthorizeEndpoint" for "/connect/authorize/login" (f7642de5)
+2017-06-30T10:45:40.8347333-03:00 0HL5VNNHPQHV3 [INF] AuthenticationScheme: "idsrv" was successfully authenticated. (1805f3b3)
+2017-06-30T10:45:40.8427357-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (4ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AbsoluteRefreshTokenLifetime], [x].[AccessTokenLifetime], [x].[AccessTokenType], [x].[AllowAccessTokensViaBrowser], [x].[AllowOfflineAccess], [x].[AllowPlainTextPkce], [x].[AllowRememberConsent], [x].[AlwaysIncludeUserClaimsInIdToken], [x].[AlwaysSendClientClaims], [x].[AuthorizationCodeLifetime], [x].[ClientId], [x].[ClientName], [x].[ClientUri], [x].[EnableLocalLogin], [x].[Enabled], [x].[IdentityTokenLifetime], [x].[IncludeJwtId], [x].[LogoUri], [x].[LogoutSessionRequired], [x].[LogoutUri], [x].[PrefixClientClaims], [x].[ProtocolType], [x].[RefreshTokenExpiration], [x].[RefreshTokenUsage], [x].[RequireClientSecret], [x].[RequireConsent], [x].[RequirePkce], [x].[SlidingRefreshTokenLifetime], [x].[UpdateAccessTokenClaimsOnRefresh]
+FROM [Clients] AS [x]
+WHERE [x].[ClientId] = @__clientId_0
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T10:45:40.8467384-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (3ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c6].[Id], [c6].[ClientId], [c6].[Origin]
+FROM [ClientCorsOrigins] AS [c6]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x7] ON [c6].[ClientId] = [x7].[Id]
+ORDER BY [x7].[Id] (6438bdd5)
+2017-06-30T10:45:40.8517420-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (4ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c5].[Id], [c5].[ClientId], [c5].[Provider]
+FROM [ClientIdPRestrictions] AS [c5]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x6] ON [c5].[ClientId] = [x6].[Id]
+ORDER BY [x6].[Id] (6438bdd5)
+2017-06-30T10:45:40.8567447-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (5ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c4].[Id], [c4].[ClientId], [c4].[Type], [c4].[Value]
+FROM [ClientClaims] AS [c4]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x5] ON [c4].[ClientId] = [x5].[Id]
+ORDER BY [x5].[Id] (6438bdd5)
+2017-06-30T10:45:40.8597461-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (2ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c3].[Id], [c3].[ClientId], [c3].[Description], [c3].[Expiration], [c3].[Type], [c3].[Value]
+FROM [ClientSecrets] AS [c3]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x4] ON [c3].[ClientId] = [x4].[Id]
+ORDER BY [x4].[Id] (6438bdd5)
+2017-06-30T10:45:40.8627483-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (2ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c2].[Id], [c2].[ClientId], [c2].[Scope]
+FROM [ClientScopes] AS [c2]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x3] ON [c2].[ClientId] = [x3].[Id]
+ORDER BY [x3].[Id] (6438bdd5)
+2017-06-30T10:45:40.8657513-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (2ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[ClientId], [c1].[PostLogoutRedirectUri]
+FROM [ClientPostLogoutRedirectUris] AS [c1]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x2] ON [c1].[ClientId] = [x2].[Id]
+ORDER BY [x2].[Id] (6438bdd5)
+2017-06-30T10:45:40.8677518-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (2ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c0].[Id], [c0].[ClientId], [c0].[RedirectUri]
+FROM [ClientRedirectUris] AS [c0]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x1] ON [c0].[ClientId] = [x1].[Id]
+ORDER BY [x1].[Id] (6438bdd5)
+2017-06-30T10:45:40.8727566-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (4ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[ClientId], [c].[GrantType]
+FROM [ClientGrantTypes] AS [c]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x0] ON [c].[ClientId] = [x0].[Id]
+ORDER BY [x0].[Id] (6438bdd5)
+2017-06-30T10:45:40.8767585-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [identityResource].[Id], [identityResource].[Description], [identityResource].[DisplayName], [identityResource].[Emphasize], [identityResource].[Enabled], [identityResource].[Name], [identityResource].[Required], [identityResource].[ShowInDiscoveryDocument]
+FROM [IdentityResources] AS [identityResource]
+WHERE [identityResource].[Name] IN (N'openid', N'calemas', N'profile', N'email')
+ORDER BY [identityResource].[Id] (6438bdd5)
+2017-06-30T10:45:40.8807607-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[IdentityResourceId], [i].[Type]
+FROM [IdentityClaims] AS [i]
+WHERE EXISTS (
+    SELECT 1
+    FROM [IdentityResources] AS [identityResource]
+    WHERE [identityResource].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([i].[IdentityResourceId] = [identityResource].[Id]))
+ORDER BY [i].[IdentityResourceId] (6438bdd5)
+2017-06-30T10:45:40.8887681-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [api].[Id], [api].[Description], [api].[DisplayName], [api].[Enabled], [api].[Name]
+FROM [ApiResources] AS [api]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiScopes] AS [x]
+    WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId]))
+ORDER BY [api].[Id] (6438bdd5)
+2017-06-30T10:45:40.9077786-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a3].[Id], [a3].[ApiResourceId], [a3].[Type]
+FROM [ApiClaims] AS [a3]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a3].[ApiResourceId] = [api].[Id]))
+ORDER BY [a3].[ApiResourceId] (6438bdd5)
+2017-06-30T10:45:40.9287932-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a2].[Id], [a2].[ApiResourceId], [a2].[Description], [a2].[Expiration], [a2].[Type], [a2].[Value]
+FROM [ApiSecrets] AS [a2]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a2].[ApiResourceId] = [api].[Id]))
+ORDER BY [a2].[ApiResourceId] (6438bdd5)
+2017-06-30T10:45:40.9468053-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ApiResourceId], [a].[Description], [a].[DisplayName], [a].[Emphasize], [a].[Name], [a].[Required], [a].[ShowInDiscoveryDocument]
+FROM [ApiScopes] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a].[ApiResourceId] = [api].[Id]))
+ORDER BY [a].[ApiResourceId], [a].[Id] (6438bdd5)
+2017-06-30T10:45:40.9828298-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[ApiScopeId], [a0].[Type]
+FROM [ApiScopeClaims] AS [a0]
+INNER JOIN (
+    SELECT DISTINCT [a].[ApiResourceId], [a].[Id]
+    FROM [ApiScopes] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiResources] AS [api]
+        WHERE EXISTS (
+            SELECT 1
+            FROM [ApiScopes] AS [x]
+            WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a].[ApiResourceId] = [api].[Id]))
+) AS [a1] ON [a0].[ApiScopeId] = [a1].[Id]
+ORDER BY [a1].[ApiResourceId], [a1].[Id] (6438bdd5)
+2017-06-30T10:45:40.9838294-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [identityResource].[Id], [identityResource].[Description], [identityResource].[DisplayName], [identityResource].[Emphasize], [identityResource].[Enabled], [identityResource].[Name], [identityResource].[Required], [identityResource].[ShowInDiscoveryDocument]
+FROM [IdentityResources] AS [identityResource]
+WHERE [identityResource].[Name] IN (N'openid', N'calemas', N'profile', N'email')
+ORDER BY [identityResource].[Id] (6438bdd5)
+2017-06-30T10:45:40.9848299-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[IdentityResourceId], [i].[Type]
+FROM [IdentityClaims] AS [i]
+WHERE EXISTS (
+    SELECT 1
+    FROM [IdentityResources] AS [identityResource]
+    WHERE [identityResource].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([i].[IdentityResourceId] = [identityResource].[Id]))
+ORDER BY [i].[IdentityResourceId] (6438bdd5)
+2017-06-30T10:45:40.9858312-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [api].[Id], [api].[Description], [api].[DisplayName], [api].[Enabled], [api].[Name]
+FROM [ApiResources] AS [api]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiScopes] AS [x]
+    WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId]))
+ORDER BY [api].[Id] (6438bdd5)
+2017-06-30T10:45:40.9858312-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a3].[Id], [a3].[ApiResourceId], [a3].[Type]
+FROM [ApiClaims] AS [a3]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a3].[ApiResourceId] = [api].[Id]))
+ORDER BY [a3].[ApiResourceId] (6438bdd5)
+2017-06-30T10:45:40.9868320-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a2].[Id], [a2].[ApiResourceId], [a2].[Description], [a2].[Expiration], [a2].[Type], [a2].[Value]
+FROM [ApiSecrets] AS [a2]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a2].[ApiResourceId] = [api].[Id]))
+ORDER BY [a2].[ApiResourceId] (6438bdd5)
+2017-06-30T10:45:40.9878346-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ApiResourceId], [a].[Description], [a].[DisplayName], [a].[Emphasize], [a].[Name], [a].[Required], [a].[ShowInDiscoveryDocument]
+FROM [ApiScopes] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [api]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiScopes] AS [x]
+        WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a].[ApiResourceId] = [api].[Id]))
+ORDER BY [a].[ApiResourceId], [a].[Id] (6438bdd5)
+2017-06-30T10:45:40.9888342-03:00 0HL5VNNHPQHV3 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[ApiScopeId], [a0].[Type]
+FROM [ApiScopeClaims] AS [a0]
+INNER JOIN (
+    SELECT DISTINCT [a].[ApiResourceId], [a].[Id]
+    FROM [ApiScopes] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiResources] AS [api]
+        WHERE EXISTS (
+            SELECT 1
+            FROM [ApiScopes] AS [x]
+            WHERE [x].[Name] IN (N'openid', N'calemas', N'profile', N'email') AND ([api].[Id] = [x].[ApiResourceId])) AND ([a].[ApiResourceId] = [api].[Id]))
+) AS [a1] ON [a0].[ApiScopeId] = [a1].[Id]
+ORDER BY [a1].[ApiResourceId], [a1].[Id] (6438bdd5)
+2017-06-30T10:45:40.9898347-03:00 0HL5VNNHPQHV3 [INF] AuthenticationScheme: "idsrv" was successfully authenticated. (1805f3b3)
+2017-06-30T10:45:40.9898347-03:00 0HL5VNNHPQHV3 [INF] ValidatedAuthorizeRequest
+"{
+  \"ClientId\": \"ssocalemas\",
+  \"ClientName\": \"Calemas\",
+  \"RedirectUri\": \"http://localhost:8080/#/authorized/?\",
+  \"AllowedRedirectUris\": [
+    \"http://localhost:8080/#/authorized/?\"
+  ],
+  \"SubjectId\": \"1\",
+  \"ResponseType\": \"id_token token\",
+  \"ResponseMode\": \"fragment\",
+  \"GrantType\": \"implicit\",
+  \"RequestedScopes\": \"openid calemas profile email\",
+  \"State\": \"1498830173820\",
+  \"Nonce\": \"xyz\",
+  \"SessionId\": \"671d6af3b75bc0349fa053ce7030f9e2\",
+  \"Raw\": {
+    \"client_id\": \"ssocalemas\",
+    \"redirect_uri\": \"http://localhost:8080/#/authorized/?\",
+    \"response_type\": \"id_token token\",
+    \"scope\": \"openid calemas profile email\",
+    \"state\": \"1498830173820\",
+    \"nonce\": \"xyz\"
+  }
+}" (9a175e33)
+2017-06-30T10:45:41.3708828-03:00 0HL5VNNHPQHV3 [INF] Authorize endpoint response
+"{
+  \"SubjectId\": \"1\",
+  \"ClientId\": \"ssocalemas\",
+  \"RedirectUri\": \"http://localhost:8080/#/authorized/?\",
+  \"State\": \"1498830173820\",
+  \"Scope\": \"openid profile email calemas\"
+}" (5993a9fa)
+2017-06-30T10:45:41.3828912-03:00 0HL5VNNHPQHV3 [INF] AuthenticationScheme: "idsrv" was successfully authenticated. (1805f3b3)
+2017-06-30T10:45:41.3888968-03:00 0HL5VNNHPQHV3 [INF] AuthenticationScheme: "idsrv" was successfully authenticated. (1805f3b3)
+2017-06-30T10:45:41.3908965-03:00 0HL5VNNHPQHV3 [INF] AuthenticationScheme: "idsrv" signed in. (c66dd7e7)
+2017-06-30T10:45:41.3959005-03:00 0HL5VNNHPQHV3 [INF] Request finished in 580.1321ms 302  (15c52c40)
+2017-06-30T10:45:41.8661541-03:00 0HL5VNNHPQHV4 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:4000/connect/userinfo/?   (e5be5b71)
+2017-06-30T10:45:41.8731606-03:00 0HL5VNNHPQHV4 [INF] Request finished in 7.236ms 204  (15c52c40)
+2017-06-30T10:45:42.0072481-03:00 0HL5VNNHPQHV5 [INF] Request starting HTTP/1.1 GET http://localhost:4000/connect/userinfo/?   (e5be5b71)
+2017-06-30T10:45:42.0122517-03:00 0HL5VNNHPQHV5 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.UserInfoEndpoint" for "/connect/userinfo/" (f7642de5)
+2017-06-30T10:45:42.0292629-03:00 0HL5VNNHPQHV5 [INF] ValidateAsync: Locating bearer token (a4b419b4)
+2017-06-30T10:45:42.1633521-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AbsoluteRefreshTokenLifetime], [x].[AccessTokenLifetime], [x].[AccessTokenType], [x].[AllowAccessTokensViaBrowser], [x].[AllowOfflineAccess], [x].[AllowPlainTextPkce], [x].[AllowRememberConsent], [x].[AlwaysIncludeUserClaimsInIdToken], [x].[AlwaysSendClientClaims], [x].[AuthorizationCodeLifetime], [x].[ClientId], [x].[ClientName], [x].[ClientUri], [x].[EnableLocalLogin], [x].[Enabled], [x].[IdentityTokenLifetime], [x].[IncludeJwtId], [x].[LogoUri], [x].[LogoutSessionRequired], [x].[LogoutUri], [x].[PrefixClientClaims], [x].[ProtocolType], [x].[RefreshTokenExpiration], [x].[RefreshTokenUsage], [x].[RequireClientSecret], [x].[RequireConsent], [x].[RequirePkce], [x].[SlidingRefreshTokenLifetime], [x].[UpdateAccessTokenClaimsOnRefresh]
+FROM [Clients] AS [x]
+WHERE [x].[ClientId] = @__clientId_0
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T10:45:42.1643533-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c6].[Id], [c6].[ClientId], [c6].[Origin]
+FROM [ClientCorsOrigins] AS [c6]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x7] ON [c6].[ClientId] = [x7].[Id]
+ORDER BY [x7].[Id] (6438bdd5)
+2017-06-30T10:45:42.1643533-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c5].[Id], [c5].[ClientId], [c5].[Provider]
+FROM [ClientIdPRestrictions] AS [c5]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x6] ON [c5].[ClientId] = [x6].[Id]
+ORDER BY [x6].[Id] (6438bdd5)
+2017-06-30T10:45:42.1653538-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c4].[Id], [c4].[ClientId], [c4].[Type], [c4].[Value]
+FROM [ClientClaims] AS [c4]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x5] ON [c4].[ClientId] = [x5].[Id]
+ORDER BY [x5].[Id] (6438bdd5)
+2017-06-30T10:45:42.1653538-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c3].[Id], [c3].[ClientId], [c3].[Description], [c3].[Expiration], [c3].[Type], [c3].[Value]
+FROM [ClientSecrets] AS [c3]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x4] ON [c3].[ClientId] = [x4].[Id]
+ORDER BY [x4].[Id] (6438bdd5)
+2017-06-30T10:45:42.1663534-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c2].[Id], [c2].[ClientId], [c2].[Scope]
+FROM [ClientScopes] AS [c2]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x3] ON [c2].[ClientId] = [x3].[Id]
+ORDER BY [x3].[Id] (6438bdd5)
+2017-06-30T10:45:42.1663534-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[ClientId], [c1].[PostLogoutRedirectUri]
+FROM [ClientPostLogoutRedirectUris] AS [c1]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x2] ON [c1].[ClientId] = [x2].[Id]
+ORDER BY [x2].[Id] (6438bdd5)
+2017-06-30T10:45:42.1663534-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c0].[Id], [c0].[ClientId], [c0].[RedirectUri]
+FROM [ClientRedirectUris] AS [c0]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x1] ON [c0].[ClientId] = [x1].[Id]
+ORDER BY [x1].[Id] (6438bdd5)
+2017-06-30T10:45:42.1673543-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[ClientId], [c].[GrantType]
+FROM [ClientGrantTypes] AS [c]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x0] ON [c].[ClientId] = [x0].[Id]
+ORDER BY [x0].[Id] (6438bdd5)
+2017-06-30T10:45:42.1793628-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AbsoluteRefreshTokenLifetime], [x].[AccessTokenLifetime], [x].[AccessTokenType], [x].[AllowAccessTokensViaBrowser], [x].[AllowOfflineAccess], [x].[AllowPlainTextPkce], [x].[AllowRememberConsent], [x].[AlwaysIncludeUserClaimsInIdToken], [x].[AlwaysSendClientClaims], [x].[AuthorizationCodeLifetime], [x].[ClientId], [x].[ClientName], [x].[ClientUri], [x].[EnableLocalLogin], [x].[Enabled], [x].[IdentityTokenLifetime], [x].[IncludeJwtId], [x].[LogoUri], [x].[LogoutSessionRequired], [x].[LogoutUri], [x].[PrefixClientClaims], [x].[ProtocolType], [x].[RefreshTokenExpiration], [x].[RefreshTokenUsage], [x].[RequireClientSecret], [x].[RequireConsent], [x].[RequirePkce], [x].[SlidingRefreshTokenLifetime], [x].[UpdateAccessTokenClaimsOnRefresh]
+FROM [Clients] AS [x]
+WHERE [x].[ClientId] = @__clientId_0
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T10:45:42.1803636-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c6].[Id], [c6].[ClientId], [c6].[Origin]
+FROM [ClientCorsOrigins] AS [c6]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x7] ON [c6].[ClientId] = [x7].[Id]
+ORDER BY [x7].[Id] (6438bdd5)
+2017-06-30T10:45:42.1813641-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c5].[Id], [c5].[ClientId], [c5].[Provider]
+FROM [ClientIdPRestrictions] AS [c5]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x6] ON [c5].[ClientId] = [x6].[Id]
+ORDER BY [x6].[Id] (6438bdd5)
+2017-06-30T10:45:42.1813641-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c4].[Id], [c4].[ClientId], [c4].[Type], [c4].[Value]
+FROM [ClientClaims] AS [c4]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x5] ON [c4].[ClientId] = [x5].[Id]
+ORDER BY [x5].[Id] (6438bdd5)
+2017-06-30T10:45:42.1823646-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c3].[Id], [c3].[ClientId], [c3].[Description], [c3].[Expiration], [c3].[Type], [c3].[Value]
+FROM [ClientSecrets] AS [c3]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x4] ON [c3].[ClientId] = [x4].[Id]
+ORDER BY [x4].[Id] (6438bdd5)
+2017-06-30T10:45:42.1823646-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c2].[Id], [c2].[ClientId], [c2].[Scope]
+FROM [ClientScopes] AS [c2]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x3] ON [c2].[ClientId] = [x3].[Id]
+ORDER BY [x3].[Id] (6438bdd5)
+2017-06-30T10:45:42.1833654-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[ClientId], [c1].[PostLogoutRedirectUri]
+FROM [ClientPostLogoutRedirectUris] AS [c1]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x2] ON [c1].[ClientId] = [x2].[Id]
+ORDER BY [x2].[Id] (6438bdd5)
+2017-06-30T10:45:42.1833654-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c0].[Id], [c0].[ClientId], [c0].[RedirectUri]
+FROM [ClientRedirectUris] AS [c0]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x1] ON [c0].[ClientId] = [x1].[Id]
+ORDER BY [x1].[Id] (6438bdd5)
+2017-06-30T10:45:42.1843663-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (0ms) [Parameters=[@__clientId_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[ClientId], [c].[GrantType]
+FROM [ClientGrantTypes] AS [c]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [x].[Id]
+    FROM [Clients] AS [x]
+    WHERE [x].[ClientId] = @__clientId_0
+    ORDER BY [x].[Id]
+) AS [x0] ON [c].[ClientId] = [x0].[Id]
+ORDER BY [x0].[Id] (6438bdd5)
+2017-06-30T10:45:42.2073807-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [identityResource].[Id], [identityResource].[Description], [identityResource].[DisplayName], [identityResource].[Emphasize], [identityResource].[Enabled], [identityResource].[Name], [identityResource].[Required], [identityResource].[ShowInDiscoveryDocument]
+FROM [IdentityResources] AS [identityResource]
+WHERE [identityResource].[Name] IN (N'openid', N'profile', N'email', N'calemas')
+ORDER BY [identityResource].[Id] (6438bdd5)
+2017-06-30T10:45:42.2113837-03:00 0HL5VNNHPQHV5 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[IdentityResourceId], [i].[Type]
+FROM [IdentityClaims] AS [i]
+WHERE EXISTS (
+    SELECT 1
+    FROM [IdentityResources] AS [identityResource]
+    WHERE [identityResource].[Name] IN (N'openid', N'profile', N'email', N'calemas') AND ([i].[IdentityResourceId] = [identityResource].[Id]))
+ORDER BY [i].[IdentityResourceId] (6438bdd5)
+2017-06-30T10:45:42.2143860-03:00 0HL5VNNHPQHV5 [INF] Profile service returned to the following claim types: "sub name email" (a9217bec)
+2017-06-30T10:45:42.2223925-03:00 0HL5VNNHPQHV5 [INF] Request finished in 215.8899ms 200 application/json (15c52c40)
+2017-06-30T10:45:45.4125229-03:00 0HL5VNNHPQHV6 [INF] Request starting HTTP/1.1 GET http://localhost:4000/.well-known/openid-configuration   (e5be5b71)
+2017-06-30T10:45:45.4145250-03:00 0HL5VNNHPQHV6 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2017-06-30T10:45:45.4485478-03:00 0HL5VNNHPQHV6 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Description], [x].[DisplayName], [x].[Emphasize], [x].[Enabled], [x].[Name], [x].[Required], [x].[ShowInDiscoveryDocument]
+FROM [IdentityResources] AS [x]
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T10:45:45.4505487-03:00 0HL5VNNHPQHV6 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[IdentityResourceId], [i].[Type]
+FROM [IdentityClaims] AS [i]
+WHERE EXISTS (
+    SELECT 1
+    FROM [IdentityResources] AS [x]
+    WHERE [i].[IdentityResourceId] = [x].[Id])
+ORDER BY [i].[IdentityResourceId] (6438bdd5)
+2017-06-30T10:45:45.4685607-03:00 0HL5VNNHPQHV6 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Description], [x].[DisplayName], [x].[Enabled], [x].[Name]
+FROM [ApiResources] AS [x]
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T10:45:45.4735655-03:00 0HL5VNNHPQHV6 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a3].[Id], [a3].[ApiResourceId], [a3].[Type]
+FROM [ApiClaims] AS [a3]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a3].[ApiResourceId] = [x].[Id])
+ORDER BY [a3].[ApiResourceId] (6438bdd5)
+2017-06-30T10:45:45.4755665-03:00 0HL5VNNHPQHV6 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a2].[Id], [a2].[ApiResourceId], [a2].[Description], [a2].[Expiration], [a2].[Type], [a2].[Value]
+FROM [ApiSecrets] AS [a2]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a2].[ApiResourceId] = [x].[Id])
+ORDER BY [a2].[ApiResourceId] (6438bdd5)
+2017-06-30T10:45:45.4785678-03:00 0HL5VNNHPQHV6 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ApiResourceId], [a].[Description], [a].[DisplayName], [a].[Emphasize], [a].[Name], [a].[Required], [a].[ShowInDiscoveryDocument]
+FROM [ApiScopes] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a].[ApiResourceId] = [x].[Id])
+ORDER BY [a].[ApiResourceId], [a].[Id] (6438bdd5)
+2017-06-30T10:45:45.4835714-03:00 0HL5VNNHPQHV6 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[ApiScopeId], [a0].[Type]
+FROM [ApiScopeClaims] AS [a0]
+INNER JOIN (
+    SELECT DISTINCT [a].[ApiResourceId], [a].[Id]
+    FROM [ApiScopes] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiResources] AS [x]
+        WHERE [a].[ApiResourceId] = [x].[Id])
+) AS [a1] ON [a0].[ApiScopeId] = [a1].[Id]
+ORDER BY [a1].[ApiResourceId], [a1].[Id] (6438bdd5)
+2017-06-30T10:45:45.5055873-03:00 0HL5VNNHPQHV6 [INF] Request finished in 93.4696ms 200 application/json (15c52c40)
+2017-06-30T10:45:45.8137913-03:00 0HL5VNNHPQHV7 [INF] Request starting HTTP/1.1 GET http://localhost:4000/.well-known/openid-configuration/jwks   (e5be5b71)
+2017-06-30T10:45:45.8137913-03:00 0HL5VNNHPQHV7 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2017-06-30T10:45:45.8318029-03:00 0HL5VNNHPQHV7 [INF] Request finished in 18.3404ms 200 application/json (15c52c40)
+2017-06-30T10:52:10.1986947-03:00 0HL5VNNHPQHV8 [INF] Request starting HTTP/1.1 GET http://localhost:4000/.well-known/openid-configuration   (e5be5b71)
+2017-06-30T10:52:10.1991951-03:00 0HL5VNNHPQHV8 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2017-06-30T10:52:10.2077005-03:00 0HL5VNNHPQHV8 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Description], [x].[DisplayName], [x].[Emphasize], [x].[Enabled], [x].[Name], [x].[Required], [x].[ShowInDiscoveryDocument]
+FROM [IdentityResources] AS [x]
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T10:52:10.2112027-03:00 0HL5VNNHPQHV8 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[IdentityResourceId], [i].[Type]
+FROM [IdentityClaims] AS [i]
+WHERE EXISTS (
+    SELECT 1
+    FROM [IdentityResources] AS [x]
+    WHERE [i].[IdentityResourceId] = [x].[Id])
+ORDER BY [i].[IdentityResourceId] (6438bdd5)
+2017-06-30T10:52:10.2137045-03:00 0HL5VNNHPQHV8 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Description], [x].[DisplayName], [x].[Enabled], [x].[Name]
+FROM [ApiResources] AS [x]
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T10:52:10.2167067-03:00 0HL5VNNHPQHV8 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a3].[Id], [a3].[ApiResourceId], [a3].[Type]
+FROM [ApiClaims] AS [a3]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a3].[ApiResourceId] = [x].[Id])
+ORDER BY [a3].[ApiResourceId] (6438bdd5)
+2017-06-30T10:52:10.2232107-03:00 0HL5VNNHPQHV8 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a2].[Id], [a2].[ApiResourceId], [a2].[Description], [a2].[Expiration], [a2].[Type], [a2].[Value]
+FROM [ApiSecrets] AS [a2]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a2].[ApiResourceId] = [x].[Id])
+ORDER BY [a2].[ApiResourceId] (6438bdd5)
+2017-06-30T10:52:10.2267134-03:00 0HL5VNNHPQHV8 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ApiResourceId], [a].[Description], [a].[DisplayName], [a].[Emphasize], [a].[Name], [a].[Required], [a].[ShowInDiscoveryDocument]
+FROM [ApiScopes] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a].[ApiResourceId] = [x].[Id])
+ORDER BY [a].[ApiResourceId], [a].[Id] (6438bdd5)
+2017-06-30T10:52:10.2312165-03:00 0HL5VNNHPQHV8 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[ApiScopeId], [a0].[Type]
+FROM [ApiScopeClaims] AS [a0]
+INNER JOIN (
+    SELECT DISTINCT [a].[ApiResourceId], [a].[Id]
+    FROM [ApiScopes] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiResources] AS [x]
+        WHERE [a].[ApiResourceId] = [x].[Id])
+) AS [a1] ON [a0].[ApiScopeId] = [a1].[Id]
+ORDER BY [a1].[ApiResourceId], [a1].[Id] (6438bdd5)
+2017-06-30T10:52:10.2327170-03:00 0HL5VNNHPQHV8 [INF] Request finished in 34.1935ms 200 application/json (15c52c40)
+2017-06-30T10:52:10.6720108-03:00 0HL5VNNHPQHV9 [INF] Request starting HTTP/1.1 GET http://localhost:4000/.well-known/openid-configuration/jwks   (e5be5b71)
+2017-06-30T10:52:10.6725112-03:00 0HL5VNNHPQHV9 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2017-06-30T10:52:10.6735121-03:00 0HL5VNNHPQHV9 [INF] Request finished in 1.321ms 200 application/json (15c52c40)
+2017-06-30T10:55:37.6579390-03:00 0HL5VNNHPQHVA [INF] Request starting HTTP/1.1 GET http://localhost:4000/.well-known/openid-configuration   (e5be5b71)
+2017-06-30T10:55:37.6584399-03:00 0HL5VNNHPQHVA [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2017-06-30T10:55:37.6604404-03:00 0HL5VNNHPQHVA [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Description], [x].[DisplayName], [x].[Emphasize], [x].[Enabled], [x].[Name], [x].[Required], [x].[ShowInDiscoveryDocument]
+FROM [IdentityResources] AS [x]
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T10:55:37.6629421-03:00 0HL5VNNHPQHVA [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[IdentityResourceId], [i].[Type]
+FROM [IdentityClaims] AS [i]
+WHERE EXISTS (
+    SELECT 1
+    FROM [IdentityResources] AS [x]
+    WHERE [i].[IdentityResourceId] = [x].[Id])
+ORDER BY [i].[IdentityResourceId] (6438bdd5)
+2017-06-30T10:55:37.6644439-03:00 0HL5VNNHPQHVA [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Description], [x].[DisplayName], [x].[Enabled], [x].[Name]
+FROM [ApiResources] AS [x]
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T10:55:37.6664448-03:00 0HL5VNNHPQHVA [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a3].[Id], [a3].[ApiResourceId], [a3].[Type]
+FROM [ApiClaims] AS [a3]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a3].[ApiResourceId] = [x].[Id])
+ORDER BY [a3].[ApiResourceId] (6438bdd5)
+2017-06-30T10:55:37.6684469-03:00 0HL5VNNHPQHVA [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a2].[Id], [a2].[ApiResourceId], [a2].[Description], [a2].[Expiration], [a2].[Type], [a2].[Value]
+FROM [ApiSecrets] AS [a2]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a2].[ApiResourceId] = [x].[Id])
+ORDER BY [a2].[ApiResourceId] (6438bdd5)
+2017-06-30T10:55:37.6704479-03:00 0HL5VNNHPQHVA [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ApiResourceId], [a].[Description], [a].[DisplayName], [a].[Emphasize], [a].[Name], [a].[Required], [a].[ShowInDiscoveryDocument]
+FROM [ApiScopes] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a].[ApiResourceId] = [x].[Id])
+ORDER BY [a].[ApiResourceId], [a].[Id] (6438bdd5)
+2017-06-30T10:55:37.6729496-03:00 0HL5VNNHPQHVA [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[ApiScopeId], [a0].[Type]
+FROM [ApiScopeClaims] AS [a0]
+INNER JOIN (
+    SELECT DISTINCT [a].[ApiResourceId], [a].[Id]
+    FROM [ApiScopes] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiResources] AS [x]
+        WHERE [a].[ApiResourceId] = [x].[Id])
+) AS [a1] ON [a0].[ApiScopeId] = [a1].[Id]
+ORDER BY [a1].[ApiResourceId], [a1].[Id] (6438bdd5)
+2017-06-30T10:55:37.6739497-03:00 0HL5VNNHPQHVA [INF] Request finished in 16.1235ms 200 application/json (15c52c40)
+2017-06-30T10:55:37.9926628-03:00 0HL5VNNHPQHVB [INF] Request starting HTTP/1.1 GET http://localhost:4000/.well-known/openid-configuration/jwks   (e5be5b71)
+2017-06-30T10:55:37.9936641-03:00 0HL5VNNHPQHVB [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2017-06-30T10:55:37.9941637-03:00 0HL5VNNHPQHVB [INF] Request finished in 1.2094ms 200 application/json (15c52c40)
+2017-06-30T10:57:03.8402508-03:00 0HL5VNNHPQHVC [INF] Request starting HTTP/1.1 GET http://localhost:4000/.well-known/openid-configuration   (e5be5b71)
+2017-06-30T10:57:03.8407512-03:00 0HL5VNNHPQHVC [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2017-06-30T10:57:03.8442531-03:00 0HL5VNNHPQHVC [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Description], [x].[DisplayName], [x].[Emphasize], [x].[Enabled], [x].[Name], [x].[Required], [x].[ShowInDiscoveryDocument]
+FROM [IdentityResources] AS [x]
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T10:57:03.8462564-03:00 0HL5VNNHPQHVC [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[IdentityResourceId], [i].[Type]
+FROM [IdentityClaims] AS [i]
+WHERE EXISTS (
+    SELECT 1
+    FROM [IdentityResources] AS [x]
+    WHERE [i].[IdentityResourceId] = [x].[Id])
+ORDER BY [i].[IdentityResourceId] (6438bdd5)
+2017-06-30T10:57:03.8497570-03:00 0HL5VNNHPQHVC [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Description], [x].[DisplayName], [x].[Enabled], [x].[Name]
+FROM [ApiResources] AS [x]
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T10:57:03.8567619-03:00 0HL5VNNHPQHVC [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a3].[Id], [a3].[ApiResourceId], [a3].[Type]
+FROM [ApiClaims] AS [a3]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a3].[ApiResourceId] = [x].[Id])
+ORDER BY [a3].[ApiResourceId] (6438bdd5)
+2017-06-30T10:57:03.8597637-03:00 0HL5VNNHPQHVC [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a2].[Id], [a2].[ApiResourceId], [a2].[Description], [a2].[Expiration], [a2].[Type], [a2].[Value]
+FROM [ApiSecrets] AS [a2]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a2].[ApiResourceId] = [x].[Id])
+ORDER BY [a2].[ApiResourceId] (6438bdd5)
+2017-06-30T10:57:03.8632672-03:00 0HL5VNNHPQHVC [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ApiResourceId], [a].[Description], [a].[DisplayName], [a].[Emphasize], [a].[Name], [a].[Required], [a].[ShowInDiscoveryDocument]
+FROM [ApiScopes] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a].[ApiResourceId] = [x].[Id])
+ORDER BY [a].[ApiResourceId], [a].[Id] (6438bdd5)
+2017-06-30T10:57:03.8677695-03:00 0HL5VNNHPQHVC [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[ApiScopeId], [a0].[Type]
+FROM [ApiScopeClaims] AS [a0]
+INNER JOIN (
+    SELECT DISTINCT [a].[ApiResourceId], [a].[Id]
+    FROM [ApiScopes] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiResources] AS [x]
+        WHERE [a].[ApiResourceId] = [x].[Id])
+) AS [a1] ON [a0].[ApiScopeId] = [a1].[Id]
+ORDER BY [a1].[ApiResourceId], [a1].[Id] (6438bdd5)
+2017-06-30T10:57:03.8692700-03:00 0HL5VNNHPQHVC [INF] Request finished in 28.9649ms 200 application/json (15c52c40)
+2017-06-30T10:57:04.1489572-03:00 0HL5VNNHPQHVD [INF] Request starting HTTP/1.1 GET http://localhost:4000/.well-known/openid-configuration/jwks   (e5be5b71)
+2017-06-30T10:57:04.1494572-03:00 0HL5VNNHPQHVD [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2017-06-30T10:57:04.1499577-03:00 0HL5VNNHPQHVD [INF] Request finished in 1.2771ms 200 application/json (15c52c40)
+2017-06-30T10:59:55.9700249-03:00 0HL5VNNHPQHVE [INF] Request starting HTTP/1.1 GET http://localhost:4000/.well-known/openid-configuration   (e5be5b71)
+2017-06-30T10:59:55.9705249-03:00 0HL5VNNHPQHVE [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2017-06-30T10:59:55.9735271-03:00 0HL5VNNHPQHVE [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Description], [x].[DisplayName], [x].[Emphasize], [x].[Enabled], [x].[Name], [x].[Required], [x].[ShowInDiscoveryDocument]
+FROM [IdentityResources] AS [x]
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T10:59:55.9765294-03:00 0HL5VNNHPQHVE [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[IdentityResourceId], [i].[Type]
+FROM [IdentityClaims] AS [i]
+WHERE EXISTS (
+    SELECT 1
+    FROM [IdentityResources] AS [x]
+    WHERE [i].[IdentityResourceId] = [x].[Id])
+ORDER BY [i].[IdentityResourceId] (6438bdd5)
+2017-06-30T10:59:55.9790311-03:00 0HL5VNNHPQHVE [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Description], [x].[DisplayName], [x].[Enabled], [x].[Name]
+FROM [ApiResources] AS [x]
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T10:59:55.9825342-03:00 0HL5VNNHPQHVE [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a3].[Id], [a3].[ApiResourceId], [a3].[Type]
+FROM [ApiClaims] AS [a3]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a3].[ApiResourceId] = [x].[Id])
+ORDER BY [a3].[ApiResourceId] (6438bdd5)
+2017-06-30T10:59:55.9855356-03:00 0HL5VNNHPQHVE [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a2].[Id], [a2].[ApiResourceId], [a2].[Description], [a2].[Expiration], [a2].[Type], [a2].[Value]
+FROM [ApiSecrets] AS [a2]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a2].[ApiResourceId] = [x].[Id])
+ORDER BY [a2].[ApiResourceId] (6438bdd5)
+2017-06-30T10:59:55.9885370-03:00 0HL5VNNHPQHVE [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ApiResourceId], [a].[Description], [a].[DisplayName], [a].[Emphasize], [a].[Name], [a].[Required], [a].[ShowInDiscoveryDocument]
+FROM [ApiScopes] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a].[ApiResourceId] = [x].[Id])
+ORDER BY [a].[ApiResourceId], [a].[Id] (6438bdd5)
+2017-06-30T10:59:55.9915392-03:00 0HL5VNNHPQHVE [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[ApiScopeId], [a0].[Type]
+FROM [ApiScopeClaims] AS [a0]
+INNER JOIN (
+    SELECT DISTINCT [a].[ApiResourceId], [a].[Id]
+    FROM [ApiScopes] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiResources] AS [x]
+        WHERE [a].[ApiResourceId] = [x].[Id])
+) AS [a1] ON [a0].[ApiScopeId] = [a1].[Id]
+ORDER BY [a1].[ApiResourceId], [a1].[Id] (6438bdd5)
+2017-06-30T10:59:55.9930409-03:00 0HL5VNNHPQHVE [INF] Request finished in 23.0673ms 200 application/json (15c52c40)
+2017-06-30T10:59:56.3722929-03:00 0HL5VNNHPQHVF [INF] Request starting HTTP/1.1 GET http://localhost:4000/.well-known/openid-configuration/jwks   (e5be5b71)
+2017-06-30T10:59:56.3732942-03:00 0HL5VNNHPQHVF [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2017-06-30T10:59:56.3737942-03:00 0HL5VNNHPQHVF [INF] Request finished in 1.1778ms 200 application/json (15c52c40)
+2017-06-30T11:08:12.4285537-03:00 0HL5VNNHPQHVG [INF] Request starting HTTP/1.1 GET http://localhost:4000/.well-known/openid-configuration   (e5be5b71)
+2017-06-30T11:08:12.4295538-03:00 0HL5VNNHPQHVG [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2017-06-30T11:08:12.4350582-03:00 0HL5VNNHPQHVG [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Description], [x].[DisplayName], [x].[Emphasize], [x].[Enabled], [x].[Name], [x].[Required], [x].[ShowInDiscoveryDocument]
+FROM [IdentityResources] AS [x]
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T11:08:12.4370595-03:00 0HL5VNNHPQHVG [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[IdentityResourceId], [i].[Type]
+FROM [IdentityClaims] AS [i]
+WHERE EXISTS (
+    SELECT 1
+    FROM [IdentityResources] AS [x]
+    WHERE [i].[IdentityResourceId] = [x].[Id])
+ORDER BY [i].[IdentityResourceId] (6438bdd5)
+2017-06-30T11:08:12.4390608-03:00 0HL5VNNHPQHVG [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Description], [x].[DisplayName], [x].[Enabled], [x].[Name]
+FROM [ApiResources] AS [x]
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T11:08:12.4405617-03:00 0HL5VNNHPQHVG [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a3].[Id], [a3].[ApiResourceId], [a3].[Type]
+FROM [ApiClaims] AS [a3]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a3].[ApiResourceId] = [x].[Id])
+ORDER BY [a3].[ApiResourceId] (6438bdd5)
+2017-06-30T11:08:12.4420630-03:00 0HL5VNNHPQHVG [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a2].[Id], [a2].[ApiResourceId], [a2].[Description], [a2].[Expiration], [a2].[Type], [a2].[Value]
+FROM [ApiSecrets] AS [a2]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a2].[ApiResourceId] = [x].[Id])
+ORDER BY [a2].[ApiResourceId] (6438bdd5)
+2017-06-30T11:08:12.4435639-03:00 0HL5VNNHPQHVG [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ApiResourceId], [a].[Description], [a].[DisplayName], [a].[Emphasize], [a].[Name], [a].[Required], [a].[ShowInDiscoveryDocument]
+FROM [ApiScopes] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a].[ApiResourceId] = [x].[Id])
+ORDER BY [a].[ApiResourceId], [a].[Id] (6438bdd5)
+2017-06-30T11:08:12.4470649-03:00 0HL5VNNHPQHVG [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[ApiScopeId], [a0].[Type]
+FROM [ApiScopeClaims] AS [a0]
+INNER JOIN (
+    SELECT DISTINCT [a].[ApiResourceId], [a].[Id]
+    FROM [ApiScopes] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiResources] AS [x]
+        WHERE [a].[ApiResourceId] = [x].[Id])
+) AS [a1] ON [a0].[ApiScopeId] = [a1].[Id]
+ORDER BY [a1].[ApiResourceId], [a1].[Id] (6438bdd5)
+2017-06-30T11:08:12.4475658-03:00 0HL5VNNHPQHVG [INF] Request finished in 19.414ms 200 application/json (15c52c40)
+2017-06-30T11:08:12.7247512-03:00 0HL5VNNHPQHVH [INF] Request starting HTTP/1.1 GET http://localhost:4000/.well-known/openid-configuration/jwks   (e5be5b71)
+2017-06-30T11:08:12.7252513-03:00 0HL5VNNHPQHVH [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2017-06-30T11:08:12.7257521-03:00 0HL5VNNHPQHVH [INF] Request finished in 1.0571ms 200 application/json (15c52c40)
+2017-06-30T11:11:30.3593674-03:00 0HL5VNNHPQHVI [INF] Request starting HTTP/1.1 GET http://localhost:4000/.well-known/openid-configuration   (e5be5b71)
+2017-06-30T11:11:30.3608687-03:00 0HL5VNNHPQHVI [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2017-06-30T11:11:30.3643705-03:00 0HL5VNNHPQHVI [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Description], [x].[DisplayName], [x].[Emphasize], [x].[Enabled], [x].[Name], [x].[Required], [x].[ShowInDiscoveryDocument]
+FROM [IdentityResources] AS [x]
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T11:11:30.3663731-03:00 0HL5VNNHPQHVI [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[IdentityResourceId], [i].[Type]
+FROM [IdentityClaims] AS [i]
+WHERE EXISTS (
+    SELECT 1
+    FROM [IdentityResources] AS [x]
+    WHERE [i].[IdentityResourceId] = [x].[Id])
+ORDER BY [i].[IdentityResourceId] (6438bdd5)
+2017-06-30T11:11:30.3683736-03:00 0HL5VNNHPQHVI [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Description], [x].[DisplayName], [x].[Enabled], [x].[Name]
+FROM [ApiResources] AS [x]
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T11:11:30.3698749-03:00 0HL5VNNHPQHVI [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a3].[Id], [a3].[ApiResourceId], [a3].[Type]
+FROM [ApiClaims] AS [a3]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a3].[ApiResourceId] = [x].[Id])
+ORDER BY [a3].[ApiResourceId] (6438bdd5)
+2017-06-30T11:11:30.3713754-03:00 0HL5VNNHPQHVI [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a2].[Id], [a2].[ApiResourceId], [a2].[Description], [a2].[Expiration], [a2].[Type], [a2].[Value]
+FROM [ApiSecrets] AS [a2]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a2].[ApiResourceId] = [x].[Id])
+ORDER BY [a2].[ApiResourceId] (6438bdd5)
+2017-06-30T11:11:30.3733767-03:00 0HL5VNNHPQHVI [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ApiResourceId], [a].[Description], [a].[DisplayName], [a].[Emphasize], [a].[Name], [a].[Required], [a].[ShowInDiscoveryDocument]
+FROM [ApiScopes] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a].[ApiResourceId] = [x].[Id])
+ORDER BY [a].[ApiResourceId], [a].[Id] (6438bdd5)
+2017-06-30T11:11:30.3768794-03:00 0HL5VNNHPQHVI [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[ApiScopeId], [a0].[Type]
+FROM [ApiScopeClaims] AS [a0]
+INNER JOIN (
+    SELECT DISTINCT [a].[ApiResourceId], [a].[Id]
+    FROM [ApiScopes] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiResources] AS [x]
+        WHERE [a].[ApiResourceId] = [x].[Id])
+) AS [a1] ON [a0].[ApiScopeId] = [a1].[Id]
+ORDER BY [a1].[ApiResourceId], [a1].[Id] (6438bdd5)
+2017-06-30T11:11:30.3783807-03:00 0HL5VNNHPQHVI [INF] Request finished in 18.9628ms 200 application/json (15c52c40)
+2017-06-30T11:11:30.7236108-03:00 0HL5VNNHPQHVJ [INF] Request starting HTTP/1.1 GET http://localhost:4000/.well-known/openid-configuration/jwks   (e5be5b71)
+2017-06-30T11:11:30.7241112-03:00 0HL5VNNHPQHVJ [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2017-06-30T11:11:30.7246113-03:00 0HL5VNNHPQHVJ [INF] Request finished in 1.0554ms 200 application/json (15c52c40)
+2017-06-30T11:13:23.8153160-03:00 0HL5VNNHPQHVK [INF] Request starting HTTP/1.1 GET http://localhost:4000/.well-known/openid-configuration   (e5be5b71)
+2017-06-30T11:13:23.8163160-03:00 0HL5VNNHPQHVK [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2017-06-30T11:13:23.8203191-03:00 0HL5VNNHPQHVK [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Description], [x].[DisplayName], [x].[Emphasize], [x].[Enabled], [x].[Name], [x].[Required], [x].[ShowInDiscoveryDocument]
+FROM [IdentityResources] AS [x]
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T11:13:23.8238214-03:00 0HL5VNNHPQHVK [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[IdentityResourceId], [i].[Type]
+FROM [IdentityClaims] AS [i]
+WHERE EXISTS (
+    SELECT 1
+    FROM [IdentityResources] AS [x]
+    WHERE [i].[IdentityResourceId] = [x].[Id])
+ORDER BY [i].[IdentityResourceId] (6438bdd5)
+2017-06-30T11:13:23.8328280-03:00 0HL5VNNHPQHVK [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Description], [x].[DisplayName], [x].[Enabled], [x].[Name]
+FROM [ApiResources] AS [x]
+ORDER BY [x].[Id] (6438bdd5)
+2017-06-30T11:13:23.8353289-03:00 0HL5VNNHPQHVK [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a3].[Id], [a3].[ApiResourceId], [a3].[Type]
+FROM [ApiClaims] AS [a3]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a3].[ApiResourceId] = [x].[Id])
+ORDER BY [a3].[ApiResourceId] (6438bdd5)
+2017-06-30T11:13:23.8383316-03:00 0HL5VNNHPQHVK [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a2].[Id], [a2].[ApiResourceId], [a2].[Description], [a2].[Expiration], [a2].[Type], [a2].[Value]
+FROM [ApiSecrets] AS [a2]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a2].[ApiResourceId] = [x].[Id])
+ORDER BY [a2].[ApiResourceId] (6438bdd5)
+2017-06-30T11:13:23.8423338-03:00 0HL5VNNHPQHVK [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ApiResourceId], [a].[Description], [a].[DisplayName], [a].[Emphasize], [a].[Name], [a].[Required], [a].[ShowInDiscoveryDocument]
+FROM [ApiScopes] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ApiResources] AS [x]
+    WHERE [a].[ApiResourceId] = [x].[Id])
+ORDER BY [a].[ApiResourceId], [a].[Id] (6438bdd5)
+2017-06-30T11:13:23.8513396-03:00 0HL5VNNHPQHVK [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[ApiScopeId], [a0].[Type]
+FROM [ApiScopeClaims] AS [a0]
+INNER JOIN (
+    SELECT DISTINCT [a].[ApiResourceId], [a].[Id]
+    FROM [ApiScopes] AS [a]
+    WHERE EXISTS (
+        SELECT 1
+        FROM [ApiResources] AS [x]
+        WHERE [a].[ApiResourceId] = [x].[Id])
+) AS [a1] ON [a0].[ApiScopeId] = [a1].[Id]
+ORDER BY [a1].[ApiResourceId], [a1].[Id] (6438bdd5)
+2017-06-30T11:13:23.8523405-03:00 0HL5VNNHPQHVK [INF] Request finished in 36.9572ms 200 application/json (15c52c40)
+2017-06-30T11:13:24.3346624-03:00 0HL5VNNHPQHVL [INF] Request starting HTTP/1.1 GET http://localhost:4000/.well-known/openid-configuration/jwks   (e5be5b71)
+2017-06-30T11:13:24.3351629-03:00 0HL5VNNHPQHVL [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2017-06-30T11:13:24.3356629-03:00 0HL5VNNHPQHVL [INF] Request finished in 1.1482ms 200 application/json (15c52c40)

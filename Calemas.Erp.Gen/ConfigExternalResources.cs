@@ -19,7 +19,7 @@ namespace Calemas.Erp.Gen
                 ResouceRepositoryName = "template-gerador-back-DDD",
                 ResourceUrlRepository = "https://github.com/wilsonsantosnet/template-gerador-back-DDD.git",
                 ResourceLocalPathFolderExecuteCloning = @"C:\Pessoal",
-                ResourceLocalPathDestinationFolrderApplication = @"C:\Projetos\Calemas.Erp\Main\Calemas.Erp.Gen\Templates\Back"
+                ResourceLocalPathDestinationFolrderApplication = @"C:\Pessoal\calemas-erp\Calemas.Erp.Gen\Templates\Back"
             };
 
         }        

@@ -31,17 +31,17 @@ namespace Calemas.Erp.Api.Controllers
             var result = new HttpResult<dynamic>(this._logger);
             try
             {
-                var claims = this._user.GetClaims();
-                if (claims.IsAny())
+                return await Task.Run(() =>
                 {
-                    return result.ReturnCustomResponse(claims.Select(_ => new
+                    var claims = this._user.GetClaims();
+                    if (claims.IsAny())
                     {
-                        ClamsType = _.Key,
-                        Value = _.Value
-                    }));
-                }
+                        return result.ReturnCustomResponse(claims);
+                    }
 
-                return result.ReturnCustomResponse(new { warning = "No Claims found!" });
+                    return result.ReturnCustomResponse(new { warning = "No Claims found!" });
+
+                });
 
             }
             catch (Exception ex)

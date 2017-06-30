@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Common.Domain.Base
 {
-    public abstract class ServiceBase<T>
+    public abstract class ServiceBase<T> where T : class
     {
 
         protected readonly CacheHelper _cacheHelper;
@@ -16,12 +16,26 @@ namespace Common.Domain.Base
 
         protected WarningSpecificationResult _validationWarning;
 
-       
+        protected CurrentUser _user;
 
 
         public ServiceBase(ICache cache)
         {
             this._cacheHelper = new CacheHelper(cache);
+        }
+
+        protected virtual T AuditDefault(DomainBaseWithUserCreate entity, DomainBaseWithUserCreate entityOld)
+        {
+            var isNew = entityOld.IsNull();
+            if (isNew)
+                entity.SetUserCreate(this._user.GetSubjectId<int>());
+            else
+            {
+                entity.SetUserCreate(entityOld.UserCreateId, entityOld.UserCreateDate);
+                entity.SetUserUpdate(this._user.GetSubjectId<int>());
+            }
+
+            return entity as T;
         }
 
         public virtual async Task<IEnumerable<T>> Save(IEnumerable<T> entitys)

@@ -11,6 +11,7 @@ Vue.use(VueAxios, axios)
 export function Api(resource, endpoint) {
 
     axios.defaults.headers.common['Authorization'] = "Bearer " + Cookie.get(Global.ACCESS_TOKEN);
+    axios.defaults.headers.common['Accept-Language'] = "pt-BR";
 
     this.Resourse = resource;
     this.EndPoint = endpoint;
@@ -94,7 +95,7 @@ export function Api(resource, endpoint) {
 
         self.lastAction = "get";
         self.filters.filterBehavior = behavior;
-        self.url = makeGetCustomMethodBaseUrl(method);
+        self.url = makeGetCustomMethodBaseUrl();
 
         if (isOffline())
             return loadFromCache().then(handleSuccess, handleError);

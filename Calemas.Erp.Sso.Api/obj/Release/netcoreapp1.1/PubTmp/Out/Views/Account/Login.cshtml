@@ -1,0 +1,43 @@
+﻿@model LoginViewModel
+
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <div class="card-group mb-0">
+            <div class="card p-12">
+                <form asp-route="Login">
+                    <div class="card-block">
+                        <h1>Calemas</h1>
+                        <input type="hidden" asp-for="ReturnUrl" />
+                        <p class="text-muted">@Html.Partial("_ValidationSummary")</p>
+                        <div class="input-group mb-3">
+                            <span class="input-group-addon">
+                                <i class="icon-user"></i>
+                            </span>
+                            <input class="form-control" placeholder="Usuário" asp-for="Username" autofocus required />
+                        </div>
+                        <div class="input-group mb-4">
+                            <span class="input-group-addon">
+                                <i class="icon-lock"></i>
+                            </span>
+                            <input type="password" class="form-control" placeholder="Password" asp-for="Password" autocomplete="off" required />
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                @if (Model.AllowRememberLogin)
+                                {
+                                    <label asp-for="RememberLogin">
+                                        <input asp-for="RememberLogin">
+                                        <strong>Relembrar acesso?</strong>
+                                    </label>
+                                }
+                            </div>
+                            <div class="col-6 text-right">
+                                <button class="btn btn-primary px-4">Acessar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

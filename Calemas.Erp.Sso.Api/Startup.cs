@@ -40,8 +40,6 @@ namespace Calemas.Erp.Sso.Api
             _env = env;
         }
 
-
-
         public void ConfigureServices(IServiceCollection services)
         {
 
@@ -75,6 +73,15 @@ namespace Calemas.Erp.Sso.Api
                         .AllowAnyMethod();
                 });
             });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("frontprod", policy =>
+                {
+                    policy.WithOrigins("http://calemas-front.azurewebsites.net")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
 
             // Add cross-origin resource sharing services Configurations
             //Cors.Enable(services);
@@ -88,13 +95,14 @@ namespace Calemas.Erp.Sso.Api
             loggerFactory.AddConsole(LogLevel.Debug);
             app.UseDeveloperExceptionPage();
 
-            InitializeDatabase(app);
+            //InitializeDatabase(app);
 
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
             loggerFactory.AddFile("Logs/calemas-sso-server-api-{Date}.log");
 
             app.UseCors("frontcore");
+            app.UseCors("frontprod");
 
             app.UseIdentityServer();
 

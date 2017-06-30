@@ -71,7 +71,7 @@ namespace <#namespace#>.Api
             app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
             {
                 Authority = configSettingsBase.Value.AuthorityEndPoint,
-                ScopeName = "ssosm",
+                ScopeName = "ssosa",
                 RequireHttpsMetadata = false
             });
 

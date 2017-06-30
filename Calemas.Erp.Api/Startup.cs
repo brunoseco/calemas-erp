@@ -13,6 +13,9 @@ using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Common.API.Extensions;
 using Newtonsoft.Json.Serialization;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using System;
 
 namespace Calemas.Erp.Api
 {
@@ -50,7 +53,17 @@ namespace Calemas.Erp.Api
             Cors.Enable(services);
             ConfigContainerCore.Config(services);
 
+            services.Configure<RequestLocalizationOptions>(
+                        opts =>
+                        {
+                            var supportedCultures = new[] { new CultureInfo("pt-BR") };
+                            opts.DefaultRequestCulture = new RequestCulture("pt-BR");
+                            opts.SupportedCultures = supportedCultures;
+                            opts.SupportedUICultures = supportedCultures;
+                        });
+
             services.AddMvc();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,17 +82,12 @@ namespace Calemas.Erp.Api
                 RequireHttpsMetadata = false
             });
 
-            var supportedCultures = new[]
-            {
-                new CultureInfo("pt-BR"),
-            };
+            var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(options.Value);
 
-            app.UseRequestLocalization(new RequestLocalizationOptions
-            {
-                DefaultRequestCulture = new RequestCulture("pt-BR"),
-                SupportedCultures = supportedCultures,
-                SupportedUICultures = supportedCultures
-            });
+            var cultureInfo = new CultureInfo("pt-BR");
+            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 
             app.AddTokenMiddleware();
             app.UseMvc();

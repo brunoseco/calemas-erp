@@ -5,8 +5,8 @@ using System.Linq.Expressions;
 
 namespace Calemas.Erp.Dto
 {
-	public class ColaboradorDtoSpecialized : ColaboradorDto
-	{
+    public class ColaboradorDtoSpecialized : ColaboradorDto
+    {
         public PessoaDto Pessoa { get; set; }
     }
 }

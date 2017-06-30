@@ -17,6 +17,29 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
+		public class OrdemServicoFactory
+        {
+            public OrdemServico GetDefaaultInstance(dynamic data)
+            {
+                var construction = new OrdemServico(data.OrdemServicoId,
+                                        data.Protoco,
+                                        data.ClienteId,
+                                        data.PrioridadeId,
+                                        data.SetorId,
+                                        data.TipoOrdemServicoId,
+                                        data.AgendaId,
+                                        data.StatusOrdemServicoId,
+                                        data.DataSituacao);
+
+                construction.SetarObservacao(data.Observacao);
+                construction.SetarDescricao(data.Descricao);
+
+
+				return construction;
+            }
+
+        }
+
         public bool IsValid()
         {
             base._validationResult = new OrdemServicoEstaConsistenteValidation().Validate(this);

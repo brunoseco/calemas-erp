@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\wwwroot\**" />
+    <Content Remove="wwwroot\wwwroot\**" />
+    <EmbeddedResource Remove="wwwroot\wwwroot\**" />
+    <None Remove="wwwroot\wwwroot\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="wwwroot\css\font-awesome.css" />
     <Content Include="wwwroot\css\font-awesome.css.map" />
     <Content Include="wwwroot\css\font-awesome.min.css" />
@@ -66,12 +73,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Include="wwwroot\lib\jquery\jquery.min.map">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="wwwroot\wwwroot\icon.jpg">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="wwwroot\wwwroot\icon.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
   </ItemGroup>

@@ -17,6 +17,19 @@ namespace <#namespace#>.Domain.Entitys
 
         }
 
+		public class <#className#>Factory
+        {
+            public <#className#> GetDefaaultInstance(dynamic data)
+            {
+                var construction = new <#className#>(<#parametersRequiredConstruction#>);
+
+<#methodsSetersConstruction#>
+
+				return construction;
+            }
+
+        }
+
         public bool IsValid()
         {
             base._validationResult = new <#className#>EstaConsistenteValidation().Validate(this);

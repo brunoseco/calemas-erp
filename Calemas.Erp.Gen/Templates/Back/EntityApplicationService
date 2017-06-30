@@ -5,6 +5,8 @@ using <#namespace#>.Domain.Filter;
 using <#namespace#>.Domain.Interfaces.Services;
 using <#namespace#>.Dto;
 using System.Linq;
+using System.Collections.Generic;
+using Common.Domain.Base;
 
 namespace <#namespace#>.Application
 {
@@ -15,6 +17,11 @@ namespace <#namespace#>.Application
             base(service, uow, cache)
         {
   
+        }
+
+        protected override System.Collections.Generic.IEnumerable<TDS> MapperDomainToResult<TDS>(FilterBase filter, PaginateResult<<#className#>> dataList)
+        {
+            return base.MapperDomainToResult<<#className#>DtoSpecializedResult>(filter, dataList) as IEnumerable<TDS>;
         }
 
 

@@ -12,6 +12,8 @@ Vue.use(VeeValidate, {
     locale: 'pt'
 });
 
+require('vue-strap/dist/vue-strap-lang.js')
+
 const Moment = require('moment')
 require('moment/locale/pt')
 Vue.use(require('vue-moment'), { Moment });

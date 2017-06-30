@@ -13,7 +13,6 @@ namespace Calemas.Erp.Domain.Services
     public class PessoaServiceBase : ServiceBase<Pessoa>
     {
         protected readonly IPessoaRepository _rep;
-		protected readonly CurrentUser _user;
 
         public PessoaServiceBase(IPessoaRepository rep, ICache cache, CurrentUser user)
             : base(cache)
@@ -138,34 +137,19 @@ namespace Calemas.Erp.Domain.Services
 			base._validationWarning  = new PessoaAptoParaCadastroWarning(this._rep).Validate(pessoa);
         }
 
-        public virtual Pessoa AuditDefault(Pessoa pessoa, Pessoa pessoaOld)
-        {
-            var isNew = pessoaOld.IsNull();
-            if (isNew)
-                pessoa.SetUserCreate(this._user.GetSubjectId<int>());
-            else
-            {
-                pessoa.SetUserUpdate(this._user.GetSubjectId<int>());
-                pessoa.SetUserCreate(pessoaOld.UserCreateId, pessoaOld.UserCreateDate);
-            }
-
-            return pessoa;
-        }
-
         protected virtual Pessoa SaveDefault(Pessoa pessoa, Pessoa pessoaOld)
         {
+			
+			pessoa = AuditDefault(pessoa, pessoaOld);
+
             var isNew = pessoaOld.IsNull();
             if (isNew)
-            {
-				pessoa.SetUserCreate(this._user.GetSubjectId<int>());
                 pessoa = this._rep.Add(pessoa);
-            }
             else
             {
-				pessoa.SetUserUpdate(this._user.GetSubjectId<int>());
-				pessoa.SetUserCreate(pessoaOld.UserCreateId, pessoaOld.UserCreateDate);
                 pessoa = this._rep.Update(pessoa);
             }
+
 
             return pessoa;
         }

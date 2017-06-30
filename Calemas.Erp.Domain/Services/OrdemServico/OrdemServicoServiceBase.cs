@@ -13,7 +13,6 @@ namespace Calemas.Erp.Domain.Services
     public class OrdemServicoServiceBase : ServiceBase<OrdemServico>
     {
         protected readonly IOrdemServicoRepository _rep;
-		protected readonly CurrentUser _user;
 
         public OrdemServicoServiceBase(IOrdemServicoRepository rep, ICache cache, CurrentUser user)
             : base(cache)
@@ -140,18 +139,17 @@ namespace Calemas.Erp.Domain.Services
 
         protected virtual OrdemServico SaveDefault(OrdemServico ordemservico, OrdemServico ordemservicoOld)
         {
+			
+			ordemservico = AuditDefault(ordemservico, ordemservicoOld);
+
             var isNew = ordemservicoOld.IsNull();
             if (isNew)
-            {
-				ordemservico.SetUserCreate(this._user.GetSubjectId<int>());
                 ordemservico = this._rep.Add(ordemservico);
-            }
             else
             {
-				ordemservico.SetUserUpdate(this._user.GetSubjectId<int>());
-				ordemservico.SetUserCreate(ordemservicoOld.UserCreateId, ordemservicoOld.UserCreateDate);
                 ordemservico = this._rep.Update(ordemservico);
             }
+
 
             return ordemservico;
         }
