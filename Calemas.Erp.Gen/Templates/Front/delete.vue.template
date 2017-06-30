@@ -1,13 +1,12 @@
-﻿<template>
-    <modal title="Exclusão de Mídia" v-model="crud.delete.modalIsOpen" :danger="true" effect="fade/zoom">
+<template>
+    <modal title="Exclusão de <#classNameFormated#>" v-model="crud.delete.modalIsOpen" :danger="true" effect="fade/zoom">
         <div slot="modal-header" class="modal-header">
-            <h4 class="modal-title">Exclusão de Colaborador</h4>
+            <h4 class="modal-title">Exclusão de <#classNameFormated#></h4>
         </div>
         <form type="post" v-on:submit="crud.delete.executeAction()">
             <div class="row">
-                <div class="form-group col-md-6">
-                    <label class="label">Nome</label>
-                    <p>{{crud.delete.model.pessoa.nome}}</p>
+                <div class="form-group col-md-12">
+                  <h4>Confirma a remoção deste item?</h4>
                 </div>
             </div>
         </form>

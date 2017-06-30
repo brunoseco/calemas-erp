@@ -1,46 +1,22 @@
-﻿import vSelect from 'vue-strap/src/Select'
-import vOption from 'vue-strap/src/Option'
-import { Api } from '../api'
+﻿import { Api } from '../api'
+import Vue from 'vue'
 
-export default {
-    template: `
-            <v-select v-model="internal_model" name="name" @change="selected" search justified>
-                <v-option value="">Selecione</v-option>
-                <v-option v-for="item in itens" key="item.id" :value="item.id">{{ item.name }}</v-option>
-            </v-select>`,
-    components: { vSelect, vOption },
-    props: {
-        value: {
-            type: Number,
-            required: true,
-            default: 0
-        },
-        dataItem: {
-            type: String,
-            required: true
-        },
-        name: {
-            type: String,
-            required: true
-        },
-    },
-    data: function () {
-        return {
-            internal_model: 0,
-            itens: []
-        }
-    },
-    mounted: function () {
-        this.internal_model = this.value;
-        this.get();
-    },
-    methods: {
-        selected: function () {
-            this.$emit('select', { target: { value: this.internal_model } });
-        },
-        get: function () {
-            var api = new Api(this.dataItem);
-            api.dataItem().then(data => { this.itens = data.dataList })
-        }
+function _addOption(el, text, value) {
+    var option = document.createElement("option");
+    option.text = text;
+    option.value = value;
+    el.add(option);
+}
+
+Vue.directive('select', {
+    bind: function (el, binding, vnode) {
+        _addOption(el, binding.value.default, null);
+        var api = new Api(binding.value.dataitem);
+        api.dataItem().then(data => {
+            if (data.dataList) {
+                for (var i = 0; i < data.dataList.length; i++)
+                    _addOption(el, data.dataList[i].name, data.dataList[i].id);
+            }
+        });
     }
-};
+})

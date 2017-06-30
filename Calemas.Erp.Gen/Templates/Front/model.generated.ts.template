@@ -1,5 +1,0 @@
-import { Dto } from '../common/models/dto';
-
-export class <#className#>Generated extends Dto {
-<#formFields#>
-}

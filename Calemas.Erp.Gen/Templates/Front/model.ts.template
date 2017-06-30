@@ -1,4 +1,0 @@
-import { <#className#>Generated } from '../../../models/<#classNameLower#>.generated';
-
-export class <#className#> extends <#className#>Generated {
-}

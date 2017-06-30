@@ -1,0 +1,35 @@
+<template>
+    <modal title="Edição de <#classNameFormated#>" v-model="crud.edit.modalIsOpen" effect="fade/zoom" :primary="true" :large="true">
+        <div slot="modal-header" class="modal-header">
+            <h4 class="modal-title">Edição de <#classNameFormated#></h4>
+        </div>
+        <form data-vv-scope="form-edit" @keyup.enter.prevent="crud.edit.executeAction()">
+            <fieldset>
+                <legend>Dados</legend>
+                <div class="row">
+<#formFields#> 
+                </div>
+            </fieldset>
+        </form>
+        <div slot="modal-footer" class="modal-footer">
+            <button type="button" class="btn btn-default" @click="crud.edit.modalIsOpen = false">Fechar</button>
+            <button type="button" class="btn btn-primary" @click="crud.edit.executeAction()">
+                <i class="fa fa-pencil"></i> Alterar
+            </button>
+        </div>
+    </modal>
+
+</template>
+<script>
+    import modal from 'vue-strap/src/Modal'
+    import select from '../../common/select'
+
+    export default {
+        name: 'edit-partial',
+        props: ['crud'],
+        components: { modal },
+        mounted() {
+            this.edit.create.setVm(this);
+        }
+    }
+</script>

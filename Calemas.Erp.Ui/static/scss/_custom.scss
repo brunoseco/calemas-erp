@@ -137,3 +137,8 @@ body > .spinner-wrap {
         transform: rotate(360deg);
     }
 }
+
+.has-danger > input, .has-danger > select {
+    border-color: #f86c6b;
+    border-left-width: 5px;
+}

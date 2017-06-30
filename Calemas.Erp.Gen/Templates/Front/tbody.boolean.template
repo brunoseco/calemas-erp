@@ -1,1 +1,1 @@
-            <td><span class='label' [ngClass]="{'label-danger': !item.<#propertyName#>, 'label-success': item.<#propertyName#>}">{{ item.<#propertyName#> ? 'Sim' : 'Não' }}</span></td>
+            <td><span class="badge badge-pill" v-bind:class="{ 'badge-success': item.<#propertyNameLowerCase#>, 'badge-danger': !item.<#propertyNameLowerCase#> }">{{item.<#propertyNameLowerCase#> ? 'Sim' : 'Não'}}</span></td>

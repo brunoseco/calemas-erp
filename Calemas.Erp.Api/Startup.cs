@@ -16,6 +16,7 @@ using Newtonsoft.Json.Serialization;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Calemas.Erp.Api
 {
@@ -33,7 +34,7 @@ namespace Calemas.Erp.Api
 
             Configuration = builder.Build();
         }
-
+        
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DbContextCore>(
@@ -52,15 +53,6 @@ namespace Calemas.Erp.Api
 
             Cors.Enable(services);
             ConfigContainerCore.Config(services);
-
-            services.Configure<RequestLocalizationOptions>(
-                        opts =>
-                        {
-                            var supportedCultures = new[] { new CultureInfo("pt-BR") };
-                            opts.DefaultRequestCulture = new RequestCulture("pt-BR");
-                            opts.SupportedCultures = supportedCultures;
-                            opts.SupportedUICultures = supportedCultures;
-                        });
 
             services.AddMvc();
 
@@ -81,14 +73,7 @@ namespace Calemas.Erp.Api
                 ApiName = "ssocalemas",
                 RequireHttpsMetadata = false
             });
-
-            var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
-            app.UseRequestLocalization(options.Value);
-
-            var cultureInfo = new CultureInfo("pt-BR");
-            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
-            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
-
+            
             app.AddTokenMiddleware();
             app.UseMvc();
 

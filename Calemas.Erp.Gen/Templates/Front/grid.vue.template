@@ -1,4 +1,4 @@
-﻿<template>
+<template>
     <div class="animated fadeIn">
         <div class="row">
             <div class="col-sm-12">
@@ -10,17 +10,7 @@
                         <table class="table has-tickbox table-striped table-sm">
                             <thead class="">
                                 <tr>
-                                    <th>#</th>
-                                    <th>
-                                        Nome
-                                        <button @click="crud.filter.orderBy('nome')" class="btn btn-xs btn-link no-border pull-right">
-                                            <i class="fa fa-sort"></i>
-                                        </button>
-                                    </th>
-                                    <th>Email</th>
-                                    <th>Telefone</th>
-                                    <th>Conta/Acesso</th>
-                                    <th>Ativo</th>
+                                    <#theadFields#>
                                     <th class="text-center" width="75">
                                         <i class="fa fa-cog"></i>
                                     </th>
@@ -28,19 +18,12 @@
                             </thead>
                             <tbody>
                                 <tr v-for="item in crud.filter.result.itens" class="animated fadeIn">
-                                    <td>{{ item.colaboradorId }}</td>
-                                    <td>{{ item.pessoa.nome }}</td>
-                                    <td>{{ item.pessoa.email }}</td>
-                                    <td>{{ item.pessoa.telefone }}</td>
-                                    <td>{{ item.account }}</td>
-                                    <td>
-                                        <span class="badge badge-pill" v-bind:class="{ 'badge-success': item.Ativo, 'badge-danger': !item.Ativo }">{{item.Ativo ? 'Sim' : 'Não'}}</span>
-                                    </td>
+                                    <#tbodyFields#>
                                     <td class="text-center">
-                                        <button type="button" class="btn btn-xs btn-primary" @click="crud.edit.executeModal(item.colaboradorId, item)">
+                                        <button type="button" class="btn btn-xs btn-primary" @click="crud.edit.executeModal(item.<#KeyName#>, item)">
                                             <i class="fa fa-pencil"></i>
                                         </button>
-                                        <button type="button" class="btn btn-xs btn-danger" @click="crud.delete.executeModal(item.colaboradorId, item)">
+                                        <button type="button" class="btn btn-xs btn-danger" @click="crud.delete.executeModal(item.<#KeyName#>, item)">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </td>

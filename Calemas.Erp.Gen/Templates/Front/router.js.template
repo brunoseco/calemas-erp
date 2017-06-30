@@ -1,0 +1,6 @@
+
+const routers = [
+	<#pathsRoute#>
+];
+
+export default routers

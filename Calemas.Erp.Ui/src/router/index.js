@@ -1,18 +1,20 @@
 ﻿import Vue from 'vue'
 import Router from 'vue-router'
-
-// Containers
 import Template from '@/template'
-
-// Views
-import Dashboard from '@/views/dashboard'
-import Colaborador from '@/views/colaborador'
-import Authorized from '@/views/authorized'
-
-//Auth 
 import Auth from '../common/auth'
 
+import Dashboard from '@/views/dashboard'
+import Authorized from '@/views/authorized'
+
+import routers from './generated'
+
 Vue.use(Router)
+
+routers.push({
+    path: 'dashboard',
+    name: 'Dashboard',
+    component: Dashboard
+})
 
 const router = new Router({
     linkActiveClass: 'open active',
@@ -24,19 +26,7 @@ const router = new Router({
             name: 'Home',
             component: Template,
             meta: { requiresAuth: true },
-            children: [
-                {
-                    path: 'dashboard',
-                    name: 'Dashboard',
-                    component: Dashboard
-                },
-                {
-                    path: 'colaborador',
-                    name: 'Colaborador',
-                    component: Colaborador
-                }
-
-            ]
+            children: routers
         },
         {
             path: '/authorized',
@@ -48,14 +38,12 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-
     if (to.matched.some(record => record.meta.requiresAuth)) {
         if (!Auth.logged()) {
             Auth.login();
             return;
         }
     }
-
     next();
 })
 

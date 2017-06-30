@@ -1,16 +1,20 @@
-				<section class="<#colformField#>">
-					<div class="form-group">
-						<label for="<#propertyName#>"><ng-container i18n><#propertyName#></ng-container>?</label>
-						<div class="radio">
-							<label class="radio-inline">
-								<input type="radio" name="<#propertyName#>" [value]="undefined" [(ngModel)]="<#formType#>.model.<#propertyName#>" <#isRequired#> />Todos
-							</label>
-							<label class="radio-inline">
-								<input type="radio" name="<#propertyName#>" [value]="true" [(ngModel)]="<#formType#>.model.<#propertyName#>" <#isRequired#> />Sim
-							</label>
-							<label class="radio-inline">
-								<input type="radio" name="<#propertyName#>" [value]="false" [(ngModel)]="<#formType#>.model.<#propertyName#>" <#isRequired#> />Não
-							</label>
-						</div>
-					</div>
-				</section>
+				<div class="form-group <#colformField#>">
+                    <label><#propertyName#></label>
+                    <div class="form-group">
+                        <label class="custom-control custom-radio">
+                            <input type="radio" name="<#propertyNameLowerCase#>" v-model="crud.<#formType#>.model.<#propertyNameLowerCase#>" value="undefined" class="custom-control-input">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Todos</span>
+                        </label>
+                        <label class="custom-control custom-radio">
+                            <input type="radio" name="<#propertyNameLowerCase#>" v-model="crud.<#formType#>.model.<#propertyNameLowerCase#>" value="true" class="custom-control-input">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Sim</span>
+                        </label>
+                        <label class="custom-control custom-radio">
+                            <input type="radio" name="<#propertyNameLowerCase#>" v-model="crud.<#formType#>.model.<#propertyNameLowerCase#>" value="false" class="custom-control-input">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Não</span>
+                        </label>
+                    </div>
+                </div>

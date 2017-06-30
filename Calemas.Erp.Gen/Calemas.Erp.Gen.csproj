@@ -322,19 +322,16 @@
     <None Include="Templates\Back\summary">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Front\component.html.template">
+    <None Include="Templates\Front\delete.vue.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Front\component.ts.template">
+    <None Include="Templates\Front\edit.vue.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Front\delete.component.ts.template">
+    <None Include="Templates\Front\header.vue.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Front\delete.generated.component.html.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Templates\Front\delete.generated.component.ts.template">
+    <None Include="Templates\Front\index.vue.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Templates\Front\field.checkbox.template">
@@ -355,13 +352,7 @@
     <None Include="Templates\Front\field.select.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Front\filter.component.ts.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Templates\Front\filter.generated.component.html.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Templates\Front\filter.generated.component.ts.template">
+    <None Include="Templates\Front\filter.vue.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Templates\Front\tbody.date.template">
@@ -382,43 +373,13 @@
     <None Include="Templates\Front\thead.id.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Front\grid.component.ts.template">
+    <None Include="Templates\Front\grid.vue.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Front\grid.generated.component.html.template">
+    <None Include="Templates\Front\router.js.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Front\grid.generated.component.ts.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Templates\Front\model.filter.generated.ts.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Templates\Front\model.filter.ts.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Templates\Front\model.generated.ts.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Templates\Front\model.ts.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Templates\Front\module.ts.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Templates\Front\routing.generated.ts.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Templates\Front\routing.module.ts.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Templates\Front\save.component.ts.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Templates\Front\save.generated.component.html.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Templates\Front\save.generated.component.ts.template">
+    <None Include="Templates\Front\create.vue.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

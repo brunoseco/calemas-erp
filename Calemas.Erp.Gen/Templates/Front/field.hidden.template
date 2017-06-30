@@ -1,1 +1,1 @@
-				<input type="hidden" name="<#propertyName#>" id="<#propertyName#>" [(ngModel)]="<#formType#>.model.<#propertyName#>" />
+                   <input type="hidden" class="form-control" name="<#propertyNameLowerCase#>" v-model="crud.<#formType#>.model.<#propertyNameLowerCase#>" />

@@ -1,0 +1,32 @@
+<template>
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Filtros</strong>
+                    </div>
+                    <div class="card-block">
+                        <form @keyup.enter.prevent="crud.filter.executeAction()">
+                            <div class="row">
+<#formFields#>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button type="submit" class="btn btn-primary" @click="crud.filter.executeAction()">
+                            <i class="fa fa-search"></i> Filtrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>
+<script>
+    export default {
+        name: 'filter-partial',
+        props: ['crud']
+    }
+</script>

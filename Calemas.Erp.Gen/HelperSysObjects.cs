@@ -23,9 +23,6 @@ namespace Calemas.Erp.Gen
                 if (column.ToLower() == "id")
                     return string.Format("{0}Id", className);
 
-                if (column == "IdiomaId")
-                    return column;
-
                 if (column.ToString().ToLower().StartsWith("id"))
                 {
                     var keyname = column.ToString().Replace("Id", "");
@@ -34,6 +31,11 @@ namespace Calemas.Erp.Gen
             }
 
             return column;
+        }
+
+        public override HelperSysObjectsBase DefineFrontTemplateClass(Context config)
+        {
+            return new HelperSysObjectsVue(config);
         }
 
     }

@@ -22,6 +22,7 @@ export function Filter(config) {
     this.model = {};
     this.executeAction = _executeAction;
     this.executePageChanged = _executePageChanged;
+    this.orderBy = _orderBy;
 
     var self = this;
 
@@ -31,6 +32,19 @@ export function Filter(config) {
 
     function _executePageChanged(page) {
         self.model.pageIndex = page;
+        _executeLoad(self.model);
+    }
+
+    function _orderBy(field) {
+
+        self.model.orderFields = [field];
+        var type = 0;
+
+        if (self.model.orderByType == 0) type = 1;
+
+        self.model.orderByType = type;
+        self.model.isOrderByDynamic = true;
+
         _executeLoad(self.model);
     }
 

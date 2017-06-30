@@ -18,7 +18,7 @@ namespace Calemas.Erp.Gen
             return new List<Context>
             {
                 this.ConfigContextCore(),
-                //this.ConfigContextAngular()
+                this.ConfigContextVue()
             };
 
         }
@@ -29,7 +29,7 @@ namespace Calemas.Erp.Gen
             return new Context
             {
 
-                ConnectionString = ConfigurationManager.ConnectionStrings["PortalFranqueador"].ConnectionString,
+                ConnectionString = ConfigurationManager.ConnectionStrings["Core"].ConnectionString,
 
                 Namespace = "Calemas.Erp",
                 ContextName = "Core",
@@ -55,7 +55,29 @@ namespace Calemas.Erp.Gen
                 }
             };
         }
-        
+
+        private Context ConfigContextVue()
+        {
+            return new Context
+            {
+
+                ConnectionString = ConfigurationManager.ConnectionStrings["Core"].ConnectionString,
+
+                Namespace = "calemas.erp",
+
+                OutputAngular = ConfigurationManager.AppSettings["OutputVue"],
+                CamelCasing = true,
+                MakeFront = true,
+                AlertNotFoundTable = true,
+
+                TableInfo = new UniqueListTableInfo
+                {
+                    new TableInfo { TableName = "NivelAcesso", ClassNameFormated = "Nível de aecsso", MakeFront = true,  },
+                }
+            };
+        }
+
+
         #endregion
     }
 }
