@@ -140,7 +140,7 @@ namespace Calemas.Erp.Domain.Services
         protected virtual NivelAcesso SaveDefault(NivelAcesso nivelacesso, NivelAcesso nivelacessoOld)
         {
 			
-			<#AuditDefault#>
+			
 
             var isNew = nivelacessoOld.IsNull();
             if (isNew)

@@ -20,6 +20,10 @@ namespace Calemas.Erp.Api
             services.AddScoped<ICache, RedisComponent>();
             services.AddScoped<IUnitOfWork, UnitOfWork<DbContextCore>>();
             
+			services.AddScoped<ICorApplicationService, CorApplicationService>();
+			services.AddScoped<ICorService, CorService>();
+			services.AddScoped<ICorRepository, CorRepository>();
+
 			services.AddScoped<IOrdemServicoApplicationService, OrdemServicoApplicationService>();
 			services.AddScoped<IOrdemServicoService, OrdemServicoService>();
 			services.AddScoped<IOrdemServicoRepository, OrdemServicoRepository>();
@@ -31,6 +35,18 @@ namespace Calemas.Erp.Api
 			services.AddScoped<INivelAcessoApplicationService, NivelAcessoApplicationService>();
 			services.AddScoped<INivelAcessoService, NivelAcessoService>();
 			services.AddScoped<INivelAcessoRepository, NivelAcessoRepository>();
+
+			services.AddScoped<ISetorApplicationService, SetorApplicationService>();
+			services.AddScoped<ISetorService, SetorService>();
+			services.AddScoped<ISetorRepository, SetorRepository>();
+
+			services.AddScoped<IPrioridadeApplicationService, PrioridadeApplicationService>();
+			services.AddScoped<IPrioridadeService, PrioridadeService>();
+			services.AddScoped<IPrioridadeRepository, PrioridadeRepository>();
+
+			services.AddScoped<ITipoOrdemServicoApplicationService, TipoOrdemServicoApplicationService>();
+			services.AddScoped<ITipoOrdemServicoService, TipoOrdemServicoService>();
+			services.AddScoped<ITipoOrdemServicoRepository, TipoOrdemServicoRepository>();
 
 			services.AddScoped<IPessoaApplicationService, PessoaApplicationService>();
 			services.AddScoped<IPessoaService, PessoaService>();

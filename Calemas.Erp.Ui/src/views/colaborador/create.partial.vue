@@ -3,7 +3,7 @@
         <div slot="modal-header" class="modal-header">
             <h4 class="modal-title">Cadastro de Colaborador</h4>
         </div>
-        <form data-vv-scope="form-create" @keyup.enter.prevent="crud.create.executeAction()">
+        <form data-vv-scope="form-create" v-on:submit="crud.create.executeAction()">
             <fieldset>
                 <legend>Dados</legend>
                 <div class="row">

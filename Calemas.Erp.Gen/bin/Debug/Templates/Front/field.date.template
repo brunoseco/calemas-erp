@@ -1,6 +1,4 @@
-					<section class="<#colformField#>">
-						<div class="form-group">
-							<label for="<#propertyName#>"><ng-container i18n><#propertyName#></ng-container></label>
-							<input type="date" class="form-control" name="<#propertyName#>" [(ngModel)]="<#formType#>.model.<#propertyName#>" <#isRequired#> />
-						</div>
-					</section>
+					<div class="form-group <#colformField#>" v-bind:class="{ 'has-danger': formErrors.has('form-<#formType#>.<#propertyNameLowerCase#>') }">
+                        <label for="<#propertyNameLowerCase#>"><#propertyName#></label>
+                        <input type="date" class="form-control" name="<#propertyNameLowerCase#>" v-model="crud.<#formType#>.model.<#propertyNameLowerCase#>" <#isRequired#> />
+                    </div>

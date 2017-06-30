@@ -1,1 +1,1 @@
-                   <input type="hidden" class="form-control" name="<#propertyNameLowerCase#>" v-model="crud.<#formType#>.model.<#propertyNameLowerCase#>" />
+                    <input type="hidden" class="form-control" name="<#propertyNameLowerCase#>" v-model="crud.<#formType#>.model.<#propertyNameLowerCase#>" />

@@ -32,6 +32,18 @@ namespace Calemas.Erp.Api
 			services.AddScoped<INivelAcessoService, NivelAcessoService>();
 			services.AddScoped<INivelAcessoRepository, NivelAcessoRepository>();
 
+			services.AddScoped<ISetorApplicationService, SetorApplicationService>();
+			services.AddScoped<ISetorService, SetorService>();
+			services.AddScoped<ISetorRepository, SetorRepository>();
+
+			services.AddScoped<IPrioridadeApplicationService, PrioridadeApplicationService>();
+			services.AddScoped<IPrioridadeService, PrioridadeService>();
+			services.AddScoped<IPrioridadeRepository, PrioridadeRepository>();
+
+			services.AddScoped<ITipoOrdemServicoApplicationService, TipoOrdemServicoApplicationService>();
+			services.AddScoped<ITipoOrdemServicoService, TipoOrdemServicoService>();
+			services.AddScoped<ITipoOrdemServicoRepository, TipoOrdemServicoRepository>();
+
 			services.AddScoped<IPessoaApplicationService, PessoaApplicationService>();
 			services.AddScoped<IPessoaService, PessoaService>();
 			services.AddScoped<IPessoaRepository, PessoaRepository>();

@@ -28,9 +28,13 @@ namespace Sso.Server.Api
 
             var tools = new List<dynamic>
             {
-                new { Name = "OrdemServico", Value = "#OrdemServico" },
+                new { Name = "Cor", Value = "#Cor" },
+new { Name = "OrdemServico", Value = "#OrdemServico" },
 new { Name = "Colaborador", Value = "#Colaborador" },
 new { Name = "NivelAcesso", Value = "#NivelAcesso" },
+new { Name = "Setor", Value = "#Setor" },
+new { Name = "Prioridade", Value = "#Prioridade" },
+new { Name = "TipoOrdemServico", Value = "#TipoOrdemServico" },
 new { Name = "Pessoa", Value = "#Pessoa" },
 
             };

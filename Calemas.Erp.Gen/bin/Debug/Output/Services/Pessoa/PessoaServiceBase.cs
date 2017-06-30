@@ -140,7 +140,7 @@ namespace Calemas.Erp.Domain.Services
         protected virtual Pessoa SaveDefault(Pessoa pessoa, Pessoa pessoaOld)
         {
 			
-			<#AuditDefault#>
+			pessoa = AuditDefault(pessoa, pessoaOld);
 
             var isNew = pessoaOld.IsNull();
             if (isNew)

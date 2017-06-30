@@ -1,9 +1,8 @@
-					<section class="<#colformField#>">
-						<div class="form-group">
-							<div class="checkbox">
-								<label>
-									<input type="checkbox" name="<#propertyName#>" [(ngModel)]="<#formType#>.model.<#propertyName#>" /><ng-container i18n><#propertyName#></ng-container>?
-								</label>
-							</div>
-						</div>
-					</section>
+					<div class="form-group <#colformField#>" v-bind:class="{ 'has-danger': formErrors.has('form-<#formType#>.<#propertyNameLowerCase#>') }">
+                        <div class="clearfix">&nbsp;</div>
+                        <label class="custom-control custom-checkbox">
+                            <input type="checkbox" name="<#propertyNameLowerCase#>" class="custom-control-input" v-model="crud.<#formType#>.model.<#propertyNameLowerCase#>">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description"> <#propertyName#>?</span>
+                        </label>
+                    </div>

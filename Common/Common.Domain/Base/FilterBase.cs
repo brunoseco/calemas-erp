@@ -29,7 +29,7 @@ namespace Common.Domain.Base
         public string QueryOptimizerBehavior { get; set; }
         public bool IsOrderByDomain { get; set; }
         public string[] OrderFields { get; set; }
-        public OrderByType orderByType { get; set; }
+        public OrderByType OrderByType { get; set; }
 
         public int PageIndex { get; set; }
         public int PageSize { get; set; }

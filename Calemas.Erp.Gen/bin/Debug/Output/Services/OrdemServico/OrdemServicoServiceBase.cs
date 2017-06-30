@@ -140,7 +140,7 @@ namespace Calemas.Erp.Domain.Services
         protected virtual OrdemServico SaveDefault(OrdemServico ordemservico, OrdemServico ordemservicoOld)
         {
 			
-			<#AuditDefault#>
+			ordemservico = AuditDefault(ordemservico, ordemservicoOld);
 
             var isNew = ordemservicoOld.IsNull();
             if (isNew)

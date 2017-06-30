@@ -140,7 +140,7 @@ namespace Calemas.Erp.Domain.Services
         protected virtual Colaborador SaveDefault(Colaborador colaborador, Colaborador colaboradorOld)
         {
 			
-			<#AuditDefault#>
+			colaborador = AuditDefault(colaborador, colaboradorOld);
 
             var isNew = colaboradorOld.IsNull();
             if (isNew)

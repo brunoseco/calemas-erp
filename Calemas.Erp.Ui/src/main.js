@@ -5,6 +5,8 @@ import router from './router'
 import Notifications from 'vue-notification'
 Vue.use(Notifications)
 
+import select from './common/select'
+
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate, {
     errorBagName: 'formErrors',

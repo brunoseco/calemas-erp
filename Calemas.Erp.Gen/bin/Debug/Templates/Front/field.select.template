@@ -1,6 +1,4 @@
-				<section class="<#colformField#>">
-					<div class="form-group">
-						<label><ng-container i18n><#ReletedClass#></ng-container></label>
-						<make-select (ngModelChange)="<#formType#>.model.<#propertyName#> = $event" [dataitem]="'<#ReletedClass#>'"></make-select>
-					</div>
-				</section>
+                    <div class="form-group <#colformField#>" v-bind:class="{ 'has-danger': formErrors.has('form-<#formType#>.nivelAcessoId') }">
+                        <label for="<#propertyNameLowerCase#>"><#ReletedClass#></label>
+                        <select v-select="{ dataitem: '<#ReletedClass#>', default: 'Selecione' }" v-model="crud.<#formType#>.model.nivelAcessoId" class="form-control" name="<#propertyNameLowerCase#>" <#isRequired#>></select>
+                    </div>
