@@ -15,6 +15,7 @@ namespace Calemas.Erp.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            new PessoaMap(modelBuilder.Entity<Pessoa>());
             new CorMap(modelBuilder.Entity<Cor>());
             new OrdemServicoMap(modelBuilder.Entity<OrdemServico>());
             new ColaboradorMap(modelBuilder.Entity<Colaborador>());
@@ -22,7 +23,9 @@ namespace Calemas.Erp.Data.Context
             new SetorMap(modelBuilder.Entity<Setor>());
             new PrioridadeMap(modelBuilder.Entity<Prioridade>());
             new TipoOrdemServicoMap(modelBuilder.Entity<TipoOrdemServico>());
-            new PessoaMap(modelBuilder.Entity<Pessoa>());
+            new FinanceiroMap(modelBuilder.Entity<Financeiro>());
+            new PlanoContaMap(modelBuilder.Entity<PlanoConta>());
+            new TipoPlanoContaMap(modelBuilder.Entity<TipoPlanoConta>());
 
         }
 

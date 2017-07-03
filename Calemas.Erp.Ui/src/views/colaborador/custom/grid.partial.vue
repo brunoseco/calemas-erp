@@ -1,4 +1,4 @@
-<template>
+﻿<template>
     <div class="animated fadeIn">
         <div class="row">
             <div class="col-sm-12">
@@ -12,24 +12,15 @@
                                 <tr>
                                     <th>#</th>
                                     <th>
-                                        Account
+                                        Nome
                                         <button @click="crud.filter.orderBy('nome')" class="btn btn-xs btn-link no-border pull-right">
                                             <i class="fa fa-sort"></i>
                                         </button>
                                     </th>
-                                    <th>
-                                        Password
-                                        <button @click="crud.filter.orderBy('nome')" class="btn btn-xs btn-link no-border pull-right">
-                                            <i class="fa fa-sort"></i>
-                                        </button>
-                                    </th>
-                                    <th>
-                                        Ativo
-                                        <button @click="crud.filter.orderBy('nome')" class="btn btn-xs btn-link no-border pull-right">
-                                            <i class="fa fa-sort"></i>
-                                        </button>
-                                    </th>
-
+                                    <th>Email</th>
+                                    <th>Telefone</th>
+                                    <th>Conta/Acesso</th>
+                                    <th>Ativo</th>
                                     <th class="text-center" width="75">
                                         <i class="fa fa-cog"></i>
                                     </th>
@@ -37,16 +28,19 @@
                             </thead>
                             <tbody>
                                 <tr v-for="item in crud.filter.result.itens" class="animated fadeIn">
-                                    <td>{{ item.ColaboradorId }}</td>
-                                    <td>{{ item.Account }}</td>
-                                    <td>{{ item.Password }}</td>
-                                    <td><span class="badge badge-pill" v-bind:class="{ 'badge-success': item.<#propertyNameLowerCase#>, 'badge-danger': !item.<#propertyNameLowerCase#> }">{{item.<#propertyNameLowerCase#> ? 'Sim' : 'Não'}}</span></td>
-
+                                    <td>{{ item.colaboradorId }}</td>
+                                    <td>{{ item.pessoa.nome }}</td>
+                                    <td>{{ item.pessoa.email }}</td>
+                                    <td>{{ item.pessoa.telefone }}</td>
+                                    <td>{{ item.account }}</td>
+                                    <td>
+                                        <span class="badge badge-pill" v-bind:class="{ 'badge-success': item.ativo, 'badge-danger': !item.ativo }">{{item.ativo ? 'Sim' : 'Não'}}</span>
+                                    </td>
                                     <td class="text-center">
-                                        <button type="button" class="btn btn-xs btn-primary" @click="crud.edit.executeModal(item.ColaboradorId, item)">
+                                        <button type="button" class="btn btn-xs btn-primary" @click="crud.edit.executeModal(item.colaboradorId, item)">
                                             <i class="fa fa-pencil"></i>
                                         </button>
-                                        <button type="button" class="btn btn-xs btn-danger" @click="crud.delete.executeModal(item.ColaboradorId, item)">
+                                        <button type="button" class="btn btn-xs btn-danger" @click="crud.delete.executeModal(item.colaboradorId, item)">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </td>

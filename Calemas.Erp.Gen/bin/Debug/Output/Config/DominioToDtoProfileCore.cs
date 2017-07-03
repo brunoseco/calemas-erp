@@ -8,6 +8,16 @@ namespace Calemas.Erp.Application.Config
 
         public DominioToDtoProfileCore()
         {
+            CreateMap(typeof(Pessoa), typeof(PessoaDto)).ReverseMap();
+            CreateMap(typeof(Pessoa), typeof(PessoaDtoSpecialized));
+            CreateMap(typeof(Pessoa), typeof(PessoaDtoSpecializedResult));
+            CreateMap(typeof(Pessoa), typeof(PessoaDtoSpecializedReport));
+            CreateMap(typeof(Pessoa), typeof(PessoaDtoSpecializedDetails));
+            CreateMap(typeof(Cor), typeof(CorDto)).ReverseMap();
+            CreateMap(typeof(Cor), typeof(CorDtoSpecialized));
+            CreateMap(typeof(Cor), typeof(CorDtoSpecializedResult));
+            CreateMap(typeof(Cor), typeof(CorDtoSpecializedReport));
+            CreateMap(typeof(Cor), typeof(CorDtoSpecializedDetails));
             CreateMap(typeof(OrdemServico), typeof(OrdemServicoDto)).ReverseMap();
             CreateMap(typeof(OrdemServico), typeof(OrdemServicoDtoSpecialized));
             CreateMap(typeof(OrdemServico), typeof(OrdemServicoDtoSpecializedResult));
@@ -38,11 +48,21 @@ namespace Calemas.Erp.Application.Config
             CreateMap(typeof(TipoOrdemServico), typeof(TipoOrdemServicoDtoSpecializedResult));
             CreateMap(typeof(TipoOrdemServico), typeof(TipoOrdemServicoDtoSpecializedReport));
             CreateMap(typeof(TipoOrdemServico), typeof(TipoOrdemServicoDtoSpecializedDetails));
-            CreateMap(typeof(Pessoa), typeof(PessoaDto)).ReverseMap();
-            CreateMap(typeof(Pessoa), typeof(PessoaDtoSpecialized));
-            CreateMap(typeof(Pessoa), typeof(PessoaDtoSpecializedResult));
-            CreateMap(typeof(Pessoa), typeof(PessoaDtoSpecializedReport));
-            CreateMap(typeof(Pessoa), typeof(PessoaDtoSpecializedDetails));
+            CreateMap(typeof(Financeiro), typeof(FinanceiroDto)).ReverseMap();
+            CreateMap(typeof(Financeiro), typeof(FinanceiroDtoSpecialized));
+            CreateMap(typeof(Financeiro), typeof(FinanceiroDtoSpecializedResult));
+            CreateMap(typeof(Financeiro), typeof(FinanceiroDtoSpecializedReport));
+            CreateMap(typeof(Financeiro), typeof(FinanceiroDtoSpecializedDetails));
+            CreateMap(typeof(PlanoConta), typeof(PlanoContaDto)).ReverseMap();
+            CreateMap(typeof(PlanoConta), typeof(PlanoContaDtoSpecialized));
+            CreateMap(typeof(PlanoConta), typeof(PlanoContaDtoSpecializedResult));
+            CreateMap(typeof(PlanoConta), typeof(PlanoContaDtoSpecializedReport));
+            CreateMap(typeof(PlanoConta), typeof(PlanoContaDtoSpecializedDetails));
+            CreateMap(typeof(TipoPlanoConta), typeof(TipoPlanoContaDto)).ReverseMap();
+            CreateMap(typeof(TipoPlanoConta), typeof(TipoPlanoContaDtoSpecialized));
+            CreateMap(typeof(TipoPlanoConta), typeof(TipoPlanoContaDtoSpecializedResult));
+            CreateMap(typeof(TipoPlanoConta), typeof(TipoPlanoContaDtoSpecializedReport));
+            CreateMap(typeof(TipoPlanoConta), typeof(TipoPlanoContaDtoSpecializedDetails));
 
         }
 

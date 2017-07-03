@@ -138,20 +138,22 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual TipoOrdemServico SaveDefault(TipoOrdemServico tipoordemservico, TipoOrdemServico tipoordemservicoOld)
-        {
-			
-			tipoordemservico = AuditDefault(tipoordemservico, tipoordemservicoOld);
+        {			
+			tipoordemservico = this.AuditDefault(tipoordemservico, tipoordemservicoOld);
 
             var isNew = tipoordemservicoOld.IsNull();
             if (isNew)
                 tipoordemservico = this._rep.Add(tipoordemservico);
             else
-            {
                 tipoordemservico = this._rep.Update(tipoordemservico);
-            }
-
 
             return tipoordemservico;
         }
+
+		public virtual TipoOrdemServico AuditDefault(TipoOrdemServico tipoordemservico, TipoOrdemServico tipoordemservicoOld)
+        {
+            return base.AuditDefault(tipoordemservico, tipoordemservicoOld);
+        }
+
     }
 }

@@ -7,6 +7,8 @@ const routers = [
     { path: 'prioridade', name: 'Prioridade', component: function (resolve) { require(['@/views/prioridade'], resolve) } },
     { path: 'tipoordemservico', name: 'TipoOrdemServico', component: function (resolve) { require(['@/views/tipoordemservico'], resolve) } },
     { path: 'cor', name: 'Cor', component: function (resolve) { require(['@/views/cor'], resolve) } },
+    { path: 'financeiro', name: 'Financeiro', component: function (resolve) { require(['@/views/financeiro'], resolve) } },
+    { path: 'planoconta', name: 'PlanoConta', component: function (resolve) { require(['@/views/planoconta'], resolve) } },
 
 ];
 

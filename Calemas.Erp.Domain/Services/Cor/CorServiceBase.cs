@@ -138,20 +138,19 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual Cor SaveDefault(Cor cor, Cor corOld)
-        {
-			
+        {			
 			
 
             var isNew = corOld.IsNull();
             if (isNew)
                 cor = this._rep.Add(cor);
             else
-            {
                 cor = this._rep.Update(cor);
-            }
-
 
             return cor;
         }
+
+
+
     }
 }

@@ -10,15 +10,14 @@ import select from './common/select'
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate, {
     errorBagName: 'formErrors',
-    fieldsBagName: 'formFields',
-    locale: 'pt'
+    fieldsBagName: 'formFields'
 });
 
 require('vue-strap/dist/vue-strap-lang.js')
 
-const Moment = require('moment')
+const _moment = require('moment')
 require('moment/locale/pt')
-Vue.use(require('vue-moment'), { Moment });
+Vue.use(require('vue-moment'), { _moment });
 
 import '../static/scss/style.scss'
 

@@ -138,20 +138,22 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual Prioridade SaveDefault(Prioridade prioridade, Prioridade prioridadeOld)
-        {
-			
-			prioridade = AuditDefault(prioridade, prioridadeOld);
+        {			
+			prioridade = this.AuditDefault(prioridade, prioridadeOld);
 
             var isNew = prioridadeOld.IsNull();
             if (isNew)
                 prioridade = this._rep.Add(prioridade);
             else
-            {
                 prioridade = this._rep.Update(prioridade);
-            }
-
 
             return prioridade;
         }
+
+		public virtual Prioridade AuditDefault(Prioridade prioridade, Prioridade prioridadeOld)
+        {
+            return base.AuditDefault(prioridade, prioridadeOld);
+        }
+
     }
 }

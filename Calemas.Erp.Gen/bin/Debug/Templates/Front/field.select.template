@@ -1,4 +1,4 @@
-                    <div class="form-group <#colformField#>" v-bind:class="{ 'has-danger': formErrors.has('form-<#formType#>.nivelAcessoId') }">
+                    <div class="form-group <#colformField#>" v-bind:class="{ 'has-danger': formErrors.has('form-<#formType#>.<#propertyNameLowerCase#>') }">
                         <label for="<#propertyNameLowerCase#>"><#ReletedClass#></label>
-                        <select v-select="{ dataitem: '<#ReletedClass#>', default: 'Selecione' }" v-model="crud.<#formType#>.model.nivelAcessoId" class="form-control" name="<#propertyNameLowerCase#>" <#isRequired#>></select>
+                        <select v-select="{ dataitem: '<#ReletedClass#>', default: 'Selecione' }" v-model="crud.<#formType#>.model.<#propertyNameLowerCase#>" class="form-control" name="<#propertyNameLowerCase#>" <#isRequired#>></select>
                     </div>

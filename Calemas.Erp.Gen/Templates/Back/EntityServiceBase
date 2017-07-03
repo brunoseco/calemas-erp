@@ -138,20 +138,19 @@ namespace <#namespace#>.Domain.Services
         }
 
         protected virtual <#className#> SaveDefault(<#className#> <#classNameLower#>, <#className#> <#classNameLower#>Old)
-        {
-			
+        {			
 			<#AuditDefault#>
 
             var isNew = <#classNameLower#>Old.IsNull();
             if (isNew)
                 <#classNameLower#> = this._rep.Add(<#classNameLower#>);
             else
-            {
                 <#classNameLower#> = this._rep.Update(<#classNameLower#>);
-            }
-
 
             return <#classNameLower#>;
         }
+
+<#AuditDefaultMethod#>
+
     }
 }

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
     <div class="wrapper">
         <header-partial :crud="crud" />
         <filter-partial :crud="crud" />
@@ -10,12 +10,12 @@
 </template>
 <script>
 
-    import headerPartial from './generated/header.partial'
-    import filterPartial from './generated/filter.partial'
-    import gridPartial from './generated/grid.partial'
-    import createPartial from './generated/create.partial'
-    import editPartial from './generated/edit.partial'
-    import deletePartial from './generated/delete.partial'
+    import headerPartial from './custom/header.partial'
+    import filterPartial from './custom/filter.partial'
+    import gridPartial from './custom/grid.partial'
+    import createPartial from './custom/create.partial'
+    import editPartial from './custom/edit.partial'
+    import deletePartial from './custom/delete.partial'
 
     import { Crud } from '../../common/crud'
 
@@ -34,9 +34,9 @@
                 crud: new Crud({
                     resource: "colaborador",
                     vm: this,
-                    create: { model: { } },
-                    edit: { model: { } },
-                    delete: { model: { } }
+                    create: { model: { pessoa: {} } },
+                    edit: { model: { pessoa: {} } },
+                    delete: { model: { pessoa: {} } }
                 }),
             }
         },

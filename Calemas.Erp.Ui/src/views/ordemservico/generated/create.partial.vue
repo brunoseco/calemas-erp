@@ -17,17 +17,17 @@
                         <label for="clienteId">ClienteId</label>
                         <input type="text" class="form-control" name="clienteId" placeholder="ClienteId" v-model="crud.create.model.clienteId" v-validate="'required'" />
                     </div>
-                    <div class="form-group col-md-12" v-bind:class="{ 'has-danger': formErrors.has('form-create.nivelAcessoId') }">
+                    <div class="form-group col-md-12" v-bind:class="{ 'has-danger': formErrors.has('form-create.prioridadeId') }">
                         <label for="prioridadeId">Prioridade</label>
-                        <select v-select="{ dataitem: 'Prioridade', default: 'Selecione' }" v-model="crud.create.model.nivelAcessoId" class="form-control" name="prioridadeId" v-validate="'required'"></select>
+                        <select v-select="{ dataitem: 'Prioridade', default: 'Selecione' }" v-model="crud.create.model.prioridadeId" class="form-control" name="prioridadeId" v-validate="'required'"></select>
                     </div>
-                    <div class="form-group col-md-12" v-bind:class="{ 'has-danger': formErrors.has('form-create.nivelAcessoId') }">
+                    <div class="form-group col-md-12" v-bind:class="{ 'has-danger': formErrors.has('form-create.setorId') }">
                         <label for="setorId">Setor</label>
-                        <select v-select="{ dataitem: 'Setor', default: 'Selecione' }" v-model="crud.create.model.nivelAcessoId" class="form-control" name="setorId" v-validate="'required'"></select>
+                        <select v-select="{ dataitem: 'Setor', default: 'Selecione' }" v-model="crud.create.model.setorId" class="form-control" name="setorId" v-validate="'required'"></select>
                     </div>
-                    <div class="form-group col-md-12" v-bind:class="{ 'has-danger': formErrors.has('form-create.nivelAcessoId') }">
+                    <div class="form-group col-md-12" v-bind:class="{ 'has-danger': formErrors.has('form-create.tipoOrdemServicoId') }">
                         <label for="tipoOrdemServicoId">TipoOrdemServico</label>
-                        <select v-select="{ dataitem: 'TipoOrdemServico', default: 'Selecione' }" v-model="crud.create.model.nivelAcessoId" class="form-control" name="tipoOrdemServicoId" v-validate="'required'"></select>
+                        <select v-select="{ dataitem: 'TipoOrdemServico', default: 'Selecione' }" v-model="crud.create.model.tipoOrdemServicoId" class="form-control" name="tipoOrdemServicoId" v-validate="'required'"></select>
                     </div>
 					<div class="form-group col-md-12" v-bind:class="{ 'has-danger': formErrors.has('form-create.agendaId') }">
                         <label for="agendaId">AgendaId</label>

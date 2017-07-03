@@ -138,20 +138,22 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual Setor SaveDefault(Setor setor, Setor setorOld)
-        {
-			
-			setor = AuditDefault(setor, setorOld);
+        {			
+			setor = this.AuditDefault(setor, setorOld);
 
             var isNew = setorOld.IsNull();
             if (isNew)
                 setor = this._rep.Add(setor);
             else
-            {
                 setor = this._rep.Update(setor);
-            }
-
 
             return setor;
         }
+
+		public virtual Setor AuditDefault(Setor setor, Setor setorOld)
+        {
+            return base.AuditDefault(setor, setorOld);
+        }
+
     }
 }

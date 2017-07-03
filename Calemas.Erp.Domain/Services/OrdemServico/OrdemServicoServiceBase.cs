@@ -138,20 +138,22 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual OrdemServico SaveDefault(OrdemServico ordemservico, OrdemServico ordemservicoOld)
-        {
-			
-			ordemservico = AuditDefault(ordemservico, ordemservicoOld);
+        {			
+			ordemservico = this.AuditDefault(ordemservico, ordemservicoOld);
 
             var isNew = ordemservicoOld.IsNull();
             if (isNew)
                 ordemservico = this._rep.Add(ordemservico);
             else
-            {
                 ordemservico = this._rep.Update(ordemservico);
-            }
-
 
             return ordemservico;
         }
+
+		public virtual OrdemServico AuditDefault(OrdemServico ordemservico, OrdemServico ordemservicoOld)
+        {
+            return base.AuditDefault(ordemservico, ordemservicoOld);
+        }
+
     }
 }

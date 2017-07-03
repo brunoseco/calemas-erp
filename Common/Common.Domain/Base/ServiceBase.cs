@@ -17,25 +17,32 @@ namespace Common.Domain.Base
         protected WarningSpecificationResult _validationWarning;
 
         protected CurrentUser _user;
-
-
+        
         public ServiceBase(ICache cache)
         {
             this._cacheHelper = new CacheHelper(cache);
         }
 
-        protected virtual T AuditDefault(DomainBaseWithUserCreate entity, DomainBaseWithUserCreate entityOld)
+        public virtual T AuditDefault(DomainBaseWithUserCreate entity, DomainBaseWithUserCreate entityOld)
         {
             var isNew = entityOld.IsNull();
             if (isNew)
-                entity.SetUserCreate(this._user.GetSubjectId<int>());
+                this.SetUserCreate(entity);
             else
-            {
-                entity.SetUserCreate(entityOld.UserCreateId, entityOld.UserCreateDate);
-                entity.SetUserUpdate(this._user.GetSubjectId<int>());
-            }
+                this.SetUserUpdate(entity, entityOld);
 
             return entity as T;
+        }
+
+        protected void SetUserCreate(DomainBaseWithUserCreate entity)
+        {
+            entity.SetUserCreate(this._user.GetSubjectId<int>());
+        }
+
+        protected void SetUserUpdate(DomainBaseWithUserCreate entity, DomainBaseWithUserCreate entityOld)
+        {
+            entity.SetUserCreate(entityOld.UserCreateId, entityOld.UserCreateDate);
+            entity.SetUserUpdate(this._user.GetSubjectId<int>());
         }
 
         public virtual async Task<IEnumerable<T>> Save(IEnumerable<T> entitys)

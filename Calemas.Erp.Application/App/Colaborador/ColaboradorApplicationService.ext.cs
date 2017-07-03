@@ -7,6 +7,7 @@ using Calemas.Erp.Dto;
 using System.Linq;
 using System.Collections.Generic;
 using Common.Domain.Base;
+using System.Threading.Tasks;
 
 namespace Calemas.Erp.Application
 {
@@ -29,6 +30,24 @@ namespace Calemas.Erp.Application
             return base.MapperDomainToDto<ColaboradorDtoSpecialized>(model) as TDS;
         }
 
+        protected override Colaborador MapperDtoToDomain<TDS>(TDS dto)
+        {
+            var _dto = dto as ColaboradorDtoSpecialized;
+
+            var domain = base.MapperDtoToDomain(_dto);
+
+            if (_dto.Pessoa.IsNotNull())
+                domain.Pessoa = new Pessoa.PessoaFactory().GetDefaaultInstance(_dto.Pessoa);
+
+            return domain;
+        }
+
+        protected override async Task<Colaborador> AlterDomainWithDto<TDS>(TDS dto)
+        {
+            var colaborador = dto as ColaboradorDto;
+            var result = await this._serviceBase.GetOne(new ColaboradorFilter { ColaboradorId = colaborador.ColaboradorId });
+            return result;
+        }
 
     }
 }

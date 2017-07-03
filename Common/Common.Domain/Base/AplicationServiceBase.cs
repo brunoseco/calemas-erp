@@ -88,7 +88,7 @@ namespace Common.Domain.Base
             var entityChanged = await this.AlterDomainWithDto(entity);
             if (entityChanged.IsNull())
             {
-                this._serviceBase.AddDomainValidation("Não econtrado");
+                this._serviceBase.AddDomainValidation("Não encontrado");
                 return entity;
             }
 

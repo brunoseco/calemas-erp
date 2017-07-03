@@ -1,11 +1,11 @@
-<template>
+﻿<template>
     <div class="animated fadeIn">
         <div class="row" style="margin-bottom: 1rem;margin-top: -0.5rem;">
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
                 <h6 class="page-title txt-color-blueDark">
                     <i class="fa-fw fa fa-home"></i>
                     Cadastros
-                    <span>Manutenção de Colaborador</span>
+                    <span>Manutenção de Colaboradores</span>
                 </h6>
             </div>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4 text-right">

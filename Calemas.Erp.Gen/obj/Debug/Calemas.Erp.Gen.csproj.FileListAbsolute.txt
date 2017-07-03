@@ -218,3 +218,4 @@ C:\Pessoal\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\filter.vue.temp
 C:\Pessoal\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\grid.vue.template
 C:\Pessoal\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\router.js.template
 C:\Pessoal\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\create.vue.template
+C:\Pessoal\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Back\EntityServiceBase.Audit

@@ -26,10 +26,10 @@ namespace Calemas.Erp.Data.Repository
 				
 				queryFilter = queryFilter.Where(_=>_.Descricao.Contains(filters.Descricao));
 			};
-            if (filters.Cor.IsSent()) 
+            if (filters.CorId.IsSent()) 
 			{ 
 				
-				queryFilter = queryFilter.Where(_=>_.Cor.Contains(filters.Cor));
+				queryFilter = queryFilter.Where(_=>_.CorId == filters.CorId);
 			};
             if (filters.Ativo.IsSent()) 
 			{ 

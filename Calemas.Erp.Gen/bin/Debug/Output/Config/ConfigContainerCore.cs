@@ -20,6 +20,14 @@ namespace Calemas.Erp.Api
             services.AddScoped<ICache, RedisComponent>();
             services.AddScoped<IUnitOfWork, UnitOfWork<DbContextCore>>();
             
+			services.AddScoped<IPessoaApplicationService, PessoaApplicationService>();
+			services.AddScoped<IPessoaService, PessoaService>();
+			services.AddScoped<IPessoaRepository, PessoaRepository>();
+
+			services.AddScoped<ICorApplicationService, CorApplicationService>();
+			services.AddScoped<ICorService, CorService>();
+			services.AddScoped<ICorRepository, CorRepository>();
+
 			services.AddScoped<IOrdemServicoApplicationService, OrdemServicoApplicationService>();
 			services.AddScoped<IOrdemServicoService, OrdemServicoService>();
 			services.AddScoped<IOrdemServicoRepository, OrdemServicoRepository>();
@@ -44,9 +52,17 @@ namespace Calemas.Erp.Api
 			services.AddScoped<ITipoOrdemServicoService, TipoOrdemServicoService>();
 			services.AddScoped<ITipoOrdemServicoRepository, TipoOrdemServicoRepository>();
 
-			services.AddScoped<IPessoaApplicationService, PessoaApplicationService>();
-			services.AddScoped<IPessoaService, PessoaService>();
-			services.AddScoped<IPessoaRepository, PessoaRepository>();
+			services.AddScoped<IFinanceiroApplicationService, FinanceiroApplicationService>();
+			services.AddScoped<IFinanceiroService, FinanceiroService>();
+			services.AddScoped<IFinanceiroRepository, FinanceiroRepository>();
+
+			services.AddScoped<IPlanoContaApplicationService, PlanoContaApplicationService>();
+			services.AddScoped<IPlanoContaService, PlanoContaService>();
+			services.AddScoped<IPlanoContaRepository, PlanoContaRepository>();
+
+			services.AddScoped<ITipoPlanoContaApplicationService, TipoPlanoContaApplicationService>();
+			services.AddScoped<ITipoPlanoContaService, TipoPlanoContaService>();
+			services.AddScoped<ITipoPlanoContaRepository, TipoPlanoContaRepository>();
 
 
 

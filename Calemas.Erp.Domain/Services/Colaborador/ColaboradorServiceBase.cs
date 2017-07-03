@@ -138,20 +138,22 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual Colaborador SaveDefault(Colaborador colaborador, Colaborador colaboradorOld)
-        {
-			
-			colaborador = AuditDefault(colaborador, colaboradorOld);
+        {			
+			colaborador = this.AuditDefault(colaborador, colaboradorOld);
 
             var isNew = colaboradorOld.IsNull();
             if (isNew)
                 colaborador = this._rep.Add(colaborador);
             else
-            {
                 colaborador = this._rep.Update(colaborador);
-            }
-
 
             return colaborador;
         }
+
+		public virtual Colaborador AuditDefault(Colaborador colaborador, Colaborador colaboradorOld)
+        {
+            return base.AuditDefault(colaborador, colaboradorOld);
+        }
+
     }
 }

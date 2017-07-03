@@ -138,20 +138,22 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual Pessoa SaveDefault(Pessoa pessoa, Pessoa pessoaOld)
-        {
-			
-			pessoa = AuditDefault(pessoa, pessoaOld);
+        {			
+			pessoa = this.AuditDefault(pessoa, pessoaOld);
 
             var isNew = pessoaOld.IsNull();
             if (isNew)
                 pessoa = this._rep.Add(pessoa);
             else
-            {
                 pessoa = this._rep.Update(pessoa);
-            }
-
 
             return pessoa;
         }
+
+		public virtual Pessoa AuditDefault(Pessoa pessoa, Pessoa pessoaOld)
+        {
+            return base.AuditDefault(pessoa, pessoaOld);
+        }
+
     }
 }

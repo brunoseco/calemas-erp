@@ -154,7 +154,7 @@ export function Api(resource, endpoint) {
             if (filters.orderByType === undefined)
                 filters.orderByType = 1;
         }
-        
+
         if (filters.id !== undefined)
             return String.format("{0}?{1}", filters.id, Object.$httpParamSerializer(filters));
 
@@ -171,7 +171,7 @@ export function Api(resource, endpoint) {
     function handleSuccess(response) { addCache(response.data); }
 
     function handleError(err) {
-        if (err.status == 401)
+        if (err && err.status == 401)
             Auth.login();
     }
 

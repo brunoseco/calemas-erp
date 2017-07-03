@@ -19,9 +19,9 @@ namespace Calemas.Erp.Dto
 
         public virtual string Descricao {get; set;}
 
-        [Required(ErrorMessage="Setor - Campo Cor é Obrigatório")]
-        [MaxLength(7, ErrorMessage = "Setor - Quantidade de caracteres maior que o permitido para o campo Cor")]
-        public virtual string Cor {get; set;}
+        
+
+        public virtual int CorId {get; set;}
 
         [Required(ErrorMessage="Setor - Campo Ativo é Obrigatório")]
         public virtual bool Ativo {get; set;}

@@ -8,6 +8,25 @@
                     </router-link>
                 </li>
                 <li class="nav-item nav-dropdown">
+                    <div class="nav-link nav-dropdown-toggle" @click="handleClick"><i class="icon-list"></i> Administrativo</div>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <router-link :to="'/colaborador'" class="nav-link" exact><i class="icon-user"></i> Colaborador</router-link>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-dropdown">
+                    <div class="nav-link nav-dropdown-toggle" @click="handleClick"><i class="icon-chart"></i> Financeiro</div>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <router-link :to="'/financeiro'" class="nav-link" exact><i class="icon-wallet"></i> Lançamentos</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link :to="'/planoconta'" class="nav-link" exact><i class="icon-notebook"></i> Plano de conta</router-link>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-dropdown">
                     <div class="nav-link nav-dropdown-toggle" @click="handleClick"><i class="icon-pencil"></i> Cadastros</div>
                     <ul class="nav-dropdown-items">
                         <li class="nav-item">

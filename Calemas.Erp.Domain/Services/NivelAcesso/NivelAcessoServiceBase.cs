@@ -138,20 +138,19 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual NivelAcesso SaveDefault(NivelAcesso nivelacesso, NivelAcesso nivelacessoOld)
-        {
-			
+        {			
 			
 
             var isNew = nivelacessoOld.IsNull();
             if (isNew)
                 nivelacesso = this._rep.Add(nivelacesso);
             else
-            {
                 nivelacesso = this._rep.Update(nivelacesso);
-            }
-
 
             return nivelacesso;
         }
+
+
+
     }
 }

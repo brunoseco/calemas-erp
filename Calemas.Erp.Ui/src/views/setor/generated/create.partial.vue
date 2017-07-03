@@ -17,9 +17,9 @@
                         <label for="descricao">Descricao</label>
                         <input type="text" class="form-control" name="descricao" placeholder="Descricao" v-model="crud.create.model.descricao"  />
                     </div>
-                    <div class="form-group col-md-12" v-bind:class="{ 'has-danger': formErrors.has('form-create.nivelAcessoId') }">
+                    <div class="form-group col-md-12" v-bind:class="{ 'has-danger': formErrors.has('form-create.corId') }">
                         <label for="corId">Cor</label>
-                        <select v-select="{ dataitem: 'Cor', default: 'Selecione' }" v-model="crud.create.model.nivelAcessoId" class="form-control" name="corId" v-validate="'required'"></select>
+                        <select v-select="{ dataitem: 'Cor', default: 'Selecione' }" v-model="crud.create.model.corId" class="form-control" name="corId" v-validate="'required'"></select>
                     </div>
 					<div class="form-group col-md-12" v-bind:class="{ 'has-danger': formErrors.has('form-create.ativo') }">
                         <div class="clearfix">&nbsp;</div>
