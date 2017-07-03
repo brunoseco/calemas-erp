@@ -1,4 +1,4 @@
-<template>
+﻿<template>
     <modal title="Cadastro de Cores do sistema" v-model="crud.create.modalIsOpen" effect="fade/zoom" :success="true" :large="true">
         <div slot="modal-header" class="modal-header">
             <h4 class="modal-title">Cadastro de Cores do sistema</h4>

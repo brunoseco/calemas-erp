@@ -1,4 +1,4 @@
-<template>
+﻿<template>
     <modal title="Exclusão de Cores do sistema" v-model="crud.delete.modalIsOpen" :danger="true" effect="fade/zoom">
         <div slot="modal-header" class="modal-header">
             <h4 class="modal-title">Exclusão de Cores do sistema</h4>
