@@ -15,18 +15,18 @@ namespace Calemas.Erp.Domain.Services
             : base(rep, cache, user)
         {
             this._repPessoa = repPessoa;
-
         }
 
-        public override Colaborador AuditDefault(Colaborador entity, Colaborador entityOld)
+        public override Colaborador AuditDefault(DomainBaseWithUserCreate entity, DomainBaseWithUserCreate entityOld)
         {
-            if (entity.Pessoa.IsNotNull())
+            var colaborador = base.AuditDefault(entity, entityOld);
+            if (colaborador.Pessoa.IsNotNull())
             {
                 var isNew = entityOld.IsNull();
-                base.AuditDefault(entity.Pessoa, isNew ? null : entityOld.Pessoa);
+                base.AuditDefault(colaborador.Pessoa, isNew ? null : colaborador.Pessoa);
             }
 
-            return base.AuditDefault(entity, entityOld);
+            return colaborador;
         }
 
     }

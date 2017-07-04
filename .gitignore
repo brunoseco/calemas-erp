@@ -7,3 +7,5 @@ yarn-error.log*
 *.dll
 *.pdb
 *.json
+/Calemas.Erp.Database/Calemas.Erp.Database.jfm
+/Calemas.Erp.Database/Calemas.Erp.Database.dbmdl

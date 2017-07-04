@@ -149,11 +149,6 @@ namespace Calemas.Erp.Domain.Services
 
             return colaborador;
         }
-
-		public virtual Colaborador AuditDefault(Colaborador colaborador, Colaborador colaboradorOld)
-        {
-            return base.AuditDefault(colaborador, colaboradorOld);
-        }
-
+        
     }
 }

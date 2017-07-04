@@ -1,4 +1,0 @@
-﻿		public virtual <#className#> AuditDefault(<#className#> <#classNameLower#>, <#className#> <#classNameLower#>Old)
-        {
-            return base.AuditDefault(<#classNameLower#>, <#classNameLower#>Old);
-        }

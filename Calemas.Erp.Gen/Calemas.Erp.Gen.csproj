@@ -229,9 +229,6 @@
     <None Include="Templates\Back\EntityServiceBase">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Back\EntityServiceBase.Audit">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Templates\Back\EntityServiceExt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
