@@ -56,8 +56,8 @@ export default {
     name: 'sidebar',
     methods: {
         handleClick(e) {
-            e.preventDefault()
-            e.target.parentElement.classList.toggle('open')
+            e.preventDefault();
+            e.target.parentElement.classList.toggle('open');
         }
     }
 }

@@ -17,6 +17,8 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using System;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Converters;
+using Common.API.Converters;
 
 namespace Calemas.Erp.Api
 {
@@ -54,7 +56,10 @@ namespace Calemas.Erp.Api
             Cors.Enable(services);
             ConfigContainerCore.Config(services);
 
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(options =>
+            {
+                options.SerializerSettings.Converters.Add(new DateTimeConverter());
+            });
 
         }
 
@@ -80,4 +85,5 @@ namespace Calemas.Erp.Api
             AutoMapperConfigCore.RegisterMappings();
         }
     }
+    
 }
