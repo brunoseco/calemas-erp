@@ -1,9 +1,10 @@
 ﻿import { Api } from '../api'
-import {Notification} from '../notification'
+import { Notification } from '../notification'
 import { Delete } from './delete'
 import { Edit } from './edit'
 import { Create } from './create'
 import { Filter } from './filter'
+import { Details } from './details'
 
 export function Crud(params) {
 
@@ -31,6 +32,10 @@ export function Crud(params) {
             showAlertMessage: true,
             alertMessage: "Parece que você não preencheu todos os campos."
         },
+        details: {
+            model: {},
+        },
+        filterInstance: null
     };
 
     this.config = Object.assign({}, this.default, params);
@@ -39,7 +44,7 @@ export function Crud(params) {
 
     this.notification = new Notification(this.config.vm);
 
-    this.filter = new Filter({
+    this.filter = this.config.filterInstance || new Filter({
         api: this.api,
     })
 
@@ -64,4 +69,8 @@ export function Crud(params) {
         config: Object.assign({}, this.default.create, this.config.create),
     })
 
+    this.details = new Details({
+        api: this.api,
+        config: Object.assign({}, this.default.details, this.config.details),
+    })
 }

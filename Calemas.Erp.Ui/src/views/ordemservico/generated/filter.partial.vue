@@ -13,6 +13,10 @@
                         <label for="protoco">Protoco</label>
                         <input type="text" class="form-control" name="protoco" placeholder="Protoco" v-model="crud.filter.model.protoco"  />
                     </div>
+                    <div class="form-group col-md-6" v-bind:class="{ 'has-danger': formErrors.has('form-filter.responsavelId') }">
+                        <label for="responsavelId">Colaborador</label>
+                        <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" v-model="crud.filter.model.responsavelId" class="form-control" name="responsavelId" ></select>
+                    </div>
 					<div class="form-group col-md-6" v-bind:class="{ 'has-danger': formErrors.has('form-create.clienteId') }">
                         <label for="clienteId">ClienteId</label>
                         <input type="text" class="form-control" name="clienteId" placeholder="ClienteId" v-model="crud.filter.model.clienteId"  />
@@ -36,6 +40,10 @@
 					<div class="form-group col-md-6" v-bind:class="{ 'has-danger': formErrors.has('form-create.statusOrdemServicoId') }">
                         <label for="statusOrdemServicoId">StatusOrdemServicoId</label>
                         <input type="text" class="form-control" name="statusOrdemServicoId" placeholder="StatusOrdemServicoId" v-model="crud.filter.model.statusOrdemServicoId"  />
+                    </div>
+					<div class="form-group col-md-6" v-bind:class="{ 'has-danger': formErrors.has('form-filter.dataOcorrencia') }">
+                        <label for="dataOcorrencia">DataOcorrencia</label>
+                        <input type="date" class="form-control" name="dataOcorrencia" v-model="crud.filter.model.dataOcorrencia"  />
                     </div>
 					<div class="form-group col-md-6" v-bind:class="{ 'has-danger': formErrors.has('form-filter.dataSituacao') }">
                         <label for="dataSituacao">DataSituacao</label>

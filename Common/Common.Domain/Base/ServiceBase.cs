@@ -17,7 +17,7 @@ namespace Common.Domain.Base
         protected WarningSpecificationResult _validationWarning;
 
         protected CurrentUser _user;
-        
+
         public ServiceBase(ICache cache)
         {
             this._cacheHelper = new CacheHelper(cache);
@@ -55,6 +55,14 @@ namespace Common.Domain.Base
             }
             return savedAll;
 
+        }
+
+        public virtual async Task<T> DomainOrchestration(T entity, T entityOld)
+        {
+            return await Task.Run(() =>
+            {
+                return entity;
+            });
         }
 
         public abstract Task<T> Save(T entity, bool questionToContinue = true);

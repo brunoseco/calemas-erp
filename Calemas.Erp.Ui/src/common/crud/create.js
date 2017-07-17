@@ -35,10 +35,10 @@ export function Create(params) {
         });
     }
 
-    function _executeModal() {
+    function _executeModal(model) {
         if (!self.validation) throw "vm is not set";
         self.validation.clearForm();
-        self.model = self.config.model;
+        self.model = model || self.config.model;
         self.modalIsOpen = true;
     }
 

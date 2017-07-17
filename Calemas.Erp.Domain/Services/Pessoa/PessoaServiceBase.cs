@@ -149,11 +149,6 @@ namespace Calemas.Erp.Domain.Services
 
             return pessoa;
         }
-
-		public virtual Pessoa AuditDefault(Pessoa pessoa, Pessoa pessoaOld)
-        {
-            return base.AuditDefault(pessoa, pessoaOld);
-        }
-
+		
     }
 }

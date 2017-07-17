@@ -149,11 +149,6 @@ namespace Calemas.Erp.Domain.Services
 
             return prioridade;
         }
-
-		public virtual Prioridade AuditDefault(Prioridade prioridade, Prioridade prioridadeOld)
-        {
-            return base.AuditDefault(prioridade, prioridadeOld);
-        }
-
+		
     }
 }

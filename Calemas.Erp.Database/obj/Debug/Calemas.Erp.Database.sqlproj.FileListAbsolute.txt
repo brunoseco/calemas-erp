@@ -1,0 +1,5 @@
+C:\Pessoal\calemas-erp\Calemas.Erp.Database\bin\Debug\Calemas.Erp.Database.dacpac
+C:\Pessoal\calemas-erp\Calemas.Erp.Database\bin\Debug\Calemas.Erp.Database.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.Database\bin\Debug\Calemas.Erp.Database.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Database\obj\Debug\Calemas.Erp.Database.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.Database\obj\Debug\Calemas.Erp.Database.pdb

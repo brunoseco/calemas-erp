@@ -9,7 +9,7 @@
 }
 
 .vue-notification {
-    margin-top: 5px;
+    margin-top: 5px !important;
     font-size: 14px;
 }
 
@@ -141,4 +141,10 @@ body > .spinner-wrap {
 .has-danger > input, .has-danger > select {
     border-color: #f86c6b;
     border-left-width: 5px;
+}
+
+.nav-link.open,
+.nav-link.active {
+    font-weight: bold;
+    background: none !important; /*$brand-primary !important;*/
 }

@@ -149,8 +149,6 @@ namespace Calemas.Erp.Domain.Services
 
             return cor;
         }
-
-
-
+		
     }
 }

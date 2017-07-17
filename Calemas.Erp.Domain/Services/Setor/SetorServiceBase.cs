@@ -149,11 +149,6 @@ namespace Calemas.Erp.Domain.Services
 
             return setor;
         }
-
-		public virtual Setor AuditDefault(Setor setor, Setor setorOld)
-        {
-            return base.AuditDefault(setor, setorOld);
-        }
-
+		
     }
 }

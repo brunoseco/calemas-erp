@@ -149,11 +149,6 @@ namespace Calemas.Erp.Domain.Services
 
             return tipoordemservico;
         }
-
-		public virtual TipoOrdemServico AuditDefault(TipoOrdemServico tipoordemservico, TipoOrdemServico tipoordemservicoOld)
-        {
-            return base.AuditDefault(tipoordemservico, tipoordemservicoOld);
-        }
-
+		
     }
 }

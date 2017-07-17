@@ -11,31 +11,31 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public OrdemServico(int ordemservicoid, string protoco, int clienteid, int prioridadeid, int setorid, int tipoordemservicoid, int agendaid, int statusordemservicoid, DateTime datasituacao) :
-            base(ordemservicoid, protoco, clienteid, prioridadeid, setorid, tipoordemservicoid, agendaid, statusordemservicoid, datasituacao)
-        {
+        public OrdemServico(int ordemservicoid, string protoco, int responsavelid, int clienteid, int prioridadeid, int setorid, int tipoordemservicoid, int agendaid, int statusordemservicoid, DateTime dataocorrencia, DateTime datasituacao)
+            : base(ordemservicoid, protoco, responsavelid, clienteid, prioridadeid, setorid, tipoordemservicoid, agendaid, statusordemservicoid, dataocorrencia, datasituacao)
+        { }
 
-        }
-
-		public class OrdemServicoFactory
+        public class OrdemServicoFactory
         {
             public OrdemServico GetDefaaultInstance(dynamic data)
             {
                 var construction = new OrdemServico(data.OrdemServicoId,
                                         data.Protoco,
+                                        data.ResponsavelId,
                                         data.ClienteId,
                                         data.PrioridadeId,
                                         data.SetorId,
                                         data.TipoOrdemServicoId,
                                         data.AgendaId,
                                         data.StatusOrdemServicoId,
+                                        data.DataOcorrencia,
                                         data.DataSituacao);
 
                 construction.SetarObservacao(data.Observacao);
                 construction.SetarDescricao(data.Descricao);
 
 
-				return construction;
+                return construction;
             }
 
         }
@@ -46,6 +46,6 @@ namespace Calemas.Erp.Domain.Entitys
             return base._validationResult.IsValid;
 
         }
-        
+
     }
 }

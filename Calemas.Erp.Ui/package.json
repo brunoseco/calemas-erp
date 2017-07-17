@@ -21,7 +21,7 @@
     "vue-notification": "^1.2.3",
     "vue-pagination-bootstrap": "^1.0.1",
     "vue-router": "^2.3.1",
-    "vue-strap": "github:wffranco/vue-strap"
+    "vue-strap": "github:brunoseco/vue-strap"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",

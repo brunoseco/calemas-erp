@@ -24,14 +24,6 @@ namespace Calemas.Erp.Api
 			services.AddScoped<IPessoaService, PessoaService>();
 			services.AddScoped<IPessoaRepository, PessoaRepository>();
 
-			services.AddScoped<ICorApplicationService, CorApplicationService>();
-			services.AddScoped<ICorService, CorService>();
-			services.AddScoped<ICorRepository, CorRepository>();
-
-			services.AddScoped<IOrdemServicoApplicationService, OrdemServicoApplicationService>();
-			services.AddScoped<IOrdemServicoService, OrdemServicoService>();
-			services.AddScoped<IOrdemServicoRepository, OrdemServicoRepository>();
-
 			services.AddScoped<IColaboradorApplicationService, ColaboradorApplicationService>();
 			services.AddScoped<IColaboradorService, ColaboradorService>();
 			services.AddScoped<IColaboradorRepository, ColaboradorRepository>();
@@ -39,6 +31,14 @@ namespace Calemas.Erp.Api
 			services.AddScoped<INivelAcessoApplicationService, NivelAcessoApplicationService>();
 			services.AddScoped<INivelAcessoService, NivelAcessoService>();
 			services.AddScoped<INivelAcessoRepository, NivelAcessoRepository>();
+
+			services.AddScoped<ICorApplicationService, CorApplicationService>();
+			services.AddScoped<ICorService, CorService>();
+			services.AddScoped<ICorRepository, CorRepository>();
+
+			services.AddScoped<IOrdemServicoApplicationService, OrdemServicoApplicationService>();
+			services.AddScoped<IOrdemServicoService, OrdemServicoService>();
+			services.AddScoped<IOrdemServicoRepository, OrdemServicoRepository>();
 
 			services.AddScoped<ISetorApplicationService, SetorApplicationService>();
 			services.AddScoped<ISetorService, SetorService>();
@@ -63,6 +63,22 @@ namespace Calemas.Erp.Api
 			services.AddScoped<ITipoPlanoContaApplicationService, TipoPlanoContaApplicationService>();
 			services.AddScoped<ITipoPlanoContaService, TipoPlanoContaService>();
 			services.AddScoped<ITipoPlanoContaRepository, TipoPlanoContaRepository>();
+
+			services.AddScoped<ICategoriaEstoqueApplicationService, CategoriaEstoqueApplicationService>();
+			services.AddScoped<ICategoriaEstoqueService, CategoriaEstoqueService>();
+			services.AddScoped<ICategoriaEstoqueRepository, CategoriaEstoqueRepository>();
+
+			services.AddScoped<IUnidadeMedidaApplicationService, UnidadeMedidaApplicationService>();
+			services.AddScoped<IUnidadeMedidaService, UnidadeMedidaService>();
+			services.AddScoped<IUnidadeMedidaRepository, UnidadeMedidaRepository>();
+
+			services.AddScoped<IEstoqueApplicationService, EstoqueApplicationService>();
+			services.AddScoped<IEstoqueService, EstoqueService>();
+			services.AddScoped<IEstoqueRepository, EstoqueRepository>();
+
+			services.AddScoped<IEstoqueMovimentacaoApplicationService, EstoqueMovimentacaoApplicationService>();
+			services.AddScoped<IEstoqueMovimentacaoService, EstoqueMovimentacaoService>();
+			services.AddScoped<IEstoqueMovimentacaoRepository, EstoqueMovimentacaoRepository>();
 
 
 

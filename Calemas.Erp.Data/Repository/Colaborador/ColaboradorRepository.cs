@@ -41,8 +41,8 @@ namespace Calemas.Erp.Data.Repository
         {
             var querybase = await this.ToListAsync(this.GetBySimplefilters(filters).Select(_ => new
             {
-                Id = _.ColaboradorId
-
+                Id = _.ColaboradorId,
+                Name = _.Pessoa.Nome
             }));
 
             return querybase;

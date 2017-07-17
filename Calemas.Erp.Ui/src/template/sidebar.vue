@@ -11,18 +11,10 @@
                     <div class="nav-link nav-dropdown-toggle" @click="handleClick"><i class="icon-list"></i> Administrativo</div>
                     <ul class="nav-dropdown-items">
                         <li class="nav-item">
-                            <router-link :to="'/colaborador'" class="nav-link" exact><i class="icon-user"></i> Colaborador</router-link>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item nav-dropdown">
-                    <div class="nav-link nav-dropdown-toggle" @click="handleClick"><i class="icon-chart"></i> Financeiro</div>
-                    <ul class="nav-dropdown-items">
-                        <li class="nav-item">
-                            <router-link :to="'/financeiro'" class="nav-link" exact><i class="icon-wallet"></i> Lançamentos</router-link>
+                            <router-link :to="'/estoquemovimentacao'" class="nav-link">Movimentação de Estoque</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link :to="'/planoconta'" class="nav-link" exact><i class="icon-notebook"></i> Plano de conta</router-link>
+                            <router-link :to="'/ordemservico'" class="nav-link">Ordem de Serviço</router-link>
                         </li>
                     </ul>
                 </li>
@@ -30,19 +22,31 @@
                     <div class="nav-link nav-dropdown-toggle" @click="handleClick"><i class="icon-pencil"></i> Cadastros</div>
                     <ul class="nav-dropdown-items">
                         <li class="nav-item">
-                            <router-link :to="'/nivelacesso'" class="nav-link" exact><i class="icon-anchor"></i> Nível de acesso</router-link>
+                            <router-link :to="'/estoque'" class="nav-link">Estoque</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link :to="'/prioridade'" class="nav-link" exact><i class="icon-loop"></i> Prioridade</router-link>
+                            <router-link :to="'/unidademedida'" class="nav-link">Unidade de medida</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link :to="'/setor'" class="nav-link" exact><i class="icon-people"></i> Setor</router-link>
+                            <router-link :to="'/categoriaestoque'" class="nav-link">Categorias de estoque</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link :to="'/tipoordemservico'" class="nav-link" exact><i class="icon-paper-clip"></i> Tipo de OS</router-link>
+                            <router-link :to="'/prioridade'" class="nav-link">Prioridade</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link :to="'/cor'" class="nav-link" exact><i class="icon-drawer"></i> Cor</router-link>
+                            <router-link :to="'/tipoordemservico'" class="nav-link">Tipo de OS</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link :to="'/colaborador'" class="nav-link">Colaborador</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link :to="'/setor'" class="nav-link">Setor</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link :to="'/cor'" class="nav-link">Etiquetas</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link :to="'/planoconta'" class="nav-link">Plano de conta</router-link>
                         </li>
                     </ul>
                 </li>
@@ -52,15 +56,15 @@
 </template>
 <script>
 
-export default {
-    name: 'sidebar',
-    methods: {
-        handleClick(e) {
-            e.preventDefault();
-            e.target.parentElement.classList.toggle('open');
+    export default {
+        name: 'sidebar',
+        methods: {
+            handleClick(e) {
+                e.preventDefault();
+                e.target.parentElement.classList.toggle('open');
+            }
         }
     }
-}
 </script>
 <style lang="css">
     .nav-link {

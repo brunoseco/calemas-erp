@@ -13,16 +13,6 @@ namespace Calemas.Erp.Application.Config
             CreateMap(typeof(Pessoa), typeof(PessoaDtoSpecializedResult));
             CreateMap(typeof(Pessoa), typeof(PessoaDtoSpecializedReport));
             CreateMap(typeof(Pessoa), typeof(PessoaDtoSpecializedDetails));
-            CreateMap(typeof(Cor), typeof(CorDto)).ReverseMap();
-            CreateMap(typeof(Cor), typeof(CorDtoSpecialized));
-            CreateMap(typeof(Cor), typeof(CorDtoSpecializedResult));
-            CreateMap(typeof(Cor), typeof(CorDtoSpecializedReport));
-            CreateMap(typeof(Cor), typeof(CorDtoSpecializedDetails));
-            CreateMap(typeof(OrdemServico), typeof(OrdemServicoDto)).ReverseMap();
-            CreateMap(typeof(OrdemServico), typeof(OrdemServicoDtoSpecialized));
-            CreateMap(typeof(OrdemServico), typeof(OrdemServicoDtoSpecializedResult));
-            CreateMap(typeof(OrdemServico), typeof(OrdemServicoDtoSpecializedReport));
-            CreateMap(typeof(OrdemServico), typeof(OrdemServicoDtoSpecializedDetails));
             CreateMap(typeof(Colaborador), typeof(ColaboradorDto)).ReverseMap();
             CreateMap(typeof(Colaborador), typeof(ColaboradorDtoSpecialized));
             CreateMap(typeof(Colaborador), typeof(ColaboradorDtoSpecializedResult));
@@ -33,6 +23,16 @@ namespace Calemas.Erp.Application.Config
             CreateMap(typeof(NivelAcesso), typeof(NivelAcessoDtoSpecializedResult));
             CreateMap(typeof(NivelAcesso), typeof(NivelAcessoDtoSpecializedReport));
             CreateMap(typeof(NivelAcesso), typeof(NivelAcessoDtoSpecializedDetails));
+            CreateMap(typeof(Cor), typeof(CorDto)).ReverseMap();
+            CreateMap(typeof(Cor), typeof(CorDtoSpecialized));
+            CreateMap(typeof(Cor), typeof(CorDtoSpecializedResult));
+            CreateMap(typeof(Cor), typeof(CorDtoSpecializedReport));
+            CreateMap(typeof(Cor), typeof(CorDtoSpecializedDetails));
+            CreateMap(typeof(OrdemServico), typeof(OrdemServicoDto)).ReverseMap();
+            CreateMap(typeof(OrdemServico), typeof(OrdemServicoDtoSpecialized));
+            CreateMap(typeof(OrdemServico), typeof(OrdemServicoDtoSpecializedResult));
+            CreateMap(typeof(OrdemServico), typeof(OrdemServicoDtoSpecializedReport));
+            CreateMap(typeof(OrdemServico), typeof(OrdemServicoDtoSpecializedDetails));
             CreateMap(typeof(Setor), typeof(SetorDto)).ReverseMap();
             CreateMap(typeof(Setor), typeof(SetorDtoSpecialized));
             CreateMap(typeof(Setor), typeof(SetorDtoSpecializedResult));
@@ -63,6 +63,26 @@ namespace Calemas.Erp.Application.Config
             CreateMap(typeof(TipoPlanoConta), typeof(TipoPlanoContaDtoSpecializedResult));
             CreateMap(typeof(TipoPlanoConta), typeof(TipoPlanoContaDtoSpecializedReport));
             CreateMap(typeof(TipoPlanoConta), typeof(TipoPlanoContaDtoSpecializedDetails));
+            CreateMap(typeof(CategoriaEstoque), typeof(CategoriaEstoqueDto)).ReverseMap();
+            CreateMap(typeof(CategoriaEstoque), typeof(CategoriaEstoqueDtoSpecialized));
+            CreateMap(typeof(CategoriaEstoque), typeof(CategoriaEstoqueDtoSpecializedResult));
+            CreateMap(typeof(CategoriaEstoque), typeof(CategoriaEstoqueDtoSpecializedReport));
+            CreateMap(typeof(CategoriaEstoque), typeof(CategoriaEstoqueDtoSpecializedDetails));
+            CreateMap(typeof(UnidadeMedida), typeof(UnidadeMedidaDto)).ReverseMap();
+            CreateMap(typeof(UnidadeMedida), typeof(UnidadeMedidaDtoSpecialized));
+            CreateMap(typeof(UnidadeMedida), typeof(UnidadeMedidaDtoSpecializedResult));
+            CreateMap(typeof(UnidadeMedida), typeof(UnidadeMedidaDtoSpecializedReport));
+            CreateMap(typeof(UnidadeMedida), typeof(UnidadeMedidaDtoSpecializedDetails));
+            CreateMap(typeof(Estoque), typeof(EstoqueDto)).ReverseMap();
+            CreateMap(typeof(Estoque), typeof(EstoqueDtoSpecialized));
+            CreateMap(typeof(Estoque), typeof(EstoqueDtoSpecializedResult));
+            CreateMap(typeof(Estoque), typeof(EstoqueDtoSpecializedReport));
+            CreateMap(typeof(Estoque), typeof(EstoqueDtoSpecializedDetails));
+            CreateMap(typeof(EstoqueMovimentacao), typeof(EstoqueMovimentacaoDto)).ReverseMap();
+            CreateMap(typeof(EstoqueMovimentacao), typeof(EstoqueMovimentacaoDtoSpecialized));
+            CreateMap(typeof(EstoqueMovimentacao), typeof(EstoqueMovimentacaoDtoSpecializedResult));
+            CreateMap(typeof(EstoqueMovimentacao), typeof(EstoqueMovimentacaoDtoSpecializedReport));
+            CreateMap(typeof(EstoqueMovimentacao), typeof(EstoqueMovimentacaoDtoSpecializedDetails));
 
         }
 

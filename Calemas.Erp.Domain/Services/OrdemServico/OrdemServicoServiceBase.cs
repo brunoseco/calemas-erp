@@ -149,11 +149,6 @@ namespace Calemas.Erp.Domain.Services
 
             return ordemservico;
         }
-
-		public virtual OrdemServico AuditDefault(OrdemServico ordemservico, OrdemServico ordemservicoOld)
-        {
-            return base.AuditDefault(ordemservico, ordemservicoOld);
-        }
-
+		
     }
 }

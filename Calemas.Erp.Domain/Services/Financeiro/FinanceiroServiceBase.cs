@@ -149,11 +149,6 @@ namespace Calemas.Erp.Domain.Services
 
             return financeiro;
         }
-
-		public virtual Financeiro AuditDefault(Financeiro financeiro, Financeiro financeiroOld)
-        {
-            return base.AuditDefault(financeiro, financeiroOld);
-        }
-
+		
     }
 }

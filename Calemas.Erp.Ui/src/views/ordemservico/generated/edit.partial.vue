@@ -13,6 +13,10 @@
                         <label for="protoco">Protoco</label>
                         <input type="text" class="form-control" name="protoco" placeholder="Protoco" v-model="crud.edit.model.protoco" v-validate="'required'" />
                     </div>
+                    <div class="form-group col-md-12" v-bind:class="{ 'has-danger': formErrors.has('form-edit.responsavelId') }">
+                        <label for="responsavelId">Colaborador</label>
+                        <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" v-model="crud.edit.model.responsavelId" class="form-control" name="responsavelId" v-validate="'required'"></select>
+                    </div>
 					<div class="form-group col-md-12" v-bind:class="{ 'has-danger': formErrors.has('form-create.clienteId') }">
                         <label for="clienteId">ClienteId</label>
                         <input type="text" class="form-control" name="clienteId" placeholder="ClienteId" v-model="crud.edit.model.clienteId" v-validate="'required'" />
@@ -36,6 +40,10 @@
 					<div class="form-group col-md-12" v-bind:class="{ 'has-danger': formErrors.has('form-create.statusOrdemServicoId') }">
                         <label for="statusOrdemServicoId">StatusOrdemServicoId</label>
                         <input type="text" class="form-control" name="statusOrdemServicoId" placeholder="StatusOrdemServicoId" v-model="crud.edit.model.statusOrdemServicoId" v-validate="'required'" />
+                    </div>
+					<div class="form-group col-md-12" v-bind:class="{ 'has-danger': formErrors.has('form-edit.dataOcorrencia') }">
+                        <label for="dataOcorrencia">DataOcorrencia</label>
+                        <input type="date" class="form-control" name="dataOcorrencia" v-model="crud.edit.model.dataOcorrencia" v-validate="'required'" />
                     </div>
 					<div class="form-group col-md-12" v-bind:class="{ 'has-danger': formErrors.has('form-edit.dataSituacao') }">
                         <label for="dataSituacao">DataSituacao</label>

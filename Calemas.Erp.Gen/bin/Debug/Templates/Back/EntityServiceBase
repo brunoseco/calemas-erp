@@ -149,8 +149,6 @@ namespace <#namespace#>.Domain.Services
 
             return <#classNameLower#>;
         }
-
-<#AuditDefaultMethod#>
-
+		
     }
 }

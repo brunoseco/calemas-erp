@@ -9,6 +9,10 @@ const routers = [
     { path: 'cor', name: 'Cor', component: function (resolve) { require(['@/views/cor'], resolve) } },
     { path: 'financeiro', name: 'Financeiro', component: function (resolve) { require(['@/views/financeiro'], resolve) } },
     { path: 'planoconta', name: 'PlanoConta', component: function (resolve) { require(['@/views/planoconta'], resolve) } },
+    { path: 'categoriaestoque', name: 'CategoriaEstoque', component: function (resolve) { require(['@/views/categoriaestoque'], resolve) } },
+    { path: 'unidademedida', name: 'UnidadeMedida', component: function (resolve) { require(['@/views/unidademedida'], resolve) } },
+    { path: 'estoque', name: 'Estoque', component: function (resolve) { require(['@/views/estoque'], resolve) } },
+    { path: 'estoquemovimentacao', name: 'EstoqueMovimentacao', component: function (resolve) { require(['@/views/estoquemovimentacao'], resolve) } },
 
 ];
 

@@ -21,6 +21,12 @@
                                     <th>#</th>
                                     <th>#</th>
                                     <th>
+                                        DataOcorrencia
+                                        <button @click="crud.filter.orderBy('nome')" class="btn btn-xs btn-link no-border pull-right">
+                                            <i class="fa fa-sort"></i>
+                                        </button>
+                                    </th>
+                                    <th>
                                         DataSituacao
                                         <button @click="crud.filter.orderBy('nome')" class="btn btn-xs btn-link no-border pull-right">
                                             <i class="fa fa-sort"></i>
@@ -51,6 +57,7 @@
                                     <td>{{ item.clienteId }}</td>
                                     <td>{{ item.agendaId }}</td>
                                     <td>{{ item.statusOrdemServicoId }}</td>
+                                    <td>{{ item.dataOcorrencia }}</td>
                                     <td>{{ item.dataSituacao }}</td>
                                     <td>{{ item.observacao }}</td>
                                     <td>{{ item.descricao }}</td>
