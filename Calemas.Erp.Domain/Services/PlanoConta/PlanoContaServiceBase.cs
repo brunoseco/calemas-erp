@@ -69,30 +69,37 @@ namespace Calemas.Erp.Domain.Services
         public override async Task<PlanoConta> Save(PlanoConta planoconta, bool questionToContinue = false)
         {
             var planocontaOld = await this.GetOne(new PlanoContaFilter { PlanoContaId = planoconta.PlanoContaId });
+			var planocontaOrchestrated = await this.DomainOrchestration(planoconta, planocontaOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(planoconta, planocontaOld) == false)
-                    return planoconta;
+                if (base.Continue(planocontaOrchestrated, planocontaOld) == false)
+                    return planocontaOrchestrated;
             }
 
-            return this.SaveWithValidation(planoconta, planocontaOld);
+            return this.SaveWithValidation(planocontaOrchestrated, planocontaOld);
         }
 
         public override async Task<PlanoConta> SavePartial(PlanoConta planoconta, bool questionToContinue = false)
         {
             var planocontaOld = await this.GetOne(new PlanoContaFilter { PlanoContaId = planoconta.PlanoContaId });
+			var planocontaOrchestrated = await this.DomainOrchestration(planoconta, planocontaOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(planoconta, planocontaOld) == false)
-                    return planoconta;
+                if (base.Continue(planocontaOrchestrated, planocontaOld) == false)
+                    return planocontaOrchestrated;
             }
 
-            return SaveWithOutValidation(planoconta, planocontaOld);
+            return SaveWithOutValidation(planocontaOrchestrated, planocontaOld);
         }
 
         protected override PlanoConta SaveWithOutValidation(PlanoConta planoconta, PlanoConta planocontaOld)
         {
             planoconta = this.SaveDefault(planoconta, planocontaOld);
+
+			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
+                return planoconta;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -120,9 +127,7 @@ namespace Calemas.Erp.Domain.Services
             this.Specifications(planoconta);
 
             if (!base._validationResult.IsValid)
-            {
                 return planoconta;
-            }
             
             planoconta = this.SaveDefault(planoconta, planocontaOld);
             base._validationResult.Message = "PlanoConta cadastrado com sucesso :)";
@@ -142,13 +147,25 @@ namespace Calemas.Erp.Domain.Services
 			
 
             var isNew = planocontaOld.IsNull();
+			
             if (isNew)
                 planoconta = this._rep.Add(planoconta);
             else
-                planoconta = this._rep.Update(planoconta);
+				planoconta = this.UpdateDefault(planoconta);
 
             return planoconta;
         }
 		
+        protected virtual PlanoConta AddDefault(PlanoConta planoconta)
+        {
+            planoconta = this._rep.Add(planoconta);
+            return planoconta;
+        }
+
+		protected virtual PlanoConta UpdateDefault(PlanoConta planoconta)
+        {
+            planoconta = this._rep.Update(planoconta);
+            return planoconta;
+        }
     }
 }

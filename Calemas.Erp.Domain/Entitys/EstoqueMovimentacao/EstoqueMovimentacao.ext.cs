@@ -1,4 +1,5 @@
 using Calemas.Erp.Domain.Validations;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -21,7 +22,7 @@ namespace Calemas.Erp.Domain.Entitys
 
         public class EstoqueMovimentacaoFactory
         {
-            public EstoqueMovimentacao GetDefaaultInstance(dynamic data)
+            public EstoqueMovimentacao GetDefaultInstance(dynamic data, CurrentUser user)
             {
                 var construction = new EstoqueMovimentacao(data.EstoqueMovimentacaoId,
                                         data.EstoqueId,

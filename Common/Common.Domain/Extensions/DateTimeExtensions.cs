@@ -27,9 +27,19 @@ namespace Common.Domain
             return Convert.ToDateTime(date.ToString("dd/MM/yyyy"));
         }
 
+        public static DateTime TodayHoursZeroMs(this DateTime date)
+        {
+            return Convert.ToDateTime(date.ToString("dd/MM/yyyy HH:mm"));
+        }
+
         public static DateTime TomorrowZeroHours(this DateTime date)
         {
             return date.TodayZeroHours().AddDays(1);
+        }
+
+        public static string FormatTempoEmTimeSheet(int totalHours, int totalMinutes)
+        {
+            return string.Format("{0}:{1}", totalHours.ToString().PadLeft(2, '0'), totalMinutes.ToString().PadLeft(2, '0'));
         }
 
 

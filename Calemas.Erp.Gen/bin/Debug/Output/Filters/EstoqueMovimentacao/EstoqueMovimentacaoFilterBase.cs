@@ -12,7 +12,7 @@ namespace calemas.erp.Domain.Filter
         public string Descricao { get; set;} 
         public decimal Quantidade { get; set;} 
         public int ResponsavelId { get; set;} 
-        public int? UserCreateId { get; set;} 
+        public int UserCreateId { get; set;} 
         public DateTime UserCreateDateStart { get; set;} 
         public DateTime UserCreateDateEnd { get; set;} 
         public DateTime UserCreateDate { get; set;} 

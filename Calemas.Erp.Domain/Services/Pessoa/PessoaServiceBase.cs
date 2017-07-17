@@ -69,30 +69,37 @@ namespace Calemas.Erp.Domain.Services
         public override async Task<Pessoa> Save(Pessoa pessoa, bool questionToContinue = false)
         {
             var pessoaOld = await this.GetOne(new PessoaFilter { PessoaId = pessoa.PessoaId });
+			var pessoaOrchestrated = await this.DomainOrchestration(pessoa, pessoaOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(pessoa, pessoaOld) == false)
-                    return pessoa;
+                if (base.Continue(pessoaOrchestrated, pessoaOld) == false)
+                    return pessoaOrchestrated;
             }
 
-            return this.SaveWithValidation(pessoa, pessoaOld);
+            return this.SaveWithValidation(pessoaOrchestrated, pessoaOld);
         }
 
         public override async Task<Pessoa> SavePartial(Pessoa pessoa, bool questionToContinue = false)
         {
             var pessoaOld = await this.GetOne(new PessoaFilter { PessoaId = pessoa.PessoaId });
+			var pessoaOrchestrated = await this.DomainOrchestration(pessoa, pessoaOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(pessoa, pessoaOld) == false)
-                    return pessoa;
+                if (base.Continue(pessoaOrchestrated, pessoaOld) == false)
+                    return pessoaOrchestrated;
             }
 
-            return SaveWithOutValidation(pessoa, pessoaOld);
+            return SaveWithOutValidation(pessoaOrchestrated, pessoaOld);
         }
 
         protected override Pessoa SaveWithOutValidation(Pessoa pessoa, Pessoa pessoaOld)
         {
             pessoa = this.SaveDefault(pessoa, pessoaOld);
+
+			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
+                return pessoa;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -120,9 +127,7 @@ namespace Calemas.Erp.Domain.Services
             this.Specifications(pessoa);
 
             if (!base._validationResult.IsValid)
-            {
                 return pessoa;
-            }
             
             pessoa = this.SaveDefault(pessoa, pessoaOld);
             base._validationResult.Message = "Pessoa cadastrado com sucesso :)";
@@ -142,13 +147,25 @@ namespace Calemas.Erp.Domain.Services
 			pessoa = this.AuditDefault(pessoa, pessoaOld);
 
             var isNew = pessoaOld.IsNull();
+			
             if (isNew)
                 pessoa = this._rep.Add(pessoa);
             else
-                pessoa = this._rep.Update(pessoa);
+				pessoa = this.UpdateDefault(pessoa);
 
             return pessoa;
         }
 		
+        protected virtual Pessoa AddDefault(Pessoa pessoa)
+        {
+            pessoa = this._rep.Add(pessoa);
+            return pessoa;
+        }
+
+		protected virtual Pessoa UpdateDefault(Pessoa pessoa)
+        {
+            pessoa = this._rep.Update(pessoa);
+            return pessoa;
+        }
     }
 }

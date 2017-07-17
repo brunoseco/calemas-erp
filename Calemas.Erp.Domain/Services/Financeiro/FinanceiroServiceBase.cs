@@ -69,30 +69,37 @@ namespace Calemas.Erp.Domain.Services
         public override async Task<Financeiro> Save(Financeiro financeiro, bool questionToContinue = false)
         {
             var financeiroOld = await this.GetOne(new FinanceiroFilter { FinanceiroId = financeiro.FinanceiroId });
+			var financeiroOrchestrated = await this.DomainOrchestration(financeiro, financeiroOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(financeiro, financeiroOld) == false)
-                    return financeiro;
+                if (base.Continue(financeiroOrchestrated, financeiroOld) == false)
+                    return financeiroOrchestrated;
             }
 
-            return this.SaveWithValidation(financeiro, financeiroOld);
+            return this.SaveWithValidation(financeiroOrchestrated, financeiroOld);
         }
 
         public override async Task<Financeiro> SavePartial(Financeiro financeiro, bool questionToContinue = false)
         {
             var financeiroOld = await this.GetOne(new FinanceiroFilter { FinanceiroId = financeiro.FinanceiroId });
+			var financeiroOrchestrated = await this.DomainOrchestration(financeiro, financeiroOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(financeiro, financeiroOld) == false)
-                    return financeiro;
+                if (base.Continue(financeiroOrchestrated, financeiroOld) == false)
+                    return financeiroOrchestrated;
             }
 
-            return SaveWithOutValidation(financeiro, financeiroOld);
+            return SaveWithOutValidation(financeiroOrchestrated, financeiroOld);
         }
 
         protected override Financeiro SaveWithOutValidation(Financeiro financeiro, Financeiro financeiroOld)
         {
             financeiro = this.SaveDefault(financeiro, financeiroOld);
+
+			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
+                return financeiro;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -120,9 +127,7 @@ namespace Calemas.Erp.Domain.Services
             this.Specifications(financeiro);
 
             if (!base._validationResult.IsValid)
-            {
                 return financeiro;
-            }
             
             financeiro = this.SaveDefault(financeiro, financeiroOld);
             base._validationResult.Message = "Financeiro cadastrado com sucesso :)";
@@ -142,13 +147,25 @@ namespace Calemas.Erp.Domain.Services
 			financeiro = this.AuditDefault(financeiro, financeiroOld);
 
             var isNew = financeiroOld.IsNull();
+			
             if (isNew)
                 financeiro = this._rep.Add(financeiro);
             else
-                financeiro = this._rep.Update(financeiro);
+				financeiro = this.UpdateDefault(financeiro);
 
             return financeiro;
         }
 		
+        protected virtual Financeiro AddDefault(Financeiro financeiro)
+        {
+            financeiro = this._rep.Add(financeiro);
+            return financeiro;
+        }
+
+		protected virtual Financeiro UpdateDefault(Financeiro financeiro)
+        {
+            financeiro = this._rep.Update(financeiro);
+            return financeiro;
+        }
     }
 }

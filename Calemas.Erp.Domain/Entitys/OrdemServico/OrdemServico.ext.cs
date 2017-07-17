@@ -1,4 +1,5 @@
 using Calemas.Erp.Domain.Validations;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -17,7 +18,7 @@ namespace Calemas.Erp.Domain.Entitys
 
         public class OrdemServicoFactory
         {
-            public OrdemServico GetDefaaultInstance(dynamic data)
+            public OrdemServico GetDefaultInstance(dynamic data, CurrentUser user)
             {
                 var construction = new OrdemServico(data.OrdemServicoId,
                                         data.Protoco,

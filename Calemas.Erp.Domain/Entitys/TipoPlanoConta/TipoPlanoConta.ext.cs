@@ -1,4 +1,5 @@
 using Calemas.Erp.Domain.Validations;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -19,7 +20,7 @@ namespace Calemas.Erp.Domain.Entitys
 
 		public class TipoPlanoContaFactory
         {
-            public TipoPlanoConta GetDefaaultInstance(dynamic data)
+            public TipoPlanoConta GetDefaultInstance(dynamic data, CurrentUser user)
             {
                 var construction = new TipoPlanoConta(data.TipoPlanoContaId,
                                         data.Nome);

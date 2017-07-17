@@ -8,16 +8,17 @@ using System.Linq;
 using System.Collections.Generic;
 using Common.Domain.Base;
 using System.Threading.Tasks;
+using Common.Domain.Model;
 
 namespace Calemas.Erp.Application
 {
     public class ColaboradorApplicationService : ColaboradorApplicationServiceBase
     {
 
-        public ColaboradorApplicationService(IColaboradorService service, IUnitOfWork uow, ICache cache) :
-            base(service, uow, cache)
+        public ColaboradorApplicationService(IColaboradorService service, IUnitOfWork uow, ICache cache, CurrentUser user) :
+            base(service, uow, cache, user)
         {
-  
+
         }
 
         protected override System.Collections.Generic.IEnumerable<TDS> MapperDomainToResult<TDS>(FilterBase filter, PaginateResult<Colaborador> dataList)
@@ -37,7 +38,7 @@ namespace Calemas.Erp.Application
             var domain = base.MapperDtoToDomain(_dto);
 
             if (_dto.Pessoa.IsNotNull())
-                domain.Pessoa = new Pessoa.PessoaFactory().GetDefaaultInstance(_dto.Pessoa);
+                domain.Pessoa = new Pessoa.PessoaFactory().GetDefaultInstance(_dto.Pessoa, this._user);
 
             return domain;
         }

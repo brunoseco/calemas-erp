@@ -19,10 +19,6 @@ namespace Common.Domain.Model
             this._claims = claims;
         }
 
-        public int UserId { get; set; }
-
-        public object UserInfo { get; set; }
-
         private Dictionary<string, object> _claims;
 
         public string GetToken()
@@ -56,6 +52,20 @@ namespace Common.Domain.Model
             return default(TS);
         }
 
+        public TS GetTenantOwnerId<TS>()
+        {
+            if (this.IsTenant())
+            {
+                var subjectId = this._claims
+                    .Where(_ => _.Key.ToLower() == "owner")
+                    .SingleOrDefault()
+                    .Value;
+
+                return (TS)Convert.ChangeType(subjectId, typeof(TS));
+            }
+            return default(TS);
+        }
+
         public TS GetSubjectId<TS>()
         {
             var subjectId = this._claims
@@ -66,11 +76,7 @@ namespace Common.Domain.Model
             return (TS)Convert.ChangeType(subjectId, typeof(TS));
         }
 
-        public T GetUserInfo<T>() where T : class
-        {
-            var result = (T)UserInfo as T;
-            return result;
-        }
+        
 
     }
 }

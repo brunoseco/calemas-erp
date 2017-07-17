@@ -15,6 +15,10 @@ namespace Common.Dto
     {
         private ValidationSpecificationResult result = new ValidationSpecificationResult();
 
+        public ValidatorAnnotations()
+        {
+            result.Errors = new List<string>();
+        }
         public IEnumerable<string> GetErros()
         {
             return result.Errors.Distinct().ToList();

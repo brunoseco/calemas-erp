@@ -69,30 +69,37 @@ namespace Calemas.Erp.Domain.Services
         public override async Task<UnidadeMedida> Save(UnidadeMedida unidademedida, bool questionToContinue = false)
         {
             var unidademedidaOld = await this.GetOne(new UnidadeMedidaFilter { UnidadeMedidaId = unidademedida.UnidadeMedidaId });
+			var unidademedidaOrchestrated = await this.DomainOrchestration(unidademedida, unidademedidaOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(unidademedida, unidademedidaOld) == false)
-                    return unidademedida;
+                if (base.Continue(unidademedidaOrchestrated, unidademedidaOld) == false)
+                    return unidademedidaOrchestrated;
             }
 
-            return this.SaveWithValidation(unidademedida, unidademedidaOld);
+            return this.SaveWithValidation(unidademedidaOrchestrated, unidademedidaOld);
         }
 
         public override async Task<UnidadeMedida> SavePartial(UnidadeMedida unidademedida, bool questionToContinue = false)
         {
             var unidademedidaOld = await this.GetOne(new UnidadeMedidaFilter { UnidadeMedidaId = unidademedida.UnidadeMedidaId });
+			var unidademedidaOrchestrated = await this.DomainOrchestration(unidademedida, unidademedidaOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(unidademedida, unidademedidaOld) == false)
-                    return unidademedida;
+                if (base.Continue(unidademedidaOrchestrated, unidademedidaOld) == false)
+                    return unidademedidaOrchestrated;
             }
 
-            return SaveWithOutValidation(unidademedida, unidademedidaOld);
+            return SaveWithOutValidation(unidademedidaOrchestrated, unidademedidaOld);
         }
 
         protected override UnidadeMedida SaveWithOutValidation(UnidadeMedida unidademedida, UnidadeMedida unidademedidaOld)
         {
             unidademedida = this.SaveDefault(unidademedida, unidademedidaOld);
+
+			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
+                return unidademedida;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -120,9 +127,7 @@ namespace Calemas.Erp.Domain.Services
             this.Specifications(unidademedida);
 
             if (!base._validationResult.IsValid)
-            {
                 return unidademedida;
-            }
             
             unidademedida = this.SaveDefault(unidademedida, unidademedidaOld);
             base._validationResult.Message = "UnidadeMedida cadastrado com sucesso :)";
@@ -142,13 +147,25 @@ namespace Calemas.Erp.Domain.Services
 			
 
             var isNew = unidademedidaOld.IsNull();
+			
             if (isNew)
                 unidademedida = this._rep.Add(unidademedida);
             else
-                unidademedida = this._rep.Update(unidademedida);
+				unidademedida = this.UpdateDefault(unidademedida);
 
             return unidademedida;
         }
 		
+        protected virtual UnidadeMedida AddDefault(UnidadeMedida unidademedida)
+        {
+            unidademedida = this._rep.Add(unidademedida);
+            return unidademedida;
+        }
+
+		protected virtual UnidadeMedida UpdateDefault(UnidadeMedida unidademedida)
+        {
+            unidademedida = this._rep.Update(unidademedida);
+            return unidademedida;
+        }
     }
 }

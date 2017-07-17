@@ -69,30 +69,37 @@ namespace Calemas.Erp.Domain.Services
         public override async Task<TipoPlanoConta> Save(TipoPlanoConta tipoplanoconta, bool questionToContinue = false)
         {
             var tipoplanocontaOld = await this.GetOne(new TipoPlanoContaFilter { TipoPlanoContaId = tipoplanoconta.TipoPlanoContaId });
+			var tipoplanocontaOrchestrated = await this.DomainOrchestration(tipoplanoconta, tipoplanocontaOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(tipoplanoconta, tipoplanocontaOld) == false)
-                    return tipoplanoconta;
+                if (base.Continue(tipoplanocontaOrchestrated, tipoplanocontaOld) == false)
+                    return tipoplanocontaOrchestrated;
             }
 
-            return this.SaveWithValidation(tipoplanoconta, tipoplanocontaOld);
+            return this.SaveWithValidation(tipoplanocontaOrchestrated, tipoplanocontaOld);
         }
 
         public override async Task<TipoPlanoConta> SavePartial(TipoPlanoConta tipoplanoconta, bool questionToContinue = false)
         {
             var tipoplanocontaOld = await this.GetOne(new TipoPlanoContaFilter { TipoPlanoContaId = tipoplanoconta.TipoPlanoContaId });
+			var tipoplanocontaOrchestrated = await this.DomainOrchestration(tipoplanoconta, tipoplanocontaOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(tipoplanoconta, tipoplanocontaOld) == false)
-                    return tipoplanoconta;
+                if (base.Continue(tipoplanocontaOrchestrated, tipoplanocontaOld) == false)
+                    return tipoplanocontaOrchestrated;
             }
 
-            return SaveWithOutValidation(tipoplanoconta, tipoplanocontaOld);
+            return SaveWithOutValidation(tipoplanocontaOrchestrated, tipoplanocontaOld);
         }
 
         protected override TipoPlanoConta SaveWithOutValidation(TipoPlanoConta tipoplanoconta, TipoPlanoConta tipoplanocontaOld)
         {
             tipoplanoconta = this.SaveDefault(tipoplanoconta, tipoplanocontaOld);
+
+			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
+                return tipoplanoconta;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -120,9 +127,7 @@ namespace Calemas.Erp.Domain.Services
             this.Specifications(tipoplanoconta);
 
             if (!base._validationResult.IsValid)
-            {
                 return tipoplanoconta;
-            }
             
             tipoplanoconta = this.SaveDefault(tipoplanoconta, tipoplanocontaOld);
             base._validationResult.Message = "TipoPlanoConta cadastrado com sucesso :)";
@@ -142,13 +147,25 @@ namespace Calemas.Erp.Domain.Services
 			
 
             var isNew = tipoplanocontaOld.IsNull();
+			
             if (isNew)
                 tipoplanoconta = this._rep.Add(tipoplanoconta);
             else
-                tipoplanoconta = this._rep.Update(tipoplanoconta);
+				tipoplanoconta = this.UpdateDefault(tipoplanoconta);
 
             return tipoplanoconta;
         }
 		
+        protected virtual TipoPlanoConta AddDefault(TipoPlanoConta tipoplanoconta)
+        {
+            tipoplanoconta = this._rep.Add(tipoplanoconta);
+            return tipoplanoconta;
+        }
+
+		protected virtual TipoPlanoConta UpdateDefault(TipoPlanoConta tipoplanoconta)
+        {
+            tipoplanoconta = this._rep.Update(tipoplanoconta);
+            return tipoplanoconta;
+        }
     }
 }

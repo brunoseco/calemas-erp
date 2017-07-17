@@ -1,5 +1,6 @@
 ﻿using <#namespace#>.Domain.Validations;
 using System;
+using Common.Domain.Model;
 
 namespace <#namespace#>.Domain.Entitys
 {
@@ -19,7 +20,7 @@ namespace <#namespace#>.Domain.Entitys
 
 		public class <#className#>Factory
         {
-            public <#className#> GetDefaaultInstance(dynamic data)
+            public <#className#> GetDefaultInstance(dynamic data, CurrentUser user)
             {
                 var construction = new <#className#>(<#parametersRequiredConstruction#>);
 

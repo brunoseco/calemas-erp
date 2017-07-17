@@ -13,6 +13,7 @@ namespace Common.Domain.Interfaces
         IQueryable<T> GetAll(params Expression<Func<T, object>>[] includes);
         T Add(T entity);
         T Update(T entity);
+        IEnumerable<T> Update(IEnumerable<T> entitys);
         void Remove(T entity);
         Task<PaginateResult<T>> PagingAndDefineFields(FilterBase filters, IQueryable<T> queryFilter);
 

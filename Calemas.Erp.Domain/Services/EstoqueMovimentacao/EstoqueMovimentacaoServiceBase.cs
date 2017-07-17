@@ -18,7 +18,7 @@ namespace Calemas.Erp.Domain.Services
             : base(cache)
         {
             this._rep = rep;
-            this._user = user;
+			this._user = user;
         }
 
         public virtual async Task<EstoqueMovimentacao> GetOne(EstoqueMovimentacaoFilter filters)
@@ -69,7 +69,7 @@ namespace Calemas.Erp.Domain.Services
         public override async Task<EstoqueMovimentacao> Save(EstoqueMovimentacao estoquemovimentacao, bool questionToContinue = false)
         {
             var estoquemovimentacaoOld = await this.GetOne(new EstoqueMovimentacaoFilter { EstoqueMovimentacaoId = estoquemovimentacao.EstoqueMovimentacaoId });
-            var estoquemovimentacaoOrchestrated = await this.DomainOrchestration(estoquemovimentacao, estoquemovimentacaoOld);
+			var estoquemovimentacaoOrchestrated = await this.DomainOrchestration(estoquemovimentacao, estoquemovimentacaoOld);
 
             if (questionToContinue)
             {
@@ -83,18 +83,23 @@ namespace Calemas.Erp.Domain.Services
         public override async Task<EstoqueMovimentacao> SavePartial(EstoqueMovimentacao estoquemovimentacao, bool questionToContinue = false)
         {
             var estoquemovimentacaoOld = await this.GetOne(new EstoqueMovimentacaoFilter { EstoqueMovimentacaoId = estoquemovimentacao.EstoqueMovimentacaoId });
+			var estoquemovimentacaoOrchestrated = await this.DomainOrchestration(estoquemovimentacao, estoquemovimentacaoOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(estoquemovimentacao, estoquemovimentacaoOld) == false)
-                    return estoquemovimentacao;
+                if (base.Continue(estoquemovimentacaoOrchestrated, estoquemovimentacaoOld) == false)
+                    return estoquemovimentacaoOrchestrated;
             }
 
-            return SaveWithOutValidation(estoquemovimentacao, estoquemovimentacaoOld);
+            return SaveWithOutValidation(estoquemovimentacaoOrchestrated, estoquemovimentacaoOld);
         }
 
         protected override EstoqueMovimentacao SaveWithOutValidation(EstoqueMovimentacao estoquemovimentacao, EstoqueMovimentacao estoquemovimentacaoOld)
         {
             estoquemovimentacao = this.SaveDefault(estoquemovimentacao, estoquemovimentacaoOld);
+
+			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
+                return estoquemovimentacao;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -108,7 +113,7 @@ namespace Calemas.Erp.Domain.Services
 
         }
 
-        protected override EstoqueMovimentacao SaveWithValidation(EstoqueMovimentacao estoquemovimentacao, EstoqueMovimentacao estoquemovimentacaoOld)
+		protected override EstoqueMovimentacao SaveWithValidation(EstoqueMovimentacao estoquemovimentacao, EstoqueMovimentacao estoquemovimentacaoOld)
         {
             if (!this.DataAnnotationIsValid())
                 return estoquemovimentacao;
@@ -122,10 +127,8 @@ namespace Calemas.Erp.Domain.Services
             this.Specifications(estoquemovimentacao);
 
             if (!base._validationResult.IsValid)
-            {
                 return estoquemovimentacao;
-            }
-
+            
             estoquemovimentacao = this.SaveDefault(estoquemovimentacao, estoquemovimentacaoOld);
             base._validationResult.Message = "EstoqueMovimentacao cadastrado com sucesso :)";
 
@@ -133,28 +136,35 @@ namespace Calemas.Erp.Domain.Services
             return estoquemovimentacao;
         }
 
-        protected virtual void Specifications(EstoqueMovimentacao estoquemovimentacao)
+		protected virtual void Specifications(EstoqueMovimentacao estoquemovimentacao)
         {
-            base._validationResult = new EstoqueMovimentacaoAptoParaCadastroValidation(this._rep).Validate(estoquemovimentacao);
-            base._validationWarning = new EstoqueMovimentacaoAptoParaCadastroWarning(this._rep).Validate(estoquemovimentacao);
+            base._validationResult  = new EstoqueMovimentacaoAptoParaCadastroValidation(this._rep).Validate(estoquemovimentacao);
+			base._validationWarning  = new EstoqueMovimentacaoAptoParaCadastroWarning(this._rep).Validate(estoquemovimentacao);
         }
 
         protected virtual EstoqueMovimentacao SaveDefault(EstoqueMovimentacao estoquemovimentacao, EstoqueMovimentacao estoquemovimentacaoOld)
-        {
-            estoquemovimentacao = this.AuditDefault(estoquemovimentacao, estoquemovimentacaoOld);
+        {			
+			estoquemovimentacao = this.AuditDefault(estoquemovimentacao, estoquemovimentacaoOld);
 
             var isNew = estoquemovimentacaoOld.IsNull();
+			
             if (isNew)
-                estoquemovimentacao = AddDefault(estoquemovimentacao);
+                estoquemovimentacao = this._rep.Add(estoquemovimentacao);
             else
-                estoquemovimentacao = this._rep.Update(estoquemovimentacao);
+				estoquemovimentacao = this.UpdateDefault(estoquemovimentacao);
 
             return estoquemovimentacao;
         }
-
+		
         protected virtual EstoqueMovimentacao AddDefault(EstoqueMovimentacao estoquemovimentacao)
         {
             estoquemovimentacao = this._rep.Add(estoquemovimentacao);
+            return estoquemovimentacao;
+        }
+
+		protected virtual EstoqueMovimentacao UpdateDefault(EstoqueMovimentacao estoquemovimentacao)
+        {
+            estoquemovimentacao = this._rep.Update(estoquemovimentacao);
             return estoquemovimentacao;
         }
     }

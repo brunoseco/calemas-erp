@@ -7,14 +7,15 @@ using Calemas.Erp.Dto;
 using System.Linq;
 using System.Collections.Generic;
 using Common.Domain.Base;
+using Common.Domain.Model;
 
 namespace Calemas.Erp.Application
 {
     public class UnidadeMedidaApplicationService : UnidadeMedidaApplicationServiceBase
     {
 
-        public UnidadeMedidaApplicationService(IUnidadeMedidaService service, IUnitOfWork uow, ICache cache) :
-            base(service, uow, cache)
+        public UnidadeMedidaApplicationService(IUnidadeMedidaService service, IUnitOfWork uow, ICache cache, CurrentUser user) :
+            base(service, uow, cache, user)
         {
   
         }

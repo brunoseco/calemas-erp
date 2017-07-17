@@ -48,6 +48,16 @@ namespace Common.Orm
             return entity;
         }
 
+        public virtual IEnumerable<T> Update(IEnumerable<T> entitys)
+        {
+            var entitysUpdated = new List<T>();
+            foreach (var entity in entitys)
+            {
+                entitysUpdated.Add(this.Update(entity));
+            }
+            return entitysUpdated;
+        }
+
         public virtual void Remove(T entity)
         {
             dbSet.Remove(entity);

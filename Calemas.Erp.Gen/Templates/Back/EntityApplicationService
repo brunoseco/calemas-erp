@@ -7,14 +7,15 @@ using <#namespace#>.Dto;
 using System.Linq;
 using System.Collections.Generic;
 using Common.Domain.Base;
+using Common.Domain.Model;
 
 namespace <#namespace#>.Application
 {
     public class <#className#>ApplicationService : <#className#>ApplicationServiceBase
     {
 
-        public <#className#>ApplicationService(I<#className#>Service service, IUnitOfWork uow, ICache cache) :
-            base(service, uow, cache)
+        public <#className#>ApplicationService(I<#className#>Service service, IUnitOfWork uow, ICache cache, CurrentUser user) :
+            base(service, uow, cache, user)
         {
   
         }

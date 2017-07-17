@@ -1,4 +1,5 @@
 using Calemas.Erp.Domain.Validations;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -20,7 +21,7 @@ namespace Calemas.Erp.Domain.Entitys
 
 		public class ColaboradorFactory
         {
-            public Colaborador GetDefaaultInstance(dynamic data)
+            public Colaborador GetDefaultInstance(dynamic data, CurrentUser user)
             {
                 var construction = new Colaborador(data.ColaboradorId,
                                         data.Account,

@@ -1,5 +1,6 @@
 using Calemas.Erp.Domain.Validations;
 using System;
+using Common.Domain.Model;
 
 namespace Calemas.Erp.Domain.Entitys
 {
@@ -19,7 +20,7 @@ namespace Calemas.Erp.Domain.Entitys
 
 		public class CategoriaEstoqueFactory
         {
-            public CategoriaEstoque GetDefaaultInstance(dynamic data)
+            public CategoriaEstoque GetDefaultInstance(dynamic data, CurrentUser user)
             {
                 var construction = new CategoriaEstoque(data.CategoriaEstoqueId,
                                         data.Nome);
@@ -28,7 +29,6 @@ namespace Calemas.Erp.Domain.Entitys
 
 				return construction;
             }
-
         }
 
         public bool IsValid()

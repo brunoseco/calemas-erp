@@ -18,6 +18,11 @@ namespace Common.Domain.Base
         [NotMapped]
         public string AttributeBehavior { get; protected set; }
 
+        public void SetAttributeBehavior(string value) {
+
+            this.AttributeBehavior = value;
+        }
+
         public virtual ValidationSpecificationResult GetDomainValidation(FilterBase filters = null)
         {
             return this._validationResult;

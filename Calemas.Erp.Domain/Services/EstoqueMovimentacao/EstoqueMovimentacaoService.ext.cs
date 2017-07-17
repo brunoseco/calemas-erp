@@ -29,10 +29,7 @@ namespace Calemas.Erp.Domain.Services
         protected override EstoqueMovimentacao AddDefault(EstoqueMovimentacao estoquemovimentacao)
         {
             if (estoquemovimentacao.Estoque.IsNotNull())
-            {
                 _repEstoque.Update(estoquemovimentacao.Estoque);
-                //estoquemovimentacao.Estoque = null;
-            }
 
             return base.AddDefault(estoquemovimentacao);
         }

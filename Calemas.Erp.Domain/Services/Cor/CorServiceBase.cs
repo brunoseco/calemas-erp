@@ -69,30 +69,37 @@ namespace Calemas.Erp.Domain.Services
         public override async Task<Cor> Save(Cor cor, bool questionToContinue = false)
         {
             var corOld = await this.GetOne(new CorFilter { CorId = cor.CorId });
+			var corOrchestrated = await this.DomainOrchestration(cor, corOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(cor, corOld) == false)
-                    return cor;
+                if (base.Continue(corOrchestrated, corOld) == false)
+                    return corOrchestrated;
             }
 
-            return this.SaveWithValidation(cor, corOld);
+            return this.SaveWithValidation(corOrchestrated, corOld);
         }
 
         public override async Task<Cor> SavePartial(Cor cor, bool questionToContinue = false)
         {
             var corOld = await this.GetOne(new CorFilter { CorId = cor.CorId });
+			var corOrchestrated = await this.DomainOrchestration(cor, corOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(cor, corOld) == false)
-                    return cor;
+                if (base.Continue(corOrchestrated, corOld) == false)
+                    return corOrchestrated;
             }
 
-            return SaveWithOutValidation(cor, corOld);
+            return SaveWithOutValidation(corOrchestrated, corOld);
         }
 
         protected override Cor SaveWithOutValidation(Cor cor, Cor corOld)
         {
             cor = this.SaveDefault(cor, corOld);
+
+			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
+                return cor;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -120,9 +127,7 @@ namespace Calemas.Erp.Domain.Services
             this.Specifications(cor);
 
             if (!base._validationResult.IsValid)
-            {
                 return cor;
-            }
             
             cor = this.SaveDefault(cor, corOld);
             base._validationResult.Message = "Cor cadastrado com sucesso :)";
@@ -142,13 +147,25 @@ namespace Calemas.Erp.Domain.Services
 			
 
             var isNew = corOld.IsNull();
+			
             if (isNew)
                 cor = this._rep.Add(cor);
             else
-                cor = this._rep.Update(cor);
+				cor = this.UpdateDefault(cor);
 
             return cor;
         }
 		
+        protected virtual Cor AddDefault(Cor cor)
+        {
+            cor = this._rep.Add(cor);
+            return cor;
+        }
+
+		protected virtual Cor UpdateDefault(Cor cor)
+        {
+            cor = this._rep.Update(cor);
+            return cor;
+        }
     }
 }

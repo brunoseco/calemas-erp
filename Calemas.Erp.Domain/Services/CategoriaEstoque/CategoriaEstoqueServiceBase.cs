@@ -69,30 +69,37 @@ namespace Calemas.Erp.Domain.Services
         public override async Task<CategoriaEstoque> Save(CategoriaEstoque categoriaestoque, bool questionToContinue = false)
         {
             var categoriaestoqueOld = await this.GetOne(new CategoriaEstoqueFilter { CategoriaEstoqueId = categoriaestoque.CategoriaEstoqueId });
+			var categoriaestoqueOrchestrated = await this.DomainOrchestration(categoriaestoque, categoriaestoqueOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(categoriaestoque, categoriaestoqueOld) == false)
-                    return categoriaestoque;
+                if (base.Continue(categoriaestoqueOrchestrated, categoriaestoqueOld) == false)
+                    return categoriaestoqueOrchestrated;
             }
 
-            return this.SaveWithValidation(categoriaestoque, categoriaestoqueOld);
+            return this.SaveWithValidation(categoriaestoqueOrchestrated, categoriaestoqueOld);
         }
 
         public override async Task<CategoriaEstoque> SavePartial(CategoriaEstoque categoriaestoque, bool questionToContinue = false)
         {
             var categoriaestoqueOld = await this.GetOne(new CategoriaEstoqueFilter { CategoriaEstoqueId = categoriaestoque.CategoriaEstoqueId });
+			var categoriaestoqueOrchestrated = await this.DomainOrchestration(categoriaestoque, categoriaestoqueOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(categoriaestoque, categoriaestoqueOld) == false)
-                    return categoriaestoque;
+                if (base.Continue(categoriaestoqueOrchestrated, categoriaestoqueOld) == false)
+                    return categoriaestoqueOrchestrated;
             }
 
-            return SaveWithOutValidation(categoriaestoque, categoriaestoqueOld);
+            return SaveWithOutValidation(categoriaestoqueOrchestrated, categoriaestoqueOld);
         }
 
         protected override CategoriaEstoque SaveWithOutValidation(CategoriaEstoque categoriaestoque, CategoriaEstoque categoriaestoqueOld)
         {
             categoriaestoque = this.SaveDefault(categoriaestoque, categoriaestoqueOld);
+
+			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
+                return categoriaestoque;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -120,9 +127,7 @@ namespace Calemas.Erp.Domain.Services
             this.Specifications(categoriaestoque);
 
             if (!base._validationResult.IsValid)
-            {
                 return categoriaestoque;
-            }
             
             categoriaestoque = this.SaveDefault(categoriaestoque, categoriaestoqueOld);
             base._validationResult.Message = "CategoriaEstoque cadastrado com sucesso :)";
@@ -142,13 +147,25 @@ namespace Calemas.Erp.Domain.Services
 			
 
             var isNew = categoriaestoqueOld.IsNull();
+			
             if (isNew)
                 categoriaestoque = this._rep.Add(categoriaestoque);
             else
-                categoriaestoque = this._rep.Update(categoriaestoque);
+				categoriaestoque = this.UpdateDefault(categoriaestoque);
 
             return categoriaestoque;
         }
 		
+        protected virtual CategoriaEstoque AddDefault(CategoriaEstoque categoriaestoque)
+        {
+            categoriaestoque = this._rep.Add(categoriaestoque);
+            return categoriaestoque;
+        }
+
+		protected virtual CategoriaEstoque UpdateDefault(CategoriaEstoque categoriaestoque)
+        {
+            categoriaestoque = this._rep.Update(categoriaestoque);
+            return categoriaestoque;
+        }
     }
 }

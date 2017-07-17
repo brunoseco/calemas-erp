@@ -7,6 +7,7 @@ using Calemas.Erp.Domain.Filter;
 using Calemas.Erp.Domain.Interfaces.Services;
 using Calemas.Erp.Dto;
 using System.Threading.Tasks;
+using Common.Domain.Model;
 
 namespace Calemas.Erp.Application
 {
@@ -14,13 +15,15 @@ namespace Calemas.Erp.Application
     {
         protected readonly ValidatorAnnotations<OrdemServicoDto> _validatorAnnotations;
         protected readonly IOrdemServicoService _service;
+		protected readonly CurrentUser _user;
 
-        public OrdemServicoApplicationServiceBase(IOrdemServicoService service, IUnitOfWork uow, ICache cache) :
+        public OrdemServicoApplicationServiceBase(IOrdemServicoService service, IUnitOfWork uow, ICache cache, CurrentUser user) :
             base(service, uow, cache)
         {
             base.SetTagNameCache("OrdemServico");
             this._validatorAnnotations = new ValidatorAnnotations<OrdemServicoDto>();
             this._service = service;
+			this._user = user;
         }
 
 
@@ -29,8 +32,7 @@ namespace Calemas.Erp.Application
 			var _dto = dto as OrdemServicoDtoSpecialized;
             this._validatorAnnotations.Validate(_dto);
             this._serviceBase.AddDomainValidation(this._validatorAnnotations.GetErros());
-
-			var domain = new OrdemServico.OrdemServicoFactory().GetDefaaultInstance(_dto);
+			var domain = new OrdemServico.OrdemServicoFactory().GetDefaultInstance(_dto, this._user);
             return domain;
         }
 
@@ -39,12 +41,6 @@ namespace Calemas.Erp.Application
         {
 			var ordemservico = dto as OrdemServicoDto;
             var result = await this._serviceBase.GetOne(new OrdemServicoFilter { OrdemServicoId = ordemservico.OrdemServicoId });
-
-            //Inicio da Transferencia dos valores
-           
-
-            //Fim da Transferencia dos valores
-
             return result;
         }
 

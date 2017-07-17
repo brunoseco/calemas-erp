@@ -13,12 +13,6 @@ namespace Common.Domain.Base
         {
             this._cache = _cache;
         }
-
-        public ICache GetCacheInstance()
-        {
-            return _cache;
-        }
-
         public virtual void ClearCache()
         {
             if (!this._cache.Enabled())

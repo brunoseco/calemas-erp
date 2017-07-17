@@ -7,6 +7,7 @@ using <#namespace#>.Domain.Filter;
 using <#namespace#>.Domain.Interfaces.Services;
 using <#namespace#>.Dto;
 using System.Threading.Tasks;
+using Common.Domain.Model;
 
 namespace <#namespace#>.Application
 {
@@ -14,13 +15,15 @@ namespace <#namespace#>.Application
     {
         protected readonly ValidatorAnnotations<<#className#>Dto> _validatorAnnotations;
         protected readonly I<#className#>Service _service;
+		protected readonly CurrentUser _user;
 
-        public <#className#>ApplicationServiceBase(I<#className#>Service service, IUnitOfWork uow, ICache cache) :
+        public <#className#>ApplicationServiceBase(I<#className#>Service service, IUnitOfWork uow, ICache cache, CurrentUser user) :
             base(service, uow, cache)
         {
             base.SetTagNameCache("<#className#>");
             this._validatorAnnotations = new ValidatorAnnotations<<#className#>Dto>();
             this._service = service;
+			this._user = user;
         }
 
 
@@ -29,8 +32,7 @@ namespace <#namespace#>.Application
 			var _dto = dto as <#className#>DtoSpecialized;
             this._validatorAnnotations.Validate(_dto);
             this._serviceBase.AddDomainValidation(this._validatorAnnotations.GetErros());
-
-			var domain = new <#className#>.<#className#>Factory().GetDefaaultInstance(_dto);
+			var domain = new <#className#>.<#className#>Factory().GetDefaultInstance(_dto, this._user);
             return domain;
         }
 
@@ -39,12 +41,6 @@ namespace <#namespace#>.Application
         {
 			var <#classNameLower#> = dto as <#className#>Dto;
             var result = await this._serviceBase.GetOne(<#GetOneFilterKeys#>);
-
-            //Inicio da Transferencia dos valores
-           
-
-            //Fim da Transferencia dos valores
-
             return result;
         }
 

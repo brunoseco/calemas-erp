@@ -1,4 +1,5 @@
 using Calemas.Erp.Domain.Validations;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -19,7 +20,7 @@ namespace Calemas.Erp.Domain.Entitys
 
 		public class PrioridadeFactory
         {
-            public Prioridade GetDefaaultInstance(dynamic data)
+            public Prioridade GetDefaultInstance(dynamic data, CurrentUser user)
             {
                 var construction = new Prioridade(data.PrioridadeId,
                                         data.Nome,

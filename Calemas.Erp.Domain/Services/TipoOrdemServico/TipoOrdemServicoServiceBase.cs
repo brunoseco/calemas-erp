@@ -69,30 +69,37 @@ namespace Calemas.Erp.Domain.Services
         public override async Task<TipoOrdemServico> Save(TipoOrdemServico tipoordemservico, bool questionToContinue = false)
         {
             var tipoordemservicoOld = await this.GetOne(new TipoOrdemServicoFilter { TipoOrdemServicoId = tipoordemservico.TipoOrdemServicoId });
+			var tipoordemservicoOrchestrated = await this.DomainOrchestration(tipoordemservico, tipoordemservicoOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(tipoordemservico, tipoordemservicoOld) == false)
-                    return tipoordemservico;
+                if (base.Continue(tipoordemservicoOrchestrated, tipoordemservicoOld) == false)
+                    return tipoordemservicoOrchestrated;
             }
 
-            return this.SaveWithValidation(tipoordemservico, tipoordemservicoOld);
+            return this.SaveWithValidation(tipoordemservicoOrchestrated, tipoordemservicoOld);
         }
 
         public override async Task<TipoOrdemServico> SavePartial(TipoOrdemServico tipoordemservico, bool questionToContinue = false)
         {
             var tipoordemservicoOld = await this.GetOne(new TipoOrdemServicoFilter { TipoOrdemServicoId = tipoordemservico.TipoOrdemServicoId });
+			var tipoordemservicoOrchestrated = await this.DomainOrchestration(tipoordemservico, tipoordemservicoOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(tipoordemservico, tipoordemservicoOld) == false)
-                    return tipoordemservico;
+                if (base.Continue(tipoordemservicoOrchestrated, tipoordemservicoOld) == false)
+                    return tipoordemservicoOrchestrated;
             }
 
-            return SaveWithOutValidation(tipoordemservico, tipoordemservicoOld);
+            return SaveWithOutValidation(tipoordemservicoOrchestrated, tipoordemservicoOld);
         }
 
         protected override TipoOrdemServico SaveWithOutValidation(TipoOrdemServico tipoordemservico, TipoOrdemServico tipoordemservicoOld)
         {
             tipoordemservico = this.SaveDefault(tipoordemservico, tipoordemservicoOld);
+
+			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
+                return tipoordemservico;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -120,9 +127,7 @@ namespace Calemas.Erp.Domain.Services
             this.Specifications(tipoordemservico);
 
             if (!base._validationResult.IsValid)
-            {
                 return tipoordemservico;
-            }
             
             tipoordemservico = this.SaveDefault(tipoordemservico, tipoordemservicoOld);
             base._validationResult.Message = "TipoOrdemServico cadastrado com sucesso :)";
@@ -142,13 +147,25 @@ namespace Calemas.Erp.Domain.Services
 			tipoordemservico = this.AuditDefault(tipoordemservico, tipoordemservicoOld);
 
             var isNew = tipoordemservicoOld.IsNull();
+			
             if (isNew)
                 tipoordemservico = this._rep.Add(tipoordemservico);
             else
-                tipoordemservico = this._rep.Update(tipoordemservico);
+				tipoordemservico = this.UpdateDefault(tipoordemservico);
 
             return tipoordemservico;
         }
 		
+        protected virtual TipoOrdemServico AddDefault(TipoOrdemServico tipoordemservico)
+        {
+            tipoordemservico = this._rep.Add(tipoordemservico);
+            return tipoordemservico;
+        }
+
+		protected virtual TipoOrdemServico UpdateDefault(TipoOrdemServico tipoordemservico)
+        {
+            tipoordemservico = this._rep.Update(tipoordemservico);
+            return tipoordemservico;
+        }
     }
 }

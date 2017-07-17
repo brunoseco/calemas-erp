@@ -69,30 +69,37 @@ namespace Calemas.Erp.Domain.Services
         public override async Task<Estoque> Save(Estoque estoque, bool questionToContinue = false)
         {
             var estoqueOld = await this.GetOne(new EstoqueFilter { EstoqueId = estoque.EstoqueId });
+			var estoqueOrchestrated = await this.DomainOrchestration(estoque, estoqueOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(estoque, estoqueOld) == false)
-                    return estoque;
+                if (base.Continue(estoqueOrchestrated, estoqueOld) == false)
+                    return estoqueOrchestrated;
             }
 
-            return this.SaveWithValidation(estoque, estoqueOld);
+            return this.SaveWithValidation(estoqueOrchestrated, estoqueOld);
         }
 
         public override async Task<Estoque> SavePartial(Estoque estoque, bool questionToContinue = false)
         {
             var estoqueOld = await this.GetOne(new EstoqueFilter { EstoqueId = estoque.EstoqueId });
+			var estoqueOrchestrated = await this.DomainOrchestration(estoque, estoqueOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(estoque, estoqueOld) == false)
-                    return estoque;
+                if (base.Continue(estoqueOrchestrated, estoqueOld) == false)
+                    return estoqueOrchestrated;
             }
 
-            return SaveWithOutValidation(estoque, estoqueOld);
+            return SaveWithOutValidation(estoqueOrchestrated, estoqueOld);
         }
 
         protected override Estoque SaveWithOutValidation(Estoque estoque, Estoque estoqueOld)
         {
             estoque = this.SaveDefault(estoque, estoqueOld);
+
+			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
+                return estoque;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -120,9 +127,7 @@ namespace Calemas.Erp.Domain.Services
             this.Specifications(estoque);
 
             if (!base._validationResult.IsValid)
-            {
                 return estoque;
-            }
             
             estoque = this.SaveDefault(estoque, estoqueOld);
             base._validationResult.Message = "Estoque cadastrado com sucesso :)";
@@ -142,13 +147,25 @@ namespace Calemas.Erp.Domain.Services
 			estoque = this.AuditDefault(estoque, estoqueOld);
 
             var isNew = estoqueOld.IsNull();
+			
             if (isNew)
                 estoque = this._rep.Add(estoque);
             else
-                estoque = this._rep.Update(estoque);
+				estoque = this.UpdateDefault(estoque);
 
             return estoque;
         }
 		
+        protected virtual Estoque AddDefault(Estoque estoque)
+        {
+            estoque = this._rep.Add(estoque);
+            return estoque;
+        }
+
+		protected virtual Estoque UpdateDefault(Estoque estoque)
+        {
+            estoque = this._rep.Update(estoque);
+            return estoque;
+        }
     }
 }

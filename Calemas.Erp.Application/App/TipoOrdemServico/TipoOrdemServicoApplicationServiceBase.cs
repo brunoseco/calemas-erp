@@ -7,6 +7,7 @@ using Calemas.Erp.Domain.Filter;
 using Calemas.Erp.Domain.Interfaces.Services;
 using Calemas.Erp.Dto;
 using System.Threading.Tasks;
+using Common.Domain.Model;
 
 namespace Calemas.Erp.Application
 {
@@ -14,13 +15,15 @@ namespace Calemas.Erp.Application
     {
         protected readonly ValidatorAnnotations<TipoOrdemServicoDto> _validatorAnnotations;
         protected readonly ITipoOrdemServicoService _service;
+		protected readonly CurrentUser _user;
 
-        public TipoOrdemServicoApplicationServiceBase(ITipoOrdemServicoService service, IUnitOfWork uow, ICache cache) :
+        public TipoOrdemServicoApplicationServiceBase(ITipoOrdemServicoService service, IUnitOfWork uow, ICache cache, CurrentUser user) :
             base(service, uow, cache)
         {
             base.SetTagNameCache("TipoOrdemServico");
             this._validatorAnnotations = new ValidatorAnnotations<TipoOrdemServicoDto>();
             this._service = service;
+			this._user = user;
         }
 
 
@@ -29,8 +32,7 @@ namespace Calemas.Erp.Application
 			var _dto = dto as TipoOrdemServicoDtoSpecialized;
             this._validatorAnnotations.Validate(_dto);
             this._serviceBase.AddDomainValidation(this._validatorAnnotations.GetErros());
-
-			var domain = new TipoOrdemServico.TipoOrdemServicoFactory().GetDefaaultInstance(_dto);
+			var domain = new TipoOrdemServico.TipoOrdemServicoFactory().GetDefaultInstance(_dto, this._user);
             return domain;
         }
 
@@ -39,12 +41,6 @@ namespace Calemas.Erp.Application
         {
 			var tipoordemservico = dto as TipoOrdemServicoDto;
             var result = await this._serviceBase.GetOne(new TipoOrdemServicoFilter { TipoOrdemServicoId = tipoordemservico.TipoOrdemServicoId });
-
-            //Inicio da Transferencia dos valores
-           
-
-            //Fim da Transferencia dos valores
-
             return result;
         }
 
