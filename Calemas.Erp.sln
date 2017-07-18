@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Presentation", "1-Presentation", "{1BDD72EA-F258-4FAC-AFEB-989CB5A969C2}"
 EndProject
@@ -49,8 +49,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Validation", "Common
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calemas.Erp.Enums", "Calemas.Erp.Enums\Calemas.Erp.Enums.csproj", "{146A51DF-CB44-445D-95F1-5ADC34BF647A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calemas.Erp.Sso.Api", "Calemas.Erp.Sso.Api\Calemas.Erp.Sso.Api.csproj", "{9A9C2365-F0BF-4460-8263-C6720F939B70}"
-EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Calemas.Erp.Ui", "Calemas.Erp.Ui\", "{3ABEE050-694D-43AE-B63F-83A47276D840}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
@@ -73,6 +71,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Calemas.Erp.Ui", "Calemas.E
 	EndProjectSection
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Calemas.Erp.Database", "Calemas.Erp.Database\Calemas.Erp.Database.sqlproj", "{E80D8366-1F49-48E1-B61D-90ED1092C856}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calemas.Erp.Sso.Api", "Calemas.Erp.Sso.Api\Calemas.Erp.Sso.Api.csproj", "{C7411DDC-502E-42A1-9288-34F2603DA352}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -264,17 +264,6 @@ Global
 		{146A51DF-CB44-445D-95F1-5ADC34BF647A}.Pre-Production|Any CPU.Build.0 = Debug|Any CPU
 		{146A51DF-CB44-445D-95F1-5ADC34BF647A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{146A51DF-CB44-445D-95F1-5ADC34BF647A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Azure|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Azure|Any CPU.Build.0 = Debug|Any CPU
-		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Homolog|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Homolog|Any CPU.Build.0 = Debug|Any CPU
-		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Migration|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Migration|Any CPU.Build.0 = Debug|Any CPU
-		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Pre-Production|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Pre-Production|Any CPU.Build.0 = Debug|Any CPU
-		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A9C2365-F0BF-4460-8263-C6720F939B70}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3ABEE050-694D-43AE-B63F-83A47276D840}.Azure|Any CPU.ActiveCfg = Debug|Any CPU
 		{3ABEE050-694D-43AE-B63F-83A47276D840}.Azure|Any CPU.Build.0 = Debug|Any CPU
 		{3ABEE050-694D-43AE-B63F-83A47276D840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -304,6 +293,18 @@ Global
 		{E80D8366-1F49-48E1-B61D-90ED1092C856}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E80D8366-1F49-48E1-B61D-90ED1092C856}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E80D8366-1F49-48E1-B61D-90ED1092C856}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C7411DDC-502E-42A1-9288-34F2603DA352}.Azure|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7411DDC-502E-42A1-9288-34F2603DA352}.Azure|Any CPU.Build.0 = Debug|Any CPU
+		{C7411DDC-502E-42A1-9288-34F2603DA352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7411DDC-502E-42A1-9288-34F2603DA352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7411DDC-502E-42A1-9288-34F2603DA352}.Homolog|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7411DDC-502E-42A1-9288-34F2603DA352}.Homolog|Any CPU.Build.0 = Debug|Any CPU
+		{C7411DDC-502E-42A1-9288-34F2603DA352}.Migration|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7411DDC-502E-42A1-9288-34F2603DA352}.Migration|Any CPU.Build.0 = Debug|Any CPU
+		{C7411DDC-502E-42A1-9288-34F2603DA352}.Pre-Production|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7411DDC-502E-42A1-9288-34F2603DA352}.Pre-Production|Any CPU.Build.0 = Debug|Any CPU
+		{C7411DDC-502E-42A1-9288-34F2603DA352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7411DDC-502E-42A1-9288-34F2603DA352}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -324,8 +325,8 @@ Global
 		{7371024F-8EA9-4FCB-8720-8D5C4EF4BB7E} = {59E331DC-2E90-4938-8D93-DECCFE06CC79}
 		{A2195BFC-766E-4BDD-B58D-B6911DDE6857} = {59E331DC-2E90-4938-8D93-DECCFE06CC79}
 		{146A51DF-CB44-445D-95F1-5ADC34BF647A} = {011CD2C7-D3E3-4A7C-A3DF-BD7F29823F63}
-		{9A9C2365-F0BF-4460-8263-C6720F939B70} = {C51C1997-89ED-4BAB-879A-8F527C20C4B5}
 		{3ABEE050-694D-43AE-B63F-83A47276D840} = {1BDD72EA-F258-4FAC-AFEB-989CB5A969C2}
 		{E80D8366-1F49-48E1-B61D-90ED1092C856} = {6F680235-4896-4310-8969-2B876A6B374D}
+		{C7411DDC-502E-42A1-9288-34F2603DA352} = {C51C1997-89ED-4BAB-879A-8F527C20C4B5}
 	EndGlobalSection
 EndGlobal

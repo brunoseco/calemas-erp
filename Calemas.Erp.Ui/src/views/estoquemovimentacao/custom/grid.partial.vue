@@ -48,9 +48,9 @@
                                     <td>{{ item.quantidadeMinima }}</td>
                                     <td>{{ item.quantidade }}</td>
                                     <td class="text-center">
-                                        <button type="button" class="btn btn-xs btn-default" @click="crud.details.executeModal(null, {estoqueId:item.estoqueId})">
+                                        <router-link :to="{ name: 'estoquemovimentacaodetails', params: { id: item.estoqueId }}" class="btn btn-xs btn-info">
                                             <i class="fa fa-history"></i>
-                                        </button>
+                                        </router-link>
                                         <button type="button" class="btn btn-xs btn-danger" @click="crud.create.executeModal({ estoqueId: item.estoqueId, entrada: false })">
                                             <i class="fa fa-minus"></i>
                                         </button>

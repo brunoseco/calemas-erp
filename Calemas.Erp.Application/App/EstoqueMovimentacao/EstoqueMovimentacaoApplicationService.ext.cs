@@ -23,7 +23,6 @@ namespace Calemas.Erp.Application
         {
             return base.MapperDomainToResult<EstoqueMovimentacaoDtoSpecializedResult>(filter, dataList) as IEnumerable<TDS>;
         }
-
-
+        
     }
 }

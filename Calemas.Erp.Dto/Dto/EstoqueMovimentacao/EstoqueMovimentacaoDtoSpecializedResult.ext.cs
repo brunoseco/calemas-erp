@@ -8,9 +8,10 @@ namespace Calemas.Erp.Dto
 	public class EstoqueMovimentacaoDtoSpecializedResult : EstoqueMovimentacaoDto
 	{
 
-        public  ColaboradorDto Colaborador { get; set;} 
-        public  EstoqueDto Estoque { get; set;} 
+        public  ColaboradorDtoSpecializedResult Colaborador { get; set;} 
+        public  EstoqueDto Estoque { get; set;}
 
-		
-	}
+        public DateTime UserCreateDate { get; set; }
+
+    }
 }

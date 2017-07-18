@@ -8,7 +8,7 @@ namespace Calemas.Erp.Dto
 	public class ColaboradorDtoSpecializedDetails : ColaboradorDto
 	{
 
-        public  NivelAcessoDto NivelAcesso { get; set;} 
+        public  PessoaDto Pessoa { get; set;} 
 
 		
 	}

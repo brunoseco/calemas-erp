@@ -7,6 +7,8 @@ namespace Calemas.Erp.Domain.Entitys
     public class EstoqueMovimentacao : EstoqueMovimentacaoBase
     {
 
+        public virtual Colaborador Colaborador { get; set; }
+
         public EstoqueMovimentacao()
         {
 

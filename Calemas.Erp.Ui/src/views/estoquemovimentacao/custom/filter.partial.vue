@@ -10,7 +10,7 @@
                         <form v-on:submit.prevent="crud.filter.executeAction()">
                             <div class="row">
                                 <div class="form-group col-md-6" v-bind:class="{ 'has-danger': formErrors.has('form-filter.estoqueId') }">
-                                    <label for="estoqueId">Estoque/Produto</label>
+                                    <label for="estoqueId">Estoque</label>
                                     <select v-select="{ dataitem: 'Estoque', default: 'Selecione' }" v-model="crud.filter.model.estoqueId" class="form-control" name="estoqueId"></select>
                                 </div>
                                 <div class="form-group col-md-3" v-bind:class="{ 'has-danger': formErrors.has('form-filter.referencia') }">

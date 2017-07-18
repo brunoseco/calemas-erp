@@ -6,9 +6,12 @@ import Auth from '../common/auth'
 import Dashboard from '@/views/dashboard'
 import Authorized from '@/views/authorized'
 
-import routers from './generated'
+import routersgenerated from './generated'
+import routerscustom from './custom'
 
 Vue.use(Router)
+
+var routers = routersgenerated.concat(routerscustom);
 
 routers.push({
     path: 'dashboard',

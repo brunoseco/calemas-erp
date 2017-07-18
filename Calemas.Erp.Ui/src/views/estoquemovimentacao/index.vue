@@ -18,7 +18,7 @@
     import deletePartial from './custom/delete.partial'
 
     import { Crud } from '../../common/crud'
-
+    
     export default {
         name: 'estoquemovimentacao',
         components: {
@@ -50,7 +50,6 @@
             }
         },
         mounted() {
-            
             this.crud.filter.executeAction();
         }
     }

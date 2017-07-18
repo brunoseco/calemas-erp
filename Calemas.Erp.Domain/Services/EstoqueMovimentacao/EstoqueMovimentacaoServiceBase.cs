@@ -149,7 +149,7 @@ namespace Calemas.Erp.Domain.Services
             var isNew = estoquemovimentacaoOld.IsNull();
 			
             if (isNew)
-                estoquemovimentacao = this._rep.Add(estoquemovimentacao);
+                estoquemovimentacao = this.AddDefault(estoquemovimentacao);
             else
 				estoquemovimentacao = this.UpdateDefault(estoquemovimentacao);
 

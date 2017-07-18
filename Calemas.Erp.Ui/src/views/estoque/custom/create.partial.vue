@@ -36,10 +36,6 @@
                         <label for="quantidadeMinima">Quantidade Mínima</label>
                         <input type="text" class="form-control" name="quantidadeMinima" placeholder="Quantidade Mínima" v-model="crud.create.model.quantidadeMinima" v-validate="'required'" />
                     </div>
-					<div class="form-group col-md-3" v-bind:class="{ 'has-danger': formErrors.has('form-create.quantidade') }">
-                        <label for="quantidade">Quantidade Atual</label>
-                        <input type="text" class="form-control" name="quantidade" placeholder="Quantidade" v-model="crud.create.model.quantidade" v-validate="'required'" />
-                    </div>
 					<div class="form-group col-md-3" v-bind:class="{ 'has-danger': formErrors.has('form-create.valorVenda') }">
                         <label for="valorVenda">Valor de Venda</label>
                         <input type="text" class="form-control" name="valorVenda" placeholder="Valor de Venda" v-model="crud.create.model.valorVenda"  />

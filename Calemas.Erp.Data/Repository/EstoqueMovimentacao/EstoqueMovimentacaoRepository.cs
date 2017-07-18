@@ -20,30 +20,30 @@ namespace Calemas.Erp.Data.Repository
 
         }
 
-      
+
         public IQueryable<EstoqueMovimentacao> GetBySimplefilters(EstoqueMovimentacaoFilter filters)
         {
             var querybase = this.GetAll(this.DataAgregation(filters))
-								.WithBasicFilters(filters)
-								.WithCustomFilters(filters);
+                                .WithBasicFilters(filters)
+                                .WithCustomFilters(filters);
             return querybase;
         }
 
         public async Task<EstoqueMovimentacao> GetById(EstoqueMovimentacaoFilter model)
         {
             var _estoquemovimentacao = await this.SingleOrDefaultAsync(this.GetAll(this.DataAgregation(model))
-               .Where(_=>_.EstoqueMovimentacaoId == model.EstoqueMovimentacaoId));
+               .Where(_ => _.EstoqueMovimentacaoId == model.EstoqueMovimentacaoId));
 
             return _estoquemovimentacao;
         }
 
-		 public async Task<IEnumerable<dynamic>> GetDataItem(EstoqueMovimentacaoFilter filters)
+        public async Task<IEnumerable<dynamic>> GetDataItem(EstoqueMovimentacaoFilter filters)
         {
             var querybase = await this.ToListAsync(this.GetBySimplefilters(filters).Select(_ => new
             {
                 Id = _.EstoqueMovimentacaoId
 
-            })); 
+            }));
 
             return querybase;
         }
@@ -134,9 +134,9 @@ namespace Calemas.Erp.Data.Repository
             return source.SingleOrDefault();
         }
 
-		protected override Expression<Func<EstoqueMovimentacao, object>>[] DataAgregation(Expression<Func<EstoqueMovimentacao, object>>[] includes, FilterBase filter)
+        protected override Expression<Func<EstoqueMovimentacao, object>>[] DataAgregation(Expression<Func<EstoqueMovimentacao, object>>[] includes, FilterBase filter)
         {
-            return base.DataAgregation(includes, filter);
+            return includes.Add(_ => _.Colaborador.Pessoa);
         }
 
     }

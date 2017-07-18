@@ -7,10 +7,5 @@ namespace Calemas.Erp.Dto
 {
 	public class EstoqueMovimentacaoDtoSpecializedDetails : EstoqueMovimentacaoDto
 	{
-
-        public  ColaboradorDto Colaborador { get; set;} 
-        public  EstoqueDto Estoque { get; set;} 
-
-		
 	}
 }
