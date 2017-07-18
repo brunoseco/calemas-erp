@@ -21,12 +21,17 @@ namespace Calemas.Erp.Domain.Services
         {
             var colaborador = base.AuditDefault(entity, entityOld);
             if (colaborador.Pessoa.IsNotNull())
-            {
-                var isNew = entityOld.IsNull();
-                base.AuditDefault(colaborador.Pessoa, isNew ? null : colaborador.Pessoa);
-            }
+                base.AuditDefault(colaborador.Pessoa, entityOld);
 
             return colaborador;
+        }
+
+        protected override Colaborador UpdateDefault(Colaborador colaborador)
+        {
+            if (colaborador.Pessoa.IsNotNull())
+                _repPessoa.Update(colaborador.Pessoa);
+
+            return base.UpdateDefault(colaborador);
         }
 
     }
