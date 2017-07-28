@@ -7518,15 +7518,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bruun\\.nuget\\packages\\": {}
+    "C:\\Users\\Bruno Seco\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Dto\\Calemas.Erp.Dto.csproj",
+      "projectUniqueName": "D:\\Projetos\\calemas-erp\\Calemas.Erp.Dto\\Calemas.Erp.Dto.csproj",
       "projectName": "Calemas.Erp.Dto",
-      "projectPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Dto\\Calemas.Erp.Dto.csproj",
-      "outputPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Dto\\obj\\",
+      "projectPath": "D:\\Projetos\\calemas-erp\\Calemas.Erp.Dto\\Calemas.Erp.Dto.csproj",
+      "outputPath": "D:\\Projetos\\calemas-erp\\Calemas.Erp.Dto\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -7534,8 +7534,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "C:\\Pessoal\\calemas-erp\\Common\\Common.Dto\\Common.Dto.csproj": {
-              "projectPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Dto\\Common.Dto.csproj"
+            "D:\\Projetos\\calemas-erp\\Common\\Common.Dto\\Common.Dto.csproj": {
+              "projectPath": "D:\\Projetos\\calemas-erp\\Common\\Common.Dto\\Common.Dto.csproj"
             }
           }
         }

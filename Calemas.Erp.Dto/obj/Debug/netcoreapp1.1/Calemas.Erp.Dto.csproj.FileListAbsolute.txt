@@ -20,3 +20,14 @@ C:\Pessoal\calemas-erp\Calemas.Erp.Dto\obj\Debug\netcoreapp1.1\Calemas.Erp.Dto.c
 C:\Pessoal\calemas-erp\Calemas.Erp.Dto\obj\Debug\netcoreapp1.1\Calemas.Erp.Dto.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Calemas.Erp.Dto\obj\Debug\netcoreapp1.1\Calemas.Erp.Dto.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Dto\obj\Debug\netcoreapp1.1\Calemas.Erp.Dto.pdb
+D:\Projetos\calemas-erp\Calemas.Erp.Dto\bin\Debug\netcoreapp1.1\Calemas.Erp.Dto.deps.json
+D:\Projetos\calemas-erp\Calemas.Erp.Dto\bin\Debug\netcoreapp1.1\Calemas.Erp.Dto.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Dto\bin\Debug\netcoreapp1.1\Calemas.Erp.Dto.pdb
+D:\Projetos\calemas-erp\Calemas.Erp.Dto\bin\Debug\netcoreapp1.1\Common.Domain.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Dto\bin\Debug\netcoreapp1.1\Common.Dto.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Dto\bin\Debug\netcoreapp1.1\Common.Dto.pdb
+D:\Projetos\calemas-erp\Calemas.Erp.Dto\bin\Debug\netcoreapp1.1\Common.Domain.pdb
+D:\Projetos\calemas-erp\Calemas.Erp.Dto\obj\Debug\netcoreapp1.1\Calemas.Erp.Dto.csprojResolveAssemblyReference.cache
+D:\Projetos\calemas-erp\Calemas.Erp.Dto\obj\Debug\netcoreapp1.1\Calemas.Erp.Dto.AssemblyInfo.cs
+D:\Projetos\calemas-erp\Calemas.Erp.Dto\obj\Debug\netcoreapp1.1\Calemas.Erp.Dto.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Dto\obj\Debug\netcoreapp1.1\Calemas.Erp.Dto.pdb

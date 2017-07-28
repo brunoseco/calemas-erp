@@ -7037,15 +7037,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bruun\\.nuget\\packages\\": {}
+    "C:\\Users\\Bruno Seco\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Enums\\Calemas.Erp.Enums.csproj",
+      "projectUniqueName": "D:\\Projetos\\calemas-erp\\Calemas.Erp.Enums\\Calemas.Erp.Enums.csproj",
       "projectName": "Calemas.Erp.Enums",
-      "projectPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Enums\\Calemas.Erp.Enums.csproj",
-      "outputPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Enums\\obj\\",
+      "projectPath": "D:\\Projetos\\calemas-erp\\Calemas.Erp.Enums\\Calemas.Erp.Enums.csproj",
+      "outputPath": "D:\\Projetos\\calemas-erp\\Calemas.Erp.Enums\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

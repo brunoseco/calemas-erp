@@ -16,3 +16,12 @@ C:\Pessoal\calemas-erp\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.Fi
 C:\Pessoal\calemas-erp\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.Filter.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.Filter.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.Filter.csprojResolveAssemblyReference.cache
+D:\Projetos\calemas-erp\Calemas.Erp.Filter\bin\Debug\netcoreapp1.1\Calemas.Erp.Filter.deps.json
+D:\Projetos\calemas-erp\Calemas.Erp.Filter\bin\Debug\netcoreapp1.1\Calemas.Erp.Filter.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Filter\bin\Debug\netcoreapp1.1\Calemas.Erp.Filter.pdb
+D:\Projetos\calemas-erp\Calemas.Erp.Filter\bin\Debug\netcoreapp1.1\Common.Domain.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Filter\bin\Debug\netcoreapp1.1\Common.Domain.pdb
+D:\Projetos\calemas-erp\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.Filter.csprojResolveAssemblyReference.cache
+D:\Projetos\calemas-erp\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.Filter.AssemblyInfo.cs
+D:\Projetos\calemas-erp\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.Filter.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.Filter.pdb

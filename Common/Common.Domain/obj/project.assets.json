@@ -7491,15 +7491,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bruun\\.nuget\\packages\\": {}
+    "C:\\Users\\Bruno Seco\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj",
+      "projectUniqueName": "D:\\Projetos\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj",
       "projectName": "Common.Domain",
-      "projectPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj",
-      "outputPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\obj\\",
+      "projectPath": "D:\\Projetos\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj",
+      "outputPath": "D:\\Projetos\\calemas-erp\\Common\\Common.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

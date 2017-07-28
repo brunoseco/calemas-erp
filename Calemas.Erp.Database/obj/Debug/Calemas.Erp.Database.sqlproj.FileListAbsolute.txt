@@ -3,3 +3,12 @@ C:\Pessoal\calemas-erp\Calemas.Erp.Database\bin\Debug\Calemas.Erp.Database.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Database\bin\Debug\Calemas.Erp.Database.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Database\obj\Debug\Calemas.Erp.Database.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Database\obj\Debug\Calemas.Erp.Database.pdb
+D:\Projetos\calemas-erp\Calemas.Erp.Database\bin\Debug\Calemas.Erp.Database.dacpac
+D:\Projetos\calemas-erp\Calemas.Erp.Database\bin\Debug\Calemas.Erp.Database.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Database\bin\Debug\Calemas.Erp.Database.pdb
+D:\Projetos\calemas-erp\Calemas.Erp.Database\obj\Debug\Model.xml
+D:\Projetos\calemas-erp\Calemas.Erp.Database\obj\Debug\refactor.xml
+D:\Projetos\calemas-erp\Calemas.Erp.Database\obj\Debug\postdeploy.sql
+D:\Projetos\calemas-erp\Calemas.Erp.Database\obj\Debug\predeploy.sql
+D:\Projetos\calemas-erp\Calemas.Erp.Database\obj\Debug\Calemas.Erp.Database.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Database\obj\Debug\Calemas.Erp.Database.pdb

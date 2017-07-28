@@ -12,3 +12,10 @@ C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Debug\netcoreapp1.1\Calemas.Erp.Enu
 C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Debug\netcoreapp1.1\Calemas.Erp.Enums.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Debug\netcoreapp1.1\Calemas.Erp.Enums.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Debug\netcoreapp1.1\Calemas.Erp.Enums.pdb
+D:\Projetos\calemas-erp\Calemas.Erp.Enums\bin\Debug\netcoreapp1.1\Calemas.Erp.Enums.deps.json
+D:\Projetos\calemas-erp\Calemas.Erp.Enums\bin\Debug\netcoreapp1.1\Calemas.Erp.Enums.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Enums\bin\Debug\netcoreapp1.1\Calemas.Erp.Enums.pdb
+D:\Projetos\calemas-erp\Calemas.Erp.Enums\obj\Debug\netcoreapp1.1\Calemas.Erp.Enums.csprojResolveAssemblyReference.cache
+D:\Projetos\calemas-erp\Calemas.Erp.Enums\obj\Debug\netcoreapp1.1\Calemas.Erp.Enums.AssemblyInfo.cs
+D:\Projetos\calemas-erp\Calemas.Erp.Enums\obj\Debug\netcoreapp1.1\Calemas.Erp.Enums.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Enums\obj\Debug\netcoreapp1.1\Calemas.Erp.Enums.pdb

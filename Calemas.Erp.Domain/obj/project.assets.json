@@ -7533,15 +7533,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bruun\\.nuget\\packages\\": {}
+    "C:\\Users\\Bruno Seco\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Domain\\Calemas.Erp.Domain.csproj",
+      "projectUniqueName": "D:\\Projetos\\calemas-erp\\Calemas.Erp.Domain\\Calemas.Erp.Domain.csproj",
       "projectName": "Calemas.Erp.Domain",
-      "projectPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Domain\\Calemas.Erp.Domain.csproj",
-      "outputPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Domain\\obj\\",
+      "projectPath": "D:\\Projetos\\calemas-erp\\Calemas.Erp.Domain\\Calemas.Erp.Domain.csproj",
+      "outputPath": "D:\\Projetos\\calemas-erp\\Calemas.Erp.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -7549,14 +7549,14 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "C:\\Pessoal\\calemas-erp\\Common\\Common.Validation\\Common.Validation.csproj": {
-              "projectPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Validation\\Common.Validation.csproj"
+            "D:\\Projetos\\calemas-erp\\Common\\Common.Validation\\Common.Validation.csproj": {
+              "projectPath": "D:\\Projetos\\calemas-erp\\Common\\Common.Validation\\Common.Validation.csproj"
             },
-            "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj": {
-              "projectPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj"
+            "D:\\Projetos\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj": {
+              "projectPath": "D:\\Projetos\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj"
             },
-            "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Filter\\Calemas.Erp.Filter.csproj": {
-              "projectPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Filter\\Calemas.Erp.Filter.csproj"
+            "D:\\Projetos\\calemas-erp\\Calemas.Erp.Filter\\Calemas.Erp.Filter.csproj": {
+              "projectPath": "D:\\Projetos\\calemas-erp\\Calemas.Erp.Filter\\Calemas.Erp.Filter.csproj"
             }
           }
         }

@@ -59,6 +59,7 @@
     <Folder Include="Properties" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="compare.scmp" />
+    <None Include="compare-de-ca-pra-la.scmp" />
+    <None Include="compare-de-la-pra-ca.scmp" />
   </ItemGroup>
 </Project>
