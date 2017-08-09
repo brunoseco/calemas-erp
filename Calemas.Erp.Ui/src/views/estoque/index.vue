@@ -51,52 +51,14 @@
                             <thead class="">
                                 <tr>
                                     <th>#</th>
-                                    <th>
-                                        Referência
-                                        <button @click="executeOrderBy('nome')" class="btn btn-xs btn-link no-border pull-right">
-                                            <i class="fa fa-sort"></i>
-                                        </button>
-                                    </th>
-                                    <th>
-                                        Nome
-                                        <button @click="executeOrderBy('nome')" class="btn btn-xs btn-link no-border pull-right">
-                                            <i class="fa fa-sort"></i>
-                                        </button>
-                                    </th>
-                                    <th>
-                                        Qtde. Mínima
-                                        <button @click="executeOrderBy('nome')" class="btn btn-xs btn-link no-border pull-right">
-                                            <i class="fa fa-sort"></i>
-                                        </button>
-                                    </th>
-                                    <th>
-                                        Qtde. Atual
-                                        <button @click="executeOrderBy('nome')" class="btn btn-xs btn-link no-border pull-right">
-                                            <i class="fa fa-sort"></i>
-                                        </button>
-                                    </th>
-                                    <th>
-                                        Valor de Venda
-                                        <button @click="executeOrderBy('nome')" class="btn btn-xs btn-link no-border pull-right">
-                                            <i class="fa fa-sort"></i>
-                                        </button>
-                                    </th>
-                                    <th>
-                                        Valor de Compra
-                                        <button @click="executeOrderBy('nome')" class="btn btn-xs btn-link no-border pull-right">
-                                            <i class="fa fa-sort"></i>
-                                        </button>
-                                    </th>
-                                    <th>
-                                        Ativo
-                                        <button @click="executeOrderBy('nome')" class="btn btn-xs btn-link no-border pull-right">
-                                            <i class="fa fa-sort"></i>
-                                        </button>
-                                    </th>
-
-                                    <th class="text-center" width="75">
-                                        <i class="fa fa-cog"></i>
-                                    </th>
+                                    <th>Referência <button @click="executeOrderBy('referencia')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Nome <button @click="executeOrderBy('nome')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Qtde. Mínima <button @click="executeOrderBy('quantidadeMinima')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Qtde. Atual <button @click="executeOrderBy('quantidade')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Valor de Venda <button @click="executeOrderBy('valorVenda')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Valor de Compra <button @click="executeOrderBy('valorCompra')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Ativo <button @click="executeOrderBy('nome')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th class="text-center" width="75"><i class="fa fa-cog"></i></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -146,7 +108,7 @@
 
         <modal title="Edição de Estoque" v-model="modalEditOpen" effect="fade/zoom" type="modal-primary" :large="true">
             <div slot="modal-header" class="modal-header">
-                <h4 class="modal-title">Cadastro de Estoque</h4>
+                <h4 class="modal-title">Edição de Estoque</h4>
                 <button type="button" class="close" @click="closeEdit()"><span>&times;</span></button>
             </div>
             <form v-on:submit.prevent="executeEdit(model)">
