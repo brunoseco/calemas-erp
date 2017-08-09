@@ -57,7 +57,7 @@
                                     <th>Qtde. Atual <button @click="executeOrderBy('quantidade')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
                                     <th>Valor de Venda <button @click="executeOrderBy('valorVenda')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
                                     <th>Valor de Compra <button @click="executeOrderBy('valorCompra')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Ativo <button @click="executeOrderBy('nome')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Ativo <button @click="executeOrderBy('ativo')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
                                     <th class="text-center" width="75"><i class="fa fa-cog"></i></th>
                                 </tr>
                             </thead>

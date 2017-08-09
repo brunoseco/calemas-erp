@@ -1,0 +1,18 @@
+<template>
+
+    <fieldset>
+        <legend>Dados</legend>
+        <div class="row">
+            <#formFields#>
+        </div>
+    </fieldset>
+
+</template>
+<script>
+    import formBase from '../../common/mixins/form'
+    export default {
+        name: 'form-partial',
+        props: ['model'],
+        mixins: [formBase],        
+    }
+</script>
