@@ -4276,7 +4276,7 @@
     "microsoft.aspnetcore.staticfiles/1.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-5/HgUCOBOf7/8LrTlXMxBkFtdlN5mudii0nh1GOiSa4+DfcOuaZ6YzJYqHfcPNFIXs6JD6C9I6Mxu8jBcD5jmg==",
+      "sha512": "sha512-JtfaHhKqhjZXvVfDUkpOwZJ9t/64v8MeGQ9Te+5GKajCUswv49DjZcS5oF8qu8kqv35eeTYmhOWd0VxIu6rGXQ==",
       "path": "microsoft.aspnetcore.staticfiles/1.1.2",
       "hashPath": "microsoft.aspnetcore.staticfiles.1.1.2.nupkg.sha512"
     },

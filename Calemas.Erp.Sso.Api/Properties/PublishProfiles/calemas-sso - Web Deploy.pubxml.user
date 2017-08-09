@@ -6,7 +6,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqNqovQ/mjkap+lchNqcMMwAAAAACAAAAAAAQZgAAAAEAACAAAACbqGD3xCROmszc2/pDrbNfucUFmYfiAqWc4puwjyz4qAAAAAAOgAAAAAIAACAAAAB6sTDXItGw0rkmHkiPJ3C6yc5lV/vCRf29hKB/Sp4LloAAAACigVLSYI4uw4Y6RKm58DoVEk050gwXgQ+mhk2SGi0Bj9z/xTCnv/F0uQcV05XujcLXkQJHhMpIl57XLyW37z/Vt0gWEksLINQQuzOZAbjE620B2IcZQxczJ+e1RkKZpFY3YKpObDIcS2peRxLZ735JioJcJs1JQpJYwkGzkm0h1EAAAADBFqotoejJpOJQGeD4Yd7vxxjXv+jmfYD/Iz1uJcTD45HZqfvjqt+25yM4pb1dzfXu5O6I3mDiI7NChVudMbpr</EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWfNzORtN9k+WkdVgUgXR1AAAAAACAAAAAAAQZgAAAAEAACAAAAAOZbaEH8tZIto+MHTudmdYSrnVCSwCv7rpKW2DvWO22wAAAAAOgAAAAAIAACAAAACtfFlmIMjitDNK3QrB7t06FnD1qUwzDuLhyWwGfFLo+IAAAACEMW0TIR13cEV3hQ0jFHd6ff5X1O8QrGdX0VgQMD67nuSgF/2ZvvOrlVf3lHxZuFBValwBxqxClyS79Piv18tSH+JBAt+4CthPWP4mn2YzxbGkG+LqawCVv/6GpOY0iFS+7bCTGJqkf+D0MfG/4zt0II+MSxWeg5XWkVJN0z1NOUAAAADUyJCm+te6A4uUzqIYRnxtwM610WiJzB50eLzISrnZfcdyIZOxzKSRgVYkdJ/0TvfrKnBbE3W3rETA1i+Jr4Pq</EncryptedPassword>
     <_NewBackgroundProfile>True</_NewBackgroundProfile>
   </PropertyGroup>
+  <ItemGroup>
+    <AzureDBConnectionStrings Include="Data Source=tcp:calemas-prod.database.windows.net,1433;Initial Catalog=calemas-prod;User ID=Calemas;Password=Admin321$" />
+    <AzureDBConnectionStrings Include="Data Source=tcp:calemas-sso.database.windows.net,1433;Initial Catalog=calemas-sso;User ID=Calemas;Password=Admin321$" />
+    <AzureDBConnectionStrings Include="Data Source=tcp:calemas-sso.database.windows.net,1433;Initial Catalog=calemas-sso;User Id=Calemas@calemas-sso.database.windows.net;Password=Admin321$" />
+  </ItemGroup>
 </Project>

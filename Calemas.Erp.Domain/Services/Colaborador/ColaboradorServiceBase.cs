@@ -149,7 +149,7 @@ namespace Calemas.Erp.Domain.Services
             var isNew = colaboradorOld.IsNull();
 			
             if (isNew)
-                colaborador = this._rep.Add(colaborador);
+                colaborador = this.AddDefault(colaborador);
             else
 				colaborador = this.UpdateDefault(colaborador);
 

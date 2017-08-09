@@ -149,7 +149,7 @@ namespace Calemas.Erp.Domain.Services
             var isNew = tipoplanocontaOld.IsNull();
 			
             if (isNew)
-                tipoplanoconta = this._rep.Add(tipoplanoconta);
+                tipoplanoconta = this.AddDefault(tipoplanoconta);
             else
 				tipoplanoconta = this.UpdateDefault(tipoplanoconta);
 

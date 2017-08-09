@@ -87,6 +87,9 @@
     <OutputPath>bin\Azure\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Domain">
+      <HintPath>C:\Projetos\Common-V2\Lib\Common.Domain.dll</HintPath>
+    </Reference>
     <Reference Include="Common.Gen, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Projetos\Common-V2\Lib\Common.Gen.dll</HintPath>

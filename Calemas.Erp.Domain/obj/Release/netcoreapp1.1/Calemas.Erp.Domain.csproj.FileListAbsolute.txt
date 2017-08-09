@@ -11,3 +11,16 @@ C:\Pessoal\calemas-erp\Calemas.Erp.Domain\obj\Release\netcoreapp1.1\Calemas.Erp.
 C:\Pessoal\calemas-erp\Calemas.Erp.Domain\obj\Release\netcoreapp1.1\Calemas.Erp.Domain.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Calemas.Erp.Domain\obj\Release\netcoreapp1.1\Calemas.Erp.Domain.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Domain\obj\Release\netcoreapp1.1\Calemas.Erp.Domain.pdb
+D:\Projetos\calemas-erp\Calemas.Erp.Domain\bin\Release\netcoreapp1.1\Calemas.Erp.Domain.deps.json
+D:\Projetos\calemas-erp\Calemas.Erp.Domain\bin\Release\netcoreapp1.1\Calemas.Erp.Domain.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Domain\bin\Release\netcoreapp1.1\Calemas.Erp.Domain.pdb
+D:\Projetos\calemas-erp\Calemas.Erp.Domain\bin\Release\netcoreapp1.1\Calemas.Erp.Filter.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Domain\bin\Release\netcoreapp1.1\Common.Domain.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Domain\bin\Release\netcoreapp1.1\Common.Validation.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Domain\bin\Release\netcoreapp1.1\Calemas.Erp.Filter.pdb
+D:\Projetos\calemas-erp\Calemas.Erp.Domain\bin\Release\netcoreapp1.1\Common.Domain.pdb
+D:\Projetos\calemas-erp\Calemas.Erp.Domain\bin\Release\netcoreapp1.1\Common.Validation.pdb
+D:\Projetos\calemas-erp\Calemas.Erp.Domain\obj\Release\netcoreapp1.1\Calemas.Erp.Domain.csprojResolveAssemblyReference.cache
+D:\Projetos\calemas-erp\Calemas.Erp.Domain\obj\Release\netcoreapp1.1\Calemas.Erp.Domain.AssemblyInfo.cs
+D:\Projetos\calemas-erp\Calemas.Erp.Domain\obj\Release\netcoreapp1.1\Calemas.Erp.Domain.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Domain\obj\Release\netcoreapp1.1\Calemas.Erp.Domain.pdb

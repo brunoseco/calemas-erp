@@ -16,10 +16,10 @@
                     <div slot="dropdown-menu" class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-header text-center"><strong>Central</strong></div>
 
-                        <a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> Novidades<span class="badge badge-info">2</span></a>
+                        <!--<a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> Novidades<span class="badge badge-info">2</span></a>
                         <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> Mensagens<span class="badge badge-success">0</span></a>
-                        <a class="dropdown-item" href="#"><i class="fa fa-tasks"></i> Tarefas<span class="badge badge-danger">5</span></a>
-                        <a class="dropdown-item" href="#"><i class="fa fa-reply"></i> Acessar RadiusNet</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-tasks"></i> Tarefas<span class="badge badge-danger">5</span></a>-->
+                        <a class="dropdown-item" href="http://177.19.207.42/radiusnet/" target="_blank"><i class="fa fa-reply"></i> Acessar RadiusNet</a>
 
                         <div class="dropdown-header text-center"><strong>Acesso</strong></div>
                         <a class="dropdown-item" href="#" @click="logout"><i class="fa fa-sign-out"></i> Sair</a>
@@ -27,9 +27,9 @@
                 </dropdown>
             </li>
             <li class="nav-item d-md-down-none">
-                <a class="nav-link navbar-toggler aside-menu-toggler" href="#" @click="asideToggle">
+                <!--<a class="nav-link navbar-toggler aside-menu-toggler" href="#" @click="asideToggle">
                     <i class="icon-bell"></i><span class="badge badge-pill badge-danger">5</span>
-                </a>
+                </a>-->
             </li>
         </ul>
     </navbar>

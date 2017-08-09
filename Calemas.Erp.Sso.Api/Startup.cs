@@ -42,19 +42,19 @@ namespace Calemas.Erp.Sso.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-
-            var cns = Configuration.GetSection("EFCoreConnStrings:Core").Value;
+            var cnsSso = Configuration.GetSection("EFCoreConnStrings:Sso").Value;
+            var cnsCalemas = Configuration.GetSection("EFCoreConnStrings:Calemas").Value;
 
             var migrationAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
-            services.AddDbContext<DbContextCore>(options => options.UseSqlServer(cns));
+            services.AddDbContext<DbContextCore>(options => options.UseSqlServer(cnsCalemas));
 
             services.AddIdentityServer()
                 .AddTemporarySigningCredential()
                 .AddConfigurationStore(builder =>
-                        builder.UseSqlServer(cns, options =>
+                        builder.UseSqlServer(cnsSso, options =>
                             options.MigrationsAssembly(migrationAssembly)))
-                    .AddOperationalStore(builder =>
-                        builder.UseSqlServer(cns, options =>
+                .AddOperationalStore(builder =>
+                        builder.UseSqlServer(cnsSso, options =>
                             options.MigrationsAssembly(migrationAssembly)));
 
             //for clarity of the next piece of code
@@ -77,7 +77,7 @@ namespace Calemas.Erp.Sso.Api
             {
                 options.AddPolicy("frontprod", policy =>
                 {
-                    policy.WithOrigins("http://calemas-front.azurewebsites.net")
+                    policy.WithOrigins("http://calemas.azurewebsites.net")
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                 });

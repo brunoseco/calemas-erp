@@ -149,7 +149,7 @@ namespace Calemas.Erp.Domain.Services
             var isNew = nivelacessoOld.IsNull();
 			
             if (isNew)
-                nivelacesso = this._rep.Add(nivelacesso);
+                nivelacesso = this.AddDefault(nivelacesso);
             else
 				nivelacesso = this.UpdateDefault(nivelacesso);
 

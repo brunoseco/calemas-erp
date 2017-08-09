@@ -21,6 +21,14 @@ namespace Calemas.Erp.Dto
 
         
 
+        public virtual string Modelo {get; set;}
+
+        
+
+        public virtual string Fabricante {get; set;}
+
+        
+
         public virtual string Referencia {get; set;}
 
         

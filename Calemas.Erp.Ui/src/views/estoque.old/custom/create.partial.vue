@@ -16,6 +16,14 @@
                         <label for="referencia">Referência</label>
                         <input type="text" class="form-control" name="referencia" placeholder="Referencia" v-model="crud.create.model.referencia" />
                     </div>
+                    <div class="form-group col-md-6" v-bind:class="{ 'has-danger': formErrors.has('form-create.modelo') }">
+                        <label for="modelo">Modelo</label>
+                        <input type="text" class="form-control" name="modelo" placeholder="Modelo" v-model="crud.create.model.modelo" />
+                    </div>
+                    <div class="form-group col-md-6" v-bind:class="{ 'has-danger': formErrors.has('form-create.fabricante') }">
+                        <label for="fabricante">Fabricante</label>
+                        <input type="text" class="form-control" name="fabricante" placeholder="Fabricante" v-model="crud.create.model.fabricante" />
+                    </div>
                     <div class="form-group col-md-6" v-bind:class="{ 'has-danger': formErrors.has('form-create.unidadeMedidaId') }">
                         <label for="unidadeMedidaId">Unidade de Medida</label>
                         <select v-select="{ dataitem: 'UnidadeMedida', default: 'Selecione' }" v-model="crud.create.model.unidadeMedidaId" class="form-control" name="unidadeMedidaId" v-validate="'required'"></select>

@@ -8,10 +8,7 @@ Vue.use(Notifications)
 import select from './common/select'
 
 import VeeValidate from 'vee-validate';
-Vue.use(VeeValidate, {
-    errorBagName: 'formErrors',
-    fieldsBagName: 'formFields'
-});
+Vue.use(VeeValidate);
 
 require('vue-strap/dist/vue-strap-lang.js')
 

@@ -149,7 +149,7 @@ namespace Calemas.Erp.Domain.Services
             var isNew = unidademedidaOld.IsNull();
 			
             if (isNew)
-                unidademedida = this._rep.Add(unidademedida);
+                unidademedida = this.AddDefault(unidademedida);
             else
 				unidademedida = this.UpdateDefault(unidademedida);
 

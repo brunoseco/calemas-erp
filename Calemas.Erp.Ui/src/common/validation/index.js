@@ -16,15 +16,20 @@ export function Validation(config) {
     function _formIsValid(actionIfValid) {
         self.config.vm.$validator
             .validateAll(self.config.form)
-            .then(actionIfValid)
+            .then(result => {
+                if (result)
+                    return actionIfValid()
+            })
             .catch(() => { })
     }
 
     function _clearForm() {
-        self.config.vm.formErrors.errors = self.config.vm.formErrors.errors
-            .filter(function (e) {
+        var errors = self.config.vm.formErrors.items;
+        if (errors) {
+            self.config.vm.formErrors.items = errors.filter(function (e) {
                 return e.scope !== self.config.form;
-            })
+            });
+        }
     }
 
 }

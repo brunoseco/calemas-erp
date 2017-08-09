@@ -149,7 +149,7 @@ namespace Calemas.Erp.Domain.Services
             var isNew = setorOld.IsNull();
 			
             if (isNew)
-                setor = this._rep.Add(setor);
+                setor = this.AddDefault(setor);
             else
 				setor = this.UpdateDefault(setor);
 

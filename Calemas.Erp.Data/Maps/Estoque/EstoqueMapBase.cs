@@ -17,6 +17,8 @@ namespace Calemas.Erp.Data.Map
 
             type.Property(t => t.Nome).HasColumnName("Nome");
             type.Property(t => t.Descricao).HasColumnName("Descricao");
+            type.Property(t => t.Modelo).HasColumnName("Modelo");
+            type.Property(t => t.Fabricante).HasColumnName("Fabricante");
             type.Property(t => t.Referencia).HasColumnName("Referencia");
             type.Property(t => t.UnidadeMedidaId).HasColumnName("UnidadeMedidaId");
             type.Property(t => t.CategoriaEstoqueId).HasColumnName("CategoriaEstoqueId");

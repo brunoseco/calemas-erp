@@ -149,7 +149,7 @@ namespace Calemas.Erp.Domain.Services
             var isNew = tipoordemservicoOld.IsNull();
 			
             if (isNew)
-                tipoordemservico = this._rep.Add(tipoordemservico);
+                tipoordemservico = this.AddDefault(tipoordemservico);
             else
 				tipoordemservico = this.UpdateDefault(tipoordemservico);
 

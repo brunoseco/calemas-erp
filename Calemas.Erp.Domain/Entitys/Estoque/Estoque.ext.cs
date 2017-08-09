@@ -35,9 +35,10 @@ namespace Calemas.Erp.Domain.Entitys
                 construction.SetarObservacao(data.Observacao);
                 construction.SetarValorVenda(data.ValorVenda);
                 construction.SetarValorCompra(data.ValorCompra);
+                construction.SetarModelo(data.Modelo);
+                construction.SetarFabricante(data.Fabricante);
 
-
-				return construction;
+                return construction;
             }
 
         }

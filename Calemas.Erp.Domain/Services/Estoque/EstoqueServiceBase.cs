@@ -149,7 +149,7 @@ namespace Calemas.Erp.Domain.Services
             var isNew = estoqueOld.IsNull();
 			
             if (isNew)
-                estoque = this._rep.Add(estoque);
+                estoque = this.AddDefault(estoque);
             else
 				estoque = this.UpdateDefault(estoque);
 

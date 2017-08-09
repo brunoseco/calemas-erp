@@ -149,7 +149,7 @@ namespace Calemas.Erp.Domain.Services
             var isNew = pessoaOld.IsNull();
 			
             if (isNew)
-                pessoa = this._rep.Add(pessoa);
+                pessoa = this.AddDefault(pessoa);
             else
 				pessoa = this.UpdateDefault(pessoa);
 

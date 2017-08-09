@@ -149,7 +149,7 @@ namespace Calemas.Erp.Domain.Services
             var isNew = categoriaestoqueOld.IsNull();
 			
             if (isNew)
-                categoriaestoque = this._rep.Add(categoriaestoque);
+                categoriaestoque = this.AddDefault(categoriaestoque);
             else
 				categoriaestoque = this.UpdateDefault(categoriaestoque);
 

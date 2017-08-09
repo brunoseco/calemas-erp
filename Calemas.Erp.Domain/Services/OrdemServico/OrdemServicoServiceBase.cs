@@ -149,7 +149,7 @@ namespace Calemas.Erp.Domain.Services
             var isNew = ordemservicoOld.IsNull();
 			
             if (isNew)
-                ordemservico = this._rep.Add(ordemservico);
+                ordemservico = this.AddDefault(ordemservico);
             else
 				ordemservico = this.UpdateDefault(ordemservico);
 

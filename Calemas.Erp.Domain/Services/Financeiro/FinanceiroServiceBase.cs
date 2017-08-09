@@ -149,7 +149,7 @@ namespace Calemas.Erp.Domain.Services
             var isNew = financeiroOld.IsNull();
 			
             if (isNew)
-                financeiro = this._rep.Add(financeiro);
+                financeiro = this.AddDefault(financeiro);
             else
 				financeiro = this.UpdateDefault(financeiro);
 

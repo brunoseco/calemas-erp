@@ -24,6 +24,18 @@
                                         </button>
                                     </th>
                                     <th>
+                                        Modelo
+                                        <button @click="crud.filter.orderBy('nome')" class="btn btn-xs btn-link no-border pull-right">
+                                            <i class="fa fa-sort"></i>
+                                        </button>
+                                    </th>
+                                    <th>
+                                        Fabricante
+                                        <button @click="crud.filter.orderBy('nome')" class="btn btn-xs btn-link no-border pull-right">
+                                            <i class="fa fa-sort"></i>
+                                        </button>
+                                    </th>
+                                    <th>
                                         Referencia
                                         <button @click="crud.filter.orderBy('nome')" class="btn btn-xs btn-link no-border pull-right">
                                             <i class="fa fa-sort"></i>
@@ -76,6 +88,8 @@
                                     <td>{{ item.estoqueId }}</td>
                                     <td>{{ item.nome }}</td>
                                     <td>{{ item.descricao }}</td>
+                                    <td>{{ item.modelo }}</td>
+                                    <td>{{ item.fabricante }}</td>
                                     <td>{{ item.referencia }}</td>
                                     <td>{{ item.observacao }}</td>
                                     <td>{{ item.quantidadeMinima }}</td>

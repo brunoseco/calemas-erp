@@ -149,7 +149,7 @@ namespace Calemas.Erp.Domain.Services
             var isNew = corOld.IsNull();
 			
             if (isNew)
-                cor = this._rep.Add(cor);
+                cor = this.AddDefault(cor);
             else
 				cor = this.UpdateDefault(cor);
 

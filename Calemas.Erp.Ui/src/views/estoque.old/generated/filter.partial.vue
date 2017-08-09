@@ -17,6 +17,14 @@
                         <label for="descricao">Descricao</label>
                         <input type="text" class="form-control" name="descricao" placeholder="Descricao" v-model="crud.filter.model.descricao"  />
                     </div>
+					<div class="form-group col-md-6" v-bind:class="{ 'has-danger': formErrors.has('form-create.modelo') }">
+                        <label for="modelo">Modelo</label>
+                        <input type="text" class="form-control" name="modelo" placeholder="Modelo" v-model="crud.filter.model.modelo"  />
+                    </div>
+					<div class="form-group col-md-6" v-bind:class="{ 'has-danger': formErrors.has('form-create.fabricante') }">
+                        <label for="fabricante">Fabricante</label>
+                        <input type="text" class="form-control" name="fabricante" placeholder="Fabricante" v-model="crud.filter.model.fabricante"  />
+                    </div>
 					<div class="form-group col-md-6" v-bind:class="{ 'has-danger': formErrors.has('form-create.referencia') }">
                         <label for="referencia">Referencia</label>
                         <input type="text" class="form-control" name="referencia" placeholder="Referencia" v-model="crud.filter.model.referencia"  />

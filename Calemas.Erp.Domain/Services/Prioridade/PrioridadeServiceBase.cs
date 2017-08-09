@@ -149,7 +149,7 @@ namespace Calemas.Erp.Domain.Services
             var isNew = prioridadeOld.IsNull();
 			
             if (isNew)
-                prioridade = this._rep.Add(prioridade);
+                prioridade = this.AddDefault(prioridade);
             else
 				prioridade = this.UpdateDefault(prioridade);
 

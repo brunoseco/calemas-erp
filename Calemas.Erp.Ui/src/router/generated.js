@@ -1,5 +1,5 @@
-﻿
-const routersgenerated = [
+
+const routers = [
     { path: 'nivelacesso', name: 'NivelAcesso', component: function (resolve) { require(['@/views/nivelacesso'], resolve) } },
     { path: 'colaborador', name: 'Colaborador', component: function (resolve) { require(['@/views/colaborador'], resolve) } },
     { path: 'ordemservico', name: 'OrdemServico', component: function (resolve) { require(['@/views/ordemservico'], resolve) } },
@@ -16,4 +16,4 @@ const routersgenerated = [
 
 ];
 
-export default routersgenerated
+export default routers

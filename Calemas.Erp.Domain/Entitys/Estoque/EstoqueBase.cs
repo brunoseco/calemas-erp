@@ -24,6 +24,8 @@ namespace Calemas.Erp.Domain.Entitys
         public int EstoqueId { get; protected set; }
         public string Nome { get; protected set; }
         public string Descricao { get; protected set; }
+        public string Modelo { get; protected set; }
+        public string Fabricante { get; protected set; }
         public string Referencia { get; protected set; }
         public int UnidadeMedidaId { get; protected set; }
         public int CategoriaEstoqueId { get; protected set; }
@@ -38,6 +40,14 @@ namespace Calemas.Erp.Domain.Entitys
 		public virtual void SetarDescricao(string descricao)
 		{
 			this.Descricao = descricao;
+		}
+		public virtual void SetarModelo(string modelo)
+		{
+			this.Modelo = modelo;
+		}
+		public virtual void SetarFabricante(string fabricante)
+		{
+			this.Fabricante = fabricante;
 		}
 		public virtual void SetarReferencia(string referencia)
 		{

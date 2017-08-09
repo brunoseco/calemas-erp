@@ -7,14 +7,14 @@
                         <i class="icon-home"></i> Dashboard
                     </router-link>
                 </li>
+                <li class="nav-title">
+                    Menu
+                </li>
                 <li class="nav-item nav-dropdown">
                     <div class="nav-link nav-dropdown-toggle" @click="handleClick"><i class="icon-list"></i> Administrativo</div>
                     <ul class="nav-dropdown-items">
                         <li class="nav-item">
                             <router-link :to="'/estoquemovimentacao'" class="nav-link">Movimentação de Estoque</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="'/ordemservico'" class="nav-link">Ordem de Serviço</router-link>
                         </li>
                     </ul>
                 </li>
@@ -29,24 +29,6 @@
                         </li>
                         <li class="nav-item">
                             <router-link :to="'/categoriaestoque'" class="nav-link">Categorias de estoque</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="'/prioridade'" class="nav-link">Prioridade</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="'/tipoordemservico'" class="nav-link">Tipo de OS</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="'/colaborador'" class="nav-link">Colaborador</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="'/setor'" class="nav-link">Setor</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="'/cor'" class="nav-link">Etiquetas</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="'/planoconta'" class="nav-link">Plano de conta</router-link>
                         </li>
                     </ul>
                 </li>

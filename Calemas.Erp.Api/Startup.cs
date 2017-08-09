@@ -39,10 +39,7 @@ namespace Calemas.Erp.Api
         
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DbContextCore>(
-             options => options.UseSqlServer(
-                 Configuration
-                    .GetSection("EFCoreConnStrings:Core").Value));
+            services.AddDbContext<DbContextCore>(options => options.UseSqlServer(Configuration.GetSection("EFCoreConnStrings:Core").Value));
 
             services.AddDistributedRedisCache(options =>
             {

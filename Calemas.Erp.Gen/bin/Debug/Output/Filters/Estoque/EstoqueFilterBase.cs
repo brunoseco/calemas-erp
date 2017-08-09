@@ -9,6 +9,8 @@ namespace calemas.erp.Domain.Filter
         public int EstoqueId { get; set;} 
         public string Nome { get; set;} 
         public string Descricao { get; set;} 
+        public string Modelo { get; set;} 
+        public string Fabricante { get; set;} 
         public string Referencia { get; set;} 
         public int UnidadeMedidaId { get; set;} 
         public int CategoriaEstoqueId { get; set;} 
