@@ -69,30 +69,37 @@ namespace Calemas.Erp.Domain.Services
         public override async Task<Setor> Save(Setor setor, bool questionToContinue = false)
         {
             var setorOld = await this.GetOne(new SetorFilter { SetorId = setor.SetorId });
+			var setorOrchestrated = await this.DomainOrchestration(setor, setorOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(setor, setorOld) == false)
-                    return setor;
+                if (base.Continue(setorOrchestrated, setorOld) == false)
+                    return setorOrchestrated;
             }
 
-            return this.SaveWithValidation(setor, setorOld);
+            return this.SaveWithValidation(setorOrchestrated, setorOld);
         }
 
         public override async Task<Setor> SavePartial(Setor setor, bool questionToContinue = false)
         {
             var setorOld = await this.GetOne(new SetorFilter { SetorId = setor.SetorId });
+			var setorOrchestrated = await this.DomainOrchestration(setor, setorOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(setor, setorOld) == false)
-                    return setor;
+                if (base.Continue(setorOrchestrated, setorOld) == false)
+                    return setorOrchestrated;
             }
 
-            return SaveWithOutValidation(setor, setorOld);
+            return SaveWithOutValidation(setorOrchestrated, setorOld);
         }
 
         protected override Setor SaveWithOutValidation(Setor setor, Setor setorOld)
         {
             setor = this.SaveDefault(setor, setorOld);
+
+			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
+                return setor;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -120,9 +127,7 @@ namespace Calemas.Erp.Domain.Services
             this.Specifications(setor);
 
             if (!base._validationResult.IsValid)
-            {
                 return setor;
-            }
             
             setor = this.SaveDefault(setor, setorOld);
             base._validationResult.Message = "Setor cadastrado com sucesso :)";
@@ -138,19 +143,28 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual Setor SaveDefault(Setor setor, Setor setorOld)
-        {
-			
-			setor = AuditDefault(setor, setorOld);
+        {			
+			setor = this.AuditDefault(setor, setorOld);
 
             var isNew = setorOld.IsNull();
+			
             if (isNew)
-                setor = this._rep.Add(setor);
+                setor = this.AddDefault(setor);
             else
-            {
-                setor = this._rep.Update(setor);
-            }
+				setor = this.UpdateDefault(setor);
 
+            return setor;
+        }
+		
+        protected virtual Setor AddDefault(Setor setor)
+        {
+            setor = this._rep.Add(setor);
+            return setor;
+        }
 
+		protected virtual Setor UpdateDefault(Setor setor)
+        {
+            setor = this._rep.Update(setor);
             return setor;
         }
     }

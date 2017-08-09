@@ -1,6 +1,1 @@
-                                    <th>
-                                        <#propertyName#>
-                                        <button @click="crud.filter.orderBy('nome')" class="btn btn-xs btn-link no-border pull-right">
-                                            <i class="fa fa-sort"></i>
-                                        </button>
-                                    </th>
+                                    <th><#propertyName#><button @click="crud.filter.orderBy('<#propertyNameLowerCase#>')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>

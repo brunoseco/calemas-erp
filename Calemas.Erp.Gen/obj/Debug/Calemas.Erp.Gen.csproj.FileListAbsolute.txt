@@ -287,9 +287,6 @@ D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Back\profileCustom
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Back\README.md
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Back\sso.configauth
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Back\summary
-D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\delete.vue.template
-D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\edit.vue.template
-D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\header.vue.template
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\index.vue.template
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\field.checkbox.template
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\field.date.template
@@ -304,9 +301,7 @@ D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\tbody.string.t
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\tbody.boolean.template
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\thead.fields.template
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\thead.id.template
-D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\grid.vue.template
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\router.js.template
-D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\create.vue.template
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Calemas.Erp.Gen.exe.config
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Calemas.Erp.Gen.exe
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Calemas.Erp.Gen.pdb
@@ -319,3 +314,7 @@ D:\Projetos\calemas-erp\Calemas.Erp.Gen\obj\Debug\Calemas.Erp.Gen.pdb
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Common.Domain.dll
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Common.dll
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\obj\Debug\Calemas.Erp.Gen.csprojResolveAssemblyReference.cache
+D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\form.vue.template
+D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Common.Gen.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Common.Infrastructure.Log.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Common.StorageBase.dll

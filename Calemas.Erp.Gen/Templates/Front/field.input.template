@@ -1,4 +1,4 @@
-					<div class="form-group <#colformField#>" v-bind:class="{ 'has-danger': formErrors.has('form-create.<#propertyNameLowerCase#>') }">
+					<div class="form-group <#colformField#>" <#isRequiredLabelTag#>>
                         <label for="<#propertyNameLowerCase#>"><#propertyName#></label>
-                        <input type="text" class="form-control" name="<#propertyNameLowerCase#>" placeholder="<#propertyName#>" v-model="crud.<#formType#>.model.<#propertyNameLowerCase#>" <#isRequired#> />
+                        <input type="text" class="form-control" name="<#propertyNameLowerCase#>" placeholder="<#propertyName#>" v-model="<#modelType#>.<#propertyNameLowerCase#>" <#isRequired#> />
                     </div>

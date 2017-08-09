@@ -2,17 +2,17 @@
                     <label><#propertyName#></label>
                     <div class="form-group">
                         <label class="custom-control custom-radio">
-                            <input type="radio" name="<#propertyNameLowerCase#>" v-model="crud.<#formType#>.model.<#propertyNameLowerCase#>" value="undefined" class="custom-control-input">
+                            <input type="radio" name="<#propertyNameLowerCase#>" v-model="<#modelType#>.<#propertyNameLowerCase#>" value="undefined" class="custom-control-input">
                             <span class="custom-control-indicator"></span>
                             <span class="custom-control-description">Todos</span>
                         </label>
                         <label class="custom-control custom-radio">
-                            <input type="radio" name="<#propertyNameLowerCase#>" v-model="crud.<#formType#>.model.<#propertyNameLowerCase#>" value="true" class="custom-control-input">
+                            <input type="radio" name="<#propertyNameLowerCase#>" v-model="<#modelType#>.<#propertyNameLowerCase#>" value="true" class="custom-control-input">
                             <span class="custom-control-indicator"></span>
                             <span class="custom-control-description">Sim</span>
                         </label>
                         <label class="custom-control custom-radio">
-                            <input type="radio" name="<#propertyNameLowerCase#>" v-model="crud.<#formType#>.model.<#propertyNameLowerCase#>" value="false" class="custom-control-input">
+                            <input type="radio" name="<#propertyNameLowerCase#>" v-model="<#modelType#>.<#propertyNameLowerCase#>" value="false" class="custom-control-input">
                             <span class="custom-control-indicator"></span>
                             <span class="custom-control-description">Não</span>
                         </label>

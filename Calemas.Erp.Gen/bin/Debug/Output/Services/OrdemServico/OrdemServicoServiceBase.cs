@@ -69,30 +69,37 @@ namespace Calemas.Erp.Domain.Services
         public override async Task<OrdemServico> Save(OrdemServico ordemservico, bool questionToContinue = false)
         {
             var ordemservicoOld = await this.GetOne(new OrdemServicoFilter { OrdemServicoId = ordemservico.OrdemServicoId });
+			var ordemservicoOrchestrated = await this.DomainOrchestration(ordemservico, ordemservicoOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(ordemservico, ordemservicoOld) == false)
-                    return ordemservico;
+                if (base.Continue(ordemservicoOrchestrated, ordemservicoOld) == false)
+                    return ordemservicoOrchestrated;
             }
 
-            return this.SaveWithValidation(ordemservico, ordemservicoOld);
+            return this.SaveWithValidation(ordemservicoOrchestrated, ordemservicoOld);
         }
 
         public override async Task<OrdemServico> SavePartial(OrdemServico ordemservico, bool questionToContinue = false)
         {
             var ordemservicoOld = await this.GetOne(new OrdemServicoFilter { OrdemServicoId = ordemservico.OrdemServicoId });
+			var ordemservicoOrchestrated = await this.DomainOrchestration(ordemservico, ordemservicoOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(ordemservico, ordemservicoOld) == false)
-                    return ordemservico;
+                if (base.Continue(ordemservicoOrchestrated, ordemservicoOld) == false)
+                    return ordemservicoOrchestrated;
             }
 
-            return SaveWithOutValidation(ordemservico, ordemservicoOld);
+            return SaveWithOutValidation(ordemservicoOrchestrated, ordemservicoOld);
         }
 
         protected override OrdemServico SaveWithOutValidation(OrdemServico ordemservico, OrdemServico ordemservicoOld)
         {
             ordemservico = this.SaveDefault(ordemservico, ordemservicoOld);
+
+			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
+                return ordemservico;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -120,9 +127,7 @@ namespace Calemas.Erp.Domain.Services
             this.Specifications(ordemservico);
 
             if (!base._validationResult.IsValid)
-            {
                 return ordemservico;
-            }
             
             ordemservico = this.SaveDefault(ordemservico, ordemservicoOld);
             base._validationResult.Message = "OrdemServico cadastrado com sucesso :)";
@@ -138,19 +143,28 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual OrdemServico SaveDefault(OrdemServico ordemservico, OrdemServico ordemservicoOld)
-        {
-			
-			ordemservico = AuditDefault(ordemservico, ordemservicoOld);
+        {			
+			ordemservico = this.AuditDefault(ordemservico, ordemservicoOld);
 
             var isNew = ordemservicoOld.IsNull();
+			
             if (isNew)
-                ordemservico = this._rep.Add(ordemservico);
+                ordemservico = this.AddDefault(ordemservico);
             else
-            {
-                ordemservico = this._rep.Update(ordemservico);
-            }
+				ordemservico = this.UpdateDefault(ordemservico);
 
+            return ordemservico;
+        }
+		
+        protected virtual OrdemServico AddDefault(OrdemServico ordemservico)
+        {
+            ordemservico = this._rep.Add(ordemservico);
+            return ordemservico;
+        }
 
+		protected virtual OrdemServico UpdateDefault(OrdemServico ordemservico)
+        {
+            ordemservico = this._rep.Update(ordemservico);
             return ordemservico;
         }
     }

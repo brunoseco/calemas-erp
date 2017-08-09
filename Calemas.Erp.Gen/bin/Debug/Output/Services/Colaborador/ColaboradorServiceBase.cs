@@ -69,30 +69,37 @@ namespace Calemas.Erp.Domain.Services
         public override async Task<Colaborador> Save(Colaborador colaborador, bool questionToContinue = false)
         {
             var colaboradorOld = await this.GetOne(new ColaboradorFilter { ColaboradorId = colaborador.ColaboradorId });
+			var colaboradorOrchestrated = await this.DomainOrchestration(colaborador, colaboradorOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(colaborador, colaboradorOld) == false)
-                    return colaborador;
+                if (base.Continue(colaboradorOrchestrated, colaboradorOld) == false)
+                    return colaboradorOrchestrated;
             }
 
-            return this.SaveWithValidation(colaborador, colaboradorOld);
+            return this.SaveWithValidation(colaboradorOrchestrated, colaboradorOld);
         }
 
         public override async Task<Colaborador> SavePartial(Colaborador colaborador, bool questionToContinue = false)
         {
             var colaboradorOld = await this.GetOne(new ColaboradorFilter { ColaboradorId = colaborador.ColaboradorId });
+			var colaboradorOrchestrated = await this.DomainOrchestration(colaborador, colaboradorOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(colaborador, colaboradorOld) == false)
-                    return colaborador;
+                if (base.Continue(colaboradorOrchestrated, colaboradorOld) == false)
+                    return colaboradorOrchestrated;
             }
 
-            return SaveWithOutValidation(colaborador, colaboradorOld);
+            return SaveWithOutValidation(colaboradorOrchestrated, colaboradorOld);
         }
 
         protected override Colaborador SaveWithOutValidation(Colaborador colaborador, Colaborador colaboradorOld)
         {
             colaborador = this.SaveDefault(colaborador, colaboradorOld);
+
+			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
+                return colaborador;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -120,9 +127,7 @@ namespace Calemas.Erp.Domain.Services
             this.Specifications(colaborador);
 
             if (!base._validationResult.IsValid)
-            {
                 return colaborador;
-            }
             
             colaborador = this.SaveDefault(colaborador, colaboradorOld);
             base._validationResult.Message = "Colaborador cadastrado com sucesso :)";
@@ -138,19 +143,28 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual Colaborador SaveDefault(Colaborador colaborador, Colaborador colaboradorOld)
-        {
-			
-			colaborador = AuditDefault(colaborador, colaboradorOld);
+        {			
+			colaborador = this.AuditDefault(colaborador, colaboradorOld);
 
             var isNew = colaboradorOld.IsNull();
+			
             if (isNew)
-                colaborador = this._rep.Add(colaborador);
+                colaborador = this.AddDefault(colaborador);
             else
-            {
-                colaborador = this._rep.Update(colaborador);
-            }
+				colaborador = this.UpdateDefault(colaborador);
 
+            return colaborador;
+        }
+		
+        protected virtual Colaborador AddDefault(Colaborador colaborador)
+        {
+            colaborador = this._rep.Add(colaborador);
+            return colaborador;
+        }
 
+		protected virtual Colaborador UpdateDefault(Colaborador colaborador)
+        {
+            colaborador = this._rep.Update(colaborador);
             return colaborador;
         }
     }

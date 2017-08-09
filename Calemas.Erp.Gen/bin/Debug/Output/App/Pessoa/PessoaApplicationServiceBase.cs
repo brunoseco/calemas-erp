@@ -7,6 +7,7 @@ using Calemas.Erp.Domain.Filter;
 using Calemas.Erp.Domain.Interfaces.Services;
 using Calemas.Erp.Dto;
 using System.Threading.Tasks;
+using Common.Domain.Model;
 
 namespace Calemas.Erp.Application
 {
@@ -14,13 +15,15 @@ namespace Calemas.Erp.Application
     {
         protected readonly ValidatorAnnotations<PessoaDto> _validatorAnnotations;
         protected readonly IPessoaService _service;
+		protected readonly CurrentUser _user;
 
-        public PessoaApplicationServiceBase(IPessoaService service, IUnitOfWork uow, ICache cache) :
+        public PessoaApplicationServiceBase(IPessoaService service, IUnitOfWork uow, ICache cache, CurrentUser user) :
             base(service, uow, cache)
         {
             base.SetTagNameCache("Pessoa");
             this._validatorAnnotations = new ValidatorAnnotations<PessoaDto>();
             this._service = service;
+			this._user = user;
         }
 
 
@@ -29,8 +32,7 @@ namespace Calemas.Erp.Application
 			var _dto = dto as PessoaDtoSpecialized;
             this._validatorAnnotations.Validate(_dto);
             this._serviceBase.AddDomainValidation(this._validatorAnnotations.GetErros());
-
-			var domain = new Pessoa.PessoaFactory().GetDefaaultInstance(_dto);
+			var domain = new Pessoa.PessoaFactory().GetDefaultInstance(_dto, this._user);
             return domain;
         }
 
@@ -39,12 +41,6 @@ namespace Calemas.Erp.Application
         {
 			var pessoa = dto as PessoaDto;
             var result = await this._serviceBase.GetOne(new PessoaFilter { PessoaId = pessoa.PessoaId });
-
-            //Inicio da Transferencia dos valores
-           
-
-            //Fim da Transferencia dos valores
-
             return result;
         }
 

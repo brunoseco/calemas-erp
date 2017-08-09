@@ -69,30 +69,37 @@ namespace Calemas.Erp.Domain.Services
         public override async Task<Prioridade> Save(Prioridade prioridade, bool questionToContinue = false)
         {
             var prioridadeOld = await this.GetOne(new PrioridadeFilter { PrioridadeId = prioridade.PrioridadeId });
+			var prioridadeOrchestrated = await this.DomainOrchestration(prioridade, prioridadeOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(prioridade, prioridadeOld) == false)
-                    return prioridade;
+                if (base.Continue(prioridadeOrchestrated, prioridadeOld) == false)
+                    return prioridadeOrchestrated;
             }
 
-            return this.SaveWithValidation(prioridade, prioridadeOld);
+            return this.SaveWithValidation(prioridadeOrchestrated, prioridadeOld);
         }
 
         public override async Task<Prioridade> SavePartial(Prioridade prioridade, bool questionToContinue = false)
         {
             var prioridadeOld = await this.GetOne(new PrioridadeFilter { PrioridadeId = prioridade.PrioridadeId });
+			var prioridadeOrchestrated = await this.DomainOrchestration(prioridade, prioridadeOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(prioridade, prioridadeOld) == false)
-                    return prioridade;
+                if (base.Continue(prioridadeOrchestrated, prioridadeOld) == false)
+                    return prioridadeOrchestrated;
             }
 
-            return SaveWithOutValidation(prioridade, prioridadeOld);
+            return SaveWithOutValidation(prioridadeOrchestrated, prioridadeOld);
         }
 
         protected override Prioridade SaveWithOutValidation(Prioridade prioridade, Prioridade prioridadeOld)
         {
             prioridade = this.SaveDefault(prioridade, prioridadeOld);
+
+			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
+                return prioridade;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -120,9 +127,7 @@ namespace Calemas.Erp.Domain.Services
             this.Specifications(prioridade);
 
             if (!base._validationResult.IsValid)
-            {
                 return prioridade;
-            }
             
             prioridade = this.SaveDefault(prioridade, prioridadeOld);
             base._validationResult.Message = "Prioridade cadastrado com sucesso :)";
@@ -138,19 +143,28 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual Prioridade SaveDefault(Prioridade prioridade, Prioridade prioridadeOld)
-        {
-			
-			prioridade = AuditDefault(prioridade, prioridadeOld);
+        {			
+			prioridade = this.AuditDefault(prioridade, prioridadeOld);
 
             var isNew = prioridadeOld.IsNull();
+			
             if (isNew)
-                prioridade = this._rep.Add(prioridade);
+                prioridade = this.AddDefault(prioridade);
             else
-            {
-                prioridade = this._rep.Update(prioridade);
-            }
+				prioridade = this.UpdateDefault(prioridade);
 
+            return prioridade;
+        }
+		
+        protected virtual Prioridade AddDefault(Prioridade prioridade)
+        {
+            prioridade = this._rep.Add(prioridade);
+            return prioridade;
+        }
 
+		protected virtual Prioridade UpdateDefault(Prioridade prioridade)
+        {
+            prioridade = this._rep.Update(prioridade);
             return prioridade;
         }
     }

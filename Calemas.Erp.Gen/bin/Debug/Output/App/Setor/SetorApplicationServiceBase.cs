@@ -7,6 +7,7 @@ using Calemas.Erp.Domain.Filter;
 using Calemas.Erp.Domain.Interfaces.Services;
 using Calemas.Erp.Dto;
 using System.Threading.Tasks;
+using Common.Domain.Model;
 
 namespace Calemas.Erp.Application
 {
@@ -14,13 +15,15 @@ namespace Calemas.Erp.Application
     {
         protected readonly ValidatorAnnotations<SetorDto> _validatorAnnotations;
         protected readonly ISetorService _service;
+		protected readonly CurrentUser _user;
 
-        public SetorApplicationServiceBase(ISetorService service, IUnitOfWork uow, ICache cache) :
+        public SetorApplicationServiceBase(ISetorService service, IUnitOfWork uow, ICache cache, CurrentUser user) :
             base(service, uow, cache)
         {
             base.SetTagNameCache("Setor");
             this._validatorAnnotations = new ValidatorAnnotations<SetorDto>();
             this._service = service;
+			this._user = user;
         }
 
 
@@ -29,8 +32,7 @@ namespace Calemas.Erp.Application
 			var _dto = dto as SetorDtoSpecialized;
             this._validatorAnnotations.Validate(_dto);
             this._serviceBase.AddDomainValidation(this._validatorAnnotations.GetErros());
-
-			var domain = new Setor.SetorFactory().GetDefaaultInstance(_dto);
+			var domain = new Setor.SetorFactory().GetDefaultInstance(_dto, this._user);
             return domain;
         }
 
@@ -39,12 +41,6 @@ namespace Calemas.Erp.Application
         {
 			var setor = dto as SetorDto;
             var result = await this._serviceBase.GetOne(new SetorFilter { SetorId = setor.SetorId });
-
-            //Inicio da Transferencia dos valores
-           
-
-            //Fim da Transferencia dos valores
-
             return result;
         }
 

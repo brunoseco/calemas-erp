@@ -7,6 +7,7 @@ using Calemas.Erp.Domain.Filter;
 using Calemas.Erp.Domain.Interfaces.Services;
 using Calemas.Erp.Dto;
 using System.Threading.Tasks;
+using Common.Domain.Model;
 
 namespace Calemas.Erp.Application
 {
@@ -14,13 +15,15 @@ namespace Calemas.Erp.Application
     {
         protected readonly ValidatorAnnotations<TipoPlanoContaDto> _validatorAnnotations;
         protected readonly ITipoPlanoContaService _service;
+		protected readonly CurrentUser _user;
 
-        public TipoPlanoContaApplicationServiceBase(ITipoPlanoContaService service, IUnitOfWork uow, ICache cache) :
+        public TipoPlanoContaApplicationServiceBase(ITipoPlanoContaService service, IUnitOfWork uow, ICache cache, CurrentUser user) :
             base(service, uow, cache)
         {
             base.SetTagNameCache("TipoPlanoConta");
             this._validatorAnnotations = new ValidatorAnnotations<TipoPlanoContaDto>();
             this._service = service;
+			this._user = user;
         }
 
 
@@ -29,8 +32,7 @@ namespace Calemas.Erp.Application
 			var _dto = dto as TipoPlanoContaDtoSpecialized;
             this._validatorAnnotations.Validate(_dto);
             this._serviceBase.AddDomainValidation(this._validatorAnnotations.GetErros());
-
-			var domain = new TipoPlanoConta.TipoPlanoContaFactory().GetDefaaultInstance(_dto);
+			var domain = new TipoPlanoConta.TipoPlanoContaFactory().GetDefaultInstance(_dto, this._user);
             return domain;
         }
 
@@ -39,12 +41,6 @@ namespace Calemas.Erp.Application
         {
 			var tipoplanoconta = dto as TipoPlanoContaDto;
             var result = await this._serviceBase.GetOne(new TipoPlanoContaFilter { TipoPlanoContaId = tipoplanoconta.TipoPlanoContaId });
-
-            //Inicio da Transferencia dos valores
-           
-
-            //Fim da Transferencia dos valores
-
             return result;
         }
 

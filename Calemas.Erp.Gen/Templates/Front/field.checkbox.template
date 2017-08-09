@@ -1,7 +1,7 @@
-					<div class="form-group <#colformField#>" v-bind:class="{ 'has-danger': formErrors.has('form-<#formType#>.<#propertyNameLowerCase#>') }">
+					<div class="form-group <#colformField#>">
                         <div class="clearfix">&nbsp;</div>
                         <label class="custom-control custom-checkbox">
-                            <input type="checkbox" name="<#propertyNameLowerCase#>" class="custom-control-input" v-model="crud.<#formType#>.model.<#propertyNameLowerCase#>">
+                            <input type="checkbox" name="<#propertyNameLowerCase#>" class="custom-control-input" v-model="<#modelType#>.<#propertyNameLowerCase#>">
                             <span class="custom-control-indicator"></span>
                             <span class="custom-control-description"> <#propertyName#>?</span>
                         </label>

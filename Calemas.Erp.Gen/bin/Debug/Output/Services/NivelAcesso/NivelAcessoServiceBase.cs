@@ -69,30 +69,37 @@ namespace Calemas.Erp.Domain.Services
         public override async Task<NivelAcesso> Save(NivelAcesso nivelacesso, bool questionToContinue = false)
         {
             var nivelacessoOld = await this.GetOne(new NivelAcessoFilter { NivelAcessoId = nivelacesso.NivelAcessoId });
+			var nivelacessoOrchestrated = await this.DomainOrchestration(nivelacesso, nivelacessoOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(nivelacesso, nivelacessoOld) == false)
-                    return nivelacesso;
+                if (base.Continue(nivelacessoOrchestrated, nivelacessoOld) == false)
+                    return nivelacessoOrchestrated;
             }
 
-            return this.SaveWithValidation(nivelacesso, nivelacessoOld);
+            return this.SaveWithValidation(nivelacessoOrchestrated, nivelacessoOld);
         }
 
         public override async Task<NivelAcesso> SavePartial(NivelAcesso nivelacesso, bool questionToContinue = false)
         {
             var nivelacessoOld = await this.GetOne(new NivelAcessoFilter { NivelAcessoId = nivelacesso.NivelAcessoId });
+			var nivelacessoOrchestrated = await this.DomainOrchestration(nivelacesso, nivelacessoOld);
+
             if (questionToContinue)
             {
-                if (base.Continue(nivelacesso, nivelacessoOld) == false)
-                    return nivelacesso;
+                if (base.Continue(nivelacessoOrchestrated, nivelacessoOld) == false)
+                    return nivelacessoOrchestrated;
             }
 
-            return SaveWithOutValidation(nivelacesso, nivelacessoOld);
+            return SaveWithOutValidation(nivelacessoOrchestrated, nivelacessoOld);
         }
 
         protected override NivelAcesso SaveWithOutValidation(NivelAcesso nivelacesso, NivelAcesso nivelacessoOld)
         {
             nivelacesso = this.SaveDefault(nivelacesso, nivelacessoOld);
+
+			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
+                return nivelacesso;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -120,9 +127,7 @@ namespace Calemas.Erp.Domain.Services
             this.Specifications(nivelacesso);
 
             if (!base._validationResult.IsValid)
-            {
                 return nivelacesso;
-            }
             
             nivelacesso = this.SaveDefault(nivelacesso, nivelacessoOld);
             base._validationResult.Message = "NivelAcesso cadastrado com sucesso :)";
@@ -138,19 +143,28 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual NivelAcesso SaveDefault(NivelAcesso nivelacesso, NivelAcesso nivelacessoOld)
-        {
-			
+        {			
 			
 
             var isNew = nivelacessoOld.IsNull();
+			
             if (isNew)
-                nivelacesso = this._rep.Add(nivelacesso);
+                nivelacesso = this.AddDefault(nivelacesso);
             else
-            {
-                nivelacesso = this._rep.Update(nivelacesso);
-            }
+				nivelacesso = this.UpdateDefault(nivelacesso);
 
+            return nivelacesso;
+        }
+		
+        protected virtual NivelAcesso AddDefault(NivelAcesso nivelacesso)
+        {
+            nivelacesso = this._rep.Add(nivelacesso);
+            return nivelacesso;
+        }
 
+		protected virtual NivelAcesso UpdateDefault(NivelAcesso nivelacesso)
+        {
+            nivelacesso = this._rep.Update(nivelacesso);
             return nivelacesso;
         }
     }

@@ -21,6 +21,11 @@ namespace Calemas.Erp.Data.Repository
 				
 				queryFilter = queryFilter.Where(_=>_.Protoco.Contains(filters.Protoco));
 			};
+            if (filters.ResponsavelId.IsSent()) 
+			{ 
+				
+				queryFilter = queryFilter.Where(_=>_.ResponsavelId == filters.ResponsavelId);
+			};
             if (filters.ClienteId.IsSent()) 
 			{ 
 				
@@ -51,6 +56,17 @@ namespace Calemas.Erp.Data.Repository
 				
 				queryFilter = queryFilter.Where(_=>_.StatusOrdemServicoId == filters.StatusOrdemServicoId);
 			};
+            if (filters.DataOcorrenciaStart.IsSent()) 
+			{ 
+				
+				queryFilter = queryFilter.Where(_=>_.DataOcorrencia >= filters.DataOcorrenciaStart );
+			};
+            if (filters.DataOcorrenciaEnd.IsSent()) 
+			{ 
+				filters.DataOcorrenciaEnd = filters.DataOcorrenciaEnd.AddDays(1).AddMilliseconds(-1);
+				queryFilter = queryFilter.Where(_=>_.DataOcorrencia  <= filters.DataOcorrenciaEnd);
+			};
+
             if (filters.DataSituacaoStart.IsSent()) 
 			{ 
 				
