@@ -18,7 +18,7 @@ namespace <#namespace#>.Domain.Entitys
 
         }
 
-		public class <#className#>Factory
+		    public class <#className#>Factory
         {
             public <#className#> GetDefaultInstance(dynamic data, CurrentUser user)
             {
@@ -26,7 +26,8 @@ namespace <#namespace#>.Domain.Entitys
 
 <#methodsSetersConstruction#>
 
-				return construction;
+				construction.SetAttributeBehavior(data.AttributeBehavior);
+        		return construction;
             }
 
         }

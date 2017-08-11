@@ -8,6 +8,7 @@ using Calemas.Erp.Domain.Interfaces.Services;
 using Calemas.Erp.Dto;
 using System.Threading.Tasks;
 using Common.Domain.Model;
+using System.Collections.Generic;
 
 namespace Calemas.Erp.Application
 {
@@ -26,22 +27,42 @@ namespace Calemas.Erp.Application
 			this._user = user;
         }
 
-
-        protected override CategoriaEstoque MapperDtoToDomain<TDS>(TDS dto)
+       protected override async Task<CategoriaEstoque> MapperDtoToDomain<TDS>(TDS dto)
         {
-			var _dto = dto as CategoriaEstoqueDtoSpecialized;
-            this._validatorAnnotations.Validate(_dto);
-            this._serviceBase.AddDomainValidation(this._validatorAnnotations.GetErros());
-			var domain = new CategoriaEstoque.CategoriaEstoqueFactory().GetDefaultInstance(_dto, this._user);
-            return domain;
+			return await Task.Run(() =>
+            {
+				var _dto = dto as CategoriaEstoqueDtoSpecialized;
+				this._validatorAnnotations.Validate(_dto);
+				this._serviceBase.AddDomainValidation(this._validatorAnnotations.GetErros());
+				var domain = this._service.GetNewInstance(_dto, this._user);
+				return domain;
+			});
+        }
+
+		protected override async Task<IEnumerable<CategoriaEstoque>> MapperDtoToDomain<TDS>(IEnumerable<TDS> dtos)
+        {
+			var domains = new List<CategoriaEstoque>();
+			foreach (var dto in dtos)
+			{
+				var _dto = dto as CategoriaEstoqueDtoSpecialized;
+				this._validatorAnnotations.Validate(_dto);
+				this._serviceBase.AddDomainValidation(this._validatorAnnotations.GetErros());
+				var domain = await this._service.GetNewInstance(_dto, this._user);
+				domains.Add(domain);
+			}
+			return domains;
+			
         }
 
 
         protected override async Task<CategoriaEstoque> AlterDomainWithDto<TDS>(TDS dto)
         {
-			var categoriaestoque = dto as CategoriaEstoqueDto;
-            var result = await this._serviceBase.GetOne(new CategoriaEstoqueFilter { CategoriaEstoqueId = categoriaestoque.CategoriaEstoqueId });
-            return result;
+			return await Task.Run(() =>
+            {
+				var _dto = dto as CategoriaEstoqueDto;
+				var domain = this._service.GetUpdateInstance(_dto, this._user);
+				return domain;
+			});
         }
 
     }

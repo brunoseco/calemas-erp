@@ -8,6 +8,8 @@ namespace Common.Domain.Base
     public abstract class ServiceBase<T> where T : class
     {
 
+        protected List<T> _saveManyItens;
+
         protected readonly CacheHelper _cacheHelper;
 
         protected ValidationSpecificationResult _validationResult;
@@ -22,6 +24,7 @@ namespace Common.Domain.Base
         public ServiceBase(ICache cache)
         {
             this._cacheHelper = new CacheHelper(cache);
+            this._saveManyItens = new List<T>();
         }
 
         public virtual T AuditDefault(DomainBaseWithUserCreate entity, DomainBaseWithUserCreate entityOld)
@@ -46,17 +49,39 @@ namespace Common.Domain.Base
             entity.SetUserUpdate(this._user.GetSubjectId<int>());
         }
 
+        public virtual void Remove(IEnumerable<T> entitys)
+        {
+            foreach (var entity in entitys)
+            {
+                this.Remove(entity);
+            }
+        }
+
         public virtual async Task<IEnumerable<T>> Save(IEnumerable<T> entitys)
         {
-            var savedAll = new List<T>();
+            
             foreach (var item in entitys)
             {
                 var saved = await this.Save(item);
-                savedAll.Add(saved);
+                this._saveManyItens.Add(saved);
             }
-            return savedAll;
+            return this._saveManyItens;
 
         }
+
+        public virtual async Task<IEnumerable<T>> SavePartial(IEnumerable<T> entitys)
+        {
+
+            foreach (var item in entitys)
+            {
+                var saved = await this.SavePartial(item);
+                this._saveManyItens.Add(saved);
+            }
+            return this._saveManyItens;
+
+        }
+
+        public abstract void Remove(T entity);
 
         public abstract Task<T> Save(T entity, bool questionToContinue = true);
 
@@ -116,7 +141,12 @@ namespace Common.Domain.Base
         {
             return await Task.Run(() =>
             {
+                var isNew = entityOld.IsNull();
+                if (isNew)
+                    return entity;
+
                 return entity;
+
             });
         }
 

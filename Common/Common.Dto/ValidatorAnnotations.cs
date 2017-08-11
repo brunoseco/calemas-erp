@@ -46,14 +46,19 @@ namespace Common.Dto
 
             var errors = new List<string>();
 
-            var prop = typeof(T).GetTypeInfo().GetProperties();
+            var prop = entity.GetType().GetProperties();
 
             foreach (var item in prop)
             {
-                var atts = item.GetCustomAttributes(typeof(ValidationAttribute), true);
+                var attsCustom = item.GetCustomAttributes(typeof(RequiredAllowCustomAttribute), true);
+                if (attsCustom.IsAny())
+                    continue;
 
+                var atts = item.GetCustomAttributes(typeof(ValidationAttribute), true);
                 foreach (ValidationAttribute att in atts)
                 {
+                   
+
                     var propinfo = entity.GetType().GetTypeInfo().GetProperty(item.Name);
                     var propValue = propinfo.GetValue(entity);
 

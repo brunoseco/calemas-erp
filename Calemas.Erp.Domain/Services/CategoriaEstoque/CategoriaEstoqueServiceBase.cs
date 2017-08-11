@@ -38,7 +38,7 @@ namespace Calemas.Erp.Domain.Services
             return this._rep.PagingAndDefineFields(filters, queryBase);
         }
 
-        public virtual void Remove(CategoriaEstoque categoriaestoque)
+        public override void Remove(CategoriaEstoque categoriaestoque)
         {
             this._rep.Remove(categoriaestoque);
         }
@@ -68,7 +68,7 @@ namespace Calemas.Erp.Domain.Services
 
         public override async Task<CategoriaEstoque> Save(CategoriaEstoque categoriaestoque, bool questionToContinue = false)
         {
-            var categoriaestoqueOld = await this.GetOne(new CategoriaEstoqueFilter { CategoriaEstoqueId = categoriaestoque.CategoriaEstoqueId });
+			var categoriaestoqueOld = await this.GetOne(new CategoriaEstoqueFilter { CategoriaEstoqueId = categoriaestoque.CategoriaEstoqueId });
 			var categoriaestoqueOrchestrated = await this.DomainOrchestration(categoriaestoque, categoriaestoqueOld);
 
             if (questionToContinue)
@@ -99,7 +99,7 @@ namespace Calemas.Erp.Domain.Services
             categoriaestoque = this.SaveDefault(categoriaestoque, categoriaestoqueOld);
 
 			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
-                return categoriaestoque;
+				return categoriaestoque;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -143,11 +143,10 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual CategoriaEstoque SaveDefault(CategoriaEstoque categoriaestoque, CategoriaEstoque categoriaestoqueOld)
-        {			
+        {
 			
 
-            var isNew = categoriaestoqueOld.IsNull();
-			
+            var isNew = categoriaestoqueOld.IsNull();			
             if (isNew)
                 categoriaestoque = this.AddDefault(categoriaestoque);
             else
@@ -167,5 +166,21 @@ namespace Calemas.Erp.Domain.Services
             categoriaestoque = this._rep.Update(categoriaestoque);
             return categoriaestoque;
         }
+				
+		public virtual async Task<CategoriaEstoque> GetNewInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new CategoriaEstoque.CategoriaEstoqueFactory().GetDefaultInstance(model, user);
+            });
+         }
+
+		public virtual async Task<CategoriaEstoque> GetUpdateInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new CategoriaEstoque.CategoriaEstoqueFactory().GetDefaultInstance(model, user);
+            });
+         }
     }
 }

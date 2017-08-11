@@ -8,6 +8,7 @@ using Calemas.Erp.Domain.Interfaces.Services;
 using Calemas.Erp.Dto;
 using System.Threading.Tasks;
 using Common.Domain.Model;
+using System.Collections.Generic;
 
 namespace Calemas.Erp.Application
 {
@@ -26,22 +27,42 @@ namespace Calemas.Erp.Application
 			this._user = user;
         }
 
-
-        protected override Prioridade MapperDtoToDomain<TDS>(TDS dto)
+       protected override async Task<Prioridade> MapperDtoToDomain<TDS>(TDS dto)
         {
-			var _dto = dto as PrioridadeDtoSpecialized;
-            this._validatorAnnotations.Validate(_dto);
-            this._serviceBase.AddDomainValidation(this._validatorAnnotations.GetErros());
-			var domain = new Prioridade.PrioridadeFactory().GetDefaultInstance(_dto, this._user);
-            return domain;
+			return await Task.Run(() =>
+            {
+				var _dto = dto as PrioridadeDtoSpecialized;
+				this._validatorAnnotations.Validate(_dto);
+				this._serviceBase.AddDomainValidation(this._validatorAnnotations.GetErros());
+				var domain = this._service.GetNewInstance(_dto, this._user);
+				return domain;
+			});
+        }
+
+		protected override async Task<IEnumerable<Prioridade>> MapperDtoToDomain<TDS>(IEnumerable<TDS> dtos)
+        {
+			var domains = new List<Prioridade>();
+			foreach (var dto in dtos)
+			{
+				var _dto = dto as PrioridadeDtoSpecialized;
+				this._validatorAnnotations.Validate(_dto);
+				this._serviceBase.AddDomainValidation(this._validatorAnnotations.GetErros());
+				var domain = await this._service.GetNewInstance(_dto, this._user);
+				domains.Add(domain);
+			}
+			return domains;
+			
         }
 
 
         protected override async Task<Prioridade> AlterDomainWithDto<TDS>(TDS dto)
         {
-			var prioridade = dto as PrioridadeDto;
-            var result = await this._serviceBase.GetOne(new PrioridadeFilter { PrioridadeId = prioridade.PrioridadeId });
-            return result;
+			return await Task.Run(() =>
+            {
+				var _dto = dto as PrioridadeDto;
+				var domain = this._service.GetUpdateInstance(_dto, this._user);
+				return domain;
+			});
         }
 
     }

@@ -21,7 +21,11 @@ namespace Common.Domain.Interfaces
 
         Task<IEnumerable<T>> Save(IEnumerable<T> entitys);
 
+        Task<IEnumerable<T>> SavePartial(IEnumerable<T> entitys);
+
         void Remove(T entity);
+
+        void Remove(IEnumerable<T> entitys);
 
         Summary GetSummary(PaginateResult<T> paginateResult);
 
@@ -39,5 +43,8 @@ namespace Common.Domain.Interfaces
 
         string GetTagNameCache();
 
+        Task<T> GetNewInstance(dynamic model, CurrentUser user);
+
+        Task<T> GetUpdateInstance(dynamic model, CurrentUser user);
     }
 }

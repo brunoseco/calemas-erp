@@ -11,6 +11,7 @@ namespace Common.Domain.Interfaces
     {
         IQueryable<T> GetAll();
         IQueryable<T> GetAll(params Expression<Func<T, object>>[] includes);
+        IQueryable<T> GetAllAsTracking(params Expression<Func<T, object>>[] includes);
         T Add(T entity);
         T Update(T entity);
         IEnumerable<T> Update(IEnumerable<T> entitys);

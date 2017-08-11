@@ -27,6 +27,8 @@ export default {
 
             model: {},
 
+            modelEmpty: Object.assign({}, this.model, {}),
+
             filter: {
                 pageSize: 10,
                 pageIndex: 1,
@@ -64,9 +66,6 @@ export default {
             let resource = this.resource;
             if (this.resources.filter) resource = this.resources.filter;
             return new Api(resource);
-        },
-        modelEmpty: function () {
-            return Object.assign({}, this.model, {});;
         },
     },
     methods: {
@@ -181,7 +180,6 @@ export default {
 
         formValidate: function (action) {
             bus.$emit('validate');
-            console.log(this.errors)
             setTimeout(() => {
                 if (!this.errors.items || this.errors.items.length == 0)
                     action();

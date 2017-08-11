@@ -27,7 +27,7 @@ namespace <#namespace#>.Api.Controllers
         {
             this._rep = rep;
             this._app = app;
-			this._logger = logger.CreateLogger<<#className#>Controller>();
+			this._logger = logger.CreateLogger<<#className#>MoreController>();
         }
 
         [HttpGet]
@@ -77,6 +77,23 @@ namespace <#namespace#>.Api.Controllers
             catch (Exception ex)
             {
                 return result.ReturnCustomException(ex,"<#namespace#> - <#className#>", dtos);
+            }
+
+        }
+
+	[HttpPut]
+        public async Task<IActionResult> Put([FromBody]IEnumerable<<#className#>DtoSpecialized> dtos)
+        {
+            var result = new HttpResult<<#className#>Dto>(this._logger);
+            try
+            {
+                var returnModels = await this._app.SavePartial(dtos);
+                return result.ReturnCustomResponse(this._app, returnModels);
+
+            }
+            catch (Exception ex)
+            {
+                return result.ReturnCustomException(ex, "<#namespace#> - <#className#>", dtos);
             }
 
         }

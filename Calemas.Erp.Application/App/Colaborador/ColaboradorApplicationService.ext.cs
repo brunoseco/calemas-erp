@@ -31,16 +31,19 @@ namespace Calemas.Erp.Application
             return base.MapperDomainToDto<ColaboradorDtoSpecialized>(model) as TDS;
         }
 
-        protected override Colaborador MapperDtoToDomain<TDS>(TDS dto)
+        protected override async Task<Colaborador> MapperDtoToDomain<TDS>(TDS dto)
         {
-            var _dto = dto as ColaboradorDtoSpecialized;
+            return await Task.Run(() =>
+            {
+                var _dto = dto as ColaboradorDtoSpecialized;
 
-            var domain = base.MapperDtoToDomain(_dto);
+                var domain = base.MapperDtoToDomain(_dto).Result;
 
-            if (_dto.Pessoa.IsNotNull())
-                domain.Pessoa = new Pessoa.PessoaFactory().GetDefaultInstance(_dto.Pessoa, this._user);
+                if (_dto.Pessoa.IsNotNull())
+                    domain.Pessoa = new Pessoa.PessoaFactory().GetDefaultInstance(_dto.Pessoa, this._user);
 
-            return domain;
+                return domain;
+            });
         }
 
         protected override async Task<Colaborador> AlterDomainWithDto<TDS>(TDS dto)

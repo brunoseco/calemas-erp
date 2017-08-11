@@ -38,7 +38,7 @@ namespace Calemas.Erp.Domain.Services
             return this._rep.PagingAndDefineFields(filters, queryBase);
         }
 
-        public virtual void Remove(UnidadeMedida unidademedida)
+        public override void Remove(UnidadeMedida unidademedida)
         {
             this._rep.Remove(unidademedida);
         }
@@ -68,7 +68,7 @@ namespace Calemas.Erp.Domain.Services
 
         public override async Task<UnidadeMedida> Save(UnidadeMedida unidademedida, bool questionToContinue = false)
         {
-            var unidademedidaOld = await this.GetOne(new UnidadeMedidaFilter { UnidadeMedidaId = unidademedida.UnidadeMedidaId });
+			var unidademedidaOld = await this.GetOne(new UnidadeMedidaFilter { UnidadeMedidaId = unidademedida.UnidadeMedidaId });
 			var unidademedidaOrchestrated = await this.DomainOrchestration(unidademedida, unidademedidaOld);
 
             if (questionToContinue)
@@ -99,7 +99,7 @@ namespace Calemas.Erp.Domain.Services
             unidademedida = this.SaveDefault(unidademedida, unidademedidaOld);
 
 			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
-                return unidademedida;
+				return unidademedida;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -143,11 +143,10 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual UnidadeMedida SaveDefault(UnidadeMedida unidademedida, UnidadeMedida unidademedidaOld)
-        {			
+        {
 			
 
-            var isNew = unidademedidaOld.IsNull();
-			
+            var isNew = unidademedidaOld.IsNull();			
             if (isNew)
                 unidademedida = this.AddDefault(unidademedida);
             else
@@ -167,5 +166,21 @@ namespace Calemas.Erp.Domain.Services
             unidademedida = this._rep.Update(unidademedida);
             return unidademedida;
         }
+				
+		public virtual async Task<UnidadeMedida> GetNewInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new UnidadeMedida.UnidadeMedidaFactory().GetDefaultInstance(model, user);
+            });
+         }
+
+		public virtual async Task<UnidadeMedida> GetUpdateInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new UnidadeMedida.UnidadeMedidaFactory().GetDefaultInstance(model, user);
+            });
+         }
     }
 }

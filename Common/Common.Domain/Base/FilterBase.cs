@@ -13,6 +13,7 @@ namespace Common.Domain.Base
         {
             this.PageIndex = 0;
             this.PageSize = 50;
+            this.IsPagination = true;
         }
 
         public int PageSkipped

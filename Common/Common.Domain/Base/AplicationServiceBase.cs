@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Common.Domain.Base
 {
-    public abstract class ApplicationServiceBase<T, TD, TF> 
+    public abstract class ApplicationServiceBase<T, TD, TF>
         where TF : class
         where TD : class
     {
@@ -62,7 +62,7 @@ namespace Common.Domain.Base
         {
             this.BeginTransaction();
 
-            var model = this.MapperDtoToDomainForDelete(entity);
+            var model = await this.MapperDtoToDomainForDelete(entity);
             this._serviceBase.Remove(model);
 
             return await this.CommitAsync();
@@ -70,20 +70,33 @@ namespace Common.Domain.Base
 
         public virtual async Task<IEnumerable<TD>> Save(IEnumerable<TD> entitys)
         {
-            var entitysChanged = this.MapperDtoToDomain(entitys);
+            var entitysChanged = await this.MapperDtoToDomain(entitys);
 
             this.BeginTransaction();
 
             var resultDomain = await this._serviceBase.Save(entitysChanged);
-            var resultDto = this.MapperDomainToDto<TD>(resultDomain);
-
             if (!DomainIsValid())
-                return resultDto;
+                return  this.MapperDomainToDto<TD>(resultDomain);
 
             await this.CommitAsync();
-            return resultDto;
+            return  this.MapperDomainToDto<TD>(resultDomain);
         }
-        public virtual async Task<TD> SavePartial(TD entity,  bool questionToContinue = false) 
+
+        public virtual async Task<IEnumerable<TD>> SavePartial(IEnumerable<TD> entitys)
+        {
+            this.BeginTransaction();
+
+            var entitysChanged = await this.MapperDtoToDomain(entitys);
+
+            var resultDomain = await this._serviceBase.SavePartial(entitysChanged);
+            if (!DomainIsValid())
+                return this.MapperDomainToDto<TD>(resultDomain);
+
+            await this.CommitAsync();
+            return this.MapperDomainToDto<TD>(resultDomain);
+        }
+
+        public virtual async Task<TD> SavePartial(TD entity, bool questionToContinue = false)
         {
             var entityChanged = await this.AlterDomainWithDto(entity);
             if (entityChanged.IsNull())
@@ -95,38 +108,37 @@ namespace Common.Domain.Base
             this.BeginTransaction();
 
             var resultDomain = await this._serviceBase.SavePartial(entityChanged, questionToContinue);
-            var resultDto = this.MapperDomainToDto<TD>(resultDomain);
-
             if (!DomainIsValid())
-                return resultDto;
+                return this.MapperDomainToDto<TD>(resultDomain);
 
             await this.CommitAsync();
-            return resultDto;
+
+            return  this.MapperDomainToDto<TD>(resultDomain);
 
         }
 
 
         public virtual async Task<TD> Save(TD entity, bool questionToContinue = false)
         {
-            var model = this.MapperDtoToDomain(entity);
+            var model = await this.MapperDtoToDomain(entity);
 
             this.BeginTransaction();
 
             var resultDomain = await this._serviceBase.Save(model, questionToContinue);
-            var resultDto = this.MapperDomainToDto<TD>(resultDomain);
-
             if (!DomainIsValid())
-                return resultDto;
+                return this.MapperDomainToDto<TD>(resultDomain);
 
             await this.CommitAsync();
-            return resultDto;
+            return this.MapperDomainToDto<TD>(resultDomain); ;
         }
 
-        
 
-        private Summary Summary(PaginateResult<T> paginateResult)
-        {
-            return this._serviceBase.GetSummary(paginateResult);
+
+        private Summary Summary(FilterBase filter, PaginateResult<T> paginateResult)
+        { 
+            var _summary = this._serviceBase.GetSummary(paginateResult);
+            _summary.PageSize = filter.PageSize;
+            return _summary;
         }
 
         private bool DomainIsValid()
@@ -143,7 +155,7 @@ namespace Common.Domain.Base
 
             var paginateResultOptimize = await this._serviceBase.GetByFiltersPaging(filter as TF);
             var result = MapperDomainToDto(filter, paginateResultOptimize);
-            var summary = this.Summary(paginateResultOptimize);
+            var summary = this.Summary(filter, paginateResultOptimize);
 
             var searchResult = new SearchResult<TD>
             {
@@ -161,41 +173,52 @@ namespace Common.Domain.Base
             return searchResult;
         }
 
+        protected async virtual Task<T> MapperDtoToDomain<TDS>(TDS dto) where TDS : class
+        {
+            return await Task.Run(() =>
+            {
+                var result = AutoMapper.Mapper.Map<TDS, T>(dto);
+                return result;
+            });
+        }
+
+        protected async virtual Task<T> MapperDtoToDomainForDelete<TDS>(TDS dto) where TDS : class
+        {
+            return await Task.Run(() =>
+            {
+                var result = AutoMapper.Mapper.Map<TDS, T>(dto);
+                return result;
+            });
+        }
+       
+
+        protected async virtual Task<IEnumerable<T>> MapperDtoToDomain<TDS>(IEnumerable<TDS> dtos)
+        {
+            return await Task.Run(() =>
+            {
+                var result = AutoMapper.Mapper.Map<IEnumerable<TDS>, IEnumerable<T>>(dtos);
+                return result;
+            });
+        }
+
         protected virtual IEnumerable<TDS> MapperDomainToResult<TDS>(FilterBase filter, PaginateResult<T> dataList)
         {
             var result = filter.IsOnlySummary ? null : AutoMapper.Mapper.Map<IEnumerable<T>, IEnumerable<TDS>>(dataList.ResultPaginatedData);
             return result;
         }
 
-        protected virtual T MapperDtoToDomain<TDS>(TDS dto) where TDS : class
-        {
-            var result = AutoMapper.Mapper.Map<TDS, T>(dto);
-            return result;
-        }
-
-        protected virtual T MapperDtoToDomainForDelete<TDS>(TDS dto) where TDS : class
-        {
-            var result = AutoMapper.Mapper.Map<TDS, T>(dto);
-            return result;
-        }
-
         protected abstract Task<T> AlterDomainWithDto<TDS>(TDS dto) where TDS : class;
 
-        protected virtual TDS MapperDomainToDto<TDS>(T model) where TDS : class
-        {
-            var result = AutoMapper.Mapper.Map<T, TDS>(model);
-            return result;
-        }
-
-        protected virtual IEnumerable<T> MapperDtoToDomain<TDS>(IEnumerable<TDS> dtos)
-        {
-            var result = AutoMapper.Mapper.Map<IEnumerable<TDS>, IEnumerable<T>>(dtos);
-            return result;
-        }
 
         protected virtual IEnumerable<TDS> MapperDomainToDto<TDS>(IEnumerable<T> models)
         {
             var result = AutoMapper.Mapper.Map<IEnumerable<T>, IEnumerable<TDS>>(models);
+            return result;
+        }
+
+        protected virtual TDS MapperDomainToDto<TDS>(T model) where TDS : class
+        {
+            var result = AutoMapper.Mapper.Map<T, TDS>(model);
             return result;
         }
 

@@ -1,4 +1,4 @@
-﻿using Common.Domain.Base;
+using Common.Domain.Base;
 using Common.Domain.Interfaces;
 using Common.Domain.Model;
 using <#namespace#>.Domain.Entitys;
@@ -38,7 +38,7 @@ namespace <#namespace#>.Domain.Services
             return this._rep.PagingAndDefineFields(filters, queryBase);
         }
 
-        public virtual void Remove(<#className#> <#classNameLower#>)
+        public override void Remove(<#className#> <#classNameLower#>)
         {
             this._rep.Remove(<#classNameLower#>);
         }
@@ -68,7 +68,7 @@ namespace <#namespace#>.Domain.Services
 
         public override async Task<<#className#>> Save(<#className#> <#classNameLower#>, bool questionToContinue = false)
         {
-            var <#classNameLower#>Old = await this.GetOne(<#GetOneFilterKeys#>);
+			var <#classNameLower#>Old = await this.GetOne(<#GetOneFilterKeys#>);
 			var <#classNameLower#>Orchestrated = await this.DomainOrchestration(<#classNameLower#>, <#classNameLower#>Old);
 
             if (questionToContinue)
@@ -99,7 +99,7 @@ namespace <#namespace#>.Domain.Services
             <#classNameLower#> = this.SaveDefault(<#classNameLower#>, <#classNameLower#>Old);
 
 			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
-                return <#classNameLower#>;
+				return <#classNameLower#>;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -143,11 +143,10 @@ namespace <#namespace#>.Domain.Services
         }
 
         protected virtual <#className#> SaveDefault(<#className#> <#classNameLower#>, <#className#> <#classNameLower#>Old)
-        {			
+        {
 			<#AuditDefault#>
 
-            var isNew = <#classNameLower#>Old.IsNull();
-			
+            var isNew = <#classNameLower#>Old.IsNull();			
             if (isNew)
                 <#classNameLower#> = this.AddDefault(<#classNameLower#>);
             else
@@ -167,5 +166,21 @@ namespace <#namespace#>.Domain.Services
             <#classNameLower#> = this._rep.Update(<#classNameLower#>);
             return <#classNameLower#>;
         }
+				
+		public virtual async Task<<#className#>> GetNewInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new <#className#>.<#className#>Factory().GetDefaultInstance(model, user);
+            });
+         }
+
+		public virtual async Task<<#className#>> GetUpdateInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new <#className#>.<#className#>Factory().GetDefaultInstance(model, user);
+            });
+         }
     }
 }

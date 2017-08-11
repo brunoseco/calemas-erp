@@ -33,6 +33,12 @@ namespace Common.Orm
                 .AsNoTracking();
         }
 
+        public virtual IQueryable<T> GetAllAsTracking(params Expression<Func<T, object>>[] includes)
+        {
+            IQueryable<T> query = ctx.Set<T>();
+            return includes.Aggregate(query, (current, include) => current.Include(include));
+        }
+
         public virtual T Add(T entity)
         {
             var result = this.dbSet.Add(entity);

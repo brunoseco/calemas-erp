@@ -25,10 +25,10 @@ namespace <#namespace#>.Api.Controllers
         }
 
       
-        [HttpGet("{file}")]
-        public async Task<IActionResult> Get(string file)
+        [HttpGet("{folder}/{file}")]
+        public async Task<IActionResult> Get(string folder, string file)
         {
-            var uploads = Path.Combine(this._env.ContentRootPath, "upload");
+            var uploads = Path.Combine(this._env.ContentRootPath, "upload", folder);
             var filePath = $"{uploads}\\{file}";
             byte[] bytes;
 

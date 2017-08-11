@@ -17,6 +17,8 @@ namespace Common.Domain.Interfaces
 
         Task<T> SavePartial(T entity, bool questionToContinue = false);
 
+        Task<IEnumerable<T>> SavePartial(IEnumerable<T> entitys);
+
         Task<IEnumerable<T>> Save(IEnumerable<T> entitys);
 
         Task<int> Remove(T entity);

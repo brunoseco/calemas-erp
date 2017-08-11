@@ -28,7 +28,7 @@ namespace Sso.Server.Api
 
             var tools = new List<dynamic>
             {
-                <#claimsforadmin#>
+<#claimsforadmin#>
             };
 
             var _toolsForAdmin = JsonConvert.SerializeObject(tools);
@@ -90,7 +90,7 @@ namespace Sso.Server.Api
             };
         }
 
-        public static IEnumerable<Client> GetClients()
+        public static IEnumerable<Client> GetClients(ConfigSettingsBase settings)
         {
             return new List<Client>
             {
@@ -110,6 +110,33 @@ namespace Sso.Server.Api
                         "ssosa"
                     }
                 },
+
+				new Client
+                {
+                    ClientId = "<#contextName#>-spa",
+                    ClientSecrets = { new Secret("segredo".Sha256()) },
+
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+
+                    RedirectUris = {
+                        settings.RedirectUris
+                    },
+                    PostLogoutRedirectUris =
+                    {
+                        settings.PostLogoutRedirectUris
+                    },
+
+                    AllowedCorsOrigins = { settings.ClientAuthorityEndPoint },
+
+                    AllowedScopes =
+                    {
+                        StandardScopes.OpenId,
+                        StandardScopes.Profile,
+                        StandardScopes.Email,
+                        "ssosa"
+                    }
+                }
           
             };
         }

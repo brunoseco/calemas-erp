@@ -12,6 +12,7 @@ using <#namespace#>.Data.Context;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Common.API.Extensions;
+using System.Collections.Generic;
 
 namespace <#namespace#>.Api
 {
@@ -33,6 +34,13 @@ namespace <#namespace#>.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+			//Camelcase para json
+            services.AddMvc()
+			.AddJsonOptions(options =>
+			{
+				options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver();
+			});
+
             services.AddDbContext<DbContext<#contextName#>>(
              options => options.UseSqlServer(
                  Configuration
@@ -54,7 +62,10 @@ namespace <#namespace#>.Api
             ConfigContainer<#contextName#>.Config(services);			
 
             // Add framework services.
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(options =>
+            {
+                options.SerializerSettings.Converters.Add(new DateTimePtBrConverter());
+            });
 
         }
 
@@ -62,7 +73,7 @@ namespace <#namespace#>.Api
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, IOptions<ConfigSettingsBase> configSettingsBase)
         {
 
-			loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+	    loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
             app.UseDeveloperExceptionPage();
@@ -71,7 +82,7 @@ namespace <#namespace#>.Api
             app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
             {
                 Authority = configSettingsBase.Value.AuthorityEndPoint,
-                ScopeName = "ssosa",
+                AllowedScopes = new List<string> { "ssosa" },
                 RequireHttpsMetadata = false
             });
 
@@ -91,6 +102,7 @@ namespace <#namespace#>.Api
 
             app.AddTokenMiddleware();
             app.UseMvc();
+	    	app.UseCors("AllowAnyOrigin");
             AutoMapperConfig<#contextName#>.RegisterMappings();
         }
 
