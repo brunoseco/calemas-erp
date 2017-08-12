@@ -1,4 +1,4 @@
-<template>
+﻿<template>
     <div class="wrapper">
 
         <div class="row" style="margin-bottom: 1rem;margin-top: -0.5rem;">
@@ -50,19 +50,22 @@
                         <table class="table has-tickbox table-striped table-sm">
                             <thead class="">
                                 <tr>
-<#theadFields#>
+                                    <th>#</th>
+                                    <th>Nome<button @click="executeOrderBy('nome')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+
                                     <th class="text-center" width="75"><i class="fa fa-cog"></i></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr v-for="item in result.itens" class="animated fadeIn">
-<#tbodyFields#>
-                                    <td><span class="badge badge-pill" v-bind:class="{ 'badge-success': item.ativo, 'badge-danger': !item.ativo }">{{item.ativo ? 'Sim' : 'Não'}}</span></td>
+                                    <td>{{ item.categoriaEstoqueId }}</td>
+                                    <td>{{ item.nome }}</td>
+
                                     <td class="text-center">
-                                        <button type="button" class="btn btn-xs btn-primary" @click="openEdit(item.estoqueId, item)">
+                                        <button type="button" class="btn btn-xs btn-primary" @click="openEdit(item.categoriaEstoqueId, item)">
                                             <i class="fa fa-pencil"></i>
                                         </button>
-                                        <button type="button" class="btn btn-xs btn-danger" @click="openDelete(item.estoqueId, item)">
+                                        <button type="button" class="btn btn-xs btn-danger" @click="openDelete(item.categoriaEstoqueId, item)">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </td>

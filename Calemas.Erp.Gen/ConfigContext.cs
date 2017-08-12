@@ -87,16 +87,16 @@ namespace Calemas.Erp.Gen
 
                 TableInfo = new UniqueListTableInfo
                 {
-                    new TableInfo { TableName = "NivelAcesso", ClassNameFormated = "Nível de acesso", MakeFront = true,  },
+                    //new TableInfo { TableName = "NivelAcesso", ClassNameFormated = "Nível de acesso", MakeFront = true,  },
                     new TableInfo { TableName = "Colaborador", ClassNameFormated = "Colaborador", MakeFront = true,  },
-                    new TableInfo { TableName = "OrdemServico", ClassNameFormated = "Ordem de serviço", MakeFront = true,  },
-                    new TableInfo { TableName = "Setor", ClassNameFormated = "Setor", MakeFront = true,  },
-                    new TableInfo { TableName = "Prioridade", ClassNameFormated = "Prioridade", MakeFront = true,  },
-                    new TableInfo { TableName = "TipoOrdemServico", ClassNameFormated = "Tipo de ordem de serviço", MakeFront = true,  },
-                    new TableInfo { TableName = "Cor", ClassNameFormated = "Cores do sistema", MakeFront = true,  },
+                    //new TableInfo { TableName = "OrdemServico", ClassNameFormated = "Ordem de serviço", MakeFront = true,  },
+                    //new TableInfo { TableName = "Setor", ClassNameFormated = "Setor", MakeFront = true,  },
+                    //new TableInfo { TableName = "Prioridade", ClassNameFormated = "Prioridade", MakeFront = true,  },
+                    //new TableInfo { TableName = "TipoOrdemServico", ClassNameFormated = "Tipo de ordem de serviço", MakeFront = true,  },
+                    //new TableInfo { TableName = "Cor", ClassNameFormated = "Cores do sistema", MakeFront = true,  },
 
-                    new TableInfo { TableName = "Financeiro", ClassNameFormated = "Financeiro", MakeFront = true,  },
-                    new TableInfo { TableName = "PlanoConta", ClassNameFormated = "Plano de Conta", MakeFront = true,  },
+                    //new TableInfo { TableName = "Financeiro", ClassNameFormated = "Financeiro", MakeFront = true,  },
+                    //new TableInfo { TableName = "PlanoConta", ClassNameFormated = "Plano de Conta", MakeFront = true,  },
 
                     new TableInfo { TableName = "CategoriaEstoque", ClassNameFormated = "Categoria de estoque", MakeFront = true,  },
                     new TableInfo { TableName = "UnidadeMedida", ClassNameFormated = "Unidade de medida", MakeFront = true,  },

@@ -72,6 +72,8 @@ export default {
 
         openCreate: function (model) {
             this.resetForm();
+            if (model) this.model = model;
+            else this.model = this.modelEmpty;
             this.modalCreateOpen = true;
         },
         openEdit: function (id, item) {
@@ -190,7 +192,6 @@ export default {
         },
         resetForm: function () {
             this.errors.items = [];
-            this.model = this.modelEmpty;
         },
         registerErrorsEvent: function () {
             bus.$on('errors-changed', (_errors) => {
