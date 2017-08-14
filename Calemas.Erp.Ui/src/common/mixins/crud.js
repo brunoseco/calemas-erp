@@ -1,7 +1,10 @@
 ﻿import modal from 'vue-strap/src/Modal'
 import pagination from 'vue-pagination-bootstrap'
 import bus from '../../common/bus'
+import loading from '../loading'
+
 import { Api } from '../api'
+import { Notification } from '../notification'
 
 export default {
     components: {
@@ -20,14 +23,16 @@ export default {
                 filter: null
             },
 
-            modalCreateOpen: false,
-            modalEditOpen: false,
-            modalDeleteOpen: false,
-            modalDetailOpen: false,
+            modalCreateIsOpen: false,
+            modalEditIsOpen: false,
+            modalDeleteIsOpen: false,
+            modalDetailIsOpen: false,
+            filterPartialIsOpen: true,
 
             model: {},
-
             modelEmpty: Object.assign({}, this.model, {}),
+
+            notification: new Notification(this),
 
             filter: {
                 pageSize: 10,
@@ -74,14 +79,14 @@ export default {
             this.resetForm();
             if (model) this.model = model;
             else this.model = this.modelEmpty;
-            this.modalCreateOpen = true;
+            this.modalCreateIsOpen = true;
         },
         openEdit: function (id, item) {
             this.resetForm();
             this.apiEdit.filters = item;
             this.apiEdit.filters.id = id;
             this.apiEdit.get().then(data => {
-                this.modalEditOpen = true;
+                this.modalEditIsOpen = true;
                 this.model = data.data;
             });
         },
@@ -90,7 +95,7 @@ export default {
             this.apiDelete.filters = item;
             this.apiDelete.filters.id = id;
             this.apiDelete.get().then(data => {
-                this.modalDeleteOpen = true;
+                this.modalDeleteIsOpen = true;
                 this.model = data.data;
             });
         },
@@ -98,22 +103,25 @@ export default {
             this.apiDetail.filters = item;
             this.apiDetail.filters.id = id;
             this.apiDetail.get().then(data => {
-                this.modalDetailOpen = true;
+                this.modalDetailIsOpen = true;
                 this.model = data.data;
             });
         },
+        openFilter: function () {
+            this.filterPartialIsOpen = !this.filterPartialIsOpen;
+        },
 
         closeCreate: function () {
-            this.modalCreateOpen = false;
+            this.modalCreateIsOpen = false;
         },
         closeEdit: function () {
-            this.modalEditOpen = false;
+            this.modalEditIsOpen = false;
         },
         closeDelete: function () {
-            this.modalDeleteOpen = false;
+            this.modalDeleteIsOpen = false;
         },
         closeDetail: function () {
-            this.modalDetailOpen = false;
+            this.modalDetailIsOpen = false;
         },
 
         onBeforeCreate: (model) => { },
@@ -127,32 +135,47 @@ export default {
         executeCreate: function (model) {
             this.onBeforeCreate(model);
             this.formValidate(() => {
+                this.defaultBeforeAction();
                 this.apiCreate.post(model).then(data => {
+                    this.notification.success("Sucesso", "Criado com sucesso.")
+                    this.defaultSuccessResult(data);
                     this.onAfterCreate(data);
                     this.executeFilter();
-                    this.modalCreateOpen = false;
-                }, err => { })
+                    this.modalCreateIsOpen = false;
+                }, err => {
+                    this.defaultErrorResult(err);
+                })
             });
         },
         executeEdit: function (model) {
             this.onBeforeEdit(model);
             this.formValidate(() => {
+                this.defaultBeforeAction();
                 this.apiEdit.post(model).then(data => {
+                    this.notification.success("Sucesso", "Edição realizada com sucesso.")
+                    this.defaultSuccessResult(data);
                     this.onAfterEdit(data);
                     this.executeFilter();
-                    this.modalEditOpen = false;
-                }, err => { })
+                    this.modalEditIsOpen = false;
+                }, err => {
+                    this.defaultErrorResult(err);
+                })
             });
         },
         executeDelete: function (model) {
             this.onBeforeDelete(model);
             this.formValidate(() => {
+                this.defaultBeforeAction();
                 this.apiDelete.filters = model;
                 this.apiDelete.delete().then(data => {
+                    this.notification.success("Sucesso", "Removido com sucesso.")
+                    this.defaultSuccessResult(data);
                     this.onAfterDelete(data);
                     this.executeFilter();
-                    this.modalDeleteOpen = false;
-                }, err => { });
+                    this.modalDeleteIsOpen = false;
+                }, err => {
+                    this.defaultErrorResult(err);
+                });
             });
         },
 
@@ -198,7 +221,27 @@ export default {
                 this.errors.items = [];
                 _errors.forEach(error => { this.errors.add(error.field, error.msg) });
             });
-        }
+        },
+
+        defaultBeforeAction: function () {
+            this.showLoading();
+        },
+        defaultSuccessResult: function (res) {
+            this.hideLoading();
+        },
+        defaultErrorResult: function (err) {
+            this.hideLoading();
+
+            if (err.data && err.data.result && err.data.result.errors)
+                this.notification.error('Erro', err.data.result.errors[0]);
+        },
+
+        showLoading: function () {
+            loading.show();
+        },
+        hideLoading: function () {
+            loading.hide();
+        },
 
     },
 

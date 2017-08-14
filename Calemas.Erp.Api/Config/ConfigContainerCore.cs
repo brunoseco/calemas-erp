@@ -20,6 +20,14 @@ namespace Calemas.Erp.Api
             services.AddScoped<ICache, RedisComponent>();
             services.AddScoped<IUnitOfWork, UnitOfWork<DbContextCore>>();
             
+			services.AddScoped<IAgendaApplicationService, AgendaApplicationService>();
+			services.AddScoped<IAgendaService, AgendaService>();
+			services.AddScoped<IAgendaRepository, AgendaRepository>();
+
+			services.AddScoped<IAgendaColaboradorApplicationService, AgendaColaboradorApplicationService>();
+			services.AddScoped<IAgendaColaboradorService, AgendaColaboradorService>();
+			services.AddScoped<IAgendaColaboradorRepository, AgendaColaboradorRepository>();
+
 			services.AddScoped<IPessoaApplicationService, PessoaApplicationService>();
 			services.AddScoped<IPessoaService, PessoaService>();
 			services.AddScoped<IPessoaRepository, PessoaRepository>();

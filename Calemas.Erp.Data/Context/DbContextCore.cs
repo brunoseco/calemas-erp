@@ -15,6 +15,8 @@ namespace Calemas.Erp.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            new AgendaMap(modelBuilder.Entity<Agenda>());
+            new AgendaColaboradorMap(modelBuilder.Entity<AgendaColaborador>());
             new PessoaMap(modelBuilder.Entity<Pessoa>());
             new ColaboradorMap(modelBuilder.Entity<Colaborador>());
             new NivelAcessoMap(modelBuilder.Entity<NivelAcesso>());

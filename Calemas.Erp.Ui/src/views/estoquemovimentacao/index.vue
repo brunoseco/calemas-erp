@@ -84,7 +84,7 @@
             </div>
         </div>
 
-        <modal title="Cadastro de Estoque" v-model="modalCreateOpen" effect="fade/zoom" type="modal-success" :large="true">
+        <modal title="Cadastro de Estoque" v-model="modalCreateIsOpen" effect="fade/zoom" type="modal-success" :large="true">
             <div slot="modal-header" class="modal-header">
                 <h4 class="modal-title">Cadastro de Movimentação de estoque</h4>
                 <button type="button" class="close" @click="closeCreate()"><span>&times;</span></button>

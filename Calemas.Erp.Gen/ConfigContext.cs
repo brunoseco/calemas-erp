@@ -47,6 +47,9 @@ namespace Calemas.Erp.Gen
 
                 TableInfo = new UniqueListTableInfo
                 {
+                    new TableInfo { TableName = "Agenda", MakeCrud = true, MakeDomain = true, MakeDto = true , MakeSummary = true , MakeApp = true, MakeApi = true},
+                    new TableInfo { TableName = "AgendaColaborador", MakeCrud = true, MakeDomain = true, MakeDto = true , MakeSummary = true , MakeApp = true, MakeApi = true},
+
                     new TableInfo { TableName = "Pessoa", MakeCrud = true, MakeDomain = true, MakeDto = true , MakeSummary = true , MakeApp = true, MakeApi = true},
                     new TableInfo { TableName = "Colaborador", MakeCrud = true, MakeDomain = true, MakeDto = true , MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "NivelAcesso", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
@@ -102,6 +105,9 @@ namespace Calemas.Erp.Gen
                     new TableInfo { TableName = "UnidadeMedida", ClassNameFormated = "Unidade de medida", MakeFront = true,  },
                     new TableInfo { TableName = "Estoque", ClassNameFormated = "Estoque", MakeFront = true,  },
                     new TableInfo { TableName = "EstoqueMovimentacao", ClassNameFormated = "Movimentação de estoque", MakeFront = true,  },
+
+                    new TableInfo { TableName = "Agenda", ClassNameFormated = "Agenda", MakeFront = true,  },
+
 
                 }
             };

@@ -90,7 +90,7 @@
             </div>
         </div>
 
-        <modal title="Cadastro de Estoque" v-model="modalCreateOpen" effect="fade/zoom" type="modal-success" :large="true">
+        <modal title="Cadastro de Estoque" v-model="modalCreateIsOpen" effect="fade/zoom" type="modal-success" :large="true">
             <div slot="modal-header" class="modal-header">
                 <h4 class="modal-title">Cadastro de Estoque</h4>
                 <button type="button" class="close" @click="closeCreate()"><span>&times;</span></button>
@@ -106,7 +106,7 @@
             </div>
         </modal>
 
-        <modal title="Edição de Estoque" v-model="modalEditOpen" effect="fade/zoom" type="modal-primary" :large="true">
+        <modal title="Edição de Estoque" v-model="modalEditIsOpen" effect="fade/zoom" type="modal-primary" :large="true">
             <div slot="modal-header" class="modal-header">
                 <h4 class="modal-title">Edição de Estoque</h4>
                 <button type="button" class="close" @click="closeEdit()"><span>&times;</span></button>
@@ -122,7 +122,7 @@
             </div>
         </modal>
 
-        <modal title="Exclusão de Estoque" v-model="modalDeleteOpen" type="modal-danger" effect="fade/zoom">
+        <modal title="Exclusão de Estoque" v-model="modalDeleteIsOpen" type="modal-danger" effect="fade/zoom">
             <div slot="modal-header" class="modal-header">
                 <h4 class="modal-title">Exclusão de Estoque</h4>
                 <button type="button" class="close" @click="closeDelete()"><span>&times;</span></button>

@@ -8,6 +8,16 @@ namespace Calemas.Erp.Application.Config
 
         public DominioToDtoProfileCore()
         {
+            CreateMap(typeof(Agenda), typeof(AgendaDto)).ReverseMap();
+            CreateMap(typeof(Agenda), typeof(AgendaDtoSpecialized));
+            CreateMap(typeof(Agenda), typeof(AgendaDtoSpecializedResult));
+            CreateMap(typeof(Agenda), typeof(AgendaDtoSpecializedReport));
+            CreateMap(typeof(Agenda), typeof(AgendaDtoSpecializedDetails));
+            CreateMap(typeof(AgendaColaborador), typeof(AgendaColaboradorDto)).ReverseMap();
+            CreateMap(typeof(AgendaColaborador), typeof(AgendaColaboradorDtoSpecialized));
+            CreateMap(typeof(AgendaColaborador), typeof(AgendaColaboradorDtoSpecializedResult));
+            CreateMap(typeof(AgendaColaborador), typeof(AgendaColaboradorDtoSpecializedReport));
+            CreateMap(typeof(AgendaColaborador), typeof(AgendaColaboradorDtoSpecializedDetails));
             CreateMap(typeof(Pessoa), typeof(PessoaDto)).ReverseMap();
             CreateMap(typeof(Pessoa), typeof(PessoaDtoSpecialized));
             CreateMap(typeof(Pessoa), typeof(PessoaDtoSpecializedResult));

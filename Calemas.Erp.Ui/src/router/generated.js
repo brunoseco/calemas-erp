@@ -5,6 +5,7 @@ const routers = [
     { path: 'unidademedida', name: 'UnidadeMedida', component: function (resolve) { require(['@/views/unidademedida'], resolve) } },
     { path: 'estoque', name: 'Estoque', component: function (resolve) { require(['@/views/estoque'], resolve) } },
     { path: 'estoquemovimentacao', name: 'EstoqueMovimentacao', component: function (resolve) { require(['@/views/estoquemovimentacao'], resolve) } },
+    { path: 'agenda', name: 'Agenda', component: function (resolve) { require(['@/views/agenda'], resolve) } },
 
 ];
 

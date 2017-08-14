@@ -7,6 +7,11 @@
                         <i class="icon-home"></i> Dashboard
                     </router-link>
                 </li>
+                <li class="nav-item">
+                    <router-link :to="'/agenda'" class="nav-link">
+                        <i class="icon-calendar"></i> Agenda
+                    </router-link>
+                </li>
                 <li class="nav-title">
                     Menu
                 </li>

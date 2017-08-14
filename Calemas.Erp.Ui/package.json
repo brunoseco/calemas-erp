@@ -17,6 +17,7 @@
     "vue": "^2.3.3",
     "vue-axios": "^2.0.2",
     "vue-color": "^2.2.0",
+    "vue-fullcalendar": "^1.0.9",
     "vue-moment": "^2.0.2",
     "vue-notification": "^1.2.3",
     "vue-pagination-bootstrap": "^1.0.1",
