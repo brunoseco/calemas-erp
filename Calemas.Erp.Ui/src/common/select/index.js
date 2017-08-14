@@ -10,7 +10,7 @@ function _addOption(el, text, value) {
 
 Vue.directive('select', {
     bind: function (el, binding, vnode) {
-        _addOption(el, binding.value.default, null);
+        _addOption(el, binding.value.default, undefined);
         var api = new Api(binding.value.dataitem);
         api.dataItem().then(data => {
             if (data.dataList) {

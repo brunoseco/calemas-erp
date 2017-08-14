@@ -48,8 +48,8 @@
                 <full-calendar :events="events" locale="pt" :weekNames="weekNames" :monthNames="monthNames" @eventClick="eventClickAgenda"></full-calendar>
             </div>
         </div>
-        
-        <modal title="Cadastro de Estoque" v-model="modalCreateIsOpen" effect="fade/zoom" type="modal-success" :large="true">
+
+        <modal title="Cadastro de Agenda" v-model="modalCreateIsOpen" effect="fade/zoom" type="modal-success" :large="true">
             <div slot="modal-header" class="modal-header">
                 <h4 class="modal-title">Cadastro de Agenda</h4>
                 <button type="button" class="close" @click="closeCreate()"><span>&times;</span></button>
@@ -64,12 +64,27 @@
                 </button>
             </div>
         </modal>
+
+        <modal title="Edição de Agenda" v-model="modalEditIsOpen" effect="fade/zoom" type="modal-primary" :large="true">
+            <div slot="modal-header" class="modal-header">
+                <h4 class="modal-title">Edição de Agenda</h4>
+                <button type="button" class="close" @click="closeEdit()"><span>&times;</span></button>
+            </div>
+            <form v-on:submit.prevent="executeEdit(model)">
+                <form-partial :model="model" />
+            </form>
+            <div slot="modal-footer" class="modal-footer">
+                <button type="button" class="btn btn-default" @click="closeEdit()">Fechar</button>
+                <button type="button" class="btn btn-success" @click="executeEdit(model)">
+                    <i class="fa fa-pencil"></i> Alterar
+                </button>
+            </div>
+        </modal>
         
     </div>
 </template>
 <script>
 
-    import Vue from 'vue'
     import fullCalendar from 'vue-fullcalendar'
 
     import crudBase from '../../common/mixins/crud'
@@ -106,6 +121,7 @@
         },
         methods: {
             eventClickAgenda: function (a, b, c) {
+                console.log(a.YOUR_DATA)
                 this.openEdit(a.YOUR_DATA.agendaId, a.YOUR_DATA);
             },
         }
