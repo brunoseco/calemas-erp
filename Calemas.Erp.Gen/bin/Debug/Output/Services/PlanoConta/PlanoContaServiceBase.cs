@@ -38,7 +38,7 @@ namespace Calemas.Erp.Domain.Services
             return this._rep.PagingAndDefineFields(filters, queryBase);
         }
 
-        public virtual void Remove(PlanoConta planoconta)
+        public override void Remove(PlanoConta planoconta)
         {
             this._rep.Remove(planoconta);
         }
@@ -68,7 +68,7 @@ namespace Calemas.Erp.Domain.Services
 
         public override async Task<PlanoConta> Save(PlanoConta planoconta, bool questionToContinue = false)
         {
-            var planocontaOld = await this.GetOne(new PlanoContaFilter { PlanoContaId = planoconta.PlanoContaId });
+			var planocontaOld = await this.GetOne(new PlanoContaFilter { PlanoContaId = planoconta.PlanoContaId });
 			var planocontaOrchestrated = await this.DomainOrchestration(planoconta, planocontaOld);
 
             if (questionToContinue)
@@ -99,7 +99,7 @@ namespace Calemas.Erp.Domain.Services
             planoconta = this.SaveDefault(planoconta, planocontaOld);
 
 			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
-                return planoconta;
+				return planoconta;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -143,11 +143,10 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual PlanoConta SaveDefault(PlanoConta planoconta, PlanoConta planocontaOld)
-        {			
+        {
 			
 
-            var isNew = planocontaOld.IsNull();
-			
+            var isNew = planocontaOld.IsNull();			
             if (isNew)
                 planoconta = this.AddDefault(planoconta);
             else
@@ -167,5 +166,21 @@ namespace Calemas.Erp.Domain.Services
             planoconta = this._rep.Update(planoconta);
             return planoconta;
         }
+				
+		public virtual async Task<PlanoConta> GetNewInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new PlanoConta.PlanoContaFactory().GetDefaultInstance(model, user);
+            });
+         }
+
+		public virtual async Task<PlanoConta> GetUpdateInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new PlanoConta.PlanoContaFactory().GetDefaultInstance(model, user);
+            });
+         }
     }
 }

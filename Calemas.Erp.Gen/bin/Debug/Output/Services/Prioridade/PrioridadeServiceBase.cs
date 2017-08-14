@@ -38,7 +38,7 @@ namespace Calemas.Erp.Domain.Services
             return this._rep.PagingAndDefineFields(filters, queryBase);
         }
 
-        public virtual void Remove(Prioridade prioridade)
+        public override void Remove(Prioridade prioridade)
         {
             this._rep.Remove(prioridade);
         }
@@ -68,7 +68,7 @@ namespace Calemas.Erp.Domain.Services
 
         public override async Task<Prioridade> Save(Prioridade prioridade, bool questionToContinue = false)
         {
-            var prioridadeOld = await this.GetOne(new PrioridadeFilter { PrioridadeId = prioridade.PrioridadeId });
+			var prioridadeOld = await this.GetOne(new PrioridadeFilter { PrioridadeId = prioridade.PrioridadeId });
 			var prioridadeOrchestrated = await this.DomainOrchestration(prioridade, prioridadeOld);
 
             if (questionToContinue)
@@ -99,7 +99,7 @@ namespace Calemas.Erp.Domain.Services
             prioridade = this.SaveDefault(prioridade, prioridadeOld);
 
 			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
-                return prioridade;
+				return prioridade;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -143,11 +143,10 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual Prioridade SaveDefault(Prioridade prioridade, Prioridade prioridadeOld)
-        {			
+        {
 			prioridade = this.AuditDefault(prioridade, prioridadeOld);
 
-            var isNew = prioridadeOld.IsNull();
-			
+            var isNew = prioridadeOld.IsNull();			
             if (isNew)
                 prioridade = this.AddDefault(prioridade);
             else
@@ -167,5 +166,21 @@ namespace Calemas.Erp.Domain.Services
             prioridade = this._rep.Update(prioridade);
             return prioridade;
         }
+				
+		public virtual async Task<Prioridade> GetNewInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new Prioridade.PrioridadeFactory().GetDefaultInstance(model, user);
+            });
+         }
+
+		public virtual async Task<Prioridade> GetUpdateInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new Prioridade.PrioridadeFactory().GetDefaultInstance(model, user);
+            });
+         }
     }
 }

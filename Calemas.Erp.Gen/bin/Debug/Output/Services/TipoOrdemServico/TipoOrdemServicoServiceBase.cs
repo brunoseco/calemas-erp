@@ -38,7 +38,7 @@ namespace Calemas.Erp.Domain.Services
             return this._rep.PagingAndDefineFields(filters, queryBase);
         }
 
-        public virtual void Remove(TipoOrdemServico tipoordemservico)
+        public override void Remove(TipoOrdemServico tipoordemservico)
         {
             this._rep.Remove(tipoordemservico);
         }
@@ -68,7 +68,7 @@ namespace Calemas.Erp.Domain.Services
 
         public override async Task<TipoOrdemServico> Save(TipoOrdemServico tipoordemservico, bool questionToContinue = false)
         {
-            var tipoordemservicoOld = await this.GetOne(new TipoOrdemServicoFilter { TipoOrdemServicoId = tipoordemservico.TipoOrdemServicoId });
+			var tipoordemservicoOld = await this.GetOne(new TipoOrdemServicoFilter { TipoOrdemServicoId = tipoordemservico.TipoOrdemServicoId });
 			var tipoordemservicoOrchestrated = await this.DomainOrchestration(tipoordemservico, tipoordemservicoOld);
 
             if (questionToContinue)
@@ -99,7 +99,7 @@ namespace Calemas.Erp.Domain.Services
             tipoordemservico = this.SaveDefault(tipoordemservico, tipoordemservicoOld);
 
 			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
-                return tipoordemservico;
+				return tipoordemservico;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -143,11 +143,10 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual TipoOrdemServico SaveDefault(TipoOrdemServico tipoordemservico, TipoOrdemServico tipoordemservicoOld)
-        {			
+        {
 			tipoordemservico = this.AuditDefault(tipoordemservico, tipoordemservicoOld);
 
-            var isNew = tipoordemservicoOld.IsNull();
-			
+            var isNew = tipoordemservicoOld.IsNull();			
             if (isNew)
                 tipoordemservico = this.AddDefault(tipoordemservico);
             else
@@ -167,5 +166,21 @@ namespace Calemas.Erp.Domain.Services
             tipoordemservico = this._rep.Update(tipoordemservico);
             return tipoordemservico;
         }
+				
+		public virtual async Task<TipoOrdemServico> GetNewInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new TipoOrdemServico.TipoOrdemServicoFactory().GetDefaultInstance(model, user);
+            });
+         }
+
+		public virtual async Task<TipoOrdemServico> GetUpdateInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new TipoOrdemServico.TipoOrdemServicoFactory().GetDefaultInstance(model, user);
+            });
+         }
     }
 }

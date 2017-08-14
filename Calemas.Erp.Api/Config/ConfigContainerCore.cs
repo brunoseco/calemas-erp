@@ -28,6 +28,22 @@ namespace Calemas.Erp.Api
 			services.AddScoped<IAgendaColaboradorService, AgendaColaboradorService>();
 			services.AddScoped<IAgendaColaboradorRepository, AgendaColaboradorRepository>();
 
+			services.AddScoped<IClienteApplicationService, ClienteApplicationService>();
+			services.AddScoped<IClienteService, ClienteService>();
+			services.AddScoped<IClienteRepository, ClienteRepository>();
+
+			services.AddScoped<ICondominioApplicationService, CondominioApplicationService>();
+			services.AddScoped<ICondominioService, CondominioService>();
+			services.AddScoped<ICondominioRepository, CondominioRepository>();
+
+			services.AddScoped<IEnderecoApplicationService, EnderecoApplicationService>();
+			services.AddScoped<IEnderecoService, EnderecoService>();
+			services.AddScoped<IEnderecoRepository, EnderecoRepository>();
+
+			services.AddScoped<IStatusClienteApplicationService, StatusClienteApplicationService>();
+			services.AddScoped<IStatusClienteService, StatusClienteService>();
+			services.AddScoped<IStatusClienteRepository, StatusClienteRepository>();
+
 			services.AddScoped<IPessoaApplicationService, PessoaApplicationService>();
 			services.AddScoped<IPessoaService, PessoaService>();
 			services.AddScoped<IPessoaRepository, PessoaRepository>();
@@ -59,6 +75,10 @@ namespace Calemas.Erp.Api
 			services.AddScoped<ITipoOrdemServicoApplicationService, TipoOrdemServicoApplicationService>();
 			services.AddScoped<ITipoOrdemServicoService, TipoOrdemServicoService>();
 			services.AddScoped<ITipoOrdemServicoRepository, TipoOrdemServicoRepository>();
+
+			services.AddScoped<IStatusOrdemServicoApplicationService, StatusOrdemServicoApplicationService>();
+			services.AddScoped<IStatusOrdemServicoService, StatusOrdemServicoService>();
+			services.AddScoped<IStatusOrdemServicoRepository, StatusOrdemServicoRepository>();
 
 			services.AddScoped<IFinanceiroApplicationService, FinanceiroApplicationService>();
 			services.AddScoped<IFinanceiroService, FinanceiroService>();

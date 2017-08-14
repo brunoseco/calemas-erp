@@ -38,7 +38,7 @@ namespace Calemas.Erp.Domain.Services
             return this._rep.PagingAndDefineFields(filters, queryBase);
         }
 
-        public virtual void Remove(Cor cor)
+        public override void Remove(Cor cor)
         {
             this._rep.Remove(cor);
         }
@@ -68,7 +68,7 @@ namespace Calemas.Erp.Domain.Services
 
         public override async Task<Cor> Save(Cor cor, bool questionToContinue = false)
         {
-            var corOld = await this.GetOne(new CorFilter { CorId = cor.CorId });
+			var corOld = await this.GetOne(new CorFilter { CorId = cor.CorId });
 			var corOrchestrated = await this.DomainOrchestration(cor, corOld);
 
             if (questionToContinue)
@@ -99,7 +99,7 @@ namespace Calemas.Erp.Domain.Services
             cor = this.SaveDefault(cor, corOld);
 
 			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
-                return cor;
+				return cor;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -143,11 +143,10 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual Cor SaveDefault(Cor cor, Cor corOld)
-        {			
+        {
 			
 
-            var isNew = corOld.IsNull();
-			
+            var isNew = corOld.IsNull();			
             if (isNew)
                 cor = this.AddDefault(cor);
             else
@@ -167,5 +166,21 @@ namespace Calemas.Erp.Domain.Services
             cor = this._rep.Update(cor);
             return cor;
         }
+				
+		public virtual async Task<Cor> GetNewInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new Cor.CorFactory().GetDefaultInstance(model, user);
+            });
+         }
+
+		public virtual async Task<Cor> GetUpdateInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new Cor.CorFactory().GetDefaultInstance(model, user);
+            });
+         }
     }
 }

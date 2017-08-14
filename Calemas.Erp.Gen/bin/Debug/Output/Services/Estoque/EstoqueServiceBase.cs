@@ -38,7 +38,7 @@ namespace Calemas.Erp.Domain.Services
             return this._rep.PagingAndDefineFields(filters, queryBase);
         }
 
-        public virtual void Remove(Estoque estoque)
+        public override void Remove(Estoque estoque)
         {
             this._rep.Remove(estoque);
         }
@@ -68,7 +68,7 @@ namespace Calemas.Erp.Domain.Services
 
         public override async Task<Estoque> Save(Estoque estoque, bool questionToContinue = false)
         {
-            var estoqueOld = await this.GetOne(new EstoqueFilter { EstoqueId = estoque.EstoqueId });
+			var estoqueOld = await this.GetOne(new EstoqueFilter { EstoqueId = estoque.EstoqueId });
 			var estoqueOrchestrated = await this.DomainOrchestration(estoque, estoqueOld);
 
             if (questionToContinue)
@@ -99,7 +99,7 @@ namespace Calemas.Erp.Domain.Services
             estoque = this.SaveDefault(estoque, estoqueOld);
 
 			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
-                return estoque;
+				return estoque;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -143,11 +143,10 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual Estoque SaveDefault(Estoque estoque, Estoque estoqueOld)
-        {			
+        {
 			estoque = this.AuditDefault(estoque, estoqueOld);
 
-            var isNew = estoqueOld.IsNull();
-			
+            var isNew = estoqueOld.IsNull();			
             if (isNew)
                 estoque = this.AddDefault(estoque);
             else
@@ -167,5 +166,21 @@ namespace Calemas.Erp.Domain.Services
             estoque = this._rep.Update(estoque);
             return estoque;
         }
+				
+		public virtual async Task<Estoque> GetNewInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new Estoque.EstoqueFactory().GetDefaultInstance(model, user);
+            });
+         }
+
+		public virtual async Task<Estoque> GetUpdateInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new Estoque.EstoqueFactory().GetDefaultInstance(model, user);
+            });
+         }
     }
 }

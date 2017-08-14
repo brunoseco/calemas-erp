@@ -8,6 +8,7 @@ using Calemas.Erp.Domain.Interfaces.Services;
 using Calemas.Erp.Dto;
 using System.Threading.Tasks;
 using Common.Domain.Model;
+using System.Collections.Generic;
 
 namespace Calemas.Erp.Application
 {
@@ -26,22 +27,42 @@ namespace Calemas.Erp.Application
 			this._user = user;
         }
 
-
-        protected override Pessoa MapperDtoToDomain<TDS>(TDS dto)
+       protected override async Task<Pessoa> MapperDtoToDomain<TDS>(TDS dto)
         {
-			var _dto = dto as PessoaDtoSpecialized;
-            this._validatorAnnotations.Validate(_dto);
-            this._serviceBase.AddDomainValidation(this._validatorAnnotations.GetErros());
-			var domain = new Pessoa.PessoaFactory().GetDefaultInstance(_dto, this._user);
-            return domain;
+			return await Task.Run(() =>
+            {
+				var _dto = dto as PessoaDtoSpecialized;
+				this._validatorAnnotations.Validate(_dto);
+				this._serviceBase.AddDomainValidation(this._validatorAnnotations.GetErros());
+				var domain = this._service.GetNewInstance(_dto, this._user);
+				return domain;
+			});
+        }
+
+		protected override async Task<IEnumerable<Pessoa>> MapperDtoToDomain<TDS>(IEnumerable<TDS> dtos)
+        {
+			var domains = new List<Pessoa>();
+			foreach (var dto in dtos)
+			{
+				var _dto = dto as PessoaDtoSpecialized;
+				this._validatorAnnotations.Validate(_dto);
+				this._serviceBase.AddDomainValidation(this._validatorAnnotations.GetErros());
+				var domain = await this._service.GetNewInstance(_dto, this._user);
+				domains.Add(domain);
+			}
+			return domains;
+			
         }
 
 
         protected override async Task<Pessoa> AlterDomainWithDto<TDS>(TDS dto)
         {
-			var pessoa = dto as PessoaDto;
-            var result = await this._serviceBase.GetOne(new PessoaFilter { PessoaId = pessoa.PessoaId });
-            return result;
+			return await Task.Run(() =>
+            {
+				var _dto = dto as PessoaDto;
+				var domain = this._service.GetUpdateInstance(_dto, this._user);
+				return domain;
+			});
         }
 
     }

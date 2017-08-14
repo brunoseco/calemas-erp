@@ -38,7 +38,7 @@ namespace Calemas.Erp.Domain.Services
             return this._rep.PagingAndDefineFields(filters, queryBase);
         }
 
-        public virtual void Remove(Financeiro financeiro)
+        public override void Remove(Financeiro financeiro)
         {
             this._rep.Remove(financeiro);
         }
@@ -68,7 +68,7 @@ namespace Calemas.Erp.Domain.Services
 
         public override async Task<Financeiro> Save(Financeiro financeiro, bool questionToContinue = false)
         {
-            var financeiroOld = await this.GetOne(new FinanceiroFilter { FinanceiroId = financeiro.FinanceiroId });
+			var financeiroOld = await this.GetOne(new FinanceiroFilter { FinanceiroId = financeiro.FinanceiroId });
 			var financeiroOrchestrated = await this.DomainOrchestration(financeiro, financeiroOld);
 
             if (questionToContinue)
@@ -99,7 +99,7 @@ namespace Calemas.Erp.Domain.Services
             financeiro = this.SaveDefault(financeiro, financeiroOld);
 
 			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
-                return financeiro;
+				return financeiro;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -143,11 +143,10 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual Financeiro SaveDefault(Financeiro financeiro, Financeiro financeiroOld)
-        {			
+        {
 			financeiro = this.AuditDefault(financeiro, financeiroOld);
 
-            var isNew = financeiroOld.IsNull();
-			
+            var isNew = financeiroOld.IsNull();			
             if (isNew)
                 financeiro = this.AddDefault(financeiro);
             else
@@ -167,5 +166,21 @@ namespace Calemas.Erp.Domain.Services
             financeiro = this._rep.Update(financeiro);
             return financeiro;
         }
+				
+		public virtual async Task<Financeiro> GetNewInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new Financeiro.FinanceiroFactory().GetDefaultInstance(model, user);
+            });
+         }
+
+		public virtual async Task<Financeiro> GetUpdateInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new Financeiro.FinanceiroFactory().GetDefaultInstance(model, user);
+            });
+         }
     }
 }

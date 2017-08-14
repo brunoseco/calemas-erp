@@ -16,6 +16,17 @@
                     Menu
                 </li>
                 <li class="nav-item nav-dropdown">
+                    <div class="nav-link nav-dropdown-toggle" @click="handleClick"><i class="icon-docs"></i> Comercial</div>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <router-link :to="'/cliente'" class="nav-link">Clientes</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link :to="'/condominio'" class="nav-link">Condomínios</router-link>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-dropdown">
                     <div class="nav-link nav-dropdown-toggle" @click="handleClick"><i class="icon-list"></i> Administrativo</div>
                     <ul class="nav-dropdown-items">
                         <li class="nav-item">

@@ -50,6 +50,10 @@ namespace Calemas.Erp.Gen
                     new TableInfo { TableName = "Agenda", MakeCrud = true, MakeDomain = true, MakeDto = true , MakeSummary = true , MakeApp = true, MakeApi = true},
                     new TableInfo { TableName = "AgendaColaborador", MakeCrud = true, MakeDomain = true, MakeDto = true , MakeSummary = true , MakeApp = true, MakeApi = true},
 
+                    new TableInfo { TableName = "Cliente", MakeCrud = true, MakeDomain = true, MakeDto = true , MakeSummary = true , MakeApp = true, MakeApi = true},
+                    new TableInfo { TableName = "Condominio", MakeCrud = true, MakeDomain = true, MakeDto = true , MakeSummary = true , MakeApp = true, MakeApi = true},
+                    new TableInfo { TableName = "Endereco", MakeCrud = true, MakeDomain = true, MakeDto = true , MakeSummary = true , MakeApp = true, MakeApi = true},
+                    new TableInfo { TableName = "StatusCliente", MakeCrud = true, MakeDomain = true, MakeDto = true , MakeSummary = true , MakeApp = true, MakeApi = true},
                     new TableInfo { TableName = "Pessoa", MakeCrud = true, MakeDomain = true, MakeDto = true , MakeSummary = true , MakeApp = true, MakeApi = true},
                     new TableInfo { TableName = "Colaborador", MakeCrud = true, MakeDomain = true, MakeDto = true , MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "NivelAcesso", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
@@ -59,6 +63,7 @@ namespace Calemas.Erp.Gen
                     new TableInfo { TableName = "Setor", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "Prioridade", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "TipoOrdemServico", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
+                    new TableInfo { TableName = "StatusOrdemServico", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
 
                     new TableInfo { TableName = "Financeiro", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "PlanoConta", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
@@ -90,23 +95,19 @@ namespace Calemas.Erp.Gen
 
                 TableInfo = new UniqueListTableInfo
                 {
-                    //new TableInfo { TableName = "NivelAcesso", ClassNameFormated = "Nível de acesso", MakeFront = true,  },
                     new TableInfo { TableName = "Colaborador", ClassNameFormated = "Colaborador", MakeFront = true,  },
-                    //new TableInfo { TableName = "OrdemServico", ClassNameFormated = "Ordem de serviço", MakeFront = true,  },
-                    //new TableInfo { TableName = "Setor", ClassNameFormated = "Setor", MakeFront = true,  },
-                    //new TableInfo { TableName = "Prioridade", ClassNameFormated = "Prioridade", MakeFront = true,  },
-                    //new TableInfo { TableName = "TipoOrdemServico", ClassNameFormated = "Tipo de ordem de serviço", MakeFront = true,  },
-                    //new TableInfo { TableName = "Cor", ClassNameFormated = "Cores do sistema", MakeFront = true,  },
-
-                    //new TableInfo { TableName = "Financeiro", ClassNameFormated = "Financeiro", MakeFront = true,  },
-                    //new TableInfo { TableName = "PlanoConta", ClassNameFormated = "Plano de Conta", MakeFront = true,  },
 
                     new TableInfo { TableName = "CategoriaEstoque", ClassNameFormated = "Categoria de estoque", MakeFront = true,  },
                     new TableInfo { TableName = "UnidadeMedida", ClassNameFormated = "Unidade de medida", MakeFront = true,  },
                     new TableInfo { TableName = "Estoque", ClassNameFormated = "Estoque", MakeFront = true,  },
                     new TableInfo { TableName = "EstoqueMovimentacao", ClassNameFormated = "Movimentação de estoque", MakeFront = true,  },
 
+                    new TableInfo { TableName = "Cliente", ClassNameFormated = "Cliente", MakeFront = true,  },
+                    new TableInfo { TableName = "Condominio", ClassNameFormated = "Condomínio", MakeFront = true,  },
+
                     new TableInfo { TableName = "Agenda", ClassNameFormated = "Agenda", MakeFront = true,  },
+
+                    new TableInfo { TableName = "StatusCliente", ClassNameFormated = "Situação do cliente", MakeFront = true,  },
 
 
                 }

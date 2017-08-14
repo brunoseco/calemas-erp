@@ -38,7 +38,7 @@ namespace Calemas.Erp.Domain.Services
             return this._rep.PagingAndDefineFields(filters, queryBase);
         }
 
-        public virtual void Remove(Colaborador colaborador)
+        public override void Remove(Colaborador colaborador)
         {
             this._rep.Remove(colaborador);
         }
@@ -68,7 +68,7 @@ namespace Calemas.Erp.Domain.Services
 
         public override async Task<Colaborador> Save(Colaborador colaborador, bool questionToContinue = false)
         {
-            var colaboradorOld = await this.GetOne(new ColaboradorFilter { ColaboradorId = colaborador.ColaboradorId });
+			var colaboradorOld = await this.GetOne(new ColaboradorFilter { ColaboradorId = colaborador.ColaboradorId });
 			var colaboradorOrchestrated = await this.DomainOrchestration(colaborador, colaboradorOld);
 
             if (questionToContinue)
@@ -99,7 +99,7 @@ namespace Calemas.Erp.Domain.Services
             colaborador = this.SaveDefault(colaborador, colaboradorOld);
 
 			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
-                return colaborador;
+				return colaborador;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -143,11 +143,10 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual Colaborador SaveDefault(Colaborador colaborador, Colaborador colaboradorOld)
-        {			
+        {
 			colaborador = this.AuditDefault(colaborador, colaboradorOld);
 
-            var isNew = colaboradorOld.IsNull();
-			
+            var isNew = colaboradorOld.IsNull();			
             if (isNew)
                 colaborador = this.AddDefault(colaborador);
             else
@@ -167,5 +166,21 @@ namespace Calemas.Erp.Domain.Services
             colaborador = this._rep.Update(colaborador);
             return colaborador;
         }
+				
+		public virtual async Task<Colaborador> GetNewInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new Colaborador.ColaboradorFactory().GetDefaultInstance(model, user);
+            });
+         }
+
+		public virtual async Task<Colaborador> GetUpdateInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new Colaborador.ColaboradorFactory().GetDefaultInstance(model, user);
+            });
+         }
     }
 }

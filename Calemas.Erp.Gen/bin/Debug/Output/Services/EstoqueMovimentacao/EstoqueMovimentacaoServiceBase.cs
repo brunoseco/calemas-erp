@@ -38,7 +38,7 @@ namespace Calemas.Erp.Domain.Services
             return this._rep.PagingAndDefineFields(filters, queryBase);
         }
 
-        public virtual void Remove(EstoqueMovimentacao estoquemovimentacao)
+        public override void Remove(EstoqueMovimentacao estoquemovimentacao)
         {
             this._rep.Remove(estoquemovimentacao);
         }
@@ -68,7 +68,7 @@ namespace Calemas.Erp.Domain.Services
 
         public override async Task<EstoqueMovimentacao> Save(EstoqueMovimentacao estoquemovimentacao, bool questionToContinue = false)
         {
-            var estoquemovimentacaoOld = await this.GetOne(new EstoqueMovimentacaoFilter { EstoqueMovimentacaoId = estoquemovimentacao.EstoqueMovimentacaoId });
+			var estoquemovimentacaoOld = await this.GetOne(new EstoqueMovimentacaoFilter { EstoqueMovimentacaoId = estoquemovimentacao.EstoqueMovimentacaoId });
 			var estoquemovimentacaoOrchestrated = await this.DomainOrchestration(estoquemovimentacao, estoquemovimentacaoOld);
 
             if (questionToContinue)
@@ -99,7 +99,7 @@ namespace Calemas.Erp.Domain.Services
             estoquemovimentacao = this.SaveDefault(estoquemovimentacao, estoquemovimentacaoOld);
 
 			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
-                return estoquemovimentacao;
+				return estoquemovimentacao;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -143,11 +143,10 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual EstoqueMovimentacao SaveDefault(EstoqueMovimentacao estoquemovimentacao, EstoqueMovimentacao estoquemovimentacaoOld)
-        {			
+        {
 			estoquemovimentacao = this.AuditDefault(estoquemovimentacao, estoquemovimentacaoOld);
 
-            var isNew = estoquemovimentacaoOld.IsNull();
-			
+            var isNew = estoquemovimentacaoOld.IsNull();			
             if (isNew)
                 estoquemovimentacao = this.AddDefault(estoquemovimentacao);
             else
@@ -167,5 +166,21 @@ namespace Calemas.Erp.Domain.Services
             estoquemovimentacao = this._rep.Update(estoquemovimentacao);
             return estoquemovimentacao;
         }
+				
+		public virtual async Task<EstoqueMovimentacao> GetNewInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new EstoqueMovimentacao.EstoqueMovimentacaoFactory().GetDefaultInstance(model, user);
+            });
+         }
+
+		public virtual async Task<EstoqueMovimentacao> GetUpdateInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new EstoqueMovimentacao.EstoqueMovimentacaoFactory().GetDefaultInstance(model, user);
+            });
+         }
     }
 }

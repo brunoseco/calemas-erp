@@ -27,7 +27,7 @@ namespace Calemas.Erp.Api.Controllers
         {
             this._rep = rep;
             this._app = app;
-			this._logger = logger.CreateLogger<EstoqueMovimentacaoController>();
+			this._logger = logger.CreateLogger<EstoqueMovimentacaoMoreController>();
         }
 
         [HttpGet]
@@ -77,6 +77,23 @@ namespace Calemas.Erp.Api.Controllers
             catch (Exception ex)
             {
                 return result.ReturnCustomException(ex,"Calemas.Erp - EstoqueMovimentacao", dtos);
+            }
+
+        }
+
+	[HttpPut]
+        public async Task<IActionResult> Put([FromBody]IEnumerable<EstoqueMovimentacaoDtoSpecialized> dtos)
+        {
+            var result = new HttpResult<EstoqueMovimentacaoDto>(this._logger);
+            try
+            {
+                var returnModels = await this._app.SavePartial(dtos);
+                return result.ReturnCustomResponse(this._app, returnModels);
+
+            }
+            catch (Exception ex)
+            {
+                return result.ReturnCustomException(ex, "Calemas.Erp - EstoqueMovimentacao", dtos);
             }
 
         }

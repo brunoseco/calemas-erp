@@ -38,7 +38,7 @@ namespace Calemas.Erp.Domain.Services
             return this._rep.PagingAndDefineFields(filters, queryBase);
         }
 
-        public virtual void Remove(Pessoa pessoa)
+        public override void Remove(Pessoa pessoa)
         {
             this._rep.Remove(pessoa);
         }
@@ -68,7 +68,7 @@ namespace Calemas.Erp.Domain.Services
 
         public override async Task<Pessoa> Save(Pessoa pessoa, bool questionToContinue = false)
         {
-            var pessoaOld = await this.GetOne(new PessoaFilter { PessoaId = pessoa.PessoaId });
+			var pessoaOld = await this.GetOne(new PessoaFilter { PessoaId = pessoa.PessoaId });
 			var pessoaOrchestrated = await this.DomainOrchestration(pessoa, pessoaOld);
 
             if (questionToContinue)
@@ -99,7 +99,7 @@ namespace Calemas.Erp.Domain.Services
             pessoa = this.SaveDefault(pessoa, pessoaOld);
 
 			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
-                return pessoa;
+				return pessoa;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -143,11 +143,10 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual Pessoa SaveDefault(Pessoa pessoa, Pessoa pessoaOld)
-        {			
+        {
 			pessoa = this.AuditDefault(pessoa, pessoaOld);
 
-            var isNew = pessoaOld.IsNull();
-			
+            var isNew = pessoaOld.IsNull();			
             if (isNew)
                 pessoa = this.AddDefault(pessoa);
             else
@@ -167,5 +166,21 @@ namespace Calemas.Erp.Domain.Services
             pessoa = this._rep.Update(pessoa);
             return pessoa;
         }
+				
+		public virtual async Task<Pessoa> GetNewInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new Pessoa.PessoaFactory().GetDefaultInstance(model, user);
+            });
+         }
+
+		public virtual async Task<Pessoa> GetUpdateInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new Pessoa.PessoaFactory().GetDefaultInstance(model, user);
+            });
+         }
     }
 }

@@ -38,7 +38,7 @@ namespace Calemas.Erp.Domain.Services
             return this._rep.PagingAndDefineFields(filters, queryBase);
         }
 
-        public virtual void Remove(OrdemServico ordemservico)
+        public override void Remove(OrdemServico ordemservico)
         {
             this._rep.Remove(ordemservico);
         }
@@ -68,7 +68,7 @@ namespace Calemas.Erp.Domain.Services
 
         public override async Task<OrdemServico> Save(OrdemServico ordemservico, bool questionToContinue = false)
         {
-            var ordemservicoOld = await this.GetOne(new OrdemServicoFilter { OrdemServicoId = ordemservico.OrdemServicoId });
+			var ordemservicoOld = await this.GetOne(new OrdemServicoFilter { OrdemServicoId = ordemservico.OrdemServicoId });
 			var ordemservicoOrchestrated = await this.DomainOrchestration(ordemservico, ordemservicoOld);
 
             if (questionToContinue)
@@ -99,7 +99,7 @@ namespace Calemas.Erp.Domain.Services
             ordemservico = this.SaveDefault(ordemservico, ordemservicoOld);
 
 			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
-                return ordemservico;
+				return ordemservico;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -143,11 +143,10 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual OrdemServico SaveDefault(OrdemServico ordemservico, OrdemServico ordemservicoOld)
-        {			
+        {
 			ordemservico = this.AuditDefault(ordemservico, ordemservicoOld);
 
-            var isNew = ordemservicoOld.IsNull();
-			
+            var isNew = ordemservicoOld.IsNull();			
             if (isNew)
                 ordemservico = this.AddDefault(ordemservico);
             else
@@ -167,5 +166,21 @@ namespace Calemas.Erp.Domain.Services
             ordemservico = this._rep.Update(ordemservico);
             return ordemservico;
         }
+				
+		public virtual async Task<OrdemServico> GetNewInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new OrdemServico.OrdemServicoFactory().GetDefaultInstance(model, user);
+            });
+         }
+
+		public virtual async Task<OrdemServico> GetUpdateInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new OrdemServico.OrdemServicoFactory().GetDefaultInstance(model, user);
+            });
+         }
     }
 }

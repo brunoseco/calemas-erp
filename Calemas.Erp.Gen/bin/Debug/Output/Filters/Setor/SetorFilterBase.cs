@@ -1,7 +1,7 @@
 using Common.Domain.Base;
 using System;
 
-namespace calemas.erp.Domain.Filter
+namespace Calemas.Erp.Domain.Filter
 {
     public class SetorFilterBase : FilterBase
     {

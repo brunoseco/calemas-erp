@@ -27,7 +27,7 @@ namespace Calemas.Erp.Api.Controllers
         {
             this._rep = rep;
             this._app = app;
-			this._logger = logger.CreateLogger<PlanoContaController>();
+			this._logger = logger.CreateLogger<PlanoContaMoreController>();
         }
 
         [HttpGet]
@@ -77,6 +77,23 @@ namespace Calemas.Erp.Api.Controllers
             catch (Exception ex)
             {
                 return result.ReturnCustomException(ex,"Calemas.Erp - PlanoConta", dtos);
+            }
+
+        }
+
+	[HttpPut]
+        public async Task<IActionResult> Put([FromBody]IEnumerable<PlanoContaDtoSpecialized> dtos)
+        {
+            var result = new HttpResult<PlanoContaDto>(this._logger);
+            try
+            {
+                var returnModels = await this._app.SavePartial(dtos);
+                return result.ReturnCustomResponse(this._app, returnModels);
+
+            }
+            catch (Exception ex)
+            {
+                return result.ReturnCustomException(ex, "Calemas.Erp - PlanoConta", dtos);
             }
 
         }

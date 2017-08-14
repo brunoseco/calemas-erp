@@ -27,7 +27,7 @@ namespace Calemas.Erp.Api.Controllers
         {
             this._rep = rep;
             this._app = app;
-			this._logger = logger.CreateLogger<NivelAcessoController>();
+			this._logger = logger.CreateLogger<NivelAcessoMoreController>();
         }
 
         [HttpGet]
@@ -77,6 +77,23 @@ namespace Calemas.Erp.Api.Controllers
             catch (Exception ex)
             {
                 return result.ReturnCustomException(ex,"Calemas.Erp - NivelAcesso", dtos);
+            }
+
+        }
+
+	[HttpPut]
+        public async Task<IActionResult> Put([FromBody]IEnumerable<NivelAcessoDtoSpecialized> dtos)
+        {
+            var result = new HttpResult<NivelAcessoDto>(this._logger);
+            try
+            {
+                var returnModels = await this._app.SavePartial(dtos);
+                return result.ReturnCustomResponse(this._app, returnModels);
+
+            }
+            catch (Exception ex)
+            {
+                return result.ReturnCustomException(ex, "Calemas.Erp - NivelAcesso", dtos);
             }
 
         }

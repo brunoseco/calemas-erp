@@ -38,7 +38,7 @@ namespace Calemas.Erp.Domain.Services
             return this._rep.PagingAndDefineFields(filters, queryBase);
         }
 
-        public virtual void Remove(Setor setor)
+        public override void Remove(Setor setor)
         {
             this._rep.Remove(setor);
         }
@@ -68,7 +68,7 @@ namespace Calemas.Erp.Domain.Services
 
         public override async Task<Setor> Save(Setor setor, bool questionToContinue = false)
         {
-            var setorOld = await this.GetOne(new SetorFilter { SetorId = setor.SetorId });
+			var setorOld = await this.GetOne(new SetorFilter { SetorId = setor.SetorId });
 			var setorOrchestrated = await this.DomainOrchestration(setor, setorOld);
 
             if (questionToContinue)
@@ -99,7 +99,7 @@ namespace Calemas.Erp.Domain.Services
             setor = this.SaveDefault(setor, setorOld);
 
 			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
-                return setor;
+				return setor;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -143,11 +143,10 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual Setor SaveDefault(Setor setor, Setor setorOld)
-        {			
+        {
 			setor = this.AuditDefault(setor, setorOld);
 
-            var isNew = setorOld.IsNull();
-			
+            var isNew = setorOld.IsNull();			
             if (isNew)
                 setor = this.AddDefault(setor);
             else
@@ -167,5 +166,21 @@ namespace Calemas.Erp.Domain.Services
             setor = this._rep.Update(setor);
             return setor;
         }
+				
+		public virtual async Task<Setor> GetNewInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new Setor.SetorFactory().GetDefaultInstance(model, user);
+            });
+         }
+
+		public virtual async Task<Setor> GetUpdateInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new Setor.SetorFactory().GetDefaultInstance(model, user);
+            });
+         }
     }
 }

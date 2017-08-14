@@ -38,7 +38,7 @@ namespace Calemas.Erp.Domain.Services
             return this._rep.PagingAndDefineFields(filters, queryBase);
         }
 
-        public virtual void Remove(NivelAcesso nivelacesso)
+        public override void Remove(NivelAcesso nivelacesso)
         {
             this._rep.Remove(nivelacesso);
         }
@@ -68,7 +68,7 @@ namespace Calemas.Erp.Domain.Services
 
         public override async Task<NivelAcesso> Save(NivelAcesso nivelacesso, bool questionToContinue = false)
         {
-            var nivelacessoOld = await this.GetOne(new NivelAcessoFilter { NivelAcessoId = nivelacesso.NivelAcessoId });
+			var nivelacessoOld = await this.GetOne(new NivelAcessoFilter { NivelAcessoId = nivelacesso.NivelAcessoId });
 			var nivelacessoOrchestrated = await this.DomainOrchestration(nivelacesso, nivelacessoOld);
 
             if (questionToContinue)
@@ -99,7 +99,7 @@ namespace Calemas.Erp.Domain.Services
             nivelacesso = this.SaveDefault(nivelacesso, nivelacessoOld);
 
 			if (base._validationResult.IsNotNull() && !base._validationResult.IsValid)
-                return nivelacesso;
+				return nivelacesso;
 
             base._validationResult = new ValidationSpecificationResult
             {
@@ -143,11 +143,10 @@ namespace Calemas.Erp.Domain.Services
         }
 
         protected virtual NivelAcesso SaveDefault(NivelAcesso nivelacesso, NivelAcesso nivelacessoOld)
-        {			
+        {
 			
 
-            var isNew = nivelacessoOld.IsNull();
-			
+            var isNew = nivelacessoOld.IsNull();			
             if (isNew)
                 nivelacesso = this.AddDefault(nivelacesso);
             else
@@ -167,5 +166,21 @@ namespace Calemas.Erp.Domain.Services
             nivelacesso = this._rep.Update(nivelacesso);
             return nivelacesso;
         }
+				
+		public virtual async Task<NivelAcesso> GetNewInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new NivelAcesso.NivelAcessoFactory().GetDefaultInstance(model, user);
+            });
+         }
+
+		public virtual async Task<NivelAcesso> GetUpdateInstance(dynamic model, CurrentUser user)
+        {
+            return await Task.Run(() =>
+            {
+                return new NivelAcesso.NivelAcessoFactory().GetDefaultInstance(model, user);
+            });
+         }
     }
 }
