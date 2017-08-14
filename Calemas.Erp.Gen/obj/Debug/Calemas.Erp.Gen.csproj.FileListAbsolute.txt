@@ -313,7 +313,6 @@ D:\Projetos\calemas-erp\Calemas.Erp.Gen\obj\Debug\Calemas.Erp.Gen.exe
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\obj\Debug\Calemas.Erp.Gen.pdb
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Common.Domain.dll
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Common.dll
-D:\Projetos\calemas-erp\Calemas.Erp.Gen\obj\Debug\Calemas.Erp.Gen.csprojResolveAssemblyReference.cache
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Front\form.vue.template
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Common.Gen.dll
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Common.Infrastructure.Log.dll

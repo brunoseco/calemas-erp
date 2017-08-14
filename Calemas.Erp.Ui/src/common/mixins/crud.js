@@ -134,6 +134,7 @@ export default {
 
         executeCreate: function (model) {
             this.onBeforeCreate(model);
+            console.log(model)
             this.formValidate(() => {
                 this.defaultBeforeAction();
                 this.apiCreate.post(model).then(data => {
