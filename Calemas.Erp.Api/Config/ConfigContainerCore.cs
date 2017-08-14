@@ -64,6 +64,10 @@ namespace Calemas.Erp.Api
 			services.AddScoped<IOrdemServicoService, OrdemServicoService>();
 			services.AddScoped<IOrdemServicoRepository, OrdemServicoRepository>();
 
+			services.AddScoped<IOrdemServicoInteracaoApplicationService, OrdemServicoInteracaoApplicationService>();
+			services.AddScoped<IOrdemServicoInteracaoService, OrdemServicoInteracaoService>();
+			services.AddScoped<IOrdemServicoInteracaoRepository, OrdemServicoInteracaoRepository>();
+
 			services.AddScoped<ISetorApplicationService, SetorApplicationService>();
 			services.AddScoped<ISetorService, SetorService>();
 			services.AddScoped<ISetorRepository, SetorRepository>();

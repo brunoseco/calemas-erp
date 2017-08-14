@@ -60,6 +60,7 @@ namespace Calemas.Erp.Gen
 
                     new TableInfo { TableName = "Cor", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "OrdemServico", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
+                    new TableInfo { TableName = "OrdemServicoInteracao", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "Setor", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "Prioridade", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "TipoOrdemServico", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
@@ -102,12 +103,20 @@ namespace Calemas.Erp.Gen
                     new TableInfo { TableName = "Estoque", ClassNameFormated = "Estoque", MakeFront = true,  },
                     new TableInfo { TableName = "EstoqueMovimentacao", ClassNameFormated = "Movimentação de estoque", MakeFront = true,  },
 
+                    new TableInfo { TableName = "OrdemServico", ClassNameFormated = "Ordem de serviço", MakeFront = true,  },
+                    new TableInfo { TableName = "OrdemServicoInteracao", ClassNameFormated = "Interação com ordem de serviço", MakeFront = true,  },
+                    new TableInfo { TableName = "Setor", ClassNameFormated = "Setor", MakeFront = true,  },
+                    new TableInfo { TableName = "Prioridade", ClassNameFormated = "Prioridade", MakeFront = true,  },
+                    new TableInfo { TableName = "TipoOrdemServico", ClassNameFormated = "Tipo de ordem de serviço", MakeFront = true,  },
+                    new TableInfo { TableName = "StatusOrdemServico", ClassNameFormated = "Situação de ordem de serviço", MakeFront = true,  },
+                    new TableInfo { TableName = "Cor", ClassNameFormated = "Cores do sistema", MakeFront = true,  },
+
                     new TableInfo { TableName = "Cliente", ClassNameFormated = "Cliente", MakeFront = true,  },
                     new TableInfo { TableName = "Condominio", ClassNameFormated = "Condomínio", MakeFront = true,  },
+                    new TableInfo { TableName = "StatusCliente", ClassNameFormated = "Situação do cliente", MakeFront = true,  },
 
                     new TableInfo { TableName = "Agenda", ClassNameFormated = "Agenda", MakeFront = true,  },
 
-                    new TableInfo { TableName = "StatusCliente", ClassNameFormated = "Situação do cliente", MakeFront = true,  },
 
 
                 }

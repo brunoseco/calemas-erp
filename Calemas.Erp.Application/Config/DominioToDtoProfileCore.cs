@@ -63,6 +63,11 @@ namespace Calemas.Erp.Application.Config
             CreateMap(typeof(OrdemServico), typeof(OrdemServicoDtoSpecializedResult));
             CreateMap(typeof(OrdemServico), typeof(OrdemServicoDtoSpecializedReport));
             CreateMap(typeof(OrdemServico), typeof(OrdemServicoDtoSpecializedDetails));
+            CreateMap(typeof(OrdemServicoInteracao), typeof(OrdemServicoInteracaoDto)).ReverseMap();
+            CreateMap(typeof(OrdemServicoInteracao), typeof(OrdemServicoInteracaoDtoSpecialized));
+            CreateMap(typeof(OrdemServicoInteracao), typeof(OrdemServicoInteracaoDtoSpecializedResult));
+            CreateMap(typeof(OrdemServicoInteracao), typeof(OrdemServicoInteracaoDtoSpecializedReport));
+            CreateMap(typeof(OrdemServicoInteracao), typeof(OrdemServicoInteracaoDtoSpecializedDetails));
             CreateMap(typeof(Setor), typeof(SetorDto)).ReverseMap();
             CreateMap(typeof(Setor), typeof(SetorDtoSpecialized));
             CreateMap(typeof(Setor), typeof(SetorDtoSpecializedResult));

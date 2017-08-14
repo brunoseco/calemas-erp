@@ -26,6 +26,7 @@ namespace Calemas.Erp.Data.Context
             new NivelAcessoMap(modelBuilder.Entity<NivelAcesso>());
             new CorMap(modelBuilder.Entity<Cor>());
             new OrdemServicoMap(modelBuilder.Entity<OrdemServico>());
+            new OrdemServicoInteracaoMap(modelBuilder.Entity<OrdemServicoInteracao>());
             new SetorMap(modelBuilder.Entity<Setor>());
             new PrioridadeMap(modelBuilder.Entity<Prioridade>());
             new TipoOrdemServicoMap(modelBuilder.Entity<TipoOrdemServico>());
