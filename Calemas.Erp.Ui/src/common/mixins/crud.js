@@ -80,6 +80,7 @@ export default {
             if (model) this.model = model;
             else this.model = this.modelEmpty;
             this.modalCreateIsOpen = true;
+            this.formValidate();
         },
         openEdit: function (id, item) {
             this.resetForm();
@@ -134,7 +135,6 @@ export default {
 
         executeCreate: function (model) {
             this.onBeforeCreate(model);
-            console.log(model)
             this.formValidate(() => {
                 this.defaultBeforeAction();
                 this.apiCreate.post(model).then(data => {
@@ -207,8 +207,11 @@ export default {
         formValidate: function (action) {
             bus.$emit('validate');
             setTimeout(() => {
-                if (!this.errors.items || this.errors.items.length == 0)
-                    action();
+                if (!this.errors.items || this.errors.items.length == 0) {
+                    if (action) {
+                        action();
+                    }
+                }
             }, 500)
         },
         formIsValid: function () {

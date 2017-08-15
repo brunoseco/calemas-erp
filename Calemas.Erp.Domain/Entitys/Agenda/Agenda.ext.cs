@@ -18,7 +18,9 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-		    public class AgendaFactory
+
+
+        public class AgendaFactory
         {
             public Agenda GetDefaultInstance(dynamic data, CurrentUser user)
             {
@@ -31,10 +33,15 @@ namespace Calemas.Erp.Domain.Entitys
                 construction.SetarDescricao(data.Descricao);
 
 
-				construction.SetAttributeBehavior(data.AttributeBehavior);
-        		return construction;
+                construction.SetAttributeBehavior(data.AttributeBehavior);
+                return construction;
             }
 
+        }
+
+        public virtual void SetarNome(string nome)
+        {
+            this.Nome = nome;
         }
 
         public bool IsValid()
@@ -43,6 +50,6 @@ namespace Calemas.Erp.Domain.Entitys
             return base._validationResult.IsValid;
 
         }
-        
+
     }
 }

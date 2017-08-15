@@ -1,4 +1,4 @@
-<template>
+﻿<template>
     <div class="wrapper">
 
         <div class="row" style="margin-bottom: 1rem;margin-top: -0.5rem;">
@@ -14,7 +14,7 @@
                     <a href="javascript:history.back()" class="btn btn-primary btn-sm pull-right header-btn hidden-mobile">
                         <i class="fa fa-reply"></i> Voltar
                     </a>
-                    <button @click="openCreate()" class="btn btn-success btn-sm pull-right header-btn hidden-mobile">
+                    <button @click="openCreate({agenda:{}})" class="btn btn-success btn-sm pull-right header-btn hidden-mobile">
                         <i class="fa fa-plus"></i> Cadastrar
                     </button>
                 </div>

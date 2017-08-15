@@ -1,59 +1,38 @@
-<template>
+﻿<template>
     <div class="row">
-        					<div class="form-group col-md-12" >
-                        <label for="protoco">Protoco</label>
-                        <input type="text" class="form-control" name="protoco" placeholder="Protoco" v-model="filter.protoco"  />
-                    </div>
-                    <div class="form-group col-md-12" >
-                        <label for="responsavelId">Colaborador</label>
-                        <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" v-model="filter.responsavelId" class="form-control" name="responsavelId" ></select>
-                    </div>
-                    <div class="form-group col-md-12" >
-                        <label for="clienteId">Cliente</label>
-                        <select v-select="{ dataitem: 'Cliente', default: 'Selecione' }" v-model="filter.clienteId" class="form-control" name="clienteId" ></select>
-                    </div>
-                    <div class="form-group col-md-12" >
-                        <label for="prioridadeId">Prioridade</label>
-                        <select v-select="{ dataitem: 'Prioridade', default: 'Selecione' }" v-model="filter.prioridadeId" class="form-control" name="prioridadeId" ></select>
-                    </div>
-                    <div class="form-group col-md-12" >
-                        <label for="setorId">Setor</label>
-                        <select v-select="{ dataitem: 'Setor', default: 'Selecione' }" v-model="filter.setorId" class="form-control" name="setorId" ></select>
-                    </div>
-                    <div class="form-group col-md-12" >
-                        <label for="tipoOrdemServicoId">TipoOrdemServico</label>
-                        <select v-select="{ dataitem: 'TipoOrdemServico', default: 'Selecione' }" v-model="filter.tipoOrdemServicoId" class="form-control" name="tipoOrdemServicoId" ></select>
-                    </div>
-                    <div class="form-group col-md-12" >
-                        <label for="agendaId">Agenda</label>
-                        <select v-select="{ dataitem: 'Agenda', default: 'Selecione' }" v-model="filter.agendaId" class="form-control" name="agendaId" ></select>
-                    </div>
-                    <div class="form-group col-md-12" >
-                        <label for="statusOrdemServicoId">StatusOrdemServico</label>
-                        <select v-select="{ dataitem: 'StatusOrdemServico', default: 'Selecione' }" v-model="filter.statusOrdemServicoId" class="form-control" name="statusOrdemServicoId" ></select>
-                    </div>
-					<div class="form-group col-md-12" >
-                        <label for="dataOcorrencia">DataOcorrencia</label>
-                        <input type="date" class="form-control" name="dataOcorrencia" v-model="filter.dataOcorrencia"  />
-                    </div>
-					<div class="form-group col-md-12" >
-                        <label for="dataSituacao">DataSituacao</label>
-                        <input type="date" class="form-control" name="dataSituacao" v-model="filter.dataSituacao"  />
-                    </div>
-					<div class="form-group col-md-12" >
-                        <label for="observacao">Observacao</label>
-                        <input type="text" class="form-control" name="observacao" placeholder="Observacao" v-model="filter.observacao"  />
-                    </div>
-					<div class="form-group col-md-12" >
-                        <label for="descricao">Descricao</label>
-                        <input type="text" class="form-control" name="descricao" placeholder="Descricao" v-model="filter.descricao"  />
-                    </div>
-
+        <div class="form-group col-md-4">
+            <label for="protoco">Protoco</label>
+            <input type="text" class="form-control" name="protoco" placeholder="Protoco" v-model="filter.protoco" />
+        </div>
+        <div class="form-group col-md-8">
+            <label for="clienteId">Cliente</label>
+            <select v-select="{ dataitem: 'Cliente', default: 'Selecione' }" v-model="filter.clienteId" class="form-control" name="clienteId"></select>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="setorId">Setor</label>
+            <select v-select="{ dataitem: 'Setor', default: 'Selecione' }" v-model="filter.setorId" class="form-control" name="setorId"></select>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="prioridadeId">Prioridade</label>
+            <select v-select="{ dataitem: 'Prioridade', default: 'Selecione' }" v-model="filter.prioridadeId" class="form-control" name="prioridadeId"></select>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="statusOrdemServicoId">Situação</label>
+            <select v-select="{ dataitem: 'StatusOrdemServico', default: 'Selecione' }" v-model="filter.statusOrdemServicoId" class="form-control" name="statusOrdemServicoId"></select>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="tipoOrdemServicoId">Tipo da O.S</label>
+            <select v-select="{ dataitem: 'TipoOrdemServico', default: 'Selecione' }" v-model="filter.tipoOrdemServicoId" class="form-control" name="tipoOrdemServicoId"></select>
+        </div>
+        <div class="form-group col-md-8">
+            <label for="responsavelId">Responsável</label>
+            <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" v-model="filter.responsavelId" class="form-control" name="responsavelId"></select>
+        </div>
     </div>
 </template>
 <script>
     export default {
         name: 'filter-partial',
-        props: ['filter'],    
+        props: ['filter'],
     }
 </script>

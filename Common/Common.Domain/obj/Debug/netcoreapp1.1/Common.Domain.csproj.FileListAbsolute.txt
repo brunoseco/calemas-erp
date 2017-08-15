@@ -11,3 +11,4 @@ D:\Projetos\calemas-erp\Common\Common.Domain\bin\Debug\netcoreapp1.1\Common.Doma
 D:\Projetos\calemas-erp\Common\Common.Domain\obj\Debug\netcoreapp1.1\Common.Domain.AssemblyInfo.cs
 D:\Projetos\calemas-erp\Common\Common.Domain\obj\Debug\netcoreapp1.1\Common.Domain.dll
 D:\Projetos\calemas-erp\Common\Common.Domain\obj\Debug\netcoreapp1.1\Common.Domain.pdb
+D:\Projetos\calemas-erp\Common\Common.Domain\obj\Debug\netcoreapp1.1\Common.Domain.csprojResolveAssemblyReference.cache

@@ -6,7 +6,7 @@ namespace Calemas.Erp.Domain.Entitys
 {
     public class OrdemServico : OrdemServicoBase
     {
-
+        public virtual Agenda Agenda { get; set; }
         public OrdemServico()
         {
 
@@ -35,10 +35,13 @@ namespace Calemas.Erp.Domain.Entitys
                 construction.SetarObservacao(data.Observacao);
                 construction.SetarDescricao(data.Descricao);
 
-
                 return construction;
             }
+        }
 
+        public virtual void SetarDataSituacao(DateTime dataSituacao)
+        {
+            this.DataSituacao = dataSituacao;
         }
 
         public bool IsValid()
