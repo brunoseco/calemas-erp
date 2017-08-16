@@ -6,8 +6,8 @@ namespace Calemas.Erp.Domain.Filter
     public class TipoPlanoContaFilterBase : FilterBase
     {
 
-        public int TipoPlanoContaId { get; set;} 
-        public string Nome { get; set;} 
+        public virtual int TipoPlanoContaId { get; set;} 
+        public virtual string Nome { get; set;} 
 
 
     }

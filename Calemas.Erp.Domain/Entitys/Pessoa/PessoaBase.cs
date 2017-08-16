@@ -17,20 +17,20 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public int PessoaId { get; protected set; }
-        public string CPF_CNPJ { get; protected set; }
-        public string RG_IE { get; protected set; }
-        public string Nome { get; protected set; }
-        public string Apelido { get; protected set; }
-        public string Email { get; protected set; }
-        public string Telefone { get; protected set; }
-        public string Celular { get; protected set; }
-        public string Comercial { get; protected set; }
-        public DateTime? DataNascimento { get; protected set; }
-        public int? EstadoCivilId { get; protected set; }
-        public int? Sexo { get; protected set; }
-        public bool? Juridica { get; protected set; }
-        public int? EnderecoId { get; protected set; }
+        public virtual int PessoaId { get; protected set; }
+        public virtual string CPF_CNPJ { get; protected set; }
+        public virtual string RG_IE { get; protected set; }
+        public virtual string Nome { get; protected set; }
+        public virtual string Apelido { get; protected set; }
+        public virtual string Email { get; protected set; }
+        public virtual string Telefone { get; protected set; }
+        public virtual string Celular { get; protected set; }
+        public virtual string Comercial { get; protected set; }
+        public virtual DateTime? DataNascimento { get; protected set; }
+        public virtual int? EstadoCivilId { get; protected set; }
+        public virtual int? Sexo { get; protected set; }
+        public virtual bool? Juridica { get; protected set; }
+        public virtual int? EnderecoId { get; protected set; }
 
 
 		public virtual void SetarCPF_CNPJ(string cpf_cnpj)

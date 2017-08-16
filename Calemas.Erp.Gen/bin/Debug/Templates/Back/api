@@ -99,5 +99,8 @@ namespace <#namespace#>.Api.Controllers
                 return result.ReturnCustomException(ex,"<#namespace#> - <#className#>", dto);
             }
         }
+
+<#customMethods#>
+
     }
 }

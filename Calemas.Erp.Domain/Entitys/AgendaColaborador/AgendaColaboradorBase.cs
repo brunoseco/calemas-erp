@@ -16,8 +16,8 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public int AgendaId { get; protected set; }
-        public int ColaboradorId { get; protected set; }
+        public virtual int AgendaId { get; protected set; }
+        public virtual int ColaboradorId { get; protected set; }
 
 
 

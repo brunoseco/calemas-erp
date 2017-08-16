@@ -6,30 +6,30 @@ namespace Calemas.Erp.Domain.Filter
     public class PessoaFilterBase : FilterBase
     {
 
-        public int PessoaId { get; set;} 
-        public string CPF_CNPJ { get; set;} 
-        public string RG_IE { get; set;} 
-        public string Nome { get; set;} 
-        public string Apelido { get; set;} 
-        public string Email { get; set;} 
-        public string Telefone { get; set;} 
-        public string Celular { get; set;} 
-        public string Comercial { get; set;} 
-        public DateTime? DataNascimentoStart { get; set;} 
-        public DateTime? DataNascimentoEnd { get; set;} 
-        public DateTime? DataNascimento { get; set;} 
-        public int? EstadoCivilId { get; set;} 
-        public int? Sexo { get; set;} 
-        public bool? Juridica { get; set;} 
-        public int? EnderecoId { get; set;} 
-        public int UserCreateId { get; set;} 
-        public DateTime UserCreateDateStart { get; set;} 
-        public DateTime UserCreateDateEnd { get; set;} 
-        public DateTime UserCreateDate { get; set;} 
-        public int? UserAlterId { get; set;} 
-        public DateTime? UserAlterDateStart { get; set;} 
-        public DateTime? UserAlterDateEnd { get; set;} 
-        public DateTime? UserAlterDate { get; set;} 
+        public virtual int PessoaId { get; set;} 
+        public virtual string CPF_CNPJ { get; set;} 
+        public virtual string RG_IE { get; set;} 
+        public virtual string Nome { get; set;} 
+        public virtual string Apelido { get; set;} 
+        public virtual string Email { get; set;} 
+        public virtual string Telefone { get; set;} 
+        public virtual string Celular { get; set;} 
+        public virtual string Comercial { get; set;} 
+        public virtual DateTime? DataNascimentoStart { get; set;} 
+        public virtual DateTime? DataNascimentoEnd { get; set;} 
+        public virtual DateTime? DataNascimento { get; set;} 
+        public virtual int? EstadoCivilId { get; set;} 
+        public virtual int? Sexo { get; set;} 
+        public virtual bool? Juridica { get; set;} 
+        public virtual int? EnderecoId { get; set;} 
+        public virtual int UserCreateId { get; set;} 
+        public virtual DateTime UserCreateDateStart { get; set;} 
+        public virtual DateTime UserCreateDateEnd { get; set;} 
+        public virtual DateTime UserCreateDate { get; set;} 
+        public virtual int? UserAlterId { get; set;} 
+        public virtual DateTime? UserAlterDateStart { get; set;} 
+        public virtual DateTime? UserAlterDateEnd { get; set;} 
+        public virtual DateTime? UserAlterDate { get; set;} 
 
 
     }

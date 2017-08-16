@@ -20,12 +20,12 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public int EstoqueMovimentacaoId { get; protected set; }
-        public int EstoqueId { get; protected set; }
-        public bool Entrada { get; protected set; }
-        public string Descricao { get; protected set; }
-        public decimal Quantidade { get; protected set; }
-        public int ResponsavelId { get; protected set; }
+        public virtual int EstoqueMovimentacaoId { get; protected set; }
+        public virtual int EstoqueId { get; protected set; }
+        public virtual bool Entrada { get; protected set; }
+        public virtual string Descricao { get; protected set; }
+        public virtual decimal Quantidade { get; protected set; }
+        public virtual int ResponsavelId { get; protected set; }
 
 
 

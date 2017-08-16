@@ -17,10 +17,10 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public int ClienteId { get; protected set; }
-        public int StatusClienteId { get; protected set; }
-        public int? CondominioId { get; protected set; }
-        public int ResponsavelId { get; protected set; }
+        public virtual int ClienteId { get; protected set; }
+        public virtual int StatusClienteId { get; protected set; }
+        public virtual int? CondominioId { get; protected set; }
+        public virtual int ResponsavelId { get; protected set; }
 
 
 		public virtual void SetarCondominioId(int? condominioid)

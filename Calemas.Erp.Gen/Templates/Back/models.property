@@ -1,1 +1,1 @@
-﻿public <#type#> <#propertyName#> { get; set;} 
+﻿public virtual <#type#> <#propertyName#> { get; set;} 

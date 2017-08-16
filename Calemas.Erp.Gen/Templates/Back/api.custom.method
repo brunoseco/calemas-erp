@@ -1,0 +1,15 @@
+﻿		[HttpPost("<#customMethodsVerb#>")]
+        [Route("<#customMethodsRoute#>")]
+        public async Task<IActionResult> <#customMethodsTemplate#>
+        {
+            var result = new HttpResult<<#className#>Dto>(this._logger);
+            try
+            {
+                var returnModel = await this._app.<#customMethodsName#>;
+                return result.ReturnCustomResponse(this._app, returnModel);
+            }
+            catch (Exception ex)
+            {
+                return result.ReturnCustomException(ex, "<#namespace#> - <#className#>");
+            }
+        }

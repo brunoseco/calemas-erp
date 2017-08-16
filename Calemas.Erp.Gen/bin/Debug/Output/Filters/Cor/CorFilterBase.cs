@@ -6,9 +6,9 @@ namespace calemas.erp.Domain.Filter
     public class CorFilterBase : FilterBase
     {
 
-        public int CorId { get; set;} 
-        public string Nome { get; set;} 
-        public string Hash { get; set;} 
+        public virtual int CorId { get; set;} 
+        public virtual string Nome { get; set;} 
+        public virtual string Hash { get; set;} 
 
 
     }

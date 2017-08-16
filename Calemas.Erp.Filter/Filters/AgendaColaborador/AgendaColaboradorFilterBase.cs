@@ -6,8 +6,8 @@ namespace Calemas.Erp.Domain.Filter
     public class AgendaColaboradorFilterBase : FilterBase
     {
 
-        public int AgendaId { get; set;} 
-        public int ColaboradorId { get; set;} 
+        public virtual int AgendaId { get; set;} 
+        public virtual int ColaboradorId { get; set;} 
 
 
     }

@@ -17,9 +17,9 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public int CorId { get; protected set; }
-        public string Nome { get; protected set; }
-        public string Hash { get; protected set; }
+        public virtual int CorId { get; protected set; }
+        public virtual string Nome { get; protected set; }
+        public virtual string Hash { get; protected set; }
 
 
 

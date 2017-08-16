@@ -6,20 +6,20 @@ namespace calemas.erp.Domain.Filter
     public class EstoqueMovimentacaoFilterBase : FilterBase
     {
 
-        public int EstoqueMovimentacaoId { get; set;} 
-        public int EstoqueId { get; set;} 
-        public bool? Entrada { get; set;} 
-        public string Descricao { get; set;} 
-        public decimal Quantidade { get; set;} 
-        public int ResponsavelId { get; set;} 
-        public int UserCreateId { get; set;} 
-        public DateTime UserCreateDateStart { get; set;} 
-        public DateTime UserCreateDateEnd { get; set;} 
-        public DateTime UserCreateDate { get; set;} 
-        public int? UserAlterId { get; set;} 
-        public DateTime? UserAlterDateStart { get; set;} 
-        public DateTime? UserAlterDateEnd { get; set;} 
-        public DateTime? UserAlterDate { get; set;} 
+        public virtual int EstoqueMovimentacaoId { get; set;} 
+        public virtual int EstoqueId { get; set;} 
+        public virtual bool? Entrada { get; set;} 
+        public virtual string Descricao { get; set;} 
+        public virtual decimal Quantidade { get; set;} 
+        public virtual int ResponsavelId { get; set;} 
+        public virtual int UserCreateId { get; set;} 
+        public virtual DateTime UserCreateDateStart { get; set;} 
+        public virtual DateTime UserCreateDateEnd { get; set;} 
+        public virtual DateTime UserCreateDate { get; set;} 
+        public virtual int? UserAlterId { get; set;} 
+        public virtual DateTime? UserAlterDateStart { get; set;} 
+        public virtual DateTime? UserAlterDateEnd { get; set;} 
+        public virtual DateTime? UserAlterDate { get; set;} 
 
 
     }

@@ -65,5 +65,7 @@ namespace <#namespace#>.Application
 			});
         }
 
+<#customMethods#>
+
     }
 }

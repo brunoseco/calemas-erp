@@ -21,20 +21,20 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public int EstoqueId { get; protected set; }
-        public string Nome { get; protected set; }
-        public string Descricao { get; protected set; }
-        public string Modelo { get; protected set; }
-        public string Fabricante { get; protected set; }
-        public string Referencia { get; protected set; }
-        public int UnidadeMedidaId { get; protected set; }
-        public int CategoriaEstoqueId { get; protected set; }
-        public string Observacao { get; protected set; }
-        public decimal QuantidadeMinima { get; protected set; }
-        public decimal Quantidade { get; protected set; }
-        public decimal? ValorVenda { get; protected set; }
-        public decimal? ValorCompra { get; protected set; }
-        public bool Ativo { get; protected set; }
+        public virtual int EstoqueId { get; protected set; }
+        public virtual string Nome { get; protected set; }
+        public virtual string Descricao { get; protected set; }
+        public virtual string Modelo { get; protected set; }
+        public virtual string Fabricante { get; protected set; }
+        public virtual string Referencia { get; protected set; }
+        public virtual int UnidadeMedidaId { get; protected set; }
+        public virtual int CategoriaEstoqueId { get; protected set; }
+        public virtual string Observacao { get; protected set; }
+        public virtual decimal QuantidadeMinima { get; protected set; }
+        public virtual decimal Quantidade { get; protected set; }
+        public virtual decimal? ValorVenda { get; protected set; }
+        public virtual decimal? ValorCompra { get; protected set; }
+        public virtual bool Ativo { get; protected set; }
 
 
 		public virtual void SetarDescricao(string descricao)

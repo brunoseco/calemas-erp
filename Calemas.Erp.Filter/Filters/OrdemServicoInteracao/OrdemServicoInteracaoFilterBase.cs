@@ -6,17 +6,17 @@ namespace Calemas.Erp.Domain.Filter
     public class OrdemServicoInteracaoFilterBase : FilterBase
     {
 
-        public int OrdemServicoInteracaoId { get; set;} 
-        public int OrdemServicoId { get; set;} 
-        public DateTime DataConclusaoStart { get; set;} 
-        public DateTime DataConclusaoEnd { get; set;} 
-        public DateTime DataConclusao { get; set;} 
-        public string Descricao { get; set;} 
-        public string Observacao { get; set;} 
-        public bool? FoiProprioCliente { get; set;} 
-        public string NomeClienteResponsavel { get; set;} 
-        public int TecnicoId { get; set;} 
-        public int StatusOrdemServicoInteracaoId { get; set;} 
+        public virtual int OrdemServicoInteracaoId { get; set;} 
+        public virtual int OrdemServicoId { get; set;} 
+        public virtual DateTime DataConclusaoStart { get; set;} 
+        public virtual DateTime DataConclusaoEnd { get; set;} 
+        public virtual DateTime DataConclusao { get; set;} 
+        public virtual string Descricao { get; set;} 
+        public virtual string Observacao { get; set;} 
+        public virtual bool? FoiProprioCliente { get; set;} 
+        public virtual string NomeClienteResponsavel { get; set;} 
+        public virtual int TecnicoId { get; set;} 
+        public virtual int StatusOrdemServicoInteracaoId { get; set;} 
 
 
     }

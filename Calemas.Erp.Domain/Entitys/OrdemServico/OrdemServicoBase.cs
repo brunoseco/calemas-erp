@@ -25,19 +25,19 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public int OrdemServicoId { get; protected set; }
-        public string Protoco { get; protected set; }
-        public int ResponsavelId { get; protected set; }
-        public int ClienteId { get; protected set; }
-        public int PrioridadeId { get; protected set; }
-        public int SetorId { get; protected set; }
-        public int TipoOrdemServicoId { get; protected set; }
-        public int AgendaId { get; protected set; }
-        public int StatusOrdemServicoId { get; protected set; }
-        public DateTime DataOcorrencia { get; protected set; }
-        public DateTime DataSituacao { get; protected set; }
-        public string Observacao { get; protected set; }
-        public string Descricao { get; protected set; }
+        public virtual int OrdemServicoId { get; protected set; }
+        public virtual string Protoco { get; protected set; }
+        public virtual int ResponsavelId { get; protected set; }
+        public virtual int ClienteId { get; protected set; }
+        public virtual int PrioridadeId { get; protected set; }
+        public virtual int SetorId { get; protected set; }
+        public virtual int TipoOrdemServicoId { get; protected set; }
+        public virtual int AgendaId { get; protected set; }
+        public virtual int StatusOrdemServicoId { get; protected set; }
+        public virtual DateTime DataOcorrencia { get; protected set; }
+        public virtual DateTime DataSituacao { get; protected set; }
+        public virtual string Observacao { get; protected set; }
+        public virtual string Descricao { get; protected set; }
 
 
 		public virtual void SetarObservacao(string observacao)

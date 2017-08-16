@@ -19,11 +19,11 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public int ColaboradorId { get; protected set; }
-        public string Account { get; protected set; }
-        public string Password { get; protected set; }
-        public bool Ativo { get; protected set; }
-        public int NivelAcessoId { get; protected set; }
+        public virtual int ColaboradorId { get; protected set; }
+        public virtual string Account { get; protected set; }
+        public virtual string Password { get; protected set; }
+        public virtual bool Ativo { get; protected set; }
+        public virtual int NivelAcessoId { get; protected set; }
 
 
 

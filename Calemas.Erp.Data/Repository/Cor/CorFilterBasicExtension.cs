@@ -15,21 +15,22 @@ namespace Calemas.Erp.Data.Repository
 			{ 
 				
 				queryFilter = queryFilter.Where(_=>_.CorId == filters.CorId);
-			};
+			}
             if (filters.Nome.IsSent()) 
 			{ 
 				
 				queryFilter = queryFilter.Where(_=>_.Nome.Contains(filters.Nome));
-			};
+			}
             if (filters.Hash.IsSent()) 
 			{ 
 				
 				queryFilter = queryFilter.Where(_=>_.Hash.Contains(filters.Hash));
-			};
+			}
 
 
             return queryFilter;
         }
 
+		
     }
 }

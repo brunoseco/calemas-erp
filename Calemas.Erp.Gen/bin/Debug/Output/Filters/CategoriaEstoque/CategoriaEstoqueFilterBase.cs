@@ -6,8 +6,8 @@ namespace calemas.erp.Domain.Filter
     public class CategoriaEstoqueFilterBase : FilterBase
     {
 
-        public int CategoriaEstoqueId { get; set;} 
-        public string Nome { get; set;} 
+        public virtual int CategoriaEstoqueId { get; set;} 
+        public virtual string Nome { get; set;} 
 
 
     }

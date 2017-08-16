@@ -48,6 +48,7 @@ namespace Calemas.Erp.Domain.Services
             return new Summary
             {
                 Total = paginateResult.TotalCount,
+				PageSize = paginateResult.PageSize,
             };
         }
 

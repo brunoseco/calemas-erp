@@ -18,10 +18,10 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public int PlanoContaId { get; protected set; }
-        public string Nome { get; protected set; }
-        public string Descricao { get; protected set; }
-        public int TipoPlanoContaId { get; protected set; }
+        public virtual int PlanoContaId { get; protected set; }
+        public virtual string Nome { get; protected set; }
+        public virtual string Descricao { get; protected set; }
+        public virtual int TipoPlanoContaId { get; protected set; }
 
 
 

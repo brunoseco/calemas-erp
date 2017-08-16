@@ -1,0 +1,11 @@
+﻿using Common.Domain.Interfaces;
+using <#namespace#>.Dto;
+using System.Threading.Tasks;
+
+namespace <#namespace#>.Application.Interfaces
+{
+    public interface I<#className#>ApplicationServiceBase : IApplicationServiceBase<<#className#>Dto>
+    {
+<#customMethods#>
+    }
+}

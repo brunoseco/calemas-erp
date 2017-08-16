@@ -6,22 +6,22 @@ namespace Calemas.Erp.Domain.Filter
     public class EnderecoFilterBase : FilterBase
     {
 
-        public int EnderecoId { get; set;} 
-        public string CEP { get; set;} 
-        public string Rua { get; set;} 
-        public string Numero { get; set;} 
-        public string Complemento { get; set;} 
-        public string PontoReferencia { get; set;} 
-        public string Cidade { get; set;} 
-        public int? EstadoId { get; set;} 
-        public int UserCreateId { get; set;} 
-        public DateTime UserCreateDateStart { get; set;} 
-        public DateTime UserCreateDateEnd { get; set;} 
-        public DateTime UserCreateDate { get; set;} 
-        public int? UserAlterId { get; set;} 
-        public DateTime? UserAlterDateStart { get; set;} 
-        public DateTime? UserAlterDateEnd { get; set;} 
-        public DateTime? UserAlterDate { get; set;} 
+        public virtual int EnderecoId { get; set;} 
+        public virtual string CEP { get; set;} 
+        public virtual string Rua { get; set;} 
+        public virtual string Numero { get; set;} 
+        public virtual string Complemento { get; set;} 
+        public virtual string PontoReferencia { get; set;} 
+        public virtual string Cidade { get; set;} 
+        public virtual int? EstadoId { get; set;} 
+        public virtual int UserCreateId { get; set;} 
+        public virtual DateTime UserCreateDateStart { get; set;} 
+        public virtual DateTime UserCreateDateEnd { get; set;} 
+        public virtual DateTime UserCreateDate { get; set;} 
+        public virtual int? UserAlterId { get; set;} 
+        public virtual DateTime? UserAlterDateStart { get; set;} 
+        public virtual DateTime? UserAlterDateEnd { get; set;} 
+        public virtual DateTime? UserAlterDate { get; set;} 
 
 
     }

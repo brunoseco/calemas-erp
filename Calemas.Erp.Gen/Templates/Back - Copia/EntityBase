@@ -1,0 +1,22 @@
+﻿using Common.Domain.Base;
+using System;
+
+namespace <#namespace#>.Domain.Entitys
+{
+    public class <#className#>Base : <#classBaseEntity#>
+    {
+        public <#className#>Base()
+        {
+
+        }
+        public <#className#>Base(<#parametersRequired#>)
+        {
+<#initParametersRequired#>
+        }
+
+<#property#>
+
+<#methodsSeters#>
+
+    }
+}

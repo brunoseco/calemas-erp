@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "d0c519520bba71dbb62dd4c0e08e59bed88aabcb"
+    "signature": "8e2fcc0586f6112f35e52aedb79f7797aeadcc90"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,7 +9,7 @@
       "common.orm/1.0.0": {
         "dependencies": {
           "Common.Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "1.1.2"
+          "Microsoft.EntityFrameworkCore.SqlServer": "1.1.1"
         },
         "runtime": {
           "Common.Orm.dll": {}
@@ -24,7 +24,7 @@
           "lib/netstandard1.3/AutoMapper.dll": {}
         }
       },
-      "microsoft.entityframeworkcore/1.1.2": {
+      "microsoft.entityframeworkcore/1.1.1": {
         "dependencies": {
           "Microsoft.Extensions.Caching.Memory": "1.1.1",
           "Microsoft.Extensions.DependencyInjection": "1.1.0",
@@ -36,19 +36,19 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "microsoft.entityframeworkcore.relational/1.1.2": {
+      "microsoft.entityframeworkcore.relational/1.1.1": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "1.1.2",
+          "Microsoft.EntityFrameworkCore": "1.1.1",
           "System.Data.Common": "4.3.0"
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
-      "microsoft.entityframeworkcore.sqlserver/1.1.2": {
+      "microsoft.entityframeworkcore.sqlserver/1.1.1": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
-          "System.Data.SqlClient": "4.3.1"
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
+          "System.Data.SqlClient": "4.3.0"
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
@@ -184,7 +184,7 @@
           "lib/netstandard1.2/System.Data.Common.dll": {}
         }
       },
-      "system.data.sqlclient/4.3.1": {
+      "system.data.sqlclient/4.3.0": {
         "dependencies": {
           "System.Data.Common": "4.3.0",
           "System.IO.Pipes": "4.3.0",
@@ -265,26 +265,26 @@
       "path": "automapper/5.1.1",
       "hashPath": "automapper.5.1.1.nupkg.sha512"
     },
-    "microsoft.entityframeworkcore/1.1.2": {
+    "microsoft.entityframeworkcore/1.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2oY1cQ3DEhpbRjlDBE1zb7IngKyPC4fslAX5WL1mnVQOLX/8BPOAjgYM2inzNK2z8ld/DxBUZEwc3xfNc8qhbw==",
-      "path": "microsoft.entityframeworkcore/1.1.2",
-      "hashPath": "microsoft.entityframeworkcore.1.1.2.nupkg.sha512"
+      "sha512": "sha512-wkPi/5FriMthUoCBjqO/hCDEGdRrJ5aTGKa9jGHK7NYw1uSxb2FXksBuqqMfFve3sd2j4+9BpYtdvAJ6fzjeXg==",
+      "path": "microsoft.entityframeworkcore/1.1.1",
+      "hashPath": "microsoft.entityframeworkcore.1.1.1.nupkg.sha512"
     },
-    "microsoft.entityframeworkcore.relational/1.1.2": {
+    "microsoft.entityframeworkcore.relational/1.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-oiPXaIMk8cPbEmtcChzhPzM1ZyEYMoy8sMYWgWfv292Q0e0U2v7CIrtGylrORVZOA4lb9M0gWjbfKPtj7iDbxA==",
-      "path": "microsoft.entityframeworkcore.relational/1.1.2",
-      "hashPath": "microsoft.entityframeworkcore.relational.1.1.2.nupkg.sha512"
+      "sha512": "sha512-wIeIC02b3uFQ0Mgd5yDcpzbGQs383p2BAkpMjNz2xffo9QAFXO1CDavuolRk5I2Rv/iBy9igB91BZoY0tpcMzA==",
+      "path": "microsoft.entityframeworkcore.relational/1.1.1",
+      "hashPath": "microsoft.entityframeworkcore.relational.1.1.1.nupkg.sha512"
     },
-    "microsoft.entityframeworkcore.sqlserver/1.1.2": {
+    "microsoft.entityframeworkcore.sqlserver/1.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/PpnI2G7zitSAjCtDqVjElhKM3Gpxc+9Su6OhYqYavZS/Ouc/bNAWsoWEj/tbeYSGMUdZyjeAm9xKKJSF/h3Dw==",
-      "path": "microsoft.entityframeworkcore.sqlserver/1.1.2",
-      "hashPath": "microsoft.entityframeworkcore.sqlserver.1.1.2.nupkg.sha512"
+      "sha512": "sha512-ltffbSKAfcVPWy4Ovbm+Qw6Kivmrn7SMWLmOl1mBJDZ+TmI7CSXwclLDunmlqyv2KsA/FGVgulQTe/RU3EgqCg==",
+      "path": "microsoft.entityframeworkcore.sqlserver/1.1.1",
+      "hashPath": "microsoft.entityframeworkcore.sqlserver.1.1.1.nupkg.sha512"
     },
     "microsoft.extensions.caching.abstractions/1.1.1": {
       "type": "package",
@@ -412,12 +412,12 @@
       "path": "system.data.common/4.3.0",
       "hashPath": "system.data.common.4.3.0.nupkg.sha512"
     },
-    "system.data.sqlclient/4.3.1": {
+    "system.data.sqlclient/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-FllDZf1liw5++vWf3d73tskt04trlGXb0UwEps/kvGxuKi0QnzcMLmBoXHulzhluvlLg7oIam3+mIsqcxHgj0A==",
-      "path": "system.data.sqlclient/4.3.1",
-      "hashPath": "system.data.sqlclient.4.3.1.nupkg.sha512"
+      "sha512": "sha512-XmWg+/uUcME++m/vsRzxq1fo0GvlYzFfZM5fCqIIDT+O7AwDdpfd1LkRXmcxeTJQTCgx5AN3Y3t5qSz5XxQLVw==",
+      "path": "system.data.sqlclient/4.3.0",
+      "hashPath": "system.data.sqlclient.4.3.0.nupkg.sha512"
     },
     "system.interactive.async/3.0.0": {
       "type": "package",

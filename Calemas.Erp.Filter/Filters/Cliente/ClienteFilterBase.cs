@@ -6,10 +6,10 @@ namespace Calemas.Erp.Domain.Filter
     public class ClienteFilterBase : FilterBase
     {
 
-        public int ClienteId { get; set;} 
-        public int StatusClienteId { get; set;} 
-        public int? CondominioId { get; set;} 
-        public int ResponsavelId { get; set;} 
+        public virtual int ClienteId { get; set;} 
+        public virtual int StatusClienteId { get; set;} 
+        public virtual int? CondominioId { get; set;} 
+        public virtual int ResponsavelId { get; set;} 
 
 
     }

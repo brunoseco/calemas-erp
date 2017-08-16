@@ -3,7 +3,7 @@ using <#namespace#>.Dto;
 
 namespace <#namespace#>.Application.Interfaces
 {
-    public interface I<#className#>ApplicationService : IApplicationServiceBase<<#className#>Dto>
+    public interface I<#className#>ApplicationService : I<#className#>ApplicationServiceBase
     {
        
 

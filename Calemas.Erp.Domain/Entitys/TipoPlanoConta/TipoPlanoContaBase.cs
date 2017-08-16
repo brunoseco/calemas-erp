@@ -16,8 +16,8 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public int TipoPlanoContaId { get; protected set; }
-        public string Nome { get; protected set; }
+        public virtual int TipoPlanoContaId { get; protected set; }
+        public virtual string Nome { get; protected set; }
 
 
 

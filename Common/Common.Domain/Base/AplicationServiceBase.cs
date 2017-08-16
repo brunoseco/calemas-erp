@@ -134,11 +134,9 @@ namespace Common.Domain.Base
 
 
 
-        private Summary Summary(FilterBase filter, PaginateResult<T> paginateResult)
-        { 
-            var _summary = this._serviceBase.GetSummary(paginateResult);
-            _summary.PageSize = filter.PageSize;
-            return _summary;
+        private Summary Summary(PaginateResult<T> paginateResult)
+        {
+            return this._serviceBase.GetSummary(paginateResult);
         }
 
         private bool DomainIsValid()
@@ -155,7 +153,7 @@ namespace Common.Domain.Base
 
             var paginateResultOptimize = await this._serviceBase.GetByFiltersPaging(filter as TF);
             var result = MapperDomainToDto(filter, paginateResultOptimize);
-            var summary = this.Summary(filter, paginateResultOptimize);
+            var summary = this.Summary(paginateResultOptimize);
 
             var searchResult = new SearchResult<TD>
             {

@@ -48,6 +48,7 @@ namespace <#namespace#>.Domain.Services
             return new Summary
             {
                 Total = paginateResult.TotalCount,
+				PageSize = paginateResult.PageSize,
             };
         }
 

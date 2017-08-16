@@ -130,6 +130,9 @@
     <None Include="Templates\Back\api.currentUser">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Templates\Back\api.custom.method">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Templates\Back\api.download">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -196,6 +199,9 @@
     <None Include="Templates\Back\EntityApplicationService">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Templates\Back\EntityApplicationService.custom.method">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Templates\Back\EntityApplicationServiceBase">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -254,6 +260,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Templates\Back\IEntityApplicationService">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Back\IEntityApplicationService.custom.method">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Back\IEntityApplicationServiceBase">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Templates\Back\IEntityRepository">

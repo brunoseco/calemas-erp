@@ -28,21 +28,21 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public int FinanceiroId { get; protected set; }
-        public DateTime DataVencimento { get; protected set; }
-        public int Parcela { get; protected set; }
-        public int PlanoContaId { get; protected set; }
-        public decimal ValorOriginal { get; protected set; }
-        public decimal ValorDesconto { get; protected set; }
-        public decimal ValorMultaJuros { get; protected set; }
-        public decimal ValorFinal { get; protected set; }
-        public int PessoaId { get; protected set; }
-        public string Descricao { get; protected set; }
-        public bool Baixado { get; protected set; }
-        public DateTime? DataBaixa { get; protected set; }
-        public decimal ValorDescontoAteVencimento { get; protected set; }
-        public decimal PercentualJuros { get; protected set; }
-        public decimal PercentualMulta { get; protected set; }
+        public virtual int FinanceiroId { get; protected set; }
+        public virtual DateTime DataVencimento { get; protected set; }
+        public virtual int Parcela { get; protected set; }
+        public virtual int PlanoContaId { get; protected set; }
+        public virtual decimal ValorOriginal { get; protected set; }
+        public virtual decimal ValorDesconto { get; protected set; }
+        public virtual decimal ValorMultaJuros { get; protected set; }
+        public virtual decimal ValorFinal { get; protected set; }
+        public virtual int PessoaId { get; protected set; }
+        public virtual string Descricao { get; protected set; }
+        public virtual bool Baixado { get; protected set; }
+        public virtual DateTime? DataBaixa { get; protected set; }
+        public virtual decimal ValorDescontoAteVencimento { get; protected set; }
+        public virtual decimal PercentualJuros { get; protected set; }
+        public virtual decimal PercentualMulta { get; protected set; }
 
 
 		public virtual void SetarDataBaixa(DateTime? databaixa)

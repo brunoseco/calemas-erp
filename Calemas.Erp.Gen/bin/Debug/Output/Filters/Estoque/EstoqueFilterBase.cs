@@ -6,28 +6,28 @@ namespace calemas.erp.Domain.Filter
     public class EstoqueFilterBase : FilterBase
     {
 
-        public int EstoqueId { get; set;} 
-        public string Nome { get; set;} 
-        public string Descricao { get; set;} 
-        public string Modelo { get; set;} 
-        public string Fabricante { get; set;} 
-        public string Referencia { get; set;} 
-        public int UnidadeMedidaId { get; set;} 
-        public int CategoriaEstoqueId { get; set;} 
-        public string Observacao { get; set;} 
-        public decimal QuantidadeMinima { get; set;} 
-        public decimal Quantidade { get; set;} 
-        public decimal? ValorVenda { get; set;} 
-        public decimal? ValorCompra { get; set;} 
-        public bool? Ativo { get; set;} 
-        public int UserCreateId { get; set;} 
-        public DateTime UserCreateDateStart { get; set;} 
-        public DateTime UserCreateDateEnd { get; set;} 
-        public DateTime UserCreateDate { get; set;} 
-        public int? UserAlterId { get; set;} 
-        public DateTime? UserAlterDateStart { get; set;} 
-        public DateTime? UserAlterDateEnd { get; set;} 
-        public DateTime? UserAlterDate { get; set;} 
+        public virtual int EstoqueId { get; set;} 
+        public virtual string Nome { get; set;} 
+        public virtual string Descricao { get; set;} 
+        public virtual string Modelo { get; set;} 
+        public virtual string Fabricante { get; set;} 
+        public virtual string Referencia { get; set;} 
+        public virtual int UnidadeMedidaId { get; set;} 
+        public virtual int CategoriaEstoqueId { get; set;} 
+        public virtual string Observacao { get; set;} 
+        public virtual decimal QuantidadeMinima { get; set;} 
+        public virtual decimal Quantidade { get; set;} 
+        public virtual decimal? ValorVenda { get; set;} 
+        public virtual decimal? ValorCompra { get; set;} 
+        public virtual bool? Ativo { get; set;} 
+        public virtual int UserCreateId { get; set;} 
+        public virtual DateTime UserCreateDateStart { get; set;} 
+        public virtual DateTime UserCreateDateEnd { get; set;} 
+        public virtual DateTime UserCreateDate { get; set;} 
+        public virtual int? UserAlterId { get; set;} 
+        public virtual DateTime? UserAlterDateStart { get; set;} 
+        public virtual DateTime? UserAlterDateEnd { get; set;} 
+        public virtual DateTime? UserAlterDate { get; set;} 
 
 
     }

@@ -16,8 +16,8 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public int CategoriaEstoqueId { get; protected set; }
-        public string Nome { get; protected set; }
+        public virtual int CategoriaEstoqueId { get; protected set; }
+        public virtual string Nome { get; protected set; }
 
 
 

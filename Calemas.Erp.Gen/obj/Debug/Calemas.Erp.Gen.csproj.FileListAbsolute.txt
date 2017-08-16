@@ -318,3 +318,7 @@ D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Common.Gen.dll
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Common.Infrastructure.Log.dll
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Common.StorageBase.dll
 D:\Projetos\calemas-erp\Calemas.Erp.Gen\obj\Debug\Calemas.Erp.Gen.csprojResolveAssemblyReference.cache
+D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Back\api.custom.method
+D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Back\EntityApplicationService.custom.method
+D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Back\IEntityApplicationService.custom.method
+D:\Projetos\calemas-erp\Calemas.Erp.Gen\bin\Debug\Templates\Back\IEntityApplicationServiceBase

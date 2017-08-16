@@ -6,10 +6,10 @@ namespace Calemas.Erp.Domain.Filter
     public class PlanoContaFilterBase : FilterBase
     {
 
-        public int PlanoContaId { get; set;} 
-        public string Nome { get; set;} 
-        public string Descricao { get; set;} 
-        public int TipoPlanoContaId { get; set;} 
+        public virtual int PlanoContaId { get; set;} 
+        public virtual string Nome { get; set;} 
+        public virtual string Descricao { get; set;} 
+        public virtual int TipoPlanoContaId { get; set;} 
 
 
     }

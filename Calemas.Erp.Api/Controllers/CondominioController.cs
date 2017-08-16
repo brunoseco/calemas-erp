@@ -115,5 +115,8 @@ namespace Calemas.Erp.Api.Controllers
                 return result.ReturnCustomException(ex,"Calemas.Erp - Condominio", dto);
             }
         }
+
+
+
     }
 }

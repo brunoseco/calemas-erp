@@ -15,14 +15,14 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public int EnderecoId { get; protected set; }
-        public string CEP { get; protected set; }
-        public string Rua { get; protected set; }
-        public string Numero { get; protected set; }
-        public string Complemento { get; protected set; }
-        public string PontoReferencia { get; protected set; }
-        public string Cidade { get; protected set; }
-        public int? EstadoId { get; protected set; }
+        public virtual int EnderecoId { get; protected set; }
+        public virtual string CEP { get; protected set; }
+        public virtual string Rua { get; protected set; }
+        public virtual string Numero { get; protected set; }
+        public virtual string Complemento { get; protected set; }
+        public virtual string PontoReferencia { get; protected set; }
+        public virtual string Cidade { get; protected set; }
+        public virtual int? EstadoId { get; protected set; }
 
 
 		public virtual void SetarCEP(string cep)

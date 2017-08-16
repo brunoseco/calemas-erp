@@ -16,8 +16,8 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public int UnidadeMedidaId { get; protected set; }
-        public string Nome { get; protected set; }
+        public virtual int UnidadeMedidaId { get; protected set; }
+        public virtual string Nome { get; protected set; }
 
 
 

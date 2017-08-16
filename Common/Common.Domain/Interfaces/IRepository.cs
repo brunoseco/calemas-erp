@@ -16,6 +16,7 @@ namespace Common.Domain.Interfaces
         T Update(T entity);
         IEnumerable<T> Update(IEnumerable<T> entitys);
         void Remove(T entity);
+        void RemoveRange(IEnumerable<T> entitys);
         Task<PaginateResult<T>> PagingAndDefineFields(FilterBase filters, IQueryable<T> queryFilter);
 
         Task<List<T2>> ToListAsync<T2>(IQueryable<T2> source);

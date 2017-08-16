@@ -13,6 +13,8 @@ public class PaginateResult<T>
     public IQueryable<T> Source { get; set; }
 
     public int TotalCount { get; set; }
+    
+    public int PageSize { get; set; }
 
 }
 

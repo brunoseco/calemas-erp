@@ -6,8 +6,8 @@ namespace calemas.erp.Domain.Filter
     public class UnidadeMedidaFilterBase : FilterBase
     {
 
-        public int UnidadeMedidaId { get; set;} 
-        public string Nome { get; set;} 
+        public virtual int UnidadeMedidaId { get; set;} 
+        public virtual string Nome { get; set;} 
 
 
     }

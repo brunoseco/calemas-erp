@@ -10,8 +10,11 @@ namespace Common.Validation
     {
         public ValidatorSpecification<T> WithRules(Func<KeyValuePair<string, Rule<T>>, bool> predicate)
         {
-            var result = this.Where(predicate).ToDictionary(_ => _.Key, _ => _.Value);
-            return result as ValidatorSpecification<T>;
+            var validationsFilter = new ValidatorSpecification<T>();
+            foreach (var item in this.Where(predicate).ToDictionary(_ => _.Key, _ => _.Value))
+                validationsFilter.Add(item.Key, item.Value);
+
+            return validationsFilter;
         }
 
         public ValidationSpecificationResult Validate(T entity)

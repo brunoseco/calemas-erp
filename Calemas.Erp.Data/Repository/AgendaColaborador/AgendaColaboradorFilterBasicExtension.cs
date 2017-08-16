@@ -15,16 +15,17 @@ namespace Calemas.Erp.Data.Repository
 			{ 
 				
 				queryFilter = queryFilter.Where(_=>_.AgendaId == filters.AgendaId);
-			};
+			}
             if (filters.ColaboradorId.IsSent()) 
 			{ 
 				
 				queryFilter = queryFilter.Where(_=>_.ColaboradorId == filters.ColaboradorId);
-			};
+			}
 
 
             return queryFilter;
         }
 
+		
     }
 }

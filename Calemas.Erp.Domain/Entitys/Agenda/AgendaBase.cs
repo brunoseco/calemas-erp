@@ -19,12 +19,12 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public int AgendaId { get; protected set; }
-        public string Nome { get; protected set; }
-        public string Descricao { get; protected set; }
-        public DateTime DataInicio { get; protected set; }
-        public DateTime DataFim { get; protected set; }
-        public int CorId { get; protected set; }
+        public virtual int AgendaId { get; protected set; }
+        public virtual string Nome { get; protected set; }
+        public virtual string Descricao { get; protected set; }
+        public virtual DateTime DataInicio { get; protected set; }
+        public virtual DateTime DataFim { get; protected set; }
+        public virtual int CorId { get; protected set; }
 
 
 		public virtual void SetarDescricao(string descricao)

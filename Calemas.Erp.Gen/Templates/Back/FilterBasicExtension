@@ -2,4 +2,4 @@
 			{ 
 				<#filtersRange#>
 				queryFilter = queryFilter.Where(<#condition#>);
-			};
+			}
