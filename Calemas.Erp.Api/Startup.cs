@@ -36,7 +36,7 @@ namespace Calemas.Erp.Api
 
             Configuration = builder.Build();
         }
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DbContextCore>(options => options.UseSqlServer(Configuration.GetSection("EFCoreConnStrings:Core").Value));
@@ -75,12 +75,24 @@ namespace Calemas.Erp.Api
                 ApiName = "ssocalemas",
                 RequireHttpsMetadata = false
             });
-            
+
+            //var suportedCultures = new[]
+            //{
+            //    new CultureInfo("pt-BR")
+            //};
+
+            //app.UseRequestLocalization(new RequestLocalizationOptions
+            //{
+            //    DefaultRequestCulture = new RequestCulture("pt-BR"),
+            //    SupportedCultures = suportedCultures,
+            //    SupportedUICultures = suportedCultures
+            //});
+
             app.AddTokenMiddleware();
             app.UseMvc();
 
             AutoMapperConfigCore.RegisterMappings();
         }
     }
-    
+
 }

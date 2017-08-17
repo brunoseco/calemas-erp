@@ -3,7 +3,7 @@ using Calemas.Erp.Dto;
 
 namespace Calemas.Erp.Application.Interfaces
 {
-    public interface IAgendaColaboradorApplicationService : IApplicationServiceBase<AgendaColaboradorDto>
+    public interface IAgendaColaboradorApplicationService : IAgendaColaboradorApplicationServiceBase
     {
        
 

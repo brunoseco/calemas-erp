@@ -1,7 +1,7 @@
 ﻿		public virtual async Task<<#customMethodsDto#>> <#customMethodsTemplate#>
 		{
 			return await Task.Run(() =>
-				{
-					return <#customMethodsparameterReturn#>;
-				});
+			{
+				return <#customMethodsparameterReturn#>;
+			});
 		}

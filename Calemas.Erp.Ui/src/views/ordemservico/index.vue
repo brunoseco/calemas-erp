@@ -51,12 +51,8 @@
                             <thead class="">
                                 <tr>
                                     <th>#</th>
-                                    <th>Protoco<button @click="executeOrderBy('protoco')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>DataOcorrencia<button @click="executeOrderBy('dataOcorrencia')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>DataSituacao<button @click="executeOrderBy('dataSituacao')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Observacao<button @click="executeOrderBy('observacao')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Descricao<button @click="executeOrderBy('descricao')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-
+                                    <th>Protocolo<button @click="executeOrderBy('protoco')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Data da Ocorrência<button @click="executeOrderBy('dataOcorrencia')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
                                     <th class="text-center" width="75"><i class="fa fa-cog"></i></th>
                                 </tr>
                             </thead>
@@ -65,10 +61,6 @@
                                     <td>{{ item.ordemServicoId }}</td>
                                     <td>{{ item.protoco }}</td>
                                     <td>{{ item.dataOcorrencia }}</td>
-                                    <td>{{ item.dataSituacao }}</td>
-                                    <td>{{ item.observacao }}</td>
-                                    <td>{{ item.descricao }}</td>
-
                                     <td class="text-center">
                                         <button type="button" class="btn btn-xs btn-primary" @click="openEdit(item.ordemServicoId, item)">
                                             <i class="fa fa-pencil"></i>
@@ -156,7 +148,14 @@
         data() {
             return {
                 resource: "ordemservico",
+                model: { agenda: {} }
             }
+        },
+        methods: {
+            onBeforeCreate: (model) => {
+                model.agenda.dataFim = model.agenda.dataInicio;
+            },
         }
+
     }
 </script>

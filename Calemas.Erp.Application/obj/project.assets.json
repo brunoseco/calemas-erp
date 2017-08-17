@@ -2435,6 +2435,13 @@
           "Microsoft.NETCore.App": "1.1.2"
         }
       },
+      "Calemas.Erp.Enums/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.1",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.1.2"
+        }
+      },
       "Calemas.Erp.Filter/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v1.1",
@@ -7545,6 +7552,11 @@
       "path": "../Calemas.Erp.Dto/Calemas.Erp.Dto.csproj",
       "msbuildProject": "../Calemas.Erp.Dto/Calemas.Erp.Dto.csproj"
     },
+    "Calemas.Erp.Enums/1.0.0": {
+      "type": "project",
+      "path": "../Calemas.Erp.Enums/Calemas.Erp.Enums.csproj",
+      "msbuildProject": "../Calemas.Erp.Enums/Calemas.Erp.Enums.csproj"
+    },
     "Calemas.Erp.Filter/1.0.0": {
       "type": "project",
       "path": "../Calemas.Erp.Filter/Calemas.Erp.Filter.csproj",
@@ -7571,6 +7583,7 @@
       "AutoMapper >= 6.1.0",
       "Calemas.Erp.Domain >= 1.0.0",
       "Calemas.Erp.Dto >= 1.0.0",
+      "Calemas.Erp.Enums >= 1.0.0",
       "Common.Domain >= 1.0.0",
       "Common.Dto >= 1.0.0",
       "Microsoft.NETCore.App >= 1.1.2"
@@ -7601,6 +7614,9 @@
             },
             "D:\\Projetos\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj": {
               "projectPath": "D:\\Projetos\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj"
+            },
+            "D:\\Projetos\\calemas-erp\\Calemas.Erp.Enums\\Calemas.Erp.Enums.csproj": {
+              "projectPath": "D:\\Projetos\\calemas-erp\\Calemas.Erp.Enums\\Calemas.Erp.Enums.csproj"
             },
             "D:\\Projetos\\calemas-erp\\Calemas.Erp.Dto\\Calemas.Erp.Dto.csproj": {
               "projectPath": "D:\\Projetos\\calemas-erp\\Calemas.Erp.Dto\\Calemas.Erp.Dto.csproj"

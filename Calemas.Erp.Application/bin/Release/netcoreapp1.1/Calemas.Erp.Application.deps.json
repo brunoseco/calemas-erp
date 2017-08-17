@@ -11,6 +11,7 @@
           "AutoMapper": "6.1.0",
           "Calemas.Erp.Domain": "1.0.0",
           "Calemas.Erp.Dto": "1.0.0",
+          "Calemas.Erp.Enums": "1.0.0",
           "Common.Domain": "1.0.0",
           "Common.Dto": "1.0.0"
         },
@@ -100,6 +101,11 @@
         },
         "runtime": {
           "Calemas.Erp.Dto.dll": {}
+        }
+      },
+      "calemas.erp.enums/1.0.0": {
+        "runtime": {
+          "Calemas.Erp.Enums.dll": {}
         }
       },
       "calemas.erp.filter/1.0.0": {
@@ -212,6 +218,11 @@
       "sha512": ""
     },
     "calemas.erp.dto/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "calemas.erp.enums/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

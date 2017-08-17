@@ -89,6 +89,7 @@ export default {
             this.apiEdit.get().then(data => {
                 this.modalEditIsOpen = true;
                 this.model = data.data;
+                this.formValidate(); 
             });
         },
         openDelete: function (id, item) {

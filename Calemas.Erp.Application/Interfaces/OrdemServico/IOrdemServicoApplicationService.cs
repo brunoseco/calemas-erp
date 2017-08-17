@@ -3,7 +3,7 @@ using Calemas.Erp.Dto;
 
 namespace Calemas.Erp.Application.Interfaces
 {
-    public interface IOrdemServicoApplicationService : IApplicationServiceBase<OrdemServicoDto>
+    public interface IOrdemServicoApplicationService : IOrdemServicoApplicationServiceBase
     {
        
 

@@ -7,3 +7,12 @@ C:\Projetos\Target.Pendencias\Common.API\obj\Release\netcoreapp1.1\Common.API.cs
 C:\Projetos\Target.Pendencias\Common.API\obj\Release\netcoreapp1.1\Common.API.AssemblyInfo.cs
 C:\Projetos\Target.Pendencias\Common.API\obj\Release\netcoreapp1.1\Common.API.dll
 C:\Projetos\Target.Pendencias\Common.API\obj\Release\netcoreapp1.1\Common.API.pdb
+D:\Projetos\calemas-erp\Common\Common.API\bin\Release\netcoreapp1.1\Common.API.deps.json
+D:\Projetos\calemas-erp\Common\Common.API\bin\Release\netcoreapp1.1\Common.API.dll
+D:\Projetos\calemas-erp\Common\Common.API\bin\Release\netcoreapp1.1\Common.API.pdb
+D:\Projetos\calemas-erp\Common\Common.API\bin\Release\netcoreapp1.1\Common.Domain.dll
+D:\Projetos\calemas-erp\Common\Common.API\bin\Release\netcoreapp1.1\Common.Domain.pdb
+D:\Projetos\calemas-erp\Common\Common.API\obj\Release\netcoreapp1.1\Common.API.csprojResolveAssemblyReference.cache
+D:\Projetos\calemas-erp\Common\Common.API\obj\Release\netcoreapp1.1\Common.API.AssemblyInfo.cs
+D:\Projetos\calemas-erp\Common\Common.API\obj\Release\netcoreapp1.1\Common.API.dll
+D:\Projetos\calemas-erp\Common\Common.API\obj\Release\netcoreapp1.1\Common.API.pdb

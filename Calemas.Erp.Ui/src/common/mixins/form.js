@@ -1,15 +1,19 @@
 ﻿import bus from '../../common/bus'
 
+import Vue from 'vue'
+import VueMask from 'di-vue-mask'
+Vue.use(VueMask);
+
 export default {
     mounted() {
         bus.$on('validate', this.onValidate)
-        this.$watch(() => this.errors.items, (newValue, oldValue) => {
-            bus.$emit('errors-changed', this.errors.items, [])
+        this.$watch(() => this.errors.items, () => {
+            bus.$emit('errors-changed', this.errors.items)
         })
     },
     methods: {
         onValidate() {
-            this.$validator.validateAll().then(() => {
+            this.$validator.validateAll().then(res => {
                 bus.$emit('errors-changed', this.errors.items)
             });
         },

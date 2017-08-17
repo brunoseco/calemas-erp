@@ -7,3 +7,12 @@ C:\Projetos\Target.Pendencias\Common.Validation\obj\Release\netcoreapp1.1\Common
 C:\Projetos\Target.Pendencias\Common.Validation\obj\Release\netcoreapp1.1\Common.Validation.AssemblyInfo.cs
 C:\Projetos\Target.Pendencias\Common.Validation\obj\Release\netcoreapp1.1\Common.Validation.dll
 C:\Projetos\Target.Pendencias\Common.Validation\obj\Release\netcoreapp1.1\Common.Validation.pdb
+D:\Projetos\calemas-erp\Common\Common.Validation\bin\Release\netcoreapp1.1\Common.Validation.deps.json
+D:\Projetos\calemas-erp\Common\Common.Validation\bin\Release\netcoreapp1.1\Common.Validation.dll
+D:\Projetos\calemas-erp\Common\Common.Validation\bin\Release\netcoreapp1.1\Common.Validation.pdb
+D:\Projetos\calemas-erp\Common\Common.Validation\bin\Release\netcoreapp1.1\Common.Domain.dll
+D:\Projetos\calemas-erp\Common\Common.Validation\bin\Release\netcoreapp1.1\Common.Domain.pdb
+D:\Projetos\calemas-erp\Common\Common.Validation\obj\Release\netcoreapp1.1\Common.Validation.csprojResolveAssemblyReference.cache
+D:\Projetos\calemas-erp\Common\Common.Validation\obj\Release\netcoreapp1.1\Common.Validation.AssemblyInfo.cs
+D:\Projetos\calemas-erp\Common\Common.Validation\obj\Release\netcoreapp1.1\Common.Validation.dll
+D:\Projetos\calemas-erp\Common\Common.Validation\obj\Release\netcoreapp1.1\Common.Validation.pdb

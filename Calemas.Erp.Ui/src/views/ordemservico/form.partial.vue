@@ -1,6 +1,6 @@
 ﻿<template>
     <fieldset>
-        <legend>Dados</legend>
+        <legend>Básico</legend>
         <div class="row">
             <input type="hidden" class="form-control" name="ordemServicoId" v-model="model.ordemServicoId" />
 
@@ -11,10 +11,6 @@
             <div class="form-group col-md-8" v-bind:class="{ 'has-danger': errors.has('clienteId') }">
                 <label for="clienteId">Cliente</label>
                 <select v-select="{ dataitem: 'Cliente', default: 'Selecione' }" v-model="model.clienteId" class="form-control" name="clienteId" v-validate="'required'"></select>
-            </div>
-            <div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('responsavelId') }">
-                <label for="responsavelId">Responsável</label>
-                <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" v-model="model.responsavelId" class="form-control" name="responsavelId" v-validate="'required'"></select>
             </div>
             <div class="form-group col-md-6" v-bind:class="{ 'has-danger': errors.has('setorId') }">
                 <label for="setorId">Setor</label>
@@ -40,7 +36,17 @@
                 <label for="observacao">Observação</label>
                 <textarea class="form-control" name="observacao" placeholder="Observacao" v-model="model.observacao" />
             </div>
-
+        </div>
+        <legend>Realização</legend>
+        <div class="row">
+            <div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('responsavelId') }">
+                <label for="responsavelId">Técnico</label>
+                <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" v-model="model.responsavelId" class="form-control" name="responsavelId" v-validate="'required'"></select>
+            </div>
+            <div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('dataInicio') }">
+                <label for="dataInicio">Data prevista de realização</label>
+                <input type="datetime-local" class="form-control" name="dataInicio" v-model="model.agenda.dataInicio" v-validate="'required'" />
+            </div>
         </div>
     </fieldset>
 </template>

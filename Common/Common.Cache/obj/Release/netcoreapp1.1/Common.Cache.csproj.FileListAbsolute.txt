@@ -7,3 +7,12 @@ C:\Projetos\Target.Pendencias\Common.Cache\obj\Release\netcoreapp1.1\Common.Cach
 C:\Projetos\Target.Pendencias\Common.Cache\obj\Release\netcoreapp1.1\Common.Cache.AssemblyInfo.cs
 C:\Projetos\Target.Pendencias\Common.Cache\obj\Release\netcoreapp1.1\Common.Cache.dll
 C:\Projetos\Target.Pendencias\Common.Cache\obj\Release\netcoreapp1.1\Common.Cache.pdb
+D:\Projetos\calemas-erp\Common\Common.Cache\bin\Release\netcoreapp1.1\Common.Cache.deps.json
+D:\Projetos\calemas-erp\Common\Common.Cache\bin\Release\netcoreapp1.1\Common.Cache.dll
+D:\Projetos\calemas-erp\Common\Common.Cache\bin\Release\netcoreapp1.1\Common.Cache.pdb
+D:\Projetos\calemas-erp\Common\Common.Cache\bin\Release\netcoreapp1.1\Common.Domain.dll
+D:\Projetos\calemas-erp\Common\Common.Cache\bin\Release\netcoreapp1.1\Common.Domain.pdb
+D:\Projetos\calemas-erp\Common\Common.Cache\obj\Release\netcoreapp1.1\Common.Cache.csprojResolveAssemblyReference.cache
+D:\Projetos\calemas-erp\Common\Common.Cache\obj\Release\netcoreapp1.1\Common.Cache.AssemblyInfo.cs
+D:\Projetos\calemas-erp\Common\Common.Cache\obj\Release\netcoreapp1.1\Common.Cache.dll
+D:\Projetos\calemas-erp\Common\Common.Cache\obj\Release\netcoreapp1.1\Common.Cache.pdb

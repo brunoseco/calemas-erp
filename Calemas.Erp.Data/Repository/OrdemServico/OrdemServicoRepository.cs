@@ -20,30 +20,30 @@ namespace Calemas.Erp.Data.Repository
 
         }
 
-      
+
         public IQueryable<OrdemServico> GetBySimplefilters(OrdemServicoFilter filters)
         {
             var querybase = this.GetAll(this.DataAgregation(filters))
-								.WithBasicFilters(filters)
-								.WithCustomFilters(filters);
+                                .WithBasicFilters(filters)
+                                .WithCustomFilters(filters);
             return querybase;
         }
 
         public async Task<OrdemServico> GetById(OrdemServicoFilter model)
         {
             var _ordemservico = await this.SingleOrDefaultAsync(this.GetAll(this.DataAgregation(model))
-               .Where(_=>_.OrdemServicoId == model.OrdemServicoId));
+               .Where(_ => _.OrdemServicoId == model.OrdemServicoId));
 
             return _ordemservico;
         }
 
-		 public async Task<IEnumerable<dynamic>> GetDataItem(OrdemServicoFilter filters)
+        public async Task<IEnumerable<dynamic>> GetDataItem(OrdemServicoFilter filters)
         {
             var querybase = await this.ToListAsync(this.GetBySimplefilters(filters).Select(_ => new
             {
                 Id = _.OrdemServicoId
 
-            })); 
+            }));
 
             return querybase;
         }
@@ -134,9 +134,9 @@ namespace Calemas.Erp.Data.Repository
             return source.SingleOrDefault();
         }
 
-		protected override Expression<Func<OrdemServico, object>>[] DataAgregation(Expression<Func<OrdemServico, object>>[] includes, FilterBase filter)
+        protected override Expression<Func<OrdemServico, object>>[] DataAgregation(Expression<Func<OrdemServico, object>>[] includes, FilterBase filter)
         {
-            return base.DataAgregation(includes, filter);
+            return includes.Add(_ => _.Agenda);
         }
 
     }

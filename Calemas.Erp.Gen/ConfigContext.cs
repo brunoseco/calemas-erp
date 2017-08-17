@@ -59,7 +59,21 @@ namespace Calemas.Erp.Gen
                     new TableInfo { TableName = "NivelAcesso", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
 
                     new TableInfo { TableName = "Cor", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
-                    new TableInfo { TableName = "OrdemServico", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
+                    new TableInfo { TableName = "OrdemServico", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true,
+                        MethodConfig = new List<MethodConfig>
+                        {
+                            new MethodConfig
+                            {
+                                SignatureTemplate = "Fechar(OrdemServicoDtoSpecialized model)",
+                                ParameterReturn = "model",
+                                CallTemplate = "Fechar(model)",
+                                Dto = "OrdemServicoDtoSpecialized",
+                                Route = "/OrdemServico/Fechar",
+                                Verb = "Post"
+                            }
+                        },
+                    },
+
                     new TableInfo { TableName = "OrdemServicoInteracao", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "Setor", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "Prioridade", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },

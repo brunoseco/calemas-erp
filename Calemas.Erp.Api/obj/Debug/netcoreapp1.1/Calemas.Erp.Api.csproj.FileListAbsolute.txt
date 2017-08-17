@@ -91,3 +91,5 @@ D:\Projetos\calemas-erp\Calemas.Erp.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Api.
 D:\Projetos\calemas-erp\Calemas.Erp.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Api.AssemblyInfo.cs
 D:\Projetos\calemas-erp\Calemas.Erp.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Api.dll
 D:\Projetos\calemas-erp\Calemas.Erp.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Api.pdb
+D:\Projetos\calemas-erp\Calemas.Erp.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Enums.dll
+D:\Projetos\calemas-erp\Calemas.Erp.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Enums.pdb

@@ -65,6 +65,13 @@ namespace Calemas.Erp.Application
 			});
         }
 
+		public virtual async Task<OrdemServicoDtoSpecialized> Fechar(OrdemServicoDtoSpecialized model)
+		{
+			return await Task.Run(() =>
+			{
+				return model;
+			});
+		}
 
 
     }

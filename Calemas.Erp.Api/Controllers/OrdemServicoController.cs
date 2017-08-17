@@ -116,7 +116,21 @@ namespace Calemas.Erp.Api.Controllers
             }
         }
 
-
+		[HttpPost("Post")]
+        [Route("api/OrdemServico/Fechar")]
+        public async Task<IActionResult> Fechar(OrdemServicoDtoSpecialized model)
+        {
+            var result = new HttpResult<OrdemServicoDto>(this._logger);
+            try
+            {
+                var returnModel = await this._app.Fechar(model);
+                return result.ReturnCustomResponse(this._app, returnModel);
+            }
+            catch (Exception ex)
+            {
+                return result.ReturnCustomException(ex, "Calemas.Erp - OrdemServico");
+            }
+        }
 
     }
 }
