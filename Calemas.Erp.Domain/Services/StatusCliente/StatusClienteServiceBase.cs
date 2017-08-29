@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 statuscliente = this.AddDefault(statuscliente);
             else
-				statuscliente = this.UpdateDefault(statuscliente);
+				statuscliente = this.UpdateDefault(statuscliente, statusclienteOld);
 
             return statuscliente;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return statuscliente;
         }
 
-		protected virtual StatusCliente UpdateDefault(StatusCliente statuscliente)
+		protected virtual StatusCliente UpdateDefault(StatusCliente statuscliente, StatusCliente statusclienteOld)
         {
             statuscliente = this._rep.Update(statuscliente);
             return statuscliente;

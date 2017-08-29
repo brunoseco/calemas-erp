@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 estoque = this.AddDefault(estoque);
             else
-				estoque = this.UpdateDefault(estoque);
+				estoque = this.UpdateDefault(estoque, estoqueOld);
 
             return estoque;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return estoque;
         }
 
-		protected virtual Estoque UpdateDefault(Estoque estoque)
+		protected virtual Estoque UpdateDefault(Estoque estoque, Estoque estoqueOld)
         {
             estoque = this._rep.Update(estoque);
             return estoque;

@@ -6,6 +6,6 @@ namespace Calemas.Erp.Application.Interfaces
 {
     public interface IOrdemServicoApplicationServiceBase : IApplicationServiceBase<OrdemServicoDto>
     {
-		Task<OrdemServicoDtoSpecialized> Fechar(OrdemServicoDtoSpecialized model);
+
     }
 }

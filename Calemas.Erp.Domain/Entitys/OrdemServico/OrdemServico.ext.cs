@@ -1,12 +1,27 @@
 using Calemas.Erp.Domain.Validations;
 using Common.Domain.Model;
 using System;
+using System.Collections.Generic;
 
 namespace Calemas.Erp.Domain.Entitys
 {
     public class OrdemServico : OrdemServicoBase
     {
+        public bool HouveInteracao
+        {
+            get
+            {
+                return this.CollectionOrdemServicoInteracao.IsAny();
+            }
+        }
+
         public virtual Agenda Agenda { get; set; }
+        public virtual Cliente Cliente { get; set; }
+        public virtual StatusOrdemServico StatusOrdemServico { get; set; }
+        public virtual TipoOrdemServico TipoOrdemServico { get; set; }
+        public virtual Colaborador Responsavel { get; set; }
+        public virtual ICollection<OrdemServicoInteracao> CollectionOrdemServicoInteracao { get; set; }
+
         public OrdemServico()
         {
 
@@ -42,6 +57,11 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual void SetarDataSituacao(DateTime dataSituacao)
         {
             this.DataSituacao = dataSituacao;
+        }
+
+        public virtual void SetarSituacao(int id)
+        {
+            this.StatusOrdemServicoId = id;
         }
 
         public bool IsValid()

@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 tipoordemservico = this.AddDefault(tipoordemservico);
             else
-				tipoordemservico = this.UpdateDefault(tipoordemservico);
+				tipoordemservico = this.UpdateDefault(tipoordemservico, tipoordemservicoOld);
 
             return tipoordemservico;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return tipoordemservico;
         }
 
-		protected virtual TipoOrdemServico UpdateDefault(TipoOrdemServico tipoordemservico)
+		protected virtual TipoOrdemServico UpdateDefault(TipoOrdemServico tipoordemservico, TipoOrdemServico tipoordemservicoOld)
         {
             tipoordemservico = this._rep.Update(tipoordemservico);
             return tipoordemservico;

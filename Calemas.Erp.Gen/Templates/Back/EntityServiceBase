@@ -151,7 +151,7 @@ namespace <#namespace#>.Domain.Services
             if (isNew)
                 <#classNameLower#> = this.AddDefault(<#classNameLower#>);
             else
-				<#classNameLower#> = this.UpdateDefault(<#classNameLower#>);
+				<#classNameLower#> = this.UpdateDefault(<#classNameLower#>, <#classNameLower#>Old);
 
             return <#classNameLower#>;
         }
@@ -162,7 +162,7 @@ namespace <#namespace#>.Domain.Services
             return <#classNameLower#>;
         }
 
-		protected virtual <#className#> UpdateDefault(<#className#> <#classNameLower#>)
+		protected virtual <#className#> UpdateDefault(<#className#> <#classNameLower#>, <#className#> <#classNameLower#>Old)
         {
             <#classNameLower#> = this._rep.Update(<#classNameLower#>);
             return <#classNameLower#>;

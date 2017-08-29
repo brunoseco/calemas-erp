@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 statusordemservico = this.AddDefault(statusordemservico);
             else
-				statusordemservico = this.UpdateDefault(statusordemservico);
+				statusordemservico = this.UpdateDefault(statusordemservico, statusordemservicoOld);
 
             return statusordemservico;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return statusordemservico;
         }
 
-		protected virtual StatusOrdemServico UpdateDefault(StatusOrdemServico statusordemservico)
+		protected virtual StatusOrdemServico UpdateDefault(StatusOrdemServico statusordemservico, StatusOrdemServico statusordemservicoOld)
         {
             statusordemservico = this._rep.Update(statusordemservico);
             return statusordemservico;

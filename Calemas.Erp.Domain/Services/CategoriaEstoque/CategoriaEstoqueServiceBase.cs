@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 categoriaestoque = this.AddDefault(categoriaestoque);
             else
-				categoriaestoque = this.UpdateDefault(categoriaestoque);
+				categoriaestoque = this.UpdateDefault(categoriaestoque, categoriaestoqueOld);
 
             return categoriaestoque;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return categoriaestoque;
         }
 
-		protected virtual CategoriaEstoque UpdateDefault(CategoriaEstoque categoriaestoque)
+		protected virtual CategoriaEstoque UpdateDefault(CategoriaEstoque categoriaestoque, CategoriaEstoque categoriaestoqueOld)
         {
             categoriaestoque = this._rep.Update(categoriaestoque);
             return categoriaestoque;

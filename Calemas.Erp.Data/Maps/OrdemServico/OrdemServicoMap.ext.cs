@@ -13,7 +13,7 @@ namespace Calemas.Erp.Data.Map
 
         protected override void CustomConfig(EntityTypeBuilder<OrdemServico> type)
         {
-
+            type.HasOne(_ => _.Responsavel).WithMany().HasForeignKey(_ => _.ResponsavelId).IsRequired();
         }
 
     }

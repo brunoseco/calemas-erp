@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 prioridade = this.AddDefault(prioridade);
             else
-				prioridade = this.UpdateDefault(prioridade);
+				prioridade = this.UpdateDefault(prioridade, prioridadeOld);
 
             return prioridade;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return prioridade;
         }
 
-		protected virtual Prioridade UpdateDefault(Prioridade prioridade)
+		protected virtual Prioridade UpdateDefault(Prioridade prioridade, Prioridade prioridadeOld)
         {
             prioridade = this._rep.Update(prioridade);
             return prioridade;

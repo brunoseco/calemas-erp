@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 setor = this.AddDefault(setor);
             else
-				setor = this.UpdateDefault(setor);
+				setor = this.UpdateDefault(setor, setorOld);
 
             return setor;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return setor;
         }
 
-		protected virtual Setor UpdateDefault(Setor setor)
+		protected virtual Setor UpdateDefault(Setor setor, Setor setorOld)
         {
             setor = this._rep.Update(setor);
             return setor;

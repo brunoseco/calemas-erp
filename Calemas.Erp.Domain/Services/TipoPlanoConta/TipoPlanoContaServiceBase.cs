@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 tipoplanoconta = this.AddDefault(tipoplanoconta);
             else
-				tipoplanoconta = this.UpdateDefault(tipoplanoconta);
+				tipoplanoconta = this.UpdateDefault(tipoplanoconta, tipoplanocontaOld);
 
             return tipoplanoconta;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return tipoplanoconta;
         }
 
-		protected virtual TipoPlanoConta UpdateDefault(TipoPlanoConta tipoplanoconta)
+		protected virtual TipoPlanoConta UpdateDefault(TipoPlanoConta tipoplanoconta, TipoPlanoConta tipoplanocontaOld)
         {
             tipoplanoconta = this._rep.Update(tipoplanoconta);
             return tipoplanoconta;

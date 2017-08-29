@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 agendacolaborador = this.AddDefault(agendacolaborador);
             else
-				agendacolaborador = this.UpdateDefault(agendacolaborador);
+				agendacolaborador = this.UpdateDefault(agendacolaborador, agendacolaboradorOld);
 
             return agendacolaborador;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return agendacolaborador;
         }
 
-		protected virtual AgendaColaborador UpdateDefault(AgendaColaborador agendacolaborador)
+		protected virtual AgendaColaborador UpdateDefault(AgendaColaborador agendacolaborador, AgendaColaborador agendacolaboradorOld)
         {
             agendacolaborador = this._rep.Update(agendacolaborador);
             return agendacolaborador;

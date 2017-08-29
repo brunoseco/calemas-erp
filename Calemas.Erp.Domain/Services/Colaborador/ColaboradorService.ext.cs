@@ -26,12 +26,12 @@ namespace Calemas.Erp.Domain.Services
             return colaborador;
         }
 
-        protected override Colaborador UpdateDefault(Colaborador colaborador)
+        protected override Colaborador UpdateDefault(Colaborador colaborador, Colaborador colaboradorOld)
         {
             if (colaborador.Pessoa.IsNotNull())
                 _repPessoa.Update(colaborador.Pessoa);
 
-            return base.UpdateDefault(colaborador);
+            return base.UpdateDefault(colaborador, colaboradorOld);
         }
 
     }

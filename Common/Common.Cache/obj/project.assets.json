@@ -7742,10 +7742,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projetos\\calemas-erp\\Common\\Common.Cache\\Common.Cache.csproj",
+      "projectUniqueName": "C:\\Pessoal\\calemas-erp\\Common\\Common.Cache\\Common.Cache.csproj",
       "projectName": "Common.Cache",
-      "projectPath": "D:\\Projetos\\calemas-erp\\Common\\Common.Cache\\Common.Cache.csproj",
-      "outputPath": "D:\\Projetos\\calemas-erp\\Common\\Common.Cache\\obj\\",
+      "projectPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Cache\\Common.Cache.csproj",
+      "outputPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Cache\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -7753,8 +7753,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "D:\\Projetos\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj": {
-              "projectPath": "D:\\Projetos\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj"
+            "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj": {
+              "projectPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj"
             }
           }
         }

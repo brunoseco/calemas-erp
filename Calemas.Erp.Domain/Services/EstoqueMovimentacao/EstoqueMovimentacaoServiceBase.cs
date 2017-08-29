@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 estoquemovimentacao = this.AddDefault(estoquemovimentacao);
             else
-				estoquemovimentacao = this.UpdateDefault(estoquemovimentacao);
+				estoquemovimentacao = this.UpdateDefault(estoquemovimentacao, estoquemovimentacaoOld);
 
             return estoquemovimentacao;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return estoquemovimentacao;
         }
 
-		protected virtual EstoqueMovimentacao UpdateDefault(EstoqueMovimentacao estoquemovimentacao)
+		protected virtual EstoqueMovimentacao UpdateDefault(EstoqueMovimentacao estoquemovimentacao, EstoqueMovimentacao estoquemovimentacaoOld)
         {
             estoquemovimentacao = this._rep.Update(estoquemovimentacao);
             return estoquemovimentacao;

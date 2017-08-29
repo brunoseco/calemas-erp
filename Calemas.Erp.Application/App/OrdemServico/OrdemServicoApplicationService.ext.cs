@@ -18,11 +18,13 @@ namespace Calemas.Erp.Application
     public class OrdemServicoApplicationService : OrdemServicoApplicationServiceBase
     {
         private IPrioridadeRepository _prioridadeRepository;
+        private IClienteRepository _clienteRepository;
 
-        public OrdemServicoApplicationService(IOrdemServicoService service, IPrioridadeRepository prioridadeRepository, IUnitOfWork uow, ICache cache, CurrentUser user) :
+        public OrdemServicoApplicationService(IOrdemServicoService service, IPrioridadeRepository prioridadeRepository, IClienteRepository clienteRepository, IUnitOfWork uow, ICache cache, CurrentUser user) :
             base(service, uow, cache, user)
         {
             this._prioridadeRepository = prioridadeRepository;
+            this._clienteRepository = clienteRepository;
         }
 
         protected override System.Collections.Generic.IEnumerable<TDS> MapperDomainToResult<TDS>(FilterBase filter, PaginateResult<OrdemServico> dataList)
@@ -42,24 +44,43 @@ namespace Calemas.Erp.Application
                 var _dto = dto as OrdemServicoDtoSpecialized;
 
                 if (!_dto.StatusOrdemServicoId.IsSent())
+                {
                     _dto.StatusOrdemServicoId = (int)EStatusOrdemServico.Pendente;
-
-                if (!_dto.DataSituacao.IsSent())
                     _dto.DataSituacao = DateTime.Now;
+                }
 
                 var domain = base.MapperDtoToDomain(_dto).Result;
 
                 if (_dto.Agenda.IsNotNull())
                 {
-                    var prioridade = this._prioridadeRepository.GetById(new PrioridadeFilter { PrioridadeId = _dto.PrioridadeId }).Result;
-                    _dto.Agenda.CorId = prioridade.CorId;
+                    this.DefineCorAgendaPelaPrioridade(_dto);
+                    this.DefineTituloPeloCliente(_dto);
                     domain.Agenda = new Agenda.AgendaFactory().GetDefaultInstance(_dto.Agenda, this._user);
+
+                    this.ConfiguraAgendaColaborador(domain);
                 }
 
                 return domain;
             });
         }
 
+        private void DefineTituloPeloCliente(OrdemServicoDtoSpecialized dto)
+        {
+            var cliente = this._clienteRepository.GetById(new ClienteFilter { ClienteId = dto.ClienteId }).Result;
+            dto.Agenda.Descricao = cliente.Pessoa.Nome;
+        }
+
+        private void ConfiguraAgendaColaborador(OrdemServico domain)
+        {
+            var agendaColaborador = new AgendaColaborador(domain.Agenda.AgendaId, domain.ResponsavelId);
+            domain.Agenda.CollectionAgendaColaborador = new List<AgendaColaborador>() { agendaColaborador };
+        }
+
+        private void DefineCorAgendaPelaPrioridade(OrdemServicoDtoSpecialized _dto)
+        {
+            var prioridade = this._prioridadeRepository.GetById(new PrioridadeFilter { PrioridadeId = _dto.PrioridadeId }).Result;
+            _dto.Agenda.CorId = prioridade.CorId;
+        }
 
     }
 }

@@ -1,12 +1,14 @@
 using Calemas.Erp.Domain.Validations;
 using System;
 using Common.Domain.Model;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Calemas.Erp.Domain.Entitys
 {
     public class Agenda : AgendaBase
     {
-
+        public virtual ICollection<AgendaColaborador> CollectionAgendaColaborador { get; set; }
         public Agenda()
         {
 

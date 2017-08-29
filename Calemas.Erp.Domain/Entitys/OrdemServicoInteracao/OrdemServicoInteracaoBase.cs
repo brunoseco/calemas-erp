@@ -9,7 +9,7 @@ namespace Calemas.Erp.Domain.Entitys
         {
 
         }
-        public OrdemServicoInteracaoBase(int ordemservicointeracaoid, int ordemservicoid, DateTime dataconclusao, string descricao, bool foipropriocliente, int tecnicoid, int statusordemservicointeracaoid)
+        public OrdemServicoInteracaoBase(int ordemservicointeracaoid, int ordemservicoid, DateTime dataconclusao, string descricao, bool foipropriocliente, int tecnicoid, int statusordemservicoid)
         {
             this.OrdemServicoInteracaoId = ordemservicointeracaoid;
             this.OrdemServicoId = ordemservicoid;
@@ -17,7 +17,7 @@ namespace Calemas.Erp.Domain.Entitys
             this.Descricao = descricao;
             this.FoiProprioCliente = foipropriocliente;
             this.TecnicoId = tecnicoid;
-            this.StatusOrdemServicoInteracaoId = statusordemservicointeracaoid;
+            this.StatusOrdemServicoId = statusordemservicoid;
 
         }
 
@@ -29,7 +29,7 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual bool FoiProprioCliente { get; protected set; }
         public virtual string NomeClienteResponsavel { get; protected set; }
         public virtual int TecnicoId { get; protected set; }
-        public virtual int StatusOrdemServicoInteracaoId { get; protected set; }
+        public virtual int StatusOrdemServicoId { get; protected set; }
 
 
 		public virtual void SetarObservacao(string observacao)

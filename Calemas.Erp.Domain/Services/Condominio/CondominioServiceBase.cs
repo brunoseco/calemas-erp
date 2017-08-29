@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 condominio = this.AddDefault(condominio);
             else
-				condominio = this.UpdateDefault(condominio);
+				condominio = this.UpdateDefault(condominio, condominioOld);
 
             return condominio;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return condominio;
         }
 
-		protected virtual Condominio UpdateDefault(Condominio condominio)
+		protected virtual Condominio UpdateDefault(Condominio condominio, Condominio condominioOld)
         {
             condominio = this._rep.Update(condominio);
             return condominio;

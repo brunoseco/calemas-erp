@@ -29,6 +29,7 @@ export default {
             modalDetailIsOpen: false,
             filterPartialIsOpen: true,
 
+            detail: null,
             model: {},
             modelEmpty: Object.assign({}, this.model, {}),
 
@@ -89,7 +90,7 @@ export default {
             this.apiEdit.get().then(data => {
                 this.modalEditIsOpen = true;
                 this.model = data.data;
-                this.formValidate(); 
+                this.formValidate();
             });
         },
         openDelete: function (id, item) {
@@ -106,7 +107,10 @@ export default {
             this.apiDetail.filters.id = id;
             this.apiDetail.get().then(data => {
                 this.modalDetailIsOpen = true;
-                this.model = data.data;
+                if (data.dataList)
+                    this.detail = data.dataList;
+                else
+                    this.detail = data.data;
             });
         },
         openFilter: function () {

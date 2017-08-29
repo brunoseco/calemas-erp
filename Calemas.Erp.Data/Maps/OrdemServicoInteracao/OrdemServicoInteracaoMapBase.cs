@@ -22,7 +22,7 @@ namespace Calemas.Erp.Data.Map
             type.Property(t => t.FoiProprioCliente).HasColumnName("FoiProprioCliente");
             type.Property(t => t.NomeClienteResponsavel).HasColumnName("NomeClienteResponsavel");
             type.Property(t => t.TecnicoId).HasColumnName("TecnicoId");
-            type.Property(t => t.StatusOrdemServicoInteracaoId).HasColumnName("StatusOrdemServicoInteracaoId");
+            type.Property(t => t.StatusOrdemServicoId).HasColumnName("StatusOrdemServicoId");
 
 
             type.HasKey(d => new { d.OrdemServicoInteracaoId, }); 

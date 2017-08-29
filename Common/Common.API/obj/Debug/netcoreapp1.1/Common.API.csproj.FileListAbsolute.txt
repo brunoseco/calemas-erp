@@ -34,3 +34,12 @@ D:\Projetos\calemas-erp\Common\Common.API\obj\Debug\netcoreapp1.1\Common.API.csp
 D:\Projetos\calemas-erp\Common\Common.API\obj\Debug\netcoreapp1.1\Common.API.AssemblyInfo.cs
 D:\Projetos\calemas-erp\Common\Common.API\obj\Debug\netcoreapp1.1\Common.API.dll
 D:\Projetos\calemas-erp\Common\Common.API\obj\Debug\netcoreapp1.1\Common.API.pdb
+C:\Pessoal\calemas-erp\Common\Common.API\bin\Debug\netcoreapp1.1\Common.API.deps.json
+C:\Pessoal\calemas-erp\Common\Common.API\bin\Debug\netcoreapp1.1\Common.API.dll
+C:\Pessoal\calemas-erp\Common\Common.API\bin\Debug\netcoreapp1.1\Common.API.pdb
+C:\Pessoal\calemas-erp\Common\Common.API\bin\Debug\netcoreapp1.1\Common.Domain.dll
+C:\Pessoal\calemas-erp\Common\Common.API\bin\Debug\netcoreapp1.1\Common.Domain.pdb
+C:\Pessoal\calemas-erp\Common\Common.API\obj\Debug\netcoreapp1.1\Common.API.csprojResolveAssemblyReference.cache
+C:\Pessoal\calemas-erp\Common\Common.API\obj\Debug\netcoreapp1.1\Common.API.AssemblyInfo.cs
+C:\Pessoal\calemas-erp\Common\Common.API\obj\Debug\netcoreapp1.1\Common.API.dll
+C:\Pessoal\calemas-erp\Common\Common.API\obj\Debug\netcoreapp1.1\Common.API.pdb

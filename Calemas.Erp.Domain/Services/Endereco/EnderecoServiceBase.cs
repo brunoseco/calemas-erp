@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 endereco = this.AddDefault(endereco);
             else
-				endereco = this.UpdateDefault(endereco);
+				endereco = this.UpdateDefault(endereco, enderecoOld);
 
             return endereco;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return endereco;
         }
 
-		protected virtual Endereco UpdateDefault(Endereco endereco)
+		protected virtual Endereco UpdateDefault(Endereco endereco, Endereco enderecoOld)
         {
             endereco = this._rep.Update(endereco);
             return endereco;

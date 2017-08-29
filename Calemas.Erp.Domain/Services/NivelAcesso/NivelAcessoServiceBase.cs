@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 nivelacesso = this.AddDefault(nivelacesso);
             else
-				nivelacesso = this.UpdateDefault(nivelacesso);
+				nivelacesso = this.UpdateDefault(nivelacesso, nivelacessoOld);
 
             return nivelacesso;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return nivelacesso;
         }
 
-		protected virtual NivelAcesso UpdateDefault(NivelAcesso nivelacesso)
+		protected virtual NivelAcesso UpdateDefault(NivelAcesso nivelacesso, NivelAcesso nivelacessoOld)
         {
             nivelacesso = this._rep.Update(nivelacesso);
             return nivelacesso;

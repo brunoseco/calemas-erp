@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 ordemservicointeracao = this.AddDefault(ordemservicointeracao);
             else
-				ordemservicointeracao = this.UpdateDefault(ordemservicointeracao);
+				ordemservicointeracao = this.UpdateDefault(ordemservicointeracao, ordemservicointeracaoOld);
 
             return ordemservicointeracao;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return ordemservicointeracao;
         }
 
-		protected virtual OrdemServicoInteracao UpdateDefault(OrdemServicoInteracao ordemservicointeracao)
+		protected virtual OrdemServicoInteracao UpdateDefault(OrdemServicoInteracao ordemservicointeracao, OrdemServicoInteracao ordemservicointeracaoOld)
         {
             ordemservicointeracao = this._rep.Update(ordemservicointeracao);
             return ordemservicointeracao;

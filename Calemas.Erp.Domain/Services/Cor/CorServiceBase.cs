@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 cor = this.AddDefault(cor);
             else
-				cor = this.UpdateDefault(cor);
+				cor = this.UpdateDefault(cor, corOld);
 
             return cor;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return cor;
         }
 
-		protected virtual Cor UpdateDefault(Cor cor)
+		protected virtual Cor UpdateDefault(Cor cor, Cor corOld)
         {
             cor = this._rep.Update(cor);
             return cor;

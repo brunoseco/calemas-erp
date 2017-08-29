@@ -26,12 +26,12 @@ namespace Calemas.Erp.Domain.Services
             return base.DomainOrchestration(entity, entityOld);
         }
 
-        protected override Cliente UpdateDefault(Cliente cliente)
+        protected override Cliente UpdateDefault(Cliente cliente, Cliente clienteOld)
         {
             if (cliente.Pessoa.IsNotNull())
                 _repPessoa.Update(cliente.Pessoa);
 
-            return base.UpdateDefault(cliente);
+            return base.UpdateDefault(cliente, clienteOld);
         }
 
     }

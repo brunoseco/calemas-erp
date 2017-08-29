@@ -9,15 +9,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
 using System;
+using Common.Domain.Model;
 
 namespace Calemas.Erp.Data.Repository
 {
     public class AgendaRepository : Repository<Agenda>, IAgendaRepository
     {
-        public AgendaRepository(DbContextCore ctx) : base(ctx)
+        private CurrentUser _user;
+        public AgendaRepository(DbContextCore ctx, CurrentUser user) : base(ctx)
         {
-
-
+            this._user = user;
         }
 
       
@@ -25,7 +26,7 @@ namespace Calemas.Erp.Data.Repository
         {
             var querybase = this.GetAll(this.DataAgregation(filters))
 								.WithBasicFilters(filters)
-								.WithCustomFilters(filters);
+								.WithCustomFilters(filters, _user);
             return querybase;
         }
 

@@ -47,25 +47,37 @@
                         <strong>Resultado</strong>
                     </div>
                     <div class="card-block no-padding">
-                        <table class="table has-tickbox table-striped table-sm">
+                        <table class="table table-striped table-sm">
                             <thead class="">
                                 <tr>
-                                    <th>#</th>
-                                    <th>Protocolo<button @click="executeOrderBy('protoco')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Data da Ocorrência<button @click="executeOrderBy('dataOcorrencia')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th class="text-center" width="75"><i class="fa fa-cog"></i></th>
+                                    <th>Protocolo <button @click="executeOrderBy('protoco')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Cliente <button @click="executeOrderBy('protoco')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Tipo da O.S <button @click="executeOrderBy('protoco')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Data da Ocorrência <button @click="executeOrderBy('protoco')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Data para Realização <button @click="executeOrderBy('protoco')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Situação <button @click="executeOrderBy('protoco')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th class="text-center" width="150"><i class="fa fa-cog"></i></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr v-for="item in result.itens" class="animated fadeIn">
-                                    <td>{{ item.ordemServicoId }}</td>
                                     <td>{{ item.protoco }}</td>
-                                    <td>{{ item.dataOcorrencia }}</td>
+                                    <td>{{ item.cliente.pessoa.nome }}</td>
+                                    <td>{{ item.tipoOrdemServico.nome }}</td>
+                                    <td>{{ item.dataOcorrencia | date }}</td>
+                                    <td>{{ item.agenda.dataInicio | date }}</td>
+                                    <td>{{ item.statusOrdemServico.nome }}</td>
                                     <td class="text-center">
-                                        <button type="button" class="btn btn-xs btn-primary" @click="openEdit(item.ordemServicoId, item)">
+                                        <button type="button" class="btn btn-xs btn-success" v-if="item.houveInteracao" @click="openDetail(undefined, { ordemServicoId: item.ordemServicoId })">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-xs btn-warning" v-if="item.statusOrdemServico.ativo" @click="openInteracao(item.ordemServicoId, item)">
+                                            <i class="fa fa-check-square-o"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-xs btn-primary" v-if="item.statusOrdemServico.ativo  && !item.houveInteracao" @click="openEdit(item.ordemServicoId, item)">
                                             <i class="fa fa-pencil"></i>
                                         </button>
-                                        <button type="button" class="btn btn-xs btn-danger" @click="openDelete(item.ordemServicoId, item)">
+                                        <button type="button" class="btn btn-xs btn-danger" v-if="item.statusOrdemServico.ativo && !item.houveInteracao" @click="openDelete(item.ordemServicoId, item)">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </td>
@@ -80,7 +92,7 @@
             </div>
         </div>
 
-        <modal title="Cadastro de Estoque" v-model="modalCreateIsOpen" effect="fade/zoom" type="modal-success" :large="true">
+        <modal title="Cadastro de Ordem de serviço" v-model="modalCreateIsOpen" effect="fade/zoom" type="modal-success" :large="true">
             <div slot="modal-header" class="modal-header">
                 <h4 class="modal-title">Cadastro de Ordem de serviço</h4>
                 <button type="button" class="close" @click="closeCreate()"><span>&times;</span></button>
@@ -96,7 +108,7 @@
             </div>
         </modal>
 
-        <modal title="Edição de Estoque" v-model="modalEditIsOpen" effect="fade/zoom" type="modal-primary" :large="true">
+        <modal title="Edição de Ordem de serviço" v-model="modalEditIsOpen" effect="fade/zoom" type="modal-primary" :large="true">
             <div slot="modal-header" class="modal-header">
                 <h4 class="modal-title">Edição de Ordem de serviço</h4>
                 <button type="button" class="close" @click="closeEdit()"><span>&times;</span></button>
@@ -112,7 +124,7 @@
             </div>
         </modal>
 
-        <modal title="Exclusão de Estoque" v-model="modalDeleteIsOpen" type="modal-danger" effect="fade/zoom">
+        <modal title="Exclusão de Ordem de serviço" v-model="modalDeleteIsOpen" type="modal-danger" effect="fade/zoom">
             <div slot="modal-header" class="modal-header">
                 <h4 class="modal-title">Exclusão de Ordem de serviço</h4>
                 <button type="button" class="close" @click="closeDelete()"><span>&times;</span></button>
@@ -131,29 +143,95 @@
             </div>
         </modal>
 
+        <modal title="Interação de Ordem de serviço" v-model="modalInteracaoIsOpen" effect="fade/zoom" type="modal-warning" :large="true">
+            <div slot="modal-header" class="modal-header">
+                <h4 class="modal-title">Interação de Ordem de serviço</h4>
+                <button type="button" class="close" @click="closeInteracao()"><span>&times;</span></button>
+            </div>
+            <form v-on:submit.prevent="executeInteracao(interacao)">
+                <interacao-partial :model="interacao" />
+            </form>
+            <div slot="modal-footer" class="modal-footer">
+                <button type="button" class="btn btn-default" @click="closeInteracao()">Fechar</button>
+                <button type="button" class="btn btn-warning" @click="executeInteracao(interacao)">
+                    <i class="fa fa-check"></i> Registrar
+                </button>
+            </div>
+        </modal>
+
+        <modal title="Registros da ordem de serviço" v-model="modalDetailIsOpen" effect="fade/zoom" type="modal-success" :large="true">
+            <div slot="modal-header" class="modal-header">
+                <h4 class="modal-title">Registros da ordem de serviço</h4>
+                <button type="button" class="close" @click="closeDetail()"><span>&times;</span></button>
+            </div>
+            <detail-partial :detail="detail" />
+            <div slot="modal-footer" class="modal-footer">
+                <button type="button" class="btn btn-default" @click="closeDetail()">Fechar</button>
+            </div>
+        </modal>
+
     </div>
 </template>
 <script>
 
+    import { Api } from '../../common/api'
+
+    import Vue from 'vue'
+    const _moment = require('moment')
+    require('moment/locale/pt')
+    Vue.use(require('vue-moment'), { _moment });
 
     import crudBase from '../../common/mixins/crud'
 
     import formPartial from './form.partial'
     import filterPartial from './filter.partial'
+    import interacaoPartial from './interacao.partial'
+    import detailPartial from './detail.partial'
 
     export default {
         name: "ordemservico",
-        components: { formPartial, filterPartial },
+        components: { formPartial, filterPartial, interacaoPartial, detailPartial },
         mixins: [crudBase],
         data() {
             return {
                 resource: "ordemservico",
-                model: { agenda: {} }
+                model: { agenda: {} },
+                resources: {
+                    detail: "ordemservicointeracao"
+                },
+
+                interacao: { ordemServico: {} },
+                modalInteracaoIsOpen: false,
+                apiInteracao: new Api("ordemservicointeracao")
             }
         },
         methods: {
             onBeforeCreate: (model) => {
                 model.agenda.dataFim = model.agenda.dataInicio;
+            },
+
+            openInteracao: function (id, item) {
+
+                this.interacao = {
+                    dataConclusao: _moment().format('YYYY-MM-DDTHH:MM'),
+                    ordemServicoId: id,
+                    ordemServico: {}
+                }
+
+                this.modalInteracaoIsOpen = true;
+            },
+            closeInteracao: function () {
+                this.modalInteracaoIsOpen = false;
+            },
+            executeInteracao: function (model) {
+
+                this.defaultBeforeAction();
+                this.apiInteracao.post(model).then(data => {
+                    this.notification.success("Sucesso", "Registrado.")
+                    this.defaultSuccessResult(data);
+                    this.executeFilter();
+                    this.modalInteracaoIsOpen = false;
+                }, err => { this.defaultErrorResult(err); })
             },
         }
 

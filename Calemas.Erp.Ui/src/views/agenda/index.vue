@@ -16,9 +16,9 @@
                     <button @click="openFilter()" class="btn btn-info btn-sm pull-right header-btn hidden-mobile">
                         <i class="fa fa-filter"></i> Filtros
                     </button>
-                    <button @click="openCreate()" class="btn btn-success btn-sm pull-right header-btn hidden-mobile">
+                    <!--<button @click="openCreate()" class="btn btn-success btn-sm pull-right header-btn hidden-mobile">
                         <i class="fa fa-plus"></i> Cadastrar
-                    </button>
+                    </button>-->
                 </div>
             </div>
         </div>
@@ -121,7 +121,6 @@
         },
         methods: {
             eventClickAgenda: function (a, b, c) {
-                console.log(a.YOUR_DATA)
                 this.openEdit(a.YOUR_DATA.agendaId, a.YOUR_DATA);
             },
         }

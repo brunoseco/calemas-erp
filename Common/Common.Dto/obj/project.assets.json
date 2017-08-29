@@ -7510,10 +7510,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projetos\\calemas-erp\\Common\\Common.Dto\\Common.Dto.csproj",
+      "projectUniqueName": "C:\\Pessoal\\calemas-erp\\Common\\Common.Dto\\Common.Dto.csproj",
       "projectName": "Common.Dto",
-      "projectPath": "D:\\Projetos\\calemas-erp\\Common\\Common.Dto\\Common.Dto.csproj",
-      "outputPath": "D:\\Projetos\\calemas-erp\\Common\\Common.Dto\\obj\\",
+      "projectPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Dto\\Common.Dto.csproj",
+      "outputPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Dto\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -7521,8 +7521,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "D:\\Projetos\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj": {
-              "projectPath": "D:\\Projetos\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj"
+            "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj": {
+              "projectPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj"
             }
           }
         }

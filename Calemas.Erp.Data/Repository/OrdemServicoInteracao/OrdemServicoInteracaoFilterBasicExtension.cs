@@ -57,10 +57,10 @@ namespace Calemas.Erp.Data.Repository
 				
 				queryFilter = queryFilter.Where(_=>_.TecnicoId == filters.TecnicoId);
 			}
-            if (filters.StatusOrdemServicoInteracaoId.IsSent()) 
+            if (filters.StatusOrdemServicoId.IsSent()) 
 			{ 
 				
-				queryFilter = queryFilter.Where(_=>_.StatusOrdemServicoInteracaoId == filters.StatusOrdemServicoInteracaoId);
+				queryFilter = queryFilter.Where(_=>_.StatusOrdemServicoId == filters.StatusOrdemServicoId);
 			}
 
 

@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 colaborador = this.AddDefault(colaborador);
             else
-				colaborador = this.UpdateDefault(colaborador);
+				colaborador = this.UpdateDefault(colaborador, colaboradorOld);
 
             return colaborador;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return colaborador;
         }
 
-		protected virtual Colaborador UpdateDefault(Colaborador colaborador)
+		protected virtual Colaborador UpdateDefault(Colaborador colaborador, Colaborador colaboradorOld)
         {
             colaborador = this._rep.Update(colaborador);
             return colaborador;

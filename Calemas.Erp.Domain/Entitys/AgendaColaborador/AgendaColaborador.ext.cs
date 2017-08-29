@@ -18,7 +18,7 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-		    public class AgendaColaboradorFactory
+        public class AgendaColaboradorFactory
         {
             public AgendaColaborador GetDefaultInstance(dynamic data, CurrentUser user)
             {
@@ -27,8 +27,8 @@ namespace Calemas.Erp.Domain.Entitys
 
 
 
-				construction.SetAttributeBehavior(data.AttributeBehavior);
-        		return construction;
+                construction.SetAttributeBehavior(data.AttributeBehavior);
+                return construction;
             }
 
         }
@@ -39,6 +39,6 @@ namespace Calemas.Erp.Domain.Entitys
             return base._validationResult.IsValid;
 
         }
-        
+
     }
 }

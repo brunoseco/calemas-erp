@@ -38,7 +38,7 @@ namespace Calemas.Erp.Dto
 
         
 
-        public virtual int StatusOrdemServicoInteracaoId {get; set;}
+        public virtual int StatusOrdemServicoId {get; set;}
 
 
 		

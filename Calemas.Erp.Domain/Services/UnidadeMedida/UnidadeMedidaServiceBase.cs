@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 unidademedida = this.AddDefault(unidademedida);
             else
-				unidademedida = this.UpdateDefault(unidademedida);
+				unidademedida = this.UpdateDefault(unidademedida, unidademedidaOld);
 
             return unidademedida;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return unidademedida;
         }
 
-		protected virtual UnidadeMedida UpdateDefault(UnidadeMedida unidademedida)
+		protected virtual UnidadeMedida UpdateDefault(UnidadeMedida unidademedida, UnidadeMedida unidademedidaOld)
         {
             unidademedida = this._rep.Update(unidademedida);
             return unidademedida;

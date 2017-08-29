@@ -8,13 +8,20 @@ namespace Calemas.Erp.Domain.Services
 {
     public class OrdemServicoInteracaoService : OrdemServicoInteracaoServiceBase, IOrdemServicoInteracaoService
     {
-
-        public OrdemServicoInteracaoService(IOrdemServicoInteracaoRepository rep, ICache cache, CurrentUser user) 
+        private IOrdemServicoRepository _repOrdemServico;
+        public OrdemServicoInteracaoService(IOrdemServicoInteracaoRepository rep, IOrdemServicoRepository repOrdemServico, ICache cache, CurrentUser user)
             : base(rep, cache, user)
         {
-
-
+            this._repOrdemServico = repOrdemServico;
         }
-        
+
+        protected override OrdemServicoInteracao AddDefault(OrdemServicoInteracao ordemservicointeracao)
+        {
+            if (ordemservicointeracao.OrdemServico.IsNotNull())
+                this._repOrdemServico.Update(ordemservicointeracao.OrdemServico);
+
+            return base.AddDefault(ordemservicointeracao);
+        }
+
     }
 }

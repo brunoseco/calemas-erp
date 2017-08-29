@@ -1,6 +1,6 @@
 ﻿<template>
     <fieldset>
-        <legend>Básico</legend>
+        <legend>Dados Básicos</legend>
         <div class="row">
             <input type="hidden" class="form-control" name="ordemServicoId" v-model="model.ordemServicoId" />
 
@@ -37,10 +37,10 @@
                 <textarea class="form-control" name="observacao" placeholder="Observacao" v-model="model.observacao" />
             </div>
         </div>
-        <legend>Realização</legend>
+        <legend>Informações para Realização</legend>
         <div class="row">
             <div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('responsavelId') }">
-                <label for="responsavelId">Técnico</label>
+                <label for="responsavelId">Técnico responsável</label>
                 <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" v-model="model.responsavelId" class="form-control" name="responsavelId" v-validate="'required'"></select>
             </div>
             <div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('dataInicio') }">

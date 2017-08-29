@@ -7509,10 +7509,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projetos\\calemas-erp\\Calemas.Erp.Filter\\Calemas.Erp.Filter.csproj",
+      "projectUniqueName": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Filter\\Calemas.Erp.Filter.csproj",
       "projectName": "Calemas.Erp.Filter",
-      "projectPath": "D:\\Projetos\\calemas-erp\\Calemas.Erp.Filter\\Calemas.Erp.Filter.csproj",
-      "outputPath": "D:\\Projetos\\calemas-erp\\Calemas.Erp.Filter\\obj\\",
+      "projectPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Filter\\Calemas.Erp.Filter.csproj",
+      "outputPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Filter\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -7520,8 +7520,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "D:\\Projetos\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj": {
-              "projectPath": "D:\\Projetos\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj"
+            "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj": {
+              "projectPath": "C:\\Pessoal\\calemas-erp\\Common\\Common.Domain\\Common.Domain.csproj"
             }
           }
         }

@@ -6,14 +6,14 @@ namespace Calemas.Erp.Domain.Entitys
 {
     public class OrdemServicoInteracao : OrdemServicoInteracaoBase
     {
-
+        public virtual OrdemServico OrdemServico { get; set; }
         public OrdemServicoInteracao()
         {
 
         }
 
-        public OrdemServicoInteracao(int ordemservicointeracaoid, int ordemservicoid, DateTime dataconclusao, string descricao, bool foipropriocliente, int tecnicoid, int statusordemservicointeracaoid) :
-            base(ordemservicointeracaoid, ordemservicoid, dataconclusao, descricao, foipropriocliente, tecnicoid, statusordemservicointeracaoid)
+        public OrdemServicoInteracao(int ordemservicointeracaoid, int ordemservicoid, DateTime dataconclusao, string descricao, bool foipropriocliente, int tecnicoid, int statusordemservicoid) :
+            base(ordemservicointeracaoid, ordemservicoid, dataconclusao, descricao, foipropriocliente, tecnicoid, statusordemservicoid)
         {
 
         }
@@ -28,7 +28,7 @@ namespace Calemas.Erp.Domain.Entitys
                                         data.Descricao,
                                         data.FoiProprioCliente,
                                         data.TecnicoId,
-                                        data.StatusOrdemServicoInteracaoId);
+                                        data.StatusOrdemServicoId);
 
                 construction.SetarObservacao(data.Observacao);
                 construction.SetarNomeClienteResponsavel(data.NomeClienteResponsavel);

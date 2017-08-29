@@ -136,8 +136,15 @@ namespace Calemas.Erp.Data.Repository
 
         protected override Expression<Func<OrdemServico, object>>[] DataAgregation(Expression<Func<OrdemServico, object>>[] includes, FilterBase filter)
         {
-            return includes.Add(_ => _.Agenda);
+            return includes.Add(
+                _ => _.Agenda,
+                _ => _.Cliente.Pessoa,
+                _ => _.StatusOrdemServico,
+                _ => _.TipoOrdemServico,
+                _ => _.Responsavel.Pessoa,
+                _ => _.CollectionOrdemServicoInteracao);
         }
+
 
     }
 }

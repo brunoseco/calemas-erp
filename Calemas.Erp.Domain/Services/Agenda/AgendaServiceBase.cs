@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 agenda = this.AddDefault(agenda);
             else
-				agenda = this.UpdateDefault(agenda);
+				agenda = this.UpdateDefault(agenda, agendaOld);
 
             return agenda;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return agenda;
         }
 
-		protected virtual Agenda UpdateDefault(Agenda agenda)
+		protected virtual Agenda UpdateDefault(Agenda agenda, Agenda agendaOld)
         {
             agenda = this._rep.Update(agenda);
             return agenda;

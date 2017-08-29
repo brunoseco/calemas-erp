@@ -151,7 +151,7 @@ namespace Calemas.Erp.Domain.Services
             if (isNew)
                 financeiro = this.AddDefault(financeiro);
             else
-				financeiro = this.UpdateDefault(financeiro);
+				financeiro = this.UpdateDefault(financeiro, financeiroOld);
 
             return financeiro;
         }
@@ -162,7 +162,7 @@ namespace Calemas.Erp.Domain.Services
             return financeiro;
         }
 
-		protected virtual Financeiro UpdateDefault(Financeiro financeiro)
+		protected virtual Financeiro UpdateDefault(Financeiro financeiro, Financeiro financeiroOld)
         {
             financeiro = this._rep.Update(financeiro);
             return financeiro;
