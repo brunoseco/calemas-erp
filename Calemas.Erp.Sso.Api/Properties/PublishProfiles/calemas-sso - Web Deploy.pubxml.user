@@ -7,7 +7,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWfNzORtN9k+WkdVgUgXR1AAAAAACAAAAAAAQZgAAAAEAACAAAAAOZbaEH8tZIto+MHTudmdYSrnVCSwCv7rpKW2DvWO22wAAAAAOgAAAAAIAACAAAACtfFlmIMjitDNK3QrB7t06FnD1qUwzDuLhyWwGfFLo+IAAAACEMW0TIR13cEV3hQ0jFHd6ff5X1O8QrGdX0VgQMD67nuSgF/2ZvvOrlVf3lHxZuFBValwBxqxClyS79Piv18tSH+JBAt+4CthPWP4mn2YzxbGkG+LqawCVv/6GpOY0iFS+7bCTGJqkf+D0MfG/4zt0II+MSxWeg5XWkVJN0z1NOUAAAADUyJCm+te6A4uUzqIYRnxtwM610WiJzB50eLzISrnZfcdyIZOxzKSRgVYkdJ/0TvfrKnBbE3W3rETA1i+Jr4Pq</EncryptedPassword>
-    <_NewBackgroundProfile>True</_NewBackgroundProfile>
+    <_NewBackgroundProfile>False</_NewBackgroundProfile>
   </PropertyGroup>
   <ItemGroup>
     <AzureDBConnectionStrings Include="Data Source=tcp:calemas-prod.database.windows.net,1433;Initial Catalog=calemas-prod;User ID=Calemas;Password=Admin321$" />

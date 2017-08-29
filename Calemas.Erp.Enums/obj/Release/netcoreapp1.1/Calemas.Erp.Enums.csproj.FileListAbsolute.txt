@@ -5,3 +5,10 @@ D:\Projetos\calemas-erp\Calemas.Erp.Enums\obj\Release\netcoreapp1.1\Calemas.Erp.
 D:\Projetos\calemas-erp\Calemas.Erp.Enums\obj\Release\netcoreapp1.1\Calemas.Erp.Enums.AssemblyInfo.cs
 D:\Projetos\calemas-erp\Calemas.Erp.Enums\obj\Release\netcoreapp1.1\Calemas.Erp.Enums.dll
 D:\Projetos\calemas-erp\Calemas.Erp.Enums\obj\Release\netcoreapp1.1\Calemas.Erp.Enums.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Enums\bin\Release\netcoreapp1.1\Calemas.Erp.Enums.deps.json
+C:\Pessoal\calemas-erp\Calemas.Erp.Enums\bin\Release\netcoreapp1.1\Calemas.Erp.Enums.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.Enums\bin\Release\netcoreapp1.1\Calemas.Erp.Enums.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Release\netcoreapp1.1\Calemas.Erp.Enums.csprojResolveAssemblyReference.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Release\netcoreapp1.1\Calemas.Erp.Enums.AssemblyInfo.cs
+C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Release\netcoreapp1.1\Calemas.Erp.Enums.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Release\netcoreapp1.1\Calemas.Erp.Enums.pdb

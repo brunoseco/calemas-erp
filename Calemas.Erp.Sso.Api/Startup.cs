@@ -49,15 +49,10 @@ namespace Calemas.Erp.Sso.Api
             services.AddDbContext<DbContextCore>(options => options.UseSqlServer(cnsCalemas));
 
             services.AddIdentityServer()
-                .AddTemporarySigningCredential()
-                .AddConfigurationStore(builder =>
-                        builder.UseSqlServer(cnsSso, options =>
-                            options.MigrationsAssembly(migrationAssembly)))
-                .AddOperationalStore(builder =>
-                        builder.UseSqlServer(cnsSso, options =>
-                            options.MigrationsAssembly(migrationAssembly)));
+                .AddSigningCredential(GetRSAParameters())
+                .AddConfigurationStore(builder => builder.UseSqlServer(cnsSso, options => options.MigrationsAssembly(migrationAssembly)))
+                .AddOperationalStore(builder => builder.UseSqlServer(cnsSso, options => options.MigrationsAssembly(migrationAssembly)));
 
-            //for clarity of the next piece of code
             services.AddScoped<CurrentUser>();
             services.AddTransient<IColaboradorRepository, ColaboradorRepository>();
             services.AddTransient<IResourceOwnerPasswordValidator, ResourceOwnerPasswordValidator>();
@@ -83,11 +78,7 @@ namespace Calemas.Erp.Sso.Api
                 });
             });
 
-            // Add cross-origin resource sharing services Configurations
-            //Cors.Enable(services);
             services.AddMvc();
-
-
         }
 
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory, IOptions<ConfigSettingsBase> configSettingsBase)
@@ -146,7 +137,8 @@ namespace Calemas.Erp.Sso.Api
 
         private X509Certificate2 GetRSAParameters()
         {
-            return new X509Certificate2(Path.Combine(_env.ContentRootPath, "idsvr3test.pfx"), "idsrv3test", X509KeyStorageFlags.Exportable);
+            var pass = "Admin321$";
+            return new X509Certificate2(Path.Combine(_env.ContentRootPath, "pfx", "calemas-certificate.pfx"), pass, X509KeyStorageFlags.Exportable);
         }
     }
 }
