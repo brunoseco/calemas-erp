@@ -4,9 +4,9 @@
         <div class="row">
             <input type="hidden" class="form-control" name="estoqueId" v-model="model.estoqueId" />
 
-            <div class="form-group col-md-8" v-bind:class="{ 'has-danger': errors.has('nome') }">
+            <div class="form-group col-md-8" data-reference="nome">
                 <label for="nome">Nome</label>
-                <input type="text" class="form-control" name="nome" placeholder="Nome" v-model="model.nome" v-validate="'required'" />
+                <input type="text" class="form-control" name="nome" placeholder="Nome" v-model="model.nome" required />
             </div>
             <div class="form-group col-md-4">
                 <label for="referencia">Referência</label>
@@ -20,13 +20,13 @@
                 <label for="fabricante">Fabricante</label>
                 <input type="text" class="form-control" name="fabricante" placeholder="Fabricante" v-model="model.fabricante" />
             </div>
-            <div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('unidadeMedidaId') }">
+            <div class="form-group col-md-12" data-reference="unidadeMedidaId">
                 <label for="unidadeMedidaId">Unidade de Medida</label>
-                <select v-select="{ dataitem: 'UnidadeMedida', default: 'Selecione' }" v-model="model.unidadeMedidaId" class="form-control" name="unidadeMedidaId" v-validate="'required'"></select>
+                <select v-select="{ dataitem: 'UnidadeMedida', default: 'Selecione' }" v-model="model.unidadeMedidaId" class="form-control" name="unidadeMedidaId" required></select>
             </div>
-            <div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('categoriaEstoqueId') }">
+            <div class="form-group col-md-12" data-reference="categoriaEstoqueId">
                 <label for="categoriaEstoqueId">Categoria de Estoque</label>
-                <select v-select="{ dataitem: 'CategoriaEstoque', default: 'Selecione' }" v-model="model.categoriaEstoqueId" class="form-control" name="categoriaEstoqueId" v-validate="'required'"></select>
+                <select v-select="{ dataitem: 'CategoriaEstoque', default: 'Selecione' }" v-model="model.categoriaEstoqueId" class="form-control" name="categoriaEstoqueId" required></select>
             </div>
             <div class="form-group col-md-12">
                 <label for="observacao">Observação</label>
@@ -36,9 +36,9 @@
                 <label for="descricao">Descrição</label>
                 <textarea class="form-control" name="descricao" placeholder="Descrição" v-model="model.descricao" />
             </div>
-            <div class="form-group col-md-4" v-bind:class="{ 'has-danger': errors.has('quantidadeMinima') }">
+            <div class="form-group col-md-4" data-reference="quantidadeMinima">
                 <label for="quantidadeMinima">Quantidade Mínim</label>
-                <input type="number" class="form-control" name="quantidadeMinima" placeholder="Quantidade Mínima" v-model="model.quantidadeMinima" v-validate="'required'" />
+                <input type="number" class="form-control" name="quantidadeMinima" placeholder="Quantidade Mínima" v-model="model.quantidadeMinima" required />
             </div>
             <div class="form-group col-md-4">
                 <label for="valorVenda">Valor de Venda</label>

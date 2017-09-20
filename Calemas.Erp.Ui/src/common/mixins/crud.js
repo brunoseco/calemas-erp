@@ -1,10 +1,10 @@
 ﻿import modal from 'vue-strap/src/Modal'
 import pagination from 'vue-pagination-bootstrap'
-import bus from '../../common/bus'
 import loading from '../loading'
 
 import { Api } from '../api'
 import { Notification } from '../notification'
+import { Form } from '../form'
 
 export default {
     components: {
@@ -23,6 +23,10 @@ export default {
                 filter: null
             },
 
+            nameCreate: 'form-create',
+            nameEdit: 'form-edit',
+            nameDelete: 'form-delete',
+
             modalCreateIsOpen: false,
             modalEditIsOpen: false,
             modalDeleteIsOpen: false,
@@ -34,7 +38,6 @@ export default {
             modelEmpty: Object.assign({}, this.model, {}),
 
             notification: new Notification(this),
-
             filter: {
                 pageSize: 10,
                 pageIndex: 1,
@@ -73,28 +76,38 @@ export default {
             if (this.resources.filter) resource = this.resources.filter;
             return new Api(resource);
         },
+        formCreate: function () {
+            let frm = this.nameCreate;
+            return new Form(frm);
+        },
+        formEdit: function () {
+            let frm = this.nameEdit;
+            return new Form(frm);
+        },
+        formDelete: function () {
+            let frm = this.nameDelete;
+            return new Form(frm);
+        },
     },
     methods: {
 
         openCreate: function (model) {
-            this.resetForm();
+            this.resetForm(this.formCreate);
             if (model) this.model = model;
             else this.model = this.modelEmpty;
             this.modalCreateIsOpen = true;
-            this.formValidate();
         },
         openEdit: function (id, item) {
-            this.resetForm();
+            this.resetForm(this.formEdit);
             this.apiEdit.filters = item;
             this.apiEdit.filters.id = id;
             this.apiEdit.get().then(data => {
                 this.modalEditIsOpen = true;
                 this.model = data.data;
-                this.formValidate();
             });
         },
         openDelete: function (id, item) {
-            this.resetForm();
+            this.resetForm(this.formDelete);
             this.apiDelete.filters = item;
             this.apiDelete.filters.id = id;
             this.apiDelete.get().then(data => {
@@ -140,48 +153,54 @@ export default {
 
         executeCreate: function (model) {
             this.onBeforeCreate(model);
-            this.formValidate(() => {
-                this.defaultBeforeAction();
-                this.apiCreate.post(model).then(data => {
-                    this.notification.success("Sucesso", "Criado com sucesso.")
-                    this.defaultSuccessResult(data);
-                    this.onAfterCreate(data);
-                    this.executeFilter();
-                    this.modalCreateIsOpen = false;
-                }, err => {
-                    this.defaultErrorResult(err);
-                })
-            });
+
+            if (this.formValid(this.formCreate) == false)
+                return;
+
+            this.defaultBeforeAction();
+            this.apiCreate.post(model).then(data => {
+                this.notification.success("Sucesso", "Criado com sucesso.")
+                this.defaultSuccessResult(data);
+                this.onAfterCreate(data);
+                this.executeFilter();
+                this.modalCreateIsOpen = false;
+            }, err => {
+                this.defaultErrorResult(err);
+            })
         },
         executeEdit: function (model) {
             this.onBeforeEdit(model);
-            this.formValidate(() => {
-                this.defaultBeforeAction();
-                this.apiEdit.post(model).then(data => {
-                    this.notification.success("Sucesso", "Edição realizada com sucesso.")
-                    this.defaultSuccessResult(data);
-                    this.onAfterEdit(data);
-                    this.executeFilter();
-                    this.modalEditIsOpen = false;
-                }, err => {
-                    this.defaultErrorResult(err);
-                })
-            });
+
+            if (this.formValid(this.formEdit) == false)
+                return;
+
+            this.defaultBeforeAction();
+            this.apiEdit.post(model).then(data => {
+                this.notification.success("Sucesso", "Edição realizada com sucesso.")
+                this.defaultSuccessResult(data);
+                this.onAfterEdit(data);
+                this.executeFilter();
+                this.modalEditIsOpen = false;
+            }, err => {
+                this.defaultErrorResult(err);
+            })
         },
         executeDelete: function (model) {
             this.onBeforeDelete(model);
-            this.formValidate(() => {
-                this.defaultBeforeAction();
-                this.apiDelete.filters = model;
-                this.apiDelete.delete().then(data => {
-                    this.notification.success("Sucesso", "Removido com sucesso.")
-                    this.defaultSuccessResult(data);
-                    this.onAfterDelete(data);
-                    this.executeFilter();
-                    this.modalDeleteIsOpen = false;
-                }, err => {
-                    this.defaultErrorResult(err);
-                });
+
+            if (this.formValid(this.formDelete) == false)
+                return;
+
+            this.defaultBeforeAction();
+            this.apiDelete.filters = model;
+            this.apiDelete.delete().then(data => {
+                this.notification.success("Sucesso", "Removido com sucesso.")
+                this.defaultSuccessResult(data);
+                this.onAfterDelete(data);
+                this.executeFilter();
+                this.modalDeleteIsOpen = false;
+            }, err => {
+                this.defaultErrorResult(err);
             });
         },
 
@@ -209,27 +228,11 @@ export default {
         },
 
 
-        formValidate: function (action) {
-            bus.$emit('validate');
-            setTimeout(() => {
-                if (!this.errors.items || this.errors.items.length == 0) {
-                    if (action) {
-                        action();
-                    }
-                }
-            }, 500)
+        formValid: function (form) {
+            return form.valid();
         },
-        formIsValid: function () {
-            return this.errors.items.length == 0;
-        },
-        resetForm: function () {
-            this.errors.items = [];
-        },
-        registerErrorsEvent: function () {
-            bus.$on('errors-changed', (_errors) => {
-                this.errors.items = [];
-                _errors.forEach(error => { this.errors.add(error.field, error.msg) });
-            });
+        resetForm: function (form) {
+            form.reset();
         },
 
         defaultBeforeAction: function () {
@@ -256,6 +259,5 @@ export default {
 
     mounted() {
         this.executeFilter();
-        this.registerErrorsEvent();
     }
 }

@@ -1,4 +1,4 @@
-﻿<template>
+﻿<!--<template>
     <div class="animated fadeIn">
         <div class="row">
             <div class="col-sm-8">
@@ -78,4 +78,4 @@
 
         }
     }
-</script>
+</script>-->

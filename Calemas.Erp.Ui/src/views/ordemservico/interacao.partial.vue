@@ -6,9 +6,9 @@
             <input type="hidden" class="form-control" name="ordemServicoInteracaoId" v-model="model.ordemServicoInteracaoId" />
             <input type="hidden" class="form-control" name="ordemServicoId" v-model="model.ordemServicoId" />
 
-            <div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('dataConclusao') }">
+            <div class="form-group col-md-12" data-reference="dataConclusao">
                 <label for="dataConclusao">Data de realização</label>
-                <input type="datetime-local" class="form-control" name="dataConclusao" v-model="model.dataConclusao" v-validate="'required'" />
+                <input type="datetime-local" class="form-control" name="dataConclusao" v-model="model.dataConclusao" required />
             </div>
 
             <div class="form-group col-md-6">
@@ -19,7 +19,7 @@
                     <span class="custom-control-description"> Foi o próprio cliente que recebeu?</span>
                 </label>
             </div>
-            <div class="form-group col-md-6" v-bind:class="{ 'has-danger': errors.has('nomeClienteResponsavel') }">
+            <div class="form-group col-md-6" data-reference="nomeClienteResponsavel">
                 <label for="nomeClienteResponsavel">Nome cliente/responsável pelo recebimento</label>
                 <input type="text" class="form-control" name="Nome cliente/responsável pelo recebimento" placeholder="Protoco" v-model="model.nomeClienteResponsavel" />
             </div>
@@ -35,14 +35,14 @@
             </div>
 
 
-            <div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('tecnicoId') }">
+            <div class="form-group col-md-12" data-reference="tecnicoId">
                 <label for="tecnicoId">Técnico que realizou o atendimento</label>
-                <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" v-model="model.tecnicoId" class="form-control" name="tecnicoId" v-validate="'required'"></select>
+                <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" v-model="model.tecnicoId" class="form-control" name="tecnicoId" required></select>
             </div>
 
-            <div class="form-group col-md-6" v-bind:class="{ 'has-danger': errors.has('statusOrdemServicoId') }">
+            <div class="form-group col-md-6" data-reference="statusOrdemServicoId">
                 <label for="statusOrdemServicoId">Situação da O.S</label>
-                <select v-select="{ dataitem: 'StatusOrdemServico', default: 'Selecione' }" v-model="model.statusOrdemServicoId" class="form-control" name="statusOrdemServicoId" v-validate="'required'"></select>
+                <select v-select="{ dataitem: 'StatusOrdemServico', default: 'Selecione' }" v-model="model.statusOrdemServicoId" class="form-control" name="statusOrdemServicoId" required></select>
             </div>
             
         </div>

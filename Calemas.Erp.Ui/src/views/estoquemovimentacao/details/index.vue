@@ -1,4 +1,4 @@
-﻿<template>
+﻿<!--<template>
     <div class="wrapper">
         <header-partial :crud="crud" />
         <filter-partial :crud="crud" />
@@ -34,4 +34,4 @@
             this.crud.filter.executeAction();
         }
     }
-</script>
+</script>-->

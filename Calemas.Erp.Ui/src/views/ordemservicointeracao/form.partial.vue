@@ -4,17 +4,17 @@
         <div class="row">
                                 <input type="hidden" class="form-control" name="ordemServicoInteracaoId" v-model="model.ordemServicoInteracaoId" />
 
-                    <div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('ordemServicoId') }">
+                    <div class="form-group col-md-12" data-reference="ordemServicoId">
                         <label for="ordemServicoId">OrdemServico</label>
-                        <select v-select="{ dataitem: 'OrdemServico', default: 'Selecione' }" v-model="model.ordemServicoId" class="form-control" name="ordemServicoId" v-validate="'required'"></select>
+                        <select v-select="{ dataitem: 'OrdemServico', default: 'Selecione' }" v-model="model.ordemServicoId" class="form-control" name="ordemServicoId" required></select>
                     </div>
-					<div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('dataConclusao') }">
+					<div class="form-group col-md-12" data-reference="dataConclusao">
                         <label for="dataConclusao">DataConclusao</label>
-                        <input type="date" class="form-control" name="dataConclusao" v-model="model.dataConclusao" v-validate="'required'" />
+                        <input type="date" class="form-control" name="dataConclusao" v-model="model.dataConclusao" required />
                     </div>
-					<div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('descricao') }">
+					<div class="form-group col-md-12" data-reference="descricao">
                         <label for="descricao">Descricao</label>
-                        <input type="text" class="form-control" name="descricao" placeholder="Descricao" v-model="model.descricao" v-validate="'required'" />
+                        <input type="text" class="form-control" name="descricao" placeholder="Descricao" v-model="model.descricao" required />
                     </div>
 					<div class="form-group col-md-12" >
                         <label for="observacao">Observacao</label>
@@ -32,13 +32,13 @@
                         <label for="nomeClienteResponsavel">NomeClienteResponsavel</label>
                         <input type="text" class="form-control" name="nomeClienteResponsavel" placeholder="NomeClienteResponsavel" v-model="model.nomeClienteResponsavel"  />
                     </div>
-                    <div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('tecnicoId') }">
+                    <div class="form-group col-md-12" data-reference="tecnicoId">
                         <label for="tecnicoId">Colaborador</label>
-                        <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" v-model="model.tecnicoId" class="form-control" name="tecnicoId" v-validate="'required'"></select>
+                        <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" v-model="model.tecnicoId" class="form-control" name="tecnicoId" required></select>
                     </div>
-					<div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('statusOrdemServicoInteracaoId') }">
+					<div class="form-group col-md-12" data-reference="statusOrdemServicoInteracaoId">
                         <label for="statusOrdemServicoInteracaoId">StatusOrdemServicoInteracaoId</label>
-                        <input type="text" class="form-control" name="statusOrdemServicoInteracaoId" placeholder="StatusOrdemServicoInteracaoId" v-model="model.statusOrdemServicoInteracaoId" v-validate="'required'" />
+                        <input type="text" class="form-control" name="statusOrdemServicoInteracaoId" placeholder="StatusOrdemServicoInteracaoId" v-model="model.statusOrdemServicoInteracaoId" required />
                     </div>
 
         </div>

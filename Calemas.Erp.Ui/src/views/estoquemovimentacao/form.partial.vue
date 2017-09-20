@@ -5,17 +5,17 @@
             <input type="hidden" class="form-control" name="estoqueMovimentacaoId" v-model="model.estoqueMovimentacaoId" />
             <input type="hidden" class="form-control" name="estoqueId" v-model="model.estoqueId" />
             <input type="hidden" class="form-control" name="entrada" v-model="model.entrada" />
-            <div class="form-group col-md-6" v-bind:class="{ 'has-danger': errors.has('quantidade') }">
+            <div class="form-group col-md-6" data-reference="quantidade">
                 <label for="quantidade">Quantidade</label>
-                <input type="number" class="form-control" name="quantidade" placeholder="Quantidade" v-model="model.quantidade" v-validate="'required'" />
+                <input type="number" class="form-control" name="quantidade" placeholder="Quantidade" v-model="model.quantidade" required />
             </div>
-            <div class="form-group col-md-6" v-bind:class="{ 'has-danger': errors.has('responsavelId') }">
+            <div class="form-group col-md-6" data-reference="responsavelId">
                 <label for="responsavelId">Responsável</label>
-                <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" v-model="model.responsavelId" class="form-control" name="responsavelId" v-validate="'required'"></select>
+                <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" v-model="model.responsavelId" class="form-control" name="responsavelId" required></select>
             </div>
-            <div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('descricao') }">
+            <div class="form-group col-md-12" data-reference="descricao">
                 <label for="descricao">Descrição</label>
-                <textarea type="text" class="form-control" name="descricao" placeholder="Descricao" v-model="model.descricao" v-validate="'required'"></textarea>
+                <textarea type="text" class="form-control" name="descricao" placeholder="Descricao" v-model="model.descricao" required></textarea>
             </div>
         </div>
     </fieldset>

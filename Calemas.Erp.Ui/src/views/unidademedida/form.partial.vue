@@ -1,13 +1,13 @@
-<template>
+﻿<template>
     <fieldset>
         <legend>Dados</legend>
         <div class="row">
-                                <input type="hidden" class="form-control" name="unidadeMedidaId" v-model="model.unidadeMedidaId" />
+            <input type="hidden" class="form-control" name="unidadeMedidaId" v-model="model.unidadeMedidaId" />
 
-					<div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('nome') }">
-                        <label for="nome">Nome</label>
-                        <input type="text" class="form-control" name="nome" placeholder="Nome" v-model="model.nome" v-validate="'required'" />
-                    </div>
+            <div class="form-group col-md-12">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" name="nome" placeholder="Nome" v-model="model.nome" required />
+            </div>
 
         </div>
     </fieldset>
@@ -17,6 +17,6 @@
     export default {
         name: 'form-partial',
         props: ['model'],
-        mixins: [formBase],        
+        mixins: [formBase],
     }
 </script>

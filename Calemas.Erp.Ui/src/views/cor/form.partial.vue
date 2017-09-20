@@ -4,13 +4,13 @@
         <div class="row">
                                 <input type="hidden" class="form-control" name="corId" v-model="model.corId" />
 
-					<div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('nome') }">
+					<div class="form-group col-md-12" data-reference="nome">
                         <label for="nome">Nome</label>
-                        <input type="text" class="form-control" name="nome" placeholder="Nome" v-model="model.nome" v-validate="'required'" />
+                        <input type="text" class="form-control" name="nome" placeholder="Nome" v-model="model.nome" required />
                     </div>
-					<div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('hash') }">
+					<div class="form-group col-md-12" data-reference="hash">
                         <label for="hash">Hash</label>
-                        <input type="text" class="form-control" name="hash" placeholder="Hash" v-model="model.hash" v-validate="'required'" />
+                        <input type="text" class="form-control" name="hash" placeholder="Hash" v-model="model.hash" required />
                     </div>
 
         </div>

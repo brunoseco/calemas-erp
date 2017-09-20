@@ -16,9 +16,6 @@
                     <button @click="openFilter()" class="btn btn-info btn-sm pull-right header-btn hidden-mobile">
                         <i class="fa fa-filter"></i> Filtros
                     </button>
-                    <!--<button @click="openCreate()" class="btn btn-success btn-sm pull-right header-btn hidden-mobile">
-                        <i class="fa fa-plus"></i> Cadastrar
-                    </button>-->
                 </div>
             </div>
         </div>
@@ -54,7 +51,7 @@
                 <h4 class="modal-title">Cadastro de Agenda</h4>
                 <button type="button" class="close" @click="closeCreate()"><span>&times;</span></button>
             </div>
-            <form v-on:submit.prevent="executeCreate(model)">
+            <form v-on:submit.prevent="executeCreate(model)" id="form-create" novalidate>
                 <form-partial :model="model" />
             </form>
             <div slot="modal-footer" class="modal-footer">
@@ -70,7 +67,7 @@
                 <h4 class="modal-title">Edição de Agenda</h4>
                 <button type="button" class="close" @click="closeEdit()"><span>&times;</span></button>
             </div>
-            <form v-on:submit.prevent="executeEdit(model)">
+            <form v-on:submit.prevent="executeEdit(model)" id="form-edit" novalidate>
                 <form-partial :model="model" />
             </form>
             <div slot="modal-footer" class="modal-footer">

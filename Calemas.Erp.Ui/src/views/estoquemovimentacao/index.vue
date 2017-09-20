@@ -48,10 +48,10 @@
                             <thead class="">
                                 <tr>
                                     <th>#</th>
-                                    <th>Referência<button @click="executeOrderBy('referencia')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Nome<button @click="executeOrderBy('nome')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Qtde. Mínima<button @click="executeOrderBy('quantidadeMinima')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Qtde. Atual<button @click="executeOrderBy('quantidade')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Referência<button @click="executeOrderBy('referencia')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Nome<button @click="executeOrderBy('nome')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Qtde. Mínima<button @click="executeOrderBy('quantidadeMinima')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Qtde. Atual<button @click="executeOrderBy('quantidade')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
                                     <th class="text-center" width="100"><i class="fa fa-cog"></i></th>
                                 </tr>
                             </thead>
@@ -63,13 +63,13 @@
                                     <td>{{ item.quantidadeMinima }}</td>
                                     <td>{{ item.quantidade }}</td>
                                     <td class="text-center">
-                                        <router-link :to="{ name: 'estoquemovimentacaodetails', params: { id: item.estoqueId }}" class="btn btn-xs btn-info">
+                                        <router-link :to="{ name: 'estoquemovimentacaodetails', params: { id: item.estoqueId }}" class="btn btn-sm btn-info">
                                             <i class="fa fa-history"></i>
                                         </router-link>
-                                        <button type="button" class="btn btn-xs btn-danger" @click="openCreate({ estoqueId: item.estoqueId, entrada: false })">
+                                        <button type="button" class="btn btn-sm btn-danger" @click="openCreate({ estoqueId: item.estoqueId, entrada: false })">
                                             <i class="fa fa-minus"></i>
                                         </button>
-                                        <button type="button" class="btn btn-xs btn-success" @click="openCreate({ estoqueId: item.estoqueId, entrada: true })">
+                                        <button type="button" class="btn btn-sm btn-success" @click="openCreate({ estoqueId: item.estoqueId, entrada: true })">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </td>
@@ -89,7 +89,7 @@
                 <h4 class="modal-title">Cadastro de Movimentação de estoque</h4>
                 <button type="button" class="close" @click="closeCreate()"><span>&times;</span></button>
             </div>
-            <form v-on:submit.prevent="executeCreate(model)">
+            <form v-on:submit.prevent="executeCreate(model)" id="form-create" novalidate>
                 <form-partial :model="model" />
             </form>
             <div slot="modal-footer" class="modal-footer">

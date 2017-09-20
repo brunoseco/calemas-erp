@@ -1,4 +1,4 @@
-﻿<template>
+﻿<!--<template>
     <div class="animated fadeIn">
         <div class="row" style="margin-bottom: 1rem;margin-top: -0.5rem;">
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
@@ -24,4 +24,4 @@
         name: 'header-partial',
         props: ['crud']
     }
-</script>
+</script>-->

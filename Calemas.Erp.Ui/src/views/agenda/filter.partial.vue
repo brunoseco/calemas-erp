@@ -6,7 +6,7 @@
         </div>
         <div class="form-group col-md-6">
             <label for="colaborador">Colaborador</label>
-            <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" v-model="filter.colaboradorId" class="form-control" name="colaboradorId" v-validate="'required'"></select>
+            <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" v-model="filter.colaboradorId" class="form-control" name="colaboradorId" required></select>
         </div>
         <div class="form-group col-md-3">
             <label for="dataInicio">Data de Início</label>

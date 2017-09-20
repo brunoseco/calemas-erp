@@ -4,17 +4,17 @@
         <div class="row">
                                 <input type="hidden" class="form-control" name="prioridadeId" v-model="model.prioridadeId" />
 
-					<div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('nome') }">
+					<div class="form-group col-md-12" data-reference="nome">
                         <label for="nome">Nome</label>
-                        <input type="text" class="form-control" name="nome" placeholder="Nome" v-model="model.nome" v-validate="'required'" />
+                        <input type="text" class="form-control" name="nome" placeholder="Nome" v-model="model.nome" required />
                     </div>
 					<div class="form-group col-md-12" >
                         <label for="descricao">Descricao</label>
                         <input type="text" class="form-control" name="descricao" placeholder="Descricao" v-model="model.descricao"  />
                     </div>
-                    <div class="form-group col-md-12" v-bind:class="{ 'has-danger': errors.has('corId') }">
+                    <div class="form-group col-md-12" data-reference="corId">
                         <label for="corId">Cor</label>
-                        <select v-select="{ dataitem: 'Cor', default: 'Selecione' }" v-model="model.corId" class="form-control" name="corId" v-validate="'required'"></select>
+                        <select v-select="{ dataitem: 'Cor', default: 'Selecione' }" v-model="model.corId" class="form-control" name="corId" required></select>
                     </div>
 					<div class="form-group col-md-12">
                         <div class="clearfix">&nbsp;</div>

@@ -51,9 +51,9 @@
                             <thead class="">
                                 <tr>
                                     <th>#</th>
-                                    <th>Nome<button @click="executeOrderBy('nome')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Descricao<button @click="executeOrderBy('descricao')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Ativo<button @click="executeOrderBy('ativo')" class="btn btn-xs btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Nome<button @click="executeOrderBy('nome')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Descricao<button @click="executeOrderBy('descricao')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Ativo<button @click="executeOrderBy('ativo')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
 
                                     <th class="text-center" width="75"><i class="fa fa-cog"></i></th>
                                 </tr>
@@ -66,10 +66,10 @@
                                     <td><span class="badge badge-pill" v-bind:class="{ 'badge-success': item.ativo, 'badge-danger': !item.ativo }">{{item.ativo ? 'Sim' : 'Não'}}</span></td>
 
                                     <td class="text-center">
-                                        <button type="button" class="btn btn-xs btn-primary" @click="openEdit(item.condominioId, item)">
+                                        <button type="button" class="btn btn-sm btn-primary" @click="openEdit(item.condominioId, item)">
                                             <i class="fa fa-pencil"></i>
                                         </button>
-                                        <button type="button" class="btn btn-xs btn-danger" @click="openDelete(item.condominioId, item)">
+                                        <button type="button" class="btn btn-sm btn-danger" @click="openDelete(item.condominioId, item)">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </td>
@@ -89,7 +89,7 @@
                 <h4 class="modal-title">Cadastro de Condomínio</h4>
                 <button type="button" class="close" @click="closeCreate()"><span>&times;</span></button>
             </div>
-            <form v-on:submit.prevent="executeCreate(model)">
+            <form v-on:submit.prevent="executeCreate(model)" id="form-create" novalidate>
                 <form-partial :model="model" />
             </form>
             <div slot="modal-footer" class="modal-footer">
@@ -105,7 +105,7 @@
                 <h4 class="modal-title">Edição de Condomínio</h4>
                 <button type="button" class="close" @click="closeEdit()"><span>&times;</span></button>
             </div>
-            <form v-on:submit.prevent="executeEdit(model)">
+            <form v-on:submit.prevent="executeEdit(model)" id="form-edit" novalidate>
                 <form-partial :model="model" />
             </form>
             <div slot="modal-footer" class="modal-footer">
@@ -121,7 +121,7 @@
                 <h4 class="modal-title">Exclusão de Condomínio</h4>
                 <button type="button" class="close" @click="closeDelete()"><span>&times;</span></button>
             </div>
-            <form type="post" v-on:submit.prevent="executeDelete(model)">
+            <form type="post" v-on:submit.prevent="executeDelete(model)" id="form-delete" novalidate>
                 <div class="row">
                     <div class="form-group col-md-12">
                         <h4>Confirma a remoção deste item?</h4>
