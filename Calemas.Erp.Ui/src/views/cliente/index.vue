@@ -51,10 +51,10 @@
                             <thead class="">
                                 <tr>
                                     <th>#</th>
-                                    <th>Nome<button @click="executeOrderBy('pessoa.nome')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Email<button @click="executeOrderBy('pessoa.email')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Telefone<button @click="executeOrderBy('pessoa.telefone')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Situação<button @click="executeOrderBy('account')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Nome<button @click="executeOrderBy('pessoa.nome')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Email<button @click="executeOrderBy('pessoa.email')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Telefone<button @click="executeOrderBy('pessoa.telefone')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Situação<button @click="executeOrderBy('account')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th class="text-center" width="75"><i class="fa fa-cog"></i></th>
                                 </tr>
                             </thead>

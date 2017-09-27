@@ -14,6 +14,7 @@
     "axios": "^0.16.2",
     "babel-polyfill": "^6.23.0",
     "di-vue-mask": "^1.1.0",
+    "fullcalendar": "^3.5.1",
     "helperclass": "^1.0.8",
     "jquery": "^3.2.1",
     "jquery-validation": "^1.17.0",

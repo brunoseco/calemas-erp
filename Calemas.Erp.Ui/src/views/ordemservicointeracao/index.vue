@@ -51,11 +51,11 @@
                             <thead class="">
                                 <tr>
                                     <th>#</th>
-                                    <th>DataConclusao<button @click="executeOrderBy('dataConclusao')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Descricao<button @click="executeOrderBy('descricao')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Observacao<button @click="executeOrderBy('observacao')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>FoiProprioCliente<button @click="executeOrderBy('foiProprioCliente')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>NomeClienteResponsavel<button @click="executeOrderBy('nomeClienteResponsavel')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>DataConclusao<button @click="executeOrderBy('dataConclusao')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Descricao<button @click="executeOrderBy('descricao')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Observacao<button @click="executeOrderBy('observacao')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>FoiProprioCliente<button @click="executeOrderBy('foiProprioCliente')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>NomeClienteResponsavel<button @click="executeOrderBy('nomeClienteResponsavel')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th>#</th>
 
                                     <th class="text-center" width="75"><i class="fa fa-cog"></i></th>

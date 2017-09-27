@@ -51,13 +51,13 @@
                             <thead class="">
                                 <tr>
                                     <th>#</th>
-                                    <th>Referência <button @click="executeOrderBy('referencia')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Nome <button @click="executeOrderBy('nome')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Qtde. Mínima <button @click="executeOrderBy('quantidadeMinima')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Qtde. Atual <button @click="executeOrderBy('quantidade')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Valor de Venda <button @click="executeOrderBy('valorVenda')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Valor de Compra <button @click="executeOrderBy('valorCompra')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Ativo <button @click="executeOrderBy('ativo')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Referência <button @click="executeOrderBy('referencia')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Nome <button @click="executeOrderBy('nome')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Qtde. Mínima <button @click="executeOrderBy('quantidadeMinima')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Qtde. Atual <button @click="executeOrderBy('quantidade')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Valor de Venda <button @click="executeOrderBy('valorVenda')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Valor de Compra <button @click="executeOrderBy('valorCompra')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Ativo <button @click="executeOrderBy('ativo')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th class="text-center" width="75"><i class="fa fa-cog"></i></th>
                                 </tr>
                             </thead>

@@ -51,7 +51,7 @@
                             <thead class="">
                                 <tr>
                                     <th>#</th>
-                                    <th>Nome<button @click="executeOrderBy('nome')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Nome<button @click="executeOrderBy('nome')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
 
                                     <th class="text-center" width="75"><i class="fa fa-cog"></i></th>
                                 </tr>
