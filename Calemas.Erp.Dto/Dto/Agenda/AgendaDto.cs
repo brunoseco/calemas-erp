@@ -20,9 +20,11 @@ namespace Calemas.Erp.Dto
         public virtual string Descricao {get; set;}
 
         [Required(ErrorMessage="Agenda - Campo DataInicio é Obrigatório")]
+
         public virtual DateTime DataInicio {get; set;}
 
         [Required(ErrorMessage="Agenda - Campo DataFim é Obrigatório")]
+
         public virtual DateTime DataFim {get; set;}
 
         

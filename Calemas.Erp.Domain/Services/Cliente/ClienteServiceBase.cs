@@ -145,7 +145,7 @@ namespace Calemas.Erp.Domain.Services
 
         protected virtual Cliente SaveDefault(Cliente cliente, Cliente clienteOld)
         {
-			
+			cliente = this.AuditDefault(cliente, clienteOld);
 
             var isNew = clienteOld.IsNull();			
             if (isNew)

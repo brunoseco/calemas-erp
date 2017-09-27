@@ -5,9 +5,9 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace Common.API
+namespace Common.Api
 {
-    public static class Httphelper
+    public static class HttpHelper
     {
 
         public static string ToQueryString(this NameValueCollection collection)

@@ -4,7 +4,7 @@ using System;
 
 namespace Common.API.Converters
 {
-    public class DateTimeConverter : DateTimeConverterBase
+    public class DateTimePtBrConverter : DateTimeConverterBase
     {
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {

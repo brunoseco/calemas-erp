@@ -19,13 +19,13 @@ namespace <#namespace#>.Api.Controllers
 
         private readonly ILogger _logger;
         private readonly IHostingEnvironment _env;
-        private string rootFolder;
+        private readonly string _uploadRoot;
 
         public UplaodController(ILoggerFactory logger, IHostingEnvironment env)
         {
             this._logger = logger.CreateLogger<UplaodController>();
             this._env = env;
-            this.rootFolder = "upload";
+            this._uploadRoot = "upload";
         }
 
         [HttpPost]
@@ -35,7 +35,7 @@ namespace <#namespace#>.Api.Controllers
             var result = new HttpResult<List<string>>(this._logger);
             try
             {
-                var uploads = Path.Combine(this._env.ContentRootPath, makeFolderUpload(folder));
+                var uploads = Path.Combine(this._env.ContentRootPath, this._uploadRoot, folder);
                 if (!Directory.Exists(uploads))
                     Directory.CreateDirectory(uploads);
 
@@ -58,17 +58,17 @@ namespace <#namespace#>.Api.Controllers
             }
             catch (Exception ex)
             {
-                return result.ReturnCustomException(ex, "Alcateia.Site - Upload");
+                return result.ReturnCustomException(ex, "<#namespace#> - Upload");
             }
         }
 
-        [HttpDelete("{folder}/{fileName}")]
+		[HttpDelete("{folder}/{fileName}")]
         public async Task<IActionResult> Delete(string folder, string fileName)
         {
             var result = new HttpResult<List<string>>(this._logger);
             try
             {
-                var uploads = Path.Combine(this._env.ContentRootPath, makeFolderUpload(folder));
+                var uploads = Path.Combine(this._env.ContentRootPath, this._uploadRoot, folder);
                 await Task.Run(() => {
                     new FileInfo(Path.Combine(uploads, fileName)).Delete();
                 });
@@ -77,13 +77,8 @@ namespace <#namespace#>.Api.Controllers
             }
             catch (Exception ex)
             {
-                return result.ReturnCustomException(ex, "SmartSecretary - upload");
+                return result.ReturnCustomException(ex, "<#namespace#> - upload");
             }
-        }
-
-        private string makeFolderUpload(string folder)
-        {
-            return this.rootFolder + "/" + folder;
         }
     }
 }

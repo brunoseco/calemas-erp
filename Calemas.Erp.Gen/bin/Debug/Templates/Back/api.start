@@ -62,7 +62,8 @@ namespace <#namespace#>.Api
             ConfigContainer<#contextName#>.Config(services);			
 
             // Add framework services.
-            services.AddMvc().AddJsonOptions(options =>
+            services.AddMvc(options => { options.ModelBinderProviders.Insert(0, new DateTimePtBrModelBinderProvider()); })
+            .AddJsonOptions(options =>
             {
                 options.SerializerSettings.Converters.Add(new DateTimePtBrConverter());
             });

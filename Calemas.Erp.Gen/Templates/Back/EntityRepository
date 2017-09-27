@@ -9,15 +9,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
 using System;
+using Common.Domain.Model;
 
 namespace <#namespace#>.Data.Repository
 {
     public class <#className#>Repository : Repository<<#className#>>, I<#className#>Repository
     {
-        public <#className#>Repository(DbContext<#contextName#> ctx) : base(ctx)
+        private CurrentUser _user;
+        public <#className#>Repository(DbContext<#contextName#> ctx, CurrentUser user) : base(ctx)
         {
-
-
+			this._user = user;
         }
 
       

@@ -8,6 +8,7 @@ using <#namespace#>.Domain.Filter;
 using <#namespace#>.Dto;
 using Common.API;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 
 namespace <#namespace#>.Api.Controllers
 {
@@ -18,13 +19,13 @@ namespace <#namespace#>.Api.Controllers
 
         private readonly I<#className#>ApplicationService _app;
 		private readonly ILogger _logger;
-
-
-        public <#className#>Controller(I<#className#>ApplicationService app, ILoggerFactory logger)
+		private readonly IHostingEnvironment _env;
+      
+        public <#className#>Controller(I<#className#>ApplicationService app, ILoggerFactory logger, IHostingEnvironment env)
         {
             this._app = app;
 			this._logger = logger.CreateLogger<<#className#>Controller>();
-			
+			this._env = env;
         }
 
         [HttpGet]

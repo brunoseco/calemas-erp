@@ -1,4 +1,4 @@
-﻿using Common.Domain.Base;
+using Common.Domain.Base;
 using Common.Domain.Model;
 using IdentityModel.Client;
 using Microsoft.AspNetCore.Builder;
@@ -50,7 +50,7 @@ namespace Common.API.Extensions
 
                         }
 
-                        currentUser.Init(tokenClear, claimsDictonary);
+                        this.ConfigClaims(currentUser, tokenClear, claimsDictonary);
                     }
                     catch (Exception ex)
                     {
@@ -60,6 +60,11 @@ namespace Common.API.Extensions
                 }
             }
             await this._next.Invoke(context);
+        }
+
+        protected virtual void ConfigClaims(CurrentUser currentUser, string tokenClear, Dictionary<string, object> claimsDictonary)
+        {
+            currentUser.Init(tokenClear, claimsDictonary);
         }
 
         private static IEnumerable<Claim> GetClaimsFromReadToken(string tokenClear, JwtSecurityTokenHandler jwt)

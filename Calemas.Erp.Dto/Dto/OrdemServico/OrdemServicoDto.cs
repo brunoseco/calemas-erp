@@ -44,9 +44,11 @@ namespace Calemas.Erp.Dto
         public virtual int StatusOrdemServicoId {get; set;}
 
         [Required(ErrorMessage="OrdemServico - Campo DataOcorrencia é Obrigatório")]
+
         public virtual DateTime DataOcorrencia {get; set;}
 
         [Required(ErrorMessage="OrdemServico - Campo DataSituacao é Obrigatório")]
+
         public virtual DateTime DataSituacao {get; set;}
 
         

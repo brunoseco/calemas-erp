@@ -11,6 +11,8 @@ using Common.Domain.Enums;
 using Common.API;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Calemas.Erp.CrossCuting;
+using Calemas.Erp.Domain.Entitys;
 
 namespace Calemas.Erp.Api.Controllers
 {
@@ -53,6 +55,14 @@ namespace Calemas.Erp.Api.Controllers
                     var searchResult = await this._rep.GetDataListCustom(filters);
                     return result.ReturnCustomResponse(searchResult, filters);
                 }
+				
+				if (filters.FilterBehavior == FilterBehavior.Export)
+                {
+					var searchResult = await this._rep.GetDataListCustom(filters);
+                    var export = new ExportExcelCustom<dynamic>(filters);
+                    var file = export.ExportFile(this.Response, searchResult, "EstoqueMovimentacao");
+                    return File(file, export.ContentTypeExcel(), export.GetFileName());
+                }
 
                 throw new InvalidOperationException("invalid FilterBehavior");
 
@@ -81,7 +91,7 @@ namespace Calemas.Erp.Api.Controllers
 
         }
 
-	[HttpPut]
+		[HttpPut]
         public async Task<IActionResult> Put([FromBody]IEnumerable<EstoqueMovimentacaoDtoSpecialized> dtos)
         {
             var result = new HttpResult<EstoqueMovimentacaoDto>(this._logger);

@@ -12,23 +12,20 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
+        public Cliente(int clienteid, int statusclienteid) : base(clienteid, statusclienteid)
+        {
+        }
+
         public virtual Pessoa Pessoa { get; set; }
         public virtual StatusCliente StatusCliente { get; set; }
         public virtual Condominio Condominio { get; set; }
-
-        public Cliente(int clienteid, int statusclienteid, int responsavelid) :
-            base(clienteid, statusclienteid, responsavelid)
-        {
-
-        }
-
+        
         public class ClienteFactory
         {
             public Cliente GetDefaultInstance(dynamic data, CurrentUser user)
             {
                 var construction = new Cliente(data.ClienteId,
-                                        data.StatusClienteId,
-                                        data.ResponsavelId);
+                                        data.StatusClienteId);
 
                 construction.SetarCondominioId(data.CondominioId);
 

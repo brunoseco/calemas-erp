@@ -8,7 +8,6 @@ C:\Calemas\Main\Calemas.Erp.Enums\obj\Debug\netcoreapp1.1\Calemas.Erp.Enums.cspr
 C:\Pessoal\calemas-erp\Calemas.Erp.Enums\bin\Debug\netcoreapp1.1\Calemas.Erp.Enums.deps.json
 C:\Pessoal\calemas-erp\Calemas.Erp.Enums\bin\Debug\netcoreapp1.1\Calemas.Erp.Enums.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Enums\bin\Debug\netcoreapp1.1\Calemas.Erp.Enums.pdb
-C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Debug\netcoreapp1.1\Calemas.Erp.Enums.csprojResolveAssemblyReference.cache
 C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Debug\netcoreapp1.1\Calemas.Erp.Enums.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Debug\netcoreapp1.1\Calemas.Erp.Enums.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Debug\netcoreapp1.1\Calemas.Erp.Enums.pdb

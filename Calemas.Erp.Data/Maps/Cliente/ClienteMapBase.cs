@@ -17,7 +17,10 @@ namespace Calemas.Erp.Data.Map
 
             type.Property(t => t.StatusClienteId).HasColumnName("StatusClienteId");
             type.Property(t => t.CondominioId).HasColumnName("CondominioId");
-            type.Property(t => t.ResponsavelId).HasColumnName("ResponsavelId");
+            type.Property(t => t.UserCreateId).HasColumnName("UserCreateId");
+            type.Property(t => t.UserCreateDate).HasColumnName("UserCreateDate");
+            type.Property(t => t.UserAlterId).HasColumnName("UserAlterId");
+            type.Property(t => t.UserAlterDate).HasColumnName("UserAlterDate");
 
 
             type.HasKey(d => new { d.ClienteId, }); 

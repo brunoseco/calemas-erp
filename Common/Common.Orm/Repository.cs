@@ -69,6 +69,12 @@ namespace Common.Orm
             dbSet.Remove(entity);
         }
         
+        public virtual void RemoveRangeAndCommit(IEnumerable<T> entitys)
+        {
+            dbSet.RemoveRange(entitys);
+            ctx.SaveChanges();
+        }
+        
         public virtual void RemoveRange(IEnumerable<T> entitys)
         {
             dbSet.RemoveRange(entitys);

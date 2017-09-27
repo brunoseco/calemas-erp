@@ -12,22 +12,22 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public Condominio(int condominioid, string nome, bool ativo) :
-            base(condominioid, nome, ativo)
+        public Condominio(int condominioid, string nome, string sigla, bool ativo, int enderecoid) 
+            : base(condominioid, nome, sigla, ativo, enderecoid)
         {
-
         }
 
-		    public class CondominioFactory
+        public class CondominioFactory
         {
             public Condominio GetDefaultInstance(dynamic data, CurrentUser user)
             {
                 var construction = new Condominio(data.CondominioId,
                                         data.Nome,
-                                        data.Ativo);
+                                        data.Sigla,
+                                        data.Ativo,
+                                        data.EnderecoId);
 
                 construction.SetarDescricao(data.Descricao);
-
 
 				construction.SetAttributeBehavior(data.AttributeBehavior);
         		return construction;

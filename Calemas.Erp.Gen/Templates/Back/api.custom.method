@@ -1,6 +1,6 @@
 ﻿		[HttpPost("<#customMethodsVerb#>")]
-        [Route("<#customMethodsRoute#>")]
-        public async Task<IActionResult> <#customMethodsTemplate#>
+        <#customMethodsRoute#>
+        public async Task<IActionResult> <#customMethodsSignatureControllerTemplate#>
         {
             var result = new HttpResult<<#className#>Dto>(this._logger);
             try

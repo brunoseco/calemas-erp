@@ -8,6 +8,7 @@ using Calemas.Erp.Domain.Filter;
 using Calemas.Erp.Dto;
 using Common.API;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Calemas.Erp.Api.Controllers
 {
@@ -18,13 +19,13 @@ namespace Calemas.Erp.Api.Controllers
 
         private readonly ISetorApplicationService _app;
 		private readonly ILogger _logger;
-
-
-        public SetorController(ISetorApplicationService app, ILoggerFactory logger)
+		private readonly IHostingEnvironment _env;
+      
+        public SetorController(ISetorApplicationService app, ILoggerFactory logger, IHostingEnvironment env)
         {
             this._app = app;
 			this._logger = logger.CreateLogger<SetorController>();
-			
+			this._env = env;
         }
 
         [HttpGet]

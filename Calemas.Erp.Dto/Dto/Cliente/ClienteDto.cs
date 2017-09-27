@@ -19,10 +19,6 @@ namespace Calemas.Erp.Dto
 
         public virtual int? CondominioId {get; set;}
 
-        
-
-        public virtual int ResponsavelId {get; set;}
-
 
 		
 	}

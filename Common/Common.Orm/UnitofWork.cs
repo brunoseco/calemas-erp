@@ -1,5 +1,6 @@
-﻿using Common.Domain.Interfaces;
+using Common.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using System.Threading.Tasks;
 
 namespace Common.Orm
@@ -9,7 +10,8 @@ namespace Common.Orm
 
         private DbContext _ctx;
         private bool _disposed;
-
+        private IDbContextTransaction _transaction;
+        
         public UnitOfWork(T _ctx)
         {
             this._ctx = _ctx as DbContext;
@@ -17,17 +19,22 @@ namespace Common.Orm
 
         public void BeginTransaction()
         {
+            this._transaction = this._ctx.Database.BeginTransaction();
             _disposed = false;
         }
 
         public int Commit()
         {
-            return this._ctx.SaveChanges();
+            var result = this._ctx.SaveChanges();
+			this._transaction.Commit();
+			return result;
         }
 
         public async Task<int> CommitAsync()
         {
-            return await this._ctx.SaveChangesAsync();
+            var result = await this._ctx.SaveChangesAsync();
+			this._transaction.Commit();
+			return result;
         }
 
         protected virtual void Dispose(bool disposing)

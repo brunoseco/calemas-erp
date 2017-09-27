@@ -16,9 +16,11 @@ namespace Calemas.Erp.Dto
         public virtual int OrdemServicoId {get; set;}
 
         [Required(ErrorMessage="OrdemServicoInteracao - Campo DataConclusao é Obrigatório")]
+
         public virtual DateTime DataConclusao {get; set;}
 
         [Required(ErrorMessage="OrdemServicoInteracao - Campo Descricao é Obrigatório")]
+
         public virtual string Descricao {get; set;}
 
         
@@ -26,6 +28,7 @@ namespace Calemas.Erp.Dto
         public virtual string Observacao {get; set;}
 
         [Required(ErrorMessage="OrdemServicoInteracao - Campo FoiProprioCliente é Obrigatório")]
+
         public virtual bool FoiProprioCliente {get; set;}
 
         

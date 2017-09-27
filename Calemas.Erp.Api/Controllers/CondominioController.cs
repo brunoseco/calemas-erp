@@ -8,6 +8,7 @@ using Calemas.Erp.Domain.Filter;
 using Calemas.Erp.Dto;
 using Common.API;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Calemas.Erp.Api.Controllers
 {
@@ -18,13 +19,13 @@ namespace Calemas.Erp.Api.Controllers
 
         private readonly ICondominioApplicationService _app;
 		private readonly ILogger _logger;
-
-
-        public CondominioController(ICondominioApplicationService app, ILoggerFactory logger)
+		private readonly IHostingEnvironment _env;
+      
+        public CondominioController(ICondominioApplicationService app, ILoggerFactory logger, IHostingEnvironment env)
         {
             this._app = app;
 			this._logger = logger.CreateLogger<CondominioController>();
-			
+			this._env = env;
         }
 
         [HttpGet]

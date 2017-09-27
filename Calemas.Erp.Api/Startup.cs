@@ -55,7 +55,7 @@ namespace Calemas.Erp.Api
 
             services.AddMvc().AddJsonOptions(options =>
             {
-                options.SerializerSettings.Converters.Add(new DateTimeConverter());
+                options.SerializerSettings.Converters.Add(new Common.API.Converters.DateTimePtBrConverter());
             });
 
         }
