@@ -75,6 +75,8 @@ namespace Calemas.Erp.Gen
                     new TableInfo { TableName = "UnidadeMedida", MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "Estoque", MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "EstoqueMovimentacao", MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
+                    new TableInfo { TableName = "SolicitacaoEstoqueMovimentacao", MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
+                    new TableInfo { TableName = "StatusSolicitacaoEstoqueMovimentacao", MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
 
 
                 }
@@ -103,6 +105,7 @@ namespace Calemas.Erp.Gen
                     new TableInfo { TableName = "UnidadeMedida", ClassNameFormated = "Unidade de medida", MakeFront = true,  },
                     new TableInfo { TableName = "Estoque", ClassNameFormated = "Estoque", MakeFront = true,  },
                     new TableInfo { TableName = "EstoqueMovimentacao", ClassNameFormated = "Movimentação de estoque", MakeFront = true,  },
+                    new TableInfo { TableName = "SolicitacaoEstoqueMovimentacao", ClassNameFormated = "Solicitação de movimentação de estoque", MakeFront = true,  },
 
                     new TableInfo { TableName = "OrdemServico", ClassNameFormated = "Ordem de serviço", MakeFront = true,  },
                     new TableInfo { TableName = "OrdemServicoInteracao", ClassNameFormated = "Interação com ordem de serviço", MakeFront = true,  },
@@ -114,11 +117,10 @@ namespace Calemas.Erp.Gen
 
                     new TableInfo { TableName = "Cliente", ClassNameFormated = "Cliente", MakeFront = true,  },
                     new TableInfo { TableName = "Condominio", ClassNameFormated = "Condomínio", MakeFront = true,  },
+                    new TableInfo { TableName = "Endereco", ClassNameFormated = "Endereço", MakeFront = true,  },
                     new TableInfo { TableName = "StatusCliente", ClassNameFormated = "Situação do cliente", MakeFront = true,  },
 
                     new TableInfo { TableName = "Agenda", ClassNameFormated = "Agenda", MakeFront = true,  },
-
-
 
                 }
             };

@@ -29,7 +29,7 @@ namespace Calemas.Erp.Dto
 
         
 
-        public virtual string PontoReferencia {get; set;}
+        public virtual string Bairro {get; set;}
 
         
 
@@ -37,7 +37,7 @@ namespace Calemas.Erp.Dto
 
         
 
-        public virtual int? EstadoId {get; set;}
+        public virtual string UF {get; set;}
 
 
 		

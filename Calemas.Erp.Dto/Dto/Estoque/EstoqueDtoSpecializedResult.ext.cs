@@ -7,11 +7,7 @@ namespace Calemas.Erp.Dto
 {
 	public class EstoqueDtoSpecializedResult : EstoqueDto
 	{
-
-        public IEnumerable<EstoqueMovimentacaoDto> CollectionEstoqueMovimentacao { get; set;} 
         public  CategoriaEstoqueDto CategoriaEstoque { get; set;} 
-        public  UnidadeMedidaDto UnidadeMedida { get; set;} 
-
 		
 	}
 }

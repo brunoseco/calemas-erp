@@ -63,6 +63,10 @@ namespace Calemas.Erp.Dto
 
         public virtual bool Ativo {get; set;}
 
+        
+
+        public virtual string Localizacao {get; set;}
+
 
 		
 	}

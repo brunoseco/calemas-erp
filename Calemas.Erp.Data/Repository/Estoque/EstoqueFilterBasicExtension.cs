@@ -81,6 +81,11 @@ namespace Calemas.Erp.Data.Repository
 				
 				queryFilter = queryFilter.Where(_=>_.Ativo == filters.Ativo);
 			}
+            if (filters.Localizacao.IsSent()) 
+			{ 
+				
+				queryFilter = queryFilter.Where(_=>_.Localizacao.Contains(filters.Localizacao));
+			}
             if (filters.UserCreateId.IsSent()) 
 			{ 
 				

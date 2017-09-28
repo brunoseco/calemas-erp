@@ -11,14 +11,17 @@
             </div>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4 text-right">
                 <div class="btn-group">
-                    <a href="javascript:history.back()" class="btn btn-primary btn-sm pull-right header-btn hidden-mobile">
+                    <a href="javascript:history.back()" class="btn btn-secondary btn-sm pull-right header-btn hidden-mobile">
                         <i class="fa fa-reply"></i> Voltar
                     </a>
+                    <button @click="openFilter()" class="btn btn-primary btn-sm pull-right header-btn">
+                        <i class="fa fa-filter"></i> Filtros
+                    </button>
                 </div>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row animated fadeIn" v-if="filterPartialIsOpen">
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
@@ -44,12 +47,13 @@
                         <strong>Resultado</strong>
                     </div>
                     <div class="card-block no-padding">
-                        <table class="table has-tickbox table-striped table-sm">
+                        <table class="table table-striped table-sm">
                             <thead class="">
                                 <tr>
-                                    <th>#</th>
-                                    <th>Referência<button @click="executeOrderBy('referencia')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th>Nome<button @click="executeOrderBy('nome')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Categoria<button @click="executeOrderBy('categoriaEstoque.nome')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Fabricante<button @click="executeOrderBy('fabricante')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Modelo<button @click="executeOrderBy('modelo')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th>Qtde. Mínima<button @click="executeOrderBy('quantidadeMinima')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th>Qtde. Atual<button @click="executeOrderBy('quantidade')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th class="text-center" width="150"><i class="fa fa-cog"></i></th>
@@ -57,9 +61,10 @@
                             </thead>
                             <tbody>
                                 <tr v-for="item in result.itens" class="animated fadeIn">
-                                    <td>{{ item.estoqueId }}</td>
-                                    <td>{{ item.referencia }}</td>
                                     <td>{{ item.nome }}</td>
+                                    <td>{{ item.categoriaEstoque.nome }}</td>
+                                    <td>{{ item.fabricante }}</td>
+                                    <td>{{ item.modelo }}</td>
                                     <td>{{ item.quantidadeMinima }}</td>
                                     <td>{{ item.quantidade }}</td>
                                     <td class="text-center">

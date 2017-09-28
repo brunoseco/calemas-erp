@@ -1,4 +1,4 @@
-<template>
+﻿<template>
     <div class="wrapper">
 
         <div class="row" style="margin-bottom: 1rem;margin-top: -0.5rem;">
@@ -11,9 +11,12 @@
             </div>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4 text-right">
                 <div class="btn-group">
-                    <a href="javascript:history.back()" class="btn btn-primary btn-sm pull-right header-btn hidden-mobile">
+                    <a href="javascript:history.back()" class="btn btn-secondary btn-sm pull-right header-btn hidden-mobile">
                         <i class="fa fa-reply"></i> Voltar
                     </a>
+                    <button @click="openFilter()" class="btn btn-primary btn-sm pull-right header-btn">
+                        <i class="fa fa-filter"></i> Filtros
+                    </button>
                     <button @click="openCreate()" class="btn btn-success btn-sm pull-right header-btn hidden-mobile">
                         <i class="fa fa-plus"></i> Cadastrar
                     </button>
@@ -21,7 +24,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row animated fadeIn" v-if="filterPartialIsOpen">
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
@@ -40,6 +43,7 @@
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -53,6 +57,7 @@
                                     <th>#</th>
                                     <th>Nome<button @click="executeOrderBy('nome')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th>Hash<button @click="executeOrderBy('hash')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Cor</th>
 
                                     <th class="text-center" width="75"><i class="fa fa-cog"></i></th>
                                 </tr>
@@ -62,6 +67,7 @@
                                     <td>{{ item.corId }}</td>
                                     <td>{{ item.nome }}</td>
                                     <td>{{ item.hash }}</td>
+                                    <td><div style="height:20px;width:20px;" v-bind:style="{ 'background-color': item.hash }"></div></td>
 
                                     <td class="text-center">
                                         <button type="button" class="btn btn-sm btn-primary" @click="openEdit(item.corId, item)">
@@ -136,7 +142,6 @@
     </div>
 </template>
 <script>
-
 
     import crudBase from '../../common/mixins/crud'
 

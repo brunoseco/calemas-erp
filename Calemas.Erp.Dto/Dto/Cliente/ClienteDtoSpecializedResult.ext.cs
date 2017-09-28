@@ -8,7 +8,7 @@ namespace Calemas.Erp.Dto
 	public class ClienteDtoSpecializedResult : ClienteDto
 	{
         public  CondominioDto Condominio { get; set;} 
-        public  PessoaDto Pessoa { get; set;} 
+        public  PessoaDtoSpecializedResult Pessoa { get; set;} 
         public  StatusClienteDto StatusCliente { get; set;} 
 
 		

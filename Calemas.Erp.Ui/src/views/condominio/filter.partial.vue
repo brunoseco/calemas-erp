@@ -1,10 +1,14 @@
 ﻿<template>
     <div class="row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-8">
             <label for="nome">Nome</label>
             <input type="text" class="form-control" name="nome" placeholder="Nome" v-model="filter.nome" />
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
+            <label for="nome">Sigla</label>
+            <input type="text" class="form-control" name="sigla" placeholder="Sigla" v-model="filter.sigla" />
+        </div>
+        <div class="form-group col-md-12">
             <label>Ativo</label>
             <div class="form-group">
                 <label class="custom-control custom-radio">

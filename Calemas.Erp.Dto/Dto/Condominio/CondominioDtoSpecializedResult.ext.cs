@@ -7,9 +7,7 @@ namespace Calemas.Erp.Dto
 {
 	public class CondominioDtoSpecializedResult : CondominioDto
 	{
-
-        public IEnumerable<ClienteDto> CollectionCliente { get; set;} 
-
+        public EnderecoDto Endereco { get; set; }
 		
 	}
 }

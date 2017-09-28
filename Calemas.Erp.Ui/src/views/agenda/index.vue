@@ -13,14 +13,14 @@
                     <a href="javascript:history.back()" class="btn btn-secondary btn-sm pull-right header-btn hidden-mobile">
                         <i class="fa fa-reply"></i> Voltar
                     </a>
-                    <button @click="openFilter()" class="btn btn-info btn-sm pull-right header-btn hidden-mobile">
+                    <button @click="openFilter()" class="btn btn-primary btn-sm pull-right header-btn">
                         <i class="fa fa-filter"></i> Filtros
                     </button>
                 </div>
             </div>
         </div>
 
-        <div class="row" v-if="filterPartialIsOpen">
+        <div class="row animated fadeIn" v-if="filterPartialIsOpen">
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">

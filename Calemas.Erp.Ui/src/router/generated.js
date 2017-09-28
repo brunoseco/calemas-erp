@@ -14,6 +14,7 @@ const routers = [
     { path: 'cor', name: 'Cores do sistema', component: function (resolve) { require(['@/views/cor'], resolve) } },
     { path: 'cliente', name: 'Cliente', component: function (resolve) { require(['@/views/cliente'], resolve) } },
     { path: 'condominio', name: 'Condomínio', component: function (resolve) { require(['@/views/condominio'], resolve) } },
+    { path: 'endereco', name: 'Endereço', component: function (resolve) { require(['@/views/endereco'], resolve) } },
     { path: 'statuscliente', name: 'Situação do cliente', component: function (resolve) { require(['@/views/statuscliente'], resolve) } },
     { path: 'agenda', name: 'Agenda', component: function (resolve) { require(['@/views/agenda'], resolve) } },
 

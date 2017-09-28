@@ -9,22 +9,26 @@
                 <input type="text" class="form-control" name="nome" placeholder="Nome" v-model="model.nome" required />
             </div>
             <div class="form-group col-md-4">
-                <label for="referencia">Referência</label>
+                <label for="referencia">Código</label>
                 <input type="text" class="form-control" name="referencia" placeholder="Referencia" v-model="model.referencia" />
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
+                <label for="modelo">Localização</label>
+                <input type="text" class="form-control" name="localizacao" placeholder="Localizacao" v-model="model.localizacao" />
+            </div>
+            <div class="form-group col-md-4">
                 <label for="modelo">Modelo</label>
                 <input type="text" class="form-control" name="modelo" placeholder="Modelo" v-model="model.modelo" />
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <label for="fabricante">Fabricante</label>
                 <input type="text" class="form-control" name="fabricante" placeholder="Fabricante" v-model="model.fabricante" />
             </div>
-            <div class="form-group col-md-12" data-reference="unidadeMedidaId">
+            <div class="form-group col-md-6" data-reference="unidadeMedidaId">
                 <label for="unidadeMedidaId">Unidade de Medida</label>
                 <select v-select="{ dataitem: 'UnidadeMedida', default: 'Selecione' }" v-model="model.unidadeMedidaId" class="form-control" name="unidadeMedidaId" required></select>
             </div>
-            <div class="form-group col-md-12" data-reference="categoriaEstoqueId">
+            <div class="form-group col-md-6" data-reference="categoriaEstoqueId">
                 <label for="categoriaEstoqueId">Categoria de Estoque</label>
                 <select v-select="{ dataitem: 'CategoriaEstoque', default: 'Selecione' }" v-model="model.categoriaEstoqueId" class="form-control" name="categoriaEstoqueId" required></select>
             </div>
@@ -37,7 +41,7 @@
                 <textarea class="form-control" name="descricao" placeholder="Descrição" v-model="model.descricao" />
             </div>
             <div class="form-group col-md-4" data-reference="quantidadeMinima">
-                <label for="quantidadeMinima">Quantidade Mínim</label>
+                <label for="quantidadeMinima">Quantidade Mínima</label>
                 <input type="number" class="form-control" name="quantidadeMinima" placeholder="Quantidade Mínima" v-model="model.quantidadeMinima" required />
             </div>
             <div class="form-group col-md-4">

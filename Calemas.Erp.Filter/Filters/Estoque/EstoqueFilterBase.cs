@@ -20,6 +20,7 @@ namespace Calemas.Erp.Domain.Filter
         public virtual decimal? ValorVenda { get; set;} 
         public virtual decimal? ValorCompra { get; set;} 
         public virtual bool? Ativo { get; set;} 
+        public virtual string Localizacao { get; set;} 
         public virtual int UserCreateId { get; set;} 
         public virtual DateTime UserCreateDateStart { get; set;} 
         public virtual DateTime UserCreateDateEnd { get; set;} 

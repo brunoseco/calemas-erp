@@ -20,30 +20,30 @@ namespace Calemas.Erp.Data.Repository
 
         }
 
-      
+
         public IQueryable<Condominio> GetBySimplefilters(CondominioFilter filters)
         {
             var querybase = this.GetAll(this.DataAgregation(filters))
-								.WithBasicFilters(filters)
-								.WithCustomFilters(filters);
+                                .WithBasicFilters(filters)
+                                .WithCustomFilters(filters);
             return querybase;
         }
 
         public async Task<Condominio> GetById(CondominioFilter model)
         {
             var _condominio = await this.SingleOrDefaultAsync(this.GetAll(this.DataAgregation(model))
-               .Where(_=>_.CondominioId == model.CondominioId));
+               .Where(_ => _.CondominioId == model.CondominioId));
 
             return _condominio;
         }
 
-		 public async Task<IEnumerable<dynamic>> GetDataItem(CondominioFilter filters)
+        public async Task<IEnumerable<dynamic>> GetDataItem(CondominioFilter filters)
         {
             var querybase = await this.ToListAsync(this.GetBySimplefilters(filters).Select(_ => new
             {
                 Id = _.CondominioId,
                 Name = _.Nome
-            })); 
+            }));
 
             return querybase;
         }
@@ -134,9 +134,9 @@ namespace Calemas.Erp.Data.Repository
             return source.SingleOrDefault();
         }
 
-		protected override Expression<Func<Condominio, object>>[] DataAgregation(Expression<Func<Condominio, object>>[] includes, FilterBase filter)
+        protected override Expression<Func<Condominio, object>>[] DataAgregation(Expression<Func<Condominio, object>>[] includes, FilterBase filter)
         {
-            return base.DataAgregation(includes, filter);
+            return includes.Add(_ => _.Endereco);
         }
 
     }

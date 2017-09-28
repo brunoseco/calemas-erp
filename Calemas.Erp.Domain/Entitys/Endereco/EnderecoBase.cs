@@ -20,9 +20,9 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual string Rua { get; protected set; }
         public virtual string Numero { get; protected set; }
         public virtual string Complemento { get; protected set; }
-        public virtual string PontoReferencia { get; protected set; }
+        public virtual string Bairro { get; protected set; }
         public virtual string Cidade { get; protected set; }
-        public virtual int? EstadoId { get; protected set; }
+        public virtual string UF { get; protected set; }
 
 
 		public virtual void SetarCEP(string cep)
@@ -41,17 +41,17 @@ namespace Calemas.Erp.Domain.Entitys
 		{
 			this.Complemento = complemento;
 		}
-		public virtual void SetarPontoReferencia(string pontoreferencia)
+		public virtual void SetarBairro(string bairro)
 		{
-			this.PontoReferencia = pontoreferencia;
+			this.Bairro = bairro;
 		}
 		public virtual void SetarCidade(string cidade)
 		{
 			this.Cidade = cidade;
 		}
-		public virtual void SetarEstadoId(int? estadoid)
+		public virtual void SetarUF(string uf)
 		{
-			this.EstadoId = estadoid;
+			this.UF = uf;
 		}
 
 

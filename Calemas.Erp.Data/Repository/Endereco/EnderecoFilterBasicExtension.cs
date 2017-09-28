@@ -36,20 +36,20 @@ namespace Calemas.Erp.Data.Repository
 				
 				queryFilter = queryFilter.Where(_=>_.Complemento.Contains(filters.Complemento));
 			}
-            if (filters.PontoReferencia.IsSent()) 
+            if (filters.Bairro.IsSent()) 
 			{ 
 				
-				queryFilter = queryFilter.Where(_=>_.PontoReferencia.Contains(filters.PontoReferencia));
+				queryFilter = queryFilter.Where(_=>_.Bairro.Contains(filters.Bairro));
 			}
             if (filters.Cidade.IsSent()) 
 			{ 
 				
 				queryFilter = queryFilter.Where(_=>_.Cidade.Contains(filters.Cidade));
 			}
-            if (filters.EstadoId.IsSent()) 
+            if (filters.UF.IsSent()) 
 			{ 
 				
-				queryFilter = queryFilter.Where(_=>_.EstadoId != null && _.EstadoId.Value == filters.EstadoId);
+				queryFilter = queryFilter.Where(_=>_.UF.Contains(filters.UF));
 			}
             if (filters.UserCreateId.IsSent()) 
 			{ 

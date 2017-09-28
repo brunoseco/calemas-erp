@@ -1,4 +1,4 @@
-                    <div class="form-group <#colformField#>" <#isRequiredLabelTag#>>
+                    <div class="form-group <#colformField#>">
                         <label for="<#propertyNameLowerCase#>"><#ReletedClass#></label>
                         <select v-select="{ dataitem: '<#ReletedClass#>', default: 'Selecione' }" v-model="<#modelType#>.<#propertyNameLowerCase#>" class="form-control" name="<#propertyNameLowerCase#>" <#isRequired#>></select>
                     </div>

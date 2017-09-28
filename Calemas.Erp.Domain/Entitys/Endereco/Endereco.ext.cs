@@ -18,7 +18,7 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-		    public class EnderecoFactory
+        public class EnderecoFactory
         {
             public Endereco GetDefaultInstance(dynamic data, CurrentUser user)
             {
@@ -28,13 +28,12 @@ namespace Calemas.Erp.Domain.Entitys
                 construction.SetarRua(data.Rua);
                 construction.SetarNumero(data.Numero);
                 construction.SetarComplemento(data.Complemento);
-                construction.SetarPontoReferencia(data.PontoReferencia);
+                construction.SetarBairro(data.Bairro);
                 construction.SetarCidade(data.Cidade);
-                construction.SetarEstadoId(data.EstadoId);
+                construction.SetarUF(data.UF);
 
-
-				construction.SetAttributeBehavior(data.AttributeBehavior);
-        		return construction;
+                construction.SetAttributeBehavior(data.AttributeBehavior);
+                return construction;
             }
 
         }
@@ -45,6 +44,6 @@ namespace Calemas.Erp.Domain.Entitys
             return base._validationResult.IsValid;
 
         }
-        
+
     }
 }

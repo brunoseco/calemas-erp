@@ -41,7 +41,12 @@ namespace Calemas.Erp.Application
                 var domain = base.MapperDtoToDomain(_dto).Result;
 
                 if (_dto.Pessoa.IsNotNull())
+                {
                     domain.Pessoa = new Pessoa.PessoaFactory().GetDefaultInstance(_dto.Pessoa, this._user);
+
+                    if (_dto.Pessoa.Endereco.IsNotNull())
+                        domain.Pessoa.Endereco = new Endereco.EnderecoFactory().GetDefaultInstance(_dto.Pessoa.Endereco, this._user);
+                }
 
                 return domain;
             });

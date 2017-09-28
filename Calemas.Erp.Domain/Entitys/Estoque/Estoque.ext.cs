@@ -1,12 +1,14 @@
 using Calemas.Erp.Domain.Validations;
 using Common.Domain.Model;
 using System;
+using System.Collections.Generic;
 
 namespace Calemas.Erp.Domain.Entitys
 {
     public class Estoque : EstoqueBase
     {
-
+        public virtual CategoriaEstoque CategoriaEstoque { get; set; }
+        public virtual ICollection<EstoqueMovimentacao> CollectionEstoqueMovimentacao { get; set; }
         public Estoque()
         {
 
@@ -18,7 +20,7 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-		public class EstoqueFactory
+        public class EstoqueFactory
         {
             public Estoque GetDefaultInstance(dynamic data, CurrentUser user)
             {
@@ -37,6 +39,7 @@ namespace Calemas.Erp.Domain.Entitys
                 construction.SetarValorCompra(data.ValorCompra);
                 construction.SetarModelo(data.Modelo);
                 construction.SetarFabricante(data.Fabricante);
+                construction.SetarLocalizacao(data.Localizacao);
 
                 return construction;
             }
@@ -57,6 +60,6 @@ namespace Calemas.Erp.Domain.Entitys
             return base._validationResult.IsValid;
 
         }
-        
+
     }
 }

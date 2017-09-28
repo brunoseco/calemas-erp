@@ -20,30 +20,30 @@ namespace Calemas.Erp.Data.Repository
 
         }
 
-      
+
         public IQueryable<Estoque> GetBySimplefilters(EstoqueFilter filters)
         {
             var querybase = this.GetAll(this.DataAgregation(filters))
-								.WithBasicFilters(filters)
-								.WithCustomFilters(filters);
+                                .WithBasicFilters(filters)
+                                .WithCustomFilters(filters);
             return querybase;
         }
 
         public async Task<Estoque> GetById(EstoqueFilter model)
         {
             var _estoque = await this.SingleOrDefaultAsync(this.GetAll(this.DataAgregation(model))
-               .Where(_=>_.EstoqueId == model.EstoqueId));
+               .Where(_ => _.EstoqueId == model.EstoqueId));
 
             return _estoque;
         }
 
-		 public async Task<IEnumerable<dynamic>> GetDataItem(EstoqueFilter filters)
+        public async Task<IEnumerable<dynamic>> GetDataItem(EstoqueFilter filters)
         {
             var querybase = await this.ToListAsync(this.GetBySimplefilters(filters).Select(_ => new
             {
                 Id = _.EstoqueId,
                 Name = _.Nome
-            })); 
+            }));
 
             return querybase;
         }
@@ -134,9 +134,9 @@ namespace Calemas.Erp.Data.Repository
             return source.SingleOrDefault();
         }
 
-		protected override Expression<Func<Estoque, object>>[] DataAgregation(Expression<Func<Estoque, object>>[] includes, FilterBase filter)
+        protected override Expression<Func<Estoque, object>>[] DataAgregation(Expression<Func<Estoque, object>>[] includes, FilterBase filter)
         {
-            return base.DataAgregation(includes, filter);
+            return includes.Add(_ => _.CategoriaEstoque);
         }
 
     }

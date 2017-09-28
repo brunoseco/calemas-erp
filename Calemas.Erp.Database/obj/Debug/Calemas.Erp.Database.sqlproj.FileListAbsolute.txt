@@ -12,7 +12,3 @@ D:\Projetos\calemas-erp\Calemas.Erp.Database\obj\Debug\Model.xml
 D:\Projetos\calemas-erp\Calemas.Erp.Database\obj\Debug\refactor.xml
 D:\Projetos\calemas-erp\Calemas.Erp.Database\obj\Debug\postdeploy.sql
 D:\Projetos\calemas-erp\Calemas.Erp.Database\obj\Debug\predeploy.sql
-C:\Pessoal\calemas-erp\Calemas.Erp.Database\obj\Debug\Model.xml
-C:\Pessoal\calemas-erp\Calemas.Erp.Database\obj\Debug\refactor.xml
-C:\Pessoal\calemas-erp\Calemas.Erp.Database\obj\Debug\postdeploy.sql
-C:\Pessoal\calemas-erp\Calemas.Erp.Database\obj\Debug\predeploy.sql

@@ -11,9 +11,12 @@
             </div>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4 text-right">
                 <div class="btn-group">
-                    <a href="javascript:history.back()" class="btn btn-primary btn-sm pull-right header-btn hidden-mobile">
+                    <a href="javascript:history.back()" class="btn btn-secondary btn-sm pull-right header-btn hidden-mobile">
                         <i class="fa fa-reply"></i> Voltar
                     </a>
+                    <button @click="openFilter()" class="btn btn-primary btn-sm pull-right header-btn">
+                        <i class="fa fa-filter"></i> Filtros
+                    </button>
                     <button @click="openCreate()" class="btn btn-success btn-sm pull-right header-btn hidden-mobile">
                         <i class="fa fa-plus"></i> Cadastrar
                     </button>
@@ -21,7 +24,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row animated fadeIn" v-if="filterPartialIsOpen">
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
@@ -50,8 +53,7 @@
                         <table class="table has-tickbox table-striped table-sm">
                             <thead class="">
                                 <tr>
-                                    <th>#</th>
-                                    <th>Referência <button @click="executeOrderBy('referencia')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Código <button @click="executeOrderBy('referencia')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th>Nome <button @click="executeOrderBy('nome')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th>Qtde. Mínima <button @click="executeOrderBy('quantidadeMinima')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th>Qtde. Atual <button @click="executeOrderBy('quantidade')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
@@ -63,7 +65,6 @@
                             </thead>
                             <tbody>
                                 <tr v-for="item in result.itens" class="animated fadeIn">
-                                    <td>{{ item.estoqueId }}</td>
                                     <td>{{ item.referencia }}</td>
                                     <td>{{ item.nome }}</td>
                                     <td>{{ item.quantidadeMinima }}</td>

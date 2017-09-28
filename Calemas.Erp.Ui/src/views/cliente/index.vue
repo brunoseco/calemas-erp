@@ -11,17 +11,20 @@
             </div>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4 text-right">
                 <div class="btn-group">
-                    <a href="javascript:history.back()" class="btn btn-primary btn-sm pull-right header-btn hidden-mobile">
+                    <a href="javascript:history.back()" class="btn btn-secondary btn-sm pull-right header-btn hidden-mobile">
                         <i class="fa fa-reply"></i> Voltar
                     </a>
-                    <button @click="openCreate({pessoa: {}})" class="btn btn-success btn-sm pull-right header-btn hidden-mobile">
+                    <button @click="openFilter()" class="btn btn-primary btn-sm pull-right header-btn">
+                        <i class="fa fa-filter"></i> Filtros
+                    </button>
+                    <button @click="openCreate({pessoa: {endereco:{}}})" class="btn btn-success btn-sm pull-right header-btn hidden-mobile">
                         <i class="fa fa-plus"></i> Cadastrar
                     </button>
                 </div>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row animated fadeIn" v-if="filterPartialIsOpen">
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
@@ -152,7 +155,7 @@
         data() {
             return {
                 resource: "cliente",
-                model: { pessoa: {} }
+                model: { pessoa: { endereco: {} } }
             }
         },
         methods: {

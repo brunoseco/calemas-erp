@@ -31,7 +31,7 @@ export default {
             modalEditIsOpen: false,
             modalDeleteIsOpen: false,
             modalDetailIsOpen: false,
-            filterPartialIsOpen: true,
+            filterPartialIsOpen: false,
 
             detail: null,
             model: {},

@@ -1,4 +1,4 @@
-					<div class="form-group <#colformField#>" <#isRequiredLabelTag#>>
+					<div class="form-group <#colformField#>">
                         <label for="<#propertyNameLowerCase#>"><#propertyName#></label>
                         <input type="text" class="form-control" name="<#propertyNameLowerCase#>" placeholder="<#propertyName#>" v-model="<#modelType#>.<#propertyNameLowerCase#>" <#isRequired#> />
                     </div>

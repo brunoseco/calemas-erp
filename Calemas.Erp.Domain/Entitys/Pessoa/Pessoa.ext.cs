@@ -6,6 +6,7 @@ namespace Calemas.Erp.Domain.Entitys
 {
     public class Pessoa : PessoaBase
     {
+        public virtual Endereco Endereco { get; set; }
         public virtual Colaborador Colaborador { get; set; }
         public virtual Cliente Cliente { get; set; }
         public Pessoa()

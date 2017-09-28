@@ -6,7 +6,7 @@
                 <h6 class="page-title txt-color-blueDark">
                     <i class="fa-fw fa fa-home"></i>
                     Cadastros
-                    <span>Manutenção de Colaborador</span>
+                    <span>Manutenção de Endereço</span>
                 </h6>
             </div>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4 text-right">
@@ -17,7 +17,7 @@
                     <button @click="openFilter()" class="btn btn-primary btn-sm pull-right header-btn">
                         <i class="fa fa-filter"></i> Filtros
                     </button>
-                    <button @click="openCreate({pessoa: {}})" class="btn btn-success btn-sm pull-right header-btn hidden-mobile">
+                    <button @click="openCreate()" class="btn btn-success btn-sm pull-right header-btn hidden-mobile">
                         <i class="fa fa-plus"></i> Cadastrar
                     </button>
                 </div>
@@ -54,29 +54,39 @@
                             <thead class="">
                                 <tr>
                                     <th>#</th>
-                                    <th>Nome<button @click="executeOrderBy('pessoa.nome')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
-                                    <th>Email<button @click="executeOrderBy('pessoa.email')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
-                                    <th>Telefone<button @click="executeOrderBy('pessoa.telefone')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
-                                    <th>Account<button @click="executeOrderBy('account')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
-                                    <th>Ativo<button @click="executeOrderBy('ativo')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>CEP<button @click="executeOrderBy('cep')" class="btn btn-xs btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+
+                                    <th>Rua<button @click="executeOrderBy('rua')" class="btn btn-xs btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+
+                                    <th>Numero<button @click="executeOrderBy('numero')" class="btn btn-xs btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+
+                                    <th>Complemento<button @click="executeOrderBy('complemento')" class="btn btn-xs btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+
+                                    <th>PontoReferencia<button @click="executeOrderBy('pontoReferencia')" class="btn btn-xs btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+
+                                    <th>Cidade<button @click="executeOrderBy('cidade')" class="btn btn-xs btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+
+                                    <th>#</th>
 
                                     <th class="text-center" width="75"><i class="fa fa-cog"></i></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr v-for="item in result.itens" class="animated fadeIn">
-                                    <td>{{ item.colaboradorId }}</td>
-                                    <td>{{ item.pessoa.nome }}</td>
-                                    <td>{{ item.pessoa.email }}</td>
-                                    <td>{{ item.pessoa.telefone }}</td>
-                                    <td>{{ item.account }}</td>
-                                    <td><span class="badge badge-pill" v-bind:class="{ 'badge-success': item.ativo, 'badge-danger': !item.ativo }">{{item.ativo ? 'Sim' : 'Não'}}</span></td>
+                                    <td>{{ item.enderecoId }}</td>
+                                    <td>{{ item.cep }}</td>
+                                    <td>{{ item.rua }}</td>
+                                    <td>{{ item.numero }}</td>
+                                    <td>{{ item.complemento }}</td>
+                                    <td>{{ item.pontoReferencia }}</td>
+                                    <td>{{ item.cidade }}</td>
+                                    <td>{{ item.estadoId }}</td>
 
                                     <td class="text-center">
-                                        <button type="button" class="btn btn-sm btn-primary" @click="openEdit(item.colaboradorId, item)">
+                                        <button type="button" class="btn btn-xs btn-primary" @click="openEdit(item.enderecoId, item)">
                                             <i class="fa fa-pencil"></i>
                                         </button>
-                                        <button type="button" class="btn btn-sm btn-danger" @click="openDelete(item.colaboradorId, item)">
+                                        <button type="button" class="btn btn-xs btn-danger" @click="openDelete(item.enderecoId, item)">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </td>
@@ -91,9 +101,9 @@
             </div>
         </div>
 
-        <modal title="Cadastro de Estoque" v-model="modalCreateIsOpen" effect="fade/zoom" type="modal-success" :large="true">
+        <modal title="Cadastro de Endereço" v-model="modalCreateIsOpen" effect="fade/zoom" type="modal-success" :large="true">
             <div slot="modal-header" class="modal-header">
-                <h4 class="modal-title">Cadastro de Colaborador</h4>
+                <h4 class="modal-title">Cadastro de Endereço</h4>
                 <button type="button" class="close" @click="closeCreate()"><span>&times;</span></button>
             </div>
             <form v-on:submit.prevent="executeCreate(model)" id="form-create" novalidate>
@@ -107,9 +117,9 @@
             </div>
         </modal>
 
-        <modal title="Edição de Estoque" v-model="modalEditIsOpen" effect="fade/zoom" type="modal-primary" :large="true">
+        <modal title="Edição de Endereço" v-model="modalEditIsOpen" effect="fade/zoom" type="modal-primary" :large="true">
             <div slot="modal-header" class="modal-header">
-                <h4 class="modal-title">Edição de Colaborador</h4>
+                <h4 class="modal-title">Edição de Endereço</h4>
                 <button type="button" class="close" @click="closeEdit()"><span>&times;</span></button>
             </div>
             <form v-on:submit.prevent="executeEdit(model)" id="form-edit" novalidate>
@@ -123,9 +133,9 @@
             </div>
         </modal>
 
-        <modal title="Exclusão de Estoque" v-model="modalDeleteIsOpen" type="modal-danger" effect="fade/zoom">
+        <modal title="Exclusão de Endereço" v-model="modalDeleteIsOpen" type="modal-danger" effect="fade/zoom">
             <div slot="modal-header" class="modal-header">
-                <h4 class="modal-title">Exclusão de Colaborador</h4>
+                <h4 class="modal-title">Exclusão de Endereço</h4>
                 <button type="button" class="close" @click="closeDelete()"><span>&times;</span></button>
             </div>
             <form type="post" v-on:submit.prevent="executeDelete(model)" id="form-delete" novalidate>
@@ -146,20 +156,18 @@
 </template>
 <script>
 
-
     import crudBase from '../../common/mixins/crud'
 
     import formPartial from './form.partial'
     import filterPartial from './filter.partial'
 
     export default {
-        name: "colaborador",
+        name: "endereco",
         components: { formPartial, filterPartial },
         mixins: [crudBase],
         data() {
             return {
-                resource: "colaborador",
-                model: { pessoa: {} }
+                resource: "endereco",
             }
         }
     }

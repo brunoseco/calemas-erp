@@ -35,6 +35,7 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual decimal? ValorVenda { get; protected set; }
         public virtual decimal? ValorCompra { get; protected set; }
         public virtual bool Ativo { get; protected set; }
+        public virtual string Localizacao { get; protected set; }
 
 
 		public virtual void SetarDescricao(string descricao)
@@ -64,6 +65,10 @@ namespace Calemas.Erp.Domain.Entitys
 		public virtual void SetarValorCompra(decimal? valorcompra)
 		{
 			this.ValorCompra = valorcompra;
+		}
+		public virtual void SetarLocalizacao(string localizacao)
+		{
+			this.Localizacao = localizacao;
 		}
 
 

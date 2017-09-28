@@ -2,7 +2,7 @@
 
     this.form = frm;
     this.$form = $("#" + this.form);
-    this.validator = this.$form.validate({ errorClass: "is-invalid", validClass: "is-valid", errorElement: "small" });
+    this.validator = this.$form.validate({ errorClass: "is-invalid", errorElement: "small" });
     this.valid = _valid;
     this.reset = _reset;
 

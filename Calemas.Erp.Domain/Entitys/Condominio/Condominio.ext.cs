@@ -6,7 +6,7 @@ namespace Calemas.Erp.Domain.Entitys
 {
     public class Condominio : CondominioBase
     {
-
+        public virtual Endereco Endereco { get; set; }
         public Condominio()
         {
 

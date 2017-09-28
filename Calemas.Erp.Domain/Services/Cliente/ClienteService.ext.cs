@@ -11,25 +11,41 @@ namespace Calemas.Erp.Domain.Services
     public class ClienteService : ClienteServiceBase, IClienteService
     {
         protected readonly IPessoaRepository _repPessoa;
+        protected readonly IEnderecoRepository _repEndereco;
 
-        public ClienteService(IClienteRepository rep, IPessoaRepository _repPessoa, ICache cache, CurrentUser user)
+        public ClienteService(IClienteRepository rep, IPessoaRepository _repPessoa, IEnderecoRepository _repEndereco, ICache cache, CurrentUser user)
             : base(rep, cache, user)
         {
             this._repPessoa = _repPessoa;
+            this._repEndereco = _repEndereco;
         }
 
-        public override Task<Cliente> DomainOrchestration(Cliente entity, Cliente entityOld)
+        public override Cliente AuditDefault(DomainBaseWithUserCreate entity, DomainBaseWithUserCreate entityOld)
         {
-            if (entity.Pessoa.IsNotNull())
-                base.AuditDefault(entity.Pessoa, entityOld?.Pessoa);
+            var alvo = base.AuditDefault(entity, entityOld);
+            if (alvo.Pessoa.IsNotNull())
+            {
+                base.AuditDefault(alvo.Pessoa, entityOld);
 
-            return base.DomainOrchestration(entity, entityOld);
+                if (alvo.Pessoa.Endereco.IsNotNull())
+                {
+                    var alvoOld = entityOld as Cliente;
+                    base.AuditDefault(alvo.Pessoa.Endereco, alvoOld?.Pessoa?.Endereco);
+                }
+            }
+
+            return alvo;
         }
 
         protected override Cliente UpdateDefault(Cliente cliente, Cliente clienteOld)
         {
             if (cliente.Pessoa.IsNotNull())
+            {
                 _repPessoa.Update(cliente.Pessoa);
+
+                if (cliente.Pessoa.Endereco.IsNotNull())
+                    _repEndereco.Update(cliente.Pessoa.Endereco);
+            }
 
             return base.UpdateDefault(cliente, clienteOld);
         }
