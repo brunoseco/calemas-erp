@@ -1,5 +1,9 @@
-﻿import { Api } from '../api'
-import Vue from 'vue'
+﻿import Vue from 'vue'
+
+import select2 from '../../../static/lib/select2/select2.full.min.js'
+import '../../../static/lib/select2/select2.min.css'
+
+import { Api } from '../api'
 
 function _addOption(el, text, value) {
     var option = document.createElement("option");
@@ -9,14 +13,16 @@ function _addOption(el, text, value) {
 }
 
 Vue.directive('select', {
+    twoWay: true,
     bind: function (el, binding, vnode) {
         _addOption(el, binding.value.default, "");
         var api = new Api(binding.value.dataitem);
         api.dataItem().then(data => {
             if (data.dataList) {
-                for (var i = 0; i < data.dataList.length; i++)
+                for (var i = 0; i < data.dataList.length; i++) {
                     _addOption(el, data.dataList[i].name, data.dataList[i].id);
+                }
             }
         });
-    }
+    },
 })

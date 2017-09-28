@@ -41,7 +41,7 @@
         <div class="row">
             <div class="form-group col-md-12" data-reference="responsavelId">
                 <label for="responsavelId">Técnico responsável</label>
-                <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" v-model="model.responsavelId" class="form-control" name="responsavelId" required></select>
+                <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" multiple v-model="model.responsavelId" class="form-control" name="responsavelId" required></select>
             </div>
             <div class="form-group col-md-12" data-reference="dataInicio">
                 <label for="dataInicio">Data prevista de realização</label>

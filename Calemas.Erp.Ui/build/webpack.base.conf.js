@@ -15,7 +15,6 @@ module.exports = {
           jquery: 'jquery',
           'window.jQuery': 'jquery',
           jQuery: 'jquery',
-          'jQuery.validator': 'jquery',
         })
     ],
     entry: {
