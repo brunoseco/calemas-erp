@@ -8,7 +8,7 @@ namespace Calemas.Erp.Dto
 	public class OrdemServicoDtoSpecialized : OrdemServicoDto
 	{
         public AgendaDto Agenda { get; set; }
-
+        public int[] ResponsavelIds { get; set; }
 
     }
 }

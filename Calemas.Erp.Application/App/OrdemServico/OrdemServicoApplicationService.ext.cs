@@ -47,6 +47,7 @@ namespace Calemas.Erp.Application
                 {
                     _dto.StatusOrdemServicoId = (int)EStatusOrdemServico.Pendente;
                     _dto.DataSituacao = DateTime.Now;
+                    _dto.ResponsavelId = _user.GetSubjectId<int>();
                 }
 
                 var domain = base.MapperDtoToDomain(_dto).Result;
@@ -57,7 +58,8 @@ namespace Calemas.Erp.Application
                     this.DefineTituloPeloCliente(_dto);
                     domain.Agenda = new Agenda.AgendaFactory().GetDefaultInstance(_dto.Agenda, this._user);
 
-                    this.ConfiguraAgendaColaborador(domain);
+                    if (_dto.ResponsavelIds.IsAny())
+                        this.ConfiguraAgendaColaborador(_dto, domain);
                 }
 
                 return domain;
@@ -70,16 +72,18 @@ namespace Calemas.Erp.Application
             dto.Agenda.Descricao = cliente.Pessoa.Nome;
         }
 
-        private void ConfiguraAgendaColaborador(OrdemServico domain)
+        private void ConfiguraAgendaColaborador(OrdemServicoDtoSpecialized dto, OrdemServico domain)
         {
-            var agendaColaborador = new AgendaColaborador(domain.Agenda.AgendaId, domain.ResponsavelId);
-            domain.Agenda.CollectionAgendaColaborador = new List<AgendaColaborador>() { agendaColaborador };
+            domain.Agenda.CollectionAgendaColaborador = new List<AgendaColaborador>();
+
+            foreach (var item in dto.ResponsavelIds)
+                domain.Agenda.CollectionAgendaColaborador.Add(new AgendaColaborador(domain.Agenda.AgendaId, item));
         }
 
-        private void DefineCorAgendaPelaPrioridade(OrdemServicoDtoSpecialized _dto)
+        private void DefineCorAgendaPelaPrioridade(OrdemServicoDtoSpecialized dto)
         {
-            var prioridade = this._prioridadeRepository.GetById(new PrioridadeFilter { PrioridadeId = _dto.PrioridadeId }).Result;
-            _dto.Agenda.CorId = prioridade.CorId;
+            var prioridade = this._prioridadeRepository.GetById(new PrioridadeFilter { PrioridadeId = dto.PrioridadeId }).Result;
+            dto.Agenda.CorId = prioridade.CorId;
         }
 
     }

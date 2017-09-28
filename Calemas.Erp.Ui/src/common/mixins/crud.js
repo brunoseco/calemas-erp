@@ -228,6 +228,9 @@ export default {
         },
 
 
+        formCustom: function (frm) {
+            return new Form(frm);
+        },
         formValid: function (form) {
             return form.valid();
         },

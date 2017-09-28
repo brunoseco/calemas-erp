@@ -2,6 +2,7 @@ using Calemas.Erp.Domain.Validations;
 using Common.Domain.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Calemas.Erp.Domain.Entitys
 {
@@ -21,6 +22,20 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual TipoOrdemServico TipoOrdemServico { get; set; }
         public virtual Colaborador Responsavel { get; set; }
         public virtual ICollection<OrdemServicoInteracao> CollectionOrdemServicoInteracao { get; set; }
+
+        public int[] ResponsavelIds
+        {
+            get
+            {
+                if (this.Agenda.IsNull())
+                    return null;
+
+                if (this.Agenda.CollectionAgendaColaborador.IsNotAny())
+                    return null;
+
+                return this.Agenda.CollectionAgendaColaborador.Select(_ => _.ColaboradorId).ToArray();
+            }
+        }
 
         public OrdemServico()
         {

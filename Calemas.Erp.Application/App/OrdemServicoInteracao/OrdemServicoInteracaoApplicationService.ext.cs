@@ -38,6 +38,8 @@ namespace Calemas.Erp.Application
             {
                 var _dto = dto as OrdemServicoInteracaoDtoSpecialized;
 
+                _dto.TecnicoId = _user.GetSubjectId<int>();
+
                 var domain = base.MapperDtoToDomain(_dto).Result;
 
                 if (_dto.OrdemServico.IsNotNull())

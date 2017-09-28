@@ -21,25 +21,19 @@
             </div>
             <div class="form-group col-md-6" data-reference="nomeClienteResponsavel">
                 <label for="nomeClienteResponsavel">Nome cliente/responsável pelo recebimento</label>
-                <input type="text" class="form-control" name="Nome cliente/responsável pelo recebimento" placeholder="Protoco" v-model="model.nomeClienteResponsavel" />
+                <input type="text" class="form-control" name="nomeClienteResponsavel" placeholder="Nome cliente/responsável pelo recebimento" v-model="model.nomeClienteResponsavel" />
             </div>
 
 
             <div class="form-group col-md-12">
                 <label for="descricao">Descrição</label>
-                <textarea class="form-control" name="descricao" placeholder="Descricao" v-model="model.descricao" />
+                <textarea class="form-control" name="descricao" placeholder="Descricao" v-model="model.descricao" required />
             </div>
             <div class="form-group col-md-12">
                 <label for="observacao">Observação</label>
                 <textarea class="form-control" name="observacao" placeholder="Observação" v-model="model.observacao" />
             </div>
-
-
-            <div class="form-group col-md-12" data-reference="tecnicoId">
-                <label for="tecnicoId">Técnico que realizou o atendimento</label>
-                <select v-select="{ dataitem: 'Colaborador', default: 'Selecione' }" v-model="model.tecnicoId" class="form-control" name="tecnicoId" required></select>
-            </div>
-
+            
             <div class="form-group col-md-6" data-reference="statusOrdemServicoId">
                 <label for="statusOrdemServicoId">Situação da O.S</label>
                 <select v-select="{ dataitem: 'StatusOrdemServico', default: 'Selecione' }" v-model="model.statusOrdemServicoId" class="form-control" name="statusOrdemServicoId" required></select>

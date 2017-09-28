@@ -17,7 +17,7 @@
                     <button @click="openFilter()" class="btn btn-primary btn-sm pull-right header-btn">
                         <i class="fa fa-filter"></i> Filtros
                     </button>
-                    <button @click="openCreate({agenda:{}})" class="btn btn-success btn-sm pull-right header-btn hidden-mobile">
+                    <button @click="openCreate(modelnew)" class="btn btn-success btn-sm pull-right header-btn hidden-mobile">
                         <i class="fa fa-plus"></i> Cadastrar
                     </button>
                 </div>
@@ -53,12 +53,12 @@
                         <table class="table table-striped table-sm">
                             <thead class="">
                                 <tr>
-                                    <th>Protocolo <button @click="executeOrderBy('protoco')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Cliente <button @click="executeOrderBy('protoco')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Tipo da O.S <button @click="executeOrderBy('protoco')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Data da Ocorrência <button @click="executeOrderBy('protoco')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Data para Realização <button @click="executeOrderBy('protoco')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
-                                    <th>Situação <button @click="executeOrderBy('protoco')" class="btn btn-sm btn-link no-border pull-right"><i class="fa fa-sort"></i></button></th>
+                                    <th>Protocolo <button @click="executeOrderBy('protoco')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Cliente <button @click="executeOrderBy('cliente.pessoa.nome')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Condomínio <button @click="executeOrderBy('cliente.condominio.sigla')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Tipo da O.S <button @click="executeOrderBy('tipoOrdemServico.nome')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Data para Realização <button @click="executeOrderBy('agenda.dataInicio')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Situação <button @click="executeOrderBy('statusOrdemServico.nome')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th class="text-center" width="150"><i class="fa fa-cog"></i></th>
                                 </tr>
                             </thead>
@@ -66,8 +66,8 @@
                                 <tr v-for="item in result.itens" class="animated fadeIn">
                                     <td>{{ item.protoco }}</td>
                                     <td>{{ item.cliente.pessoa.nome }}</td>
+                                    <td>{{ item.cliente.condominio.sigla }}</td>
                                     <td>{{ item.tipoOrdemServico.nome }}</td>
-                                    <td>{{ item.dataOcorrencia | date }}</td>
                                     <td>{{ item.agenda.dataInicio | date }}</td>
                                     <td>{{ item.statusOrdemServico.nome }}</td>
                                     <td class="text-center">
@@ -151,7 +151,7 @@
                 <h4 class="modal-title">Interação de Ordem de serviço</h4>
                 <button type="button" class="close" @click="closeInteracao()"><span>&times;</span></button>
             </div>
-            <form v-on:submit.prevent="executeInteracao(interacao)">
+            <form v-on:submit.prevent="executeInteracao(interacao)" id="form-interacao">
                 <interacao-partial :model="interacao" />
             </form>
             <div slot="modal-footer" class="modal-footer">
@@ -198,7 +198,14 @@
         data() {
             return {
                 resource: "ordemservico",
-                model: { agenda: {} },
+
+                modelnew: {
+                    dataOcorrencia: _moment().format('YYYY-MM-DDTHH:mm'),
+                    agenda: {},
+                    responsavelIds: []
+                },
+
+                model: { agenda: {}, responsavelIds: [] },
                 resources: {
                     detail: "ordemservicointeracao"
                 },
@@ -216,7 +223,7 @@
             openInteracao: function (id, item) {
 
                 this.interacao = {
-                    dataConclusao: _moment().format('YYYY-MM-DDTHH:MM'),
+                    dataConclusao: _moment().format('YYYY-MM-DDTHH:mm'),
                     ordemServicoId: id,
                     ordemServico: {}
                 }
@@ -227,6 +234,11 @@
                 this.modalInteracaoIsOpen = false;
             },
             executeInteracao: function (model) {
+
+                console.log(this.formValid(this.formCustom("form-interacao")))
+
+                if (this.formValid(this.formCustom("form-interacao")) == false)
+                    return;
 
                 this.defaultBeforeAction();
                 this.apiInteracao.post(model).then(data => {
