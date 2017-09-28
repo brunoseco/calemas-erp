@@ -83,10 +83,10 @@
                                     <td>{{ item.estadoId }}</td>
 
                                     <td class="text-center">
-                                        <button type="button" class="btn btn-xs btn-primary" @click="openEdit(item.enderecoId, item)">
+                                        <button type="button" class="btn btn-xs btn-primary" v-tooltip.left="'Editar'" @click="openEdit(item.enderecoId, item)">
                                             <i class="fa fa-pencil"></i>
                                         </button>
-                                        <button type="button" class="btn btn-xs btn-danger" @click="openDelete(item.enderecoId, item)">
+                                        <button type="button" class="btn btn-xs btn-danger" v-tooltip.left="'Remover'" @click="openDelete(item.enderecoId, item)">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </td>

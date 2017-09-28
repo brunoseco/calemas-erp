@@ -2,7 +2,7 @@
     <div class="animated fadeIn">
         <div class="row">
             <div class="col-sm-6">
-                <full-calendar :events="events" locale="pt" :weekNames="weekNames" :monthNames="monthNames"></full-calendar>
+                <!--<full-calendar :events="events" locale="pt" :weekNames="weekNames" :monthNames="monthNames"></full-calendar>-->
             </div>
             <div class="col-sm-6">
                 <div class="row">

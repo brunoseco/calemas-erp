@@ -71,16 +71,16 @@
                                     <td>{{ item.agenda.dataInicio | date }}</td>
                                     <td>{{ item.statusOrdemServico.nome }}</td>
                                     <td class="text-center">
-                                        <button type="button" class="btn btn-sm btn-success" v-if="item.houveInteracao" @click="openDetail(undefined, { ordemServicoId: item.ordemServicoId })">
+                                        <button type="button" class="btn btn-sm btn-success" v-if="item.houveInteracao" v-tooltip.left="'Detalhes'" @click="openDetail(undefined, { ordemServicoId: item.ordemServicoId })">
                                             <i class="fa fa-search"></i>
                                         </button>
-                                        <button type="button" class="btn btn-sm btn-warning" v-if="item.statusOrdemServico.ativo" @click="openInteracao(item.ordemServicoId, item)">
+                                        <button type="button" class="btn btn-sm btn-warning" v-if="item.statusOrdemServico.ativo" v-tooltip.left="'Interagir'" @click="openInteracao(item.ordemServicoId, item)">
                                             <i class="fa fa-check-square-o"></i>
                                         </button>
-                                        <button type="button" class="btn btn-sm btn-primary" v-if="item.statusOrdemServico.ativo  && !item.houveInteracao" @click="openEdit(item.ordemServicoId, item)">
+                                        <button type="button" class="btn btn-sm btn-primary" v-if="item.statusOrdemServico.ativo  && !item.houveInteracao" v-tooltip.left="'Editar'" @click="openEdit(item.ordemServicoId, item)">
                                             <i class="fa fa-pencil"></i>
                                         </button>
-                                        <button type="button" class="btn btn-sm btn-danger" v-if="item.statusOrdemServico.ativo && !item.houveInteracao" @click="openDelete(item.ordemServicoId, item)">
+                                        <button type="button" class="btn btn-sm btn-danger" v-if="item.statusOrdemServico.ativo && !item.houveInteracao" v-tooltip.left="'Remover'" @click="openDelete(item.ordemServicoId, item)">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </td>

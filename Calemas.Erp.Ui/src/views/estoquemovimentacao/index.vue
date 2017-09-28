@@ -68,13 +68,13 @@
                                     <td>{{ item.quantidadeMinima }}</td>
                                     <td>{{ item.quantidade }}</td>
                                     <td class="text-center">
-                                        <router-link :to="{ name: 'estoquemovimentacaodetails', params: { id: item.estoqueId }}" class="btn btn-sm btn-info">
+                                        <router-link :to="{ name: 'estoquemovimentacaodetails', params: { id: item.estoqueId }}" v-tooltip.left="'Histórico'" class="btn btn-sm btn-info">
                                             <i class="fa fa-history"></i>
                                         </router-link>
-                                        <button type="button" class="btn btn-sm btn-danger" @click="openCreate({ estoqueId: item.estoqueId, entrada: false })">
+                                        <button type="button" class="btn btn-sm btn-danger" v-tooltip.left="'Realizar uma retirada'" @click="openCreate({ estoqueId: item.estoqueId, entrada: false })">
                                             <i class="fa fa-minus"></i>
                                         </button>
-                                        <button type="button" class="btn btn-sm btn-success" @click="openCreate({ estoqueId: item.estoqueId, entrada: true })">
+                                        <button type="button" class="btn btn-sm btn-success" v-tooltip.left="'Realizar uma entrada'" @click="openCreate({ estoqueId: item.estoqueId, entrada: true })">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </td>

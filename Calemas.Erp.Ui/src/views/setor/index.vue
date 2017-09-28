@@ -69,10 +69,10 @@
                                     <td><span class="badge badge-pill" v-bind:class="{ 'badge-success': item.ativo, 'badge-danger': !item.ativo }">{{item.ativo ? 'Sim' : 'Não'}}</span></td>
 
                                     <td class="text-center">
-                                        <button type="button" class="btn btn-sm btn-primary" @click="openEdit(item.setorId, item)">
+                                        <button type="button" class="btn btn-sm btn-primary" v-tooltip.left="'Editar'" @click="openEdit(item.setorId, item)">
                                             <i class="fa fa-pencil"></i>
                                         </button>
-                                        <button type="button" class="btn btn-sm btn-danger" @click="openDelete(item.setorId, item)">
+                                        <button type="button" class="btn btn-sm btn-danger" v-tooltip.left="'Remover'" @click="openDelete(item.setorId, item)">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </td>

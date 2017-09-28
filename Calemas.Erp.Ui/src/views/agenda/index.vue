@@ -95,8 +95,10 @@
         mixins: [crudBase],
         data() {
             return {
+                filter: {
+                    pageSize: 50,
+                },
                 resource: "agenda",
-                filterPartialIsOpen: false,
                 weekNames: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"],
                 monthNames: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
             }

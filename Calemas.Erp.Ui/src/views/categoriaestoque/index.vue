@@ -65,10 +65,10 @@
                                     <td>{{ item.nome }}</td>
 
                                     <td class="text-center">
-                                        <button type="button" class="btn btn-sm btn-primary" @click="openEdit(item.categoriaEstoqueId, item)">
+                                        <button type="button" class="btn btn-sm btn-primary" v-tooltip.left="'Editar'" @click="openEdit(item.categoriaEstoqueId, item)">
                                             <i class="fa fa-pencil"></i>
                                         </button>
-                                        <button type="button" class="btn btn-sm btn-danger" @click="openDelete(item.categoriaEstoqueId, item)">
+                                        <button type="button" class="btn btn-sm btn-danger" v-tooltip.left="'Remover'" @click="openDelete(item.categoriaEstoqueId, item)">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </td>

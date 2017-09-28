@@ -2,11 +2,13 @@
 import App from './app'
 import router from './router'
 import validation from 'jquery-validation'
+import select from './common/select'
 
 import Notifications from 'vue-notification'
 Vue.use(Notifications)
 
-import select from './common/select'
+import VTooltip from 'v-tooltip'
+Vue.use(VTooltip)
 
 require('vue-strap/dist/vue-strap-lang.js')
 

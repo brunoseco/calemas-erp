@@ -17,19 +17,21 @@ namespace Calemas.Erp.Api.Controllers
 
         private readonly ILogger _logger;
         private readonly IHostingEnvironment _env;
+        private readonly string _uploadRoot;
 
         public DownloadController(ILoggerFactory logger, IHostingEnvironment env)
         {
-            this._logger = logger.CreateLogger<UplaodController>();
+            this._logger = logger.CreateLogger<DownloadController>();
             this._env = env;
+            this._uploadRoot = "upload";
         }
 
       
-        [HttpGet("{file}")]
-        public async Task<IActionResult> Get(string file)
+        [HttpGet("{folder}/{fileName}")]
+        public async Task<IActionResult> Get(string folder, string fileName)
         {
-            var uploads = Path.Combine(this._env.ContentRootPath, "upload");
-            var filePath = $"{uploads}\\{file}";
+            var uploads = Path.Combine(this._env.ContentRootPath, this._uploadRoot, folder);
+            var filePath = $"{uploads}\\{fileName}";
             byte[] bytes;
 
             if (System.IO.File.Exists(filePath))
