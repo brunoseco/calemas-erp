@@ -21,30 +21,30 @@ namespace Calemas.Erp.Data.Repository
             this._user = user;
         }
 
-      
+
         public IQueryable<Agenda> GetBySimplefilters(AgendaFilter filters)
         {
             var querybase = this.GetAll(this.DataAgregation(filters))
-								.WithBasicFilters(filters)
-								.WithCustomFilters(filters, _user);
+                                .WithBasicFilters(filters)
+                                .WithCustomFilters(filters, _user);
             return querybase;
         }
 
         public async Task<Agenda> GetById(AgendaFilter model)
         {
             var _agenda = await this.SingleOrDefaultAsync(this.GetAll(this.DataAgregation(model))
-               .Where(_=>_.AgendaId == model.AgendaId));
+               .Where(_ => _.AgendaId == model.AgendaId));
 
             return _agenda;
         }
 
-		 public async Task<IEnumerable<dynamic>> GetDataItem(AgendaFilter filters)
+        public async Task<IEnumerable<dynamic>> GetDataItem(AgendaFilter filters)
         {
             var querybase = await this.ToListAsync(this.GetBySimplefilters(filters).Select(_ => new
             {
                 Id = _.AgendaId
 
-            })); 
+            }));
 
             return querybase;
         }
@@ -135,9 +135,9 @@ namespace Calemas.Erp.Data.Repository
             return source.SingleOrDefault();
         }
 
-		protected override Expression<Func<Agenda, object>>[] DataAgregation(Expression<Func<Agenda, object>>[] includes, FilterBase filter)
+        protected override Expression<Func<Agenda, object>>[] DataAgregation(Expression<Func<Agenda, object>>[] includes, FilterBase filter)
         {
-            return base.DataAgregation(includes, filter);
+            return includes.Add(_ => _.Cor);
         }
 
     }

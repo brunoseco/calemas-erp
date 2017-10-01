@@ -10,11 +10,11 @@
         </div>
         <div class="form-group col-md-3">
             <label for="dataInicio">Data de Início</label>
-            <input type="date" class="form-control" name="dataInicio" v-model="filter.dataInicio" />
+            <input type="datetime-local" class="form-control" name="dataInicio" v-model="filter.dataInicio" />
         </div>
         <div class="form-group col-md-3">
             <label for="dataFim">Data de Fim</label>
-            <input type="date" class="form-control" name="dataFim" v-model="filter.dataFim" />
+            <input type="datetime-local" class="form-control" name="dataFim" v-model="filter.dataFim" />
         </div>
         <div class="form-group col-md-6">
             <label for="corId">Cor</label>

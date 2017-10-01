@@ -42,7 +42,7 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <full-calendar :events="events" locale="pt" :weekNames="weekNames" :monthNames="monthNames" @eventClick="eventClickAgenda"></full-calendar>
+                <big-calendar :events="events" locale="pt" :weekNames="weekNames" :monthNames="monthNames" @eventClick="eventClickAgenda"></big-calendar>
             </div>
         </div>
 
@@ -82,16 +82,21 @@
 </template>
 <script>
 
-    import fullCalendar from 'vue-fullcalendar'
+    import Vue from 'vue'
+    const _moment = require('moment')
+    require('moment/locale/pt')
+    Vue.use(require('vue-moment'), { _moment });
+
+    import bigCalendar from 'vue-big-calendar'
 
     import crudBase from '../../common/mixins/crud'
 
     import formPartial from './form.partial'
     import filterPartial from './filter.partial'
-    
+
     export default {
         name: "agenda",
-        components: { formPartial, filterPartial, fullCalendar },
+        components: { formPartial, filterPartial, bigCalendar },
         mixins: [crudBase],
         data() {
             return {
@@ -110,11 +115,15 @@
                     let item = this.result.itens[i];
                     itens.push({
                         title: item.nome,
+                        description: item.descricao,
                         start: item.dataInicio,
                         end: item.dataFim,
+                        color: item.cor.hash,
+                        cssClass: 'red',
                         YOUR_DATA: item,
                     })
                 }
+                
                 return itens;
             }
         },
@@ -128,6 +137,6 @@
 </script>
 <style>
     .comp-full-calendar {
-        max-width: none;
+        max-width: none !important;
     }
 </style>

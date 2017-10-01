@@ -39,12 +39,7 @@ namespace Calemas.Erp.Domain.Services
         public override Task<OrdemServico> DomainOrchestration(OrdemServico entity, OrdemServico entityOld)
         {
             if (entityOld.IsNull())
-            {
                 entity.SetarDataSituacao(DateTime.Now);
-
-                if (entity.Agenda.IsNotNull())
-                    entity.Agenda.SetarNome("Ordem de serviço - " + entity.Agenda.Descricao);
-            }
 
             return base.DomainOrchestration(entity, entityOld);
         }
@@ -57,7 +52,6 @@ namespace Calemas.Erp.Domain.Services
 
             return ordemServico;
         }
-
 
         protected override OrdemServico UpdateDefault(OrdemServico ordemServico, OrdemServico ordemservicoOld)
         {

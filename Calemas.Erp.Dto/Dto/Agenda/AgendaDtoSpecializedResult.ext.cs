@@ -7,11 +7,6 @@ namespace Calemas.Erp.Dto
 {
 	public class AgendaDtoSpecializedResult : AgendaDto
 	{
-
-        public IEnumerable<AgendaColaboradorDto> CollectionAgendaColaborador { get; set;} 
-        public IEnumerable<OrdemServicoDto> CollectionOrdemServico { get; set;} 
         public  CorDto Cor { get; set;} 
-
-		
 	}
 }

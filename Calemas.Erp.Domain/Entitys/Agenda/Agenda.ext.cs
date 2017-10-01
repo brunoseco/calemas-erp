@@ -8,6 +8,7 @@ namespace Calemas.Erp.Domain.Entitys
 {
     public class Agenda : AgendaBase
     {
+        public Cor Cor { get; set; }
         public virtual ICollection<AgendaColaborador> CollectionAgendaColaborador { get; set; }
         public Agenda()
         {

@@ -216,9 +216,6 @@
             }
         },
         methods: {
-            onBeforeCreate: (model) => {
-                model.agenda.dataFim = model.agenda.dataInicio;
-            },
 
             openInteracao: function (id, item) {
 
@@ -234,8 +231,6 @@
                 this.modalInteracaoIsOpen = false;
             },
             executeInteracao: function (model) {
-
-                console.log(this.formValid(this.formCustom("form-interacao")))
 
                 if (this.formValid(this.formCustom("form-interacao")) == false)
                     return;

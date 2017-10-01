@@ -98,22 +98,26 @@ export default {
             this.modalCreateIsOpen = true;
         },
         openEdit: function (id, item) {
+            this.showLoading();
             this.resetForm(this.formEdit);
             this.apiEdit.filters = item;
             this.apiEdit.filters.id = id;
             this.apiEdit.get().then(data => {
                 this.modalEditIsOpen = true;
                 this.model = data.data;
-            });
+                this.hideLoading();
+            }, () => { this.hideLoading(); });
         },
         openDelete: function (id, item) {
+            this.showLoading();
             this.resetForm(this.formDelete);
             this.apiDelete.filters = item;
             this.apiDelete.filters.id = id;
             this.apiDelete.get().then(data => {
                 this.modalDeleteIsOpen = true;
                 this.model = data.data;
-            });
+                this.hideLoading();
+            }, () => { this.hideLoading(); });
         },
         openDetail: function (id, item) {
             this.apiDetail.filters = item;
@@ -220,10 +224,12 @@ export default {
             this.executeLoad(this.filter);
         },
         executeLoad: function (filter) {
+            this.showLoading();
             this.apiFilter.filters = filter;
             this.apiFilter.get().then(data => {
                 this.result.total = data.summary.total;
                 this.result.itens = data.dataList;
+                this.hideLoading();
             });
         },
 
