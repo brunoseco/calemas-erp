@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="animated fadeIn">
-            <div class="row animated fadeIn" v-if="filterPartialIsOpen">
+            <div class="row animated fadeIn">
                 <div class="col-sm-8">
                     <div class="card">
                         <div class="card-header">

@@ -64,3 +64,5 @@ D:\Projetos\calemas-erp\Calemas.Erp.Api\bin\Release\netcoreapp1.1\Calemas.Erp.En
 D:\Projetos\calemas-erp\Calemas.Erp.Api\bin\Release\netcoreapp1.1\Calemas.Erp.Enums.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Api\bin\Release\netcoreapp1.1\Calemas.Erp.Enums.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Api\bin\Release\netcoreapp1.1\Calemas.Erp.Enums.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Api\bin\Release\netcoreapp1.1\Calemas.Erp.CrossCuting.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.Api\bin\Release\netcoreapp1.1\Calemas.Erp.CrossCuting.pdb

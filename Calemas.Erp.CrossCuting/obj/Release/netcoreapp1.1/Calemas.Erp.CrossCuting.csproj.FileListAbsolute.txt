@@ -1,0 +1,11 @@
+C:\Pessoal\calemas-erp\Calemas.Erp.CrossCuting\bin\Release\netcoreapp1.1\Calemas.Erp.CrossCuting.deps.json
+C:\Pessoal\calemas-erp\Calemas.Erp.CrossCuting\bin\Release\netcoreapp1.1\Calemas.Erp.CrossCuting.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.CrossCuting\bin\Release\netcoreapp1.1\Calemas.Erp.CrossCuting.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.CrossCuting\bin\Release\netcoreapp1.1\Common.API.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.CrossCuting\bin\Release\netcoreapp1.1\Common.Domain.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.CrossCuting\bin\Release\netcoreapp1.1\Common.API.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.CrossCuting\bin\Release\netcoreapp1.1\Common.Domain.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.CrossCuting\obj\Release\netcoreapp1.1\Calemas.Erp.CrossCuting.csprojResolveAssemblyReference.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.CrossCuting\obj\Release\netcoreapp1.1\Calemas.Erp.CrossCuting.AssemblyInfo.cs
+C:\Pessoal\calemas-erp\Calemas.Erp.CrossCuting\obj\Release\netcoreapp1.1\Calemas.Erp.CrossCuting.dll
+C:\Pessoal\calemas-erp\Calemas.Erp.CrossCuting\obj\Release\netcoreapp1.1\Calemas.Erp.CrossCuting.pdb
