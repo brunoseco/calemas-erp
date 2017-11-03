@@ -15,11 +15,12 @@ namespace Calemas.Erp.Data.Map
             type.Property(t => t.CondominioId).HasColumnName("Id");
            
 
-            type.Property(t => t.Nome).HasColumnName("Nome");
-            type.Property(t => t.Descricao).HasColumnName("Descricao");
-            type.Property(t => t.Sigla).HasColumnName("Sigla");
+            type.Property(t => t.Nome).HasColumnName("Nome").HasColumnType("varchar(500)");
+            type.Property(t => t.Descricao).HasColumnName("Descricao").HasColumnType("varchar(500)");
+            type.Property(t => t.Sigla).HasColumnName("Sigla").HasColumnType("varchar(10)");
             type.Property(t => t.Ativo).HasColumnName("Ativo");
             type.Property(t => t.EnderecoId).HasColumnName("EnderecoId");
+            type.Property(t => t.InfraestruturaPopId).HasColumnName("InfraestruturaPopId");
             type.Property(t => t.UserCreateId).HasColumnName("UserCreateId");
             type.Property(t => t.UserCreateDate).HasColumnName("UserCreateDate");
             type.Property(t => t.UserAlterId).HasColumnName("UserAlterId");

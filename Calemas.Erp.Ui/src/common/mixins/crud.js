@@ -1,4 +1,4 @@
-﻿import modal from 'vue-strap/src/Modal'
+import modal from 'vue-strap/src/Modal'
 import pagination from 'vue-pagination-bootstrap'
 import loading from '../loading'
 
@@ -96,6 +96,8 @@ export default {
             if (model) this.model = model;
             else this.model = this.modelEmpty;
             this.modalCreateIsOpen = true;
+            setTimeout(() => { this.formValid(this.formCreate); }, 500);
+
         },
         openEdit: function (id, item) {
             this.showLoading();
@@ -106,6 +108,7 @@ export default {
                 this.modalEditIsOpen = true;
                 this.model = data.data;
                 this.hideLoading();
+                setTimeout(() => { this.formValid(this.formEdit); }, 500);
             }, () => { this.hideLoading(); });
         },
         openDelete: function (id, item) {

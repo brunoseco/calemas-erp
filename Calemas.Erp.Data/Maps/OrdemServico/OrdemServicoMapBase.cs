@@ -15,7 +15,7 @@ namespace Calemas.Erp.Data.Map
             type.Property(t => t.OrdemServicoId).HasColumnName("Id");
            
 
-            type.Property(t => t.Protoco).HasColumnName("Protoco");
+            type.Property(t => t.Protoco).HasColumnName("Protoco").HasColumnType("varchar(50)");
             type.Property(t => t.ResponsavelId).HasColumnName("ResponsavelId");
             type.Property(t => t.ClienteId).HasColumnName("ClienteId");
             type.Property(t => t.PrioridadeId).HasColumnName("PrioridadeId");
@@ -25,8 +25,8 @@ namespace Calemas.Erp.Data.Map
             type.Property(t => t.StatusOrdemServicoId).HasColumnName("StatusOrdemServicoId");
             type.Property(t => t.DataOcorrencia).HasColumnName("DataOcorrencia");
             type.Property(t => t.DataSituacao).HasColumnName("DataSituacao");
-            type.Property(t => t.Observacao).HasColumnName("Observacao");
-            type.Property(t => t.Descricao).HasColumnName("Descricao");
+            type.Property(t => t.Observacao).HasColumnName("Observacao").HasColumnType("varchar(max)");
+            type.Property(t => t.Descricao).HasColumnName("Descricao").HasColumnType("varchar(max)");
             type.Property(t => t.UserCreateId).HasColumnName("UserCreateId");
             type.Property(t => t.UserCreateDate).HasColumnName("UserCreateDate");
             type.Property(t => t.UserAlterId).HasColumnName("UserAlterId");

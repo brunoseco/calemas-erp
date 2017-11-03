@@ -15,14 +15,14 @@ namespace Calemas.Erp.Data.Map
             type.Property(t => t.PessoaId).HasColumnName("Id");
            
 
-            type.Property(t => t.CPF_CNPJ).HasColumnName("CPF_CNPJ");
-            type.Property(t => t.RG_IE).HasColumnName("RG_IE");
-            type.Property(t => t.Nome).HasColumnName("Nome");
-            type.Property(t => t.Apelido).HasColumnName("Apelido");
-            type.Property(t => t.Email).HasColumnName("Email");
-            type.Property(t => t.Telefone).HasColumnName("Telefone");
-            type.Property(t => t.Celular).HasColumnName("Celular");
-            type.Property(t => t.Comercial).HasColumnName("Comercial");
+            type.Property(t => t.CPF_CNPJ).HasColumnName("CPF_CNPJ").HasColumnType("varchar(14)");
+            type.Property(t => t.RG_IE).HasColumnName("RG_IE").HasColumnType("varchar(50)");
+            type.Property(t => t.Nome).HasColumnName("Nome").HasColumnType("varchar(150)");
+            type.Property(t => t.Apelido).HasColumnName("Apelido").HasColumnType("varchar(150)");
+            type.Property(t => t.Email).HasColumnName("Email").HasColumnType("varchar(100)");
+            type.Property(t => t.Telefone).HasColumnName("Telefone").HasColumnType("varchar(20)");
+            type.Property(t => t.Celular).HasColumnName("Celular").HasColumnType("varchar(20)");
+            type.Property(t => t.Comercial).HasColumnName("Comercial").HasColumnType("varchar(20)");
             type.Property(t => t.DataNascimento).HasColumnName("DataNascimento");
             type.Property(t => t.EstadoCivilId).HasColumnName("EstadoCivilId");
             type.Property(t => t.Sexo).HasColumnName("Sexo");

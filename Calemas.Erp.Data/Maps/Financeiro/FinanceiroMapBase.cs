@@ -23,7 +23,7 @@ namespace Calemas.Erp.Data.Map
             type.Property(t => t.ValorMultaJuros).HasColumnName("ValorMultaJuros");
             type.Property(t => t.ValorFinal).HasColumnName("ValorFinal");
             type.Property(t => t.PessoaId).HasColumnName("PessoaId");
-            type.Property(t => t.Descricao).HasColumnName("Descricao");
+            type.Property(t => t.Descricao).HasColumnName("Descricao").HasColumnType("varchar(500)");
             type.Property(t => t.Baixado).HasColumnName("Baixado");
             type.Property(t => t.DataBaixa).HasColumnName("DataBaixa");
             type.Property(t => t.ValorDescontoAteVencimento).HasColumnName("ValorDescontoAteVencimento");

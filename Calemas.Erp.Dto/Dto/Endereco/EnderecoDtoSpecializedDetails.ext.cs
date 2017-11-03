@@ -7,9 +7,6 @@ namespace Calemas.Erp.Dto
 {
 	public class EnderecoDtoSpecializedDetails : EnderecoDto
 	{
-
-        public IEnumerable<PessoaDto> CollectionPessoa { get; set;} 
-
 		
 	}
 }

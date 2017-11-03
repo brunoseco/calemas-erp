@@ -15,8 +15,8 @@ namespace Calemas.Erp.Data.Map
             type.Property(t => t.CorId).HasColumnName("Id");
            
 
-            type.Property(t => t.Nome).HasColumnName("Nome");
-            type.Property(t => t.Hash).HasColumnName("Hash");
+            type.Property(t => t.Nome).HasColumnName("Nome").HasColumnType("varchar(50)");
+            type.Property(t => t.Hash).HasColumnName("Hash").HasColumnType("varchar(7)");
 
 
             type.HasKey(d => new { d.CorId, }); 

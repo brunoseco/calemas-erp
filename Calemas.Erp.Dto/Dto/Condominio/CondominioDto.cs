@@ -31,6 +31,10 @@ namespace Calemas.Erp.Dto
 
         public virtual int EnderecoId {get; set;}
 
+        
+
+        public virtual int? InfraestruturaPopId {get; set;}
+
 
 		
 	}

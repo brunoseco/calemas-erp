@@ -41,6 +41,11 @@ namespace Calemas.Erp.Data.Repository
 				
 				queryFilter = queryFilter.Where(_=>_.EnderecoId == filters.EnderecoId);
 			}
+            if (filters.InfraestruturaPopId.IsSent()) 
+			{ 
+				
+				queryFilter = queryFilter.Where(_=>_.InfraestruturaPopId != null && _.InfraestruturaPopId.Value == filters.InfraestruturaPopId);
+			}
             if (filters.UserCreateId.IsSent()) 
 			{ 
 				

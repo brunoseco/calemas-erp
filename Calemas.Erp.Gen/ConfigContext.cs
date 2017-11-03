@@ -67,6 +67,9 @@ namespace Calemas.Erp.Gen
                     new TableInfo { TableName = "TipoOrdemServico", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "StatusOrdemServico", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
 
+                    new TableInfo { TableName = "InfraestruturaSite", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
+                    new TableInfo { TableName = "InfraestruturaPop", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
+                    
                     new TableInfo { TableName = "Financeiro", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "PlanoConta", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "TipoPlanoConta", MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
@@ -121,6 +124,10 @@ namespace Calemas.Erp.Gen
                     new TableInfo { TableName = "StatusCliente", ClassNameFormated = "Situação do cliente", MakeFront = true,  },
 
                     new TableInfo { TableName = "Agenda", ClassNameFormated = "Agenda", MakeFront = true,  },
+
+                    new TableInfo { TableName = "InfraestruturaSite", ClassNameFormated = "Infraestrutura - Site", MakeFront = true },
+                    new TableInfo { TableName = "InfraestruturaPop", ClassNameFormated = "Infraestrutura - POP", MakeFront = true },
+
 
                 }
             };

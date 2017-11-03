@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v1.1": {
-      "calemas.erp.enums/1.0.0": {
+      "Calemas.Erp.Enums/1.0.0": {
         "runtime": {
           "Calemas.Erp.Enums.dll": {}
         }
@@ -14,7 +14,7 @@
     }
   },
   "libraries": {
-    "calemas.erp.enums/1.0.0": {
+    "Calemas.Erp.Enums/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

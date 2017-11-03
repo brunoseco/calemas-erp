@@ -26,7 +26,7 @@
                             <strong>Filtros</strong>
                         </div>
                         <div class="card-block">
-                            <form v-on:submit.prevent="executeFilter()">
+                            <form v-on:keypress.enter.prevent="executeFilter()">
                                 <filter-partial :filter="filter" />
                             </form>
                         </div>

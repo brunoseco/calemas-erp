@@ -15,13 +15,13 @@ namespace Calemas.Erp.Data.Map
             type.Property(t => t.EnderecoId).HasColumnName("Id");
            
 
-            type.Property(t => t.CEP).HasColumnName("CEP");
-            type.Property(t => t.Rua).HasColumnName("Rua");
-            type.Property(t => t.Numero).HasColumnName("Numero");
-            type.Property(t => t.Complemento).HasColumnName("Complemento");
-            type.Property(t => t.Bairro).HasColumnName("Bairro");
-            type.Property(t => t.Cidade).HasColumnName("Cidade");
-            type.Property(t => t.UF).HasColumnName("UF");
+            type.Property(t => t.CEP).HasColumnName("CEP").HasColumnType("varchar(9)");
+            type.Property(t => t.Rua).HasColumnName("Rua").HasColumnType("varchar(150)");
+            type.Property(t => t.Numero).HasColumnName("Numero").HasColumnType("varchar(150)");
+            type.Property(t => t.Complemento).HasColumnName("Complemento").HasColumnType("varchar(150)");
+            type.Property(t => t.Bairro).HasColumnName("Bairro").HasColumnType("varchar(150)");
+            type.Property(t => t.Cidade).HasColumnName("Cidade").HasColumnType("varchar(150)");
+            type.Property(t => t.UF).HasColumnName("UF").HasColumnType("varchar(2)");
             type.Property(t => t.UserCreateId).HasColumnName("UserCreateId");
             type.Property(t => t.UserCreateDate).HasColumnName("UserCreateDate");
             type.Property(t => t.UserAlterId).HasColumnName("UserAlterId");

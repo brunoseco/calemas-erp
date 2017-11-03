@@ -1,4 +1,4 @@
-﻿<template>
+<template>
     <fieldset>
         <legend>Dados</legend>
         <div class="row">
@@ -10,7 +10,7 @@
             </div>
             <div class="form-group col-md-4">
                 <label for="referencia">Código</label>
-                <input type="text" class="form-control" name="referencia" placeholder="Referencia" v-model="model.referencia" />
+                <input type="text" class="form-control" name="referencia" placeholder="Código" v-model="model.referencia" />
             </div>
             <div class="form-group col-md-4">
                 <label for="modelo">Localização</label>

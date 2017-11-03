@@ -11,3 +11,5 @@ yarn-error.log*
 *.dbmdl
 *.jfm
 */bin
+/.vs/Calemas.Erp/v15/Server/sqlite3
+/.vs/Calemas.Erp/v15/sqlite3

@@ -12,14 +12,21 @@ namespace Calemas.Erp.Data.Repository
         {
             var queryFilter = queryBase;
 
+            if (filters.AbaixoMinimo.IsSent())
+            {
+                if (filters.AbaixoMinimo.Value)
+                    queryFilter = queryFilter.Where(_ => _.Quantidade <= _.QuantidadeMinima);
+                else
+                    queryFilter = queryFilter.Where(_ => _.Quantidade > _.QuantidadeMinima);
+            }
 
             return queryFilter;
         }
 
-		public static IQueryable<Estoque> WithLimitSubscriber(this IQueryable<Estoque> queryBase, CurrentUser user)
+        public static IQueryable<Estoque> WithLimitSubscriber(this IQueryable<Estoque> queryBase, CurrentUser user)
         {
             var subscriberId = user.GetSubjectId<int>();
-			var queryFilter = queryBase;
+            var queryFilter = queryBase;
 
             return queryFilter;
         }

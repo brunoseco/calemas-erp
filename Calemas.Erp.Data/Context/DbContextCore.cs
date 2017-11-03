@@ -31,6 +31,8 @@ namespace Calemas.Erp.Data.Context
             new PrioridadeMap(modelBuilder.Entity<Prioridade>());
             new TipoOrdemServicoMap(modelBuilder.Entity<TipoOrdemServico>());
             new StatusOrdemServicoMap(modelBuilder.Entity<StatusOrdemServico>());
+            new InfraestruturaSiteMap(modelBuilder.Entity<InfraestruturaSite>());
+            new InfraestruturaPopMap(modelBuilder.Entity<InfraestruturaPop>());
             new FinanceiroMap(modelBuilder.Entity<Financeiro>());
             new PlanoContaMap(modelBuilder.Entity<PlanoConta>());
             new TipoPlanoContaMap(modelBuilder.Entity<TipoPlanoConta>());

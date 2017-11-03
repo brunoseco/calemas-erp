@@ -12,14 +12,16 @@ namespace Calemas.Erp.Data.Repository
         {
             var queryFilter = queryBase;
 
+            if (filters.CondominioId.IsSent())
+                queryFilter = queryFilter.Where(_ => _.CollectionCondominio.Where(__ => __.CondominioId == filters.CondominioId).Any());
 
             return queryFilter;
         }
 
-		public static IQueryable<Endereco> WithLimitTenant(this IQueryable<Endereco> queryBase, CurrentUser user)
+        public static IQueryable<Endereco> WithLimitTenant(this IQueryable<Endereco> queryBase, CurrentUser user)
         {
             var tenantId = user.GetTenantId<int>();
-			var queryFilter = queryBase;
+            var queryFilter = queryBase;
 
             return queryFilter;
         }

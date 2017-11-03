@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
     ".NETCoreApp,Version=v1.1": {
       "AutoMapper/6.0.2": {
@@ -2938,6 +2938,12 @@
           "Common.Domain": "1.0.0",
           "Common.Validation": "1.0.0",
           "Microsoft.NETCore.App": "1.1.2"
+        },
+        "compile": {
+          "bin/placeholder/Calemas.Erp.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Calemas.Erp.Domain.dll": {}
         }
       },
       "Calemas.Erp.Filter/1.0.0": {
@@ -2946,6 +2952,12 @@
         "dependencies": {
           "Common.Domain": "1.0.0",
           "Microsoft.NETCore.App": "1.1.2"
+        },
+        "compile": {
+          "bin/placeholder/Calemas.Erp.Filter.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Calemas.Erp.Filter.dll": {}
         }
       },
       "Common.Domain/1.0.0": {
@@ -2955,6 +2967,12 @@
           "AutoMapper": "6.0.2",
           "Microsoft.NETCore.App": "1.1.2",
           "Newtonsoft.Json": "10.0.2"
+        },
+        "compile": {
+          "bin/placeholder/Common.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.Domain.dll": {}
         }
       },
       "Common.Orm/1.0.0": {
@@ -2964,6 +2982,12 @@
           "Common.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.2",
           "Microsoft.NETCore.App": "1.1.2"
+        },
+        "compile": {
+          "bin/placeholder/Common.Orm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.Orm.dll": {}
         }
       },
       "Common.Validation/1.0.0": {
@@ -2973,6 +2997,12 @@
           "Common.Domain": "1.0.0",
           "Microsoft.NETCore.App": "1.1.2",
           "System.ComponentModel.Annotations": "4.3.0"
+        },
+        "compile": {
+          "bin/placeholder/Common.Validation.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.Validation.dll": {}
         }
       }
     }
@@ -8597,15 +8627,29 @@
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
       "projectUniqueName": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Data\\Calemas.Erp.Data.csproj",
       "projectName": "Calemas.Erp.Data",
       "projectPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Data\\Calemas.Erp.Data.csproj",
+      "packagesPath": "C:\\Users\\Bruno Seco\\.nuget\\packages\\",
       "outputPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Data\\obj\\",
       "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Pessoal\\calemas-erp\\.nuget\\NuGet.Config",
+        "C:\\Users\\Bruno Seco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
       "originalTargetFrameworks": [
         "netcoreapp1.1"
       ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
@@ -8623,6 +8667,11 @@
             }
           }
         }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
       }
     },
     "frameworks": {

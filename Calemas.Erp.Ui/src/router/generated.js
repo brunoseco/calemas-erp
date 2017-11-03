@@ -18,6 +18,8 @@ const routers = [
     { path: 'endereco', name: 'Endereço', component: function (resolve) { require(['@/views/endereco'], resolve) } },
     { path: 'statuscliente', name: 'Situação do cliente', component: function (resolve) { require(['@/views/statuscliente'], resolve) } },
     { path: 'agenda', name: 'Agenda', component: function (resolve) { require(['@/views/agenda'], resolve) } },
+    { path: 'infraestruturasite', name: 'Infraestrutura - Site', component: function (resolve) { require(['@/views/infraestruturasite'], resolve) } },
+    { path: 'infraestruturapop', name: 'Infraestrutura - POP', component: function (resolve) { require(['@/views/infraestruturapop'], resolve) } },
 
 ];
 

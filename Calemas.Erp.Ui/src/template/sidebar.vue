@@ -1,4 +1,4 @@
-﻿<template>
+<template>
     <div class="sidebar">
         <nav class="sidebar-nav">
             <ul class="nav">
@@ -70,6 +70,17 @@
                         <li class="nav-item">
                             <router-link :to="'/cor'" class="nav-link">Cor</router-link>
                         </li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-dropdown">
+                    <div class="nav-link nav-dropdown-toggle" @click="handleClick"><i class="icon-cloud-upload"></i> Infraestrutura</div>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <router-link :to="'/infraestruturasite'" class="nav-link">Site</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link :to="'/infraestruturapop'" class="nav-link">POP</router-link>
+                        </li>                        
                     </ul>
                 </li>
             </ul>

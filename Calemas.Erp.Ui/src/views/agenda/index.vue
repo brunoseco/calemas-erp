@@ -27,7 +27,7 @@
                         <strong>Filtros</strong>
                     </div>
                     <div class="card-block">
-                        <form v-on:submit.prevent="executeFilter()">
+                        <form v-on:keypress.enter.prevent="executeFilter()">
                             <filter-partial :filter="filter" />
                         </form>
                     </div>
@@ -51,7 +51,7 @@
                 <h4 class="modal-title">Cadastro de Agenda</h4>
                 <button type="button" class="close" @click="closeCreate()"><span>&times;</span></button>
             </div>
-            <form v-on:submit.prevent="executeCreate(model)" id="form-create" novalidate>
+            <form v-on:keypress.enter.prevent="executeCreate(model)" id="form-create" novalidate>
                 <form-partial :model="model" />
             </form>
             <div slot="modal-footer" class="modal-footer">
@@ -67,7 +67,7 @@
                 <h4 class="modal-title">Edição de Agenda</h4>
                 <button type="button" class="close" @click="closeEdit()"><span>&times;</span></button>
             </div>
-            <form v-on:submit.prevent="executeEdit(model)" id="form-edit" novalidate>
+            <form v-on:keypress.enter.prevent="executeEdit(model)" id="form-edit" novalidate>
                 <form-partial :model="model" />
             </form>
             <div slot="modal-footer" class="modal-footer">

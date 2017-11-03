@@ -88,6 +88,16 @@ namespace Calemas.Erp.Application.Config
             CreateMap(typeof(StatusOrdemServico), typeof(StatusOrdemServicoDtoSpecializedResult));
             CreateMap(typeof(StatusOrdemServico), typeof(StatusOrdemServicoDtoSpecializedReport));
             CreateMap(typeof(StatusOrdemServico), typeof(StatusOrdemServicoDtoSpecializedDetails));
+            CreateMap(typeof(InfraestruturaSite), typeof(InfraestruturaSiteDto)).ReverseMap();
+            CreateMap(typeof(InfraestruturaSite), typeof(InfraestruturaSiteDtoSpecialized));
+            CreateMap(typeof(InfraestruturaSite), typeof(InfraestruturaSiteDtoSpecializedResult));
+            CreateMap(typeof(InfraestruturaSite), typeof(InfraestruturaSiteDtoSpecializedReport));
+            CreateMap(typeof(InfraestruturaSite), typeof(InfraestruturaSiteDtoSpecializedDetails));
+            CreateMap(typeof(InfraestruturaPop), typeof(InfraestruturaPopDto)).ReverseMap();
+            CreateMap(typeof(InfraestruturaPop), typeof(InfraestruturaPopDtoSpecialized));
+            CreateMap(typeof(InfraestruturaPop), typeof(InfraestruturaPopDtoSpecializedResult));
+            CreateMap(typeof(InfraestruturaPop), typeof(InfraestruturaPopDtoSpecializedReport));
+            CreateMap(typeof(InfraestruturaPop), typeof(InfraestruturaPopDtoSpecializedDetails));
             CreateMap(typeof(Financeiro), typeof(FinanceiroDto)).ReverseMap();
             CreateMap(typeof(Financeiro), typeof(FinanceiroDtoSpecialized));
             CreateMap(typeof(Financeiro), typeof(FinanceiroDtoSpecializedResult));

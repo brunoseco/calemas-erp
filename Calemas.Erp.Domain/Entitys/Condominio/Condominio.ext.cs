@@ -28,6 +28,7 @@ namespace Calemas.Erp.Domain.Entitys
                                         data.EnderecoId);
 
                 construction.SetarDescricao(data.Descricao);
+                construction.SetarInfraestruturaPopId(data.InfraestruturaPopId);
 
 				construction.SetAttributeBehavior(data.AttributeBehavior);
         		return construction;

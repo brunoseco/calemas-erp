@@ -59,3 +59,5 @@ D:\Projetos\calemas-erp\Calemas.Erp.Application\bin\Debug\netcoreapp1.1\Calemas.
 D:\Projetos\calemas-erp\Calemas.Erp.Application\bin\Debug\netcoreapp1.1\Calemas.Erp.Enums.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Application\bin\Debug\netcoreapp1.1\Calemas.Erp.Enums.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Application\bin\Debug\netcoreapp1.1\Calemas.Erp.Enums.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Application\obj\Debug\netcoreapp1.1\Calemas.Erp.Application.csproj.CoreCompileInputs.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Application\obj\Debug\netcoreapp1.1\Calemas.Erp.Application.AssemblyInfoInputs.cache

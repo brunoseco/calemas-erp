@@ -1,12 +1,13 @@
 using Calemas.Erp.Domain.Validations;
 using System;
 using Common.Domain.Model;
+using System.Collections.Generic;
 
 namespace Calemas.Erp.Domain.Entitys
 {
     public class Endereco : EnderecoBase
     {
-
+        public virtual ICollection<Condominio> CollectionCondominio { get; set; }
         public Endereco()
         {
 

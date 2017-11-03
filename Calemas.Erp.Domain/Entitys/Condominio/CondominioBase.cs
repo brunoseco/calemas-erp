@@ -25,11 +25,16 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual string Sigla { get; protected set; }
         public virtual bool Ativo { get; protected set; }
         public virtual int EnderecoId { get; protected set; }
+        public virtual int? InfraestruturaPopId { get; protected set; }
 
 
 		public virtual void SetarDescricao(string descricao)
 		{
 			this.Descricao = descricao;
+		}
+		public virtual void SetarInfraestruturaPopId(int? infraestruturapopid)
+		{
+			this.InfraestruturaPopId = infraestruturapopid;
 		}
 
 

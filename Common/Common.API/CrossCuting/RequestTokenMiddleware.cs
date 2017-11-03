@@ -34,8 +34,8 @@ namespace Common.API.Extensions
                 {
                     try
                     {
-                        //var claims = await GetClaimsFromServer(configSettingsBase, tokenClear);
-                        var claims = GetClaimsFromUserPrincipal(context);
+                        var claims = await GetClaimsFromServer(configSettingsBase, tokenClear);
+                        //var claims = GetClaimsFromUserPrincipal(context);
                         //var claims = GetClaimsFromReadToken(tokenClear, jwt);
 
                         var claimsDictonary = new Dictionary<string, object>();

@@ -25,3 +25,5 @@ D:\Projetos\calemas-erp\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.F
 D:\Projetos\calemas-erp\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.Filter.AssemblyInfo.cs
 D:\Projetos\calemas-erp\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.Filter.dll
 D:\Projetos\calemas-erp\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.Filter.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.Filter.csproj.CoreCompileInputs.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Filter\obj\Debug\netcoreapp1.1\Calemas.Erp.Filter.AssemblyInfoInputs.cache

@@ -44,3 +44,5 @@ D:\Projetos\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.
 D:\Projetos\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.AssemblyInfo.cs
 D:\Projetos\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.dll
 D:\Projetos\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.csproj.CoreCompileInputs.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.AssemblyInfoInputs.cache

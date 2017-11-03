@@ -8,7 +8,7 @@ namespace Common.API.Converters
     {
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            if (reader.Value.IsNotNull())
+            if (reader.Value.IsNotNull() && reader.Value != "")
                 return DateTime.Parse(reader.Value.ToString());
 
             return null;

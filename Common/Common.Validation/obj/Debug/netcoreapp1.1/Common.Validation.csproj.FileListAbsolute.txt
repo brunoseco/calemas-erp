@@ -43,3 +43,5 @@ C:\Pessoal\calemas-erp\Common\Common.Validation\obj\Debug\netcoreapp1.1\Common.V
 C:\Pessoal\calemas-erp\Common\Common.Validation\obj\Debug\netcoreapp1.1\Common.Validation.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Common\Common.Validation\obj\Debug\netcoreapp1.1\Common.Validation.dll
 C:\Pessoal\calemas-erp\Common\Common.Validation\obj\Debug\netcoreapp1.1\Common.Validation.pdb
+C:\Pessoal\calemas-erp\Common\Common.Validation\obj\Debug\netcoreapp1.1\Common.Validation.csproj.CoreCompileInputs.cache
+C:\Pessoal\calemas-erp\Common\Common.Validation\obj\Debug\netcoreapp1.1\Common.Validation.AssemblyInfoInputs.cache

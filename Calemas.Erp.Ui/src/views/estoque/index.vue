@@ -1,4 +1,4 @@
-﻿<template>
+<template>
     <div class="wrapper">
 
         <div class="row" style="margin-bottom: 1rem;margin-top: -0.5rem;">
@@ -31,7 +31,7 @@
                         <strong>Filtros</strong>
                     </div>
                     <div class="card-block">
-                        <form v-on:submit.prevent="executeFilter()">
+                        <form v-on:keypress.enter.prevent="executeFilter()">
                             <filter-partial :filter="filter" />
                         </form>
                     </div>
@@ -50,27 +50,27 @@
                         <strong>Resultado</strong>
                     </div>
                     <div class="card-block no-padding">
-                        <table class="table has-tickbox table-striped table-sm">
+                        <table class="table table-striped table-sm">
                             <thead class="">
                                 <tr>
-                                    <th>Código <button @click="executeOrderBy('referencia')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
-                                    <th>Nome <button @click="executeOrderBy('nome')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
-                                    <th>Qtde. Mínima <button @click="executeOrderBy('quantidadeMinima')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
-                                    <th>Qtde. Atual <button @click="executeOrderBy('quantidade')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
-                                    <th>Valor de Venda <button @click="executeOrderBy('valorVenda')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
-                                    <th>Valor de Compra <button @click="executeOrderBy('valorCompra')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Categoria<button @click="executeOrderBy('categoriaEstoque.nome')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Nome<button @click="executeOrderBy('nome')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Modelo<button @click="executeOrderBy('modelo')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Fabricante<button @click="executeOrderBy('fabricante')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Qtde. Mínima<button @click="executeOrderBy('quantidadeMinima')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Qtde. Atual<button @click="executeOrderBy('quantidade')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th>Ativo <button @click="executeOrderBy('ativo')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th class="text-center" width="75"><i class="fa fa-cog"></i></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr v-for="item in result.itens" class="animated fadeIn">
-                                    <td>{{ item.referencia }}</td>
+                                    <td>{{ item.categoriaEstoque.nome }}</td>
                                     <td>{{ item.nome }}</td>
+                                    <td>{{ item.modelo }}</td>
+                                    <td>{{ item.fabricante }}</td>
                                     <td>{{ item.quantidadeMinima }}</td>
                                     <td>{{ item.quantidade }}</td>
-                                    <td>{{ item.valorVenda }}</td>
-                                    <td>{{ item.valorCompra }}</td>
                                     <td><span class="badge badge-pill" v-bind:class="{ 'badge-success': item.ativo, 'badge-danger': !item.ativo }">{{item.ativo ? 'Sim' : 'Não'}}</span></td>
                                     <td class="text-center">
                                         <button type="button" class="btn btn-sm btn-primary" v-tooltip.left="'Editar'" @click="openEdit(item.estoqueId, item)">
@@ -96,7 +96,7 @@
                 <h4 class="modal-title">Cadastro de Estoque</h4>
                 <button type="button" class="close" @click="closeCreate()"><span>&times;</span></button>
             </div>
-            <form v-on:submit.prevent="executeCreate(model)" id="form-create" novalidate>
+            <form v-on:keypress.enter.prevent="executeCreate(model)" id="form-create" novalidate>
                 <form-partial :model="model" />
             </form>
             <div slot="modal-footer" class="modal-footer">
@@ -112,7 +112,7 @@
                 <h4 class="modal-title">Edição de Estoque</h4>
                 <button type="button" class="close" @click="closeEdit()"><span>&times;</span></button>
             </div>
-            <form v-on:submit.prevent="executeEdit(model)" id="form-edit" novalidate>
+            <form v-on:keypress.enter.prevent="executeEdit(model)" id="form-edit" novalidate>
                 <form-partial :model="model" />
             </form>
             <div slot="modal-footer" class="modal-footer">
@@ -128,7 +128,7 @@
                 <h4 class="modal-title">Exclusão de Estoque</h4>
                 <button type="button" class="close" @click="closeDelete()"><span>&times;</span></button>
             </div>
-            <form type="post" v-on:submit.prevent="executeDelete(model)" id="form-delete" novalidate>
+            <form type="post" v-on:keypress.enter.prevent="executeDelete(model)" id="form-delete" novalidate>
                 <div class="row">
                     <div class="form-group col-md-12">
                         <h4>Confirma a remoção deste item?</h4>

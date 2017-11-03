@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
     ".NETCoreApp,Version=v1.1": {
       "Libuv/1.9.1": {
@@ -7041,19 +7041,38 @@
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
       "projectUniqueName": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Enums\\Calemas.Erp.Enums.csproj",
       "projectName": "Calemas.Erp.Enums",
       "projectPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Enums\\Calemas.Erp.Enums.csproj",
+      "packagesPath": "C:\\Users\\Bruno Seco\\.nuget\\packages\\",
       "outputPath": "C:\\Pessoal\\calemas-erp\\Calemas.Erp.Enums\\obj\\",
       "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Pessoal\\calemas-erp\\.nuget\\NuGet.Config",
+        "C:\\Users\\Bruno Seco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
       "originalTargetFrameworks": [
         "netcoreapp1.1"
       ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {}
         }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
       }
     },
     "frameworks": {

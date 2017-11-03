@@ -1,4 +1,4 @@
-﻿<template>
+<template>
     <fieldset>
         <legend>Dados</legend>
         <div class="row">
@@ -10,7 +10,7 @@
             </div>
             <div class="form-group col-md-12">
                 <label for="descricao">Descrição</label>
-                <input type="text" class="form-control" name="descricao" placeholder="Descrição" v-model="model.descricao" required />
+                <input type="text" class="form-control" name="descricao" placeholder="Descrição" v-model="model.descricao" />
             </div>
             <div class="form-group col-md-12">
                 <label for="solicitanteId">Quem fará a retirada?</label>

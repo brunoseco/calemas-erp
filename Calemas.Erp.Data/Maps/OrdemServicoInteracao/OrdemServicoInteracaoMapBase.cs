@@ -17,10 +17,10 @@ namespace Calemas.Erp.Data.Map
 
             type.Property(t => t.OrdemServicoId).HasColumnName("OrdemServicoId");
             type.Property(t => t.DataConclusao).HasColumnName("DataConclusao");
-            type.Property(t => t.Descricao).HasColumnName("Descricao");
-            type.Property(t => t.Observacao).HasColumnName("Observacao");
+            type.Property(t => t.Descricao).HasColumnName("Descricao").HasColumnType("varchar(max)");
+            type.Property(t => t.Observacao).HasColumnName("Observacao").HasColumnType("varchar(max)");
             type.Property(t => t.FoiProprioCliente).HasColumnName("FoiProprioCliente");
-            type.Property(t => t.NomeClienteResponsavel).HasColumnName("NomeClienteResponsavel");
+            type.Property(t => t.NomeClienteResponsavel).HasColumnName("NomeClienteResponsavel").HasColumnType("varchar(500)");
             type.Property(t => t.TecnicoId).HasColumnName("TecnicoId");
             type.Property(t => t.StatusOrdemServicoId).HasColumnName("StatusOrdemServicoId");
 

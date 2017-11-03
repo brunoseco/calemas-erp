@@ -12,6 +12,7 @@ namespace Calemas.Erp.Domain.Filter
         public virtual string Sigla { get; set;} 
         public virtual bool? Ativo { get; set;} 
         public virtual int EnderecoId { get; set;} 
+        public virtual int? InfraestruturaPopId { get; set;} 
         public virtual int UserCreateId { get; set;} 
         public virtual DateTime UserCreateDateStart { get; set;} 
         public virtual DateTime UserCreateDateEnd { get; set;} 

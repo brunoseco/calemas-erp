@@ -42,7 +42,7 @@ namespace Calemas.Erp.Data.Repository
             var querybase = await this.ToListAsync(this.GetBySimplefilters(filters).Select(_ => new
             {
                 Id = _.EstoqueId,
-                Name = _.Nome
+                Name = _.Nome + " | Modelo: " + _.Modelo + " | Fabricante: " + _.Fabricante + " | Categoria: " + _.CategoriaEstoque.Nome
             }));
 
             return querybase;

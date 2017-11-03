@@ -43,3 +43,5 @@ C:\Pessoal\calemas-erp\Common\Common.API\obj\Debug\netcoreapp1.1\Common.API.cspr
 C:\Pessoal\calemas-erp\Common\Common.API\obj\Debug\netcoreapp1.1\Common.API.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Common\Common.API\obj\Debug\netcoreapp1.1\Common.API.dll
 C:\Pessoal\calemas-erp\Common\Common.API\obj\Debug\netcoreapp1.1\Common.API.pdb
+C:\Pessoal\calemas-erp\Common\Common.API\obj\Debug\netcoreapp1.1\Common.API.csproj.CoreCompileInputs.cache
+C:\Pessoal\calemas-erp\Common\Common.API\obj\Debug\netcoreapp1.1\Common.API.AssemblyInfoInputs.cache

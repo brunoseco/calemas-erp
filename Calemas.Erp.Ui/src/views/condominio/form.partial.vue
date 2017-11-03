@@ -1,4 +1,4 @@
-﻿<template>
+<template>
     <fieldset>
         <legend>Dados</legend>
         <div class="row">
@@ -17,6 +17,10 @@
                 <input type="text" class="form-control" name="descricao" placeholder="Descricao" v-model="model.descricao" />
             </div>
             <div class="form-group col-md-12">
+                <label for="infraestruturaPopId">Pop</label>
+                <select v-select="{ dataitem: 'InfraestruturaPop', default: 'Selecione' }" v-model="model.infraestruturaPopId" class="form-control" name="infraestruturaPopId" required></select>
+            </div>
+            <div class="form-group col-md-12">
                 <div class="clearfix">&nbsp;</div>
                 <label class="custom-control custom-checkbox">
                     <input type="checkbox" name="ativo" class="custom-control-input" v-model="model.ativo">
@@ -26,7 +30,7 @@
             </div>
 
         </div>
-        <legend>Endereço</legend>
+        <legend>Endereço / Máscara</legend>
         <endereco-form :model="model.endereco" />
     </fieldset>
 </template>
