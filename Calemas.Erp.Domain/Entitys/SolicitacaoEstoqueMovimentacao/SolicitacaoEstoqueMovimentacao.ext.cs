@@ -7,30 +7,26 @@ namespace Calemas.Erp.Domain.Entitys
     public class SolicitacaoEstoqueMovimentacao : SolicitacaoEstoqueMovimentacaoBase
     {
         public Estoque Estoque { get; set; }
-        public Colaborador Solicitante { get; set; }
-        public StatusSolicitacaoEstoqueMovimentacao StatusSolicitacaoEstoqueMovimentacao { get; set; }
+
         public SolicitacaoEstoqueMovimentacao()
         {
 
         }
 
-        public SolicitacaoEstoqueMovimentacao(int solicitacaoestoquemovimentacaoid, int estoqueid, bool entrada, string descricao, int solicitanteid, DateTime datasolicitacao, DateTime dataprevista, int statussolicitacaoestoquemovimentacaoid, decimal quantidade) 
-            : base(solicitacaoestoquemovimentacaoid, estoqueid, entrada, descricao, solicitanteid, datasolicitacao, dataprevista, statussolicitacaoestoquemovimentacaoid, quantidade)
+        public SolicitacaoEstoqueMovimentacao(int solicitacaoestoquemovimentacaoid, int solicitacaoestoqueid, int estoqueid, bool entrada, decimal quantidade) :
+            base(solicitacaoestoquemovimentacaoid, solicitacaoestoqueid, estoqueid, entrada, quantidade)
         {
+
         }
 
-        public class SolicitacaoEstoqueMovimentacaoFactory
+		public class SolicitacaoEstoqueMovimentacaoFactory
         {
             public SolicitacaoEstoqueMovimentacao GetDefaultInstance(dynamic data, CurrentUser user)
             {
                 var construction = new SolicitacaoEstoqueMovimentacao(data.SolicitacaoEstoqueMovimentacaoId,
+                                        data.SolicitacaoEstoqueId,
                                         data.EstoqueId,
                                         data.Entrada,
-                                        data.Descricao,
-                                        data.SolicitanteId,
-                                        data.DataSolicitacao,
-                                        data.DataPrevista,
-                                        data.StatusSolicitacaoEstoqueMovimentacaoId,
                                         data.Quantidade);
 
 

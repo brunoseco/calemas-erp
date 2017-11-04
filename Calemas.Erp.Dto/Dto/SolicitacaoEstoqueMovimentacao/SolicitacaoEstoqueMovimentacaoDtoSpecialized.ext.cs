@@ -9,7 +9,7 @@ namespace Calemas.Erp.Dto
 	{
 
         public  EstoqueDto Estoque { get; set;} 
-        public  StatusSolicitacaoEstoqueMovimentacaoDto StatusSolicitacaoEstoqueMovimentacao { get; set;} 
+        public  SolicitacaoEstoqueDto SolicitacaoEstoque { get; set;} 
 
 		
 	}

@@ -1,4 +1,4 @@
-﻿<template>
+<template>
     <div class="wrapper">
         <div class="animated fadeIn">
             <div class="row" style="margin-bottom: 1rem;margin-top: -0.5rem;">
@@ -79,7 +79,7 @@
                                 </thead>
                                 <tbody>
                                     <tr v-for="item in result.itens" class="animated fadeIn">
-                                        <td>{{ item.userCreateDate | date }}</td>
+                                        <td>{{ item.userCreateDate | datetime }}</td>
                                         <td>{{ item.quantidade }}</td>
                                         <td>{{ item.descricao }}</td>
                                         <td>{{ item.colaborador.pessoa.nome }}</td>
@@ -110,6 +110,7 @@
         mixins: [crudBase],
         data() {
             return {
+                filterOnEnter: false,
                 resource: "estoquemovimentacao",
                 estoque: {},
             }
@@ -118,10 +119,14 @@
 
             let id = this.$route.params.id;
             let api = new Api("estoque");
+
             api.filters.id = id;
             api.get().then(data => {
                 this.estoque = data.data;
             });
+
+            this.filter.estoqueId = id;
+            this.executeFilter();
 
         }
     }

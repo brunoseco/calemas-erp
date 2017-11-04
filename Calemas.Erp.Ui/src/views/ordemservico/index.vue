@@ -1,4 +1,4 @@
-﻿<template>
+<template>
     <div class="wrapper">
 
         <div class="row" style="margin-bottom: 1rem;margin-top: -0.5rem;">
@@ -68,7 +68,7 @@
                                     <td>{{ item.cliente.pessoa.nome }}</td>
                                     <td>{{ item.cliente.condominio.sigla }}</td>
                                     <td>{{ item.tipoOrdemServico.nome }}</td>
-                                    <td>{{ item.agenda.dataInicio | date }}</td>
+                                    <td>{{ item.agenda.dataInicio | datetime }}</td>
                                     <td>{{ item.statusOrdemServico.nome }}</td>
                                     <td class="text-center">
                                         <button type="button" class="btn btn-sm btn-success" v-if="item.houveInteracao" v-tooltip.left="'Detalhes'" @click="openDetail(undefined, { ordemServicoId: item.ordemServicoId })">

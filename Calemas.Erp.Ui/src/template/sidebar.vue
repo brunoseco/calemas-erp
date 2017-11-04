@@ -39,7 +39,7 @@
                             <router-link :to="'/estoquemovimentacao'" class="nav-link">Movimentar</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link :to="'/solicitacaoestoquemovimentacao'" class="nav-link">Solicitar</router-link>
+                            <router-link :to="'/solicitacaoestoque'" class="nav-link">Solicitar</router-link>
                         </li>
                         <li class="nav-item">
                             <router-link :to="'/unidademedida'" class="nav-link">Unidade de medida</router-link>

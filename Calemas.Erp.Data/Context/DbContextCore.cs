@@ -40,6 +40,7 @@ namespace Calemas.Erp.Data.Context
             new UnidadeMedidaMap(modelBuilder.Entity<UnidadeMedida>());
             new EstoqueMap(modelBuilder.Entity<Estoque>());
             new EstoqueMovimentacaoMap(modelBuilder.Entity<EstoqueMovimentacao>());
+            new SolicitacaoEstoqueMap(modelBuilder.Entity<SolicitacaoEstoque>());
             new SolicitacaoEstoqueMovimentacaoMap(modelBuilder.Entity<SolicitacaoEstoqueMovimentacao>());
             new StatusSolicitacaoEstoqueMovimentacaoMap(modelBuilder.Entity<StatusSolicitacaoEstoqueMovimentacao>());
 

@@ -16,6 +16,12 @@
     <ProjectReference Include="..\Common\Common.Domain\Common.Domain.csproj" />
     <ProjectReference Include="..\Common\Common.Validation\Common.Validation.csproj" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Interfaces\Services\SolicitacaoEstoqueMovimentacao\" />
+    <Folder Include="Services\SolicitacaoEstoqueMovimentacao\" />
+    <Folder Include="Validations\SolicitacaoEstoqueMovimentacao\" />
+  </ItemGroup>
 
 
 </Project>

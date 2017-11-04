@@ -145,7 +145,7 @@ namespace Calemas.Erp.Domain.Services
 
         protected virtual SolicitacaoEstoqueMovimentacao SaveDefault(SolicitacaoEstoqueMovimentacao solicitacaoestoquemovimentacao, SolicitacaoEstoqueMovimentacao solicitacaoestoquemovimentacaoOld)
         {
-			solicitacaoestoquemovimentacao = this.AuditDefault(solicitacaoestoquemovimentacao, solicitacaoestoquemovimentacaoOld);
+			
 
             var isNew = solicitacaoestoquemovimentacaoOld.IsNull();			
             if (isNew)

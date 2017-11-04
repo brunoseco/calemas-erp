@@ -13,7 +13,6 @@ namespace Calemas.Erp.Data.Map
 
         protected override void CustomConfig(EntityTypeBuilder<SolicitacaoEstoqueMovimentacao> type)
         {
-            type.HasOne(_ => _.Solicitante).WithMany().HasForeignKey(_ => _.SolicitanteId).IsRequired();
 
         }
 

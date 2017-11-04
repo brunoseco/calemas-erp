@@ -37,6 +37,7 @@ export default {
             model: {},
             modelEmpty: Object.assign({}, this.model, {}),
 
+            filterOnEnter: true,
             notification: new Notification(this),
             filter: {
                 pageSize: 10,
@@ -270,6 +271,7 @@ export default {
     },
 
     mounted() {
-        this.executeFilter();
+        if (this.filterOnEnter)
+            this.executeFilter();
     }
 }

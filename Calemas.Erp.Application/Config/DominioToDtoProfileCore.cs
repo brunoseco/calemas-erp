@@ -133,6 +133,11 @@ namespace Calemas.Erp.Application.Config
             CreateMap(typeof(EstoqueMovimentacao), typeof(EstoqueMovimentacaoDtoSpecializedResult));
             CreateMap(typeof(EstoqueMovimentacao), typeof(EstoqueMovimentacaoDtoSpecializedReport));
             CreateMap(typeof(EstoqueMovimentacao), typeof(EstoqueMovimentacaoDtoSpecializedDetails));
+            CreateMap(typeof(SolicitacaoEstoque), typeof(SolicitacaoEstoqueDto)).ReverseMap();
+            CreateMap(typeof(SolicitacaoEstoque), typeof(SolicitacaoEstoqueDtoSpecialized));
+            CreateMap(typeof(SolicitacaoEstoque), typeof(SolicitacaoEstoqueDtoSpecializedResult));
+            CreateMap(typeof(SolicitacaoEstoque), typeof(SolicitacaoEstoqueDtoSpecializedReport));
+            CreateMap(typeof(SolicitacaoEstoque), typeof(SolicitacaoEstoqueDtoSpecializedDetails));
             CreateMap(typeof(SolicitacaoEstoqueMovimentacao), typeof(SolicitacaoEstoqueMovimentacaoDto)).ReverseMap();
             CreateMap(typeof(SolicitacaoEstoqueMovimentacao), typeof(SolicitacaoEstoqueMovimentacaoDtoSpecialized));
             CreateMap(typeof(SolicitacaoEstoqueMovimentacao), typeof(SolicitacaoEstoqueMovimentacaoDtoSpecializedResult));
