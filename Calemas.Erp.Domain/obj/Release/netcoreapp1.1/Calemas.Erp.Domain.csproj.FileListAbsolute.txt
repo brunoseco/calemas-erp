@@ -24,3 +24,5 @@ D:\Projetos\calemas-erp\Calemas.Erp.Domain\obj\Release\netcoreapp1.1\Calemas.Erp
 D:\Projetos\calemas-erp\Calemas.Erp.Domain\obj\Release\netcoreapp1.1\Calemas.Erp.Domain.AssemblyInfo.cs
 D:\Projetos\calemas-erp\Calemas.Erp.Domain\obj\Release\netcoreapp1.1\Calemas.Erp.Domain.dll
 D:\Projetos\calemas-erp\Calemas.Erp.Domain\obj\Release\netcoreapp1.1\Calemas.Erp.Domain.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Domain\obj\Release\netcoreapp1.1\Calemas.Erp.Domain.csproj.CoreCompileInputs.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Domain\obj\Release\netcoreapp1.1\Calemas.Erp.Domain.AssemblyInfoInputs.cache

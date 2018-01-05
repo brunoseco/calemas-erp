@@ -32,6 +32,6 @@ C:\Pessoal\calemas-erp\Common\Common.Domain\bin\Debug\netcoreapp1.1\Common.Domai
 C:\Pessoal\calemas-erp\Common\Common.Domain\obj\Debug\netcoreapp1.1\Common.Domain.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Common\Common.Domain\obj\Debug\netcoreapp1.1\Common.Domain.dll
 C:\Pessoal\calemas-erp\Common\Common.Domain\obj\Debug\netcoreapp1.1\Common.Domain.pdb
-C:\Pessoal\calemas-erp\Common\Common.Domain\obj\Debug\netcoreapp1.1\Common.Domain.csprojResolveAssemblyReference.cache
 C:\Pessoal\calemas-erp\Common\Common.Domain\obj\Debug\netcoreapp1.1\Common.Domain.csproj.CoreCompileInputs.cache
 C:\Pessoal\calemas-erp\Common\Common.Domain\obj\Debug\netcoreapp1.1\Common.Domain.AssemblyInfoInputs.cache
+C:\Pessoal\calemas-erp\Common\Common.Domain\obj\Debug\netcoreapp1.1\Common.Domain.csprojResolveAssemblyReference.cache

@@ -71,6 +71,7 @@
                             <table class="table table-striped table-sm">
                                 <thead class="">
                                     <tr>
+                                        <th>Tipo</th>
                                         <th>Data</th>
                                         <th>Qtde. Movimentada</th>
                                         <th>Descrição</th>
@@ -79,6 +80,7 @@
                                 </thead>
                                 <tbody>
                                     <tr v-for="item in result.itens" class="animated fadeIn">
+                                        <td><span class="badge badge-pill" v-bind:class="{ 'badge-success': item.entrada, 'badge-warning': !item.entrada }">{{item.entrada ? 'Entrada' : 'Saída'}}</span></td>
                                         <td>{{ item.userCreateDate | datetime }}</td>
                                         <td>{{ item.quantidade }}</td>
                                         <td>{{ item.descricao }}</td>

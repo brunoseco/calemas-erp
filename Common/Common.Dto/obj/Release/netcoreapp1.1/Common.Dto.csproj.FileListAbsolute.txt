@@ -25,3 +25,5 @@ C:\Pessoal\calemas-erp\Common\Common.Dto\obj\Release\netcoreapp1.1\Common.Dto.cs
 C:\Pessoal\calemas-erp\Common\Common.Dto\obj\Release\netcoreapp1.1\Common.Dto.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Common\Common.Dto\obj\Release\netcoreapp1.1\Common.Dto.dll
 C:\Pessoal\calemas-erp\Common\Common.Dto\obj\Release\netcoreapp1.1\Common.Dto.pdb
+C:\Pessoal\calemas-erp\Common\Common.Dto\obj\Release\netcoreapp1.1\Common.Dto.csproj.CoreCompileInputs.cache
+C:\Pessoal\calemas-erp\Common\Common.Dto\obj\Release\netcoreapp1.1\Common.Dto.AssemblyInfoInputs.cache

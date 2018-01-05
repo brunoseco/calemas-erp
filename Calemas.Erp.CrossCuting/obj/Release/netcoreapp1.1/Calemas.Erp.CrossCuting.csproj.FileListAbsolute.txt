@@ -9,3 +9,5 @@ C:\Pessoal\calemas-erp\Calemas.Erp.CrossCuting\obj\Release\netcoreapp1.1\Calemas
 C:\Pessoal\calemas-erp\Calemas.Erp.CrossCuting\obj\Release\netcoreapp1.1\Calemas.Erp.CrossCuting.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Calemas.Erp.CrossCuting\obj\Release\netcoreapp1.1\Calemas.Erp.CrossCuting.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.CrossCuting\obj\Release\netcoreapp1.1\Calemas.Erp.CrossCuting.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.CrossCuting\obj\Release\netcoreapp1.1\Calemas.Erp.CrossCuting.csproj.CoreCompileInputs.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.CrossCuting\obj\Release\netcoreapp1.1\Calemas.Erp.CrossCuting.AssemblyInfoInputs.cache

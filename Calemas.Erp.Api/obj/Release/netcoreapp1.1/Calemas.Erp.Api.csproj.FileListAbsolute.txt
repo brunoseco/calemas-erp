@@ -66,3 +66,5 @@ C:\Pessoal\calemas-erp\Calemas.Erp.Api\bin\Release\netcoreapp1.1\Calemas.Erp.Enu
 C:\Pessoal\calemas-erp\Calemas.Erp.Api\bin\Release\netcoreapp1.1\Calemas.Erp.Enums.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Api\bin\Release\netcoreapp1.1\Calemas.Erp.CrossCuting.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Api\bin\Release\netcoreapp1.1\Calemas.Erp.CrossCuting.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Api\obj\Release\netcoreapp1.1\Calemas.Erp.Api.csproj.CoreCompileInputs.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Api\obj\Release\netcoreapp1.1\Calemas.Erp.Api.AssemblyInfoInputs.cache

@@ -44,3 +44,4 @@ C:\Pessoal\calemas-erp\Common\Common.Dto\obj\Debug\netcoreapp1.1\Common.Dto.dll
 C:\Pessoal\calemas-erp\Common\Common.Dto\obj\Debug\netcoreapp1.1\Common.Dto.pdb
 C:\Pessoal\calemas-erp\Common\Common.Dto\obj\Debug\netcoreapp1.1\Common.Dto.csproj.CoreCompileInputs.cache
 C:\Pessoal\calemas-erp\Common\Common.Dto\obj\Debug\netcoreapp1.1\Common.Dto.AssemblyInfoInputs.cache
+C:\Pessoal\calemas-erp\Common\Common.Dto\obj\Debug\netcoreapp1.1\Common.Dto.csprojResolveAssemblyReference.cache

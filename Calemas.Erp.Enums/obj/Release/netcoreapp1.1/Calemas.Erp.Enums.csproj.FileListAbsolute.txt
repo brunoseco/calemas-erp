@@ -12,3 +12,5 @@ C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Release\netcoreapp1.1\Calemas.Erp.E
 C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Release\netcoreapp1.1\Calemas.Erp.Enums.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Release\netcoreapp1.1\Calemas.Erp.Enums.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Release\netcoreapp1.1\Calemas.Erp.Enums.pdb
+C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Release\netcoreapp1.1\Calemas.Erp.Enums.csproj.CoreCompileInputs.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Enums\obj\Release\netcoreapp1.1\Calemas.Erp.Enums.AssemblyInfoInputs.cache

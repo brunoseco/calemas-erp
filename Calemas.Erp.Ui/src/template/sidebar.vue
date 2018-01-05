@@ -19,7 +19,7 @@
                     <div class="nav-link nav-dropdown-toggle" @click="handleClick"><i class="icon-people"></i> Cliente</div>
                     <ul class="nav-dropdown-items">
                         <li class="nav-item">
-                            <router-link :to="'/cliente'" class="nav-link">Consultar</router-link>
+                            <router-link :to="'/cliente'" class="nav-link">Cadastrar</router-link>
                         </li>
                         <li class="nav-item">
                             <router-link :to="'/condominio'" class="nav-link">Condomínio</router-link>
@@ -33,7 +33,7 @@
                     <div class="nav-link nav-dropdown-toggle" @click="handleClick"><i class="icon-layers"></i> Estoque</div>
                     <ul class="nav-dropdown-items">
                         <li class="nav-item">
-                            <router-link :to="'/estoque'" class="nav-link">Consultar</router-link>
+                            <router-link :to="'/estoque'" class="nav-link">Cadastrar</router-link>
                         </li>
                         <li class="nav-item">
                             <router-link :to="'/estoquemovimentacao'" class="nav-link">Movimentar</router-link>
@@ -53,16 +53,16 @@
                     <div class="nav-link nav-dropdown-toggle" @click="handleClick"><i class="icon-docs"></i> Ordem de Serviço</div>
                     <ul class="nav-dropdown-items">
                         <li class="nav-item">
-                            <router-link :to="'/ordemservico'" class="nav-link">Consultar</router-link>
+                            <router-link :to="'/ordemservico'" class="nav-link">Cadastrar</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link :to="'/prioridade'" class="nav-link">Prioridade de O.S</router-link>
+                            <router-link :to="'/prioridade'" class="nav-link">Prioridade de Serviço</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link :to="'/tipoordemservico'" class="nav-link">Tipo de O.S</router-link>
+                            <router-link :to="'/tipoordemservico'" class="nav-link">Tipo de Serviço</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link :to="'/statusordemservico'" class="nav-link">Situação de O.S</router-link>
+                            <router-link :to="'/statusordemservico'" class="nav-link">Situação de Serviço</router-link>
                         </li>
                         <li class="nav-item">
                             <router-link :to="'/setor'" class="nav-link">Setor</router-link>

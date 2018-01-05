@@ -12,6 +12,11 @@ namespace Calemas.Erp.Data.Repository
         {
             var queryFilter = queryBase;
 
+            if (filters.QuantidadeDe.IsSent())
+                queryFilter = queryFilter.Where(_ => _.Quantidade >= filters.QuantidadeDe);
+
+            if (filters.QuantidadeAte.IsSent())
+                queryFilter = queryFilter.Where(_ => _.Quantidade <= filters.QuantidadeAte);
 
             return queryFilter;
         }
