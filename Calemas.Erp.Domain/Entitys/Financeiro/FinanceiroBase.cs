@@ -1,4 +1,5 @@
 using Common.Domain.Base;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -44,6 +45,34 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual decimal PercentualJuros { get; protected set; }
         public virtual decimal PercentualMulta { get; protected set; }
 
+
+public class FinanceiroFactoryBase
+        {
+            public virtual Financeiro GetDefaultInstanceBase(dynamic data, CurrentUser user)
+            {
+                var construction = new Financeiro(data.FinanceiroId,
+                                        data.DataVencimento,
+                                        data.Parcela,
+                                        data.PlanoContaId,
+                                        data.ValorOriginal,
+                                        data.ValorDesconto,
+                                        data.ValorMultaJuros,
+                                        data.ValorFinal,
+                                        data.PessoaId,
+                                        data.Descricao,
+                                        data.Baixado,
+                                        data.ValorDescontoAteVencimento,
+                                        data.PercentualJuros,
+                                        data.PercentualMulta);
+
+                construction.SetarDataBaixa(data.DataBaixa);
+
+
+				construction.SetAttributeBehavior(data.AttributeBehavior);
+        		return construction;
+            }
+
+        }
 
 		public virtual void SetarDataBaixa(DateTime? databaixa)
 		{

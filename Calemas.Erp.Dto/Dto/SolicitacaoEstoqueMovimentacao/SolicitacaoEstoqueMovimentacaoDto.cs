@@ -20,11 +20,9 @@ namespace Calemas.Erp.Dto
         public virtual int EstoqueId {get; set;}
 
         [Required(ErrorMessage="SolicitacaoEstoqueMovimentacao - Campo Entrada é Obrigatório")]
-
         public virtual bool Entrada {get; set;}
 
         [Required(ErrorMessage="SolicitacaoEstoqueMovimentacao - Campo Quantidade é Obrigatório")]
-
         public virtual decimal Quantidade {get; set;}
 
 

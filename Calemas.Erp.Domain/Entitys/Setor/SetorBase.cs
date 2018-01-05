@@ -1,4 +1,5 @@
 using Common.Domain.Base;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -24,6 +25,24 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual int CorId { get; protected set; }
         public virtual bool Ativo { get; protected set; }
 
+
+public class SetorFactoryBase
+        {
+            public virtual Setor GetDefaultInstanceBase(dynamic data, CurrentUser user)
+            {
+                var construction = new Setor(data.SetorId,
+                                        data.Nome,
+                                        data.CorId,
+                                        data.Ativo);
+
+                construction.SetarDescricao(data.Descricao);
+
+
+				construction.SetAttributeBehavior(data.AttributeBehavior);
+        		return construction;
+            }
+
+        }
 
 		public virtual void SetarDescricao(string descricao)
 		{

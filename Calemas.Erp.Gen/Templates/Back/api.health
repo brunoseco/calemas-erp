@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 
-namespace SmartSecretary.Api.Controllers
+namespace <#namespace#>.Api.Controllers
 {
 	
     [Route("api/[controller]")]

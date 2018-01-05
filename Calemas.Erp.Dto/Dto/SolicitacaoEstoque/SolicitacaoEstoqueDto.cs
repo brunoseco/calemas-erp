@@ -20,11 +20,9 @@ namespace Calemas.Erp.Dto
         public virtual int SolicitanteId {get; set;}
 
         [Required(ErrorMessage="SolicitacaoEstoque - Campo DataSolicitacao é Obrigatório")]
-
         public virtual DateTime DataSolicitacao {get; set;}
 
         [Required(ErrorMessage="SolicitacaoEstoque - Campo DataPrevista é Obrigatório")]
-
         public virtual DateTime DataPrevista {get; set;}
 
         

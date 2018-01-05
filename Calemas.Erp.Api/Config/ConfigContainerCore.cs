@@ -104,6 +104,10 @@ namespace Calemas.Erp.Api
 			services.AddScoped<ITipoPlanoContaService, TipoPlanoContaService>();
 			services.AddScoped<ITipoPlanoContaRepository, TipoPlanoContaRepository>();
 
+			services.AddScoped<IStatusPagamentoApplicationService, StatusPagamentoApplicationService>();
+			services.AddScoped<IStatusPagamentoService, StatusPagamentoService>();
+			services.AddScoped<IStatusPagamentoRepository, StatusPagamentoRepository>();
+
 			services.AddScoped<ICategoriaEstoqueApplicationService, CategoriaEstoqueApplicationService>();
 			services.AddScoped<ICategoriaEstoqueService, CategoriaEstoqueService>();
 			services.AddScoped<ICategoriaEstoqueRepository, CategoriaEstoqueRepository>();

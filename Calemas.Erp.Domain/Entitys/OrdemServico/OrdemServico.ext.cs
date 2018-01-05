@@ -19,6 +19,7 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual Agenda Agenda { get; set; }
         public virtual Cliente Cliente { get; set; }
         public virtual StatusOrdemServico StatusOrdemServico { get; set; }
+        public virtual StatusPagamento StatusPagamento { get; set; }
         public virtual TipoOrdemServico TipoOrdemServico { get; set; }
         public virtual Colaborador Responsavel { get; set; }
         public virtual ICollection<OrdemServicoInteracao> CollectionOrdemServicoInteracao { get; set; }

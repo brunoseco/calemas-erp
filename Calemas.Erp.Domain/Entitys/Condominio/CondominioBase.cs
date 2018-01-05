@@ -1,4 +1,5 @@
 using Common.Domain.Base;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -27,6 +28,26 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual int EnderecoId { get; protected set; }
         public virtual int? InfraestruturaPopId { get; protected set; }
 
+
+public class CondominioFactoryBase
+        {
+            public virtual Condominio GetDefaultInstanceBase(dynamic data, CurrentUser user)
+            {
+                var construction = new Condominio(data.CondominioId,
+                                        data.Nome,
+                                        data.Sigla,
+                                        data.Ativo,
+                                        data.EnderecoId);
+
+                construction.SetarDescricao(data.Descricao);
+                construction.SetarInfraestruturaPopId(data.InfraestruturaPopId);
+
+
+				construction.SetAttributeBehavior(data.AttributeBehavior);
+        		return construction;
+            }
+
+        }
 
 		public virtual void SetarDescricao(string descricao)
 		{

@@ -17,6 +17,7 @@ namespace Calemas.Erp.Domain.Filter
         public virtual string NomeClienteResponsavel { get; set;} 
         public virtual int TecnicoId { get; set;} 
         public virtual int StatusOrdemServicoId { get; set;} 
+        public virtual int StatusPagamentoId { get; set;} 
 
 
     }

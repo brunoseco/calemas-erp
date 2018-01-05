@@ -24,7 +24,6 @@ namespace Calemas.Erp.Dto
         public virtual string Sigla {get; set;}
 
         [Required(ErrorMessage="Condominio - Campo Ativo é Obrigatório")]
-
         public virtual bool Ativo {get; set;}
 
         

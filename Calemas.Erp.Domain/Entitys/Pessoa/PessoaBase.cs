@@ -1,4 +1,5 @@
 using Common.Domain.Base;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -32,6 +33,33 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual bool? Juridica { get; protected set; }
         public virtual int? EnderecoId { get; protected set; }
 
+
+public class PessoaFactoryBase
+        {
+            public virtual Pessoa GetDefaultInstanceBase(dynamic data, CurrentUser user)
+            {
+                var construction = new Pessoa(data.PessoaId,
+                                        data.Nome,
+                                        data.Apelido);
+
+                construction.SetarCPF_CNPJ(data.CPF_CNPJ);
+                construction.SetarRG_IE(data.RG_IE);
+                construction.SetarEmail(data.Email);
+                construction.SetarTelefone(data.Telefone);
+                construction.SetarCelular(data.Celular);
+                construction.SetarComercial(data.Comercial);
+                construction.SetarDataNascimento(data.DataNascimento);
+                construction.SetarEstadoCivilId(data.EstadoCivilId);
+                construction.SetarSexo(data.Sexo);
+                construction.SetarJuridica(data.Juridica);
+                construction.SetarEnderecoId(data.EnderecoId);
+
+
+				construction.SetAttributeBehavior(data.AttributeBehavior);
+        		return construction;
+            }
+
+        }
 
 		public virtual void SetarCPF_CNPJ(string cpf_cnpj)
 		{

@@ -1,4 +1,5 @@
 using Common.Domain.Base;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -25,6 +26,24 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual bool Entrada { get; protected set; }
         public virtual decimal Quantidade { get; protected set; }
 
+
+public class SolicitacaoEstoqueMovimentacaoFactoryBase
+        {
+            public virtual SolicitacaoEstoqueMovimentacao GetDefaultInstanceBase(dynamic data, CurrentUser user)
+            {
+                var construction = new SolicitacaoEstoqueMovimentacao(data.SolicitacaoEstoqueMovimentacaoId,
+                                        data.SolicitacaoEstoqueId,
+                                        data.EstoqueId,
+                                        data.Entrada,
+                                        data.Quantidade);
+
+
+
+				construction.SetAttributeBehavior(data.AttributeBehavior);
+        		return construction;
+            }
+
+        }
 
 
 

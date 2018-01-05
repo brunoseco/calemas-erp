@@ -1,4 +1,5 @@
 using Common.Domain.Base;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -37,6 +38,34 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual bool Ativo { get; protected set; }
         public virtual string Localizacao { get; protected set; }
 
+
+public class EstoqueFactoryBase
+        {
+            public virtual Estoque GetDefaultInstanceBase(dynamic data, CurrentUser user)
+            {
+                var construction = new Estoque(data.EstoqueId,
+                                        data.Nome,
+                                        data.UnidadeMedidaId,
+                                        data.CategoriaEstoqueId,
+                                        data.QuantidadeMinima,
+                                        data.Quantidade,
+                                        data.Ativo);
+
+                construction.SetarDescricao(data.Descricao);
+                construction.SetarModelo(data.Modelo);
+                construction.SetarFabricante(data.Fabricante);
+                construction.SetarReferencia(data.Referencia);
+                construction.SetarObservacao(data.Observacao);
+                construction.SetarValorVenda(data.ValorVenda);
+                construction.SetarValorCompra(data.ValorCompra);
+                construction.SetarLocalizacao(data.Localizacao);
+
+
+				construction.SetAttributeBehavior(data.AttributeBehavior);
+        		return construction;
+            }
+
+        }
 
 		public virtual void SetarDescricao(string descricao)
 		{

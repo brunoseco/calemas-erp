@@ -44,11 +44,9 @@ namespace Calemas.Erp.Dto
         public virtual string Observacao {get; set;}
 
         [Required(ErrorMessage="Estoque - Campo QuantidadeMinima é Obrigatório")]
-
         public virtual decimal QuantidadeMinima {get; set;}
 
         [Required(ErrorMessage="Estoque - Campo Quantidade é Obrigatório")]
-
         public virtual decimal Quantidade {get; set;}
 
         
@@ -60,7 +58,6 @@ namespace Calemas.Erp.Dto
         public virtual decimal? ValorCompra {get; set;}
 
         [Required(ErrorMessage="Estoque - Campo Ativo é Obrigatório")]
-
         public virtual bool Ativo {get; set;}
 
         

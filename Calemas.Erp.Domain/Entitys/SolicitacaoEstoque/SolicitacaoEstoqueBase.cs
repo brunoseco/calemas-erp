@@ -1,4 +1,5 @@
 using Common.Domain.Base;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -27,6 +28,25 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual DateTime DataPrevista { get; protected set; }
         public virtual int StatusSolicitacaoEstoqueMovimentacaoId { get; protected set; }
 
+
+public class SolicitacaoEstoqueFactoryBase
+        {
+            public virtual SolicitacaoEstoque GetDefaultInstanceBase(dynamic data, CurrentUser user)
+            {
+                var construction = new SolicitacaoEstoque(data.SolicitacaoEstoqueId,
+                                        data.Descricao,
+                                        data.SolicitanteId,
+                                        data.DataSolicitacao,
+                                        data.DataPrevista,
+                                        data.StatusSolicitacaoEstoqueMovimentacaoId);
+
+
+
+				construction.SetAttributeBehavior(data.AttributeBehavior);
+        		return construction;
+            }
+
+        }
 
 
 

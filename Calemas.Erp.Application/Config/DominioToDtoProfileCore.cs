@@ -113,6 +113,11 @@ namespace Calemas.Erp.Application.Config
             CreateMap(typeof(TipoPlanoConta), typeof(TipoPlanoContaDtoSpecializedResult));
             CreateMap(typeof(TipoPlanoConta), typeof(TipoPlanoContaDtoSpecializedReport));
             CreateMap(typeof(TipoPlanoConta), typeof(TipoPlanoContaDtoSpecializedDetails));
+            CreateMap(typeof(StatusPagamento), typeof(StatusPagamentoDto)).ReverseMap();
+            CreateMap(typeof(StatusPagamento), typeof(StatusPagamentoDtoSpecialized));
+            CreateMap(typeof(StatusPagamento), typeof(StatusPagamentoDtoSpecializedResult));
+            CreateMap(typeof(StatusPagamento), typeof(StatusPagamentoDtoSpecializedReport));
+            CreateMap(typeof(StatusPagamento), typeof(StatusPagamentoDtoSpecializedDetails));
             CreateMap(typeof(CategoriaEstoque), typeof(CategoriaEstoqueDto)).ReverseMap();
             CreateMap(typeof(CategoriaEstoque), typeof(CategoriaEstoqueDtoSpecialized));
             CreateMap(typeof(CategoriaEstoque), typeof(CategoriaEstoqueDtoSpecializedResult));

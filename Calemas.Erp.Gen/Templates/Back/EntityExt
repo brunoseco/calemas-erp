@@ -18,18 +18,12 @@ namespace <#namespace#>.Domain.Entitys
 
         }
 
-		public class <#className#>Factory
+		public class <#className#>Factory : <#className#>FactoryBase
         {
             public <#className#> GetDefaultInstance(dynamic data, CurrentUser user)
             {
-                var construction = new <#className#>(<#parametersRequiredConstruction#>);
-
-<#methodsSetersConstruction#>
-
-				construction.SetAttributeBehavior(data.AttributeBehavior);
-        		return construction;
+                return this.GetDefaultInstanceBase(data, user);
             }
-
         }
 
         public bool IsValid()

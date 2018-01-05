@@ -13,6 +13,7 @@ namespace calemas.erp.Domain.Filter
         public virtual int TipoOrdemServicoId { get; set;} 
         public virtual int AgendaId { get; set;} 
         public virtual int StatusOrdemServicoId { get; set;} 
+        public virtual int? StatusPagamentoId { get; set;} 
         public virtual DateTime DataOcorrenciaStart { get; set;} 
         public virtual DateTime DataOcorrenciaEnd { get; set;} 
         public virtual DateTime DataOcorrencia { get; set;} 

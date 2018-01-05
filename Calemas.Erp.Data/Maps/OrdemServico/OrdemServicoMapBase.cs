@@ -21,6 +21,7 @@ namespace Calemas.Erp.Data.Map
             type.Property(t => t.TipoOrdemServicoId).HasColumnName("TipoOrdemServicoId");
             type.Property(t => t.AgendaId).HasColumnName("AgendaId");
             type.Property(t => t.StatusOrdemServicoId).HasColumnName("StatusOrdemServicoId");
+            type.Property(t => t.StatusPagamentoId).HasColumnName("StatusPagamentoId");
             type.Property(t => t.DataOcorrencia).HasColumnName("DataOcorrencia");
             type.Property(t => t.DataSituacao).HasColumnName("DataSituacao");
             type.Property(t => t.Observacao).HasColumnName("Observacao").HasColumnType("varchar(max)");

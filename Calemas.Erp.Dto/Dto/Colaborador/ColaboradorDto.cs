@@ -20,7 +20,6 @@ namespace Calemas.Erp.Dto
         public virtual string Password {get; set;}
 
         [Required(ErrorMessage="Colaborador - Campo Ativo é Obrigatório")]
-
         public virtual bool Ativo {get; set;}
 
         

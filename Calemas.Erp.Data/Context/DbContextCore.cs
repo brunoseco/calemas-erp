@@ -36,6 +36,7 @@ namespace Calemas.Erp.Data.Context
             new FinanceiroMap(modelBuilder.Entity<Financeiro>());
             new PlanoContaMap(modelBuilder.Entity<PlanoConta>());
             new TipoPlanoContaMap(modelBuilder.Entity<TipoPlanoConta>());
+            new StatusPagamentoMap(modelBuilder.Entity<StatusPagamento>());
             new CategoriaEstoqueMap(modelBuilder.Entity<CategoriaEstoque>());
             new UnidadeMedidaMap(modelBuilder.Entity<UnidadeMedida>());
             new EstoqueMap(modelBuilder.Entity<Estoque>());

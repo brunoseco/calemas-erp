@@ -58,6 +58,7 @@
                                     <th>Condomínio <button @click="executeOrderBy('cliente.condominio.sigla')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th>Tipo da O.S <button @click="executeOrderBy('tipoOrdemServico.nome')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th>Data para Realização <button @click="executeOrderBy('agenda.dataInicio')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
+                                    <th>Pagamento <button @click="executeOrderBy('statusPagamento.nome')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th>Situação <button @click="executeOrderBy('statusOrdemServico.nome')" class="btn btn-sm btn-link no-border pull-right hide"><i class="fa fa-sort"></i></button></th>
                                     <th class="text-center" width="150"><i class="fa fa-cog"></i></th>
                                 </tr>
@@ -69,6 +70,7 @@
                                     <td>{{ item.cliente.condominio.sigla }}</td>
                                     <td>{{ item.tipoOrdemServico.nome }}</td>
                                     <td>{{ item.agenda.dataInicio | datetime }}</td>
+                                    <td>{{ item.statusPagamento ? item.statusPagamento.nome : '--' }}</td>
                                     <td>{{ item.statusOrdemServico.nome }}</td>
                                     <td class="text-center">
                                         <button type="button" class="btn btn-sm btn-success" v-if="item.houveInteracao" v-tooltip.left="'Detalhes'" @click="openDetail(undefined, { ordemServicoId: item.ordemServicoId })">

@@ -18,6 +18,9 @@ namespace <#namespace#>.Api
 {
     public class Startup
     {
+		
+		private readonly IHostingEnvironment _env;
+		
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -27,6 +30,7 @@ namespace <#namespace#>.Api
                 .AddEnvironmentVariables();
 
             Configuration = builder.Build();
+			this._env = env;
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -44,7 +48,7 @@ namespace <#namespace#>.Api
             services.AddDbContext<DbContext<#contextName#>>(
              options => options.UseSqlServer(
                  Configuration
-                    .GetSection("EFCoreConnStrings:<#contextName#>").Value));
+                    .GetSection("ConfigConnectionString:Default").Value));
 
             services.AddDistributedRedisCache(options =>
             {
@@ -54,6 +58,10 @@ namespace <#namespace#>.Api
 
             services.Configure<ConfigSettingsBase>(Configuration.GetSection("ConfigSettings"));
             services.AddSingleton<IConfiguration>(Configuration);
+			services.AddSingleton(new EnviromentInfo
+            {
+                RootPath = this._env.ContentRootPath
+            });
 
             // Add cross-origin resource sharing services Configurations
             Cors.Enable(services);

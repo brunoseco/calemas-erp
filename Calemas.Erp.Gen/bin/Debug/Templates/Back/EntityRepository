@@ -26,7 +26,9 @@ namespace <#namespace#>.Data.Repository
         {
             var querybase = this.GetAll(this.DataAgregation(filters))
 								.WithBasicFilters(filters)
-								.WithCustomFilters(filters);
+								.WithCustomFilters(filters)
+								.OrderByDomain(filters)
+                                .OrderByProperty(filters);
             return querybase;
         }
 
@@ -38,12 +40,12 @@ namespace <#namespace#>.Data.Repository
             return _<#classNameLower#>;
         }
 
-		 public async Task<IEnumerable<dynamic>> GetDataItem(<#className#>Filter filters)
+		public async Task<IEnumerable<dynamic>> GetDataItem(<#className#>Filter filters)
         {
             var querybase = await this.ToListAsync(this.GetBySimplefilters(filters).Select(_ => new
             {
-                Id = _.<#KeyName#>
-
+                Id = _.<#KeyName#>,
+				Name = _.<#DataItemFieldName#>
             })); 
 
             return querybase;

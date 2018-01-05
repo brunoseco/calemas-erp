@@ -14,6 +14,7 @@ const routers = [
     { path: 'tipoordemservico', name: 'Tipo de ordem de serviço', component: function (resolve) { require(['@/views/tipoordemservico'], resolve) } },
     { path: 'statusordemservico', name: 'Situação de ordem de serviço', component: function (resolve) { require(['@/views/statusordemservico'], resolve) } },
     { path: 'cor', name: 'Cores do sistema', component: function (resolve) { require(['@/views/cor'], resolve) } },
+    { path: 'statuspagamento', name: 'Situação de Pagamento', component: function (resolve) { require(['@/views/statuspagamento'], resolve) } },
     { path: 'cliente', name: 'Cliente', component: function (resolve) { require(['@/views/cliente'], resolve) } },
     { path: 'condominio', name: 'Condomínio', component: function (resolve) { require(['@/views/condominio'], resolve) } },
     { path: 'endereco', name: 'Endereço', component: function (resolve) { require(['@/views/endereco'], resolve) } },

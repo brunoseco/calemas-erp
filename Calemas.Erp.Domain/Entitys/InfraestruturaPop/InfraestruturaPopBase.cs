@@ -1,4 +1,5 @@
 using Common.Domain.Base;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -24,6 +25,25 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual string Longitude { get; protected set; }
         public virtual int InfraestruturaSiteId { get; protected set; }
 
+
+public class InfraestruturaPopFactoryBase
+        {
+            public virtual InfraestruturaPop GetDefaultInstanceBase(dynamic data, CurrentUser user)
+            {
+                var construction = new InfraestruturaPop(data.InfraestruturaPopId,
+                                        data.Nome,
+                                        data.InfraestruturaSiteId);
+
+                construction.SetarDescricao(data.Descricao);
+                construction.SetarLatitude(data.Latitude);
+                construction.SetarLongitude(data.Longitude);
+
+
+				construction.SetAttributeBehavior(data.AttributeBehavior);
+        		return construction;
+            }
+
+        }
 
 		public virtual void SetarDescricao(string descricao)
 		{

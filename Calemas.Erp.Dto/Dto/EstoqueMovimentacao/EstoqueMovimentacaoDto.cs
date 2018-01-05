@@ -16,7 +16,6 @@ namespace Calemas.Erp.Dto
         public virtual int EstoqueId {get; set;}
 
         [Required(ErrorMessage="EstoqueMovimentacao - Campo Entrada é Obrigatório")]
-
         public virtual bool Entrada {get; set;}
 
         [Required(ErrorMessage="EstoqueMovimentacao - Campo Descricao é Obrigatório")]
@@ -24,7 +23,6 @@ namespace Calemas.Erp.Dto
         public virtual string Descricao {get; set;}
 
         [Required(ErrorMessage="EstoqueMovimentacao - Campo Quantidade é Obrigatório")]
-
         public virtual decimal Quantidade {get; set;}
 
         

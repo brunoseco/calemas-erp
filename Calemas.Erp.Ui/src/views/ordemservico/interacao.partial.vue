@@ -33,10 +33,14 @@
                 <label for="observacao">Observação</label>
                 <textarea class="form-control" name="observacao" placeholder="Observação" v-model="model.observacao" />
             </div>
-            
+
             <div class="form-group col-md-6" data-reference="statusOrdemServicoId">
                 <label for="statusOrdemServicoId">Defina uma situação para o serviço</label>
                 <select v-select="{ dataitem: 'StatusOrdemServico', default: 'Selecione' }" v-model="model.statusOrdemServicoId" class="form-control" name="statusOrdemServicoId" required></select>
+            </div>
+            <div class="form-group col-md-6" data-reference="statusPagamentoId">
+                <label for="statusPagamentoId">Situação do PagSeguro</label>
+                <select v-select="{ dataitem: 'StatusPagamento', default: 'Selecione' }" v-model="model.statusPagamentoId" class="form-control" name="statusPagamentoId" required></select>
             </div>
             
         </div>

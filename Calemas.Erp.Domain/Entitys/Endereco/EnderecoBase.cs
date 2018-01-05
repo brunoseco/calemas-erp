@@ -1,4 +1,5 @@
 using Common.Domain.Base;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -24,6 +25,27 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual string Cidade { get; protected set; }
         public virtual string UF { get; protected set; }
 
+
+public class EnderecoFactoryBase
+        {
+            public virtual Endereco GetDefaultInstanceBase(dynamic data, CurrentUser user)
+            {
+                var construction = new Endereco(data.EnderecoId);
+
+                construction.SetarCEP(data.CEP);
+                construction.SetarRua(data.Rua);
+                construction.SetarNumero(data.Numero);
+                construction.SetarComplemento(data.Complemento);
+                construction.SetarBairro(data.Bairro);
+                construction.SetarCidade(data.Cidade);
+                construction.SetarUF(data.UF);
+
+
+				construction.SetAttributeBehavior(data.AttributeBehavior);
+        		return construction;
+            }
+
+        }
 
 		public virtual void SetarCEP(string cep)
 		{

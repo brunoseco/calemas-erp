@@ -46,9 +46,13 @@ namespace Calemas.Erp.Application
                 {
                     var ordemServico = this._serviceOrdemServico.GetOne(new OrdemServicoFilter { OrdemServicoId = domain.OrdemServicoId }).Result;
                     domain.OrdemServico = ordemServico;
+
                     domain.OrdemServico.StatusOrdemServico = null;
+                    domain.OrdemServico.StatusPagamento = null;
+
                     domain.OrdemServico.SetarDataSituacao(DateTime.Now);
                     domain.OrdemServico.SetarSituacao(_dto.StatusOrdemServicoId);
+                    domain.OrdemServico.SetarStatusPagamentoId(_dto.StatusPagamentoId);
                 }
 
                 return domain;

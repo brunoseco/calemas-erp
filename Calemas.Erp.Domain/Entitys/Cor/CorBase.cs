@@ -1,4 +1,5 @@
 using Common.Domain.Base;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -21,6 +22,22 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual string Nome { get; protected set; }
         public virtual string Hash { get; protected set; }
 
+
+public class CorFactoryBase
+        {
+            public virtual Cor GetDefaultInstanceBase(dynamic data, CurrentUser user)
+            {
+                var construction = new Cor(data.CorId,
+                                        data.Nome,
+                                        data.Hash);
+
+
+
+				construction.SetAttributeBehavior(data.AttributeBehavior);
+        		return construction;
+            }
+
+        }
 
 
 

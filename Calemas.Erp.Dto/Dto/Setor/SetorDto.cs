@@ -24,7 +24,6 @@ namespace Calemas.Erp.Dto
         public virtual int CorId {get; set;}
 
         [Required(ErrorMessage="Setor - Campo Ativo é Obrigatório")]
-
         public virtual bool Ativo {get; set;}
 
 

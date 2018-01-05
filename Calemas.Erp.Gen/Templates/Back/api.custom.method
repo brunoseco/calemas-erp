@@ -1,4 +1,4 @@
-﻿		[HttpPost("<#customMethodsVerb#>")]
+﻿		<#customMethodsVerb#>
         <#customMethodsRoute#>
         public async Task<IActionResult> <#customMethodsSignatureControllerTemplate#>
         {

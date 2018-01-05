@@ -46,6 +46,11 @@ namespace Calemas.Erp.Data.Repository
 				
 				queryFilter = queryFilter.Where(_=>_.StatusOrdemServicoId == filters.StatusOrdemServicoId);
 			}
+            if (filters.StatusPagamentoId.IsSent()) 
+			{ 
+				
+				queryFilter = queryFilter.Where(_=>_.StatusPagamentoId != null && _.StatusPagamentoId.Value == filters.StatusPagamentoId);
+			}
             if (filters.DataOcorrenciaStart.IsSent()) 
 			{ 
 				

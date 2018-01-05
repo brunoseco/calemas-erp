@@ -12,13 +12,11 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public OrdemServicoInteracao(int ordemservicointeracaoid, int ordemservicoid, DateTime dataconclusao, string descricao, bool foipropriocliente, int tecnicoid, int statusordemservicoid) :
-            base(ordemservicointeracaoid, ordemservicoid, dataconclusao, descricao, foipropriocliente, tecnicoid, statusordemservicoid)
+        public OrdemServicoInteracao(int ordemservicointeracaoid, int ordemservicoid, DateTime dataconclusao, string descricao, bool foipropriocliente, int tecnicoid, int statusordemservicoid, int statuspagamentoid) : base(ordemservicointeracaoid, ordemservicoid, dataconclusao, descricao, foipropriocliente, tecnicoid, statusordemservicoid, statuspagamentoid)
         {
-
         }
 
-		    public class OrdemServicoInteracaoFactory
+        public class OrdemServicoInteracaoFactory
         {
             public OrdemServicoInteracao GetDefaultInstance(dynamic data, CurrentUser user)
             {
@@ -28,7 +26,8 @@ namespace Calemas.Erp.Domain.Entitys
                                         data.Descricao,
                                         data.FoiProprioCliente,
                                         data.TecnicoId,
-                                        data.StatusOrdemServicoId);
+                                        data.StatusOrdemServicoId,
+                                        data.StatusPagamentoId);
 
                 construction.SetarObservacao(data.Observacao);
                 construction.SetarNomeClienteResponsavel(data.NomeClienteResponsavel);

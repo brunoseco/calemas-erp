@@ -1,4 +1,5 @@
 using Common.Domain.Base;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -30,12 +31,42 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual int TipoOrdemServicoId { get; protected set; }
         public virtual int AgendaId { get; protected set; }
         public virtual int StatusOrdemServicoId { get; protected set; }
+        public virtual int? StatusPagamentoId { get; protected set; }
         public virtual DateTime DataOcorrencia { get; protected set; }
         public virtual DateTime DataSituacao { get; protected set; }
         public virtual string Observacao { get; protected set; }
         public virtual string Descricao { get; protected set; }
 
 
+public class OrdemServicoFactoryBase
+        {
+            public virtual OrdemServico GetDefaultInstanceBase(dynamic data, CurrentUser user)
+            {
+                var construction = new OrdemServico(data.OrdemServicoId,
+                                        data.Protoco,
+                                        data.ResponsavelId,
+                                        data.ClienteId,
+                                        data.TipoOrdemServicoId,
+                                        data.AgendaId,
+                                        data.StatusOrdemServicoId,
+                                        data.DataOcorrencia,
+                                        data.DataSituacao);
+
+                construction.SetarStatusPagamentoId(data.StatusPagamentoId);
+                construction.SetarObservacao(data.Observacao);
+                construction.SetarDescricao(data.Descricao);
+
+
+				construction.SetAttributeBehavior(data.AttributeBehavior);
+        		return construction;
+            }
+
+        }
+
+		public virtual void SetarStatusPagamentoId(int? statuspagamentoid)
+		{
+			this.StatusPagamentoId = statuspagamentoid;
+		}
 		public virtual void SetarObservacao(string observacao)
 		{
 			this.Observacao = observacao;

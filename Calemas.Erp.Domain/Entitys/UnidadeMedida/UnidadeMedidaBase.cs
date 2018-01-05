@@ -1,4 +1,5 @@
 using Common.Domain.Base;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -19,6 +20,21 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual int UnidadeMedidaId { get; protected set; }
         public virtual string Nome { get; protected set; }
 
+
+public class UnidadeMedidaFactoryBase
+        {
+            public virtual UnidadeMedida GetDefaultInstanceBase(dynamic data, CurrentUser user)
+            {
+                var construction = new UnidadeMedida(data.UnidadeMedidaId,
+                                        data.Nome);
+
+
+
+				construction.SetAttributeBehavior(data.AttributeBehavior);
+        		return construction;
+            }
+
+        }
 
 
 

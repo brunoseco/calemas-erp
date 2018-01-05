@@ -1,4 +1,5 @@
 using Common.Domain.Base;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -25,6 +26,27 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual string Login { get; protected set; }
         public virtual string Senha { get; protected set; }
 
+
+public class InfraestruturaSiteFactoryBase
+        {
+            public virtual InfraestruturaSite GetDefaultInstanceBase(dynamic data, CurrentUser user)
+            {
+                var construction = new InfraestruturaSite(data.InfraestruturaSiteId,
+                                        data.Nome);
+
+                construction.SetarDescricao(data.Descricao);
+                construction.SetarLatitude(data.Latitude);
+                construction.SetarLongitude(data.Longitude);
+                construction.SetarEndpoint(data.Endpoint);
+                construction.SetarLogin(data.Login);
+                construction.SetarSenha(data.Senha);
+
+
+				construction.SetAttributeBehavior(data.AttributeBehavior);
+        		return construction;
+            }
+
+        }
 
 		public virtual void SetarDescricao(string descricao)
 		{

@@ -1,4 +1,5 @@
 using Common.Domain.Base;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -9,7 +10,7 @@ namespace Calemas.Erp.Domain.Entitys
         {
 
         }
-        public OrdemServicoInteracaoBase(int ordemservicointeracaoid, int ordemservicoid, DateTime dataconclusao, string descricao, bool foipropriocliente, int tecnicoid, int statusordemservicoid)
+        public OrdemServicoInteracaoBase(int ordemservicointeracaoid, int ordemservicoid, DateTime dataconclusao, string descricao, bool foipropriocliente, int tecnicoid, int statusordemservicoid, int statuspagamentoid)
         {
             this.OrdemServicoInteracaoId = ordemservicointeracaoid;
             this.OrdemServicoId = ordemservicoid;
@@ -18,6 +19,7 @@ namespace Calemas.Erp.Domain.Entitys
             this.FoiProprioCliente = foipropriocliente;
             this.TecnicoId = tecnicoid;
             this.StatusOrdemServicoId = statusordemservicoid;
+            this.StatusPagamentoId = statuspagamentoid;
 
         }
 
@@ -30,7 +32,31 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual string NomeClienteResponsavel { get; protected set; }
         public virtual int TecnicoId { get; protected set; }
         public virtual int StatusOrdemServicoId { get; protected set; }
+        public virtual int StatusPagamentoId { get; protected set; }
 
+
+public class OrdemServicoInteracaoFactoryBase
+        {
+            public virtual OrdemServicoInteracao GetDefaultInstanceBase(dynamic data, CurrentUser user)
+            {
+                var construction = new OrdemServicoInteracao(data.OrdemServicoInteracaoId,
+                                        data.OrdemServicoId,
+                                        data.DataConclusao,
+                                        data.Descricao,
+                                        data.FoiProprioCliente,
+                                        data.TecnicoId,
+                                        data.StatusOrdemServicoId,
+                                        data.StatusPagamentoId);
+
+                construction.SetarObservacao(data.Observacao);
+                construction.SetarNomeClienteResponsavel(data.NomeClienteResponsavel);
+
+
+				construction.SetAttributeBehavior(data.AttributeBehavior);
+        		return construction;
+            }
+
+        }
 
 		public virtual void SetarObservacao(string observacao)
 		{

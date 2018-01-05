@@ -17,12 +17,16 @@
             <select v-select="{ dataitem: 'Prioridade', default: 'Selecione' }" v-model="filter.prioridadeId" class="form-control" name="prioridadeId"></select>
         </div>
         <div class="form-group col-md-4">
+            <label for="tipoOrdemServicoId">Tipo do Serviço</label>
+            <select v-select="{ dataitem: 'TipoOrdemServico', default: 'Selecione' }" v-model="filter.tipoOrdemServicoId" class="form-control" name="tipoOrdemServicoId"></select>
+        </div>
+        <div class="form-group col-md-4">
             <label for="statusOrdemServicoId">Situação</label>
             <select v-select="{ dataitem: 'StatusOrdemServico', default: 'Selecione' }" v-model="filter.statusOrdemServicoId" class="form-control" name="statusOrdemServicoId"></select>
         </div>
         <div class="form-group col-md-4">
-            <label for="tipoOrdemServicoId">Tipo do Serviço</label>
-            <select v-select="{ dataitem: 'TipoOrdemServico', default: 'Selecione' }" v-model="filter.tipoOrdemServicoId" class="form-control" name="tipoOrdemServicoId"></select>
+            <label for="statusPagamentoId">Pagamento</label>
+            <select v-select="{ dataitem: 'StatusPagamento', default: 'Selecione' }" v-model="filter.statusPagamentoId" class="form-control" name="statusPagamentoId"></select>
         </div>
         <div class="form-group col-md-8">
             <label for="responsavelId">Responsável</label>

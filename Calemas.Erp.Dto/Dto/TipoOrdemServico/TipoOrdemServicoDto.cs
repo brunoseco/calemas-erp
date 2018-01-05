@@ -28,7 +28,6 @@ namespace Calemas.Erp.Dto
         public virtual int PrioridadeId {get; set;}
 
         [Required(ErrorMessage="TipoOrdemServico - Campo Ativo é Obrigatório")]
-
         public virtual bool Ativo {get; set;}
 
 

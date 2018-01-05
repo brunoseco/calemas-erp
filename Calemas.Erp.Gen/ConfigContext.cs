@@ -73,6 +73,7 @@ namespace Calemas.Erp.Gen
                     new TableInfo { TableName = "Financeiro", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "PlanoConta", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "TipoPlanoConta", MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
+                    new TableInfo { TableName = "StatusPagamento", MakeCrud = true, MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
 
                     new TableInfo { TableName = "CategoriaEstoque", MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "UnidadeMedida", MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
@@ -121,6 +122,7 @@ namespace Calemas.Erp.Gen
                     new TableInfo { TableName = "TipoOrdemServico", ClassNameFormated = "Tipo de ordem de serviço", MakeFront = true,  },
                     new TableInfo { TableName = "StatusOrdemServico", ClassNameFormated = "Situação de ordem de serviço", MakeFront = true,  },
                     new TableInfo { TableName = "Cor", ClassNameFormated = "Cores do sistema", MakeFront = true,  },
+                    new TableInfo { TableName = "StatusPagamento", ClassNameFormated = "Situação de Pagamento", MakeFront = true,  },
 
                     new TableInfo { TableName = "Cliente", ClassNameFormated = "Cliente", MakeFront = true,  },
                     new TableInfo { TableName = "Condominio", ClassNameFormated = "Condomínio", MakeFront = true,  },

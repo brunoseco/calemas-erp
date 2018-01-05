@@ -47,7 +47,7 @@ namespace Sso.Server.Api
 
             var tools = new List<dynamic>
             {
-                new { Name = "Tool", Value = "#/Url" },
+                new { Icon = "fa fa-edit", Name = "Tool", Value = "#/Url" },
             };
 
             var _toolsForSubscriber = JsonConvert.SerializeObject(tools);
@@ -135,7 +135,9 @@ namespace Sso.Server.Api
                         StandardScopes.Profile,
                         StandardScopes.Email,
                         "ssosa"
-                    }
+                    },
+					RequireConsent = false,
+                    AccessTokenLifetime = 43200
                 }
           
             };

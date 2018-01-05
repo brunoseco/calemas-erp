@@ -1,4 +1,5 @@
 using Common.Domain.Base;
+using Common.Domain.Model;
 using System;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -23,6 +24,23 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual string Descricao { get; protected set; }
         public virtual int TipoPlanoContaId { get; protected set; }
 
+
+public class PlanoContaFactoryBase
+        {
+            public virtual PlanoConta GetDefaultInstanceBase(dynamic data, CurrentUser user)
+            {
+                var construction = new PlanoConta(data.PlanoContaId,
+                                        data.Nome,
+                                        data.Descricao,
+                                        data.TipoPlanoContaId);
+
+
+
+				construction.SetAttributeBehavior(data.AttributeBehavior);
+        		return construction;
+            }
+
+        }
 
 
 

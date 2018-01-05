@@ -141,6 +141,7 @@ namespace Calemas.Erp.Data.Repository
                 _ => _.Cliente.Condominio,
                 _ => _.Cliente.Pessoa,
                 _ => _.StatusOrdemServico,
+                _ => _.StatusPagamento,
                 _ => _.TipoOrdemServico,
                 _ => _.Responsavel.Pessoa,
                 _ => _.CollectionOrdemServicoInteracao);
