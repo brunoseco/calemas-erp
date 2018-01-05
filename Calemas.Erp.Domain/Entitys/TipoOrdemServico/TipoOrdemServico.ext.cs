@@ -6,13 +6,14 @@ namespace Calemas.Erp.Domain.Entitys
 {
     public class TipoOrdemServico : TipoOrdemServicoBase
     {
+        public virtual Prioridade Prioridade { get; set; }
         public virtual Setor Setor { get; set; }
         public TipoOrdemServico()
         {
 
         }
 
-        public TipoOrdemServico(int tipoordemservicoid, string nome, int setorid, bool ativo) : base(tipoordemservicoid, nome, setorid, ativo)
+        public TipoOrdemServico(int tipoordemservicoid, string nome, int setorid, int prioridadeid, bool ativo) : base(tipoordemservicoid, nome, setorid, prioridadeid, ativo)
         {
         }
 
@@ -23,6 +24,7 @@ namespace Calemas.Erp.Domain.Entitys
                 var construction = new TipoOrdemServico(data.TipoOrdemServicoId,
                                         data.Nome,
                                         data.SetorId,
+                                        data.PrioridadeId,
                                         data.Ativo);
 
                 construction.SetarDescricao(data.Descricao);

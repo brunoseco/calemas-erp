@@ -42,7 +42,7 @@ namespace Calemas.Erp.Data.Repository
             var querybase = await this.ToListAsync(this.GetBySimplefilters(filters).Select(_ => new
             {
                 Id = _.TipoOrdemServicoId,
-                Name = _.Setor.Nome + " - " + _.Nome
+                Name = _.Setor.Nome + " - " + _.Nome + " - " + _.Prioridade.Nome
             }));
 
             return querybase;
@@ -136,7 +136,7 @@ namespace Calemas.Erp.Data.Repository
 
         protected override Expression<Func<TipoOrdemServico, object>>[] DataAgregation(Expression<Func<TipoOrdemServico, object>>[] includes, FilterBase filter)
         {
-            return includes.Add(_ => _.Setor);
+            return includes.Add(_ => _.Setor, _ => _.Prioridade);
         }
 
     }

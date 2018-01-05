@@ -20,10 +20,6 @@
                 <label for="dataOcorrencia">Data da Ocorrência</label>
                 <input type="datetime-local" class="form-control" name="dataOcorrencia" v-model="model.dataOcorrencia" required />
             </div>
-            <div class="form-group col-md-6" data-reference="prioridadeId">
-                <label for="prioridadeId">Prioridade</label>
-                <select v-select="{ dataitem: 'Prioridade', default: 'Selecione' }" v-model="model.prioridadeId" class="form-control" name="prioridadeId" required></select>
-            </div>
             <div class="form-group col-md-12">
                 <label for="descricao">Descrição</label>
                 <textarea class="form-control" name="descricao" placeholder="Descricao" v-model="model.descricao" />

@@ -18,7 +18,6 @@ namespace Calemas.Erp.Data.Map
             type.Property(t => t.Protoco).HasColumnName("Protoco").HasColumnType("varchar(50)");
             type.Property(t => t.ResponsavelId).HasColumnName("ResponsavelId");
             type.Property(t => t.ClienteId).HasColumnName("ClienteId");
-            type.Property(t => t.PrioridadeId).HasColumnName("PrioridadeId");
             type.Property(t => t.TipoOrdemServicoId).HasColumnName("TipoOrdemServicoId");
             type.Property(t => t.AgendaId).HasColumnName("AgendaId");
             type.Property(t => t.StatusOrdemServicoId).HasColumnName("StatusOrdemServicoId");

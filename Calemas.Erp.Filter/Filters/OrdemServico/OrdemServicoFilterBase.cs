@@ -10,7 +10,6 @@ namespace Calemas.Erp.Domain.Filter
         public virtual string Protoco { get; set;} 
         public virtual int ResponsavelId { get; set;} 
         public virtual int ClienteId { get; set;} 
-        public virtual int PrioridadeId { get; set;} 
         public virtual int TipoOrdemServicoId { get; set;} 
         public virtual int AgendaId { get; set;} 
         public virtual int StatusOrdemServicoId { get; set;} 

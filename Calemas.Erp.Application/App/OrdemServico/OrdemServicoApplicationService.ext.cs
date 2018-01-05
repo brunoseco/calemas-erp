@@ -99,14 +99,14 @@ namespace Calemas.Erp.Application
         private void ConfiguraAgendaColaborador(OrdemServicoDtoSpecialized dto, OrdemServico domain)
         {
             domain.Agenda.CollectionAgendaColaborador = new List<AgendaColaborador>();
-
             foreach (var item in dto.ResponsavelIds)
                 domain.Agenda.CollectionAgendaColaborador.Add(new AgendaColaborador(domain.Agenda.AgendaId, item));
         }
 
         private void DefineCorAgendaPelaPrioridade(OrdemServicoDtoSpecialized dto)
         {
-            var prioridade = this._prioridadeRepository.GetById(new PrioridadeFilter { PrioridadeId = dto.PrioridadeId }).Result;
+            var tipo = this._tipoOrdemServicoRepository.GetById(new TipoOrdemServicoFilter { TipoOrdemServicoId = dto.TipoOrdemServicoId }).Result;
+            var prioridade = this._prioridadeRepository.GetById(new PrioridadeFilter { PrioridadeId = tipo.PrioridadeId }).Result;
             dto.Agenda.CorId = prioridade.CorId;
         }
 

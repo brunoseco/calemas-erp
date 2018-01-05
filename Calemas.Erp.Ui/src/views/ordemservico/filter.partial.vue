@@ -1,7 +1,7 @@
-﻿<template>
+<template>
     <div class="row">
         <div class="form-group col-md-4">
-            <label for="protoco">Protoco</label>
+            <label for="protoco">Protocolo</label>
             <input type="text" class="form-control" name="protoco" placeholder="Protoco" v-model="filter.protoco" />
         </div>
         <div class="form-group col-md-8">
@@ -21,7 +21,7 @@
             <select v-select="{ dataitem: 'StatusOrdemServico', default: 'Selecione' }" v-model="filter.statusOrdemServicoId" class="form-control" name="statusOrdemServicoId"></select>
         </div>
         <div class="form-group col-md-4">
-            <label for="tipoOrdemServicoId">Tipo da O.S</label>
+            <label for="tipoOrdemServicoId">Tipo do Serviço</label>
             <select v-select="{ dataitem: 'TipoOrdemServico', default: 'Selecione' }" v-model="filter.tipoOrdemServicoId" class="form-control" name="tipoOrdemServicoId"></select>
         </div>
         <div class="form-group col-md-8">

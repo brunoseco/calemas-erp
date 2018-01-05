@@ -15,9 +15,10 @@
             <div class="form-group col-md-12">
                 <label for="setorId">Setor do Serviço</label>
                 <select v-select="{ dataitem: 'Setor', default: 'Selecione' }" v-model="model.setorId" class="form-control" name="setorId" required></select>
-
-                <!--<select-search :dataitem="'Setor'" v-model="model.setorId" :required="'true'" />-->
-
+            </div>
+            <div class="form-group col-md-12">
+                <label for="prioridadeId">Prioridade do Serviço</label>
+                <select v-select="{ dataitem: 'Prioridade', default: 'Selecione' }" v-model="model.prioridadeId" class="form-control" name="prioridadeId" required></select>
             </div>
             <div class="form-group col-md-12">
                 <div class="clearfix">&nbsp;</div>

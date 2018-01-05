@@ -25,10 +25,6 @@ namespace Calemas.Erp.Dto
 
         
 
-        public virtual int PrioridadeId {get; set;}
-
-        
-
         public virtual int TipoOrdemServicoId {get; set;}
 
         
