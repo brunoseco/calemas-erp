@@ -9,14 +9,13 @@ namespace Calemas.Erp.Domain.Entitys
         {
 
         }
-        public OrdemServicoBase(int ordemservicoid, string protoco, int responsavelid, int clienteid, int prioridadeid, int setorid, int tipoordemservicoid, int agendaid, int statusordemservicoid, DateTime dataocorrencia, DateTime datasituacao)
+        public OrdemServicoBase(int ordemservicoid, string protoco, int responsavelid, int clienteid, int prioridadeid, int tipoordemservicoid, int agendaid, int statusordemservicoid, DateTime dataocorrencia, DateTime datasituacao)
         {
             this.OrdemServicoId = ordemservicoid;
             this.Protoco = protoco;
             this.ResponsavelId = responsavelid;
             this.ClienteId = clienteid;
             this.PrioridadeId = prioridadeid;
-            this.SetorId = setorid;
             this.TipoOrdemServicoId = tipoordemservicoid;
             this.AgendaId = agendaid;
             this.StatusOrdemServicoId = statusordemservicoid;
@@ -30,7 +29,6 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual int ResponsavelId { get; protected set; }
         public virtual int ClienteId { get; protected set; }
         public virtual int PrioridadeId { get; protected set; }
-        public virtual int SetorId { get; protected set; }
         public virtual int TipoOrdemServicoId { get; protected set; }
         public virtual int AgendaId { get; protected set; }
         public virtual int StatusOrdemServicoId { get; protected set; }

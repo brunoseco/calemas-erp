@@ -29,10 +29,6 @@ namespace Calemas.Erp.Dto
 
         
 
-        public virtual int SetorId {get; set;}
-
-        
-
         public virtual int TipoOrdemServicoId {get; set;}
 
         

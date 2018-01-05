@@ -9,6 +9,7 @@ namespace Calemas.Erp.Domain.Filter
         public virtual int TipoOrdemServicoId { get; set;} 
         public virtual string Nome { get; set;} 
         public virtual string Descricao { get; set;} 
+        public virtual int SetorId { get; set;} 
         public virtual bool? Ativo { get; set;} 
         public virtual int UserCreateId { get; set;} 
         public virtual DateTime UserCreateDateStart { get; set;} 

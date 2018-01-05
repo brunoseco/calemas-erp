@@ -19,6 +19,10 @@ namespace Calemas.Erp.Dto
 
         public virtual string Descricao {get; set;}
 
+        
+
+        public virtual int SetorId {get; set;}
+
         [Required(ErrorMessage="TipoOrdemServico - Campo Ativo é Obrigatório")]
 
         public virtual bool Ativo {get; set;}

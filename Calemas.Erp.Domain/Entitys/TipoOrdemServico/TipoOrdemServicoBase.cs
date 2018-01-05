@@ -9,10 +9,11 @@ namespace Calemas.Erp.Domain.Entitys
         {
 
         }
-        public TipoOrdemServicoBase(int tipoordemservicoid, string nome, bool ativo)
+        public TipoOrdemServicoBase(int tipoordemservicoid, string nome, int setorid, bool ativo)
         {
             this.TipoOrdemServicoId = tipoordemservicoid;
             this.Nome = nome;
+            this.SetorId = setorid;
             this.Ativo = ativo;
 
         }
@@ -20,6 +21,7 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual int TipoOrdemServicoId { get; protected set; }
         public virtual string Nome { get; protected set; }
         public virtual string Descricao { get; protected set; }
+        public virtual int SetorId { get; protected set; }
         public virtual bool Ativo { get; protected set; }
 
 

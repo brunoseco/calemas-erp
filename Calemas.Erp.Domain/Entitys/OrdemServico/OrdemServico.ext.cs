@@ -42,9 +42,9 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public OrdemServico(int ordemservicoid, string protoco, int responsavelid, int clienteid, int prioridadeid, int setorid, int tipoordemservicoid, int agendaid, int statusordemservicoid, DateTime dataocorrencia, DateTime datasituacao)
-            : base(ordemservicoid, protoco, responsavelid, clienteid, prioridadeid, setorid, tipoordemservicoid, agendaid, statusordemservicoid, dataocorrencia, datasituacao)
-        { }
+        public OrdemServico(int ordemservicoid, string protoco, int responsavelid, int clienteid, int prioridadeid, int tipoordemservicoid, int agendaid, int statusordemservicoid, DateTime dataocorrencia, DateTime datasituacao) : base(ordemservicoid, protoco, responsavelid, clienteid, prioridadeid, tipoordemservicoid, agendaid, statusordemservicoid, dataocorrencia, datasituacao)
+        {
+        }
 
         public class OrdemServicoFactory
         {
@@ -55,7 +55,6 @@ namespace Calemas.Erp.Domain.Entitys
                                         data.ResponsavelId,
                                         data.ClienteId,
                                         data.PrioridadeId,
-                                        data.SetorId,
                                         data.TipoOrdemServicoId,
                                         data.AgendaId,
                                         data.StatusOrdemServicoId,

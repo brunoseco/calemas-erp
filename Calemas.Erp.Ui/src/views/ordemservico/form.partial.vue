@@ -1,4 +1,4 @@
-﻿<template>
+<template>
     <fieldset>
         <legend>Dados Básicos</legend>
         <div class="row">
@@ -12,12 +12,8 @@
                 <label for="clienteId">Cliente</label>
                 <select v-select="{ dataitem: 'Cliente', default: 'Selecione' }" v-model="model.clienteId" class="form-control" name="clienteId" required></select>
             </div>
-            <div class="form-group col-md-6" data-reference="setorId">
-                <label for="setorId">Setor</label>
-                <select v-select="{ dataitem: 'Setor', default: 'Selecione' }" v-model="model.setorId" class="form-control" name="setorId" required></select>
-            </div>
-            <div class="form-group col-md-6" data-reference="tipoOrdemServicoId">
-                <label for="tipoOrdemServicoId">Tipo da O.S</label>
+            <div class="form-group col-md-12" data-reference="tipoOrdemServicoId">
+                <label for="tipoOrdemServicoId">Tipo do Serviço</label>
                 <select v-select="{ dataitem: 'TipoOrdemServico', default: 'Selecione' }" v-model="model.tipoOrdemServicoId" class="form-control" name="tipoOrdemServicoId" required></select>
             </div>
             <div class="form-group col-md-6" data-reference="dataOcorrencia">

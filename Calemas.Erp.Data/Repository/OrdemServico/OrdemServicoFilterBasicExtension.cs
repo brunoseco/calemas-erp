@@ -36,11 +36,6 @@ namespace Calemas.Erp.Data.Repository
 				
 				queryFilter = queryFilter.Where(_=>_.PrioridadeId == filters.PrioridadeId);
 			}
-            if (filters.SetorId.IsSent()) 
-			{ 
-				
-				queryFilter = queryFilter.Where(_=>_.SetorId == filters.SetorId);
-			}
             if (filters.TipoOrdemServicoId.IsSent()) 
 			{ 
 				
