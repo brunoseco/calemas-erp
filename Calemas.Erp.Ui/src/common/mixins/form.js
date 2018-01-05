@@ -2,6 +2,10 @@ import Vue from 'vue'
 import VueMask from 'di-vue-mask'
 Vue.use(VueMask);
 
+//import bselect from 'bselect'
+//import '../../../static/lib/select2/select2.min.css'
+
+
 export default {
     data() {
         return {
@@ -16,4 +20,11 @@ export default {
             }
         }
     },
+    mounted() {
+        //let selects = $("select");
+        //for (var i = 0; i < selects.length; i++) {
+        //    let select = $(selects[i]);
+        //    select.bselect()
+        //}
+    }
 }

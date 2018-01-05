@@ -1,4 +1,4 @@
-﻿<template>
+<template>
     <fieldset>
         <legend>Dados</legend>
         <div class="row">
@@ -35,7 +35,7 @@
             </div>
             
             <div class="form-group col-md-6" data-reference="statusOrdemServicoId">
-                <label for="statusOrdemServicoId">Situação da O.S</label>
+                <label for="statusOrdemServicoId">Defina uma situação para o serviço</label>
                 <select v-select="{ dataitem: 'StatusOrdemServico', default: 'Selecione' }" v-model="model.statusOrdemServicoId" class="form-control" name="statusOrdemServicoId" required></select>
             </div>
             

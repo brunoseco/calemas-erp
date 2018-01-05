@@ -54,3 +54,53 @@
 
     }
 </script>
+
+<style>
+    .dropdown {
+        box-sizing: border-box;
+        position: relative;
+    }
+
+        .dropdown > .field {
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .dropdown > .options {
+            box-sizing: border-box;
+            max-height: 200px;
+            min-width: 100%;
+            position: absolute;
+            z-index: 1000;
+            display: none;
+            padding: 4px 0;
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+            .dropdown > .options > .option {
+                cursor: pointer;
+                box-sizing: border-box;
+                display: block;
+                margin: 0;
+                padding: 2px 6px;
+                white-space: nowrap;
+            }
+
+                .dropdown > .options > .option:hover {
+                    background-color: #f5f5f5;
+                }
+
+                .dropdown > .options > .option.disabled {
+                    color: #bbb;
+                }
+
+                .dropdown > .options > .option.highlight {
+                    background-color: #428bca;
+                    color: #fff;
+                }
+</style>
