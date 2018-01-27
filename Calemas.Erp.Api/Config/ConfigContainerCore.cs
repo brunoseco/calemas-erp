@@ -124,6 +124,10 @@ namespace Calemas.Erp.Api
 			services.AddScoped<IEstoqueMovimentacaoService, EstoqueMovimentacaoService>();
 			services.AddScoped<IEstoqueMovimentacaoRepository, EstoqueMovimentacaoRepository>();
 
+			services.AddScoped<IEstoqueMovimentacaoColaboradorApplicationService, EstoqueMovimentacaoColaboradorApplicationService>();
+			services.AddScoped<IEstoqueMovimentacaoColaboradorService, EstoqueMovimentacaoColaboradorService>();
+			services.AddScoped<IEstoqueMovimentacaoColaboradorRepository, EstoqueMovimentacaoColaboradorRepository>();
+
 			services.AddScoped<ISolicitacaoEstoqueApplicationService, SolicitacaoEstoqueApplicationService>();
 			services.AddScoped<ISolicitacaoEstoqueService, SolicitacaoEstoqueService>();
 			services.AddScoped<ISolicitacaoEstoqueRepository, SolicitacaoEstoqueRepository>();

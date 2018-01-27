@@ -1,13 +1,18 @@
 using Calemas.Erp.Domain.Validations;
 using Common.Domain.Model;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Calemas.Erp.Domain.Entitys
 {
     public class EstoqueMovimentacao : EstoqueMovimentacaoBase
     {
-
+        public virtual Estoque Estoque { get; set; }
         public virtual Colaborador Colaborador { get; set; }
+        public virtual EstoqueMovimentacaoColaborador EstoqueMovimentacaoColaborador { get; set; }
+
+        [NotMapped]
+        public bool AtualizaEstoqueColaborador { get; set; }
 
         public EstoqueMovimentacao()
         {
@@ -20,7 +25,6 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public virtual Estoque Estoque { get; set; }
 
         public class EstoqueMovimentacaoFactory
         {
@@ -33,11 +37,16 @@ namespace Calemas.Erp.Domain.Entitys
                                         data.Quantidade,
                                         data.ResponsavelId);
 
+                construction.SetarAtualizaEstoqueColaborador(data.AtualizaEstoqueColaborador);
 
-
-				return construction;
+                return construction;
             }
 
+        }
+
+        public virtual void SetarAtualizaEstoqueColaborador(bool atualizaEstoqueColaborador)
+        {
+            this.AtualizaEstoqueColaborador = atualizaEstoqueColaborador;
         }
 
         public bool IsValid()
@@ -46,6 +55,6 @@ namespace Calemas.Erp.Domain.Entitys
             return base._validationResult.IsValid;
 
         }
-        
+
     }
 }

@@ -25,9 +25,9 @@ namespace Calemas.Erp.Domain.Services
             base.Remove(itens);
         }
 
-        public bool Movimentar(Estoque entity, decimal quantidade, bool entrada)
+        public bool AtualizarQuantidade(Estoque entity, decimal quantidade, bool entrada)
         {
-            entity.Movimentar(quantidade, entrada);
+            entity.AtualizarQuantidade(quantidade, entrada);
             this._rep.Update(entity);
             return true;
         }

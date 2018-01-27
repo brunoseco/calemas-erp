@@ -9,8 +9,8 @@ namespace Calemas.Erp.Dto
 	{
 
         public  ColaboradorDto Colaborador { get; set;} 
-        public  EstoqueDto Estoque { get; set;} 
+        public  EstoqueDto Estoque { get; set;}
 
-		
-	}
+        public bool AtualizaEstoqueColaborador { get; set; }
+    }
 }

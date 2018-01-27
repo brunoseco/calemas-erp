@@ -39,6 +39,9 @@
                             <router-link :to="'/estoquemovimentacao'" class="nav-link">Movimentar</router-link>
                         </li>
                         <li class="nav-item">
+                            <router-link :to="'/estoquemovimentacaocolaborador'" class="nav-link">Colaborador</router-link>
+                        </li>
+                        <li class="nav-item">
                             <router-link :to="'/solicitacaoestoque'" class="nav-link">Solicitar</router-link>
                         </li>
                         <li class="nav-item">

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Collections.Generic;
 using Common.Domain.Base;
 using Common.Domain.Model;
+using System.Threading.Tasks;
 
 namespace Calemas.Erp.Application
 {
@@ -23,6 +24,11 @@ namespace Calemas.Erp.Application
         {
             return base.MapperDomainToResult<EstoqueMovimentacaoDtoSpecializedResult>(filter, dataList) as IEnumerable<TDS>;
         }
-        
+
+        public override Task<EstoqueMovimentacaoDto> Save(EstoqueMovimentacaoDto entity, bool questionToContinue = false)
+        {
+            return base.Save(entity, questionToContinue);
+        }
+
     }
 }

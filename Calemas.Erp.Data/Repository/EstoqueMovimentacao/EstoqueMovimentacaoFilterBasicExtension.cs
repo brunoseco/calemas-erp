@@ -41,6 +41,11 @@ namespace Calemas.Erp.Data.Repository
 				
 				queryFilter = queryFilter.Where(_=>_.ResponsavelId == filters.ResponsavelId);
 			}
+            if (filters.EstoqueMovimentacaoColaboradorId.IsSent()) 
+			{ 
+				
+				queryFilter = queryFilter.Where(_=>_.EstoqueMovimentacaoColaboradorId != null && _.EstoqueMovimentacaoColaboradorId.Value == filters.EstoqueMovimentacaoColaboradorId);
+			}
             if (filters.UserCreateId.IsSent()) 
 			{ 
 				

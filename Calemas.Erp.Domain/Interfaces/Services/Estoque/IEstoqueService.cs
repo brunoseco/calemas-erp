@@ -7,6 +7,6 @@ namespace Calemas.Erp.Domain.Interfaces.Services
 {
     public interface IEstoqueService : IServiceBase<Estoque, EstoqueFilter>
     {
-        bool Movimentar(Estoque estoque, decimal quantidade, bool entrada);
+        bool AtualizarQuantidade(Estoque estoque, decimal quantidade, bool entrada);
     }
 }

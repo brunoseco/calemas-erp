@@ -46,7 +46,7 @@ namespace Calemas.Erp.Domain.Entitys
 
         }
 
-        public void Movimentar(decimal quantidade, bool entrada)
+        public void AtualizarQuantidade(decimal quantidade, bool entrada)
         {
             if (entrada)
                 this.Quantidade += quantidade;

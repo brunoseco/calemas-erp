@@ -20,10 +20,28 @@ namespace Calemas.Erp.Domain.Services
 
         public override async Task<EstoqueMovimentacao> DomainOrchestration(EstoqueMovimentacao entity, EstoqueMovimentacao entityOld)
         {
-            var estoque = await _repEstoque.GetById(new EstoqueFilter() { EstoqueId = entity.EstoqueId });
-            estoque.Movimentar(entity.Quantidade, entity.Entrada);
-            entity.Estoque = estoque;
+            await this.AtualizaQuantidadeNoEstoque(entity);
+            await this.AtualizaEstoqueColaborador(entity);
             return entity;
+        }
+
+        private async Task AtualizaEstoqueColaborador(EstoqueMovimentacao entity)
+        {
+            await Task.Run(() =>
+            {
+                if (entity.AtualizaEstoqueColaborador)
+                {
+                    var estoqueMovimentacaoColaborador = new EstoqueMovimentacaoColaborador(0, entity.ResponsavelId, !entity.Entrada, entity.Quantidade);
+                    entity.EstoqueMovimentacaoColaborador = estoqueMovimentacaoColaborador;
+                }
+            });
+        }
+
+        private async Task AtualizaQuantidadeNoEstoque(EstoqueMovimentacao entity)
+        {
+            var estoque = await _repEstoque.GetById(new EstoqueFilter() { EstoqueId = entity.EstoqueId });
+            estoque.AtualizarQuantidade(entity.Quantidade, entity.Entrada);
+            entity.Estoque = estoque;
         }
 
         protected override EstoqueMovimentacao AddDefault(EstoqueMovimentacao estoquemovimentacao)

@@ -1,6 +1,7 @@
 import modal from 'vue-strap/src/Modal'
 import pagination from 'vue-pagination-bootstrap'
 import loading from '../loading'
+import filterBase from './filter'
 
 import { Api } from '../api'
 import { Notification } from '../notification'
@@ -11,6 +12,7 @@ export default {
         modal,
         pagination
     },
+    mixins: [ filterBase ],
     data() {
         return {
 
@@ -20,7 +22,6 @@ export default {
                 edit: null,
                 delete: null,
                 detail: null,
-                filter: null
             },
 
             nameCreate: 'form-create',
@@ -31,24 +32,12 @@ export default {
             modalEditIsOpen: false,
             modalDeleteIsOpen: false,
             modalDetailIsOpen: false,
-            filterPartialIsOpen: false,
 
             detail: null,
             model: {},
             modelEmpty: Object.assign({}, this.model, {}),
 
-            filterOnEnter: true,
             notification: new Notification(this),
-            filter: {
-                pageSize: 10,
-                pageIndex: 1,
-                isPaginate: true,
-                queryOptimizerBehavior: "",
-            },
-            result: {
-                total: 0,
-                itens: []
-            }
         }
     },
     computed: {
@@ -70,11 +59,6 @@ export default {
         apiDetail: function () {
             let resource = this.resource;
             if (this.resources.detail) resource = this.resources.detail;
-            return new Api(resource);
-        },
-        apiFilter: function () {
-            let resource = this.resource;
-            if (this.resources.filter) resource = this.resources.filter;
             return new Api(resource);
         },
         formCreate: function () {
@@ -134,10 +118,7 @@ export default {
                     this.detail = data.data;
             });
         },
-        openFilter: function () {
-            this.filterPartialIsOpen = !this.filterPartialIsOpen;
-        },
-
+        
         closeCreate: function () {
             this.modalCreateIsOpen = false;
         },
@@ -211,33 +192,7 @@ export default {
                 this.defaultErrorResult(err);
             });
         },
-
-        executeFilter: function () {
-            this.executeLoad(this.filter);
-        },
-        executePageChanged: function (index) {
-            this.filter.pageIndex = index;
-            this.executeLoad(this.filter);
-        },
-        executeOrderBy: function (field) {
-            let type = 0;
-            if (this.filter.orderByType == 0) type = 1;
-            this.filter.orderFields = [field];
-            this.filter.orderByType = type;
-            this.filter.isOrderByDynamic = true;
-            this.executeLoad(this.filter);
-        },
-        executeLoad: function (filter) {
-            this.showLoading();
-            this.apiFilter.filters = filter;
-            this.apiFilter.get().then(data => {
-                this.result.total = data.summary.total;
-                this.result.itens = data.dataList;
-                this.hideLoading();
-            });
-        },
-
-
+                
         formCustom: function (frm) {
             return new Form(frm);
         },
@@ -270,8 +225,5 @@ export default {
 
     },
 
-    mounted() {
-        if (this.filterOnEnter)
-            this.executeFilter();
-    }
+    mounted() {}
 }
