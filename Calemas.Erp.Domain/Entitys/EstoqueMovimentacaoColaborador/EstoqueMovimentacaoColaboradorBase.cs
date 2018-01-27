@@ -10,10 +10,11 @@ namespace Calemas.Erp.Domain.Entitys
         {
 
         }
-        public EstoqueMovimentacaoColaboradorBase(int estoquemovimentacaocolaboradorid, int colaboradorid, bool entrada, decimal quantidade)
+        public EstoqueMovimentacaoColaboradorBase(int estoquemovimentacaocolaboradorid, int colaboradorid, int estoquemovimentacaoid, bool entrada, decimal quantidade)
         {
             this.EstoqueMovimentacaoColaboradorId = estoquemovimentacaocolaboradorid;
             this.ColaboradorId = colaboradorid;
+            this.EstoqueMovimentacaoId = estoquemovimentacaoid;
             this.Entrada = entrada;
             this.Quantidade = quantidade;
 
@@ -21,6 +22,7 @@ namespace Calemas.Erp.Domain.Entitys
 
         public virtual int EstoqueMovimentacaoColaboradorId { get; protected set; }
         public virtual int ColaboradorId { get; protected set; }
+        public virtual int EstoqueMovimentacaoId { get; protected set; }
         public virtual bool Entrada { get; protected set; }
         public virtual string Descricao { get; protected set; }
         public virtual decimal Quantidade { get; protected set; }
@@ -32,6 +34,7 @@ public class EstoqueMovimentacaoColaboradorFactoryBase
             {
                 var construction = new EstoqueMovimentacaoColaborador(data.EstoqueMovimentacaoColaboradorId,
                                         data.ColaboradorId,
+                                        data.EstoqueMovimentacaoId,
                                         data.Entrada,
                                         data.Quantidade);
 

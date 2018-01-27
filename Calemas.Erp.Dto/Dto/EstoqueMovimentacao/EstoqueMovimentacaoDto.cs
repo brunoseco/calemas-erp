@@ -27,11 +27,11 @@ namespace Calemas.Erp.Dto
 
         
 
-        public virtual int ResponsavelId {get; set;}
+        public virtual int? MotivoEstoqueMovimentacaoId {get; set;}
 
         
 
-        public virtual int? EstoqueMovimentacaoColaboradorId {get; set;}
+        public virtual int ResponsavelId {get; set;}
 
 
 		

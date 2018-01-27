@@ -6,14 +6,15 @@ namespace Calemas.Erp.Domain.Entitys
 {
     public class EstoqueMovimentacaoColaborador : EstoqueMovimentacaoColaboradorBase
     {
+        public virtual EstoqueMovimentacao EstoqueMovimentacao { get; set; }
         public virtual Colaborador Colaborador { get; set; }
         public EstoqueMovimentacaoColaborador()
         {
 
         }
 
-        public EstoqueMovimentacaoColaborador(int estoquemovimentacaocolaboradorid, int colaboradorid, bool entrada, decimal quantidade) :
-            base(estoquemovimentacaocolaboradorid, colaboradorid, entrada, quantidade)
+        public EstoqueMovimentacaoColaborador(int estoquemovimentacaocolaboradorid, int colaboradorid, int estoquemovimentacaoid, bool entrada, decimal quantidade) :
+            base(estoquemovimentacaocolaboradorid, colaboradorid, estoquemovimentacaoid, entrada, quantidade)
         {
 
         }

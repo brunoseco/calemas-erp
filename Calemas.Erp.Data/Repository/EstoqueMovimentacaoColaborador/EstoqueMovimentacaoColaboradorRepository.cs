@@ -52,13 +52,27 @@ namespace Calemas.Erp.Data.Repository
 
         public async Task<IEnumerable<dynamic>> GetDataListCustom(EstoqueMovimentacaoColaboradorFilter filters)
         {
-            var querybase = await this.ToListAsync(this.GetBySimplefilters(filters).GroupBy(_ => _.Colaborador).Select(_ => new
+            var querybase = await this.ToListAsync(this.GetBySimplefilters(filters).Select(_ => new
             {
-                Nome = _.Key.Pessoa.Nome,
-                Quantidade = _.Sum(__ => __.Quantidade * (__.Entrada ? 1 : -1))
+                EstoqueId = _.EstoqueMovimentacao.EstoqueId,
+                Estoque = _.EstoqueMovimentacao.Estoque.Nome,
+                ColaboradorId = _.ColaboradorId,
+                Colaborador = _.Colaborador.Pessoa.Nome,
+                Quantidade = _.Quantidade,
+                Entrada = _.Entrada
             }));
 
-            return querybase;
+            if (filters.EstoqueId.IsSent())
+                querybase = querybase.Where(_ => _.EstoqueId == filters.EstoqueId).ToList();
+
+            return querybase.GroupBy(_ => new { _.EstoqueId, _.Estoque, _.ColaboradorId, _.Colaborador }).Select(_ => new
+            {
+                EstoqueId = _.Key.EstoqueId,
+                Estoque = _.Key.Estoque,
+                ColaboradorId = _.Key.ColaboradorId,
+                Colaborador = _.Key.Colaborador,
+                Quantidade = _.Sum(__ => __.Quantidade * (__.Entrada ? 1 : -1))
+            }).ToList();
         }
 
         public async Task<dynamic> GetDataCustom(EstoqueMovimentacaoColaboradorFilter filters)
@@ -138,7 +152,7 @@ namespace Calemas.Erp.Data.Repository
 
         protected override Expression<Func<EstoqueMovimentacaoColaborador, object>>[] DataAgregation(Expression<Func<EstoqueMovimentacaoColaborador, object>>[] includes, FilterBase filter)
         {
-            return includes.Add(_ => _.Colaborador.Pessoa);
+            return includes.Add(_ => _.Colaborador.Pessoa, _ => _.EstoqueMovimentacao.Estoque);
         }
 
     }

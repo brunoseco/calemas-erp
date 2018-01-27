@@ -26,8 +26,8 @@ namespace Calemas.Erp.Domain.Entitys
         public virtual bool Entrada { get; protected set; }
         public virtual string Descricao { get; protected set; }
         public virtual decimal Quantidade { get; protected set; }
+        public virtual int? MotivoEstoqueMovimentacaoId { get; protected set; }
         public virtual int ResponsavelId { get; protected set; }
-        public virtual int? EstoqueMovimentacaoColaboradorId { get; protected set; }
 
 
 public class EstoqueMovimentacaoFactoryBase
@@ -41,7 +41,7 @@ public class EstoqueMovimentacaoFactoryBase
                                         data.Quantidade,
                                         data.ResponsavelId);
 
-                construction.SetarEstoqueMovimentacaoColaboradorId(data.EstoqueMovimentacaoColaboradorId);
+                construction.SetarMotivoEstoqueMovimentacaoId(data.MotivoEstoqueMovimentacaoId);
 
 
 				construction.SetAttributeBehavior(data.AttributeBehavior);
@@ -50,9 +50,9 @@ public class EstoqueMovimentacaoFactoryBase
 
         }
 
-		public virtual void SetarEstoqueMovimentacaoColaboradorId(int? estoquemovimentacaocolaboradorid)
+		public virtual void SetarMotivoEstoqueMovimentacaoId(int? motivoestoquemovimentacaoid)
 		{
-			this.EstoqueMovimentacaoColaboradorId = estoquemovimentacaocolaboradorid;
+			this.MotivoEstoqueMovimentacaoId = motivoestoquemovimentacaoid;
 		}
 
 

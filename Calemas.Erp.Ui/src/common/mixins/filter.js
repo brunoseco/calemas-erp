@@ -16,6 +16,7 @@ export default {
                 filter: null
             },
 
+            getByDataListCustom: false,
             methodGet: null,
 
             filterPartialIsOpen: false,
@@ -73,6 +74,7 @@ export default {
 
             var request = this.apiFilter.get;
             if (this.methodGet) request = this.apiFilter.getCustom
+            else if (this.getByDataListCustom) request = this.apiFilter.getDataListCustom;
 
             request(this.methodGet).then(data => {
                 if (data.summary) this.result.total = data.summary.total;

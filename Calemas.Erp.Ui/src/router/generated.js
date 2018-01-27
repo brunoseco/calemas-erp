@@ -6,6 +6,7 @@ const routers = [
     { path: 'estoque', name: 'Estoque', component: function (resolve) { require(['@/views/estoque'], resolve) } },
     { path: 'estoquemovimentacao', name: 'Movimentação de estoque', component: function (resolve) { require(['@/views/estoquemovimentacao'], resolve) } },
     { path: 'estoquemovimentacaocolaborador', name: 'Movimentação de estoque do colaborador', component: function (resolve) { require(['@/views/estoquemovimentacaocolaborador'], resolve) } },
+    { path: 'motivoestoquemovimentacao', name: 'Motivo de movimentação de estoque', component: function (resolve) { require(['@/views/motivoestoquemovimentacao'], resolve) } },
     { path: 'solicitacaoestoque', name: 'Solicitação de movimentação de estoque', component: function (resolve) { require(['@/views/solicitacaoestoque'], resolve) } },
     { path: 'solicitacaoestoquemovimentacao', name: 'Solicitação de movimentação de estoque', component: function (resolve) { require(['@/views/solicitacaoestoquemovimentacao'], resolve) } },
     { path: 'ordemservico', name: 'Ordem de serviço', component: function (resolve) { require(['@/views/ordemservico'], resolve) } },

@@ -50,6 +50,9 @@
                         <li class="nav-item">
                             <router-link :to="'/categoriaestoque'" class="nav-link">Categoria de Estoque</router-link>
                         </li>
+                        <li class="nav-item">
+                            <router-link :to="'/motivoestoquemovimentacao'" class="nav-link">Motivos</router-link>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item nav-dropdown">

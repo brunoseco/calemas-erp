@@ -36,15 +36,15 @@ namespace Calemas.Erp.Data.Repository
 				
 				queryFilter = queryFilter.Where(_=>_.Quantidade == filters.Quantidade);
 			}
+            if (filters.MotivoEstoqueMovimentacaoId.IsSent()) 
+			{ 
+				
+				queryFilter = queryFilter.Where(_=>_.MotivoEstoqueMovimentacaoId != null && _.MotivoEstoqueMovimentacaoId.Value == filters.MotivoEstoqueMovimentacaoId);
+			}
             if (filters.ResponsavelId.IsSent()) 
 			{ 
 				
 				queryFilter = queryFilter.Where(_=>_.ResponsavelId == filters.ResponsavelId);
-			}
-            if (filters.EstoqueMovimentacaoColaboradorId.IsSent()) 
-			{ 
-				
-				queryFilter = queryFilter.Where(_=>_.EstoqueMovimentacaoColaboradorId != null && _.EstoqueMovimentacaoColaboradorId.Value == filters.EstoqueMovimentacaoColaboradorId);
 			}
             if (filters.UserCreateId.IsSent()) 
 			{ 

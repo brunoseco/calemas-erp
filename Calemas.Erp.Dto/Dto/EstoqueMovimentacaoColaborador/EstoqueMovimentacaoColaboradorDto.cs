@@ -15,6 +15,10 @@ namespace Calemas.Erp.Dto
 
         public virtual int ColaboradorId {get; set;}
 
+        
+
+        public virtual int EstoqueMovimentacaoId {get; set;}
+
         [Required(ErrorMessage="EstoqueMovimentacaoColaborador - Campo Entrada é Obrigatório")]
         public virtual bool Entrada {get; set;}
 

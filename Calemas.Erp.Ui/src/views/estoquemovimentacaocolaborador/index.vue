@@ -47,16 +47,18 @@
                         <strong>Resultado</strong>
                     </div>
                     <div class="card-block no-padding">
-                        <table class="table has-tickbox table-striped table-sm">
+                        <table class="table table-striped table-sm">
                             <thead class="">
                                 <tr>
-                                    <th>Nome</th>
-                                    <th>Quantidade Atual</th>
+                                    <th>Colaborador</th>
+                                    <th>Estoque</th>
+                                    <th>Quantidade</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr v-for="item in result.itens" class="animated fadeIn">
-                                    <td>{{ item.nome }}</td>
+                                    <td>{{ item.colaborador }}</td>
+                                    <td>{{ item.estoque }}</td>
                                     <td>{{ item.quantidade }}</td>
                                 </tr>
                             </tbody>
@@ -135,6 +137,7 @@
         mixins: [crudBase],
         data() {
             return {
+                getByDataListCustom: true,
                 resource: "estoquemovimentacaocolaborador",
             }
         }

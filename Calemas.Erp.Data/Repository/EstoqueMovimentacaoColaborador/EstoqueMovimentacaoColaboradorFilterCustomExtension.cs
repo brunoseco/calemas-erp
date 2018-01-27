@@ -12,6 +12,8 @@ namespace Calemas.Erp.Data.Repository
         {
             var queryFilter = queryBase;
 
+            if (filters.EstoqueId.IsSent())
+                queryFilter = queryFilter.Where(_ => _.EstoqueMovimentacao.EstoqueId == filters.EstoqueId);
 
             return queryFilter;
         }

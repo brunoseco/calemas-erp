@@ -1,6 +1,7 @@
 using Calemas.Erp.Domain.Validations;
 using Common.Domain.Model;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Calemas.Erp.Domain.Entitys
@@ -9,7 +10,7 @@ namespace Calemas.Erp.Domain.Entitys
     {
         public virtual Estoque Estoque { get; set; }
         public virtual Colaborador Colaborador { get; set; }
-        public virtual EstoqueMovimentacaoColaborador EstoqueMovimentacaoColaborador { get; set; }
+        public virtual ICollection<EstoqueMovimentacaoColaborador> CollectionEstoqueMovimentacaoColaborador { get; set; }
 
         [NotMapped]
         public bool AtualizaEstoqueColaborador { get; set; }
@@ -38,6 +39,7 @@ namespace Calemas.Erp.Domain.Entitys
                                         data.ResponsavelId);
 
                 construction.SetarAtualizaEstoqueColaborador(data.AtualizaEstoqueColaborador);
+                construction.SetarMotivoEstoqueMovimentacaoId(data.MotivoEstoqueMovimentacaoId);
 
                 return construction;
             }

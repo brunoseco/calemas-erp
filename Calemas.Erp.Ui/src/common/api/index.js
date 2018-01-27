@@ -1,4 +1,4 @@
-﻿import Vue from 'vue'
+import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import Cache from '../cache'
@@ -82,13 +82,7 @@ export function Api(resource, endpoint) {
         self.lastAction = "get";
         self.url = makeGetBaseUrl();
 
-        if (isOffline())
-            return loadFromCache().then(handleSuccess, handleError);
-
-        return axios
-            .get(self.url)
-            .then(res => { handleSuccess(res.data); return res.data; })
-            .catch(err => { handleError(err.response); throw err.response; })
+        return _getBase();
     }
 
     function _getMethodCustom(behavior) {
@@ -97,12 +91,18 @@ export function Api(resource, endpoint) {
         self.filters.filterBehavior = behavior;
         self.url = makeGetCustomMethodBaseUrl();
 
+        return _getBase();
+    }
+
+    function _getBase() {
+
         if (isOffline())
             return loadFromCache().then(handleSuccess, handleError);
 
         return axios
             .get(self.url)
-            .then(res => { handleSuccess(res.data); return res.data; }, err => { handleError(err); return err; });
+            .then(res => { handleSuccess(res.data); return res.data; })
+            .catch(err => { handleError(err.response); throw err.response; })
     }
 
     function _getDataListCustom() {

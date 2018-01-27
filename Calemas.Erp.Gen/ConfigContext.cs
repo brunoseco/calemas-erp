@@ -80,6 +80,7 @@ namespace Calemas.Erp.Gen
                     new TableInfo { TableName = "Estoque", MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "EstoqueMovimentacao", MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "EstoqueMovimentacaoColaborador", MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
+                    new TableInfo { TableName = "MotivoEstoqueMovimentacao", MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
 
                     new TableInfo { TableName = "SolicitacaoEstoque", MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
                     new TableInfo { TableName = "SolicitacaoEstoqueMovimentacao", MakeDomain = true, MakeDto = true, MakeSummary = true, MakeApp = true, MakeApi = true },
@@ -113,6 +114,7 @@ namespace Calemas.Erp.Gen
                     new TableInfo { TableName = "Estoque", ClassNameFormated = "Estoque", MakeFront = true,  },
                     new TableInfo { TableName = "EstoqueMovimentacao", ClassNameFormated = "Movimentação de estoque", MakeFront = true,  },
                     new TableInfo { TableName = "EstoqueMovimentacaoColaborador", ClassNameFormated = "Movimentação de estoque do colaborador", MakeFront = true,  },
+                    new TableInfo { TableName = "MotivoEstoqueMovimentacao", ClassNameFormated = "Motivo de movimentação de estoque", MakeFront = true,  },
 
                     new TableInfo { TableName = "SolicitacaoEstoque", ClassNameFormated = "Solicitação de movimentação de estoque", MakeFront = true,  },
                     new TableInfo { TableName = "SolicitacaoEstoqueMovimentacao", ClassNameFormated = "Solicitação de movimentação de estoque", MakeFront = true,  },

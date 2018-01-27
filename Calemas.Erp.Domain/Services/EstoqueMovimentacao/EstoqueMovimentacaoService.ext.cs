@@ -5,6 +5,7 @@ using Calemas.Erp.Domain.Interfaces.Repository;
 using Calemas.Erp.Domain.Interfaces.Services;
 using System.Threading.Tasks;
 using Calemas.Erp.Domain.Filter;
+using System.Collections.Generic;
 
 namespace Calemas.Erp.Domain.Services
 {
@@ -31,8 +32,8 @@ namespace Calemas.Erp.Domain.Services
             {
                 if (entity.AtualizaEstoqueColaborador)
                 {
-                    var estoqueMovimentacaoColaborador = new EstoqueMovimentacaoColaborador(0, entity.ResponsavelId, !entity.Entrada, entity.Quantidade);
-                    entity.EstoqueMovimentacaoColaborador = estoqueMovimentacaoColaborador;
+                    var estoqueMovimentacaoColaborador = new EstoqueMovimentacaoColaborador(0, entity.ResponsavelId, entity.EstoqueMovimentacaoId, !entity.Entrada, entity.Quantidade);
+                    entity.CollectionEstoqueMovimentacaoColaborador = new List<EstoqueMovimentacaoColaborador>() { estoqueMovimentacaoColaborador };
                 }
             });
         }
