@@ -25,7 +25,6 @@ C:\Pessoal\calemas-erp\Calemas.Erp.Api\bin\Release\netcoreapp1.1\Common.Dto.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Api\bin\Release\netcoreapp1.1\Common.Orm.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Api\bin\Release\netcoreapp1.1\Calemas.Erp.Filter.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Api\bin\Release\netcoreapp1.1\Common.Validation.pdb
-C:\Pessoal\calemas-erp\Calemas.Erp.Api\obj\Release\netcoreapp1.1\Calemas.Erp.Api.csprojResolveAssemblyReference.cache
 C:\Pessoal\calemas-erp\Calemas.Erp.Api\obj\Release\netcoreapp1.1\Calemas.Erp.Api.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Calemas.Erp.Api\obj\Release\netcoreapp1.1\Calemas.Erp.Api.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Api\obj\Release\netcoreapp1.1\Calemas.Erp.Api.pdb
@@ -68,3 +67,5 @@ C:\Pessoal\calemas-erp\Calemas.Erp.Api\bin\Release\netcoreapp1.1\Calemas.Erp.Cro
 C:\Pessoal\calemas-erp\Calemas.Erp.Api\bin\Release\netcoreapp1.1\Calemas.Erp.CrossCuting.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Api\obj\Release\netcoreapp1.1\Calemas.Erp.Api.csproj.CoreCompileInputs.cache
 C:\Pessoal\calemas-erp\Calemas.Erp.Api\obj\Release\netcoreapp1.1\Calemas.Erp.Api.AssemblyInfoInputs.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Api\obj\Release\netcoreapp1.1\Calemas.Erp.Api.csprojAssemblyReference.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Api\obj\Release\netcoreapp1.1\Calemas.Erp.Api.csproj.CopyComplete

@@ -28,7 +28,6 @@ C:\Pessoal\calemas-erp\Calemas.Erp.Summary\bin\Debug\netcoreapp1.1\Calemas.Erp.F
 C:\Pessoal\calemas-erp\Calemas.Erp.Summary\bin\Debug\netcoreapp1.1\Common.Domain.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Summary\bin\Debug\netcoreapp1.1\Common.Orm.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Summary\bin\Debug\netcoreapp1.1\Common.Validation.pdb
-C:\Pessoal\calemas-erp\Calemas.Erp.Summary\obj\Debug\netcoreapp1.1\Calemas.Erp.Summary.csprojResolveAssemblyReference.cache
 C:\Pessoal\calemas-erp\Calemas.Erp.Summary\obj\Debug\netcoreapp1.1\Calemas.Erp.Summary.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Calemas.Erp.Summary\obj\Debug\netcoreapp1.1\Calemas.Erp.Summary.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Summary\obj\Debug\netcoreapp1.1\Calemas.Erp.Summary.pdb
@@ -51,3 +50,5 @@ D:\Projetos\calemas-erp\Calemas.Erp.Summary\obj\Debug\netcoreapp1.1\Calemas.Erp.
 D:\Projetos\calemas-erp\Calemas.Erp.Summary\obj\Debug\netcoreapp1.1\Calemas.Erp.Summary.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Summary\obj\Debug\netcoreapp1.1\Calemas.Erp.Summary.csproj.CoreCompileInputs.cache
 C:\Pessoal\calemas-erp\Calemas.Erp.Summary\obj\Debug\netcoreapp1.1\Calemas.Erp.Summary.AssemblyInfoInputs.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Summary\obj\Debug\netcoreapp1.1\Calemas.Erp.Summary.csprojAssemblyReference.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Summary\obj\Debug\netcoreapp1.1\Calemas.Erp.Summary.csproj.CopyComplete

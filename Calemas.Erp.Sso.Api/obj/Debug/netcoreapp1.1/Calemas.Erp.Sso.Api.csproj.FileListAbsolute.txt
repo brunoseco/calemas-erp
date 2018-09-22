@@ -1,7 +1,6 @@
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.deps.json
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.runtimeconfig.json
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.runtimeconfig.dev.json
-C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.csprojResolveAssemblyReference.cache
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\bin\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.pdb
@@ -46,3 +45,5 @@ D:\Projetos\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.
 D:\Projetos\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.csproj.CoreCompileInputs.cache
 C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.AssemblyInfoInputs.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.csprojAssemblyReference.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Sso.Api\obj\Debug\netcoreapp1.1\Calemas.Erp.Sso.Api.csproj.CopyComplete

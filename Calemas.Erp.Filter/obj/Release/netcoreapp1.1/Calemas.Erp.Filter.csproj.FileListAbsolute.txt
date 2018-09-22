@@ -3,7 +3,6 @@ C:\Pessoal\calemas-erp\Calemas.Erp.Filter\bin\Release\netcoreapp1.1\Calemas.Erp.
 C:\Pessoal\calemas-erp\Calemas.Erp.Filter\bin\Release\netcoreapp1.1\Calemas.Erp.Filter.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Filter\bin\Release\netcoreapp1.1\Common.Domain.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Filter\bin\Release\netcoreapp1.1\Common.Domain.pdb
-C:\Pessoal\calemas-erp\Calemas.Erp.Filter\obj\Release\netcoreapp1.1\Calemas.Erp.Filter.csprojResolveAssemblyReference.cache
 C:\Pessoal\calemas-erp\Calemas.Erp.Filter\obj\Release\netcoreapp1.1\Calemas.Erp.Filter.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Calemas.Erp.Filter\obj\Release\netcoreapp1.1\Calemas.Erp.Filter.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Filter\obj\Release\netcoreapp1.1\Calemas.Erp.Filter.pdb
@@ -18,3 +17,5 @@ D:\Projetos\calemas-erp\Calemas.Erp.Filter\obj\Release\netcoreapp1.1\Calemas.Erp
 D:\Projetos\calemas-erp\Calemas.Erp.Filter\obj\Release\netcoreapp1.1\Calemas.Erp.Filter.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Filter\obj\Release\netcoreapp1.1\Calemas.Erp.Filter.csproj.CoreCompileInputs.cache
 C:\Pessoal\calemas-erp\Calemas.Erp.Filter\obj\Release\netcoreapp1.1\Calemas.Erp.Filter.AssemblyInfoInputs.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Filter\obj\Release\netcoreapp1.1\Calemas.Erp.Filter.csprojAssemblyReference.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Filter\obj\Release\netcoreapp1.1\Calemas.Erp.Filter.csproj.CopyComplete

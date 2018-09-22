@@ -86,14 +86,14 @@ namespace Calemas.Erp.Sso.Api
                     AllowAccessTokensViaBrowser = true,
 
                     RedirectUris = {
-                        "http://localhost:8080/#/authorized/?"
+                        "http://erp.calemas.com.br/#/authorized/?"
                     },
                     PostLogoutRedirectUris =
                     {
-                        "http://localhost:8080/#/loggedout/?"
+                        "http://erp.calemas.com.br/#/loggedout/?"
                     },
 
-                    AllowedCorsOrigins = { "http://localhost:8080" },
+                    AllowedCorsOrigins = { "http://erp.calemas.com.br" },
 
                     AllowedScopes = { "openid", "profile", "email", "calemas" }
                 },

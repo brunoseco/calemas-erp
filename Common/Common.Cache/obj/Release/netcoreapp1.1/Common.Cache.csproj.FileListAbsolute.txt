@@ -21,9 +21,10 @@ C:\Pessoal\calemas-erp\Common\Common.Cache\bin\Release\netcoreapp1.1\Common.Cach
 C:\Pessoal\calemas-erp\Common\Common.Cache\bin\Release\netcoreapp1.1\Common.Cache.pdb
 C:\Pessoal\calemas-erp\Common\Common.Cache\bin\Release\netcoreapp1.1\Common.Domain.dll
 C:\Pessoal\calemas-erp\Common\Common.Cache\bin\Release\netcoreapp1.1\Common.Domain.pdb
-C:\Pessoal\calemas-erp\Common\Common.Cache\obj\Release\netcoreapp1.1\Common.Cache.csprojResolveAssemblyReference.cache
 C:\Pessoal\calemas-erp\Common\Common.Cache\obj\Release\netcoreapp1.1\Common.Cache.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Common\Common.Cache\obj\Release\netcoreapp1.1\Common.Cache.dll
 C:\Pessoal\calemas-erp\Common\Common.Cache\obj\Release\netcoreapp1.1\Common.Cache.pdb
 C:\Pessoal\calemas-erp\Common\Common.Cache\obj\Release\netcoreapp1.1\Common.Cache.csproj.CoreCompileInputs.cache
 C:\Pessoal\calemas-erp\Common\Common.Cache\obj\Release\netcoreapp1.1\Common.Cache.AssemblyInfoInputs.cache
+C:\Pessoal\calemas-erp\Common\Common.Cache\obj\Release\netcoreapp1.1\Common.Cache.csprojAssemblyReference.cache
+C:\Pessoal\calemas-erp\Common\Common.Cache\obj\Release\netcoreapp1.1\Common.Cache.csproj.CopyComplete

@@ -8,7 +8,6 @@ C:\Calemas\Main\Calemas.Erp.Data\obj\Debug\netcoreapp1.1\Calemas.Erp.Data.csproj
 C:\Pessoal\calemas-erp\Calemas.Erp.Data\bin\Debug\netcoreapp1.1\Calemas.Erp.Data.deps.json
 C:\Pessoal\calemas-erp\Calemas.Erp.Data\bin\Debug\netcoreapp1.1\Calemas.Erp.Data.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Data\bin\Debug\netcoreapp1.1\Calemas.Erp.Data.pdb
-C:\Pessoal\calemas-erp\Calemas.Erp.Data\obj\Debug\netcoreapp1.1\Calemas.Erp.Data.csprojResolveAssemblyReference.cache
 C:\Pessoal\calemas-erp\Calemas.Erp.Data\obj\Debug\netcoreapp1.1\Calemas.Erp.Data.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Calemas.Erp.Data\obj\Debug\netcoreapp1.1\Calemas.Erp.Data.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Data\obj\Debug\netcoreapp1.1\Calemas.Erp.Data.pdb
@@ -41,3 +40,5 @@ D:\Projetos\calemas-erp\Calemas.Erp.Data\obj\Debug\netcoreapp1.1\Calemas.Erp.Dat
 D:\Projetos\calemas-erp\Calemas.Erp.Data\obj\Debug\netcoreapp1.1\Calemas.Erp.Data.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Data\obj\Debug\netcoreapp1.1\Calemas.Erp.Data.csproj.CoreCompileInputs.cache
 C:\Pessoal\calemas-erp\Calemas.Erp.Data\obj\Debug\netcoreapp1.1\Calemas.Erp.Data.AssemblyInfoInputs.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Data\obj\Debug\netcoreapp1.1\Calemas.Erp.Data.csprojAssemblyReference.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Data\obj\Debug\netcoreapp1.1\Calemas.Erp.Data.csproj.CopyComplete

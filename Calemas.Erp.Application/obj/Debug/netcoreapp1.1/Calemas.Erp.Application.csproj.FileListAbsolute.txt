@@ -32,7 +32,6 @@ C:\Pessoal\calemas-erp\Calemas.Erp.Application\bin\Debug\netcoreapp1.1\Common.Do
 C:\Pessoal\calemas-erp\Calemas.Erp.Application\bin\Debug\netcoreapp1.1\Common.Dto.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Application\bin\Debug\netcoreapp1.1\Calemas.Erp.Filter.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Application\bin\Debug\netcoreapp1.1\Common.Validation.pdb
-C:\Pessoal\calemas-erp\Calemas.Erp.Application\obj\Debug\netcoreapp1.1\Calemas.Erp.Application.csprojResolveAssemblyReference.cache
 C:\Pessoal\calemas-erp\Calemas.Erp.Application\obj\Debug\netcoreapp1.1\Calemas.Erp.Application.AssemblyInfo.cs
 C:\Pessoal\calemas-erp\Calemas.Erp.Application\obj\Debug\netcoreapp1.1\Calemas.Erp.Application.dll
 C:\Pessoal\calemas-erp\Calemas.Erp.Application\obj\Debug\netcoreapp1.1\Calemas.Erp.Application.pdb
@@ -61,3 +60,5 @@ C:\Pessoal\calemas-erp\Calemas.Erp.Application\bin\Debug\netcoreapp1.1\Calemas.E
 C:\Pessoal\calemas-erp\Calemas.Erp.Application\bin\Debug\netcoreapp1.1\Calemas.Erp.Enums.pdb
 C:\Pessoal\calemas-erp\Calemas.Erp.Application\obj\Debug\netcoreapp1.1\Calemas.Erp.Application.csproj.CoreCompileInputs.cache
 C:\Pessoal\calemas-erp\Calemas.Erp.Application\obj\Debug\netcoreapp1.1\Calemas.Erp.Application.AssemblyInfoInputs.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Application\obj\Debug\netcoreapp1.1\Calemas.Erp.Application.csprojAssemblyReference.cache
+C:\Pessoal\calemas-erp\Calemas.Erp.Application\obj\Debug\netcoreapp1.1\Calemas.Erp.Application.csproj.CopyComplete
